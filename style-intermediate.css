@@ -1,0 +1,604 @@
+/* ==================== 
+   INTERMEDIATE - NORDIC COLOR PALETTE 
+   ==================== */
+:root {
+    /* Main greens - warm and welcoming */
+    --olive-green: #6b8e23;         /* Header, primary buttons */
+    --sage-green: #8ba888;          /* Secondary buttons, tags */
+    --light-green: #c8d5b9;         /* Highlights, hover states */
+    
+    /* Browns - natural and warm */
+    --dark-brown: #5d4e37;          /* Main text */
+    --warm-brown: #8b7355;          /* Vocabulary words, emphasis */
+    --light-brown: #a89070;         /* Secondary text */
+    
+    /* Backgrounds - soft and comfortable */
+    --warm-white: #faf8f3;          /* Page background */
+    --cream: #f0e9d2;               /* Card backgrounds */
+    --light-cream: #e8dcc4;         /* Vocabulary boxes */
+    
+    /* Neutral */
+    --gray-light: #e5e5e5;
+    --shadow: rgba(93, 78, 55, 0.1);
+}
+
+/* ==================== 
+   RESET & BASE 
+   ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-brown);
+    background: var(--warm-white);
+}
+
+/* ==================== 
+   HEADER 
+   ==================== */
+.header {
+    background: linear-gradient(135deg, var(--olive-green) 0%, var(--sage-green) 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.level-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ==================== 
+   MAIN CONTAINER 
+   ==================== */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 80px);
+}
+
+/* ==================== 
+   SIDEBAR 
+   ==================== */
+.sidebar {
+    width: 300px;
+    background: white;
+    padding: 1.5rem;
+    border-right: 1px solid var(--gray-light);
+    height: calc(100vh - 80px);
+    position: sticky;
+    top: 80px;
+    overflow-y: auto;
+}
+
+/* Search Box */
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--light-green);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: var(--warm-white);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--sage-green);
+    box-shadow: 0 0 0 3px rgba(139, 168, 136, 0.1);
+}
+
+/* Home Button */
+.home-btn {
+    width: 100%;
+    background: var(--sage-green);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    background: var(--olive-green);
+    transform: translateX(-3px);
+}
+
+.home-btn.hidden {
+    display: none;
+}
+
+/* Month Navigation */
+.month-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.month-group {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.month-header {
+    width: 100%;
+    background: var(--olive-green);
+    color: white;
+    border: none;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.month-header:hover {
+    background: var(--sage-green);
+}
+
+.month-header.active {
+    background: var(--light-green);
+    color: var(--dark-brown);
+}
+
+.arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.lesson-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.lesson-list {
+    list-style: none;
+    background: var(--warm-white);
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.lesson-list.hidden {
+    max-height: 0;
+}
+
+.lesson-list li {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.lesson-list li:last-child {
+    border-bottom: none;
+}
+
+.lesson-list a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--dark-brown);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.lesson-list a:hover {
+    background: var(--light-cream);
+    padding-left: 1.5rem;
+    color: var(--olive-green);
+}
+
+/* ==================== 
+   MAIN CONTENT 
+   ==================== */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 900px;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background: linear-gradient(135deg, var(--light-green) 0%, white 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--sage-green);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.welcome-card h2 {
+    color: var(--olive-green);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.welcome-card p {
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+    color: var(--dark-brown);
+}
+
+.schedule-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 3px solid var(--olive-green);
+}
+
+.schedule-info h3 {
+    color: var(--sage-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Section Title */
+.section-title {
+    color: var(--olive-green);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--light-green);
+}
+
+/* Lesson Cards */
+.lesson-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.15);
+    border-color: var(--light-green);
+}
+
+.lesson-date {
+    min-width: 80px;
+    text-align: center;
+    padding: 1rem;
+    background: var(--light-cream);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lesson-date .day {
+    font-size: 0.85rem;
+    color: var(--sage-green);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.lesson-date .date {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--olive-green);
+    margin-top: 0.3rem;
+}
+
+.lesson-info h3 {
+    color: var(--olive-green);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.lesson-info p {
+    color: var(--dark-brown);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.read-more-btn {
+    background: var(--sage-green);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: var(--olive-green);
+    transform: translateX(3px);
+}
+
+/* ==================== 
+   LESSON DETAIL PAGE 
+   ==================== */
+.lesson-detail {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px var(--shadow);
+}
+
+.lesson-detail h1 {
+    color: var(--olive-green);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--sage-green);
+}
+
+.card h2 {
+    color: var(--olive-green);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.card ul, .card ol {
+    margin-left: 1.5rem;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0.3rem;
+    color: white;
+}
+
+.tag.sage {
+    background: var(--sage-green);
+}
+
+.tag.olive {
+    background: var(--olive-green);
+}
+
+.tag.brown {
+    background: var(--warm-brown);
+}
+
+.tag.light {
+    background: var(--light-green);
+    color: var(--dark-brown);
+}
+
+/* ==================== 
+   VOCABULARY STYLES - NORDIC 
+   ==================== */
+.vocab-highlight {
+    background-color: var(--light-cream);
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: help;
+    position: relative;
+    font-weight: 600;
+    color: var(--warm-brown);
+    border-bottom: 2px dotted var(--sage-green);
+}
+
+.vocab-highlight:hover {
+    background-color: var(--light-green);
+}
+
+.vocab-highlight:hover::after {
+    content: attr(data-translation);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-brown);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: normal;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+}
+
+.vocab-box {
+    background: var(--light-cream);
+    padding: 15px 20px;
+    border-left: 4px solid var(--sage-green);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.vocab-item {
+    margin: 10px 0;
+}
+
+.vocab-word {
+    color: var(--olive-green);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.vocab-translation {
+    color: var(--warm-brown);
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.vocab-example {
+    color: var(--dark-brown);
+    margin-top: 5px;
+    padding-left: 15px;
+    border-left: 2px solid var(--light-green);
+    font-style: italic;
+}
+
+/* ==================== 
+   DETAILS / ANSWERS 
+   ==================== */
+details {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--light-cream);
+    border-radius: 8px;
+    border-left: 4px solid var(--warm-brown);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--olive-green);
+    font-size: 17px;
+    user-select: none;
+}
+
+summary:hover {
+    color: var(--sage-green);
+}
+
+.answer-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed var(--sage-green);
+}
+
+.answer-content p {
+    margin-bottom: 1rem;
+}
+
+/* ==================== 
+   RESPONSIVE DESIGN 
+   ==================== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-light);
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .lesson-card {
+        flex-direction: column;
+    }
+    
+    .lesson-date {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .lesson-detail {
+        padding: 1.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .header-content h1 {
+        font-size: 1.4rem;
+    }
+}
+/* ==================== 
+   LESSON CONTENT CONTAINER (樣式容器)
+   ==================== */
+.lesson-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 讓裡面的卡片長得跟原本一樣漂亮 */
+.lesson-content-wrapper .card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--olive-green);
+}
+
+.lesson-content-wrapper h1 {
+    color: var(--olive-green);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* 讓圖片或按鈕在容器裡也能正常顯示 */
+.lesson-content-wrapper img {
+    max-width: 100%;
+    border-radius: 10px;
+}
