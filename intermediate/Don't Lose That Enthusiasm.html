@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Lose That Enthusiasm!</title>
+<style>
+  body {
+    font-family: 'Noto Sans', 'Open Sans', 'Arial', sans-serif;
+    line-height: 1.8;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+    color: #34495e;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+  }
+  
+  h3 {
+    font-size: 1.3em;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 12px;
+  }
+  
+  p {
+    margin-bottom: 18px;
+    text-align: justify;
+  }
+  
+  .highlight {
+    background-color:#fff4e6;
+    padding: 2px 4px;
+    border-radius: 3px;
+    cursor: help;
+  }
+  
+  .section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .vocab-box {
+    background-color: #ecf9ff;
+    border-left: 4px solid #3498db;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .vocab-item {
+    margin-bottom: 15px;
+  }
+  
+  .vocab-word {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.05em;
+  }
+  
+  .vocab-def {
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .vocab-spanish {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.95em;
+  }
+  
+  .vocab-example {
+    color: #34495e;
+    font-style: italic;
+    margin-top: 5px;
+    padding-left: 15px;
+    border-left: 2px solid #bdc3c7;
+  }
+  
+  .expressions-box {
+    background-color: #fff4e6;
+    border-left: 4px solid #f39c12;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 5px;
+  }
+  
+  .expression-item {
+    margin-bottom: 12px;
+  }
+  
+  .expression-phrase {
+    font-weight: 700;
+    color: #d35400;
+  }
+  
+  .expression-usage {
+    font-style: italic;
+    color: #555;
+  }
+  
+  .discussion-box {
+    background-color: #f0f9f0;
+    border-left: 4px solid #27ae60;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 5px;
+  }
+  
+  .discussion-box ol {
+    margin: 10px 0;
+    padding-left: 25px;
+  }
+  
+  .discussion-box li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  
+  .practice-box {
+    background-color: #fef5f5;
+    border-left: 4px solid #e74c3c;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 5px;
+  }
+  
+  details {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #2c3e50;
+    padding: 5px;
+  }
+  
+  summary:hover {
+    color: #3498db;
+  }
+  
+  .answer-content {
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 3px solid #95a5a6;
+    color: #555;
+  }
+  
+  [data-tooltip] {
+    position: relative;
+  }
+  
+  [data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.85em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-bottom: 8px;
+    z-index: 1000;
+  }
+  
+  [data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #2c3e50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-bottom: 2px;
+    z-index: 1000;
+  }
+  
+  [data-tooltip]:hover::before,
+  [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="section">
+  <h1>Don't Lose That Enthusiasm!</h1>
+  <p style="font-style: italic; color: #7f8c8d;">Ways to keep new employees encouraged and excited about their jobs</p>
+  <p style="font-size: 0.9em; color: #95a5a6;">Source: Fast Company, 2025 November 26, 27</p>
+</div>
+
+<div class="expressions-box">
+  <h2>🔑 Useful Expressions</h2>
+  <div class="expression-item">
+    <span class="expression-phrase">• peaks in the early days</span> – <span class="expression-usage">"Employee motivation often peaks in the early days before routine sets in."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• a fresh dose of optimism</span> – <span class="expression-usage">"Starting a new project always brings a fresh dose of optimism to the team."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• plunges by an average of</span> – <span class="expression-usage">"Customer satisfaction plunges by an average of 30% when response time exceeds 24 hours."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• preserve that enthusiasm</span> – <span class="expression-usage">"Our goal is to preserve that enthusiasm throughout the entire implementation phase."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• pushback, sideways glances</span> – <span class="expression-usage">"When we proposed the new safety protocol, we encountered some pushback and sideways glances from experienced operators."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• outweighed by the fear of</span> – <span class="expression-usage">"The benefits of automation were outweighed by the fear of job displacement."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• comes with the territory</span> – <span class="expression-usage">"Occasional equipment failures come with the territory in manufacturing environments."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• make an impact fast</span> – <span class="expression-usage">"In crisis management, you need to make an impact fast to prevent escalation."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• speak up and bring a fresh perspective</span> – <span class="expression-usage">"We encourage junior engineers to speak up and bring a fresh perspective to design reviews."</span>
+  </div>
+  <div class="expression-item">
+    <span class="expression-phrase">• star the clock</span> – <span class="expression-usage">"Don't star the clock on performance metrics until employees are fully trained."</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📄 Article</h2>
+  
+  <p><span class="highlight" data-tooltip="entusiasmo">Enthusiasm</span> <span class="highlight" data-tooltip="alcanza su punto máximo">peaks</span> in the early days of a new job. New <span class="highlight" data-tooltip="contrataciones">hires</span> are creative, motivated and often a fresh <span class="highlight" data-tooltip="dosis">dose</span> of optimism compared to their more <span class="highlight" data-tooltip="con experiencia; de mucho tiempo">tenured</span> teammates. Yet, in a matter of weeks, that initial enthusiasm <span class="highlight" data-tooltip="cae en picada">plunges</span> by an average of 24%.</p>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">peaks</div>
+      <div class="vocab-def">reaches the highest point or maximum level</div>
+      <div class="vocab-spanish">(alcanza su punto máximo)</div>
+      <div class="vocab-example">"Production efficiency peaks during the third quarter when all systems are optimized."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">hires (n.)</div>
+      <div class="vocab-def">newly employed people; new employees</div>
+      <div class="vocab-spanish">(contrataciones)</div>
+      <div class="vocab-example">"Our department received five new hires this month to support the expansion project."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">dose</div>
+      <div class="vocab-def">an amount or quantity of something, often used metaphorically</div>
+      <div class="vocab-spanish">(dosis)</div>
+      <div class="vocab-example">"The team needed a dose of encouragement after the failed product launch."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">tenured</div>
+      <div class="vocab-def">having worked for a long time; experienced and established</div>
+      <div class="vocab-spanish">(con experiencia; de mucho tiempo)</div>
+      <div class="vocab-example">"Tenured employees often mentor newcomers during their first weeks."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">plunges</div>
+      <div class="vocab-def">falls or drops suddenly and sharply</div>
+      <div class="vocab-spanish">(cae en picada)</div>
+      <div class="vocab-example">"System performance plunges when server load exceeds 90%."</div>
+    </div>
+  </div>
+
+  <p>The innovation and <span class="highlight" data-tooltip="discreción; criterio propio">discretionary</span> effort that comes with new-hire enthusiasm are a strategic advantage for any organization. But to be impactful, new-hire energy must last beyond the first few weeks. Here are four tips to preserve that enthusiasm:</p>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">discretionary effort</div>
+      <div class="vocab-def">extra effort employees choose to give beyond minimum requirements</div>
+      <div class="vocab-spanish">(esfuerzo discrecional; esfuerzo adicional voluntario)</div>
+      <div class="vocab-example">"When employees feel valued, they contribute discretionary effort to solve complex problems."</div>
+    </div>
+  </div>
+
+  <h3>1. Give context, not just content</h3>
+  
+  <p>Too often, new teammates find out "how it works here" through <span class="highlight" data-tooltip="resistencia; oposición">pushback</span>, <span class="highlight" data-tooltip="miradas de lado (desconfianza)">sideways glances</span> and a <span class="highlight" data-tooltip="vuelta de muñeca; giro rápido">flick</span> of the wrist over <span class="highlight" data-tooltip="cinta roja (burocracia)">red tape</span> they didn't know existed. As a result, the motivation to drive results is quickly <span class="highlight" data-tooltip="superado en peso">outweighed</span> by the fear of <span class="highlight" data-tooltip="riesgo reputacional">reputational risk</span> or <span class="highlight" data-tooltip="meterse en un problema">stepping on a cultural landmine</span>.</p>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">pushback</div>
+      <div class="vocab-def">resistance or opposition to an idea or action</div>
+      <div class="vocab-spanish">(resistencia; oposición)</div>
+      <div class="vocab-example">"The new safety procedure received pushback from workers who preferred the old method."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">sideways glances</div>
+      <div class="vocab-def">looks of suspicion, doubt, or disapproval given indirectly</div>
+      <div class="vocab-spanish">(miradas de lado; miradas de desconfianza)</div>
+      <div class="vocab-example">"His unconventional approach to troubleshooting earned him sideways glances from senior technicians."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">flick of the wrist</div>
+      <div class="vocab-def">a quick, casual dismissive gesture or action</div>
+      <div class="vocab-spanish">(vuelta de muñeca; gesto rápido y casual)</div>
+      <div class="vocab-example">"He dismissed my concern with a flick of the wrist, saying it wasn't important."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">red tape</div>
+      <div class="vocab-def">excessive bureaucracy or adherence to rules that delays action</div>
+      <div class="vocab-spanish">(burocracia; trámites excesivos)</div>
+      <div class="vocab-example">"Getting approval for new equipment involves a lot of red tape and multiple signatures."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">outweighed</div>
+      <div class="vocab-def">exceeded in importance, value, or effect</div>
+      <div class="vocab-spanish">(superado en peso; más importante que)</div>
+      <div class="vocab-example">"The benefits of the new system outweighed the initial implementation costs."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">reputational risk</div>
+      <div class="vocab-def">potential damage to one's professional standing or credibility</div>
+      <div class="vocab-spanish">(riesgo reputacional)</div>
+      <div class="vocab-example">"Speaking up about safety concerns involves some reputational risk if management disagrees."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">stepping on a cultural landmine</div>
+      <div class="vocab-def">accidentally violating an unspoken social or organizational rule</div>
+      <div class="vocab-spanish">(meterse en un problema cultural; pisar un terreno peligroso)</div>
+      <div class="vocab-example">"Criticizing the founder's original design was like stepping on a cultural landmine in that company."</div>
+    </div>
+  </div>
+
+  <p>It's a preventable <span class="highlight" data-tooltip="desplome; decepción gradual">comedown</span>. Effective <span class="highlight" data-tooltip="incorporación (de empleados)">onboarding</span> must go beyond role-specific content. Organizational context is what gives new teammates the foundation to dive in actively. At the start of the onboarding process, answer questions like:</p>
+
+  <ul>
+    <li>How do different teams typically work together (or not)?</li>
+    <li>Are there cultural norms around offering feedback?</li>
+    <li>Is the decision-making <span class="highlight" data-tooltip="jerárquico; vertical">hierarchical</span>, fluid or more rigid?</li>
+    <li>What <span class="highlight" data-tooltip="métricas; indicadores">metrics</span> are most important to the organization?</li>
+    <li>Who determines what's considered "urgent," and how is that communicated?</li>
+  </ul>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">comedown</div>
+      <div class="vocab-def">a decline or disappointment after initial excitement</div>
+      <div class="vocab-spanish">(desplome; decepción gradual; bajón)</div>
+      <div class="vocab-example">"After the successful launch, the comedown hit when we realized the maintenance costs."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">onboarding</div>
+      <div class="vocab-def">the process of integrating new employees into an organization</div>
+      <div class="vocab-spanish">(incorporación; integración de empleados)</div>
+      <div class="vocab-example">"Our onboarding program includes shadowing experienced engineers for two weeks."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">hierarchical</div>
+      <div class="vocab-def">arranged in a system of ranks or levels of authority</div>
+      <div class="vocab-spanish">(jerárquico; vertical)</div>
+      <div class="vocab-example">"Decision-making in this plant is hierarchical, requiring approval from multiple management levels."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">metrics</div>
+      <div class="vocab-def">standards of measurement; quantifiable indicators</div>
+      <div class="vocab-spanish">(métricas; indicadores)</div>
+      <div class="vocab-example">"We track several key metrics including uptime, defect rate, and cycle time."</div>
+    </div>
+  </div>
+
+  <p>This foundation enables new hires to make an impact fast, without fear of stepping on a cultural landmine.</p>
+
+  <h3>2. Prove a failure tolerance</h3>
+  
+  <p>If your organization needs to progress, failure <span class="highlight" data-tooltip="inevitablemente">inevitably</span> comes with the <span class="highlight" data-tooltip="territorio; trabajo">territory</span>. Yet, the <span class="highlight" data-tooltip="perspectiva; posibilidad">prospect</span> of failing can <span class="highlight" data-tooltip="ahogar; reprimir">stifle</span> a <span class="highlight" data-tooltip="dinámica">showstopper</span> through someone eager to impress.</p>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">inevitably</div>
+      <div class="vocab-def">unavoidably; as is certain to happen</div>
+      <div class="vocab-spanish">(inevitablemente)</div>
+      <div class="vocab-example">"When implementing new technology, some resistance inevitably occurs."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">comes with the territory</div>
+      <div class="vocab-def">is a natural or expected part of a situation or job</div>
+      <div class="vocab-spanish">(viene con el territorio; es parte del trabajo)</div>
+      <div class="vocab-example">"Dealing with unexpected equipment breakdowns comes with the territory in manufacturing."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">prospect</div>
+      <div class="vocab-def">the possibility or likelihood of something happening</div>
+      <div class="vocab-spanish">(perspectiva; posibilidad)</div>
+      <div class="vocab-example">"The prospect of system downtime worries our IT team during major upgrades."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">stifle</div>
+      <div class="vocab-def">to restrain, suppress, or prevent from happening</div>
+      <div class="vocab-spanish">(ahogar; reprimir; sofocar)</div>
+      <div class="vocab-example">"Excessive regulations can stifle innovation in process improvement."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">showstopper</div>
+      <div class="vocab-def">an impressive performance or idea; something outstanding</div>
+      <div class="vocab-spanish">(algo impresionante; desempeño destacado)</div>
+      <div class="vocab-example">"Her presentation on energy efficiency was a real showstopper at the conference."</div>
+    </div>
+  </div>
+
+  <p>A "Move fast and break things" poster does not build psychological safety or inspire risk-taking. Instead, prove an organizational failure tolerance by <span class="highlight" data-tooltip="citar">citing</span> specific examples of <span class="highlight" data-tooltip="fallidos">botched</span> initiatives:</p>
+
+  <ul>
+    <li>Share stories about failed launches, the <span class="highlight" data-tooltip="lleno de errores">buggy</span> <span class="highlight" data-tooltip="versión beta">beta version</span> or internal projects that didn't <span class="highlight" data-tooltip="cuajar; tomar forma">pan out</span>.</li>
+    <li>Talk about what was learned, how the organization <span class="highlight" data-tooltip="se adaptó">adapted</span> and, importantly, that the people behind those efforts are still here.</li>
+  </ul>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">citing</div>
+      <div class="vocab-def">mentioning or referring to as evidence or example</div>
+      <div class="vocab-spanish">(citando; mencionando)</div>
+      <div class="vocab-example">"The manager improved morale by citing past successes during the difficult quarter."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">botched</div>
+      <div class="vocab-def">badly done or carried out; failed due to poor execution</div>
+      <div class="vocab-spanish">(fallido; mal hecho; arruinado)</div>
+      <div class="vocab-example">"The botched software upgrade caused production delays for three days."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">buggy</div>
+      <div class="vocab-def">full of errors or defects (especially in software)</div>
+      <div class="vocab-spanish">(lleno de errores; con fallas)</div>
+      <div class="vocab-example">"The initial release was buggy, so we had to issue several patches."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">beta version</div>
+      <div class="vocab-def">a pre-release version of software for testing purposes</div>
+      <div class="vocab-spanish">(versión beta)</div>
+      <div class="vocab-example">"We're testing the beta version of the new inventory system before full deployment."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">pan out</div>
+      <div class="vocab-def">to succeed or develop as expected</div>
+      <div class="vocab-spanish">(resultar bien; cuajar; funcionar)</div>
+      <div class="vocab-example">"Not all our process improvement ideas pan out, but we learn from each attempt."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">adapted</div>
+      <div class="vocab-def">adjusted or modified to fit new conditions</div>
+      <div class="vocab-spanish">(se adaptó; ajustó)</div>
+      <div class="vocab-example">"Our team quickly adapted to the new safety protocols after the incident."</div>
+    </div>
+  </div>
+
+  <h3>3. Follow-up on the invitation for "new ideas"</h3>
+  
+  <p>The onboarding process can be <span class="highlight" data-tooltip="abrumador">overwhelming</span>. Between setting up passwords, learning names and attempting to <span class="highlight" data-tooltip="descifrar">decode</span> company health insurance, there isn't much <span class="highlight" data-tooltip="espacio mental">brain space</span> left for innovation in the early days.</p>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">overwhelming</div>
+      <div class="vocab-def">very intense or powerful; difficult to handle due to excessive amount</div>
+      <div class="vocab-spanish">(abrumador)</div>
+      <div class="vocab-example">"The amount of documentation for the new system was overwhelming at first."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">decode</div>
+      <div class="vocab-def">to understand or interpret something complicated</div>
+      <div class="vocab-spanish">(descifrar; interpretar)</div>
+      <div class="vocab-example">"It took me weeks to decode all the acronyms used in our department."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">brain space</div>
+      <div class="vocab-def">mental capacity or attention available for thinking</div>
+      <div class="vocab-spanish">(espacio mental; capacidad mental)</div>
+      <div class="vocab-example">"After troubleshooting for hours, I had no brain space left for creative problem-solving."</div>
+    </div>
+  </div>
+
+  <p>If you want new hires to speak up and bring a fresh perspective, follow up on that invitation after they've had time to <span class="highlight" data-tooltip="establecerse">settle in</span>. Go beyond "Got any ideas?" Ask <span class="highlight" data-tooltip="preguntas precisas">pointed questions</span> that show your interest in their perspective. Try <span class="highlight" data-tooltip="estímulos; preguntas iniciales">prompts</span> like:</p>
+
+  <ul>
+    <li>I'm curious about what you <span class="highlight" data-tooltip="opinar; pensar">take on</span> this: [describe the problem]. What do you think we're missing anything?</li>
+    <li>If you could start this (project, process, product) from <span class="highlight" data-tooltip="cero; desde el principio">scratch</span>, what would you do differently? What would stay?</li>
+    <li>Were there any moments where you thought, "Why do we do this way?"</li>
+  </ul>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">settle in</div>
+      <div class="vocab-def">to become comfortable and familiar with a new environment</div>
+      <div class="vocab-spanish">(establecerse; acomodarse; adaptarse)</div>
+      <div class="vocab-example">"It takes about a month for new engineers to settle in and feel confident."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">pointed questions</div>
+      <div class="vocab-def">specific, direct questions designed to elicit detailed responses</div>
+      <div class="vocab-spanish">(preguntas precisas; preguntas directas)</div>
+      <div class="vocab-example">"The auditor asked pointed questions about our chemical storage procedures."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">prompts</div>
+      <div class="vocab-def">cues or suggestions to encourage responses or action</div>
+      <div class="vocab-spanish">(estímulos; indicaciones; preguntas iniciales)</div>
+      <div class="vocab-example">"The facilitator used prompts to encourage discussion during the safety meeting."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">take on (this)</div>
+      <div class="vocab-def">opinion or perspective about something</div>
+      <div class="vocab-spanish">(opinión sobre; perspectiva de)</div>
+      <div class="vocab-example">"What's your take on the new quality control process?"</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">from scratch</div>
+      <div class="vocab-def">from the very beginning; starting with nothing</div>
+      <div class="vocab-spanish">(desde cero; desde el principio)</div>
+      <div class="vocab-example">"We had to rebuild the database from scratch after the corruption."</div>
+    </div>
+  </div>
+
+  <p>Showing new hires that "We want new ideas!" isn't just a <span class="highlight" data-tooltip="superficial">perfunctory</span> corporate welcome.</p>
+
+  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">perfunctory</div>
+      <div class="vocab-def">done routinely and with little interest or care; superficial</div>
+      <div class="vocab-spanish">(superficial; rutinario; sin interés real)</div>
+      <div class="vocab-example">"The safety inspection was perfunctory, missing several obvious hazards."</div>
+    </div>
+  </div>
+
+  <h3>4. Share the metrics, but don'tstar the clock</h3>  <p>Ambitious new hires want to know the <span class="highlight" data-tooltip="criterios">criteria</span> for success. Even if they don't ask, share what success—a new hire (eventually) be evaluated against. Whether it's delivery <span class="highlight" data-tooltip="plazos; cronogramas">timeline</span>, revenue targets or client satisfaction, be clear about what good looks like.</p>  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">criteria</div>
+      <div class="vocab-def">standards or principles by which something is judged</div>
+      <div class="vocab-spanish">(criterios)</div>
+      <div class="vocab-example">"The criteria for vendor selection include cost, reliability, and delivery time."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">timeline</div>
+      <div class="vocab-def">a schedule or plan showing when things should happen</div>
+      <div class="vocab-spanish">(cronograma; plazo; línea de tiempo)</div>
+      <div class="vocab-example">"The project timeline shows completion by the end of Q2."</div>
+    </div>
+  </div>  <p>But don't start the clock right away. Give new hires time to build <span class="highlight" data-tooltip="confianza">confidence</span> and develop a meaningful understanding of how to achieve those numbers effectively.</p>  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">start the clock</div>
+      <div class="vocab-def">begin measuring time or performance officially</div>
+      <div class="vocab-spanish">(empezar a contar; iniciar el cronómetro)</div>
+      <div class="vocab-example">"We don't start the clock on productivity metrics until after the training period."</div>
+    </div>
+  </div>  <p>If metrics are not shared up front and only surface during a later performance review, it can feel like a <span class="highlight" data-tooltip="juego preparado de antemano">made up mid-game</span>. On the <span class="highlight" data-tooltip="lado opuesto; por otro lado">flip side</span>, starting assessment on the first day can feel overwhelming or even unfair.</p>  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">made up mid-game</div>
+      <div class="vocab-def">created or changed after the process has already started (unfairly)</div>
+      <div class="vocab-spanish">(inventado a mitad del juego; cambiado sobre la marcha)</div>
+      <div class="vocab-example">"Changing the project requirements felt like rules made up mid-game."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">flip side</div>
+      <div class="vocab-def">the opposite or contrasting aspect of something</div>
+      <div class="vocab-Spanish">(lado opuesto; por otro lado; el reverso)</div>
+      <div class="vocab-example">"Automation increases efficiency, but the flip side is the initial investment cost."</div>
+    </div>
+  </div>  <p><span class="highlight" data-tooltip="alinear">Align</span> early on key metrics of success, but delay starting the "clock" for 60–90 days in performance-based roles. Be transparent, but not <span class="highlight" data-tooltip="prematuro">premature</span> in applying pressure.</p>  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">align</div>
+      <div class="vocab-def">to bring into agreement or coordination</div>
+      <div class="vocab-spanish">(alinear; coordinar)</div>
+      <div class="vocab-example">"We need to align our maintenance schedule with production demands."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">premature</div>
+      <div class="vocab-def">happening too soon; before the proper time</div>
+      <div class="vocab-spanish">(prematuro; anticipado)</div>
+      <div class="vocab-example">"Making a decision now would be premature until we have all the test results."</div>
+    </div>
+  </div>  <p>Will every day of work be as exciting as day one? Of course not. That level of excitement is impossible to <span class="highlight" data-tooltip="sostener; mantener">sustain</span>. Yet, with <span class="highlight" data-tooltip="intencionalidad">intentionality</span>, preserving new-hire enthusiasm is possible.</p>  <div class="vocab-box">
+    <h3>📚 Vocabulary</h3>
+    <div class="vocab-item">
+      <div class="vocab-word">sustain</div>
+      <div class="vocab-def">to maintain or keep going over time</div>
+      <div class="vocab-spanish">(sostener; mantener)</div>
+      <div class="vocab-example">"It's difficult to sustain high productivity during extended overtime periods."</div>
+    </div>
+    <div class="vocab-item">
+      <div class="vocab-word">intentionality</div>
+      <div class="vocab-def">the quality of being deliberate or purposeful</div>
+      <div class="vocab-spanish">(intencionalidad; propósito deliberado)</div>
+      <div class="vocab-example">"Safety culture requires intentionality in every decision we make."</div>
+    </div>
+  </div>
+</div><div class="discussion-box">
+  <h2>💬 Discussion Questions</h2>
+  <ol>
+    <li><strong>Initial enthusiasm decline:</strong> The article mentions that new hire enthusiasm drops by 24% within weeks. Have you experienced this in your own career or observed it in colleagues? What do you think causes this decline in your industry or workplace?</li><li><strong>Failure tolerance in your organization:</strong> How does your company handle failures or mistakes, especially from new employees? Do you think your workplace has a true "failure tolerance," or is there pressure to avoid risks? Can you share an example?</li><li><strong>Applying these tips in your context:</strong> Which of the four strategies (giving context, proving failure tolerance, inviting new ideas, sharing metrics without pressure) would be most valuable in your department (EHS, IT, or Process Engineering)? Why? What barriers might prevent implementing these strategies?</li>
+  </ol>
+</div><div class="practice-box">
+  <h2>✍️ Self-Practice Questions</h2>
+  <p><em>For students who miss class or want to review independently:</em></p>  <ol>
+    <li><strong>Summarize the main problem:</strong> In 2-3 sentences, explain why maintaining new employee enthusiasm is important for organizations.</li><li><strong>Four strategies overview:</strong> List the four tips mentioned in the article for preserving new hire enthusiasm. For each one, write one sentence explaining what it means in your own words.</li><li><strong>Personal reflection:</strong> Think about your own onboarding experience at your current company. Which of the four strategies was done well? Which could have been improved? Write a short paragraph (4-5 sentences).</li><li><strong>Vocabulary in context:</strong> Choose five vocabulary words from the article that are new to you. Write an original sentence for each word related to your work in EHS, IT, or Process Engineering.</li>
+  </ol>  <details>
+    <summary>📖 Reference Answers</summary>
+    <div class="answer-content">
+      <p><strong>Question 1 - Sample Answer:</strong></p>
+      <p>Maintaining new employee enthusiasm is crucial because initial motivation can drop by 24% within weeks of starting. This enthusiasm brings innovation, discretionary effort, and fresh perspectives that benefit the organization. If enthusiasm isn't preserved, companies lose the strategic advantage that new hires provide.</p>  <p><strong>Question 2 - Sample Answer:</strong></p>
+  <p><strong>1. Give context, not just content:</strong> Provide new employees with organizational context beyond job-specific training, including how teams work together and what cultural norms exist.</p>
+  <p><strong>2. Prove a failure tolerance:</strong> Share specific examples of past failures and what was learned, showing that the organization supports reasonable risk-taking.</p>
+  <p><strong>3. Follow-up on the invitation for new ideas:</strong> After new hires settle in, actively ask pointed questions to gather their fresh perspectives rather than just saying "we welcome ideas."</p>
+  <p><strong>4. Share the metrics, but don't start the clock:</strong> Communicate success criteria early but delay formal performance evaluation for 60-90 days to allow confidence building.</p>  <p><strong>Question 3 - Sample Answer:</strong></p>
+  <p><em>(This will vary by student. Sample response:)</em> When I joined my company, the onboarding focused heavily on technical training, which was helpful. However, strategy #1 (giving context) could have been improved. I didn't understand the decision-making hierarchy or which metrics were most important to management. This caused some confusion in my first weeks when I wasn't sure whose approval I needed for certain tasks. Strategy #3 (follow-up on new ideas) was done well—my supervisor scheduled a meeting after my first month specifically to hear my observations and suggestions about our processes.</p>  <p><strong>Question 4 - Sample Answer:</strong></p>
+  <p><em>(Answers will vary. Examples:)</em></p>
+  <ul>
+    <li><strong>Onboarding:</strong> Our IT department's onboarding process includes shadowing senior technicians for two weeks.</li>
+    <li><strong>Metrics:</strong> We track several key metrics including system uptime, response time, and user satisfaction scores.</li>
+    <li><strong>Pushback:</strong> When I proposed automating the report generation, I received some pushback from colleagues who preferred manual methods.</li>
+    <li><strong>Red tape:</strong> Getting approval for new safety equipment involves a lot of red tape and takes several weeks.</li>
+    <li><strong>Settle in:</strong> It took me about a month to settle in and feel comfortable with our company's communication style.</li>
+  </ul>
+</div>
+  </details>
+</div></body>
+</html>
