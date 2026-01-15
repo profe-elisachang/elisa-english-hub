@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fight Against Fake Job Applications</title>
+</head>
+<body>
+
+<style>
+body {
+  font-family: 'Noto Sans', 'Open Sans', sans-serif;
+  line-height: 1.8;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 4px solid #3498db;
+  padding-left: 12px;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.article-meta {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.useful-expressions {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border-left: 5px solid #3498db;
+}
+
+.useful-expressions h2 {
+  border-left: none;
+  margin-top: 0;
+}
+
+.useful-expressions ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.useful-expressions li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.useful-expressions li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.article-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+.article-content p {
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+[data-tooltip] {
+  background-color: #fff9c4;
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: help;
+  position: relative;
+  font-weight: 500;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c3e50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.85em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  margin-bottom: 8px;
+  z-index: 1000;
+  font-weight: normal;
+}
+
+[data-tooltip]::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #2c3e50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  margin-bottom: 2px;
+  z-index: 1000;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+.vocab-box {
+  background-color: #e8f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 5px solid #2980b9;
+}
+
+.vocab-box h3 {
+  color: #2980b9;
+  margin-top: 0;
+}
+
+.vocab-item {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.vocab-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.vocab-word {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.05em;
+}
+
+.vocab-definition {
+  margin: 5px 0;
+  color: #34495e;
+}
+
+.vocab-spanish {
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+.vocab-example {
+  margin-top: 8px;
+  padding-left: 15px;
+  border-left: 3px solid #3498db;
+  font-style: italic;
+  color: #555;
+}
+
+.discussion-section {
+  background-color: #fff3e0;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 5px solid #f39c12;
+}
+
+.discussion-section h2 {
+  color: #e67e22;
+  border-left: none;
+  margin-top: 0;
+}
+
+.discussion-section ol {
+  padding-left: 20px;
+}
+
+.discussion-section li {
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.practice-section {
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 5px solid #27ae60;
+}
+
+.practice-section h2 {
+  color: #27ae60;
+  border-left: none;
+  margin-top: 0;
+}
+
+.practice-section ol {
+  padding-left: 20px;
+}
+
+.practice-section li {
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+details {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #27ae60;
+  padding: 5px;
+}
+
+summary:hover {
+  color: #229954;
+}
+
+details p {
+  margin-top: 10px;
+  padding-left: 10px;
+  color: #555;
+}
+
+.article-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .useful-expressions,
+  .article-content,
+  .vocab-box,
+  .discussion-section,
+  .practice-section {
+    padding: 15px;
+  }
+
+  .article-image {
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+}
+</style>
+
+<h1>The Fight Against Fake Job Applications</h1>
+
+<img src="https://cdn.earlytorise.com/wp-content/uploads/2017/11/application-1883547_1280.jpg" alt="Job Applications" class="article-image">
+
+<div class="article-meta">
+by Steven Melendez | © 2025, Fast Company, Mansueto Ventures, LLC. Distributed by Tribune Content Agency, LLC.
+</div>
+
+<div class="useful-expressions">
+<h2>🔹 Useful Expressions</h2>
+<ul>
+<li><strong>land a job</strong> — to successfully get a job<br>
+<em>Example: "After months of searching, she finally landed a job at a tech startup."</em></li>
+
+<li><strong>filter out</strong> — to remove unwanted items from a group<br>
+<em>Example: "Our new system helps filter out unqualified candidates before the interview stage."</em></li>
+
+<li><strong>pass off (something) as (something)</strong> — to present something falsely as something else<br>
+<em>Example: "Some applicants try to pass off AI-generated work as their own during technical assessments."</em></li>
+
+<li><strong>sort through</strong> — to examine and organize items one by one<br>
+<em>Example: "HR had to sort through hundreds of applications to find qualified engineers."</em></li>
+
+<li><strong>overrun with</strong> — overwhelmed by a large number of something<br>
+<em>Example: "The IT department was overrun with support tickets after the system upgrade."</em></li>
+
+<li><strong>willing/unwilling to do something</strong> — ready or not ready to do something<br>
+<em>Example: "Some employees are unwilling to adopt new safety procedures without proper training."</em></li>
+</ul>
+</div>
+
+<div class="article-content">
+<h2>Article</h2>
+
+<p><span data-tooltip="fraudulento; engañoso">Fraudulent</span> job applications have become a serious issue in the era of remote interviews and AI-generated content. Research firm Gartner predicts that by 2028, up to 25% of applications could be fake. In some cases, <span data-tooltip="estafadores">fraudsters</span> in North Korea have managed to land Western tech jobs under false <span data-tooltip="pretensiones; identidades falsas">pretenses</span>, according to recent reports.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary — Paragraph 1</h3>
+
+<div class="vocab-item">
+<div class="vocab-word">fraudulent</div>
+<div class="vocab-definition">involving deception, fake, or dishonest</div>
+<div class="vocab-spanish">(fraudulento; engañoso)</div>
+<div class="vocab-example">"The company discovered fraudulent expense reports submitted by a former employee."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">fraudsters</div>
+<div class="vocab-definition">people who commit fraud or deception for personal gain</div>
+<div class="vocab-spanish">(estafadores)</div>
+<div class="vocab-example">"IT security teams must stay alert to prevent fraudsters from accessing company systems."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">pretenses</div>
+<div class="vocab-definition">false claims or appearances used to deceive someone</div>
+<div class="vocab-spanish">(pretensiones; identidades falsas)</div>
+<div class="vocab-example">"The contractor gained access to the facility under false pretenses."</div>
+</div>
+</div>
+
+<p>One client recently told Daniel Chait, cofounder and CEO of hiring software company Greenhouse, that more than 70% of applications for remote tech jobs they've receiving are fake. Others have reported increasing difficulty <span data-tooltip="examinar; revisar">sorting through</span> waves of relevant and <span data-tooltip="fraudulento">fraudulent</span> <span data-tooltip="presentaciones; envíos">submissions</span>.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary — Paragraph 2</h3>
+
+<div class="vocab-item">
+<div class="vocab-word">sorting through</div>
+<div class="vocab-definition">examining and organizing items to find what you need</div>
+<div class="vocab-spanish">(examinar; revisar)</div>
+<div class="vocab-example">"The EHS manager spent hours sorting through incident reports from last quarter."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">submissions</div>
+<div class="vocab-definition">documents or applications that are formally presented or sent</div>
+<div class="vocab-spanish">(presentaciones; envíos)</div>
+<div class="vocab-example">"We received over 200 submissions for the process engineer position."</div>
+</div>
+</div>
+
+<p>"What we're hearing from them is that they're <span data-tooltip="inundados con">overrun with</span> spam, unqualified applicants, <span data-tooltip="hacer trampa; engañar">cheating</span> (people using various means to pass job interviews) and fraud. [It's] <span data-tooltip="falsa representación; tergiversación">willful misrepresentation</span> in the process, often by kind of <span data-tooltip="maliciosos; turbios">nefarious</span> groups," Chait says.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary — Paragraph 3</h3>
+
+<div class="vocab-item">
+<div class="vocab-word">overrun with</div>
+<div class="vocab-definition">overwhelmed by too many of something, usually unwanted</div>
+<div class="vocab-spanish">(inundados con)</div>
+<div class="vocab-example">"The server room was overrun with outdated equipment that needed to be disposed of properly."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">cheating</div>
+<div class="vocab-definition">acting dishonestly to gain an advantage</div>
+<div class="vocab-spanish">(hacer trampa; engañar)</div>
+<div class="vocab-example">"The quality control team detected cheating in the product testing results."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">willful misrepresentation</div>
+<div class="vocab-definition">deliberately giving false information or presenting things incorrectly</div>
+<div class="vocab-spanish">(falsa representación deliberada; tergiversación intencional)</div>
+<div class="vocab-example">"Willful misrepresentation of safety data can result in serious legal consequences."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">nefarious</div>
+<div class="vocab-definition">wicked, criminal, or evil in nature</div>
+<div class="vocab-spanish">(maliciosos; turbios; perversos)</div>
+<div class="vocab-example">"Cybersecurity experts work to prevent nefarious hackers from stealing company data."</div>
+</div>
+</div>
+
+<p>To combat the problem, Greenhouse is developing a new platform called Greenhouse Real Talent. The goal is to <span data-tooltip="filtrar">filter out</span> unqualified candidates <span data-tooltip="enviando; presentando">submitting</span> AI-generated applications, those using AI tools during interviews and individuals <span data-tooltip="solicitando; aplicando">applying</span> under fake identities.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary — Paragraph 4</h3>
+
+<div class="vocab-item">
+<div class="vocab-word">filter out</div>
+<div class="vocab-definition">to remove unwanted items or people from a larger group</div>
+<div class="vocab-spanish">(filtrar; eliminar)</div>
+<div class="vocab-example">"The new air system can filter out harmful particles in the manufacturing area."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">submitting</div>
+<div class="vocab-definition">formally presenting or sending something for consideration</div>
+<div class="vocab-spanish">(enviando; presentando)</div>
+<div class="vocab-example">"All contractors must complete the process of submitting safety certifications before starting work."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">applying</div>
+<div class="vocab-definition">making a formal request for something, such as a job or position</div>
+<div class="vocab-spanish">(solicitando; aplicando)</div>
+<div class="vocab-example">"Several internal candidates are applying for the senior engineer position."</div>
+</div>
+</div>
+
+<p>To help with <span data-tooltip="verificación de identidad">identity verification</span>, Greenhouse is <span data-tooltip="asociarse con; colaborar con">partnering with</span> Clear, the company best known for its <span data-tooltip="ágil; expedito">expedited</span> airport security service.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary — Paragraph 5</h3>
+
+<div class="vocab-item">
+<div class="vocab-word">identity verification</div>
+<div class="vocab-definition">the process of confirming that someone is who they claim to be</div>
+<div class="vocab-spanish">(verificación de identidad)</div>
+<div class="vocab-example">"Identity verification is crucial when granting access to sensitive areas of the plant."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">partnering with</div>
+<div class="vocab-definition">working together with another company or organization</div>
+<div class="vocab-spanish">(asociarse con; colaborar con)</div>
+<div class="vocab-example">"Our company is partnering with a local university to develop new engineers."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">expedited</div>
+<div class="vocab-definition">made faster or more efficient, accelerated</div>
+<div class="vocab-spanish">(ágil; expedito; acelerado)</div>
+<div class="vocab-example">"We need an expedited approval process for this urgent equipment purchase."</div>
+</div>
+</div>
+
+<p>Chait adds that Real Talent will offer an alternative path for applicants who are unable or unwilling to use Clear's standard process.</p>
+
+<p>Clear has occasionally faced <span data-tooltip="críticas">criticism</span> from lawmakers and travelers over its paid airport <span data-tooltip="beneficios; ventajas">perks</span> and from privacy <span data-tooltip="defensores; partidarios">advocates</span> concerned about <span data-tooltip="biométricos">biometric</span> data. Clear cofounder and CEO Caryn Seidman Becker argues that Clear's visibility and <span data-tooltip="registro; historial">track record</span> actually build trust among businesses and consumers handling sensitive data. She also believes the use of Clear online may drive more sign-ups for its airport services.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary — Paragraph 7</h3>
+
+<div class="vocab-item">
+<div class="vocab-word">criticism</div>
+<div class="vocab-definition">the expression of disapproval or negative evaluation</div>
+<div class="vocab-spanish">(críticas; censura)</div>
+<div class="vocab-example">"The new safety protocol faced criticism from workers who found it too time-consuming."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">perks</div>
+<div class="vocab-definition">extra benefits or advantages, especially those received in addition to regular compensation</div>
+<div class="vocab-spanish">(beneficios; ventajas; privilegios)</div>
+<div class="vocab-example">"One of the perks of working in this company is free access to the employee gym."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">advocates</div>
+<div class="vocab-definition">people who publicly support or recommend a particular cause or policy</div>
+<div class="vocab-spanish">(defensores; partidarios)</div>
+<div class="vocab-example">"Safety advocates have been pushing for stricter regulations in the chemical industry."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">biometric</div>
+<div class="vocab-definition">relating to measurements of physical characteristics (fingerprints, facial recognition) used for identification</div>
+<div class="vocab-spanish">(biométrico)</div>
+<div class="vocab-example">"Our facility uses biometric scanners to control access to restricted areas."</div>
+</div>
+
+<div class="vocab-item">
+<div class="vocab-word">track record</div>
+<div class="vocab-definition">the past performance or history of a person or organization</div>
+<div class="vocab-spanish">(registro; historial; trayectoria)</div>
+<div class="vocab-example">"The contractor has an excellent track record of completing projects on time and under budget."</div>
+</div>
+</div>
+
+</div>
+
+<div class="discussion-section">
+<h2>💬 Discussion Questions</h2>
+<ol>
+<li><strong>Have you ever encountered fake applications or fraudulent behavior in your workplace?</strong> How did your company handle it? What systems or processes do you think could prevent this?</li>
+
+<li><strong>What are the advantages and risks of using biometric verification systems in the workplace?</strong> Would you feel comfortable using facial recognition or fingerprint scanning for identity verification at work? Why or why not?</li>
+
+<li><strong>How do you think AI is changing the hiring process?</strong> Do you believe AI tools help or hurt job seekers? Share your thoughts on the balance between using technology and maintaining human judgment in recruitment.</li>
+</ol>
+</div>
+
+<div class="practice-section">
+<h2>✍️ Self-Practice Questions</h2>
+<ol>
+<li>In your own words, summarize the main problem described in this article. What solutions are being developed?</li>
+
+<li>What does "willful misrepresentation" mean in the context of job applications? Can you provide an example from your industry?</li>
+
+<li>Explain the purpose of the Greenhouse Real Talent platform. Who is it partnering with and why?</li>
+
+<li>Reflect on this statement: "By 2028, up to 25% of job applications could be fake." What impact could this have on companies and genuine job seekers?</li>
+</ol>
+
+<details>
+<summary>📖 Reference Answers (Click to expand)</summary>
+
+<p><strong>Question 1:</strong> The article describes a growing problem of fraudulent job applications, where people use AI-generated content or fake identities to apply for remote positions. Some fraudsters have even successfully obtained Western tech jobs. To address this, companies like Greenhouse are developing verification platforms (Greenhouse Real Talent) that partner with identity verification services like Clear to filter out fake applicants.</p>
+
+<p><strong>Question 2:</strong> "Willful misrepresentation" means deliberately presenting false information or pretending to be someone you're not. In job applications, this could mean lying about qualifications, using someone else's work samples, or having another person take tests or interviews in your place. In manufacturing, an example might be falsifying safety training certificates or equipment inspection records.</p>
+
+<p><strong>Question 3:</strong> Greenhouse Real Talent aims to verify the authenticity of job applicants by detecting AI-generated applications, identifying people who use AI tools during interviews, and confirming real identities. It's partnering with Clear (known for airport security services) to provide biometric identity verification, helping companies trust that applicants are who they claim to be.</p>
+
+<p><strong>Question 4:</strong> If 25% of applications are fake by 2028, companies would waste significant time and resources reviewing fraudulent submissions. HR teams would be overwhelmed, making it harder to identify qualified candidates. Genuine job seekers might face longer waiting times, increased competition from fake applications, and more rigorous verification processes. This could also lead to higher hiring costs and potential security risks if fraudulent candidates actually get hired.</p>
+</details>
+</div>
+
+</body>
+</html>
