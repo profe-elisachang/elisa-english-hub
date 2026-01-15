@@ -1,29 +1,46 @@
-/* ==================== 
-   INTERMEDIATE - NORDIC COLOR PALETTE 
+/* ====================
+   ELISA ENGLISH HUB - MODERN REDESIGN
+   Color Theme: Warm Coffee & Latte
    ==================== */
+
 :root {
-    /* Main greens - warm and welcoming */
-    --olive-green: #6b8e23;         /* Header, primary buttons */
-    --sage-green: #8ba888;          /* Secondary buttons, tags */
-    --light-green: #c8d5b9;         /* Highlights, hover states */
-    
-    /* Browns - natural and warm */
-    --dark-brown: #5d4e37;          /* Main text */
-    --warm-brown: #8b7355;          /* Vocabulary words, emphasis */
-    --light-brown: #a89070;         /* Secondary text */
-    
-    /* Backgrounds - soft and comfortable */
-    --warm-white: #faf8f3;          /* Page background */
-    --cream: #f0e9d2;               /* Card backgrounds */
-    --light-cream: #e8dcc4;         /* Vocabulary boxes */
-    
-    /* Neutral */
-    --gray-light: #e5e5e5;
-    --shadow: rgba(93, 78, 55, 0.1);
+    /* Main Colors - Deep Teal & Warm Amber */
+    --teal-dark: #0d3b47;             /* Deep backgrounds */
+    --teal-medium: #1a5f7a;           /* Headers, primary elements */
+    --teal-light: #2e8ba6;            /* Hover states */
+    --sage: #57886c;                  /* Accent green */
+
+    /* Accent Color - Warm Amber */
+    --amber: #f4a261;                 /* CTAs, highlights */
+    --amber-light: #f6b67a;           /* Hover states */
+
+    /* Neutrals */
+    --white: #ffffff;
+    --off-white: #f8f9fa;             /* Page background */
+    --gray-light: #e9ecef;
+    --gray-medium: #6c757d;
+    --gray-dark: #495057;
+
+    /* Shadows & Effects */
+    --shadow-sm: 0 2px 8px rgba(13, 59, 71, 0.08);
+    --shadow-md: 0 4px 16px rgba(13, 59, 71, 0.12);
+    --shadow-lg: 0 8px 24px rgba(13, 59, 71, 0.15);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
 }
 
-/* ==================== 
-   RESET & BASE 
+/* ====================
+   RESET & BASE
    ==================== */
 * {
     margin: 0;
@@ -32,23 +49,25 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
     line-height: 1.6;
-    color: var(--dark-brown);
-    background: var(--warm-white);
+    color: var(--teal-dark);
+    background: var(--off-white);
+    min-height: 100vh;
 }
 
-/* ==================== 
-   HEADER 
+/* ====================
+   HEADER
    ==================== */
 .header {
-    background: linear-gradient(135deg, var(--olive-green) 0%, var(--sage-green) 100%);
+    background: var(--teal-medium);
     color: white;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 2px 8px var(--shadow);
+    padding: 1.25rem 2rem;
+    box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    border-bottom: 3px solid var(--amber);
 }
 
 .header-content {
@@ -57,24 +76,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--spacing-md);
 }
 
 .header-content h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
     margin: 0;
+    letter-spacing: -0.5px;
 }
 
 .level-badge {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* ==================== 
-   MAIN CONTAINER 
+/* ====================
+   MAIN CONTAINER
    ==================== */
 .container {
     display: flex;
@@ -83,13 +106,13 @@ body {
     min-height: calc(100vh - 80px);
 }
 
-/* ==================== 
-   SIDEBAR 
+/* ====================
+   SIDEBAR
    ==================== */
 .sidebar {
-    width: 300px;
+    width: 280px;
     background: white;
-    padding: 1.5rem;
+    padding: var(--spacing-md);
     border-right: 1px solid var(--gray-light);
     height: calc(100vh - 80px);
     position: sticky;
@@ -97,45 +120,74 @@ body {
     overflow-y: auto;
 }
 
+/* Custom Scrollbar for Sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: var(--off-white);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--teal-light);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--teal-medium);
+}
+
 /* Search Box */
 .search-box {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 #searchInput {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 2px solid var(--light-green);
-    border-radius: 8px;
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-md);
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    background: var(--warm-white);
+    background: var(--off-white);
+    color: var(--coffee-dark);
 }
 
 #searchInput:focus {
     outline: none;
-    border-color: var(--sage-green);
-    box-shadow: 0 0 0 3px rgba(139, 168, 136, 0.1);
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.1);
+    background: white;
+}
+
+#searchInput::placeholder {
+    color: var(--gray-medium);
 }
 
 /* Home Button */
 .home-btn {
     width: 100%;
-    background: var(--sage-green);
+    background: var(--amber);
     color: white;
     border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .home-btn:hover {
-    background: var(--olive-green);
-    transform: translateX(-3px);
+    background: var(--amber-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .home-btn.hidden {
@@ -146,55 +198,57 @@ body {
 .month-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-xs);
 }
 
 .month-group {
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     overflow: hidden;
+    background: var(--off-white);
+    margin-bottom: var(--spacing-xs);
 }
 
 .month-header {
     width: 100%;
-    background: var(--olive-green);
+    background: var(--teal-medium);
     color: white;
     border: none;
-    padding: 0.9rem 1rem;
+    padding: 0.85rem 1rem;
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--spacing-xs);
 }
 
 .month-header:hover {
-    background: var(--sage-green);
+    background: var(--teal-light);
 }
 
 .month-header.active {
-    background: var(--light-green);
-    color: var(--dark-brown);
+    background: var(--sage);
 }
 
 .arrow {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .lesson-count {
     margin-left: auto;
-    font-size: 0.85rem;
-    background: rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.25);
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
 }
 
 .lesson-list {
     list-style: none;
-    background: var(--warm-white);
+    background: white;
     max-height: 500px;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -214,326 +268,235 @@ body {
 
 .lesson-list a {
     display: block;
-    padding: 0.75rem 1rem;
-    color: var(--dark-brown);
+    padding: 0.7rem 1rem;
+    color: var(--teal-dark);
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.2s ease;
+    border-left: 3px solid transparent;
 }
 
 .lesson-list a:hover {
-    background: var(--light-cream);
-    padding-left: 1.5rem;
-    color: var(--olive-green);
+    background: var(--gray-light);
+    border-left-color: var(--amber);
+    padding-left: 1.3rem;
 }
 
-/* ==================== 
-   MAIN CONTENT 
+/* ====================
+   MAIN CONTENT
    ==================== */
 .main-content {
     flex: 1;
-    padding: 2rem;
+    padding: var(--spacing-lg);
     max-width: 900px;
 }
 
 /* Welcome Card */
 .welcome-card {
-    background: linear-gradient(135deg, var(--light-green) 0%, white 100%);
-    padding: 2rem;
-    border-radius: 12px;
-    border-left: 5px solid var(--sage-green);
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px var(--shadow);
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--amber);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
 }
 
 .welcome-card h2 {
-    color: var(--olive-green);
-    margin-bottom: 1rem;
+    color: var(--teal-medium);
+    margin-bottom: var(--spacing-sm);
     font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .welcome-card p {
     margin-bottom: 0.8rem;
     line-height: 1.8;
-    color: var(--dark-brown);
+    color: var(--teal-dark);
 }
 
 .schedule-info {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    border-left: 3px solid var(--olive-green);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--off-white);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--teal-medium);
 }
 
 .schedule-info h3 {
-    color: var(--sage-green);
+    color: var(--teal-medium);
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
 /* Section Title */
 .section-title {
-    color: var(--olive-green);
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    color: var(--teal-medium);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--light-green);
+    border-bottom: 3px solid var(--amber);
+    font-weight: 700;
 }
 
-/* Lesson Cards */
-.lesson-card {
+/* Total Count */
+.total-count {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: var(--spacing-sm);
+}
+
+/* Lesson List - Simple & Clean */
+.lesson-item {
     background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 8px var(--shadow);
-    display: flex;
-    gap: 1.5rem;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
-.lesson-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.15);
-    border-color: var(--light-green);
+.lesson-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--amber);
+}
+
+.lesson-title-wrapper {
+    flex: 1;
+}
+
+.lesson-title {
+    color: var(--teal-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .lesson-date {
-    min-width: 80px;
-    text-align: center;
-    padding: 1rem;
-    background: var(--light-cream);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.lesson-date .day {
+    color: var(--gray-medium);
     font-size: 0.85rem;
-    color: var(--sage-green);
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.lesson-date .date {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--olive-green);
-    margin-top: 0.3rem;
-}
-
-.lesson-info h3 {
-    color: var(--olive-green);
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
-}
-
-.lesson-info p {
-    color: var(--dark-brown);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-.read-more-btn {
-    background: var(--sage-green);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.read-more-btn:hover {
-    background: var(--olive-green);
-    transform: translateX(3px);
-}
-
-/* ==================== 
-   LESSON DETAIL PAGE 
-   ==================== */
-.lesson-detail {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px var(--shadow);
-}
-
-.lesson-detail h1 {
-    color: var(--olive-green);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.card {
-    background: var(--cream);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    border-left: 4px solid var(--sage-green);
-}
-
-.card h2 {
-    color: var(--olive-green);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.card p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-}
-
-.card ul, .card ol {
-    margin-left: 1.5rem;
-}
-
-.card li {
-    margin-bottom: 0.5rem;
-}
-
-/* Tags */
-.tag {
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin: 0.3rem;
-    color: white;
-}
-
-.tag.sage {
-    background: var(--sage-green);
-}
-
-.tag.olive {
-    background: var(--olive-green);
-}
-
-.tag.brown {
-    background: var(--warm-brown);
-}
-
-.tag.light {
-    background: var(--light-green);
-    color: var(--dark-brown);
-}
-
-/* ==================== 
-   VOCABULARY STYLES - NORDIC 
-   ==================== */
-.vocab-highlight {
-    background-color: var(--light-cream);
-    padding: 2px 6px;
-    border-radius: 4px;
-    cursor: help;
-    position: relative;
-    font-weight: 600;
-    color: var(--warm-brown);
-    border-bottom: 2px dotted var(--sage-green);
-}
-
-.vocab-highlight:hover {
-    background-color: var(--light-green);
-}
-
-.vocab-highlight:hover::after {
-    content: attr(data-translation);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--dark-brown);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
     white-space: nowrap;
-    font-size: 14px;
-    font-weight: normal;
-    z-index: 10;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-bottom: 5px;
+    padding: 0.3rem 0.7rem;
+    background: var(--off-white);
+    border-radius: var(--radius-sm);
 }
 
-.vocab-box {
-    background: var(--light-cream);
-    padding: 15px 20px;
-    border-left: 4px solid var(--sage-green);
-    border-radius: 8px;
-    margin: 20px 0;
+.lesson-date.new {
+    background: var(--amber);
+    color: white;
+    font-weight: 600;
 }
 
-.vocab-item {
-    margin: 10px 0;
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray-medium);
 }
 
-.vocab-word {
-    color: var(--olive-green);
-    font-weight: 700;
-    font-size: 16px;
+.no-results p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
 }
 
-.vocab-translation {
-    color: var(--warm-brown);
-    font-style: italic;
-    margin-left: 5px;
-}
-
-.vocab-example {
-    color: var(--dark-brown);
-    margin-top: 5px;
-    padding-left: 15px;
-    border-left: 2px solid var(--light-green);
-    font-style: italic;
-}
-
-/* ==================== 
-   DETAILS / ANSWERS 
+/* ====================
+   LESSON CONTENT WRAPPER (for loaded HTML)
    ==================== */
-details {
-    margin-top: 20px;
-    padding: 15px;
-    background: var(--light-cream);
-    border-radius: 8px;
-    border-left: 4px solid var(--warm-brown);
+.lesson-content-wrapper {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
 }
 
-summary {
+.lesson-content-wrapper h1 {
+    color: var(--teal-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.lesson-content-wrapper img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--amber);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
     cursor: pointer;
-    font-weight: 700;
-    color: var(--olive-green);
-    font-size: 17px;
-    user-select: none;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 999;
 }
 
-summary:hover {
-    color: var(--sage-green);
+.back-to-top:hover {
+    background: var(--amber-light);
+    transform: translateY(-3px);
 }
 
-.answer-content {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 2px dashed var(--sage-green);
+.back-to-top.visible {
+    display: flex;
 }
 
-.answer-content p {
-    margin-bottom: 1rem;
-}
-
-/* ==================== 
-   RESPONSIVE DESIGN 
+/* ====================
+   RESPONSIVE DESIGN
    ==================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .main-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+
+    .header-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .level-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+
     .container {
         flex-direction: column;
     }
-    
+
     .sidebar {
         width: 100%;
         height: auto;
@@ -541,64 +504,84 @@ summary:hover {
         top: 0;
         border-right: none;
         border-bottom: 1px solid var(--gray-light);
+        max-height: 400px;
     }
-    
+
     .main-content {
-        padding: 1rem;
+        padding: var(--spacing-sm);
     }
-    
-    .lesson-card {
+
+    .lesson-item {
         flex-direction: column;
+        align-items: flex-start;
     }
-    
+
     .lesson-date {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-around;
+        align-self: flex-start;
     }
-    
-    .lesson-detail {
-        padding: 1.5rem;
+
+    .welcome-card {
+        padding: var(--spacing-md);
     }
-    
-    .header-content {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
     }
-    
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
     .header-content h1 {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+    }
+
+    .main-content {
+        padding: 0.75rem;
+    }
+
+    .lesson-item {
+        padding: var(--spacing-sm);
+    }
+
+    .lesson-title {
+        font-size: 1rem;
     }
 }
-/* ==================== 
-   LESSON CONTENT CONTAINER (樣式容器)
+
+/* ====================
+   LOADING STATE
    ==================== */
-.lesson-content-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray-medium);
 }
 
-/* 讓裡面的卡片長得跟原本一樣漂亮 */
-.lesson-content-wrapper .card {
-    background: white;
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 6px solid var(--olive-green);
+.loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
 }
 
-.lesson-content-wrapper h1 {
-    color: var(--olive-green);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* ====================
+   UTILITY CLASSES
+   ==================== */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
     text-align: center;
 }
 
-/* 讓圖片或按鈕在容器裡也能正常顯示 */
-.lesson-content-wrapper img {
-    max-width: 100%;
-    border-radius: 10px;
-}
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }

@@ -1,146 +1,313 @@
-// ==================== 
-// LESSON DATABASE - 妳以後就在這新增課程
-// ==================== 
-const lessons = [
-    {
-        id: 'lesson-20260112',
-        date: '2026-01-12',
-        title: "The Bubble Palace",
-        description: "Click to explore the futuristic house of Pierre Cardin.",
-        filename: 'intermediate/bubble-palace.html' // 這裡要對齊妳電腦裡的路徑
-    }
-];
+// ====================
+// ELISA ENGLISH HUB - AUTOMATIC LESSON SCANNER
+// No manual configuration needed!
+// ====================
 
-// ==================== 
-// LESSON CONTENT STORAGE - 妳以後就在這貼內容
-// ==================== 
-const lessonContent = {
-    'lesson-20260112': `
-        <div class="lesson-detail">
-            <h1>🏠 The Bubble Palace (Palais Bulles)</h1>
-            
-            <div class="card">
-                <h2>💬 Useful Expressions</h2>
-                <div style="margin: 15px 0;">
-                    <span class="tag sage">all of a sudden</span>
-                    <span class="tag olive">in a split second</span>
-                    <span class="tag brown">hit the panic button</span>
-                </div>
-                <p><strong>all of a sudden</strong> - <em>de repente</em></p>
-                <p><strong>hit the panic button</strong> - <em>entrar en pánico</em></p>
-            </div>
-
-            <div class="card">
-                <h2>📖 Article: Architectural Wonders</h2>
-                <p>Imagine a house with no straight lines. The <span class="vocab-highlight" data-translation="sobresaltante">startling</span> design of the Bubble Palace <span class="vocab-highlight" data-translation="golpea / afecta">strikes</span> everyone who sees it. It was built with an <span class="vocab-highlight" data-translation="involuntario">involuntary</span> feeling of organic flow.</p>
-            </div>
-        </div>
-    `
+// Configuration
+const CONFIG = {
+    lessonFolder: 'intermediate/',
+    newLessonDays: 7 // Show "NEW" badge for lessons within X days
 };
 
-// --- 以下是原本的功能代碼，請保留不要刪除 ---
-document.addEventListener('DOMContentLoaded', function() {
-    generateMonthNavigation();
-    displayLatestLessons();
+// Global state
+let allLessons = [];
+let filteredLessons = [];
+
+// ====================
+// INITIALIZATION
+// ====================
+document.addEventListener('DOMContentLoaded', async function() {
+    showLoading();
+    await scanLessons();
+    initializeApp();
 });
 
-function displayLatestLessons() {
-    const lessonCards = document.getElementById('lessonCards');
-    const sortedLessons = [...lessons].sort((a, b) => new Date(b.date) - new Date(a.date));
-    const latestLessons = sortedLessons.slice(0, 3);
-    lessonCards.innerHTML = latestLessons.map(lesson => createLessonCard(lesson)).join('');
+// ====================
+// AUTOMATIC LESSON SCANNING
+// ====================
+async function scanLessons() {
+    // List of HTML files to scan
+    // UPDATE THIS LIST when you add new lessons!
+    const potentialFiles = [
+        'bubble-palace.html',
+        'Yakult\'s-Secret-Ingredient.html',
+        'Don\'t Lose That Enthusiasm.html'
+    ];
+
+    const lessons = [];
+
+    for (const filename of potentialFiles) {
+        try {
+            const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
+            if (response.ok) {
+                const htmlContent = await response.text();
+                const lessonData = await extractLessonData(filename, htmlContent);
+                if (lessonData) {
+                    lessons.push(lessonData);
+                }
+            }
+        } catch (error) {
+            console.warn(`Could not load ${filename}:`, error);
+        }
+    }
+
+    // Sort by date (newest first)
+    allLessons = lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
+    filteredLessons = [...allLessons];
+
+    console.log(`✅ Loaded ${allLessons.length} lessons`);
 }
 
-function createLessonCard(lesson) {
-    const date = new Date(lesson.date);
-    const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-    const monthDay = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+// ====================
+// EXTRACT LESSON DATA FROM HTML
+// ====================
+async function extractLessonData(filename, htmlContent) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlContent, 'text/html');
+
+    // Extract title from <h1>
+    const h1 = doc.querySelector('h1');
+    if (!h1) return null;
+
+    const titleText = h1.textContent.trim();
+
+    // Extract emoji from title (if exists)
+    const emojiMatch = titleText.match(/[\p{Emoji}]/u);
+    const emoji = emojiMatch ? emojiMatch[0] : '';
+
+    // Remove emoji from title for clean display
+    const cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+
+    // Try to extract date from filename (format: YYYY-MM-DD-slug.html)
+    const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+    let lessonDate;
+
+    if (dateMatch) {
+        lessonDate = new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
+    } else {
+        // Fallback: use current date
+        lessonDate = new Date();
+    }
+
+    // Extract first paragraph for preview (optional, for future use)
+    const firstParagraph = doc.querySelector('p');
+    const preview = firstParagraph ? firstParagraph.textContent.trim().substring(0, 150) : '';
+
+    // Extract searchable content (first 500 characters of text)
+    const bodyText = doc.body.textContent || '';
+    const searchableContent = bodyText.replace(/\s+/g, ' ').trim().substring(0, 500);
+
+    return {
+        id: filename.replace('.html', ''),
+        filename: filename,
+        title: cleanTitle,
+        emoji: emoji,
+        displayTitle: titleText, // Full title with emoji
+        date: lessonDate,
+        dateString: formatDate(lessonDate),
+        preview: preview,
+        searchableContent: searchableContent.toLowerCase(),
+        isNew: isNewLesson(lessonDate)
+    };
+}
+
+// ====================
+// INITIALIZE APP
+// ====================
+function initializeApp() {
+    hideLoading();
+    generateMonthNavigation();
+    displayAllLessons();
+    setupSearch();
+    setupBackToTop();
+}
+
+// ====================
+// DISPLAY LESSONS
+// ====================
+function displayAllLessons() {
+    const container = document.getElementById('lessonCards');
+    if (!container) return;
+
+    if (filteredLessons.length === 0) {
+        container.innerHTML = `
+            <div class="no-results">
+                <p>😔 No lessons found</p>
+                <p style="font-size: 0.9rem;">Try a different search term</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Update section title with count
+    const sectionTitle = document.querySelector('.section-title');
+    if (sectionTitle) {
+        sectionTitle.innerHTML = `All Articles <span class="total-count">(${filteredLessons.length})</span>`;
+    }
+
+    container.innerHTML = filteredLessons.map(lesson => createLessonItem(lesson)).join('');
+}
+
+function createLessonItem(lesson) {
+    const dateClass = lesson.isNew ? 'lesson-date new' : 'lesson-date';
+    const dateDisplay = lesson.isNew ? 'NEW' : lesson.dateString;
+
     return `
-        <article class="lesson-card" data-lesson="${lesson.id}">
-            <div class="lesson-date">
-                <span class="day">${dayName}</span>
-                <span class="date">${monthDay}</span>
+        <a href="${CONFIG.lessonFolder}${lesson.filename}" class="lesson-item" style="text-decoration: none; color: inherit;">
+            <div class="lesson-title-wrapper">
+                <h3 class="lesson-title">${lesson.emoji} ${lesson.title}</h3>
             </div>
-            <div class="lesson-info">
-                <h3>${lesson.title}</h3>
-                <p>${lesson.description}</p>
-                <button class="read-more-btn" onclick="loadLesson('${lesson.id}')">Read More →</button>
-            </div>
-        </article>`;
+            <div class="${dateClass}">${dateDisplay}</div>
+        </a>
+    `;
 }
 
+// ====================
+// MONTH NAVIGATION
+// ====================
 function generateMonthNavigation() {
     const monthNav = document.getElementById('monthNav');
+    if (!monthNav) return;
+
     const lessonsByMonth = {};
-    lessons.forEach(lesson => {
+
+    allLessons.forEach(lesson => {
         const date = new Date(lesson.date);
         const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
         const monthName = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
         if (!lessonsByMonth[monthKey]) {
             lessonsByMonth[monthKey] = { name: monthName, lessons: [] };
         }
         lessonsByMonth[monthKey].lessons.push(lesson);
     });
+
     const sortedMonths = Object.keys(lessonsByMonth).sort().reverse();
+
     monthNav.innerHTML = sortedMonths.map((monthKey, index) => {
         const month = lessonsByMonth[monthKey];
         const isFirst = index === 0;
+
         return `
             <div class="month-group">
-                <button class="month-header ${isFirst ? 'active' : ''}" data-month="${monthKey}">
-                    <span class="arrow">${isFirst ? '▼' : '▶'}</span> ${month.name}
+                <button class="month-header ${isFirst ? 'active' : ''}" onclick="toggleMonth('${monthKey}', event)">
+                    <span class="arrow">${isFirst ? '▼' : '▶'}</span>
+                    ${month.name}
                     <span class="lesson-count">${month.lessons.length}</span>
                 </button>
-                <ul class="lesson-list ${isFirst ? '' : 'hidden'}" data-month="${monthKey}">
-                    ${month.lessons.map(lesson => {
-                        const date = new Date(lesson.date);
-                        const shortDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                        return `<li><a href="#" onclick="loadLesson('${lesson.id}'); return false;">${shortDate} - ${lesson.title}</a></li>`;
-                    }).join('')}
+                <ul class="lesson-list ${isFirst ? '' : 'hidden'}" id="month-${monthKey}">
+                    ${month.lessons.map(lesson => `
+                        <li>
+                            <a href="${CONFIG.lessonFolder}${lesson.filename}">
+                                ${lesson.emoji} ${lesson.title}
+                            </a>
+                        </li>
+                    `).join('')}
                 </ul>
-            </div>`;
-    }).join('');
-    document.querySelectorAll('.month-header').forEach(button => { button.addEventListener('click', toggleMonth); });
-}
-
-function toggleMonth(e) {
-    const monthId = e.currentTarget.dataset.month;
-    const lessonList = document.querySelector(`.lesson-list[data-month="${monthId}"]`);
-    const arrow = e.currentTarget.querySelector('.arrow');
-    lessonList.classList.toggle('hidden');
-    arrow.textContent = lessonList.classList.contains('hidden') ? '▶' : '▼';
-    e.currentTarget.classList.toggle('active');
-}
-
-async function loadLesson(lessonId) {
-    // 1. 找到這堂課的資料
-    const lesson = lessons.find(l => l.id === lessonId);
-    if (!lesson || !lesson.filename) return;
-
-    const mainContent = document.getElementById('mainContent');
-    
-    try {
-        // 2. 去抓取妳放在資料夾裡的實體 HTML 檔案 (例如 intermediate/bubble-palace.html)
-        const response = await fetch(lesson.filename);
-        if (!response.ok) throw new Error('File not found');
-        
-        const htmlContent = await response.text();
-
-        // 3. 把內容塞進妳要的容器裡
-        mainContent.innerHTML = `
-            <div class="lesson-content-wrapper">
-                ${htmlContent}
             </div>
         `;
+    }).join('');
+}
 
-        // 4. 顯示回首頁按鈕
-        document.getElementById('homeBtn').classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+function toggleMonth(monthKey, event) {
+    const lessonList = document.getElementById(`month-${monthKey}`);
+    const monthHeader = event.target.closest('.month-header');
+    const arrow = monthHeader.querySelector('.arrow');
 
-    } catch (error) {
-        console.error('Error loading lesson:', error);
-        mainContent.innerHTML = `<p style="padding:20px;">抱歉，找不到教材檔案：${lesson.filename}</p>`;
+    lessonList.classList.toggle('hidden');
+    arrow.textContent = lessonList.classList.contains('hidden') ? '▶' : '▼';
+    monthHeader.classList.toggle('active');
+}
+
+// ====================
+// SEARCH FUNCTIONALITY
+// ====================
+function setupSearch() {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        if (searchTerm === '') {
+            // Show all lessons
+            filteredLessons = [...allLessons];
+        } else {
+            // Search in title, emoji, and content
+            filteredLessons = allLessons.filter(lesson => {
+                return lesson.title.toLowerCase().includes(searchTerm) ||
+                       lesson.emoji.includes(searchTerm) ||
+                       lesson.searchableContent.includes(searchTerm);
+            });
+        }
+
+        displayAllLessons();
+    });
+}
+
+// ====================
+// NAVIGATION (Not needed anymore - using direct links)
+// ====================
+// Lessons now open in the same window via direct href links
+// Each lesson page is a complete, independent HTML file
+
+// ====================
+// BACK TO TOP BUTTON
+// ====================
+function setupBackToTop() {
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '↑';
+    backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+}
+
+// ====================
+// UTILITY FUNCTIONS
+// ====================
+function formatDate(date) {
+    return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
+}
+
+function isNewLesson(lessonDate) {
+    const now = new Date();
+    const diffTime = Math.abs(now - lessonDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays <= CONFIG.newLessonDays;
+}
+
+function showLoading() {
+    const container = document.getElementById('lessonCards');
+    if (container) {
+        container.innerHTML = '<div class="loading">Loading lessons</div>';
     }
 }
 
-function goHome() { location.reload(); }
+function hideLoading() {
+    // Loading will be replaced by actual content
+}
+
+// ====================
+// EXPORT FOR DEBUGGING
+// ====================
+window.debugLessons = () => {
+    console.table(allLessons.map(l => ({
+        title: l.title,
+        emoji: l.emoji,
+        date: l.dateString,
+        isNew: l.isNew,
+        filename: l.filename
+    })));
+};
