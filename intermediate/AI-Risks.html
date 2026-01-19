@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Risks - English Lesson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a237e;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3f51b5;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #283593;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #3949ab;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .expressions {
+            background-color: #e8eaf6;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #3f51b5;
+        }
+        .expression-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        .expression-item strong {
+            color: #1a237e;
+            font-size: 1.1em;
+        }
+        .expression-item .spanish {
+            color: #d32f2f;
+            font-style: italic;
+            margin: 5px 0;
+        }
+        .expression-item .example {
+            color: #424242;
+            margin-top: 5px;
+        }
+        .article {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        .article p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            transition: all 0.3s ease;
+        }
+        .highlight:hover {
+            background-color: #fff176;
+            border-bottom: 3px solid #f57c00;
+        }
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 5px solid #ff9800;
+        }
+        .vocab-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+        .vocab-item .word {
+            font-weight: 700;
+            color: #1a237e;
+            font-size: 1.15em;
+            margin-bottom: 5px;
+        }
+        .vocab-item .translation {
+            color: #d32f2f;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .vocab-item .example {
+            color: #424242;
+            font-size: 0.95em;
+        }
+        .discussion {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #2196f3;
+        }
+        .discussion ul {
+            list-style-position: inside;
+            margin-top: 15px;
+        }
+        .discussion li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #0d47a1;
+            padding-left: 10px;
+        }
+        .practice {
+            background-color: #f1f8e9;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #8bc34a;
+        }
+        .practice-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        .practice-question strong {
+            color: #33691e;
+        }
+        details {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #fff3e0;
+            border-radius: 5px;
+            border: 1px solid #ff9800;
+        }
+        summary {
+            font-weight: 700;
+            color: #e65100;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        summary:hover {
+            color: #ff6f00;
+        }
+        .answer {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Teen Suicide Case Raises Questions about AI Risks</h1>
+        
+        <!-- Useful Expressions -->
+        <div class="section expressions">
+            <h2>💼 Useful Expressions</h2>
+            
+            <div class="expression-item">
+                <strong>Raise concerns about...</strong>
+                <div class="spanish">Plantear preocupaciones sobre...</div>
+                <div class="example">The recent incident raised concerns about product safety in our manufacturing process.</div>
+            </div>
+            
+            <div class="expression-item">
+                <strong>In response to...</strong>
+                <div class="spanish">En respuesta a...</div>
+                <div class="example">In response to customer feedback, we updated our quality inspection procedures.</div>
+            </div>
+            
+            <div class="expression-item">
+                <strong>Roll out new measures</strong>
+                <div class="spanish">Implementar nuevas medidas</div>
+                <div class="example">The logistics department will roll out new tracking measures next quarter.</div>
+            </div>
+            
+            <div class="expression-item">
+                <strong>Balance... with...</strong>
+                <div class="spanish">Equilibrar... con...</div>
+                <div class="example">We need to balance cost efficiency with quality standards in our purchasing decisions.</div>
+            </div>
+        </div>
+
+        <!-- Article -->
+        <div class="section article">
+            <h2>📰 Article</h2>
+            
+            <p>A <span class="highlight" title="trágico">tragic</span> case in California has brought renewed attention to the risks of using artificial intelligence. The parents of a 16-year-old boy, Adam Raine, <span class="highlight" title="presentaron una demanda">filed a lawsuit</span> in San Francisco <span class="highlight" title="contra">against</span> OpenAI, <span class="highlight" title="alegando">alleging</span> that ChatGPT provided <span class="highlight" title="dañina">harmful</span> information that encouraged his suicide. According to the <span class="highlight" title="queja/denuncia">complaint</span>, the chatbot not only suggested possible methods but also offered to help <span class="highlight" title="redactar">draft</span> a suicide note. The teenager died in April 2025, after which his parents <span class="highlight" title="acusaron">accused</span> the company of <span class="highlight" title="negligencia">negligence</span> and product <span class="highlight" title="responsabilidad legal">liability</span>.</p>
+
+            <p>That September, <span class="highlight" title="en respuesta a">in response to</span> growing public concerns, OpenAI announced plans to <span class="highlight" title="implementar">roll out</span> parental controls. These new tools would allow families to link accounts, set age-appropriate model behavior rules (on by <span class="highlight" title="por defecto">default</span>), manage features like memory and chat history, and receive alerts if the system <span class="highlight" title="detecta">detects</span> signs of <span class="highlight" title="agudo/grave">acute</span> emotional <span class="highlight" title="angustia">distress</span>.</p>
+
+            <p>The lawsuit <span class="highlight" title="coincide con">coincides with</span> new studies raising broader concerns about how AI systems handle suicide-related questions. Research led by Northeastern University found that while most large language models refuse to directly provide methods of self-harm, users can <span class="highlight" title="eludir/evitar">bypass</span> safeguards by presenting questions as academic research or <span class="highlight" title="hipotético">hypothetical</span> <span class="highlight" title="escenarios">scenarios</span>, sometimes receiving detailed instructions in return.</p>
+
+            <p>A separate study from the RAND Corporation reported that chatbots generally perform well in identifying very high-risk or very low-risk <span class="highlight" title="indicaciones/preguntas">prompts</span>, but their responses <span class="highlight" title="tienden a">tend to</span> be <span class="highlight" title="inconsistente">inconsistent</span> in moderate-risk situations—cases where <span class="highlight" title="angustia">distress</span> is real but less obvious.</p>
+
+            <p>Together, these findings suggest that current safeguards <span class="highlight" title="están lejos de ser">are far from</span> foolproof. As policymakers, educators, and families <span class="highlight" title="enfrentan">confront</span> these issues, the debate <span class="highlight" title="subraya">underscores</span> a pressing question: How can society balance the benefits of AI with the urgent responsibility to protect <span class="highlight" title="vulnerable">vulnerable</span> users?</p>
+        </div>
+
+        <!-- Vocabulary Boxes -->
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Paragraph 1</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="word">tragic</div>
+                    <div class="translation">trágico</div>
+                    <div class="example">The tragic accident led to immediate safety protocol changes.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">filed a lawsuit</div>
+                    <div class="translation">presentaron una demanda</div>
+                    <div class="example">The customer filed a lawsuit against the supplier for breach of contract.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">against</div>
+                    <div class="translation">contra</div>
+                    <div class="example">We implemented new measures against quality defects.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">alleging</div>
+                    <div class="translation">alegando</div>
+                    <div class="example">The report is alleging several violations of safety standards.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">harmful</div>
+                    <div class="translation">dañino</div>
+                    <div class="example">We must remove harmful chemicals from the production line.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">complaint</div>
+                    <div class="translation">queja/denuncia</div>
+                    <div class="example">The customer complaint was resolved within 24 hours.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">draft</div>
+                    <div class="translation">redactar</div>
+                    <div class="example">Please draft a response to the supplier's proposal.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">accused</div>
+                    <div class="translation">acusaron</div>
+                    <div class="example">The vendor was accused of shipping defective products.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">negligence</div>
+                    <div class="translation">negligencia</div>
+                    <div class="example">Workplace negligence can result in serious injuries.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">liability</div>
+                    <div class="translation">responsabilidad legal</div>
+                    <div class="example">Product liability insurance protects companies from legal claims.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Paragraph 2</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="word">in response to</div>
+                    <div class="translation">en respuesta a</div>
+                    <div class="example">In response to quality issues, we increased inspection frequency.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">roll out</div>
+                    <div class="translation">implementar</div>
+                    <div class="example">We will roll out the new software system next month.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">default</div>
+                    <div class="translation">por defecto</div>
+                    <div class="example">The default setting requires supervisor approval for all orders.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">detects</div>
+                    <div class="translation">detecta</div>
+                    <div class="example">Our quality system detects defects before shipping.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">acute</div>
+                    <div class="translation">agudo/grave</div>
+                    <div class="example">The acute shortage of materials delayed production.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">distress</div>
+                    <div class="translation">angustia</div>
+                    <div class="example">Financial distress forced the company to restructure.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Paragraph 3</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="word">coincides with</div>
+                    <div class="translation">coincide con</div>
+                    <div class="example">The product launch coincides with the holiday season.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">bypass</div>
+                    <div class="translation">eludir/evitar</div>
+                    <div class="example">Never try to bypass safety procedures in the warehouse.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">hypothetical</div>
+                    <div class="translation">hipotético</div>
+                    <div class="example">Let's discuss a hypothetical scenario for emergency response.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">scenarios</div>
+                    <div class="translation">escenarios</div>
+                    <div class="example">We practiced different scenarios during the safety training.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Paragraph 4</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="word">prompts</div>
+                    <div class="translation">indicaciones/preguntas</div>
+                    <div class="example">The system provides prompts to guide the inspection process.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">tend to</div>
+                    <div class="translation">tienden a</div>
+                    <div class="example">Experienced workers tend to identify problems faster.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">inconsistent</div>
+                    <div class="translation">inconsistente</div>
+                    <div class="example">Inconsistent quality results in customer complaints.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Paragraph 5</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="word">are far from</div>
+                    <div class="translation">están lejos de ser</div>
+                    <div class="example">Our current processes are far from perfect and need improvement.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">confront</div>
+                    <div class="translation">enfrentan</div>
+                    <div class="example">Companies must confront supply chain challenges proactively.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">underscores</div>
+                    <div class="translation">subraya</div>
+                    <div class="example">This incident underscores the importance of safety training.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">vulnerable</div>
+                    <div class="translation">vulnerable</div>
+                    <div class="example">We must protect vulnerable data from cyber attacks.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discussion Questions -->
+        <div class="section discussion">
+            <h2>💬 Discussion Questions</h2>
+            <ul>
+                <li>How do you think companies should balance innovation with safety when developing new technologies?</li>
+                <li>In your workplace, what measures are in place to ensure employee safety and wellbeing? Do you think they are sufficient?</li>
+                <li>What responsibilities do technology companies have toward their users, especially young people?</li>
+            </ul>
+        </div>
+
+        <!-- Self-Practice -->
+        <div class="section practice">
+            <h2>✍️ Self-Practice Questions</h2>
+            
+            <div class="practice-question">
+                <strong>1.</strong> Complete the sentence: "The company announced plans to __________ new safety measures next month."
+            </div>
+            
+            <div class="practice-question">
+                <strong>2.</strong> What does "in response to" mean? Use it in a sentence related to your work.
+            </div>
+            
+            <div class="practice-question">
+                <strong>3.</strong> Match the words with their meanings:<br>
+                a) negligence<br>
+                b) liability<br>
+                c) confront<br>
+                <br>
+                i) face or deal with<br>
+                ii) legal responsibility<br>
+                iii) failure to take proper care
+            </div>
+            
+            <div class="practice-question">
+                <strong>4.</strong> True or False: According to the article, AI systems always perfectly identify when users are at risk.
+            </div>
+
+            <details>
+                <summary>📋 Reference Answers</summary>
+                <div class="answer">
+                    <p><strong>1.</strong> roll out</p>
+                    <p><strong>2.</strong> "In response to" means "as a reaction to" or "because of." Example: "In response to customer complaints, we improved our inspection process."</p>
+                    <p><strong>3.</strong> a-iii, b-ii, c-i</p>
+                    <p><strong>4.</strong> False. The article states that AI responses "tend to be inconsistent in moderate-risk situations."</p>
+                </div>
+            </details>
+        </div>
+
+    </div>
+</body>
+</html>
