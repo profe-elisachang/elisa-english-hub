@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning from Nature: Bamboo Architecture</title>
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', Arial, sans-serif;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        
+        h1 {
+            color: #2c5f2d;
+            border-bottom: 3px solid #97c05c;
+            padding-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            font-size: 1.5em;
+            border-left: 4px solid #97c05c;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c5f2d;
+            font-size: 1.2em;
+            margin-top: 25px;
+        }
+        
+        .expressions-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .expression-item {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 4px;
+        }
+        
+        .expression-item strong {
+            color: #2c5f2d;
+            font-size: 1.1em;
+        }
+        
+        .spanish {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .article-text {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .article-text p {
+            margin: 20px 0;
+            text-align: justify;
+        }
+        
+        .vocab {
+            background-color: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            cursor: help;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .vocab:hover {
+            background-color: #ffeb3b;
+        }
+        
+        .vocab::after {
+            content: attr(data-translation);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            font-size: 0.9em;
+            z-index: 10;
+            margin-bottom: 5px;
+        }
+        
+        .vocab:hover::after {
+            opacity: 1;
+        }
+        
+        .vocab-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .vocab-box h4 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .vocab-item {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        
+        .discussion-questions {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .discussion-questions ol {
+            padding-left: 25px;
+        }
+        
+        .discussion-questions li {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .practice-section {
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        details {
+            background-color: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #7b1fa2;
+            padding: 5px;
+        }
+        
+        summary:hover {
+            color: #4a148c;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            .vocab::after {
+                font-size: 0.8em;
+                white-space: normal;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🌿 Learning from Nature: Bamboo Architecture</h1>
+    
+    <div class="expressions-box">
+        <h2>💬 Useful Expressions for Discussion</h2>
+        
+        <div class="expression-item">
+            <strong>Draw inspiration from...</strong> <span class="spanish">(Inspirarse en...)</span><br>
+            <em>"Many architects draw inspiration from nature to create sustainable buildings."</em>
+        </div>
+        
+        <div class="expression-item">
+            <strong>Withstand pressure/stress</strong> <span class="spanish">(Resistir presión/estrés)</span><br>
+            <em>"Quality inspection teams need to withstand pressure during peak production times."</em>
+        </div>
+        
+        <div class="expression-item">
+            <strong>Rely on something/someone</strong> <span class="spanish">(Depender de algo/alguien)</span><br>
+            <em>"Our logistics department relies on accurate data to plan deliveries."</em>
+        </div>
+        
+        <div class="expression-item">
+            <strong>Blend (two things) together</strong> <span class="spanish">(Combinar/mezclar)</span><br>
+            <em>"Good sales assistance blends product knowledge with customer service skills."</em>
+        </div>
+        
+        <div class="expression-item">
+            <strong>Absorb impact/shock</strong> <span class="spanish">(Absorber impacto)</span><br>
+            <em>"Packaging materials must absorb impact to protect products during shipping."</em>
+        </div>
+    </div>
+    
+    <h2>📖 Article: Nature's Building Secrets</h2>
+    
+    <div class="article-text">
+        <p>Architects have long <span class="vocab" data-translation="admirado">admired</span> the beauty of bamboo. Recently, they've also started to see it as a model for <span class="vocab" data-translation="estructuras de soporte">load-bearing structures</span>. <span class="vocab" data-translation="hueco">Hollow</span> bamboo <span class="vocab" data-translation="tallos">stems</span> are divided into sections by solid <span class="vocab" data-translation="nudos">nodes</span> that <span class="vocab" data-translation="fortalecer">strengthen</span> the plant, <span class="vocab" data-translation="permitiendo">enabling</span> it to <span class="vocab" data-translation="resistir">withstand</span> strong winds. Now, drawing on this principle, engineers are designing better <span class="vocab" data-translation="rascacielos">skyscrapers</span>.</p>
+        
+        <div class="vocab-box">
+            <h4>📚 Vocabulary - Paragraph 1</h4>
+            <div class="vocab-item"><strong>load-bearing structures</strong> - <em>estructuras de soporte</em> - "Engineers design load-bearing structures to support heavy equipment."</div>
+            <div class="vocab-item"><strong>hollow</strong> - <em>hueco</em> - "The hollow tube allows air to flow through the system."</div>
+            <div class="vocab-item"><strong>stems</strong> - <em>tallos</em> - "Plant stems carry water from roots to leaves."</div>
+            <div class="vocab-item"><strong>nodes</strong> - <em>nudos</em> - "Bamboo nodes create strong connection points in the structure."</div>
+            <div class="vocab-item"><strong>strengthen</strong> - <em>fortalecer</em> - "We need to strengthen our quality control procedures."</div>
+            <div class="vocab-item"><strong>enabling</strong> - <em>permitiendo</em> - "New software is enabling faster order processing."</div>
+            <div class="vocab-item"><strong>withstand</strong> - <em>resistir</em> - "These materials can withstand high temperatures."</div>
+            <div class="vocab-item"><strong>skyscrapers</strong> - <em>rascacielos</em> - "Modern skyscrapers use advanced engineering techniques."</div>
+        </div>
+        
+        <p>Architects have also <span class="vocab" data-translation="tomado prestado">borrowed</span> from the structure of trees. These plants have <span class="vocab" data-translation="capas">layers</span> of <span class="vocab" data-translation="fibras">fibers</span> that <span class="vocab" data-translation="envolver en espiral">spiral</span> around a <span class="vocab" data-translation="núcleo">core</span>, almost like a <span class="vocab" data-translation="cuerda">rope</span>, to create a <span class="vocab" data-translation="flexible">flexible</span> <span class="vocab" data-translation="tronco">trunk</span>. Thanks to this, trees can <span class="vocab" data-translation="balancearse">sway</span> rather than <span class="vocab" data-translation="romperse">snap</span> in the wind. The <span class="vocab" data-translation="ángulo agudo">steeper</span> the angle of the spirals, the more the tree can bend. Because of this, the lower parts of a tree, which <span class="vocab" data-translation="depender de">rely on</span> strength and stability, have <span class="vocab" data-translation="en ángulo pronunciado">steeply</span> angled spirals. The higher parts, on the other hand, have spirals at <span class="vocab" data-translation="ángulos más suaves">shallower</span> angles that <span class="vocab" data-translation="sacrificar">sacrifice</span> some strength for flexibility. Designers have used these ideas to build constructions that blend strength with flexibility.</p>
+        
+        <div class="vocab-box">
+            <h4>📚 Vocabulary - Paragraph 2</h4>
+            <div class="vocab-item"><strong>borrowed</strong> - <em>tomado prestado</em> - "Our team borrowed ideas from successful companies."</div>
+            <div class="vocab-item"><strong>layers</strong> - <em>capas</em> - "The packaging has multiple layers for protection."</div>
+            <div class="vocab-item"><strong>fibers</strong> - <em>fibras</em> - "Natural fibers are used in sustainable products."</div>
+            <div class="vocab-item"><strong>spiral</strong> - <em>envolver en espiral</em> - "The cables spiral around the support column."</div>
+            <div class="vocab-item"><strong>core</strong> - <em>núcleo</em> - "Customer satisfaction is at the core of our business."</div>
+            <div class="vocab-item"><strong>rope</strong> - <em>cuerda</em> - "Safety ropes must meet quality standards."</div>
+            <div class="vocab-item"><strong>flexible</strong> - <em>flexible</em> - "We need flexible schedules to meet customer demands."</div>
+            <div class="vocab-item"><strong>trunk</strong> - <em>tronco</em> - "The tree trunk supports all the branches."</div>
+            <div class="vocab-item"><strong>sway</strong> - <em>balancearse</em> - "The building is designed to sway slightly during earthquakes."</div>
+            <div class="vocab-item"><strong>snap</strong> - <em>romperse</em> - "Brittle materials can snap under pressure."</div>
+            <div class="vocab-item"><strong>steeper</strong> - <em>ángulo más pronunciado</em> - "A steeper angle provides more strength."</div>
+            <div class="vocab-item"><strong>rely on</strong> - <em>depender de</em> - "Logistics teams rely on accurate tracking systems."</div>
+            <div class="vocab-item"><strong>steeply</strong> - <em>en ángulo pronunciado</em> - "The graph rose steeply last quarter."</div>
+            <div class="vocab-item"><strong>shallower</strong> - <em>ángulos más suaves</em> - "Shallower angles allow more movement."</div>
+            <div class="vocab-item"><strong>sacrifice</strong> - <em>sacrificar</em> - "Sometimes we sacrifice speed for accuracy in QA."</div>
+        </div>
+        
+        <p>Plants have other <span class="vocab" data-translation="rasgos">traits</span> that are valuable for design. For example, the <span class="vocab" data-translation="cáscaras">shells</span> of <span class="vocab" data-translation="nueces">nuts</span> have a <span class="vocab" data-translation="dura, exterior">hard, outer</span> layer and a <span class="vocab" data-translation="suave, interior">soft, inner</span> <span class="vocab" data-translation="capa">layer</span> that work together to resist <span class="vocab" data-translation="grietas">cracks</span>. When something <span class="vocab" data-translation="golpea">strikes</span> the <span class="vocab" data-translation="cáscara">shell</span>, the hard layer keeps the <span class="vocab" data-translation="golpe">blow</span> from <span class="vocab" data-translation="penetrar">penetrating</span> too deeply. If it does manage to <span class="vocab" data-translation="crear">crack</span> the hard layer, the soft layer <span class="vocab" data-translation="absorbe">absorbs</span> the force of the impact and keeps the crack from spreading. Researchers are now creating new materials that <span class="vocab" data-translation="imitar">copy</span> this structure.</p>
+        
+        <div class="vocab-box">
+            <h4>📚 Vocabulary - Paragraph 3</h4>
+            <div class="vocab-item"><strong>traits</strong> - <em>rasgos/características</em> - "Leadership traits are important for managers."</div>
+            <div class="vocab-item"><strong>shells</strong> - <em>cáscaras</em> - "Protective shells keep products safe during transport."</div>
+            <div class="vocab-item"><strong>nuts</strong> - <em>nueces</em> - "Nuts have tough outer shells."</div>
+            <div class="vocab-item"><strong>hard, outer / soft, inner</strong> - <em>dura, exterior / suave, interior</em> - "The packaging has a hard outer box and soft inner padding."</div>
+            <div class="vocab-item"><strong>layer</strong> - <em>capa</em> - "Each layer serves a different purpose."</div>
+            <div class="vocab-item"><strong>cracks</strong> - <em>grietas</em> - "Quality inspectors check for cracks in the surface."</div>
+            <div class="vocab-item"><strong>strikes</strong> - <em>golpea</em> - "When a problem strikes, we need quick solutions."</div>
+            <div class="vocab-item"><strong>shell</strong> - <em>cáscara</em> - "The protective shell prevents damage."</div>
+            <div class="vocab-item"><strong>blow</strong> - <em>golpe</em> - "The material can withstand a strong blow."</div>
+            <div class="vocab-item"><strong>penetrating</strong> - <em>penetrar</em> - "Water-resistant coating prevents moisture from penetrating."</div>
+            <div class="vocab-item"><strong>crack (verb)</strong> - <em>agrietar</em> - "Extreme temperatures can crack the material."</div>
+            <div class="vocab-item"><strong>absorbs</strong> - <em>absorbe</em> - "This foam absorbs shock during shipping."</div>
+            <div class="vocab-item"><strong>copy</strong> - <em>imitar</em> - "We don't just copy competitors; we innovate."</div>
+        </div>
+        
+        <p>Engineers have developed new <span class="vocab" data-translation="equipamiento de seguridad">safety equipment</span> using a <span class="vocab" data-translation="similar">similar</span> principle. <span class="vocab" data-translation="Cascos">Helmets</span> made with these materials have a firm <span class="vocab" data-translation="capa exterior">outer layer</span> and a <span class="vocab" data-translation="flexible">flexible</span> inner layer. By <span class="vocab" data-translation="imitar">mimicking</span> nut shells, they offer better protection than previous designs. As these examples show, <span class="vocab" data-translation="biomimética">biomimicry</span>—the practice of copying nature's <span class="vocab" data-translation="diseños">designs</span>—is <span class="vocab" data-translation="resultando ser">proving to be</span> a valuable approach to creating new things.</p>
+        
+        <div class="vocab-box">
+            <h4>📚 Vocabulary - Paragraph 4</h4>
+            <div class="vocab-item"><strong>safety equipment</strong> - <em>equipamiento de seguridad</em> - "Workers must wear proper safety equipment in the warehouse."</div>
+            <div class="vocab-item"><strong>helmets</strong> - <em>cascos</em> - "Helmets protect workers from head injuries."</div>
+            <div class="vocab-item"><strong>outer layer</strong> - <em>capa exterior</em> - "The outer layer protects against external damage."</div>
+            <div class="vocab-item"><strong>mimicking</strong> - <em>imitar</em> - "Our company is mimicking best practices from industry leaders."</div>
+            <div class="vocab-item"><strong>biomimicry</strong> - <em>biomimética</em> - "Biomimicry helps engineers solve complex problems."</div>
+            <div class="vocab-item"><strong>designs</strong> - <em>diseños</em> - "Natural designs are often more efficient than human-made ones."</div>
+            <div class="vocab-item"><strong>proving to be</strong> - <em>resultando ser</em> - "The new system is proving to be very effective."</div>
+        </div>
+    </div>
+    
+    <div class="discussion-questions">
+        <h2>💭 Discussion Questions</h2>
+        <ol>
+            <li><strong>Personal Experience:</strong> Have you ever noticed something in nature that solved a problem in an interesting way? What was it, and how did it work?</li>
+            
+            <li><strong>Workplace Connection:</strong> In your job (QA, logistics, purchasing, sales), do you ever need to balance "strength" and "flexibility" like the bamboo or tree? Can you give an example?</li>
+            
+            <li><strong>Design Thinking:</strong> If you could design a product or improve something at work by copying nature, what would you create? What natural design would inspire you?</li>
+        </ol>
+    </div>
+    
+    <div class="practice-section">
+        <h2>✍️ Self-Practice Questions</h2>
+        
+        <p><strong>1.</strong> What makes bamboo a good model for building skyscrapers?</p>
+        
+        <p><strong>2.</strong> Complete: Trees can __________ in the wind instead of breaking because their fibers spiral around the core.</p>
+        
+        <p><strong>3.</strong> How do nut shells resist cracks? Describe the two layers.</p>
+        
+        <p><strong>4.</strong> Match the vocabulary with workplace examples:</p>
+        <ul style="list-style: none;">
+            <li>a) withstand pressure → _____</li>
+            <li>b) rely on → _____</li>
+            <li>c) absorb impact → _____</li>
+        </ul>
+        <p style="margin-left: 20px;">
+            i) Packaging materials during shipping<br>
+            ii) Meeting tight deadlines in QA<br>
+            iii) Using accurate data for planning
+        </p>
+        
+        <details>
+            <summary>📋 Click to See Reference Answers</summary>
+            <div style="padding: 10px; line-height: 2;">
+                <p><strong>1.</strong> Bamboo has hollow stems divided by solid nodes that strengthen it, enabling it to withstand strong winds. Engineers use this principle to design stronger skyscrapers.</p>
+                
+                <p><strong>2.</strong> sway (or: bend)</p>
+                
+                <p><strong>3.</strong> Nut shells have a hard outer layer that keeps blows from penetrating deeply, and a soft inner layer that absorbs the force and prevents cracks from spreading.</p>
+                
+                <p><strong>4.</strong> 
+                    a) → ii) Meeting tight deadlines in QA<br>
+                    b) → iii) Using accurate data for planning<br>
+                    c) → i) Packaging materials during shipping
+                </p>
+            </div>
+        </details>
+    </div>
+    
+    <div style="margin-top: 40px; padding: 20px; background-color: #e8f5e9; border-radius: 8px;">
+        <h3>🌟 Remember</h3>
+        <p>Nature has been solving engineering problems for millions of years. When we observe carefully, we can learn valuable lessons that apply not only to building design, but also to how we work, solve problems, and innovate in our own jobs!</p>
+    </div>
+</body>
+</html>
