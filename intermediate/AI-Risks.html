@@ -88,12 +88,86 @@
             border-bottom: 2px solid #ff9800;
             padding: 2px 4px;
             cursor: help;
-            transition: all 0.3s ease;
+            /* 新增以下屬性 */
+            position: relative;
+            display: inline-block;
         }
         .highlight:hover {
             background-color: #fff176;
             border-bottom: 3px solid #f57c00;
         }
+
+        /* 自定義tooltip樣式 */
+.highlight::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%; /* 顯示在文字上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    z-index: 1000;
+    font-size: 0.9em;
+    font-weight: normal;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    /* 添加小三角形 */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* 小三角形 */
+.highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* 懸停時顯示tooltip */
+.highlight:hover::after,
+.highlight:hover::before {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 6px; /* 和文字之間的間距 */
+}
+
+/* 調整三角形位置 */
+.highlight:hover::before {
+    margin-bottom: 0;
+    bottom: calc(100% - 5px);
+}
+
+/* 手機適配 */
+@media (max-width: 768px) {
+    .highlight::after {
+        font-size: 0.85em;
+        padding: 6px 10px;
+        white-space: normal;
+        max-width: 200px;
+        text-align: center;
+    }
+}
+
+/* 緊急修復：提升自定義tooltip層級並嘗試隱藏默認的 */
+.highlight::after {
+    z-index: 999999 !important;
+}
+
+/* 嘗試隱藏默認tooltip */
+.highlight:hover {
+    text-decoration: none;
+    outline: none;
+}
         .vocab-box {
             background-color: #f5f5f5;
             padding: 25px;

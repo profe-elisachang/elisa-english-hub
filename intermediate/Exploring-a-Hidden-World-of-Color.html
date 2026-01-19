@@ -58,6 +58,17 @@
         }
 
         /* 自定義tooltip樣式 */
+
+        /* 緊急修復：提升自定義tooltip層級並嘗試隱藏默認的 */
+.highlight::after {
+    z-index: 999999 !important;
+}
+
+/* 嘗試隱藏默認tooltip */
+.highlight:hover {
+    text-decoration: none;
+    outline: none;
+}
 .highlight::after {
     content: attr(title);
     position: absolute;
