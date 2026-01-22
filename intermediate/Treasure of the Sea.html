@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasure of the Sea - Seaweed Industry</title>
+</head>
+
+<style>
+body {
+  font-family: 'Noto Sans', 'Open Sans', sans-serif;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  font-size: 2em;
+}
+
+h2 {
+  color: #34495e;
+  margin-top: 30px;
+  font-size: 1.5em;
+  border-left: 4px solid #3498db;
+  padding-left: 15px;
+}
+
+h3 {
+  color: #2c3e50;
+  margin-top: 25px;
+  font-size: 1.2em;
+}
+
+.source {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.useful-expressions {
+  background-color: #e8f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 5px solid #3498db;
+}
+
+.useful-expressions h2 {
+  margin-top: 0;
+  border-left: none;
+  padding-left: 0;
+}
+
+.expression-item {
+  margin-bottom: 15px;
+}
+
+.expression-item strong {
+  color: #2980b9;
+  font-size: 1.05em;
+}
+
+.article-section {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.article-section p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.vocab-box {
+  background-color: #fff9e6;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 5px solid #f39c12;
+}
+
+.vocab-box h3 {
+  margin-top: 0;
+  color: #d68910;
+}
+
+.vocab-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0e6d2;
+}
+
+.vocab-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.vocab-word {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.05em;
+}
+
+.vocab-spanish {
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.vocab-example {
+  margin-top: 5px;
+  font-style: italic;
+  color: #555;
+}
+
+.discussion-section {
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 5px solid #27ae60;
+}
+
+.discussion-section h2 {
+  margin-top: 0;
+  color: #27ae60;
+  border-left: none;
+  padding-left: 0;
+}
+
+.discussion-section ol {
+  padding-left: 20px;
+}
+
+.discussion-section li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.practice-section {
+  background-color: #fef5e7;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 5px solid #e67e22;
+}
+
+.practice-section h2 {
+  margin-top: 0;
+  color: #e67e22;
+  border-left: none;
+  padding-left: 0;
+}
+
+details {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #2980b9;
+  padding: 5px;
+}
+
+summary:hover {
+  color: #3498db;
+}
+
+[data-tooltip] {
+  background-color: #fff59d;
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: help;
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c3e50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.85em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  margin-bottom: 8px;
+  z-index: 1000;
+}
+
+[data-tooltip]::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #2c3e50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  margin-bottom: 2px;
+  z-index: 1000;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+  opacity: 1;
+}
+</style>
+
+<body>
+
+<h1>Treasure of the Sea: The Seaweed Industry</h1>
+<p class="source">by Roddy Scheer & Doug Moss / © 2025, Emagazine.com<br>
+Distributed by Tribune Content Agency, LLC.</p>
+
+<div class="useful-expressions">
+<h2>🔹 Useful Expressions</h2>
+
+<div class="expression-item">
+<strong>boomed to</strong> — <em>increased rapidly to (a specific level)</em><br>
+Usage: <em>"Sales have boomed to $2 million this quarter."</em>
+</div>
+
+<div class="expression-item">
+<strong>is due to</strong> — <em>is caused by; results from</em><br>
+Usage: <em>"The system failure is due to a software bug."</em>
+</div>
+
+<div class="expression-item">
+<strong>proponents praise [something] for being...</strong> — <em>supporters compliment or highlight the positive aspects</em><br>
+Usage: <em>"Proponents praise the new safety protocol for being easy to implement."</em>
+</div>
+
+<div class="expression-item">
+<strong>critics argue that...</strong> — <em>people who disagree claim that...</em><br>
+Usage: <em>"Critics argue that the new policy may increase costs."</em>
+</div>
+
+<div class="expression-item">
+<strong>despite the benefits</strong> — <em>even though there are advantages</em><br>
+Usage: <em>"Despite the benefits, the process requires significant investment."</em>
+</div>
+
+<div class="expression-item">
+<strong>making it difficult to...</strong> — <em>causing challenges in achieving...</em><br>
+Usage: <em>"The lack of resources is making it difficult to meet deadlines."</em>
+</div>
+
+<div class="expression-item">
+<strong>illustrating the lack of...</strong> — <em>showing clearly that there is insufficient...</em><br>
+Usage: <em>"These numbers are illustrating the lack of qualified technicians."</em>
+</div>
+
+<div class="expression-item">
+<strong>looking for ways to expand</strong> — <em>searching for methods to grow or increase</em><br>
+Usage: <em>"We're looking for ways to expand our production capacity."</em>
+</div>
+
+</div>
+
+<div class="article-section">
+<h2>📰 Article: Treasure of the Sea</h2>
+
+<p>The production of seaweed has <span data-tooltip="aumentado rápidamente">boomed</span> to more than 35 million tons in the past few years, while the industry has become a $16.7 billion market. Its popularity is due to its notable ecological benefits, like its <span data-tooltip="absorción">absorption</span> of carbon, production of food and marine <span data-tooltip="hábitat">habitat</span> production. Seaweed <span data-tooltip="defensores, partidarios">proponents</span> praise them for being easy to grow and creating <span data-tooltip="bioplásticos">bioplastics</span> while critics argue that there are significant <span data-tooltip="deficiencias, limitaciones">shortcomings</span>.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary – Paragraph 1</h3>
+
+<div class="vocab-item">
+<span class="vocab-word">boomed</span> — increased very rapidly<br>
+<span class="vocab-spanish">(aumentado rápidamente)</span><br>
+<span class="vocab-example">Example: "The tech sector boomed after the new regulations were introduced."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">absorption</span> — the process of taking in or soaking up a substance<br>
+<span class="vocab-spanish">(absorción)</span><br>
+<span class="vocab-example">Example: "The absorption of hazardous chemicals requires specialized equipment."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">habitat</span> — the natural environment where an organism lives<br>
+<span class="vocab-spanish">(hábitat)</span><br>
+<span class="vocab-example">Example: "Industrial waste can destroy the habitat of local wildlife."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">proponents</span> — people who support or advocate for something<br>
+<span class="vocab-spanish">(defensores, partidarios)</span><br>
+<span class="vocab-example">Example: "Proponents of automation argue it improves efficiency and safety."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">bioplastics</span> — plastics made from biological materials instead of petroleum<br>
+<span class="vocab-spanish">(bioplásticos)</span><br>
+<span class="vocab-example">Example: "Our company is exploring bioplastics as a sustainable packaging option."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">shortcomings</span> — weaknesses or deficiencies<br>
+<span class="vocab-spanish">(deficiencias, limitaciones)</span><br>
+<span class="vocab-example">Example: "The audit revealed several shortcomings in our safety procedures."</span>
+</div>
+
+</div>
+
+<p>Seaweed farms are not only fast and easy to grow but also notably <span data-tooltip="versátil, adaptable">versatile</span>. Unlike <span data-tooltip="terrestre">terrestrial</span> crops like trees, fruits, vegetables and herbs, seaweed requires no fertilizer, <span data-tooltip="pesticidas">pesticides</span>, freshwater or land to grow. Thus, it can easily adapt to diverse environments and survive without constant human <span data-tooltip="intervención">intervention</span>.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary – Paragraph 2</h3>
+
+<div class="vocab-item">
+<span class="vocab-word">versatile</span> — able to adapt to many different functions or situations<br>
+<span class="vocab-spanish">(versátil, adaptable)</span><br>
+<span class="vocab-example">Example: "This versatile software can be used across multiple departments."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">terrestrial</span> — relating to land rather than water or air<br>
+<span class="vocab-spanish">(terrestre)</span><br>
+<span class="vocab-example">Example: "Terrestrial ecosystems near our plant must be monitored regularly."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">pesticides</span> — chemicals used to kill insects and pests<br>
+<span class="vocab-spanish">(pesticidas)</span><br>
+<span class="vocab-example">Example: "Workers handling pesticides must wear proper protective equipment."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">intervention</span> — the act of becoming involved in a situation to improve or change it<br>
+<span class="vocab-spanish">(intervención)</span><br>
+<span class="vocab-example">Example: "Early intervention prevented the equipment failure from escalating."</span>
+</div>
+
+</div>
+
+<p>Furthermore, the growth of seaweed farms benefits marine life. Beyond improving water quality, the presence of seaweed farms <span data-tooltip="amortigua, reduce el impacto">buffers</span> the effects of <span data-tooltip="acidificación oceánica">ocean acidification</span> in surrounding areas, greatly aiding both <span data-tooltip="próspero">prosperous</span> and polluted environments. Seaweed farms also create <span data-tooltip="forraje, alimento para animales">forage</span> and <span data-tooltip="refugio">refuge</span> habitats for commercially important fish, like <span data-tooltip="bacalao">cod</span> and <span data-tooltip="atún">tuna</span>, while acting as a food source for countless other species.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary – Paragraph 3</h3>
+
+<div class="vocab-item">
+<span class="vocab-word">buffers</span> — reduces the impact or severity of something<br>
+<span class="vocab-spanish">(amortigua, reduce el impacto)</span><br>
+<span class="vocab-example">Example: "The protective layer buffers the system against voltage fluctuations."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">ocean acidification</span> — the ongoing decrease in ocean pH caused by carbon dioxide absorption<br>
+<span class="vocab-spanish">(acidificación oceánica)</span><br>
+<span class="vocab-example">Example: "Ocean acidification poses risks to coastal industries and ecosystems."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">prosperous</span> — successful and thriving<br>
+<span class="vocab-spanish">(próspero)</span><br>
+<span class="vocab-example">Example: "A prosperous business relationship benefits both companies."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">forage</span> — food for animals, especially for grazing animals<br>
+<span class="vocab-spanish">(forraje, alimento para animales)</span><br>
+<span class="vocab-example">Example: "The environmental impact assessment included forage availability for wildlife."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">refuge</span> — a place providing shelter or protection<br>
+<span class="vocab-spanish">(refugio)</span><br>
+<span class="vocab-example">Example: "The safety zone serves as a refuge during emergency evacuations."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">cod</span> — a type of large edible fish<br>
+<span class="vocab-spanish">(bacalao)</span><br>
+<span class="vocab-example">Example: "Cod populations are monitored to ensure sustainable fishing practices."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">tuna</span> — a large ocean fish commonly used for food<br>
+<span class="vocab-spanish">(atún)</span><br>
+<span class="vocab-example">Example: "Tuna fishing regulations help protect marine biodiversity."</span>
+</div>
+
+</div>
+
+<p>Seaweed can also decrease the impacts of carbon and other greenhouse gases. By absorbing both <span data-tooltip="nutrientes">nutrients</span> and carbon dioxide to grow, seaweed decreases the number of toxic <span data-tooltip="emisiones">emissions</span> entering oceans and the <span data-tooltip="atmósfera">atmosphere</span>. Seaweed <span data-tooltip="extrae, absorbe">pulls</span> more greenhouse gases from water than <span data-tooltip="hierba de pantano">eelgrass</span>, <span data-tooltip="manglares">mangroves</span> and salt <span data-tooltip="marismas">marshes</span> combined. It can also be <span data-tooltip="cultivado">cultivated</span> to reduce heavy metals and other <span data-tooltip="contaminantes">pollutants</span>, acting as a <span data-tooltip="esponja">sponge</span> by the ocean or <span data-tooltip="toxinas">toxins</span>. It also plays a critical role in the creation of bioplastics, which <span data-tooltip="mitigar, reducir">mitigate</span> plastic pollution by replacing carbon-intensive products and greenhouse gases.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary – Paragraph 4</h3>
+
+<div class="vocab-item">
+<span class="vocab-word">nutrients</span> — substances that provide nourishment for growth<br>
+<span class="vocab-spanish">(nutrientes)</span><br>
+<span class="vocab-example">Example: "The wastewater treatment process removes excess nutrients before discharge."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">emissions</span> — substances discharged into the air<br>
+<span class="vocab-spanish">(emisiones)</span><br>
+<span class="vocab-example">Example: "Our facility monitors emissions to comply with environmental regulations."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">atmosphere</span> — the layer of gases surrounding the Earth<br>
+<span class="vocab-spanish">(atmósfera)</span><br>
+<span class="vocab-example">Example: "Industrial processes can release pollutants into the atmosphere."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">pulls</span> — draws or extracts something from a source<br>
+<span class="vocab-spanish">(extrae, absorbe)</span><br>
+<span class="vocab-example">Example: "The filtration system pulls contaminants from the water supply."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">eelgrass</span> — a type of marine grass that grows in shallow coastal waters<br>
+<span class="vocab-spanish">(hierba de pantano)</span><br>
+<span class="vocab-example">Example: "Eelgrass beds provide important ecosystem services in coastal areas."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">mangroves</span> — tropical trees that grow in coastal saltwater<br>
+<span class="vocab-spanish">(manglares)</span><br>
+<span class="vocab-example">Example: "Mangroves protect coastlines from erosion and storm damage."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">marshes</span> — wetland areas characterized by soft, wet land<br>
+<span class="vocab-spanish">(marismas)</span><br>
+<span class="vocab-example">Example: "Salt marshes near industrial zones require environmental monitoring."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">cultivated</span> — grown or developed under controlled conditions<br>
+<span class="vocab-spanish">(cultivado)</span><br>
+<span class="vocab-example">Example: "Algae can be cultivated to produce biofuels for industrial use."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">pollutants</span> — harmful substances that contaminate the environment<br>
+<span class="vocab-spanish">(contaminantes)</span><br>
+<span class="vocab-example">Example: "We test water samples regularly to detect pollutants."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">sponge</span> — something that absorbs liquid or substances (metaphorical use)<br>
+<span class="vocab-spanish">(esponja)</span><br>
+<span class="vocab-example">Example: "The filter acts as a sponge, capturing particles from the air."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">toxins</span> — poisonous substances<br>
+<span class="vocab-spanish">(toxinas)</span><br>
+<span class="vocab-example">Example: "Proper disposal procedures prevent toxins from entering the water system."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">mitigate</span> — make less severe or serious; reduce negative effects<br>
+<span class="vocab-spanish">(mitigar, reducir)</span><br>
+<span class="vocab-example">Example: "We implemented new protocols to mitigate workplace hazards."</span>
+</div>
+
+</div>
+
+<p>Despite the benefits, seaweed farms can be expensive and difficult to <span data-tooltip="implementar">implement</span> globally. The higher price decreases the demand for the <span data-tooltip="algas">algae</span>, making it difficult for farmers to support the target growth of their farms. Furthermore, 98% of farmed seaweed is grown in Asia, <span data-tooltip="ilustrando, demostrando">illustrating</span> the lack of geographic diversity worldwide.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary – Paragraph 5</h3>
+
+<div class="vocab-item">
+<span class="vocab-word">implement</span> — put into effect; execute<br>
+<span class="vocab-spanish">(implementar)</span><br>
+<span class="vocab-example">Example: "We need six months to implement the new safety management system."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">algae</span> — simple aquatic plants (seaweed is a type of algae)<br>
+<span class="vocab-spanish">(algas)</span><br>
+<span class="vocab-example">Example: "Algae growth in cooling systems can reduce efficiency."</span>
+</div>
+
+<div class="vocab-item">
+<span class="vocab-word">illustrating</span> — showing or demonstrating clearly<br>
+<span class="vocab-spanish">(ilustrando, demostrando)</span><br>
+<span class="vocab-example">Example: "The data is illustrating a clear trend in equipment failures."</span>
+</div>
+
+</div>
+
+<p>Scientists are looking for ways to expand the reach and impact of seaweed farms to maximize their benefits.</p>
+
+</div>
+
+<div class="discussion-section">
+<h2>💬 Discussion Questions</h2>
+<ol>
+<li><strong>Environmental Impact vs. Cost:</strong> The article mentions that seaweed farming has significant ecological benefits but can be expensive to implement globally. In your company or industry, have you faced similar situations where environmentally friendly solutions were difficult to adopt due to cost? How was this challenge addressed?</li>
+
+<li><strong>Geographic Concentration:</strong> The article states that 98% of farmed seaweed is grown in Asia, showing a lack of geographic diversity. What do you think are the main barriers preventing other regions (including Mexico) from developing this industry? Could Mexico have potential in this area?</li>
+
+<li><strong>Balancing Benefits and Shortcomings:</strong> Proponents praise seaweed farming while critics argue there are significant shortcomings. When implementing new processes or technologies in your workplace, how do you evaluate and balance the benefits against the potential problems?</li>
+</ol>
+</div>
+
+<div class="practice-section">
+<h2>✍️ Self-Practice Questions</h2>
+
+<p><strong>1.</strong> Summarize in your own words why seaweed farming is considered environmentally beneficial. Include at least three specific benefits mentioned in the article.</p>
+
+<p><strong>2.</strong> What makes seaweed farms different from traditional terrestrial crops? Explain the key differences.</p>
+
+<p><strong>3.</strong> What are the main challenges facing the global expansion of seaweed farming according to the article?</p>
+
+<p><strong>4.</strong> In your opinion, could seaweed farming be relevant to your company's sustainability goals? Why or why not?</p>
+
+<details>
+<summary>📖 Click here for reference answers</summary>
+
+<p><strong>Answer 1:</strong> Seaweed farming is environmentally beneficial because: (1) it absorbs carbon dioxide and other greenhouse gases from water, helping reduce emissions entering oceans and the atmosphere; (2) it buffers the effects of ocean acidification in surrounding areas; (3) it creates habitats and food sources for marine life such as cod and tuna; (4) it can be used to reduce heavy metals and other pollutants, acting like a sponge; and (5) it plays a role in creating bioplastics, which help mitigate plastic pollution.</p>
+
+<p><strong>Answer 2:</strong> Unlike terrestrial crops such as trees, fruits, vegetables, and herbs, seaweed requires no fertilizer, pesticides, freshwater, or land to grow. This makes it notably versatile and able to adapt to diverse marine environments without constant human intervention. Seaweed grows in water, making it fundamentally different from land-based agriculture.</p>
+
+<p><strong>Answer 3:</strong> The main challenges are: (1) seaweed farms can be expensive and difficult to implement globally; (2) the higher price decreases demand for the algae, making it difficult for farmers to support the target growth of their farms; and (3) there is a lack of geographic diversity, as 98% of farmed seaweed is grown in Asia.</p>
+
+<p><strong>Answer 4:</strong> <em>(Personal answer will vary)</em> Sample response: "Yes, seaweed farming could be relevant to our company's sustainability goals because we are committed to reducing our carbon footprint and exploring renewable materials. If bioplastics made from seaweed become more accessible and cost-effective, they could replace petroleum-based plastics in our packaging. Additionally, any initiative that mitigates ocean pollution aligns with our environmental responsibility objectives."</p>
+
+</details>
+
+</div>
+
+</body>
+</html>
