@@ -29,7 +29,7 @@
 
 ## 📝 如何新增課程
 
-### 超簡單！只要 2 步驟：
+### 超簡單！只要 3 步驟：
 
 #### **步驟 1：請 AI 生成課程 HTML**
 ```
@@ -41,22 +41,43 @@ AI：給你完整的 HTML 檔案
 
 #### **步驟 2：存檔並放進資料夾**
 ```
-檔名格式：YYYY-MM-DD-topic-name.html
-
-範例：
-✅ 2025-01-15-bubble-palace.html
-✅ 2025-01-18-coffee-culture.html
-✅ 2025-01-20-time-management.html
-
 存放位置：
-intermediate/2025-01-15-bubble-palace.html
+intermediate/你的檔名.html
+
+檔名可以自由命名，例如：
+✅ Cut Grass.html
+✅ AI-Risks.html
+✅ bubble-palace.html
+```
+
+#### **步驟 3：在 script.js 中註冊新文章**
+打開 `script.js`，找到 `potentialFiles` 陣列，添加新文章：
+
+**方式 1：檔名包含日期（推薦）**
+```javascript
+'2025-01-15-bubble-palace.html',  // 系統會自動從檔名解析日期
+```
+
+**方式 2：檔名不包含日期（需手動指定日期）**
+```javascript
+{ filename: 'Cut Grass.html', date: '2025-01-20' },
+```
+
+**完整範例：**
+```javascript
+const potentialFiles = [
+    '2025-01-15-bubble-palace.html',              // 方式 1
+    { filename: 'Cut Grass.html', date: '2025-01-20' },  // 方式 2
+    // 👆 在此上方添加新文章，記得加逗號！
+];
 ```
 
 #### **完成！** 🎉
-- 網站會自動偵測新檔案
+- 重新整理 `index.html` 即可看到新文章
 - 自動抓取標題和 emoji
+- 自動依照日期排序（最新的在前）
 - 自動加入月份分類
-- 自動計算「NEW」標籤
+- 自動計算「NEW」標籤（7 天內的文章）
 
 ---
 
@@ -136,32 +157,49 @@ elisa-english-hub/
     └── 2025-01-15-enthusiasm.html
 ```
 
-### **自動掃描機制**
-1. 頁面載入時，JavaScript 自動掃描 `intermediate/` 資料夾
+### **文章載入機制**
+1. 頁面載入時，JavaScript 讀取 `script.js` 中 `potentialFiles` 陣列列出的檔案
 2. 讀取每個 HTML 檔案
 3. 抓取 `<h1>` 作為標題（包含 emoji）
-4. 從檔名解析日期
+4. 解析日期（優先順序）：
+   - 手動指定的日期（物件格式中的 `date`）
+   - 從檔名解析（格式：`YYYY-MM-DD-topic.html`）
+   - 從 HTML meta 標籤提取（如果有的話）
+   - 使用當前日期（fallback）
 5. 抓取前 500 字作為搜尋內容
-6. 自動建立月份分類
+6. 依照日期排序（最新的在前）
+7. 自動建立月份分類
 
 ---
 
 ## 🚨 重要提醒
 
 ### **檔名規則**
-❌ 錯誤範例：
+
+檔名可以自由命名，但建議使用以下格式：
+
+**推薦格式 1：包含日期（方便排序）**
 ```
-bubble.html                  (沒有日期)
-palace-bubble.html           (沒有日期)
-01-10-2025-bubble.html      (日期格式錯誤)
+✅ 2025-01-10-bubble-palace.html
+✅ 2025-12-25-christmas-lesson.html
+✅ 2026-03-15-spring-vocabulary.html
+```
+說明：系統會自動從檔名解析日期，無需手動指定
+
+**推薦格式 2：不包含日期（需在 script.js 中指定）**
+```
+✅ Cut Grass.html
+✅ AI-Risks.html
+✅ bubble-palace.html
+```
+說明：需要在 `script.js` 中使用物件格式指定日期：
+```javascript
+{ filename: 'Cut Grass.html', date: '2025-01-20' }
 ```
 
-✅ 正確範例：
-```
-2025-01-10-bubble-palace.html
-2025-12-25-christmas-lesson.html
-2026-03-15-spring-vocabulary.html
-```
+**日期格式說明：**
+- 必須使用 `YYYY-MM-DD` 格式（年-月-日）
+- 範例：`2025-01-20`、`2025-12-25`
 
 ### **HTML 檔案要求**
 你的 AI 生成的 HTML **必須包含**：
@@ -217,7 +255,8 @@ debugLessons()
 ## 🌟 未來擴充建議
 
 ### **階段 1（現在）**
-✅ 自動掃描檔案
+✅ 手動註冊檔案（在 script.js 中）
+✅ 依照日期自動排序
 ✅ 基本搜尋（標題 + 內容前 500 字）
 ✅ 月份分類
 ✅ NEW 標籤
@@ -235,7 +274,10 @@ debugLessons()
 ### **常見問題**
 
 **Q: 新增的課程沒有出現？**
-A: 確認檔名格式是否正確：`YYYY-MM-DD-slug.html`
+A: 確認以下兩點：
+   1. 檔案已放在 `intermediate/` 資料夾
+   2. 已在 `script.js` 的 `potentialFiles` 陣列中添加檔案名稱
+   3. 重新整理頁面（按 F5 或 Ctrl+R）
 
 **Q: 搜尋找不到某個單字？**
 A: 目前只搜尋前 500 字，如果需要全文搜尋請告訴我

@@ -26,27 +26,66 @@ document.addEventListener('DOMContentLoaded', async function() {
 // AUTOMATIC LESSON SCANNING
 // ====================
 async function scanLessons() {
-    // List of HTML files to scan
-    // UPDATE THIS LIST when you add new lessons!
+    // ========================================
+    // 📝 手動添加新文章的位置
+    // ========================================
+    // 當您在 intermediate/ 資料夾下新增 HTML 文章時，
+    // 請在此陣列中添加檔案資訊。
+    //
+    // 【格式說明 - 兩種方式任選一種】
+    //
+    // 方式 1：簡單字串（檔名包含日期時使用）
+    //   格式：'YYYY-MM-DD-topic-name.html'
+    //   範例：'2025-01-15-bubble-palace.html'
+    //   說明：系統會自動從檔名解析日期
+    //
+    // 方式 2：物件格式（檔名不包含日期時使用）
+    //   格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
+    //   範例：{ filename: 'Cut Grass.html', date: '2025-01-20' }
+    //   說明：手動指定發佈日期，確保正確排序
+    //
+    // 【注意事項】
+    // - 如果檔案名稱包含單引號（如 Don't），請使用反斜線轉義：Don\'t
+    // - 每個項目後面加上逗號 ,
+    // - 建議按字母順序排列，方便維護
+    // - 檔案名稱必須與 intermediate/ 資料夾下的實際檔案名稱完全一致
+    //
+    // 【範例】
+    //    '2025-01-15-bubble-palace.html',              ← 方式 1：檔名包含日期
+    //    { filename: 'Cut Grass.html', date: '2025-01-20' },  ← 方式 2：手動指定日期
+    //    'Don\'t Lose That Enthusiasm.html',           ← 方式 1：但沒有日期，會用今天日期
+    //
+    // ========================================
     const potentialFiles = [
-        'AI-Risks.html',
-        'bubble-palace.html',
-        'Cut Grass.html',
-        'Don\'t Lose That Enthusiasm.html',
-        'Exploring-a-Hidden-World-of-Color.html',
-        'Learning-from-Nature.html',
-        'Power-Bank.html',
-        'Yakult\'s-Secret-Ingredient.html'
+        { filename: 'Don\'t Lose That Enthusiasm.html', date: '2025-01-12' },
+        { filename: 'bubble-palace.html', date: '2025-01-14' },
+        { filename: 'Yakult\'s-Secret-Ingredient.html', date: '2025-01-16' },
+         { filename: 'Exploring-a-Hidden-World-of-Color.html', date: '2025-01-19' },
+         { filename: 'AI-Risks.html', date: '2025-01-21' },      
+        { filename: 'Power-Bank.html', date: '2025-01-23' },
+        { filename: 'Cut Grass.html', date: '2025-01-26' },
+        // 👆 在此上方添加新文章，記得加逗號！
+        // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
     ];
 
     const lessons = [];
 
-    for (const filename of potentialFiles) {
+    for (const fileInfo of potentialFiles) {
+        // 支援兩種格式：字串或物件
+        let filename, specifiedDate = null;
+        
+        if (typeof fileInfo === 'string') {
+            filename = fileInfo;
+        } else {
+            filename = fileInfo.filename;
+            specifiedDate = fileInfo.date;
+        }
+
         try {
             const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
             if (response.ok) {
                 const htmlContent = await response.text();
-                const lessonData = await extractLessonData(filename, htmlContent);
+                const lessonData = await extractLessonData(filename, htmlContent, specifiedDate);
                 if (lessonData) {
                     lessons.push(lessonData);
                 }
@@ -66,7 +105,7 @@ async function scanLessons() {
 // ====================
 // EXTRACT LESSON DATA FROM HTML
 // ====================
-async function extractLessonData(filename, htmlContent) {
+async function extractLessonData(filename, htmlContent, specifiedDate = null) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, 'text/html');
 
@@ -83,15 +122,41 @@ async function extractLessonData(filename, htmlContent) {
     // Remove emoji from title for clean display
     const cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
 
-    // Try to extract date from filename (format: YYYY-MM-DD-slug.html)
-    const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+    // 日期提取優先順序：
+    // 1. 手動指定的日期（specifiedDate）
+    // 2. 從檔名解析日期（格式：YYYY-MM-DD-slug.html）
+    // 3. 從 HTML meta 標籤提取（如果有的話）
+    // 4. 使用檔案修改時間（如果可用）
+    // 5. Fallback: 使用當前日期
     let lessonDate;
 
-    if (dateMatch) {
-        lessonDate = new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
+    if (specifiedDate) {
+        // 優先使用手動指定的日期
+        const dateParts = specifiedDate.match(/(\d{4})-(\d{2})-(\d{2})/);
+        if (dateParts) {
+            lessonDate = new Date(dateParts[1], dateParts[2] - 1, dateParts[3]);
+        } else {
+            lessonDate = new Date(specifiedDate);
+        }
     } else {
-        // Fallback: use current date
-        lessonDate = new Date();
+        // 嘗試從檔名解析日期（格式：YYYY-MM-DD-slug.html）
+        const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+        if (dateMatch) {
+            lessonDate = new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
+        } else {
+            // 嘗試從 HTML meta 標籤提取日期
+            const metaDate = doc.querySelector('meta[name="date"], meta[property="article:published_time"]');
+            if (metaDate) {
+                const dateValue = metaDate.getAttribute('content');
+                lessonDate = new Date(dateValue);
+                if (isNaN(lessonDate.getTime())) {
+                    lessonDate = new Date(); // 如果解析失敗，使用當前日期
+                }
+            } else {
+                // Fallback: 使用當前日期
+                lessonDate = new Date();
+            }
+        }
     }
 
     // Extract first paragraph for preview (optional, for future use)
