@@ -29,9 +29,14 @@ async function scanLessons() {
     // List of HTML files to scan
     // UPDATE THIS LIST when you add new lessons!
     const potentialFiles = [
+        'AI-Risks.html',
         'bubble-palace.html',
-        'Yakult\'s-Secret-Ingredient.html',
-        'Don\'t Lose That Enthusiasm.html'
+        'Cut Grass.html',
+        'Don\'t Lose That Enthusiasm.html',
+        'Exploring-a-Hidden-World-of-Color.html',
+        'Learning-from-Nature.html',
+        'Power-Bank.html',
+        'Yakult\'s-Secret-Ingredient.html'
     ];
 
     const lessons = [];
