@@ -97,6 +97,17 @@ async function scanLessons() {
 
     // Sort by date (newest first)
     allLessons = lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    // 只標記最新的一篇文章為 NEW
+    if (allLessons.length > 0) {
+        // 重置所有文章的 isNew 標記
+        allLessons.forEach(lesson => {
+            lesson.isNew = false;
+        });
+        // 只標記最新的一篇（第一篇）為 NEW
+        allLessons[0].isNew = true;
+    }
+    
     filteredLessons = [...allLessons];
 
     console.log(`✅ Loaded ${allLessons.length} lessons`);
@@ -177,7 +188,7 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null) {
         dateString: formatDate(lessonDate),
         preview: preview,
         searchableContent: searchableContent.toLowerCase(),
-        isNew: isNewLesson(lessonDate)
+        isNew: false  // 稍後在排序後會重新設定，只標記最新的一篇
     };
 }
 
