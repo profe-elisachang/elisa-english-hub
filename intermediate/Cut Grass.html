@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut Grass: A Scent of Survival, A Perfume of Pleasure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1a5f3f;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #2e7d32;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #2e7d32;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4caf50;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #388e3c;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        
+        .expressions-box {
+            background-color: #e8f5e9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 2px solid #4caf50;
+        }
+        
+        .expression-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .expression-item strong {
+            color: #1b5e20;
+            font-size: 1.15em;
+        }
+        
+        .vocab-container {
+            background-color: #fff9c4;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 2px solid #fbc02d;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f57c00;
+        }
+        
+        .vocab-item strong {
+            color: #e65100;
+            font-size: 1.15em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .vocab-item em {
+            color: #6d4c41;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        .vocab-item .example {
+            color: #424242;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.9em;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition-delay: 0.2s;
+        }
+        
+        .highlight:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+            margin-bottom: -1px;
+            z-index: 1001;
+        }
+        
+        .discussion-questions ul, .practice-questions ul {
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+        
+        .discussion-questions li, .practice-questions li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        details {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            border: 1px solid #1976d2;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #0d47a1;
+            font-size: 1.1em;
+            padding: 10px;
+        }
+        
+        summary:hover {
+            background-color: #bbdefb;
+            border-radius: 5px;
+        }
+        
+        .answer-content {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .mobile-note {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            font-size: 0.95em;
+            color: #e65100;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Cut Grass: A Scent of Survival, A Perfume of Pleasure</h1>
+        
+        <section class="expressions-box">
+            <h2>💬 Useful Expressions</h2>
+            <div class="expression-item">
+                <strong>Could you clarify…?</strong> – ¿Podrías aclarar…?<br>
+                <em>Could you clarify the inspection criteria for this batch?</em>
+            </div>
+            <div class="expression-item">
+                <strong>It serves as…</strong> – Sirve como…<br>
+                <em>This feature serves as a quality control mechanism.</em>
+            </div>
+            <div class="expression-item">
+                <strong>To put it simply…</strong> – Para decirlo de manera simple…<br>
+                <em>To put it simply, we need to verify each shipment before dispatch.</em>
+            </div>
+            <div class="expression-item">
+                <strong>From my understanding…</strong> – Según mi entendimiento…<br>
+                <em>From my understanding, the protocol has been updated.</em>
+            </div>
+        </section>
+        
+        <section class="article-section">
+            <h2>📄 Article</h2>
+            
+            <p>The moment grass is cut, the air is instantly filled with a crisp, <span class="highlight" title="distintivo">distinctive</span> aroma that is almost universally recognized. To many, it may seem pleasant—even more appealing than <span class="highlight" title="perfumado">scented</span> candles or fancy perfumes. Yet what we are <span class="highlight" title="inhalando">inhaling</span> is actually a <span class="highlight" title="desesperado">desperate</span> call for help, a signal plants send out when they are under attack.</p>
+            
+            <div class="vocab-container">
+                <h3>📚 Vocabulary - Paragraph 1</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <strong>distinctive</strong>
+                        <em>distintivo</em>
+                        <span class="example">The packaging has a distinctive design that makes it easy to identify.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>scented</strong>
+                        <em>perfumado</em>
+                        <span class="example">We offer scented and unscented versions of this product.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>inhaling</strong>
+                        <em>inhalando</em>
+                        <span class="example">Workers should avoid inhaling chemical fumes in the warehouse.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>desperate</strong>
+                        <em>desesperado</em>
+                        <span class="example">The company made a desperate attempt to meet the deadline.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>The smell of freshly cut grass mainly comes from a group of compounds known as green leaf volatiles (GLVs). When grasses are bitten by insects or cut by a lawnmower, they give off these substances that spread rapidly through the air. Studies have shown that GLVs help <span class="highlight" title="estimular">stimulate</span> new cell growth for speedy repair and may serve as natural antibiotics to <span class="highlight" title="combatir">fight off</span> bacterial infections. More surprisingly, GLVs are a key survival strategy for the plant. They can attract predator insects that feed on plant-eating <span class="highlight" title="plagas">pests</span>. Meanwhile, nearby plants can pick up these airborne warnings and <span class="highlight" title="fortalecer">strengthen</span> their own <span class="highlight" title="defensas">defenses</span>, <span class="highlight" title="preparándose">readying</span> themselves for possible threats. While almost every plant releases GLVs when they are injured, the smell can differ depending on the species.</p>
+            
+            <div class="vocab-container">
+                <h3>📚 Vocabulary - Paragraph 2</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <strong>stimulate</strong>
+                        <em>estimular</em>
+                        <span class="example">The new incentive program aims to stimulate employee productivity.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>fight off</strong>
+                        <em>combatir</em>
+                        <span class="example">Our quality control system helps fight off defective products.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>pests</strong>
+                        <em>plagas</em>
+                        <span class="example">The warehouse must be regularly inspected for pests.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>strengthen</strong>
+                        <em>fortalecer</em>
+                        <span class="example">We need to strengthen our supply chain relationships.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>defenses</strong>
+                        <em>defensas</em>
+                        <span class="example">The company has multiple defenses against cybersecurity threats.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>readying</strong>
+                        <em>preparándose</em>
+                        <span class="example">The team is readying the shipment for departure.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>To humans, however, this emergency signal means something entirely different. Scientists believe the smell pleases us partly because it <span class="highlight" title="se superpone con">overlaps</span> with the aromas of chopped vegetables or ripening fruit, <span class="highlight" title="desencadenando">triggering</span> food-related instincts. Deeply <span class="highlight" title="grabado">etched</span> in our olfactory memory, the scent also <span class="highlight" title="trae a la mente">calls to mind</span> mowed lawns, haymaking in the countryside, or weekend sports played on grassy fields. Unsurprisingly, it is often described as uplifting. Research even shows that this aroma can reduce stress. Still, not everyone enjoys it. For <span class="highlight" title="alérgicos">allergy</span> sufferers, the aroma is less about comfort and more about sneezing and watery eyes.</p>
+            
+            <div class="vocab-container">
+                <h3>📚 Vocabulary - Paragraph 3</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <strong>overlaps</strong>
+                        <em>se superpone con</em>
+                        <span class="example">The new project overlaps with our existing quality initiatives.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>triggering</strong>
+                        <em>desencadenando</em>
+                        <span class="example">Low inventory levels are triggering automatic reorder requests.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>etched</strong>
+                        <em>grabado</em>
+                        <span class="example">The company logo is etched on every product we manufacture.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>calls to mind</strong>
+                        <em>trae a la mente</em>
+                        <span class="example">This packaging design calls to mind our heritage brand.</span>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>allergy</strong>
+                        <em>alérgicos</em>
+                        <span class="example">We must label products clearly for allergy information.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Scientists are now exploring whether GLVs could be used as eco-friendly tools in farming to reduce the need for toxic pesticides. As scientists continue to <span class="highlight" title="descubrir">unlock</span> its secrets, this natural SOS may one day become a powerful means for creating a greener, healthier world.</p>
+            
+            <div class="vocab-container">
+                <h3>📚 Vocabulary - Paragraph 4</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <strong>unlock</strong>
+                        <em>descubrir</em>
+                        <span class="example">Our R&D team is working to unlock new production efficiencies.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-note">
+                <strong>📱 Mobile Note:</strong> On mobile devices, tap and hold highlighted words to see their Spanish translations. On computers, simply hover your cursor over the highlighted words.
+            </div>
+        </section>
+        
+        <section class="discussion-questions">
+            <h2>💭 Discussion Questions</h2>
+            <ul>
+                <li>Have you ever noticed how certain smells bring back specific memories? Can you share an example from your own experience?</li>
+                <li>In your workplace, what are some signals or warnings (like the plant's GLVs) that indicate when something needs attention? How do your teams respond to these signals?</li>
+                <li>The article mentions that plants can "communicate" with each other through chemical signals. In what ways do departments or teams in your company share warnings or important information with each other?</li>
+            </ul>
+        </section>
+        
+        <section class="practice-questions">
+            <h2>✍️ Self-Practice Questions</h2>
+            <ul>
+                <li><strong>Question 1:</strong> What is the main purpose of GLVs (green leaf volatiles) for plants?</li>
+                <li><strong>Question 2:</strong> According to the article, why do humans generally find the smell of cut grass pleasant?</li>
+                <li><strong>Question 3:</strong> Fill in the blank: GLVs help plants __________ new cell growth and may serve as natural antibiotics.</li>
+                <li><strong>Question 4:</strong> How might understanding GLVs benefit agriculture in the future?</li>
+            </ul>
+            
+            <details>
+                <summary>📋 Click to See Reference Answers</summary>
+                <div class="answer-content">
+                    <p><strong>Answer 1:</strong> GLVs serve multiple survival purposes for plants: they help stimulate new cell growth for repair, act as natural antibiotics to fight bacterial infections, attract predator insects that feed on plant-eating pests, and warn nearby plants to strengthen their defenses.</p>
+                    
+                    <p><strong>Answer 2:</strong> Humans find the smell pleasant because it overlaps with aromas of chopped vegetables or ripening fruit, triggering food-related instincts. The scent also calls to mind positive memories like mowed lawns, haymaking, and outdoor activities. Research shows it can reduce stress.</p>
+                    
+                    <p><strong>Answer 3:</strong> stimulate</p>
+                    
+                    <p><strong>Answer 4:</strong> Scientists are exploring whether GLVs could be used as eco-friendly tools in farming to reduce the need for toxic pesticides, potentially creating a greener and healthier agricultural system.</p>
+                </div>
+            </details>
+        </section>
+    </div>
+</body>
+</html>
