@@ -1,0 +1,588 @@
+/* ====================
+   ELISA ENGLISH HUB - ADVANCED LEVEL
+   Color Theme: Deep Blue
+   ==================== */
+
+:root {
+    /* Main Colors - Deep Blue */
+    --blue-dark: #1e3a5f;             /* Deep backgrounds */
+    --blue-medium: #2d5aa0;           /* Headers, primary elements */
+    --blue-light: #4a90e2;            /* Hover states */
+    --blue-accent: #5ba3f5;            /* Accent blue */
+
+    /* Accent Color - Light Blue */
+    --cyan: #4fc3f7;                   /* CTAs, highlights */
+    --cyan-light: #81d4fa;             /* Hover states */
+
+    /* Neutrals */
+    --white: #ffffff;
+    --off-white: #f5f7fa;             /* Page background */
+    --gray-light: #e9ecef;
+    --gray-medium: #6c757d;
+    --gray-dark: #495057;
+
+    /* Shadows & Effects */
+    --shadow-sm: 0 2px 8px rgba(30, 58, 95, 0.08);
+    --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.12);
+    --shadow-lg: 0 8px 24px rgba(30, 58, 95, 0.15);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+}
+
+/* ====================
+   RESET & BASE
+   ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+    line-height: 1.6;
+    color: var(--blue-dark);
+    background: var(--off-white);
+    min-height: 100vh;
+}
+
+/* ====================
+   HEADER
+   ==================== */
+.header {
+    background: var(--blue-medium);
+    color: white;
+    padding: 1.25rem 2rem;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--cyan);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+.header-content h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.level-badge {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ====================
+   MAIN CONTAINER
+   ==================== */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 80px);
+}
+
+/* ====================
+   SIDEBAR
+   ==================== */
+.sidebar {
+    width: 280px;
+    background: white;
+    padding: var(--spacing-md);
+    border-right: 1px solid var(--gray-light);
+    height: calc(100vh - 80px);
+    position: sticky;
+    top: 80px;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar for Sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: var(--off-white);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--blue-light);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-medium);
+}
+
+/* Search Box */
+.search-box {
+    margin-bottom: var(--spacing-md);
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: var(--off-white);
+    color: var(--blue-dark);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.1);
+    background: white;
+}
+
+#searchInput::placeholder {
+    color: var(--gray-medium);
+}
+
+/* Home Button */
+.home-btn {
+    width: 100%;
+    background: var(--cyan);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: var(--spacing-md);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.home-btn:hover {
+    background: var(--cyan-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.home-btn.hidden {
+    display: none;
+}
+
+/* Month Navigation */
+.month-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.month-group {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--off-white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.month-header {
+    width: 100%;
+    background: var(--blue-medium);
+    color: white;
+    border: none;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.month-header:hover {
+    background: var(--blue-light);
+}
+
+.month-header.active {
+    background: var(--blue-accent);
+}
+
+.arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.lesson-count {
+    margin-left: auto;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.lesson-list {
+    list-style: none;
+    background: white;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.lesson-list.hidden {
+    max-height: 0;
+}
+
+.lesson-list li {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.lesson-list li:last-child {
+    border-bottom: none;
+}
+
+.lesson-list a {
+    display: block;
+    padding: 0.7rem 1rem;
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.lesson-list a:hover {
+    background: var(--gray-light);
+    border-left-color: var(--cyan);
+    padding-left: 1.3rem;
+}
+
+/* ====================
+   MAIN CONTENT
+   ==================== */
+.main-content {
+    flex: 1;
+    padding: var(--spacing-lg);
+    max-width: 900px;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--cyan);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.welcome-card h2 {
+    color: var(--blue-medium);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.welcome-card p {
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+    color: var(--blue-dark);
+}
+
+.schedule-info {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--off-white);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--blue-medium);
+}
+
+.schedule-info h3 {
+    color: var(--blue-medium);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Section Title */
+.section-title {
+    color: var(--blue-medium);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--cyan);
+    font-weight: 700;
+}
+
+/* Total Count */
+.total-count {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: var(--spacing-sm);
+}
+
+/* Lesson List - Simple & Clean */
+.lesson-item {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.lesson-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--cyan);
+}
+
+.lesson-title-wrapper {
+    flex: 1;
+}
+
+.lesson-title {
+    color: var(--blue-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.lesson-date {
+    color: var(--gray-medium);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    padding: 0.3rem 0.7rem;
+    background: var(--off-white);
+    border-radius: var(--radius-sm);
+}
+
+.lesson-date.new {
+    background: var(--cyan);
+    color: white;
+    font-weight: 600;
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray-medium);
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ====================
+   LESSON CONTENT WRAPPER (for loaded HTML)
+   ==================== */
+.lesson-content-wrapper {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.lesson-content-wrapper h1 {
+    color: var(--blue-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.lesson-content-wrapper img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--cyan);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background: var(--cyan-light);
+    transform: translateY(-3px);
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+/* ====================
+   RESPONSIVE DESIGN
+   ==================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .main-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+
+    .header-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .level-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-light);
+        max-height: 400px;
+    }
+
+    .main-content {
+        padding: var(--spacing-sm);
+    }
+
+    .lesson-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lesson-date {
+        align-self: flex-start;
+    }
+
+    .welcome-card {
+        padding: var(--spacing-md);
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.1rem;
+    }
+
+    .main-content {
+        padding: 0.75rem;
+    }
+
+    .lesson-item {
+        padding: var(--spacing-sm);
+    }
+
+    .lesson-title {
+        font-size: 1rem;
+    }
+}
+
+/* ====================
+   LOADING STATE
+   ==================== */
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray-medium);
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* ====================
+   UTILITY CLASSES
+   ==================== */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
