@@ -7,88 +7,127 @@
 </head>
 
 <style>
+/* ====================
+   BASE STYLES - Desktop First
+   ==================== */
 body {
   font-family: 'Noto Sans', 'Open Sans', sans-serif;
   line-height: 1.8;
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
   background-color: #f9f9f9;
   color: #333;
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2.5em;
   color: #2c3e50;
   border-bottom: 3px solid #3498db;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  line-height: 1.3;
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: #2c3e50;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   border-left: 4px solid #3498db;
-  padding-left: 12px;
+  padding-left: 15px;
+  line-height: 1.4;
 }
 
 h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   color: #34495e;
-  margin-top: 25px;
-  margin-bottom: 12px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .section {
   background-color: #ffffff;
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 35px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .expressions {
   background-color: #e8f4f8;
-  padding: 20px;
+  padding: 25px;
   border-left: 4px solid #3498db;
-  margin-bottom: 25px;
-  border-radius: 5px;
+  margin-bottom: 30px;
+  border-radius: 8px;
 }
 
 .expression-item {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  line-height: 1.8;
 }
 
 .expression-item strong {
   color: #2c3e50;
-  font-size: 1.05em;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .expression-item em {
   color: #555;
   display: block;
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 0.95em;
+  font-style: italic;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   text-align: justify;
+  font-size: 1.05em;
+  line-height: 1.9;
 }
 
+/* 網格容器 - 桌面版 3 欄 */
 .vocab-box {
   background-color: #fff9e6;
   border: 2px solid #f1c40f;
-  border-radius: 8px;
-  padding: 18px;
-  margin: 20px 0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
+.vocab-box h3 {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.3em;
+}
+
+/* 卡片樣式 */
 .vocab-item {
-  margin-bottom: 18px;
-  line-height: 1.7;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 0;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(241, 196, 15, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.vocab-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: rgba(241, 196, 15, 0.4);
 }
 
 .vocab-item:last-child {
@@ -99,64 +138,80 @@ p {
   font-weight: bold;
   color: #d35400;
   font-size: 1.05em;
+  display: block;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #f1c40f;
 }
 
 .vocab-definition {
   color: #555;
-  margin: 5px 0;
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+  flex-grow: 1;
+  font-size: 0.95em;
 }
 
 .vocab-spanish {
   color: #7f8c8d;
   font-style: italic;
-  font-size: 0.9em;
+  font-size: 0.85em;
+  display: block;
+  margin: 2px 0 0 0;
+  padding: 3px 6px;
+  background-color: #f8f9fa;
+  border-radius: 3px;
 }
 
 .vocab-example {
   color: #2c3e50;
-  margin-top: 5px;
-  padding-left: 15px;
+  margin-top: 2px;
+  padding: 8px;
   border-left: 3px solid #f1c40f;
+  background-color: #fefefe;
+  border-radius: 4px;
   font-style: italic;
+  line-height: 1.5;
+  font-size: 0.9em;
 }
 
 .discussion-questions {
   background-color: #e8f5e9;
-  padding: 20px;
+  padding: 25px;
   border-left: 4px solid #27ae60;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .discussion-questions ol {
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .discussion-questions li {
-  margin-bottom: 15px;
-  line-height: 1.7;
+  margin-bottom: 18px;
+  line-height: 1.8;
 }
 
 .practice-questions {
   background-color: #fce4ec;
-  padding: 20px;
+  padding: 25px;
   border-left: 4px solid #e91e63;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .practice-questions ol {
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .practice-questions li {
-  margin-bottom: 15px;
-  line-height: 1.7;
+  margin-bottom: 18px;
+  line-height: 1.8;
 }
 
 details {
   background-color: #f5f5f5;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 5px;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 8px;
   border: 1px solid #ddd;
 }
 
@@ -164,7 +219,8 @@ summary {
   font-weight: bold;
   cursor: pointer;
   color: #2c3e50;
-  padding: 5px;
+  padding: 8px;
+  font-size: 1.05em;
 }
 
 summary:hover {
@@ -174,14 +230,18 @@ summary:hover {
 details p {
   margin-top: 15px;
   padding-left: 10px;
+  line-height: 1.8;
 }
 
 [data-tooltip] {
   position: relative;
   background-color: #fff59d;
-  padding: 2px 4px;
+  padding: 2px 6px;
   border-radius: 3px;
   cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
 }
 
 [data-tooltip]::before {
@@ -192,16 +252,16 @@ details p {
   transform: translateX(-50%);
   background-color: #2c3e50;
   color: white;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 6px;
   white-space: nowrap;
-  font-size: 0.85em;
+  font-size: 0.9em;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 [data-tooltip]::after {
@@ -215,7 +275,7 @@ details p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   z-index: 1000;
 }
 
@@ -226,21 +286,350 @@ details p {
 
 .article-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .article-subtitle {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #7f8c8d;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 12px;
+  line-height: 1.6;
 }
 
 .source {
-  font-size: 0.9em;
+  font-size: 0.95em;
   color: #95a5a6;
-  margin-top: 20px;
+  margin-top: 25px;
   text-align: center;
+}
+
+/* ====================
+   RESPONSIVE DESIGN - Tablet
+   ==================== */
+@media (max-width: 1024px) {
+  body {
+    max-width: 900px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  .section {
+    padding: 30px;
+  }
+
+  .vocab-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .vocab-box h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+    font-size: 1.25em;
+  }
+
+  .vocab-item {
+    padding: 13px;
+  }
+
+  .vocab-word {
+    font-size: 1.02em;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  .vocab-definition {
+    font-size: 0.93em;
+    margin: 4px 0 0 0;
+  }
+
+  .vocab-spanish {
+    font-size: 0.83em;
+    margin: 2px 0 0 0;
+    padding: 3px 6px;
+  }
+
+  .vocab-example {
+    padding: 7px;
+    font-size: 0.88em;
+    margin-top: 2px;
+  }
+}
+
+/* ====================
+   RESPONSIVE DESIGN - Mobile
+   ==================== */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    padding: 20px 15px;
+    line-height: 1.7;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    border-left-width: 3px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin-top: 25px;
+    margin-bottom: 12px;
+  }
+
+  .section {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  .expressions {
+    padding: 18px 15px;
+    border-left-width: 3px;
+  }
+
+  .expression-item {
+    margin-bottom: 12px;
+  }
+
+  .expression-item strong {
+    font-size: 1.05em;
+  }
+
+  .expression-item em {
+    font-size: 0.9em;
+  }
+
+  p {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.7;
+  }
+
+  .vocab-box {
+    padding: 15px 12px;
+    margin: 20px 0;
+    border-width: 2px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .vocab-box h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+  }
+
+  .vocab-item {
+    margin-bottom: 0;
+    padding: 12px;
+  }
+
+  .vocab-word {
+    font-size: 1.0em;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  .vocab-definition {
+    font-size: 0.9em;
+    margin: 4px 0 0 0;
+  }
+
+  .vocab-spanish {
+    font-size: 0.8em;
+    margin: 2px 0 0 0;
+    padding: 2px 5px;
+  }
+
+  .vocab-example {
+    padding: 6px;
+    font-size: 0.85em;
+    margin-top: 2px;
+  }
+
+  .discussion-questions,
+  .practice-questions {
+    padding: 18px 15px;
+    border-left-width: 3px;
+  }
+
+  .discussion-questions ol,
+  .practice-questions ol {
+    padding-left: 20px;
+  }
+
+  .discussion-questions li,
+  .practice-questions li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+  }
+
+  details {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  summary {
+    padding: 6px;
+    font-size: 1em;
+  }
+
+  details p {
+    padding-left: 8px;
+    font-size: 0.95em;
+  }
+
+  [data-tooltip] {
+    padding: 2px 4px;
+  }
+
+  [data-tooltip]::before {
+    font-size: 0.85em;
+    padding: 8px 12px;
+    white-space: normal;
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+
+  .article-header {
+    margin-bottom: 25px;
+  }
+
+  .article-subtitle {
+    font-size: 1.05em;
+    margin-top: 10px;
+  }
+
+  .source {
+    font-size: 0.85em;
+    margin-top: 15px;
+  }
+}
+
+/* ====================
+   RESPONSIVE DESIGN - Small Mobile
+   ==================== */
+@media (max-width: 480px) {
+  body {
+    padding: 15px 12px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+  }
+
+  h3 {
+    font-size: 1.15em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .section {
+    padding: 15px 12px;
+    margin-bottom: 18px;
+  }
+
+  .expressions,
+  .discussion-questions,
+  .practice-questions {
+    padding: 15px 12px;
+  }
+
+  .vocab-box {
+    padding: 12px 10px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .vocab-box h3 {
+    grid-column: 1;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+  }
+
+  .vocab-item {
+    margin-bottom: 0;
+    padding: 10px;
+  }
+
+  .vocab-word {
+    font-size: 0.98em;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .vocab-definition {
+    font-size: 0.88em;
+    margin: 3px 0 0 0;
+  }
+
+  .vocab-spanish {
+    font-size: 0.78em;
+    margin: 2px 0 0 0;
+    padding: 2px 5px;
+  }
+
+  .vocab-example {
+    padding: 6px;
+    font-size: 0.82em;
+    margin-top: 2px;
+  }
+
+  .expression-item {
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }
+
+  .discussion-questions ol,
+  .practice-questions ol {
+    padding-left: 18px;
+  }
+
+  .discussion-questions li,
+  .practice-questions li {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+  }
+
+  [data-tooltip]::before {
+    max-width: 180px;
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
 }
 </style>
 
@@ -300,14 +689,6 @@ details p {
 
 <p>Mike White, the creator of the HBO series <em>The White Lotus</em>, was in Thailand searching for the perfect place to film the show's third season. His journey had led him to the island of Koh Samui and into the open-air <span data-tooltip="vestíbulo">lobby</span> of the Four Seasons Resort, overlooking <span data-tooltip="exuberante">lush</span> mountains, <span data-tooltip="brillante/reluciente">glimmering</span> ocean and $9,000-a-night <span data-tooltip="villas">villas</span>.</p>
 
-<p>The hotel's general manager, Jasjit Singh Assi, was ready with his <span data-tooltip="discurso/presentación">pitch</span>. But it didn't take much to <span data-tooltip="persuadir">persuade</span> White.</p>
-
-<p>"He was quiet for a bit," Assi <span data-tooltip="recordó">recalled</span>. "Then he says, 'All right, this is it.' It was as if he fell in love with it."</p>
-
-<p>Set at a fictional resort called the White Lotus, the murder-mystery <span data-tooltip="comedia dramática">dramedy</span> has <span data-tooltip="conseguido/obtenido">garnered</span> <span data-tooltip="elogios/reconocimiento">acclaim</span> for its <span data-tooltip="satírica">satirical</span> <span data-tooltip="representación">portrayal</span> of wealthy tourists and the working locals who <span data-tooltip="atender/servir">cater</span> to them. It's also known for <span data-tooltip="provocar/generar">sparking</span> real-life travel <span data-tooltip="auges/aumentos repentinos">booms</span> as fans of the show <span data-tooltip="buscar">seek out</span> the set locations—a phenomenon that has been <span data-tooltip="apodado/llamado">dubbed</span> the "White Lotus Effect."</p>
-
-<p>A <span data-tooltip="papel protagonista">starring role</span> is an advertisement for Thailand, which has broader ambitions to make more money from Western film productions and tourists <span data-tooltip="por igual/de manera similar">alike</span>.</p>
-
 <div class="vocab-box">
 <h3>📚 Vocabulary Box</h3>
 
@@ -331,6 +712,12 @@ details p {
 <span class="vocab-spanish">(brillante/reluciente)</span><br>
 <span class="vocab-example">Example: "The glimmering lights on the control panel indicate the system is operating normally."</span>
 </div>
+</div>
+
+<p>The hotel's general manager, Jasjit Singh Assi, was ready with his <span data-tooltip="discurso/presentación">pitch</span>. But it didn't take much to <span data-tooltip="persuadir">persuade</span> White.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">pitch</span><br>
@@ -345,6 +732,12 @@ details p {
 <span class="vocab-spanish">(persuadir)</span><br>
 <span class="vocab-example">Example: "It took weeks to persuade the procurement team to approve the budget increase."</span>
 </div>
+</div>
+
+<p>"He was quiet for a bit," Assi <span data-tooltip="recordó">recalled</span>. "Then he says, 'All right, this is it.' It was as if he fell in love with it."</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">recalled</span><br>
@@ -352,6 +745,12 @@ details p {
 <span class="vocab-spanish">(recordó)</span><br>
 <span class="vocab-example">Example: "The safety officer recalled a similar incident that happened three years ago."</span>
 </div>
+</div>
+
+<p>Set at a fictional resort called the White Lotus, the murder-mystery <span data-tooltip="comedia dramática">dramedy</span> has <span data-tooltip="conseguido/obtenido">garnered</span> <span data-tooltip="elogios/reconocimiento">acclaim</span> for its <span data-tooltip="satírica">satirical</span> <span data-tooltip="representación">portrayal</span> of wealthy tourists and the working locals who <span data-tooltip="atender/servir">cater</span> to them. It's also known for <span data-tooltip="provocar/generar">sparking</span> real-life travel <span data-tooltip="auges/aumentos repentinos">booms</span> as fans of the show <span data-tooltip="buscar">seek out</span> the set locations—a phenomenon that has been <span data-tooltip="apodado/llamado">dubbed</span> the "White Lotus Effect."</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">dramedy</span><br>
@@ -422,6 +821,12 @@ details p {
 <span class="vocab-spanish">(apodado/llamado)</span><br>
 <span class="vocab-example">Example: "The new automated system has been dubbed 'Smart Factory 2.0' by our team."</span>
 </div>
+</div>
+
+<p>A <span data-tooltip="papel protagonista">starring role</span> is an advertisement for Thailand, which has broader ambitions to make more money from Western film productions and tourists <span data-tooltip="por igual/de manera similar">alike</span>.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">starring role</span><br>
@@ -441,12 +846,6 @@ details p {
 <h3>Thailand's Rebate Program</h3>
 
 <p>Thailand's <span data-tooltip="programa de reembolso">rebate program</span> began in 2017. Udom Matsayawanigul, director of the Thailand Film Office, which is part of the Tourism Ministry, said that as competition to <span data-tooltip="atraer">lure</span> foreign productions has <span data-tooltip="endurecido/intensificado">stiffened</span>, Thailand has had to <span data-tooltip="endulzar/mejorar">sweeten</span> its offers to <span data-tooltip="mantenerse al día">keep up</span>.</p>
-
-<p>The Thailand Film Office <span data-tooltip="estima">estimates</span> that every dollar of foreign film investment <span data-tooltip="genera">generates</span> $2.80 in economic activity. The government hopes the attention will help it reach its goal of attracting a record 40 million tourists next year.</p>
-
-<p>There are risks. After the 2000 release of the film <em>The Beach</em>, starring Leonardo DiCaprio, as many as 8,000 tourists a day made the <span data-tooltip="peregrinación">pilgrimage</span> to the tiny islands of Koh Phi Phi, where it was filmed. They crowded Maya Bay with boats, driving away marine life and destroying <span data-tooltip="arrecifes de coral">coral reefs</span>.</p>
-
-<p>"<em>The Beach</em> was a lesson for Thailand," Matsayawanigul said. "The National Parks Department has been <span data-tooltip="consciente/cuidadoso">mindful</span> of this issue."</p>
 
 <div class="vocab-box">
 <h3>📚 Vocabulary Box</h3>
@@ -485,6 +884,12 @@ details p {
 <span class="vocab-spanish">(mantenerse al día)</span><br>
 <span class="vocab-example">Example: "Our IT infrastructure must keep up with rapidly evolving cybersecurity threats."</span>
 </div>
+</div>
+
+<p>The Thailand Film Office <span data-tooltip="estima">estimates</span> that every dollar of foreign film investment <span data-tooltip="genera">generates</span> $2.80 in economic activity. The government hopes the attention will help it reach its goal of attracting a record 40 million tourists next year.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">estimates</span><br>
@@ -499,6 +904,12 @@ details p {
 <span class="vocab-spanish">(genera)</span><br>
 <span class="vocab-example">Example: "Our new production line generates 30% less waste than the old system."</span>
 </div>
+</div>
+
+<p>There are risks. After the 2000 release of the film <em>The Beach</em>, starring Leonardo DiCaprio, as many as 8,000 tourists a day made the <span data-tooltip="peregrinación">pilgrimage</span> to the tiny islands of Koh Phi Phi, where it was filmed. They crowded Maya Bay with boats, driving away marine life and destroying <span data-tooltip="arrecifes de coral">coral reefs</span>.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">pilgrimage</span><br>
@@ -513,6 +924,12 @@ details p {
 <span class="vocab-spanish">(arrecifes de coral)</span><br>
 <span class="vocab-example">Example: "Our company's environmental policy includes protecting coral reefs near our coastal facilities."</span>
 </div>
+</div>
+
+<p>"<em>The Beach</em> was a lesson for Thailand," Matsayawanigul said. "The National Parks Department has been <span data-tooltip="consciente/cuidadoso">mindful</span> of this issue."</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">mindful</span><br>
@@ -526,16 +943,6 @@ details p {
 
 <p>While foreign visitors <span data-tooltip="representan">account for</span> about two-thirds of tourism revenue in Thailand, excitement about <em>The White Lotus</em> is also growing among domestic tourists, thanks to the casting of Lalisa "Lisa" Manobal, a Thai member of the K-pop group Blackpink.</p>
 
-<p>Even outside of the luxury resort's private <span data-tooltip="infinito/sin límites">infinity</span> pools, two-person bathtubs and 24-hour <span data-tooltip="mayordomo/servicio de mayordomo">butler</span> service, preparations for an expected tourism boom are <span data-tooltip="en marcha">underway</span>.</p>
-
-<p>Kanokkorn Lamlert and Patrick Moukarzel, owners of the Thai Tapas restaurant, said they began feeling <span data-tooltip="logísticas">logistical</span> <span data-tooltip="tensiones/presiones">strains</span> last year.</p>
-
-<p>When the local seafood market sold out, they had to drive 45 minutes for sea bass or shrimp. Hotel and food prices have risen, and the roads have become more <span data-tooltip="propenso">prone</span> to traffic jams, they said.</p>
-
-<p>However, the restaurant owners said they are planning a marketing campaign around the <span data-tooltip="estreno">premiere</span> of the season, which includes a scene outside their restaurant. One idea is a new dish made with lotus root, stir-fried mushroom and slow-cooked beef.</p>
-
-<p>They will call it "The White Lotus Beef Ribs."</p>
-
 <div class="vocab-box">
 <h3>📚 Vocabulary Box</h3>
 
@@ -545,6 +952,12 @@ details p {
 <span class="vocab-spanish">(representar/constituir)</span><br>
 <span class="vocab-example">Example: "Manufacturing errors account for only 2% of our total production issues this quarter."</span>
 </div>
+</div>
+
+<p>Even outside of the luxury resort's private <span data-tooltip="infinito/sin límites">infinity</span> pools, two-person bathtubs and 24-hour <span data-tooltip="mayordomo/servicio de mayordomo">butler</span> service, preparations for an expected tourism boom are <span data-tooltip="en marcha">underway</span>.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">infinity (pools)</span><br>
@@ -566,6 +979,12 @@ details p {
 <span class="vocab-spanish">(en marcha/en curso)</span><br>
 <span class="vocab-example">Example: "The system upgrade is underway and should be completed by next week."</span>
 </div>
+</div>
+
+<p>Kanokkorn Lamlert and Patrick Moukarzel, owners of the Thai Tapas restaurant, said they began feeling <span data-tooltip="logísticas">logistical</span> <span data-tooltip="tensiones/presiones">strains</span> last year.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">logistical</span><br>
@@ -580,6 +999,12 @@ details p {
 <span class="vocab-spanish">(tensiones/presiones)</span><br>
 <span class="vocab-example">Example: "The sudden increase in orders has put significant strains on our production capacity."</span>
 </div>
+</div>
+
+<p>When the local seafood market sold out, they had to drive 45 minutes for sea bass or shrimp. Hotel and food prices have risen, and the roads have become more <span data-tooltip="propenso">prone</span> to traffic jams, they said.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">prone to</span><br>
@@ -587,6 +1012,12 @@ details p {
 <span class="vocab-spanish">(propenso a)</span><br>
 <span class="vocab-example">Example: "Older equipment is more prone to breakdowns and requires frequent maintenance."</span>
 </div>
+</div>
+
+<p>However, the restaurant owners said they are planning a marketing campaign around the <span data-tooltip="estreno">premiere</span> of the season, which includes a scene outside their restaurant. One idea is a new dish made with lotus root, stir-fried mushroom and slow-cooked beef.</p>
+
+<div class="vocab-box">
+<h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
 <span class="vocab-word">premiere</span><br>
@@ -595,6 +1026,8 @@ details p {
 <span class="vocab-example">Example: "The premiere of our new product line is scheduled for next month's trade show."</span>
 </div>
 </div>
+
+<p>They will call it "The White Lotus Beef Ribs."</p>
 </div>
 
 <div class="section discussion-questions">
