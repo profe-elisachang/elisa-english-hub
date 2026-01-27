@@ -95,17 +95,17 @@ p {
   background-color: #fff9e6;
   border: 2px solid #f1c40f;
   border-radius: 10px;
-  padding: 20px;
+  padding: 18px;
   margin: 25px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 12px;
 }
 
 .vocab-box h3 {
   grid-column: 1 / -1;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: #2c3e50;
   font-size: 1.3em;
 }
@@ -114,9 +114,9 @@ p {
 .vocab-item {
   background-color: #ffffff;
   border-radius: 8px;
-  padding: 14px;
+  padding: 12px;
   margin-bottom: 0;
-  line-height: 1.6;
+  line-height: 1.5;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid rgba(241, 196, 15, 0.2);
@@ -139,15 +139,15 @@ p {
   color: #d35400;
   font-size: 1.05em;
   display: block;
-  margin-bottom: 6px;
-  padding-bottom: 6px;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
   border-bottom: 2px solid #f1c40f;
 }
 
 .vocab-definition {
   color: #555;
-  margin: 5px 0 0 0;
-  line-height: 1.5;
+  margin: 0;
+  line-height: 1;
   flex-grow: 1;
   font-size: 0.95em;
 }
@@ -158,20 +158,21 @@ p {
   font-size: 0.85em;
   display: block;
   margin: 2px 0 0 0;
-  padding: 3px 6px;
-  background-color: #f8f9fa;
+  padding: 2px ;
+  line-height: 1
+    background-color: #f8f9fa;
   border-radius: 3px;
 }
 
 .vocab-example {
   color: #2c3e50;
   margin-top: 2px;
-  padding: 8px;
+  padding: 0 0 0 8px;
   border-left: 3px solid #f1c40f;
-  background-color: #fefefe;
-  border-radius: 4px;
+  background-color: transparent;
+  border-radius: 0;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1;
   font-size: 0.9em;
 }
 
@@ -327,41 +328,44 @@ details p {
 
   .vocab-box {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 18px;
+    gap: 12px;
+    padding: 15px;
   }
 
   .vocab-box h3 {
     grid-column: 1 / -1;
-    margin-bottom: 12px;
+    margin-bottom: 0px;    
     font-size: 1.25em;
   }
 
   .vocab-item {
-    padding: 13px;
+    padding: 10px;
   }
 
   .vocab-word {
     font-size: 1.02em;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding-bottom:  0px;
+    margin-bottom: 0px;
   }
 
   .vocab-definition {
     font-size: 0.93em;
-    margin: 4px 0 0 0;
+    margin: 0;
+    line-height: 1.4;
   }
 
   .vocab-spanish {
     font-size: 0.83em;
-    margin: 2px 0 0 0;
-    padding: 3px 6px;
+    margin: 0px 0 0 0;
+    padding:  0px 5px;
   }
 
   .vocab-example {
-    padding: 7px;
+    padding: 0 0 0 px;
     font-size: 0.88em;
-    margin-top: 2px;
+    margin-top: 0px;
+    line-height: 1.4;
+    background-color: transparent;
   }
 }
 
@@ -427,33 +431,34 @@ details p {
   }
 
   .vocab-box {
-    padding: 15px 12px;
+    padding: 12px 10px;
     margin: 20px 0;
     border-width: 2px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
   }
 
   .vocab-box h3 {
     grid-column: 1 / -1;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 1.2em;
   }
 
   .vocab-item {
     margin-bottom: 0;
-    padding: 12px;
+    padding: 10px;
   }
 
   .vocab-word {
     font-size: 1.0em;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding-bottom: 4px;
+    margin-bottom: 3px;
   }
 
   .vocab-definition {
     font-size: 0.9em;
-    margin: 4px 0 0 0;
+    margin: 0;
+    line-height: 1.4;
   }
 
   .vocab-spanish {
@@ -463,9 +468,11 @@ details p {
   }
 
   .vocab-example {
-    padding: 6px;
+    padding: 0 0 0 6px;
     font-size: 0.85em;
     margin-top: 2px;
+    line-height: 1.4;
+    background-color: transparent;
   }
 
   .discussion-questions,
@@ -566,31 +573,32 @@ details p {
   }
 
   .vocab-box {
-    padding: 12px 10px;
+    padding: 10px 8px;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
   }
 
   .vocab-box h3 {
     grid-column: 1;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 1.15em;
   }
 
   .vocab-item {
     margin-bottom: 0;
-    padding: 10px;
+    padding: 8px;
   }
 
   .vocab-word {
     font-size: 0.98em;
-    padding-bottom: 4px;
-    margin-bottom: 4px;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
   }
 
   .vocab-definition {
     font-size: 0.88em;
-    margin: 3px 0 0 0;
+    margin: 0;
+    line-height: 1.4;
   }
 
   .vocab-spanish {
@@ -600,9 +608,11 @@ details p {
   }
 
   .vocab-example {
-    padding: 6px;
+    padding: 0 0 0 6px;
     font-size: 0.82em;
     margin-top: 2px;
+    line-height: 1.4;
+    background-color: transparent;
   }
 
   .expression-item {
@@ -693,23 +703,23 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">lobby</span><br>
-<span class="vocab-definition">The entrance hall or reception area of a building, especially a hotel.</span><br>
-<span class="vocab-spanish">(vestíbulo)</span><br>
+<span class="vocab-word">lobby</span>
+<span class="vocab-definition">The entrance hall or reception area of a building, especially a hotel.</span>
+<span class="vocab-spanish">(vestíbulo)</span>
 <span class="vocab-example">Example: "The IT support desk is located in the main lobby of our office building."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">lush</span><br>
-<span class="vocab-definition">Rich in vegetation; growing thickly and healthily.</span><br>
-<span class="vocab-spanish">(exuberante)</span><br>
+<span class="vocab-word">lush</span>
+<span class="vocab-definition">Rich in vegetation; growing thickly and healthily.</span>
+<span class="vocab-spanish">(exuberante)</span>
 <span class="vocab-example">Example: "The factory is surrounded by lush green hills, which helps with air quality."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">glimmering</span><br>
-<span class="vocab-definition">Shining with a faint, wavering light; sparkling.</span><br>
-<span class="vocab-spanish">(brillante/reluciente)</span><br>
+<span class="vocab-word">glimmering</span>
+<span class="vocab-definition">Shining with a faint, wavering light; sparkling.</span>
+<span class="vocab-spanish">(brillante/reluciente)</span>
 <span class="vocab-example">Example: "The glimmering lights on the control panel indicate the system is operating normally."</span>
 </div>
 </div>
@@ -720,16 +730,16 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">pitch</span><br>
-<span class="vocab-definition">A presentation or sales talk designed to persuade someone.</span><br>
-<span class="vocab-spanish">(discurso/presentación de ventas)</span><br>
+<span class="vocab-word">pitch</span>
+<span class="vocab-definition">A presentation or sales talk designed to persuade someone.</span>
+<span class="vocab-spanish">(discurso/presentación de ventas)</span>
 <span class="vocab-example">Example: "Our team prepared a pitch to convince management to invest in new safety equipment."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">persuade</span><br>
-<span class="vocab-definition">To convince someone to do or believe something through reasoning or argument.</span><br>
-<span class="vocab-spanish">(persuadir)</span><br>
+<span class="vocab-word">persuade</span>
+<span class="vocab-definition">To convince someone to do or believe something through reasoning or argument.</span>
+<span class="vocab-spanish">(persuadir)</span>
 <span class="vocab-example">Example: "It took weeks to persuade the procurement team to approve the budget increase."</span>
 </div>
 </div>
@@ -740,9 +750,9 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">recalled</span><br>
-<span class="vocab-definition">Remembered and told about past events or experiences.</span><br>
-<span class="vocab-spanish">(recordó)</span><br>
+<span class="vocab-word">recalled</span>
+<span class="vocab-definition">Remembered and told about past events or experiences.</span>
+<span class="vocab-spanish">(recordó)</span>
 <span class="vocab-example">Example: "The safety officer recalled a similar incident that happened three years ago."</span>
 </div>
 </div>
@@ -753,72 +763,72 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">dramedy</span><br>
-<span class="vocab-definition">A TV show or film that combines elements of drama and comedy.</span><br>
-<span class="vocab-spanish">(comedia dramática)</span><br>
+<span class="vocab-word">dramedy</span>
+<span class="vocab-definition">A TV show or film that combines elements of drama and comedy.</span>
+<span class="vocab-spanish">(comedia dramática)</span>
 <span class="vocab-example">Example: "The training video was almost like a dramedy, mixing serious safety lessons with humor."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">garnered</span><br>
-<span class="vocab-definition">Gathered, collected, or received (especially praise, attention, or support).</span><br>
-<span class="vocab-spanish">(conseguido/obtenido)</span><br>
+<span class="vocab-word">garnered</span>
+<span class="vocab-definition">Gathered, collected, or received (especially praise, attention, or support).</span>
+<span class="vocab-spanish">(conseguido/obtenido)</span>
 <span class="vocab-example">Example: "Our sustainability initiative has garnered recognition from international environmental groups."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">acclaim</span><br>
-<span class="vocab-definition">Enthusiastic praise or approval, especially from critics or the public.</span><br>
-<span class="vocab-spanish">(elogios/reconocimiento)</span><br>
+<span class="vocab-word">acclaim</span>
+<span class="vocab-definition">Enthusiastic praise or approval, especially from critics or the public.</span>
+<span class="vocab-spanish">(elogios/reconocimiento)</span>
 <span class="vocab-example">Example: "The new manufacturing process received acclaim for its efficiency and reduced waste."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">satirical</span><br>
-<span class="vocab-definition">Using humor, irony, or exaggeration to criticize or mock something.</span><br>
-<span class="vocab-spanish">(satírica)</span><br>
+<span class="vocab-word">satirical</span>
+<span class="vocab-definition">Using humor, irony, or exaggeration to criticize or mock something.</span>
+<span class="vocab-spanish">(satírica)</span>
 <span class="vocab-example">Example: "The presentation included a satirical look at common workplace communication failures."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">portrayal</span><br>
-<span class="vocab-definition">A representation or description of someone or something in a particular way.</span><br>
-<span class="vocab-spanish">(representación/retrato)</span><br>
+<span class="vocab-word">portrayal</span>
+<span class="vocab-definition">A representation or description of someone or something in a particular way.</span>
+<span class="vocab-spanish">(representación/retrato)</span>
 <span class="vocab-example">Example: "The company's portrayal of its safety culture in the annual report was very positive."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">cater to</span><br>
-<span class="vocab-definition">To provide what is needed or wanted by a particular person or group.</span><br>
-<span class="vocab-spanish">(atender/servir)</span><br>
+<span class="vocab-word">cater to</span>
+<span class="vocab-definition">To provide what is needed or wanted by a particular person or group.</span>
+<span class="vocab-spanish">(atender/servir)</span>
 <span class="vocab-example">Example: "Our IT department caters to the specific software needs of each department."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">sparking</span><br>
-<span class="vocab-definition">Causing something to start or happen; triggering.</span><br>
-<span class="vocab-spanish">(provocar/generar)</span><br>
+<span class="vocab-word">sparking</span>
+<span class="vocab-definition">Causing something to start or happen; triggering.</span>
+<span class="vocab-spanish">(provocar/generar)</span>
 <span class="vocab-example">Example: "The new policy is sparking debate among employees about work-life balance."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">booms</span><br>
-<span class="vocab-definition">Periods of sudden growth, increase, or prosperity.</span><br>
-<span class="vocab-spanish">(auges/aumentos repentinos)</span><br>
+<span class="vocab-word">booms</span>   
+<span class="vocab-definition">Periods of sudden growth, increase, or prosperity.</span>
+<span class="vocab-spanish">(auges/aumentos repentinos)</span>
 <span class="vocab-example">Example: "The semiconductor industry has experienced several booms and downturns over the decades."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">seek out</span><br>
-<span class="vocab-definition">To search for and find something or someone.</span><br>
-<span class="vocab-spanish">(buscar)</span><br>
+<span class="vocab-word">seek out</span>
+<span class="vocab-definition">To search for and find something or someone.</span>
+<span class="vocab-spanish">(buscar)</span>
 <span class="vocab-example">Example: "When troubleshooting complex issues, experienced engineers seek out root causes rather than treating symptoms."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">dubbed</span><br>
-<span class="vocab-definition">Given a particular name or nickname.</span><br>
-<span class="vocab-spanish">(apodado/llamado)</span><br>
+<span class="vocab-word">dubbed</span>
+<span class="vocab-definition">Given a particular name or nickname.</span>
+<span class="vocab-spanish">(apodado/llamado)</span>
 <span class="vocab-example">Example: "The new automated system has been dubbed 'Smart Factory 2.0' by our team."</span>
 </div>
 </div>
@@ -829,16 +839,16 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">starring role</span><br>
-<span class="vocab-definition">The main or most important position in a performance or situation.</span><br>
-<span class="vocab-spanish">(papel protagonista)</span><br>
+<span class="vocab-word">starring role</span>
+<span class="vocab-definition">The main or most important position in a performance or situation.</span>
+<span class="vocab-spanish">(papel protagonista)</span>
 <span class="vocab-example">Example: "Quality control plays a starring role in our production process."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">alike</span><br>
-<span class="vocab-definition">In the same way; equally; similarly.</span><br>
-<span class="vocab-spanish">(por igual/de manera similar)</span><br>
+<span class="vocab-word">alike</span>
+<span class="vocab-definition">In the same way; equally; similarly.</span>
+<span class="vocab-spanish">(por igual/de manera similar)</span>
 <span class="vocab-example">Example: "The new safety regulations affect supervisors and workers alike."</span>
 </div>
 </div>
@@ -851,37 +861,37 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">rebate program</span><br>
-<span class="vocab-definition">A system that offers partial refunds or financial incentives to encourage certain activities.</span><br>
-<span class="vocab-spanish">(programa de reembolso/incentivos)</span><br>
+<span class="vocab-word">rebate program</span>
+<span class="vocab-definition">A system that offers partial refunds or financial incentives to encourage certain activities.</span>
+<span class="vocab-spanish">(programa de reembolso/incentivos)</span>
 <span class="vocab-example">Example: "Our company offers a rebate program for employees who purchase energy-efficient vehicles."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">lure</span><br>
-<span class="vocab-definition">To attract or entice someone, often with the promise of something desirable.</span><br>
-<span class="vocab-spanish">(atraer)</span><br>
+<span class="vocab-word">lure</span>
+<span class="vocab-definition">To attract or entice someone, often with the promise of something desirable.</span>
+<span class="vocab-spanish">(atraer)</span>
 <span class="vocab-example">Example: "The company is trying to lure experienced engineers from competitors with better benefits packages."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">stiffened</span><br>
-<span class="vocab-definition">Became more intense, severe, or competitive.</span><br>
-<span class="vocab-spanish">(endurecido/intensificado)</span><br>
+<span class="vocab-word">stiffened</span>
+<span class="vocab-definition">Became more intense, severe, or competitive.</span>
+<span class="vocab-spanish">(endurecido/intensificado)</span>
 <span class="vocab-example">Example: "Competition in the electronics manufacturing sector has stiffened considerably over the past five years."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">sweeten</span><br>
-<span class="vocab-definition">To make an offer or deal more attractive by adding benefits or incentives.</span><br>
-<span class="vocab-spanish">(endulzar/mejorar)</span><br>
+<span class="vocab-word">sweeten</span>
+<span class="vocab-definition">To make an offer or deal more attractive by adding benefits or incentives.</span>
+<span class="vocab-spanish">(endulzar/mejorar)</span>
 <span class="vocab-example">Example: "To sweeten the proposal, we included extended warranty coverage and free installation."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">keep up</span><br>
-<span class="vocab-definition">To maintain the same level or pace as competitors or standards.</span><br>
-<span class="vocab-spanish">(mantenerse al día)</span><br>
+<span class="vocab-word">keep up</span>
+<span class="vocab-definition">To maintain the same level or pace as competitors or standards.</span>
+<span class="vocab-spanish">(mantenerse al día)</span>
 <span class="vocab-example">Example: "Our IT infrastructure must keep up with rapidly evolving cybersecurity threats."</span>
 </div>
 </div>
@@ -892,16 +902,16 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">estimates</span><br>
-<span class="vocab-definition">Calculates or judges the approximate value, number, or extent of something.</span><br>
-<span class="vocab-spanish">(estima)</span><br>
+<span class="vocab-word">estimates</span>
+<span class="vocab-definition">Calculates or judges the approximate value, number, or extent of something.</span>
+<span class="vocab-spanish">(estima)</span>
 <span class="vocab-example">Example: "The project manager estimates that the system upgrade will take three months to complete."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">generates</span><br>
-<span class="vocab-definition">Produces, creates, or causes something to exist or occur.</span><br>
-<span class="vocab-spanish">(genera)</span><br>
+<span class="vocab-word">generates</span>
+<span class="vocab-definition">Produces, creates, or causes something to exist or occur.</span>
+<span class="vocab-spanish">(genera)</span>
 <span class="vocab-example">Example: "Our new production line generates 30% less waste than the old system."</span>
 </div>
 </div>
@@ -912,16 +922,16 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">pilgrimage</span><br>
-<span class="vocab-definition">A journey to a place of special significance; often used metaphorically for any important journey.</span><br>
-<span class="vocab-spanish">(peregrinación)</span><br>
+<span class="vocab-word">pilgrimage</span>
+<span class="vocab-definition">A journey to a place of special significance; often used metaphorically for any important journey.</span>
+<span class="vocab-spanish">(peregrinación)</span>
 <span class="vocab-example">Example: "Every year, industry professionals make a pilgrimage to the international trade show in Las Vegas."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">coral reefs</span><br>
-<span class="vocab-definition">Underwater ecosystems formed by colonies of coral polyps; extremely important for marine biodiversity.</span><br>
-<span class="vocab-spanish">(arrecifes de coral)</span><br>
+<span class="vocab-word">coral reefs</span>
+<span class="vocab-definition">Underwater ecosystems formed by colonies of coral polyps; extremely important for marine biodiversity.</span>
+<span class="vocab-spanish">(arrecifes de coral)</span>
 <span class="vocab-example">Example: "Our company's environmental policy includes protecting coral reefs near our coastal facilities."</span>
 </div>
 </div>
@@ -932,9 +942,9 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">mindful</span><br>
-<span class="vocab-definition">Conscious or aware of something; being careful and attentive.</span><br>
-<span class="vocab-spanish">(consciente/cuidadoso)</span><br>
+<span class="vocab-word">mindful</span>
+<span class="vocab-definition">Conscious or aware of something; being careful and attentive.</span>
+<span class="vocab-spanish">(consciente/cuidadoso)</span>
 <span class="vocab-example">Example: "All employees must be mindful of safety protocols when working with hazardous materials."</span>
 </div>
 </div>
@@ -947,9 +957,9 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">account for</span><br>
-<span class="vocab-definition">To constitute or represent a particular amount or proportion of something.</span><br>
-<span class="vocab-spanish">(representar/constituir)</span><br>
+<span class="vocab-word">account for</span>
+<span class="vocab-definition">To constitute or represent a particular amount or proportion of something.</span>
+<span class="vocab-spanish">(representar/constituir)</span>
 <span class="vocab-example">Example: "Manufacturing errors account for only 2% of our total production issues this quarter."</span>
 </div>
 </div>
@@ -960,23 +970,23 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">infinity (pools)</span><br>
-<span class="vocab-definition">In this context, refers to swimming pools designed to give the visual effect of water extending to the horizon.</span><br>
-<span class="vocab-spanish">(infinito - piscinas de borde infinito)</span><br>
+<span class="vocab-word">infinity (pools)</span>
+<span class="vocab-definition">In this context, refers to swimming pools designed to give the visual effect of water extending to the horizon.</span>
+<span class="vocab-spanish">(infinito - piscinas de borde infinito)</span>
 <span class="vocab-example">Example: "The new corporate retreat center features an infinity pool overlooking the mountains."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">butler</span><br>
-<span class="vocab-definition">A personal servant who provides high-level service and assistance, especially in luxury settings.</span><br>
-<span class="vocab-spanish">(mayordomo)</span><br>
+<span class="vocab-word">butler</span>
+<span class="vocab-definition">A personal servant who provides high-level service and assistance, especially in luxury settings.</span>
+<span class="vocab-spanish">(mayordomo)</span>
 <span class="vocab-example">Example: "Some executive-level hotels offer butler service to their premium guests."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">underway</span><br>
-<span class="vocab-definition">In progress; currently happening or being done.</span><br>
-<span class="vocab-spanish">(en marcha/en curso)</span><br>
+<span class="vocab-word">underway</span>
+<span class="vocab-definition">In progress; currently happening or being done.</span>
+<span class="vocab-spanish">(en marcha/en curso)</span>
 <span class="vocab-example">Example: "The system upgrade is underway and should be completed by next week."</span>
 </div>
 </div>
@@ -987,16 +997,16 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">logistical</span><br>
-<span class="vocab-definition">Related to the detailed organization and implementation of complex operations.</span><br>
-<span class="vocab-spanish">(logísticas)</span><br>
+<span class="vocab-word">logistical</span>
+<span class="vocab-definition">Related to the detailed organization and implementation of complex operations.</span>
+<span class="vocab-spanish">(logísticas)</span>
 <span class="vocab-example">Example: "We're facing logistical challenges in coordinating shipments between our three facilities."</span>
 </div>
 
 <div class="vocab-item">
-<span class="vocab-word">strains</span><br>
-<span class="vocab-definition">Pressures, stresses, or demands that cause difficulty or problems.</span><br>
-<span class="vocab-spanish">(tensiones/presiones)</span><br>
+<span class="vocab-word">strains</span>
+<span class="vocab-definition">Pressures, stresses, or demands that cause difficulty or problems.</span>
+<span class="vocab-spanish">(tensiones/presiones)</span>
 <span class="vocab-example">Example: "The sudden increase in orders has put significant strains on our production capacity."</span>
 </div>
 </div>
@@ -1007,9 +1017,9 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">prone to</span><br>
-<span class="vocab-definition">Having a tendency or likelihood to experience something (usually negative).</span><br>
-<span class="vocab-spanish">(propenso a)</span><br>
+<span class="vocab-word">prone to</span>
+<span class="vocab-definition">Having a tendency or likelihood to experience something (usually negative).</span>
+<span class="vocab-spanish">(propenso a)</span>
 <span class="vocab-example">Example: "Older equipment is more prone to breakdowns and requires frequent maintenance."</span>
 </div>
 </div>
@@ -1020,9 +1030,9 @@ details p {
 <h3>📚 Vocabulary Box</h3>
 
 <div class="vocab-item">
-<span class="vocab-word">premiere</span><br>
-<span class="vocab-definition">The first public showing or performance of something, especially a film or TV show.</span><br>
-<span class="vocab-spanish">(estreno)</span><br>
+<span class="vocab-word">premiere</span>
+<span class="vocab-definition">The first public showing or performance of something, especially a film or TV show.</span>
+<span class="vocab-spanish">(estreno)</span>
 <span class="vocab-example">Example: "The premiere of our new product line is scheduled for next month's trade show."</span>
 </div>
 </div>
