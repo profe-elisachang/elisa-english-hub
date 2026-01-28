@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shades of Safety: Choosing the Right Sunglasses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ff9800;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        .expressions-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .expression-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .expression-item strong {
+            color: #1976d2;
+            font-size: 1.2em;
+        }
+        
+        .expression-spanish {
+            color: #757575;
+            font-style: italic;
+            display: block;
+            margin: 8px 0;
+        }
+        
+        .expression-example {
+            color: #424242;
+            display: block;
+            margin-top: 8px;
+            padding-left: 15px;
+            border-left: 3px solid #90caf9;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+        }
+        
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.9em;
+            font-weight: 400;
+            z-index: 1000;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition-delay: 0.2s;
+        }
+        
+        .vocab-box {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .vocab-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .vocab-word {
+            font-weight: 700;
+            color: #e65100;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .vocab-translation {
+            font-style: italic;
+            color: #757575;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .vocab-example {
+            color: #424242;
+            font-size: 0.95em;
+            display: block;
+        }
+        
+        .discussion-questions {
+            background-color: #f1f8e9;
+            border-left: 5px solid #689f38;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        
+        .discussion-questions ul {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+        
+        .discussion-questions li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        .practice-section {
+            background-color: #fce4ec;
+            border-left: 5px solid #e91e63;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        
+        .practice-question {
+            background-color: #ffffff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        details {
+            margin-top: 20px;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e91e63;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #c2185b;
+            padding: 10px;
+        }
+        
+        summary:hover {
+            background-color: #fce4ec;
+        }
+        
+        .answer-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f8bbd0;
+        }
+        
+        .mobile-note {
+            background-color: #fff9c4;
+            border: 1px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕶️ Shades of Safety: Choosing the Right Sunglasses</h1>
+        
+        <div class="expressions-box">
+            <h2>Useful Expressions</h2>
+            
+            <div class="expression-item">
+                <strong>Could you explain the difference between...?</strong>
+                <span class="expression-spanish">¿Podrías explicar la diferencia entre...?</span>
+                <span class="expression-example">Could you explain the difference between UV protection and polarization?</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>What should I look for when...?</strong>
+                <span class="expression-spanish">¿Qué debería buscar cuando...?</span>
+                <span class="expression-example">What should I look for when selecting safety glasses for outdoor work?</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>It's important to keep in mind that...</strong>
+                <span class="expression-spanish">Es importante tener en cuenta que...</span>
+                <span class="expression-example">It's important to keep in mind that darker lenses don't always mean better UV protection.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>How does this feature help...?</strong>
+                <span class="expression-spanish">¿Cómo ayuda esta característica...?</span>
+                <span class="expression-example">How does this feature help reduce eye strain during inspection work?</span>
+            </div>
+        </div>
+        
+        <h2>Article</h2>
+        
+        <div class="mobile-note">
+            📱 <strong>Mobile users:</strong> Tap and hold highlighted words to see Spanish translations.
+        </div>
+        
+        <p>When <span class="highlight" title="comprando">purchasing</span> sunglasses, many people <span class="highlight" title="priorizan">prioritize</span> fashion or comfort. However, experts <span class="highlight" title="advierten">warn</span> that eye safety should be the <span class="highlight" title="principal">foremost</span> concern. <span class="highlight" title="Prolongada">Prolonged</span> <span class="highlight" title="exposición">exposure</span> to ultraviolet (UV) rays can lead to serious eye problems, including cataracts, macular degeneration, and even a painful condition called photokeratitis, or "sunburn of the eye." Because of these risks, selecting sunglasses with proper UV protection is essential.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Paragraph 1</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">purchasing</span>
+                    <span class="vocab-translation">comprando</span>
+                    <span class="vocab-example">We are currently purchasing new safety equipment for the warehouse.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">prioritize</span>
+                    <span class="vocab-translation">priorizar</span>
+                    <span class="vocab-example">Our company prioritizes quality control over speed in production.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">warn</span>
+                    <span class="vocab-translation">advertir</span>
+                    <span class="vocab-example">The supervisor warned us about the safety hazards in the storage area.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">foremost</span>
+                    <span class="vocab-translation">principal</span>
+                    <span class="vocab-example">Safety is the foremost consideration in our manufacturing process.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">prolonged</span>
+                    <span class="vocab-translation">prolongada</span>
+                    <span class="vocab-example">Prolonged exposure to loud noise requires hearing protection.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">exposure</span>
+                    <span class="vocab-translation">exposición</span>
+                    <span class="vocab-example">Workers must limit their exposure to harmful chemicals.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p>One common <span class="highlight" title="concepto erróneo">misconception</span> is that darker lenses automatically block more UV rays. In fact, lens color and darkness <span class="highlight" title="tienen poco que ver con">have little to do with</span> UV protection. A pair of stylish, dark sunglasses without the <span class="highlight" title="apropiado">appropriate</span> coating can be dangerous because the darkness causes <span class="highlight" title="pupilas">pupils</span> to <span class="highlight" title="dilatarse">dilate</span>, allowing more harmful rays to enter the eyes. To keep your eyes safe, sunglasses should block 99 to 100 percent of both UVA (ultraviolet A) and UVB (ultraviolet B) rays, which is usually marked on the label as UV 400.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Paragraph 2</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">misconception</span>
+                    <span class="vocab-translation">concepto erróneo</span>
+                    <span class="vocab-example">There is a common misconception that all inspections take the same amount of time.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">have little to do with</span>
+                    <span class="vocab-translation">tienen poco que ver con</span>
+                    <span class="vocab-example">The packaging color has little to do with the product quality inside.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">appropriate</span>
+                    <span class="vocab-translation">apropiado</span>
+                    <span class="vocab-example">Please wear appropriate protective gear when entering the production area.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">pupils</span>
+                    <span class="vocab-translation">pupilas</span>
+                    <span class="vocab-example">Bright lights can cause your pupils to become smaller.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">dilate</span>
+                    <span class="vocab-translation">dilatarse</span>
+                    <span class="vocab-example">In low light conditions, pupils dilate to allow more light to enter.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p>Another concern is <span class="highlight" title="deslumbramiento">glare</span>, which can reduce <span class="highlight" title="visibilidad">visibility</span> and increase the risk of accidents, especially while driving. Polarized lenses are helpful because they cut glare from <span class="highlight" title="reflectantes">reflective</span> surfaces like water, snow, or car hoods. Still, polarization is not the same as UV protection, so consumers should look for sunglasses that offer both features.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Paragraph 3</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">glare</span>
+                    <span class="vocab-translation">deslumbramiento</span>
+                    <span class="vocab-example">The glare from the computer screen can cause eye strain during long shifts.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">visibility</span>
+                    <span class="vocab-translation">visibilidad</span>
+                    <span class="vocab-example">Poor visibility in the warehouse requires additional lighting for safety.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">reflective</span>
+                    <span class="vocab-translation">reflectantes</span>
+                    <span class="vocab-example">Workers wear reflective vests to be seen clearly in the loading area.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p>With the <span class="highlight" title="premisa">premise</span> of safety in mind, the color of the lens <span class="highlight" title="merece atención">deserves attention</span>. When you walk into a store, you may be surprised by how many colors are available. These <span class="highlight" title="tintes">tints</span> are not just about fashion; each <span class="highlight" title="sirve">serves</span> a different <span class="highlight" title="propósito">purpose</span>, helping improve vision and giving comfort under different lighting conditions. More importantly, the right lens tint can reduce risks and help drivers, cyclists, and athletes quickly <span class="highlight" title="adaptarse a">adapt to</span> changing environments.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Paragraph 4</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">premise</span>
+                    <span class="vocab-translation">premisa</span>
+                    <span class="vocab-example">The premise of our quality system is that prevention is better than correction.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">deserves attention</span>
+                    <span class="vocab-translation">merece atención</span>
+                    <span class="vocab-example">This safety issue deserves attention from all team members.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">tints</span>
+                    <span class="vocab-translation">tintes</span>
+                    <span class="vocab-example">Different tints on safety glasses can help in different lighting conditions.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">serves</span>
+                    <span class="vocab-translation">sirve</span>
+                    <span class="vocab-example">This equipment serves multiple purposes in the production line.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">purpose</span>
+                    <span class="vocab-translation">propósito</span>
+                    <span class="vocab-example">The purpose of this inspection is to ensure product quality meets standards.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">adapt to</span>
+                    <span class="vocab-translation">adaptarse a</span>
+                    <span class="vocab-example">New employees need time to adapt to our company's workflow.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p>Here's a <span class="highlight" title="desglose">breakdown</span> of several common lens colors and their functions to help you choose the right one for your needs:</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Paragraph 5</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">breakdown</span>
+                    <span class="vocab-translation">desglose</span>
+                    <span class="vocab-example">The manager provided a breakdown of the monthly production costs.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p><strong>Green:</strong> This tint <span class="highlight" title="mejora">enhances</span> contrast by <span class="highlight" title="filtrando">filtering</span> some blue light, which also reduces glare and eye <span class="highlight" title="tensión">strain</span>. It's a great choice for sports like golf and tennis, or for everyday use.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Green Tint</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">enhances</span>
+                    <span class="vocab-translation">mejora</span>
+                    <span class="vocab-example">This software enhances productivity by automating repetitive tasks.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">filtering</span>
+                    <span class="vocab-translation">filtrando</span>
+                    <span class="vocab-example">Filtering defective items is an essential part of quality control.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">strain</span>
+                    <span class="vocab-translation">tensión</span>
+                    <span class="vocab-example">Repeated lifting can cause muscle strain if done incorrectly.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p><strong>Gray:</strong> A neutral tint that reduces glare without <span class="highlight" title="distorsionando">distorting</span> colors and works well on both cloudy and sunny days. It also helps prevent <span class="highlight" title="fatiga">fatigue</span>, making it an excellent <span class="highlight" title="multiuso">all-purpose</span> lens for activities like driving.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Gray Tint</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">distorting</span>
+                    <span class="vocab-translation">distorsionando</span>
+                    <span class="vocab-example">Poor lighting can distort colors during visual inspection.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">fatigue</span>
+                    <span class="vocab-translation">fatiga</span>
+                    <span class="vocab-example">Regular breaks help prevent worker fatigue during long shifts.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">all-purpose</span>
+                    <span class="vocab-translation">multiuso</span>
+                    <span class="vocab-example">We need an all-purpose cleaning solution for the workspace.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p><strong>Blue or purple:</strong> These lenses provide enhanced color perception and help wearers see the <span class="highlight" title="contornos">contours</span> of objects more clearly. They perform well in <span class="highlight" title="nublado">foggy</span> or <span class="highlight" title="brumoso">misty</span> conditions and offer protection from reflective surfaces like snow.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Blue/Purple Tint</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">contours</span>
+                    <span class="vocab-translation">contornos</span>
+                    <span class="vocab-example">Quality inspectors check the contours of each product for defects.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">foggy</span>
+                    <span class="vocab-translation">nublado</span>
+                    <span class="vocab-example">Driving is more dangerous on foggy days with low visibility.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">misty</span>
+                    <span class="vocab-translation">brumoso</span>
+                    <span class="vocab-example">The warehouse can become misty during the early morning hours.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p><strong>Red or rose:</strong> By filtering some blue light, these lenses can improve visibility while driving and increase eye comfort. They also help improve depth perception and enhance detail, making them great for sports like skiing.</p>
+        
+        <p><strong>Yellow, orange, or gold:</strong> These lenses <span class="highlight" title="sobresalen en">excel in</span> low-light conditions, offering excellent depth perception and making one's <span class="highlight" title="entorno">surroundings</span> appear brighter. They are suitable for both outdoor and indoor sports, but they may cause color distortion.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Yellow/Orange/Gold Tint</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">excel in</span>
+                    <span class="vocab-translation">sobresalen en</span>
+                    <span class="vocab-example">Our team excels in meeting tight production deadlines.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">surroundings</span>
+                    <span class="vocab-translation">entorno</span>
+                    <span class="vocab-example">Workers should always be aware of their surroundings for safety reasons.</span>
+                </div>
+            </div>
+        </div>
+        
+        <p><strong>Amber or brown:</strong> This glare-reducing tint helps make cloudy days seem brighter. These lenses filter blue light and improve depth perception, which is useful for sports like golf or baseball, where one needs to <span class="highlight" title="detectar">spot</span> small objects <span class="highlight" title="desde lejos">from a distance</span>.</p>
+        
+        <div class="vocab-box">
+            <h3>Vocabulary - Amber/Brown Tint</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <span class="vocab-word">spot</span>
+                    <span class="vocab-translation">detectar</span>
+                    <span class="vocab-example">It's important to spot defects early in the manufacturing process.</span>
+                </div>
+                <div class="vocab-item">
+                    <span class="vocab-word">from a distance</span>
+                    <span class="vocab-translation">desde lejos</span>
+                    <span class="vocab-example">You can see the warehouse loading dock from a distance.</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="discussion-questions">
+            <h2>Discussion Questions</h2>
+            <ul>
+                <li>In your opinion, what is the most important factor when choosing sunglasses for work or daily activities? Why?</li>
+                <li>Have you ever experienced eye strain or discomfort at work? What do you think could help prevent this problem?</li>
+                <li>If you had to recommend sunglasses to a coworker who drives frequently for deliveries, what features would you suggest and why?</li>
+            </ul>
+        </div>
+        
+        <div class="practice-section">
+            <h2>Self-Practice Questions</h2>
+            
+            <div class="practice-question">
+                <strong>1.</strong> Fill in the blank: Darker sunglasses without proper UV coating can be dangerous because they cause pupils to __________, allowing more harmful rays to enter.
+            </div>
+            
+            <div class="practice-question">
+                <strong>2.</strong> Match the lens tint with its primary benefit:
+                <br>a) Green - _______
+                <br>b) Gray - _______
+                <br>c) Yellow/Orange - _______
+                <br><br>
+                Options: excellent in low-light conditions / reduces glare without distorting colors / enhances contrast for sports
+            </div>
+            
+            <div class="practice-question">
+                <strong>3.</strong> True or False: Polarized lenses and UV protection are the same thing.
+            </div>
+            
+            <div class="practice-question">
+                <strong>4.</strong> According to the article, what percentage of UVA and UVB rays should quality sunglasses block?
+            </div>
+            
+            <details>
+                <summary>Click to see Reference Answers</summary>
+                <div class="answer-content">
+                    <p><strong>Answer 1:</strong> dilate</p>
+                    <p><strong>Answer 2:</strong> a) enhances contrast for sports, b) reduces glare without distorting colors, c) excellent in low-light conditions</p>
+                    <p><strong>Answer 3:</strong> False. Polarization reduces glare from reflective surfaces, while UV protection blocks harmful ultraviolet rays. They are different features, and sunglasses should ideally have both.</p>
+                    <p><strong>Answer 4:</strong> 99 to 100 percent (marked as UV 400 on the label)</p>
+                </div>
+            </details>
+        </div>
+        
+    </div>
+</body>
+</html>
