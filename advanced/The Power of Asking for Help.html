@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Asking for Help - English Lesson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff6b35;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        .expressions-box {
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .expression-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .expression-item strong {
+            color: #2980b9;
+            font-size: 1.15em;
+        }
+        
+        .expression-item .spanish {
+            color: #27ae60;
+            font-style: italic;
+            display: block;
+            margin: 8px 0;
+        }
+        
+        .expression-item .example {
+            color: #555;
+            font-style: italic;
+            display: block;
+            margin-top: 8px;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .highlight:hover {
+            background-color: #ffeb3b;
+            border-bottom-color: #f57c00;
+        }
+        
+        .article-section {
+            background-color: #fafafa;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .vocab-box {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .vocab-box h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .vocab-word {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #d84315;
+            margin-bottom: 8px;
+        }
+        
+        .vocab-translation {
+            color: #2e7d32;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .vocab-example {
+            color: #555;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+        
+        .discussion-questions {
+            background-color: #e8f5e9;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .discussion-questions ul {
+            list-style-position: inside;
+            margin-top: 15px;
+        }
+        
+        .discussion-questions li {
+            margin-bottom: 20px;
+            font-size: 1.15em;
+            color: #2e7d32;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        .practice-section {
+            background-color: #f3e5f5;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border-left: 5px solid #9c27b0;
+        }
+        
+        .practice-question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .practice-question strong {
+            color: #7b1fa2;
+            font-size: 1.1em;
+        }
+        
+        details {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ede7f6;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        summary {
+            font-weight: 700;
+            color: #6a1b9a;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        summary:hover {
+            color: #4a148c;
+        }
+        
+        .answer-content {
+            margin-top: 10px;
+            padding: 10px;
+            color: #555;
+        }
+        
+        .note {
+            background-color: #fff9c4;
+            border-left: 4px solid #fbc02d;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .vocab-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤝 The Power of Asking for Help</h1>
+        <p style="color: #666; font-style: italic; margin-bottom: 30px;">Strategic vulnerability can make leaders more effective and trustworthy</p>
+        
+        <!-- USEFUL EXPRESSIONS -->
+        <h2>💬 Useful Expressions</h2>
+        <div class="expressions-box">
+            <div class="expression-item">
+                <strong>Could you help me understand...?</strong>
+                <span class="spanish">¿Podrías ayudarme a entender...?</span>
+                <span class="example">Could you help me understand the root cause of this equipment failure?</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>I'd value your input on...</strong>
+                <span class="spanish">Valoraría tu opinión sobre...</span>
+                <span class="example">I'd value your input on improving our safety protocols.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>Let's put our heads together to...</strong>
+                <span class="spanish">Unamos nuestras ideas para...</span>
+                <span class="example">Let's put our heads together to solve this production bottleneck.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>I might be missing something here...</strong>
+                <span class="spanish">Podría estar pasando algo por alto...</span>
+                <span class="example">I might be missing something here—can you review this risk assessment?</span>
+            </div>
+        </div>
+        
+        <!-- ARTICLE -->
+        <h2>📖 Article</h2>
+        
+        <div class="article-section">
+            <h3>The Myth of the All-Knowing Leader</h3>
+            <p>There's a myth that to be a good leader, you need to be the smartest person in the room. Many leaders <span class="highlight" title="tener dificultades para">struggle</span> to <span class="highlight" title="admitir">admit</span> they don't have all the answers. They're <span class="highlight" title="renuentes, reticentes">reluctant</span> to ask for help and <span class="highlight" title="terminar">end up</span> <span class="highlight" title="luchando">struggling</span> in silence.</p>
+            
+            <p>This reluctance is normal—it's a fear-based response to not wanting to look <span class="highlight" title="incompetente">incompetent</span> to your team or superiors. But there is a way to ask for help that <span class="highlight" title="fortalece">strengthens</span> your position as a leader, rather than <span class="highlight" title="debilita, socava">undermines</span> it.</p>
+        </div>
+        
+        <!-- VOCABULARY BOX - Paragraph 1 & 2 -->
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - The Myth of the All-Knowing Leader</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">struggle</div>
+                    <div class="vocab-translation">tener dificultades para, luchar</div>
+                    <div class="vocab-example">Many teams struggle to meet tight deadlines without proper planning.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">admit</div>
+                    <div class="vocab-translation">admitir, reconocer</div>
+                    <div class="vocab-example">Good managers admit their mistakes and learn from them.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">reluctant</div>
+                    <div class="vocab-translation">renuente, reticente</div>
+                    <div class="vocab-example">Employees are often reluctant to report safety issues if they fear blame.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">end up</div>
+                    <div class="vocab-translation">terminar, acabar</div>
+                    <div class="vocab-example">If we don't address this issue now, we'll end up with bigger problems later.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">incompetent</div>
+                    <div class="vocab-translation">incompetente</div>
+                    <div class="vocab-example">Asking questions doesn't make you look incompetent—it shows you want to learn.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">strengthens</div>
+                    <div class="vocab-translation">fortalece, refuerza</div>
+                    <div class="vocab-example">Regular training strengthens our team's technical capabilities.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">undermines</div>
+                    <div class="vocab-translation">debilita, socava, mina</div>
+                    <div class="vocab-example">Poor communication undermines trust between departments.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h3>What You Gain When You Ask for Help</h3>
+            <p>Reluctance to ask for help isn't just pride; it's often about perception. One study found that male leaders risked being perceived as less competent when they asked for a lot of help. In contrast, their female <span class="highlight" title="contrapartes, homólogas">counterparts</span> didn't experience a significant drop in perceived competence.</p>
+            
+            <p>Researchers <span class="highlight" title="advirtieron, alertaron">cautioned</span> that it isn't actually whether or not you ask for help, but <span class="highlight" title="cómo">how</span> you ask. The same study noted that asking for help is critical for leaders to learn and improve. The benefits <span class="highlight" title="superan con creces">far outweigh</span> the perceived risks. Harvard Business School researchers Alison Wood Brooks and Francesca Gino found that when we ask others for advice, they view us as more competent. It signals that we value their <span class="highlight" title="experiencia, conocimientos">expertise</span> and don't <span class="highlight" title="sobrestimar">overestimate</span> ourselves, which is a sign of self-awareness.</p>
+            
+            <p>Asking for help is also likely to <span class="highlight" title="producir, generar">yield</span> better performance results. By <span class="highlight" title="utilizando, aprovechando">utilizing</span> the knowledge and <span class="highlight" title="perspicacia, comprensión profunda">insight</span> of your team, you expand your collective problem-solving capacity. <span class="highlight" title="Aprovechar">Leveraging</span> people's strengths to solve complex problems is the <span class="highlight" title="sello distintivo">hallmark</span> of a competent leader.</p>
+        </div>
+        
+        <!-- VOCABULARY BOX - What You Gain -->
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - What You Gain When You Ask for Help</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">counterparts</div>
+                    <div class="vocab-translation">contrapartes, homólogas</div>
+                    <div class="vocab-example">Our engineering team works closely with their counterparts in the Taiwan headquarters.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">cautioned</div>
+                    <div class="vocab-translation">advirtieron, alertaron, previnieron</div>
+                    <div class="vocab-example">Safety experts cautioned against skipping protective equipment during maintenance.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">how</div>
+                    <div class="vocab-translation">cómo (énfasis)</div>
+                    <div class="vocab-example">It's not just what you say in meetings, but how you say it that matters.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">far outweigh</div>
+                    <div class="vocab-translation">superan con creces</div>
+                    <div class="vocab-example">The benefits of preventive maintenance far outweigh the costs of emergency repairs.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">expertise</div>
+                    <div class="vocab-translation">experiencia, conocimientos especializados, pericia</div>
+                    <div class="vocab-example">We value the expertise of our IT team when implementing new systems.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">overestimate</div>
+                    <div class="vocab-translation">sobrestimar, sobreestimar</div>
+                    <div class="vocab-example">Don't overestimate how quickly we can complete this project—be realistic.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">yield</div>
+                    <div class="vocab-translation">producir, generar, dar como resultado</div>
+                    <div class="vocab-example">Collaborative problem-solving sessions often yield innovative solutions.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">utilizing</div>
+                    <div class="vocab-translation">utilizando, aprovechando</div>
+                    <div class="vocab-example">By utilizing data analytics, we can identify process inefficiencies faster.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">insight</div>
+                    <div class="vocab-translation">perspicacia, comprensión profunda, visión</div>
+                    <div class="vocab-example">Your insight into the production line helped us reduce downtime significantly.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">leveraging</div>
+                    <div class="vocab-translation">aprovechar, sacar provecho de</div>
+                    <div class="vocab-example">Leveraging automation technology can improve our manufacturing efficiency.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">hallmark</div>
+                    <div class="vocab-translation">sello distintivo, característica distintiva</div>
+                    <div class="vocab-example">Attention to detail is the hallmark of quality engineering work.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h3>Learning to Practice Strategic Vulnerability</h3>
+            <p>There's a term for what effective leaders do when they admit they don't know everything: strategic vulnerability. Asking questions positions you to lead through vulnerability because you demonstrate that it has a purpose: to empower others, utilize their expertise, build trust and <span class="highlight" title="generar, provocar">spark</span> collective solutions.</p>
+            
+            <p>Harvard Professor Amy Edmondson says the admission of "I might miss something here, I need to hear from you" <span class="highlight" title="sienta las bases">lays a foundation</span> of a psychologically safe environment.</p>
+            
+            <p>By modeling <span class="highlight" title="falibilidad">fallibility</span>—not <span class="highlight" title="ineptitud">ineptitude</span>—you create an environment where people feel safe to speak up, ask questions and share ideas. When you ask questions, you appear accessible and <span class="highlight" title="accesible">approachable</span>.</p>
+            
+            <p>As a leader, you set the tone. What you do becomes the behaviors you accept, which your team <span class="highlight" title="refuerza">reinforces</span>. Asking questions models curiosity and humility. When people feel you value their input, they see how their contributions matter. Strategic vulnerability <span class="highlight" title="invierte el guion">flips the script</span> from looking incompetent to empowering your team.</p>
+        </div>
+        
+        <!-- VOCABULARY BOX - Strategic Vulnerability -->
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Learning to Practice Strategic Vulnerability</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">spark</div>
+                    <div class="vocab-translation">generar, provocar, encender</div>
+                    <div class="vocab-example">A good brainstorming session can spark creative solutions to complex problems.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">lays a foundation</div>
+                    <div class="vocab-translation">sienta las bases, establece los cimientos</div>
+                    <div class="vocab-example">Good communication lays a foundation for successful project implementation.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">fallibility</div>
+                    <div class="vocab-translation">falibilidad, capacidad de cometer errores</div>
+                    <div class="vocab-example">Acknowledging your fallibility makes you more relatable to your team.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">ineptitude</div>
+                    <div class="vocab-translation">ineptitud, incompetencia</div>
+                    <div class="vocab-example">Asking for help shows wisdom, not ineptitude.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">approachable</div>
+                    <div class="vocab-translation">accesible, cercano, abordable</div>
+                    <div class="vocab-example">An approachable manager encourages team members to share concerns openly.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">reinforces</div>
+                    <div class="vocab-translation">refuerza</div>
+                    <div class="vocab-example">Regular feedback reinforces positive behaviors in the workplace.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">flips the script</div>
+                    <div class="vocab-translation">invierte el guion, da la vuelta a la situación</div>
+                    <div class="vocab-example">Instead of hiding problems, transparent reporting flips the script and builds trust.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h3>How to Ask for Help Without Losing Authority</h3>
+            <p>Asking for help is crucial to leadership success. The key is to be intentional about when and how you ask. Here are some practical ways to ask for help that maintain your credibility:</p>
+            
+            <p><strong>Frame the problem as a shared challenge.</strong> Without <span class="highlight" title="cambiar, trasladar">shifting</span> accountability, frame the goal or problem as a collective one. Rather than, "I have no idea how we're going to launch this new product successfully," say "We're entering new territory—let's put our heads together to <span class="highlight" title="hacer una lluvia de ideas">brainstorm</span> how we can do this successfully."</p>
+            
+            <p><strong>Lean on the expertise of others.</strong> Highlighting the knowledge and expertise of the people around you shows respect and lets them know their contributions matter. "I know you're experienced in X—can you help me understand this better?"</p>
+            
+            <p><strong>Be specific and solution-focused.</strong> <span class="highlight" title="Vagas">Vague</span> <span class="highlight" title="súplicas, peticiones">pleas</span> can sound like panic, so be clear about the help you need. "Could you review [this plan] and see if we're missing anything?" shows you've got a <span class="highlight" title="control, dominio">handle</span> on the situation but see opportunities to <span class="highlight" title="cerrar brechas">close gaps</span>.</p>
+            
+            <p><strong>Use confident humility.</strong> Phrases like "I'd love your <span class="highlight" title="opinión, perspectiva">take</span> on this" <span class="highlight" title="transmitir">convey</span> optimism and authority <span class="highlight" title="junto con">alongside</span> openness. The goal is to <span class="highlight" title="afirmar, reafirmar">affirm</span> the other person's ability while acknowledging your limitations.</p>
+        </div>
+        
+        <!-- VOCABULARY BOX - How to Ask for Help -->
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - How to Ask for Help Without Losing Authority</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">shifting</div>
+                    <div class="vocab-translation">cambiar, trasladar</div>
+                    <div class="vocab-example">We're not shifting responsibility—we're sharing it across the team.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">brainstorm</div>
+                    <div class="vocab-translation">hacer una lluvia de ideas, generar ideas</div>
+                    <div class="vocab-example">Let's brainstorm ways to reduce energy consumption in our facility.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">vague</div>
+                    <div class="vocab-translation">vago, impreciso</div>
+                    <div class="vocab-example">Vague instructions lead to confusion—be specific about what you need.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">pleas</div>
+                    <div class="vocab-translation">súplicas, peticiones</div>
+                    <div class="vocab-example">Instead of desperate pleas for help, make clear, professional requests.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">handle</div>
+                    <div class="vocab-translation">control, dominio, manejo</div>
+                    <div class="vocab-example">She has a good handle on the new quality control procedures.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">close gaps</div>
+                    <div class="vocab-translation">cerrar brechas, llenar vacíos</div>
+                    <div class="vocab-example">We need to close gaps in our training program to improve safety compliance.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">take</div>
+                    <div class="vocab-translation">opinión, perspectiva, punto de vista</div>
+                    <div class="vocab-example">What's your take on the new environmental regulations?</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">convey</div>
+                    <div class="vocab-translation">transmitir, comunicar</div>
+                    <div class="vocab-example">Your tone and body language convey confidence to your team.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">alongside</div>
+                    <div class="vocab-translation">junto con, al lado de</div>
+                    <div class="vocab-example">We work alongside our Taiwan colleagues on global projects.</div>
+                </div>
+                
+                <div class="vocab-item">
+                    <div class="vocab-word">affirm</div>
+                    <div class="vocab-translation">afirmar, reafirmar, confirmar</div>
+                    <div class="vocab-example">It's important to affirm your team members' contributions regularly.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h3>Creating a Culture of Openness</h3>
+            <p>Leadership isn't about knowing everything. It's about <span class="highlight" title="aprovechar">leveraging</span> the strengths of those around you to create outcomes greater than the sum of their parts.</p>
+            
+            <p>When you combine clear intention with a thoughtful ask, you open the conversation to solve complex problems you alone couldn't accomplish. You create a culture where it's safe to speak up, ask questions and ask for help.</p>
+        </div>
+        
+        <!-- VOCABULARY BOX - Creating a Culture -->
+        <div class="vocab-box">
+            <h3>📚 Vocabulary - Creating a Culture of Openness</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">leveraging</div>
+                    <div class="vocab-translation">aprovechar, sacar provecho de</div>
+                    <div class="vocab-example">Leveraging each team member's unique skills leads to better project outcomes.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>📱 Mobile Note:</strong> On touch devices (phones/tablets), tap and hold highlighted words to see their Spanish translations. On computers, simply hover your mouse over the highlighted words.
+        </div>
+        
+        <!-- DISCUSSION QUESTIONS -->
+        <div class="discussion-questions">
+            <h2>💭 Discussion Questions</h2>
+            <ul>
+                <li>In your workplace, how comfortable do people feel asking their supervisor or manager for help? What factors make it easier or harder to ask for assistance?</li>
+                
+                <li>Can you share an example from your experience where asking for help (or NOT asking) affected the outcome of a project or task? What did you learn from that situation?</li>
+                
+                <li>The article mentions "strategic vulnerability" as a leadership skill. Do you think this concept applies differently in Mexican workplace culture compared to other cultures you've worked with? How so?</li>
+            </ul>
+        </div>
+        
+        <!-- SELF-PRACTICE QUESTIONS -->
+        <div class="practice-section">
+            <h2>✍️ Self-Practice Questions</h2>
+            
+            <div class="practice-question">
+                <strong>1. Fill in the blank:</strong><br>
+                Many leaders are __________ to ask for help because they fear looking incompetent to their team.
+                
+                <details>
+                    <summary>Show Reference Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answer:</strong> reluctant<br>
+                        <em>Explanation:</em> The article states that leaders are "reluctant to ask for help," meaning they are hesitant or unwilling because of fear.
+                    </div>
+                </details>
+            </div>
+            
+            <div class="practice-question">
+                <strong>2. True or False:</strong><br>
+                According to research mentioned in the article, asking for help always makes leaders appear less competent.
+                
+                <details>
+                    <summary>Show Reference Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answer:</strong> False<br>
+                        <em>Explanation:</em> The article explains that HOW you ask for help matters more than whether you ask. When done strategically, asking for help can actually make leaders appear MORE competent because it shows self-awareness and values others' expertise.
+                    </div>
+                </details>
+            </div>
+            
+            <div class="practice-question">
+                <strong>3. Match the strategy with its example:</strong><br><br>
+                <strong>Strategies:</strong><br>
+                A. Frame as shared challenge<br>
+                B. Lean on expertise<br>
+                C. Be specific and solution-focused<br>
+                D. Use confident humility<br><br>
+                
+                <strong>Examples:</strong><br>
+                1. "I know you're experienced in quality control—can you help me understand this better?"<br>
+                2. "Could you review this plan and see if we're missing anything?"<br>
+                3. "We're entering new territory—let's put our heads together."<br>
+                4. "I'd love your take on this approach."
+                
+                <details>
+                    <summary>Show Reference Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answers:</strong><br>
+                        A-3 (Frame as shared challenge: "We're entering new territory—let's put our heads together.")<br>
+                        B-1 (Lean on expertise: "I know you're experienced...")<br>
+                        C-2 (Be specific: "Could you review this plan...")<br>
+                        D-4 (Confident humility: "I'd love your take...")
+                    </div>
+                </details>
+            </div>
+            
+            <div class="practice-question">
+                <strong>4. Comprehension Question:</strong><br>
+                What is "strategic vulnerability" and why is it considered a positive leadership quality?
+                
+                <details>
+                    <summary>Show Reference Answer</summary>
+                    <div class="answer-content">
+                        <strong>Reference Answer:</strong><br>
+                        Strategic vulnerability is when leaders admit they don't know everything and ask questions with a clear purpose. It's positive because it:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Empowers team members</li>
+                            <li>Utilizes others' expertise</li>
+                            <li>Builds trust</li>
+                            <li>Creates psychologically safe environments</li>
+                            <li>Sparks collective solutions</li>
+                            <li>Makes leaders more approachable</li>
+                        </ul>
+                        It shows fallibility (being human and able to make mistakes) rather than ineptitude (incompetence).
+                    </div>
+                </details>
+            </div>
+        </div>
+        
+        <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e0e0e0; text-align: center; color: #666;">
+            <p><em>Lesson prepared for B2-C1 English learners | Optimized for mobile and large display screens</em></p>
+        </div>
+    </div>
+</body>
+</html>

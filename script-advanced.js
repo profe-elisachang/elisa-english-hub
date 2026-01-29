@@ -60,6 +60,7 @@ async function scanLessons() {
         { filename: 'The New Primetime.html', date: '2025-01-20' },
         { filename: 'Treasure of the Sea.html', date: '2025-01-22' },
         { filename: 'Hollywood Means Business.html', date: '2025-01-27' },
+        { filename: 'The Power of Asking for Help.html', date: '2025-01-29' },
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
     ];
