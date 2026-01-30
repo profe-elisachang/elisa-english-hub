@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendly Service or Smart Machines?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+        }
+        
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9em;
+            font-weight: 400;
+            z-index: 1000;
+            margin-bottom: 5px;
+            transition-delay: 0.2s;
+        }
+        
+        .expression-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        
+        .expression-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        
+        .expression-item strong {
+            color: #2980b9;
+            font-size: 1.1em;
+        }
+        
+        .expression-item .spanish {
+            color: #27ae60;
+            font-style: italic;
+            margin-left: 10px;
+        }
+        
+        .expression-item .example {
+            color: #555;
+            margin-top: 5px;
+            display: block;
+            padding-left: 20px;
+            border-left: 2px solid #bdc3c7;
+        }
+        
+        .picture-section {
+            background-color: #f9f9f9;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+        }
+        
+        .images-container {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .image-box {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .image-box img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .student-roles {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .student-roles ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .student-roles li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .student-roles strong {
+            color: #d35400;
+        }
+        
+        details {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            border: 1px solid #bdc3c7;
+        }
+        
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #2980b9;
+            font-size: 1.1em;
+            padding: 10px;
+            background-color: #d6eaf8;
+            border-radius: 4px;
+            margin: -15px -15px 15px -15px;
+        }
+        
+        summary:hover {
+            background-color: #aed6f1;
+        }
+        
+        .phrase-bank {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .phrase-item {
+            background-color: #fff;
+            padding: 12px;
+            border-left: 3px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .phrase-item .english {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.05em;
+        }
+        
+        .phrase-item .spanish {
+            color: #27ae60;
+            font-style: italic;
+            margin-left: 8px;
+        }
+        
+        .vocab-section {
+            background-color: #fef5e7;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #f39c12;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .vocab-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .vocab-item .word {
+            font-weight: bold;
+            color: #d35400;
+            font-size: 1.15em;
+        }
+        
+        .vocab-item .translation {
+            color: #27ae60;
+            font-style: italic;
+            margin: 5px 0;
+        }
+        
+        .vocab-item .example {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 8px;
+            padding-left: 10px;
+            border-left: 2px solid #ecf0f1;
+        }
+        
+        .discussion-questions {
+            background-color: #e8f8f5;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #1abc9c;
+        }
+        
+        .discussion-questions ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .discussion-questions li {
+            padding: 12px 0;
+            font-size: 1.1em;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        
+        .discussion-questions li:before {
+            content: "💬 ";
+            margin-right: 8px;
+        }
+        
+        .practice-section {
+            background-color: #fdeef4;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #e91e63;
+        }
+        
+        .practice-question {
+            background-color: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            border-left: 4px solid #e91e63;
+        }
+        
+        .note {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .images-container {
+                flex-direction: column;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .phrase-bank {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Friendly Service or Smart Machines?</h1>
+        
+        <!-- SECTION 1: USEFUL EXPRESSIONS -->
+        <h2>💼 Useful Expressions</h2>
+        <div class="expression-box">
+            <div class="expression-item">
+                <strong>Could you walk me through...?</strong>
+                <span class="spanish">¿Podrías explicarme...?</span>
+                <span class="example">Could you walk me through the quality control process for this product?</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>It depends on...</strong>
+                <span class="spanish">Depende de...</span>
+                <span class="example">The inspection schedule depends on the production volume.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>We need to strike a balance between...</strong>
+                <span class="spanish">Necesitamos encontrar un equilibrio entre...</span>
+                <span class="example">We need to strike a balance between speed and accuracy in our QA process.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>This would free up time to...</strong>
+                <span class="spanish">Esto liberaría tiempo para...</span>
+                <span class="example">Automation would free up time to focus on more complex tasks.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>What's your take on...?</strong>
+                <span class="spanish">¿Cuál es tu opinión sobre...?</span>
+                <span class="example">What's your take on using robots in the warehouse?</span>
+            </div>
+        </div>
+        
+        <!-- SECTION 2: PICTURE DESCRIPTION PRACTICE -->
+        <div class="picture-section">
+            <h2>📸 Picture Description Practice</h2>
+            
+            <div class="images-container">
+                <div class="image-box">
+                    <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1769790376/traditional_restaurant_oq1o43.png" alt="Traditional restaurant with human waiter taking order">
+                    <p class="image-caption">Traditional Restaurant</p>
+                </div>
+                <div class="image-box">
+                    <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1769790373/modern_restaurant_sokpsq.png" alt="Modern restaurant with robot waiter delivering food">
+                    <p class="image-caption">Modern Restaurant</p>
+                </div>
+            </div>
+            
+            <h3>📝 Step 1: First Try</h3>
+            <p>Describe what you see in your own words. Don't worry about perfect sentences!</p>
+            
+            <div class="student-roles">
+                <ul>
+                    <li><strong>Student A:</strong> Describe the LEFT picture (Traditional Restaurant)</li>
+                    <li><strong>Student B:</strong> Describe the RIGHT picture (Modern Restaurant)</li>
+                    <li><strong>Student C:</strong> What are the main differences between the two pictures?</li>
+                </ul>
+            </div>
+            
+            <details>
+                <summary>💡 Need help? Click for useful phrases</summary>
+                <div class="phrase-bank">
+                    <div class="phrase-item">
+                        <span class="english">take down an order</span>
+                        <span class="spanish">- anotar un pedido</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">greet customers</span>
+                        <span class="spanish">- saludar a clientes</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">face-to-face interaction</span>
+                        <span class="spanish">- interacción cara a cara</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">deliver dishes to the table</span>
+                        <span class="spanish">- entregar platos a la mesa</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">provide personal service</span>
+                        <span class="spanish">- dar servicio personalizado</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">robot waiter</span>
+                        <span class="spanish">- mesero robot</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">use technology</span>
+                        <span class="spanish">- usar tecnología</span>
+                    </div>
+                    <div class="phrase-item">
+                        <span class="english">carry trays</span>
+                        <span class="spanish">- llevar charolas</span>
+                    </div>
+                </div>
+            </details>
+            
+            <h3>🔄 Step 2: Try Again</h3>
+            <p>Now describe the pictures again using the helpful phrases above.</p>
+            
+            <details>
+                <summary>🔍 Sample Comparison (Reference)</summary>
+                <p><strong>Left Picture (Traditional Restaurant):</strong> In the traditional restaurant, a human waiter is taking down an order while interacting with customers face to face. The waiter is standing next to the table with a notepad, ready to write what the customers want. This service style highlights personal connection and attentive care, with the waiter providing personalized recommendations and making customers feel welcome.</p>
+                
+                <p><strong>Right Picture (Modern Restaurant):</strong> In the modern restaurant, a robot waiter is delivering dishes to the table. The robot is carrying trays with food and drinks, demonstrating the use of technology in restaurant service. Customers are seated at the table while the robot efficiently brings their orders. This setting emphasizes efficiency and novelty.</p>
+                
+                <p><strong>Main Differences:</strong> The key difference is that the traditional restaurant relies on human interaction and personal service, while the modern restaurant uses technology and automation. The traditional setting focuses on building relationships with customers through face-to-face communication, whereas the modern approach prioritizes speed and accuracy in food delivery. One offers warmth and personalized attention, while the other provides consistent, efficient service.</p>
+            </details>
+            
+            <div class="note">
+                <strong>📱 Mobile users:</strong> Tap and hold highlighted words to see translations. <strong>💻 Desktop users:</strong> Hover your mouse over highlighted words.
+            </div>
+        </div>
+        
+        <!-- SECTION 3: ARTICLE -->
+        <h2>📄 Article: Friendly Service or Smart Machines?</h2>
+        
+        <p>Dining out can <span class="highlight" title="adoptar diferentes formas">take on</span> very different forms, <span class="highlight" title="dependiendo de">depending on</span> whether you step into a restaurant that follows tradition or one that <span class="highlight" title="adopta">embraces</span> technology. The left picture presents a classic restaurant setting: a human waiter <span class="highlight" title="anotando">jotting down</span> an order while interacting with a customer face to face. This service style highlights personal connection and <span class="highlight" title="atento">attentive</span> care, with small talk or a warm smile often making the dining experience more enjoyable. By contrast, the right picture paints a more <span class="highlight" title="futurista">futuristic</span> setting, where a robot waiter delivers dishes to the table with <span class="highlight" title="precisión">precision</span>. Here, technology <span class="highlight" title="toma el centro del escenario">takes center stage</span> by demonstrating efficiency and <span class="highlight" title="novedad">novelty</span>.</p>
+                <!-- SECTION 4: VOCABULARY BOXES -->
+                <div class="vocab-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="word">take on</div>
+                            <div class="translation">adoptar, asumir (diferentes formas)</div>
+                            <div class="example">The project took on a new direction after the meeting.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">depending on</div>
+                            <div class="translation">dependiendo de</div>
+                            <div class="example">The delivery time varies depending on the shipping method.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">embrace</div>
+                            <div class="translation">adoptar, abrazar (una idea/tecnología)</div>
+                            <div class="example">Our company embraces new quality control technologies.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">jotting down</div>
+                            <div class="translation">anotando rápidamente</div>
+                            <div class="example">I'm jotting down the inspection results in my notebook.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">attentive</div>
+                            <div class="translation">atento, cuidadoso</div>
+                            <div class="example">Our QA team is very attentive to product defects.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">futuristic</div>
+                            <div class="translation">futurista</div>
+                            <div class="example">The new warehouse has a futuristic automated system.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">precision</div>
+                            <div class="translation">precisión</div>
+                            <div class="example">This measurement tool offers high precision.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">takes center stage</div>
+                            <div class="translation">toma el protagonismo, se vuelve lo principal</div>
+                            <div class="example">Customer satisfaction takes center stage in our sales strategy.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="word">novelty</div>
+                            <div class="translation">novedad</div>
+                            <div class="example">The novelty of the new packaging attracted many customers.</div>
+                        </div>
+                    </div>
+                </div>
+        <p>If I could design my ideal restaurant, I would <span class="highlight" title="lograr un equilibrio entre">strike a balance between</span> the warmth of human service and the convenience of modern technology. I would have human waiters greet customers, lead them to their tables, and take orders, since they can offer personalized recommendations and make people feel welcome. Meanwhile, robot waiters could handle <span class="highlight" title="repetitivas">repetitive</span> tasks such as carrying heavy trays or cleaning tables. This <span class="highlight" title="división del trabajo">division of labor</span> would <span class="highlight" title="liberar">free up</span> the human staff to focus on providing excellent customer service. At the same time, it would ensure timely food delivery and a well-maintained dining environment. This <span class="highlight" title="armonía">harmony</span> between people and machines would <span class="highlight" title="transformar">transform</span> an ordinary meal into an experience <span class="highlight" title="que vale la pena saborear">worth savoring</span>.</p>
+        
+        <!-- SECTION 4: VOCABULARY BOXES -->
+               
+        
+        <div class="vocab-section">
+            <h3>📚 Vocabulary - Paragraph 2</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="word">strike a balance between</div>
+                    <div class="translation">lograr un equilibrio entre</div>
+                    <div class="example">We need to strike a balance between quality and production speed.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">repetitive</div>
+                    <div class="translation">repetitivo</div>
+                    <div class="example">Robots are perfect for repetitive assembly tasks.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">division of labor</div>
+                    <div class="translation">división del trabajo</div>
+                    <div class="example">Our team uses division of labor to improve efficiency.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">free up</div>
+                    <div class="translation">liberar (tiempo/recursos)</div>
+                    <div class="example">Automation can free up workers to focus on quality control.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">harmony</div>
+                    <div class="translation">armonía</div>
+                    <div class="example">There's a good harmony between our departments.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">transform</div>
+                    <div class="translation">transformar</div>
+                    <div class="example">This new system will transform our logistics operations.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="word">worth savoring</div>
+                    <div class="translation">que vale la pena saborear/disfrutar</div>
+                    <div class="example">This achievement is worth savoring with the team.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECTION 5: DISCUSSION QUESTIONS -->
+        <div class="discussion-questions">
+            <h2>💬 Discussion Questions</h2>
+            <ul>
+                <li>If you could design your ideal workplace, would you prefer more human interaction or more automation? Why?</li>
+                <li>In your current job (QA, logistics, purchasing, sales), which tasks do you think robots could do better than humans, and which tasks should stay with people?</li>
+                <li>Some people say technology makes work easier, but others say it makes work less personal. What's your opinion based on your experience?</li>
+            </ul>
+        </div>
+        
+        <!-- SECTION 6: SELF-PRACTICE QUESTIONS -->
+        <div class="practice-section">
+            <h2>✍️ Self-Practice Questions</h2>
+            
+            <div class="practice-question">
+                <p><strong>1. Fill in the blank:</strong></p>
+                <p>Our company needs to _____________ a balance between production speed and product quality.</p>
+            </div>
+            
+            <div class="practice-question">
+                <p><strong>2. True or False:</strong></p>
+                <p>According to the article, the ideal restaurant would use ONLY robot waiters. _______</p>
+            </div>
+            
+            <div class="practice-question">
+                <p><strong>3. Complete the phrase:</strong></p>
+                <p>Automation can _____________ workers to focus on more important tasks.</p>
+            </div>
+            
+            <div class="practice-question">
+                <p><strong>4. Short answer:</strong></p>
+                <p>What are TWO advantages of traditional restaurants mentioned in the article?</p>
+            </div>
+            
+            <details>
+                <summary>📋 Reference Answers</summary>
+                <div style="padding: 15px; background-color: #fff; margin-top: 10px; border-radius: 4px;">
+                    <p><strong>1.</strong> strike</p>
+                    <p><strong>2.</strong> False (The ideal restaurant would have BOTH human and robot waiters)</p>
+                    <p><strong>3.</strong> free up</p>
+                    <p><strong>4.</strong> Possible answers:
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Personal connection with customers</li>
+                            <li>Attentive care and service</li>
+                            <li>Personalized recommendations</li>
+                            <li>Face-to-face interaction</li>
+                            <li>Making customers feel welcome</li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+        </div>
+        
+    </div>
+</body>
+</html>

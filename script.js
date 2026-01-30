@@ -65,6 +65,7 @@ async function scanLessons() {
         { filename: 'Power-Bank.html', date: '2025-01-23' },
         { filename: 'Cut Grass.html', date: '2025-01-26' },
         { filename: 'Shades of Safety.html', date: '2025-01-28' },
+        { filename: 'Friendly Service or Smart Machines.html', date: '2026-01-30' },
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
     ];
