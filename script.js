@@ -57,14 +57,14 @@ async function scanLessons() {
     //
     // ========================================
     const potentialFiles = [
-        { filename: 'Don\'t Lose That Enthusiasm.html', date: '2025-01-12' },
-        { filename: 'bubble-palace.html', date: '2025-01-14' },
-        { filename: 'Yakult\'s-Secret-Ingredient.html', date: '2025-01-16' },
-         { filename: 'Exploring-a-Hidden-World-of-Color.html', date: '2025-01-19' },
-         { filename: 'AI-Risks.html', date: '2025-01-21' },      
-        { filename: 'Power-Bank.html', date: '2025-01-23' },
-        { filename: 'Cut Grass.html', date: '2025-01-26' },
-        { filename: 'Shades of Safety.html', date: '2025-01-28' },
+        { filename: 'Don\'t Lose That Enthusiasm.html', date: '2026-01-12' },
+        { filename: 'bubble-palace.html', date: '2026-01-14' },
+        { filename: 'Yakult\'s-Secret-Ingredient.html', date: '2026-01-16' },
+        { filename: 'Exploring-a-Hidden-World-of-Color.html', date: '2026-01-19' },
+        { filename: 'AI-Risks.html', date: '2026-01-21' },
+        { filename: 'Power-Bank.html', date: '2026-01-23' },
+        { filename: 'Cut Grass.html', date: '2026-01-26' },
+        { filename: 'Shades of Safety.html', date: '2026-01-28' },
         { filename: 'Friendly Service or Smart Machines.html', date: '2026-01-30' },
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
