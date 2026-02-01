@@ -56,11 +56,12 @@ async function scanLessons() {
     //
     // ========================================
     const potentialFiles = [
-        { filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-15' },
-        { filename: 'The New Primetime.html', date: '2025-01-20' },
-        { filename: 'Treasure of the Sea.html', date: '2025-01-22' },
-        { filename: 'Hollywood Means Business.html', date: '2025-01-27' },
-        { filename: 'The Power of Asking for Help.html', date: '2025-01-29' },
+        { filename: 'The Fight Against Fake Job Applications.html', date: '2026-01-15' },
+        { filename: 'The New Primetime.html', date: '2026-01-20' },
+        { filename: 'Treasure of the Sea.html', date: '2026-01-22' },
+        { filename: 'Hollywood Means Business.html', date: '2026-01-27' },
+        { filename: 'The Power of Asking for Help.html', date: '2026-01-29' },
+        { filename: 'The Right Way to Motivate.html', date: '2026-02-03' },
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
     ];
@@ -194,17 +195,16 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null) {
 // ====================
 function initializeApp() {
     hideLoading();
-    generateMonthNavigation();
-    displayAllLessons();
+    generateCalendar();
     setupSearch();
     setupBackToTop();
 }
 
 // ====================
-// DISPLAY LESSONS
+// CALENDAR GENERATION
 // ====================
-function displayAllLessons() {
-    const container = document.getElementById('lessonCards');
+function generateCalendar() {
+    const container = document.getElementById('calendarView');
     if (!container) return;
 
     if (filteredLessons.length === 0) {
@@ -217,84 +217,192 @@ function displayAllLessons() {
         return;
     }
 
-    // Update section title with count
-    const sectionTitle = document.querySelector('.section-title');
-    if (sectionTitle) {
-        sectionTitle.innerHTML = `All Articles <span class="total-count">(${filteredLessons.length})</span>`;
-    }
+    // Group lessons by month
+    const lessonsByMonth = groupLessonsByMonth(filteredLessons);
+    
+    // Get current month for default expansion
+    const now = new Date();
+    const currentMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
 
-    container.innerHTML = filteredLessons.map(lesson => createLessonItem(lesson)).join('');
-}
-
-function createLessonItem(lesson) {
-    const dateClass = lesson.isNew ? 'lesson-date new' : 'lesson-date';
-    const dateDisplay = lesson.isNew ? 'NEW' : lesson.dateString;
-
-    return `
-        <a href="${CONFIG.lessonFolder}${lesson.filename}" class="lesson-item" style="text-decoration: none; color: inherit;">
-            <div class="lesson-title-wrapper">
-                <h3 class="lesson-title">${lesson.emoji} ${lesson.title}</h3>
-            </div>
-            <div class="${dateClass}">${dateDisplay}</div>
-        </a>
-    `;
-}
-
-// ====================
-// MONTH NAVIGATION
-// ====================
-function generateMonthNavigation() {
-    const monthNav = document.getElementById('monthNav');
-    if (!monthNav) return;
-
-    const lessonsByMonth = {};
-
-    allLessons.forEach(lesson => {
-        const date = new Date(lesson.date);
-        const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-        const monthName = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-
-        if (!lessonsByMonth[monthKey]) {
-            lessonsByMonth[monthKey] = { name: monthName, lessons: [] };
-        }
-        lessonsByMonth[monthKey].lessons.push(lesson);
-    });
-
+    // Generate calendar HTML for each month
     const sortedMonths = Object.keys(lessonsByMonth).sort().reverse();
-
-    monthNav.innerHTML = sortedMonths.map((monthKey, index) => {
-        const month = lessonsByMonth[monthKey];
-        const isFirst = index === 0;
-
-        return `
-            <div class="month-group">
-                <button class="month-header ${isFirst ? 'active' : ''}" onclick="toggleMonth('${monthKey}', event)">
-                    <span class="arrow">${isFirst ? '▼' : '▶'}</span>
-                    ${month.name}
-                    <span class="lesson-count">${month.lessons.length}</span>
-                </button>
-                <ul class="lesson-list ${isFirst ? '' : 'hidden'}" id="month-${monthKey}">
-                    ${month.lessons.map(lesson => `
-                        <li>
-                            <a href="${CONFIG.lessonFolder}${lesson.filename}">
-                                ${lesson.emoji} ${lesson.title}
-                            </a>
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
-        `;
+    
+    container.innerHTML = sortedMonths.map(monthKey => {
+        const monthData = lessonsByMonth[monthKey];
+        const isCurrentMonth = monthKey === currentMonthKey;
+        const isCollapsed = !isCurrentMonth;
+        
+        return generateMonthCalendar(monthKey, monthData.lessons, monthData.name, isCollapsed);
     }).join('');
 }
 
-function toggleMonth(monthKey, event) {
-    const lessonList = document.getElementById(`month-${monthKey}`);
-    const monthHeader = event.target.closest('.month-header');
-    const arrow = monthHeader.querySelector('.arrow');
+function groupLessonsByMonth(lessons) {
+    const grouped = {};
+    
+    lessons.forEach(lesson => {
+        const date = new Date(lesson.date);
+        const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+        const monthName = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        
+        if (!grouped[monthKey]) {
+            grouped[monthKey] = {
+                name: monthName,
+                lessons: []
+            };
+        }
+        
+        grouped[monthKey].lessons.push(lesson);
+    });
+    
+    return grouped;
+}
 
-    lessonList.classList.toggle('hidden');
-    arrow.textContent = lessonList.classList.contains('hidden') ? '▶' : '▼';
-    monthHeader.classList.toggle('active');
+function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false) {
+    // Parse year and month from monthKey (format: "YYYY-MM")
+    const [year, month] = monthKey.split('-').map(Number);
+    const monthIndex = month - 1; // JavaScript months are 0-indexed
+    
+    // Get first day of month and number of days
+    const firstDay = new Date(year, monthIndex, 1);
+    const lastDay = new Date(year, monthIndex + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    
+    // Get day of week for first day (0 = Sunday, 1 = Monday, etc.)
+    // Convert to Monday = 0 format
+    let firstDayOfWeek = firstDay.getDay();
+    firstDayOfWeek = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1; // Monday = 0
+    
+    // Get previous month's last days to fill first week
+    const prevMonthLastDay = new Date(year, monthIndex, 0).getDate();
+    const daysToShowFromPrevMonth = firstDayOfWeek;
+    
+    // Create lessons map by date
+    const lessonsByDate = {};
+    lessons.forEach(lesson => {
+        const lessonDate = new Date(lesson.date);
+        const day = lessonDate.getDate();
+        if (!lessonsByDate[day]) {
+            lessonsByDate[day] = [];
+        }
+        lessonsByDate[day].push(lesson);
+    });
+    
+    // Generate calendar grid
+    let calendarHTML = `
+        <div class="month-calendar ${isCollapsed ? 'collapsed' : ''}" data-month="${monthKey}">
+            <div class="month-header" onclick="toggleMonthCalendar('${monthKey}', event)">
+                <div class="month-header-title">
+                    <span class="month-header-arrow">${isCollapsed ? '▶' : '▼'}</span>
+                    <span>${monthName}</span>
+                </div>
+                <span class="month-header-count">(${lessons.length})</span>
+            </div>
+            <table class="calendar-grid">
+                <thead>
+                    <tr>
+                        <th class="weekday">Mon</th>
+                        <th class="weekday">Tue</th>
+                        <th class="weekday">Wed</th>
+                        <th class="weekday">Thu</th>
+                        <th class="weekday">Fri</th>
+                        <th class="weekend">Sat</th>
+                        <th class="weekend">Sun</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+    
+    // Generate calendar days
+    let currentDate = 1;
+    let nextMonthDate = 1;
+    
+    // Calculate total cells needed (6 weeks * 7 days = 42)
+    const totalCells = 42;
+    let cellCount = 0;
+    
+    while (cellCount < totalCells) {
+        calendarHTML += '<tr>';
+        
+        for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+            let dayHTML = '';
+            let cellClass = '';
+            let dayNumber = '';
+            let dayLessons = [];
+            
+            if (cellCount < firstDayOfWeek) {
+                // Previous month
+                const prevMonthDay = prevMonthLastDay - (firstDayOfWeek - cellCount - 1);
+                dayNumber = prevMonthDay;
+                cellClass = 'other-month';
+            } else if (currentDate <= daysInMonth) {
+                // Current month
+                dayNumber = currentDate;
+                dayLessons = lessonsByDate[currentDate] || [];
+                cellClass = dayOfWeek >= 5 ? 'weekend' : 'weekday';
+                currentDate++;
+            } else {
+                // Next month
+                dayNumber = nextMonthDate;
+                cellClass = 'other-month';
+                nextMonthDate++;
+            }
+            
+            // Build day cell
+            dayHTML = `<td class="${cellClass}">`;
+            dayHTML += `<div class="day-number">${dayNumber}</div>`;
+            
+            // Add lessons for this day
+            if (dayLessons.length > 0 && !cellClass.includes('other-month')) {
+                dayLessons.forEach(lesson => {
+                    // 一般文章只在週一到週五顯示，假日通知可以顯示在任何日期
+                    if (!lesson.isHoliday && dayOfWeek >= 5) {
+                        return; // 跳過週末的一般文章
+                    }
+                    
+                    const lessonClass = lesson.isNew ? 'day-lesson new' : (lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson');
+                    const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
+                    // Full title will be displayed with multi-line truncation via CSS
+                    
+                    // 假日通知不需要連結
+                    if (lesson.isHoliday) {
+                        dayHTML += `<span class="${lessonClass}" title="${fullTitle}">${fullTitle}</span>`;
+                    } else {
+                        dayHTML += `<a href="${CONFIG.lessonFolder}${lesson.filename}" class="${lessonClass}" title="${fullTitle}">${fullTitle}</a>`;
+                    }
+                });
+            }
+            
+            dayHTML += '</td>';
+            calendarHTML += dayHTML;
+            cellCount++;
+        }
+        
+        calendarHTML += '</tr>';
+        
+        // Break if we've filled all days and next month days
+        if (currentDate > daysInMonth && cellCount >= (firstDayOfWeek + daysInMonth)) {
+            break;
+        }
+    }
+    
+    calendarHTML += `
+                </tbody>
+            </table>
+        </div>
+    `;
+    
+    return calendarHTML;
+}
+
+function toggleMonthCalendar(monthKey, event) {
+    const monthCalendar = document.querySelector(`.month-calendar[data-month="${monthKey}"]`);
+    if (!monthCalendar) return;
+    
+    const monthHeader = event.currentTarget;
+    const arrow = monthHeader.querySelector('.month-header-arrow');
+    
+    monthCalendar.classList.toggle('collapsed');
+    arrow.textContent = monthCalendar.classList.contains('collapsed') ? '▶' : '▼';
 }
 
 // ====================
@@ -319,7 +427,7 @@ function setupSearch() {
             });
         }
 
-        displayAllLessons();
+        generateCalendar();
     });
 }
 
@@ -367,7 +475,7 @@ function isNewLesson(lessonDate) {
 }
 
 function showLoading() {
-    const container = document.getElementById('lessonCards');
+    const container = document.getElementById('calendarView');
     if (container) {
         container.innerHTML = '<div class="loading">Loading lessons</div>';
     }

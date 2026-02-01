@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Memory: Why We Remember and Why We Forget</title>
+    <!-- Main Site CSS -->
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .expressions {
+            background-color: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .expression-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .expression-item strong {
+            color: #2980b9;
+            font-size: 1.1em;
+        }
+        
+        .article-content {
+            margin: 30px 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .highlight:hover {
+            background-color: #ffeb3b;
+            border-bottom: 3px solid #f57c00;
+        }
+        
+        .vocab-box {
+            background-color: #f9f9f9;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .vocab-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .vocab-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .vocab-word {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pronounce-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: background-color 0.3s;
+        }
+        
+        .pronounce-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .vocab-definition {
+            color: #555;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        
+        .vocab-translation {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.9em;
+        }
+        
+        .vocab-example {
+            color: #34495e;
+            font-style: italic;
+            margin-top: 8px;
+            padding-left: 12px;
+            border-left: 3px solid #e0e0e0;
+            font-size: 0.9em;
+        }
+        
+        .discussion-questions ul, .practice-questions ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        .discussion-questions li, .practice-questions li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        details {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #3498db;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.1em;
+        }
+        
+        summary:hover {
+            color: #3498db;
+        }
+        
+        .mobile-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #856404;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 20px;">
+        <h1>🧠 The Science of Memory: Why We Remember and Why We Forget</h1>
+        
+        <div class="expressions">
+            <h2>💼 Useful Expressions</h2>
+            <div class="expression-item">
+                <strong>set out to (do something)</strong> | <em>proponerse a hacer algo</em><br>
+                "Our team set out to understand the root cause of the quality issue."
+            </div>
+            <div class="expression-item">
+                <strong>filter out</strong> | <em>filtrar, eliminar</em><br>
+                "We need to filter out the defective items before packaging."
+            </div>
+            <div class="expression-item">
+                <strong>carry out</strong> | <em>llevar a cabo, realizar</em><br>
+                "The inspection team will carry out a thorough check tomorrow."
+            </div>
+            <div class="expression-item">
+                <strong>pass on (knowledge/information)</strong> | <em>transmitir, compartir</em><br>
+                "Please pass on the updated procedures to your team members."
+            </div>
+        </div>
+
+        <div class="mobile-note">
+            📱 <strong>Mobile users:</strong> Tap and hold highlighted words to see Spanish translations.
+        </div>
+
+        <div class="article-content">
+            <h2>📖 Article</h2>
+            
+            <p>Forgetting someone's name or where you put your keys can be <span class="highlight" title="molesto">annoying</span>, but these <span class="highlight" title="lapsus, errores">lapses</span> are also totally natural. We all forget things, and according to American neurologist Scott A. Small, forgetting is actually <span class="highlight" title="crucial">crucial</span> for brain function. We are <span class="highlight" title="expuesto">exposed</span> to so much information every day that we couldn't possibly <span class="highlight" title="retener">retain</span> it all. By forgetting certain details, our brains <span class="highlight" title="filtrar">filter out</span> information we don't need while <span class="highlight" title="priorizar">prioritizing</span> information we do need. That way, we can focus on what really matters.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 1</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            annoying
+                            <button class="pronounce-btn" onclick="pronounce('annoying')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">causing slight anger or impatience; irritating</div>
+                        <div class="vocab-translation"><em>molesto, irritante</em></div>
+                        <div class="vocab-example">"The constant noise from the machine is annoying."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            lapses
+                            <button class="pronounce-btn" onclick="pronounce('lapses')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">temporary failures of memory or judgment</div>
+                        <div class="vocab-translation"><em>lapsus, errores, fallas</em></div>
+                        <div class="vocab-example">"Small lapses in quality control can lead to bigger problems."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            crucial
+                            <button class="pronounce-btn" onclick="pronounce('crucial')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">extremely important; essential</div>
+                        <div class="vocab-translation"><em>crucial, esencial</em></div>
+                        <div class="vocab-example">"Accurate documentation is crucial for traceability."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            exposed
+                            <button class="pronounce-btn" onclick="pronounce('exposed')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">made to experience or encounter something</div>
+                        <div class="vocab-translation"><em>expuesto</em></div>
+                        <div class="vocab-example">"Workers are exposed to various training materials daily."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            retain
+                            <button class="pronounce-btn" onclick="pronounce('retain')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">keep in one's memory; continue to have</div>
+                        <div class="vocab-translation"><em>retener, conservar</em></div>
+                        <div class="vocab-example">"It's important to retain key safety procedures."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            filter out
+                            <button class="pronounce-btn" onclick="pronounce('filter out')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">remove unwanted items from a larger group</div>
+                        <div class="vocab-translation"><em>filtrar, eliminar</em></div>
+                        <div class="vocab-example">"We filter out defective parts before assembly."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            prioritizing
+                            <button class="pronounce-btn" onclick="pronounce('prioritizing')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">arranging things according to their importance</div>
+                        <div class="vocab-translation"><em>priorizar</em></div>
+                        <div class="vocab-example">"Prioritizing urgent orders helps meet delivery deadlines."</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>The <span class="highlight" title="sistemático">systematic</span> study of human memory was <span class="highlight" title="iniciado, pionero">pioneered</span> by the German psychologist Hermann Ebbinghaus. Between 1880 and 1885, Ebbinghaus <span class="highlight" title="llevó a cabo">carried out</span> studies on himself to see how quickly he forgot information. He <span class="highlight" title="memorizó">memorized</span> meaningless three-letter words and tested how well he could <span class="highlight" title="recordar">recall</span> them after different amounts of time had passed. He found that he would forget around 50 percent of the words within an hour and 70 percent within a day. After a week, only around 25 percent of the words would still be retained.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 2</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            systematic
+                            <button class="pronounce-btn" onclick="pronounce('systematic')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">done according to a fixed plan or system; methodical</div>
+                        <div class="vocab-translation"><em>sistemático, metódico</em></div>
+                        <div class="vocab-example">"We follow a systematic approach to quality inspection."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            pioneered
+                            <button class="pronounce-btn" onclick="pronounce('pioneered')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">developed or was the first to use new methods or ideas</div>
+                        <div class="vocab-translation"><em>fue pionero, inició</em></div>
+                        <div class="vocab-example">"Our company pioneered the use of automated inspection systems."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            carried out
+                            <button class="pronounce-btn" onclick="pronounce('carried out')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">performed or completed a task or study</div>
+                        <div class="vocab-translation"><em>llevó a cabo, realizó</em></div>
+                        <div class="vocab-example">"The audit was carried out by an external team."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            memorized
+                            <button class="pronounce-btn" onclick="pronounce('memorized')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">learned something by heart; committed to memory</div>
+                        <div class="vocab-translation"><em>memorizó</em></div>
+                        <div class="vocab-example">"All staff memorized the emergency evacuation procedures."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            recall
+                            <button class="pronounce-btn" onclick="pronounce('recall')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">remember or bring back to mind</div>
+                        <div class="vocab-translation"><em>recordar, evocar</em></div>
+                        <div class="vocab-example">"Can you recall the batch number from yesterday's shipment?"</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Not only does Ebbinghaus's work show that we forget most information over time, but it also shows that we lose most new information quite soon after we first learn it. Clearly, our brains are very good at <span class="highlight" title="deshacerse de">getting rid of</span> information we don't need.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 3</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            getting rid of
+                            <button class="pronounce-btn" onclick="pronounce('getting rid of')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">removing or eliminating something unwanted</div>
+                        <div class="vocab-translation"><em>deshacerse de, eliminar</em></div>
+                        <div class="vocab-example">"We're getting rid of old inventory to make space for new stock."</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Since Ebbinghaus, other researchers have <span class="highlight" title="se han propuesto">set out to</span> understand memory—not just in humans, but in animals as well. Bonobos, for instance, have been found to have strong memories for faces over long periods. In one case, a bonobo recognized her sister and nephew even after being separated from them for 26 years.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 4</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            set out to
+                            <button class="pronounce-btn" onclick="pronounce('set out to')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">began with a specific goal or intention</div>
+                        <div class="vocab-translation"><em>se propusieron a, comenzaron a</em></div>
+                        <div class="vocab-example">"The team set out to improve production efficiency by 15%."</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Elephants can recall past <span class="highlight" title="interacciones">interactions</span> with other elephants, which helps them <span class="highlight" title="negociar">negotiate</span> <span class="highlight" title="complicadas">complicated</span> social situations within their <span class="highlight" title="manadas">herds</span>. They can also remember directions—one elephant was found to find its way back to a water source after 12 years away.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 5</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            interactions
+                            <button class="pronounce-btn" onclick="pronounce('interactions')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">occasions when people or things communicate or work together</div>
+                        <div class="vocab-translation"><em>interacciones</em></div>
+                        <div class="vocab-example">"Positive interactions with customers build trust and loyalty."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            negotiate
+                            <button class="pronounce-btn" onclick="pronounce('negotiate')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">manage to get through or deal with a difficult situation</div>
+                        <div class="vocab-translation"><em>negociar, manejar</em></div>
+                        <div class="vocab-example">"We negotiate with suppliers to get better pricing."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            complicated
+                            <button class="pronounce-btn" onclick="pronounce('complicated')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">consisting of many interconnecting parts; complex</div>
+                        <div class="vocab-translation"><em>complicado</em></div>
+                        <div class="vocab-example">"The customs clearance process can be quite complicated."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            herds
+                            <button class="pronounce-btn" onclick="pronounce('herds')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">large groups of animals living together</div>
+                        <div class="vocab-translation"><em>manadas, rebaños</em></div>
+                        <div class="vocab-example">"Like herds move together, our teams coordinate closely on projects."</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Elephants' <span class="highlight" title="excepcionales">exceptional</span> memories largely come from their huge brains. Yet much smaller animals can have great memories too. In one study, researchers wore scary masks and trapped seven crows living around a university campus. After releasing the birds, the researchers <span class="highlight" title="intermitentemente">intermittently</span> put the masks back on. They discovered that the campus crows reacted <span class="highlight" title="agresivamente">aggressively</span> toward them for 17 years. Interestingly, many more crows than just the original seven were hostile, suggesting that the original crows had <span class="highlight" title="transmitieron">passed</span> their knowledge <span class="highlight" title="a">on to</span> others.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 6</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            exceptional
+                            <button class="pronounce-btn" onclick="pronounce('exceptional')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">unusually good; outstanding</div>
+                        <div class="vocab-translation"><em>excepcional</em></div>
+                        <div class="vocab-example">"Her exceptional attention to detail prevents defects."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            intermittently
+                            <button class="pronounce-btn" onclick="pronounce('intermittently')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">at irregular intervals; not continuously</div>
+                        <div class="vocab-translation"><em>intermitentemente</em></div>
+                        <div class="vocab-example">"The machine operates intermittently due to power-saving mode."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            aggressively
+                            <button class="pronounce-btn" onclick="pronounce('aggressively')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">in a forceful or hostile manner</div>
+                        <div class="vocab-translation"><em>agresivamente</em></div>
+                        <div class="vocab-example">"The sales team aggressively pursued new clients this quarter."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            passed on to
+                            <button class="pronounce-btn" onclick="pronounce('passed on to')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">transferred or communicated information to others</div>
+                        <div class="vocab-translation"><em>transmitieron a, pasaron a</em></div>
+                        <div class="vocab-example">"Best practices should be passed on to new team members."</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Ultimately, for both humans and animals, remembering and forgetting are <span class="highlight" title="cruciales">crucial</span> survival skills. So, if you can't remember a <span class="highlight" title="de celebridad">celebrity's</span> name or some other <span class="highlight" title="trivial">trivial</span> fact, don't worry—your brain's just busy retaining much more important information.</p>
+
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 7</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            celebrity's
+                            <button class="pronounce-btn" onclick="pronounce('celebrity')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">belonging to a famous person</div>
+                        <div class="vocab-translation"><em>de celebridad, de una persona famosa</em></div>
+                        <div class="vocab-example">"I can't recall that celebrity's name right now."</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            trivial
+                            <button class="pronounce-btn" onclick="pronounce('trivial')">🔊</button>
+                        </div>
+                        <div class="vocab-definition">of little value or importance; minor</div>
+                        <div class="vocab-translation"><em>trivial, sin importancia</em></div>
+                        <div class="vocab-example">"Don't waste time on trivial details during the inspection."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="discussion-questions">
+            <h2>💬 Discussion Questions</h2>
+            <ul>
+                <li>How do you personally deal with forgetting important information at work? Do you have any strategies or systems that help you remember key details?</li>
+                <li>The article mentions that our brains filter out unnecessary information. In your job, what types of information do you think are most important to remember, and what can be safely forgotten?</li>
+                <li>Can you think of a time when forgetting something actually helped you focus better on more important tasks? How did that experience affect your approach to work?</li>
+            </ul>
+        </div>
+
+        <div class="practice-questions">
+            <h2>✍️ Self-Practice Questions</h2>
+            <ul>
+                <li><strong>Question 1:</strong> According to Ebbinghaus's research, approximately what percentage of new information do we forget within one hour?</li>
+                <li><strong>Question 2:</strong> Fill in the blank: "By forgetting certain details, our brains __________ information we don't need while __________ information we do need."</li>
+                <li><strong>Question 3:</strong> What evidence does the article provide that animals can have long-term memories?</li>
+                <li><strong>Question 4:</strong> Why does the article suggest that forgetting is actually beneficial for our brains?</li>
+            </ul>
+            
+            <details>
+                <summary>📋 Reference Answers</summary>
+                <ul>
+                    <li><strong>Answer 1:</strong> About 50 percent (the text states "he would forget around 50 percent of the words within an hour")</li>
+                    <li><strong>Answer 2:</strong> "filter out" / "prioritizing"</li>
+                    <li><strong>Answer 3:</strong> The article provides several examples: bonobos can recognize family members after 26 years of separation; elephants can recall past interactions with other elephants and remember directions to water sources after 12 years; crows remembered researchers who trapped them and reacted aggressively toward them for 17 years.</li>
+                    <li><strong>Answer 4:</strong> Forgetting is beneficial because we are exposed to so much information daily that we cannot retain it all. By forgetting certain details, our brains can filter out unnecessary information and prioritize what we actually need, allowing us to focus on what really matters.</li>
+                </ul>
+            </details>
+        </div>
+    </div>
+
+    <script>
+        function pronounce(word) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.8;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Sorry, your browser does not support text-to-speech.');
+            }
+        }
+    </script>
+</body>
+</html>

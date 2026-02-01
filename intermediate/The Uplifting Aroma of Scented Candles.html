@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Uplifting Aroma of Scented Candles - English Lesson</title>
+    <!-- Main Site CSS -->
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            background-color: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        .expressions {
+            background-color: #e8f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .expression-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .expression-item strong {
+            color: #2980b9;
+            font-size: 1.1em;
+        }
+        
+        .article-section {
+            margin-top: 30px;
+        }
+        
+        .article-section p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.9em;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .highlight:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+            margin-bottom: -1px;
+        }
+        
+        .vocab-box {
+            background-color: #fff9e6;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 2px solid #f39c12;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .vocab-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .vocab-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .vocab-word {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.15em;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .pronounce-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .pronounce-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+        
+        .pronounce-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .pronounce-btn::before {
+            content: "🔊";
+            font-size: 14px;
+        }
+        
+        .vocab-translation {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .vocab-example {
+            color: #34495e;
+            font-size: 0.95em;
+            font-style: italic;
+            border-left: 2px solid #bdc3c7;
+            padding-left: 10px;
+        }
+        
+        .discussion-questions ul,
+        .practice-questions ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        .discussion-questions li,
+        .practice-questions li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #2c3e50;
+            padding: 12px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        details {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f8f5;
+            border-radius: 5px;
+            border: 1px solid #16a085;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #16a085;
+            padding: 10px;
+            font-size: 1.1em;
+        }
+        
+        summary:hover {
+            color: #1abc9c;
+        }
+        
+        .answer-content {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .mobile-note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #ffc107;
+            font-size: 0.95em;
+            color: #856404;
+        }
+        
+        @media (max-width: 767px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 20px;">
+        <h1>🕯️ The Uplifting Aroma of Scented Candles</h1>
+        
+        <!-- Useful Expressions Section -->
+        <section class="expressions">
+            <h2>💬 Useful Expressions</h2>
+            
+            <div class="expression-item">
+                <strong>Could you clarify...?</strong><br>
+                <em>¿Podrías aclarar...?</em><br>
+                Could you clarify the inspection criteria for this batch?
+            </div>
+            
+            <div class="expression-item">
+                <strong>In my experience...</strong><br>
+                <em>En mi experiencia...</em><br>
+                In my experience, quality control is essential for customer satisfaction.
+            </div>
+            
+            <div class="expression-item">
+                <strong>What's the advantage of...?</strong><br>
+                <em>¿Cuál es la ventaja de...?</em><br>
+                What's the advantage of using synthetic materials in production?
+            </div>
+            
+            <div class="expression-item">
+                <strong>It makes sense to...</strong><br>
+                <em>Tiene sentido...</em><br>
+                It makes sense to mass-produce items when demand is high.
+            </div>
+        </section>
+        
+        <!-- Article Section -->
+        <section class="article-section">
+            <h2>📖 Article</h2>
+            
+            <p>Candles were made from animal fats in ancient times. As knowledge and materials improved, people began making them with <span class="highlight" title="cera de abeja">beeswax</span> and vegetable wax, which burned more cleanly and produced less <span class="highlight" title="olor">odor</span>. Before <span class="highlight" title="iluminación">lighting</span>, candles were considered highly valuable. In many religions, they <span class="highlight" title="llegaron a">came to</span> symbolize life and wisdom. Even today, candles are frequently used in religious <span class="highlight" title="rituales">rituals</span> and for cultural celebrations.</p>
+            
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 1</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">beeswax<button class="pronounce-btn" data-word="beeswax" aria-label="發音"></button></div>
+                        <div class="vocab-translation">cera de abeja</div>
+                        <div class="vocab-example">Beeswax candles burn cleaner than those made from animal fat.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">odor<button class="pronounce-btn" data-word="odor" aria-label="發音"></button></div>
+                        <div class="vocab-translation">olor</div>
+                        <div class="vocab-example">This product has no unpleasant odor during manufacturing.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">lighting<button class="pronounce-btn" data-word="lighting" aria-label="發音"></button></div>
+                        <div class="vocab-translation">iluminación</div>
+                        <div class="vocab-example">Before electricity, lighting came from candles and oil lamps.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">came to<button class="pronounce-btn" data-word="came to" aria-label="發音"></button></div>
+                        <div class="vocab-translation">llegaron a</div>
+                        <div class="vocab-example">Over time, candles came to represent hope and celebration.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">rituals<button class="pronounce-btn" data-word="rituals" aria-label="發音"></button></div>
+                        <div class="vocab-translation">rituales</div>
+                        <div class="vocab-example">Many religious rituals involve the use of special candles.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>The <span class="highlight" title="cambio">shift</span> toward <span class="highlight" title="industrial">industrial</span> candle making began in 1834, when Joseph Morgan <span class="highlight" title="patentó">patented</span> a machine that could produce molded candles <span class="highlight" title="sin interrupción">without interruption</span>. His <span class="highlight" title="invención">invention</span> marked the start of <span class="highlight" title="mecanizado">mechanized</span> production, though for many decades, candles were still made mainly in small workshops. Since the early 20th century, however, candle making has grown into a large-scale industry. The use of <span class="highlight" title="sintético">synthetic</span> oils and modern <span class="highlight" title="aroma">scent</span>-blending techniques has made it possible to <span class="highlight" title="producir en masa">mass-produce</span> a wide range of scented items that were once <span class="highlight" title="elaborado/hecho">crafted</span> only by hand.</p>
+            
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 2</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">shift<button class="pronounce-btn" data-word="shift" aria-label="發音"></button></div>
+                        <div class="vocab-translation">cambio</div>
+                        <div class="vocab-example">The shift to automated production improved efficiency in our factory.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">industrial<button class="pronounce-btn" data-word="industrial" aria-label="發音"></button></div>
+                        <div class="vocab-translation">industrial</div>
+                        <div class="vocab-example">Industrial methods allow us to produce more items at lower cost.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">patented<button class="pronounce-btn" data-word="patented" aria-label="發音"></button></div>
+                        <div class="vocab-translation">patentó</div>
+                        <div class="vocab-example">Our company patented a new quality inspection technique.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">without interruption<button class="pronounce-btn" data-word="without interruption" aria-label="發音"></button></div>
+                        <div class="vocab-translation">sin interrupción</div>
+                        <div class="vocab-example">The production line runs without interruption for 8 hours.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">invention<button class="pronounce-btn" data-word="invention" aria-label="發音"></button></div>
+                        <div class="vocab-translation">invención</div>
+                        <div class="vocab-example">This invention revolutionized the manufacturing process.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">mechanized<button class="pronounce-btn" data-word="mechanized" aria-label="發音"></button></div>
+                        <div class="vocab-translation">mecanizado</div>
+                        <div class="vocab-example">Mechanized production increased our output significantly.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">synthetic<button class="pronounce-btn" data-word="synthetic" aria-label="發音"></button></div>
+                        <div class="vocab-translation">sintético</div>
+                        <div class="vocab-example">Synthetic materials are often more durable than natural ones.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">scent<button class="pronounce-btn" data-word="scent" aria-label="發音"></button></div>
+                        <div class="vocab-translation">aroma</div>
+                        <div class="vocab-example">We need to verify the scent quality before shipping.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">mass-produce<button class="pronounce-btn" data-word="mass-produce" aria-label="發音"></button></div>
+                        <div class="vocab-translation">producir en masa</div>
+                        <div class="vocab-example">Our facility can mass-produce over 10,000 units per day.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">crafted<button class="pronounce-btn" data-word="crafted" aria-label="發音"></button></div>
+                        <div class="vocab-translation">elaborado/hecho</div>
+                        <div class="vocab-example">Each piece is carefully crafted by skilled workers.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Scented candles today can be made from countless combinations of <span class="highlight" title="fragancias">fragrances</span>. Some candles are designed to <span class="highlight" title="evocar">evoke</span> <span class="highlight" title="estacional">seasonal</span> moods or natural environments, such as fresh spring rain or a misty mountain forest. Others capture the <span class="highlight" title="distintivo">distinctive</span> scents <span class="highlight" title="asociados con">associated with</span> major <span class="highlight" title="días festivos">holidays</span>, like Thanksgiving or Christmas.</p>
+            
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 3</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">fragrances<button class="pronounce-btn" data-word="fragrances" aria-label="發音"></button></div>
+                        <div class="vocab-translation">fragancias</div>
+                        <div class="vocab-example">Our product line includes various fragrances for different markets.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">evoke<button class="pronounce-btn" data-word="evoke" aria-label="發音"></button></div>
+                        <div class="vocab-translation">evocar</div>
+                        <div class="vocab-example">Good packaging design can evoke positive emotions in customers.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">seasonal<button class="pronounce-btn" data-word="seasonal" aria-label="發音"></button></div>
+                        <div class="vocab-translation">estacional</div>
+                        <div class="vocab-example">We adjust our inventory based on seasonal demand.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">distinctive<button class="pronounce-btn" data-word="distinctive" aria-label="發音"></button></div>
+                        <div class="vocab-translation">distintivo</div>
+                        <div class="vocab-example">Our product has a distinctive design that sets it apart.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">associated with<button class="pronounce-btn" data-word="associated with" aria-label="發音"></button></div>
+                        <div class="vocab-translation">asociado con</div>
+                        <div class="vocab-example">Quality is always associated with our brand name.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">holidays<button class="pronounce-btn" data-word="holidays" aria-label="發音"></button></div>
+                        <div class="vocab-translation">días festivos</div>
+                        <div class="vocab-example">Sales increase during the holidays season.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Typically, scented candles <span class="highlight" title="liberar">release</span> fragrance in three <span class="highlight" title="fases">phases</span>: top notes, heart notes, and base notes. When a candle is first <span class="highlight" title="encendido">lit</span>, the top notes are the most <span class="highlight" title="prominente">prominent</span>. After about an hour, the heart notes become apparent, and as the candle continues to burn, the base notes slowly <span class="highlight" title="emergen">emerge</span>.</p>
+            
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 4</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">release<button class="pronounce-btn" data-word="release" aria-label="發音"></button></div>
+                        <div class="vocab-translation">liberar</div>
+                        <div class="vocab-example">The machine will release the product after quality inspection.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">phases<button class="pronounce-btn" data-word="phases" aria-label="發音"></button></div>
+                        <div class="vocab-translation">fases</div>
+                        <div class="vocab-example">Our production process has three main phases.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">lit<button class="pronounce-btn" data-word="lit" aria-label="發音"></button></div>
+                        <div class="vocab-translation">encendido</div>
+                        <div class="vocab-example">Once the indicator is lit, the machine is ready to operate.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">prominent<button class="pronounce-btn" data-word="prominent" aria-label="發音"></button></div>
+                        <div class="vocab-translation">prominente</div>
+                        <div class="vocab-example">Safety is the most prominent concern in our warehouse.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">emerge<button class="pronounce-btn" data-word="emerge" aria-label="發音"></button></div>
+                        <div class="vocab-translation">emergen</div>
+                        <div class="vocab-example">New challenges emerge as our company grows.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>A well-chosen scent can make any space feel more <span class="highlight" title="acogedor">inviting</span> and even affect one's mood. Some scents help us feel energetic and are perfect for lively gatherings. Others can offer a feeling of calm for a relaxing evening. By <span class="highlight" title="estimulando">stimulating</span> our sense of smell, scented candles are <span class="highlight" title="eficaz">effective</span> tools for creating a comfortable <span class="highlight" title="atmósfera">atmosphere</span>. They can also provide <span class="highlight" title="terapéutico">therapeutic</span> <span class="highlight" title="beneficios">benefits</span>, helping lift spirits, <span class="highlight" title="aliviar">relieve</span> stress, or promote restful sleep. No wonder they continue to be cherished in homes around the world.</p>
+            
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Paragraph 5</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">inviting<button class="pronounce-btn" data-word="inviting" aria-label="發音"></button></div>
+                        <div class="vocab-translation">acogedor</div>
+                        <div class="vocab-example">We want to create an inviting workspace for all employees.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">stimulating<button class="pronounce-btn" data-word="stimulating" aria-label="發音"></button></div>
+                        <div class="vocab-translation">estimulando</div>
+                        <div class="vocab-example">Training programs are important for stimulating employee development.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">effective<button class="pronounce-btn" data-word="effective" aria-label="發音"></button></div>
+                        <div class="vocab-translation">eficaz</div>
+                        <div class="vocab-example">Good communication is effective for solving workplace problems.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">atmosphere<button class="pronounce-btn" data-word="atmosphere" aria-label="發音"></button></div>
+                        <div class="vocab-translation">atmósfera</div>
+                        <div class="vocab-example">A positive atmosphere improves team productivity.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">therapeutic<button class="pronounce-btn" data-word="therapeutic" aria-label="發音"></button></div>
+                        <div class="vocab-translation">terapéutico</div>
+                        <div class="vocab-example">Taking short breaks has therapeutic effects on work performance.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">benefits<button class="pronounce-btn" data-word="benefits" aria-label="發音"></button></div>
+                        <div class="vocab-translation">beneficios</div>
+                        <div class="vocab-example">Our company offers health benefits to all employees.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">relieve<button class="pronounce-btn" data-word="relieve" aria-label="發音"></button></div>
+                        <div class="vocab-translation">aliviar</div>
+                        <div class="vocab-example">Good organization can relieve workplace stress.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-note">
+                <strong>📱 Mobile Note:</strong> On mobile devices, tap and hold highlighted words to see their Spanish translations. On computers, simply hover your mouse over the highlighted words.
+            </div>
+        </section>
+        
+        <!-- Discussion Questions Section -->
+        <section class="discussion-questions">
+            <h2>💭 Discussion Questions</h2>
+            <ul>
+                <li>How has mass production changed the way we buy and use everyday products? Can you think of examples from your own experience?</li>
+                <li>Do you think scents and fragrances can really affect our mood and productivity at work? Why or why not?</li>
+                <li>What are some traditional products from your culture that have changed from handmade to mass-produced? What has been gained or lost in this process?</li>
+            </ul>
+        </section>
+        
+        <!-- Self-Practice Questions Section -->
+        <section class="practice-questions">
+            <h2>✏️ Self-Practice Questions</h2>
+            <ul>
+                <li>What materials were used to make candles after people stopped using animal fats? (Mention two)</li>
+                <li>In what year did Joseph Morgan patent his candle-making machine?</li>
+                <li>Name the three phases in which scented candles release their fragrance.</li>
+                <li>According to the article, what are two benefits that scented candles can provide to people?</li>
+            </ul>
+            
+            <details>
+                <summary>📋 Reference Answers</summary>
+                <div class="answer-content">
+                    <p><strong>1.</strong> Beeswax and vegetable wax.</p>
+                    <p><strong>2.</strong> 1834.</p>
+                    <p><strong>3.</strong> Top notes, heart notes, and base notes.</p>
+                    <p><strong>4.</strong> They can help lift spirits, relieve stress, promote restful sleep, create a comfortable atmosphere, and make spaces feel more inviting. (Any two of these are acceptable)</p>
+                </div>
+            </details>
+        </section>
+    </div>
+    
+    <script>
+        // 使用瀏覽器內建的語音合成功能
+        function pronounceWord(word) {
+            if ('speechSynthesis' in window) {
+                // 停止任何正在播放的語音
+                window.speechSynthesis.cancel();
+                
+                // 創建語音合成對象
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9; // 語速稍慢，方便學習
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                
+                // 播放語音
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('您的瀏覽器不支援語音合成功能');
+            }
+        }
+        
+        // 為所有發音按鈕添加事件監聽器
+        document.addEventListener('DOMContentLoaded', function() {
+            const pronounceButtons = document.querySelectorAll('.pronounce-btn');
+            pronounceButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const vocabWord = this.getAttribute('data-word');
+                    pronounceWord(vocabWord);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
