@@ -26,52 +26,54 @@ document.addEventListener('DOMContentLoaded', async function() {
 // ====================
 async function scanLessons() {
     // ========================================
-    // 📝 手動添加新文章的位置
+    // ð æåæ·»å æ°æç« çä½ç½®
     // ========================================
-    // 當您在 advanced/ 資料夾下新增 HTML 文章時，
-    // 請在此陣列中添加檔案資訊。
+    // ç¶æ¨å¨ advanced/ è³æå¤¾ä¸æ°å¢ HTML æç« æï¼
+    // è«å¨æ­¤é£åä¸­æ·»å æªæ¡è³è¨ã
     //
-    // 【格式說明 - 兩種方式任選一種】
+    // ãæ ¼å¼èªªæ - å©ç¨®æ¹å¼ä»»é¸ä¸ç¨®ã
     //
-    // 方式 1：簡單字串（檔名包含日期時使用）
-    //   格式：'YYYY-MM-DD-topic-name.html'
-    //   範例：'2025-01-15-topic-name.html'
-    //   說明：系統會自動從檔名解析日期
+    // æ¹å¼ 1ï¼ç°¡å®å­ä¸²ï¼æªååå«æ¥ææä½¿ç¨ï¼
+    //   æ ¼å¼ï¼'YYYY-MM-DD-topic-name.html'
+    //   ç¯ä¾ï¼'2025-01-15-topic-name.html'
+    //   èªªæï¼ç³»çµ±æèªåå¾æªåè§£ææ¥æ
     //
-    // 方式 2：物件格式（檔名不包含日期時使用）
-    //   格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
-    //   範例：{ filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' }
-    //   說明：手動指定發佈日期，確保正確排序
+    // æ¹å¼ 2ï¼ç©ä»¶æ ¼å¼ï¼æªåä¸åå«æ¥ææä½¿ç¨ï¼
+    //   æ ¼å¼ï¼{ filename: 'æªå.html', date: 'YYYY-MM-DD' }
+    //   ç¯ä¾ï¼{ filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' }
+    //   èªªæï¼æåæå®ç¼ä½æ¥æï¼ç¢ºä¿æ­£ç¢ºæåº
     //
-    // 【注意事項】
-    // - 如果檔案名稱包含單引號（如 Don't），請使用反斜線轉義：Don\'t
-    // - 每個項目後面加上逗號 ,
-    // - 建議按字母順序排列，方便維護
-    // - 檔案名稱必須與 advanced/ 資料夾下的實際檔案名稱完全一致
+    // ãæ³¨æäºé ã
+    // - å¦ææªæ¡åç¨±åå«å®å¼èï¼å¦ Don'tï¼ï¼è«ä½¿ç¨åæç·è½ç¾©ï¼Don\'t
+    // - æ¯åé ç®å¾é¢å ä¸éè ,
+    // - å»ºè­°æå­æ¯é åºæåï¼æ¹ä¾¿ç¶­è­·
+    // - æªæ¡åç¨±å¿é è advanced/ è³æå¤¾ä¸çå¯¦éæªæ¡åç¨±å®å¨ä¸è´
     //
-    // 【範例】
-    //    '2025-01-15-topic-name.html',              ← 方式 1：檔名包含日期
-    //    { filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' },  ← 方式 2：手動指定日期
+    // ãç¯ä¾ã
+    //    '2025-01-15-topic-name.html',              â æ¹å¼ 1ï¼æªååå«æ¥æ
+    //    { filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' },  â æ¹å¼ 2ï¼æåæå®æ¥æ
     //
     // ========================================
     const potentialFiles = [
-        // 文章格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
-        // 假日通知格式：{ date: 'YYYY-MM-DD', title: '假日名稱（含emoji）', isHoliday: true }
+        // æç« æ ¼å¼ï¼{ filename: 'æªå.html', date: 'YYYY-MM-DD', title: 'æ¨é¡ï¼å«emojiï¼' }
+        // åæ¥éç¥æ ¼å¼ï¼{ date: 'YYYY-MM-DD', title: 'åæ¥åç¨±ï¼å«emojiï¼', isHoliday: true }
         { filename: 'The Fight Against Fake Job Applications.html', date: '2026-01-15', title: 'The Fight Against Fake Job Applications' },
-        { filename: 'The New Primetime.html', date: '2026-01-20', title: '📺 The New Primetime: Gen Z and Social Media Creators' },
+        { filename: 'The New Primetime.html', date: '2026-01-20', title: 'ðº The New Primetime: Gen Z and Social Media Creators' },
         { filename: 'Treasure of the Sea.html', date: '2026-01-22', title: 'Treasure of the Sea: The Seaweed Industry' },
         { filename: 'Hollywood Means Business.html', date: '2026-01-27', title: 'Hollywood Means Business' },
-        { filename: 'The Power of Asking for Help.html', date: '2026-01-29', title: '🤝 The Power of Asking for Help' },
-        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: '🤝 The Right Way to Motivate' },
+        { filename: 'The Power of Asking for Help.html', date: '2026-01-29', title: 'ð¤ The Power of Asking for Help' },
+        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: 'ð¤ The Right Way to Motivate' },
+        // ð å¨æ­¤ä¸æ¹æ·»å æ°æç« ï¼è¨å¾å éèï¼
+        // æ ¼å¼ï¼{ filename: 'æªå.html', date: 'YYYY-MM-DD', title: 'æ¨é¡ï¼å«emojiï¼' }
+        // åæ¥éç¥ç¯ä¾ï¼{ date: '2026-12-25', title: 'ð Christmas - No Class', isHoliday: true }
+            { filename: 'The Philosophy of Empathy.html', date: '2026-02-05', title: '🧠 The Philosophy of Empathy' },
         // 👆 在此上方添加新文章，記得加逗號！
-        // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
-        // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
-    ];
+];
 
     const lessons = [];
 
     for (const fileInfo of potentialFiles) {
-        // 支援兩種格式：字串或物件
+        // æ¯æ´å©ç¨®æ ¼å¼ï¼å­ä¸²æç©ä»¶
         let filename, specifiedDate = null, specifiedTitle = null, specifiedEmoji = null, isHoliday = false;
         
         if (typeof fileInfo === 'string') {
@@ -82,14 +84,14 @@ async function scanLessons() {
             specifiedTitle = fileInfo.title;
             isHoliday = fileInfo.isHoliday || false;
             
-            // 從標題中提取 emoji
+            // å¾æ¨é¡ä¸­æå emoji
             if (specifiedTitle) {
                 const emojiMatch = specifiedTitle.match(/[\p{Emoji}]/u);
                 specifiedEmoji = emojiMatch ? emojiMatch[0] : '';
             }
         }
 
-        // 處理假日通知（不需要載入 HTML 文件）
+        // èçåæ¥éç¥ï¼ä¸éè¦è¼å¥ HTML æä»¶ï¼
         if (isHoliday) {
             const holidayData = createHolidayData(specifiedDate, specifiedTitle, specifiedEmoji);
             if (holidayData) {
@@ -98,7 +100,7 @@ async function scanLessons() {
             continue;
         }
 
-        // 處理一般文章（需要載入 HTML 文件）
+        // èçä¸è¬æç« ï¼éè¦è¼å¥ HTML æä»¶ï¼
         try {
             const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
             if (response.ok) {
@@ -116,19 +118,19 @@ async function scanLessons() {
     // Sort by date (newest first)
     allLessons = lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
     
-    // 只標記最新的一篇文章為 NEW
+    // åªæ¨è¨ææ°çä¸ç¯æç« çº NEW
     if (allLessons.length > 0) {
-        // 重置所有文章的 isNew 標記
+        // éç½®æææç« ç isNew æ¨è¨
         allLessons.forEach(lesson => {
             lesson.isNew = false;
         });
-        // 只標記最新的一篇（第一篇）為 NEW
+        // åªæ¨è¨ææ°çä¸ç¯ï¼ç¬¬ä¸ç¯ï¼çº NEW
         allLessons[0].isNew = true;
     }
     
     filteredLessons = [...allLessons];
 
-    console.log(`✅ Loaded ${allLessons.length} lessons`);
+    console.log(`â Loaded ${allLessons.length} lessons`);
 }
 
 // ====================
@@ -147,7 +149,7 @@ function createHolidayData(specifiedDate, title, emoji) {
         id: `holiday-${specifiedDate}`,
         filename: null,
         title: cleanTitle,
-        emoji: emoji || '📅',
+        emoji: emoji || 'ð',
         displayTitle: title,
         date: holidayDate,
         dateString: formatDate(holidayDate),
@@ -165,16 +167,16 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, 'text/html');
 
-    // 優先使用 potentialFiles 中提供的標題
+    // åªåä½¿ç¨ potentialFiles ä¸­æä¾çæ¨é¡
     let titleText, emoji, cleanTitle;
     
     if (specifiedTitle) {
-        // 使用 potentialFiles 中提供的標題
+        // ä½¿ç¨ potentialFiles ä¸­æä¾çæ¨é¡
         titleText = specifiedTitle;
         emoji = specifiedEmoji || '';
         cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
     } else {
-        // 從 HTML 提取標題（fallback）
+        // å¾ HTML æåæ¨é¡ï¼fallbackï¼
         let h1 = doc.querySelector('.container h1, .main-content h1, main h1, [class*="container"] h1');
         if (!h1) {
             const allH1s = doc.querySelectorAll('h1');
@@ -197,16 +199,16 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
         cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
     }
 
-    // 日期提取優先順序：
-    // 1. 手動指定的日期（specifiedDate）
-    // 2. 從檔名解析日期（格式：YYYY-MM-DD-slug.html）
-    // 3. 從 HTML meta 標籤提取（如果有的話）
-    // 4. 使用檔案修改時間（如果可用）
-    // 5. Fallback: 使用當前日期
+    // æ¥ææååªåé åºï¼
+    // 1. æåæå®çæ¥æï¼specifiedDateï¼
+    // 2. å¾æªåè§£ææ¥æï¼æ ¼å¼ï¼YYYY-MM-DD-slug.htmlï¼
+    // 3. å¾ HTML meta æ¨ç±¤æåï¼å¦ææçè©±ï¼
+    // 4. ä½¿ç¨æªæ¡ä¿®æ¹æéï¼å¦æå¯ç¨ï¼
+    // 5. Fallback: ä½¿ç¨ç¶åæ¥æ
     let lessonDate;
 
     if (specifiedDate) {
-        // 優先使用手動指定的日期
+        // åªåä½¿ç¨æåæå®çæ¥æ
         const dateParts = specifiedDate.match(/(\d{4})-(\d{2})-(\d{2})/);
         if (dateParts) {
             lessonDate = new Date(dateParts[1], dateParts[2] - 1, dateParts[3]);
@@ -214,21 +216,21 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
             lessonDate = new Date(specifiedDate);
         }
     } else {
-        // 嘗試從檔名解析日期（格式：YYYY-MM-DD-slug.html）
+        // åè©¦å¾æªåè§£ææ¥æï¼æ ¼å¼ï¼YYYY-MM-DD-slug.htmlï¼
         const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
         if (dateMatch) {
             lessonDate = new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
         } else {
-            // 嘗試從 HTML meta 標籤提取日期
+            // åè©¦å¾ HTML meta æ¨ç±¤æåæ¥æ
             const metaDate = doc.querySelector('meta[name="date"], meta[property="article:published_time"]');
             if (metaDate) {
                 const dateValue = metaDate.getAttribute('content');
                 lessonDate = new Date(dateValue);
                 if (isNaN(lessonDate.getTime())) {
-                    lessonDate = new Date(); // 如果解析失敗，使用當前日期
+                    lessonDate = new Date(); // å¦æè§£æå¤±æï¼ä½¿ç¨ç¶åæ¥æ
                 }
             } else {
-                // Fallback: 使用當前日期
+                // Fallback: ä½¿ç¨ç¶åæ¥æ
                 lessonDate = new Date();
             }
         }
@@ -277,7 +279,7 @@ function generateCalendar() {
     if (filteredLessons.length === 0) {
         container.innerHTML = `
             <div class="no-results">
-                <p>😔 No lessons found</p>
+                <p>ð No lessons found</p>
                 <p style="font-size: 0.9rem;">Try a different search term</p>
             </div>
         `;
@@ -354,7 +356,7 @@ function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false
         <div class="month-calendar ${isCollapsed ? 'collapsed' : ''}" data-month="${monthKey}">
             <div class="month-header" onclick="toggleMonthCalendar('${monthKey}', event)">
                 <div class="month-header-title">
-                    <span class="month-header-arrow">${isCollapsed ? '▶' : '▼'}</span>
+                    <span class="month-header-arrow">${isCollapsed ? 'â¶' : 'â¼'}</span>
                     <span>${monthName}</span>
                 </div>
                 <span class="month-header-count">(${lessons.length})</span>
@@ -416,16 +418,16 @@ function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false
             // Add lessons for this day
             if (dayLessons.length > 0 && !cellClass.includes('other-month')) {
                 dayLessons.forEach(lesson => {
-                    // 一般文章只在週一到週五顯示，假日通知可以顯示在任何日期
+                    // ä¸è¬æç« åªå¨é±ä¸å°é±äºé¡¯ç¤ºï¼åæ¥éç¥å¯ä»¥é¡¯ç¤ºå¨ä»»ä½æ¥æ
                     if (!lesson.isHoliday && dayOfWeek >= 5) {
-                        return; // 跳過週末的一般文章
+                        return; // è·³éé±æ«çä¸è¬æç« 
                     }
                     
                     const lessonClass = lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson';
                     const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
                     // Full title will be displayed with multi-line truncation via CSS
                     
-                    // 假日通知不需要連結
+                    // åæ¥éç¥ä¸éè¦é£çµ
                     if (lesson.isHoliday) {
                         dayHTML += `<span class="${lessonClass}" title="${fullTitle}">${fullTitle}</span>`;
                     } else {
@@ -464,7 +466,7 @@ function toggleMonthCalendar(monthKey, event) {
     const arrow = monthHeader.querySelector('.month-header-arrow');
     
     monthCalendar.classList.toggle('collapsed');
-    arrow.textContent = monthCalendar.classList.contains('collapsed') ? '▶' : '▼';
+    arrow.textContent = monthCalendar.classList.contains('collapsed') ? 'â¶' : 'â¼';
 }
 
 // ====================
@@ -505,7 +507,7 @@ function setupSearch() {
 function setupBackToTop() {
     const backToTopBtn = document.createElement('button');
     backToTopBtn.className = 'back-to-top';
-    backToTopBtn.innerHTML = '↑';
+    backToTopBtn.innerHTML = 'â';
     backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
     document.body.appendChild(backToTopBtn);
 
