@@ -1,44 +1,42 @@
 /* ====================
-   ELISA ENGLISH HUB - MODERN REDESIGN
-   Color Theme: Warm Coffee & Latte
+   ELISA ENGLISH HUB - UNIVERSAL COLOR SYSTEM
+   完整優化版 - 2026
    ==================== */
 
-:root {
-    /* Main Colors - Deep Teal & Warm Amber */
-    --teal-dark: #0d3b47;             /* Deep backgrounds */
-    --teal-medium: #1a5f7a;           /* Headers, primary elements */
-    --teal-light: #2e8ba6;            /* Hover states */
-    --sage: #57886c;                  /* Accent green */
+   :root {
+    /* ===== PRIMARY COLORS (主色系) ===== */
+    --primary-dark: #1e3a5f;        /* 深海軍藍 - 深色背景、文字 */
+    --primary-medium: #2b5278;      /* 海軍藍 - 主要元素、標題 */
+    --primary-light: #3a6b91;       /* 淺海軍藍 - Hover 狀態 */
+    --primary-accent: #4a7ba7;      /* 天藍 - 次要強調色 */
 
-    /* Accent Color - Warm Amber */
-    --amber: #f4a261;                 /* CTAs, highlights */
-    --amber-light: #f6b67a;           /* Hover states */
+    /* ===== ACCENT COLOR (強調色) ===== */
+    --accent: #ffc93c;              /* 金黃色 - CTA、亮點 */
+    --accent-light: #ffd966;        /* 淺金黃 - Hover 狀態 */
 
-    /* Neutrals */
+    /* ===== NEUTRAL COLORS (中性色 - 冷色調) ===== */
     --white: #ffffff;
-    --off-white: #f8f9fa;             /* Page background */
-    --gray-light: #e9ecef;
-    --gray-medium: #6c757d;
-    --gray-dark: #495057;
+    --bg-page: #f5f7fa;             /* 極淺藍灰 - 頁面背景 */
+    --bg-card: #ffffff;             /* 純白 - 卡片背景 */
+    --border-light: #e3e8ef;        /* 淺藍灰邊框 */
+    --text-body: #2c3e50;           /* 深藍灰 - 內文 */
+    --text-secondary: #5a6c7d;      /* 藍灰 - 次要文字 */
 
-    /* Shadows & Effects */
-    --shadow-sm: 0 2px 8px rgba(13, 59, 71, 0.08);
-    --shadow-md: 0 4px 16px rgba(13, 59, 71, 0.12);
-    --shadow-lg: 0 8px 24px rgba(13, 59, 71, 0.15);
+    /* ===== SHADOWS & EFFECTS ===== */
+    --shadow-sm: 0 1px 3px rgba(30, 58, 95, 0.1);
+    --shadow-md: 0 2px 8px rgba(30, 58, 95, 0.12);
+    --shadow-lg: 0 4px 16px rgba(30, 58, 95, 0.15);
+    /* ===== SPACING ===== */
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
 
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-
-    /* Border Radius */
+    /* ===== BORDER RADIUS ===== */
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 16px;
 }
-
 /* ====================
    RESET & BASE
    ==================== */
@@ -51,8 +49,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
     line-height: 1.6;
-    color: var(--teal-dark);
-    background: var(--off-white);
+    color: var(--primary-dark);
+    background: var(--bg-page);
     min-height: 100vh;
 }
 
@@ -60,14 +58,13 @@ body {
    HEADER
    ==================== */
 .header {
-    background: var(--teal-medium);
-    color: white;
+    background: var(--primary-medium);
+    color: var(--white);
     padding: 1.25rem 2rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid var(--amber);
 }
 
 .header-content {
@@ -76,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--spacing-md);
+    gap: var(--space-md);
     flex-wrap: wrap;
 }
 
@@ -89,17 +86,17 @@ body {
     width: 280px;
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid rgba(255, 255, 255, 0.3);
-    color: var(--teal-dark);
+    color: var(--primary-dark);
 }
 
 .header-content .search-box #searchInput:focus {
-    background: white;
-    border-color: var(--amber);
+    background: var(--white);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.2);
 }
 
 .header-content .search-box #searchInput::placeholder {
-    color: var(--gray-medium);
+    color: var(--text-secondary);
 }
 
 .header-content h1 {
@@ -107,7 +104,7 @@ body {
     font-weight: 700 !important;
     margin: 0 !important;
     letter-spacing: -0.5px !important;
-    color: white !important;
+    color: var(--white) !important;
     border-bottom: none !important;
     padding-bottom: 0 !important;
     padding-top: 0 !important;
@@ -124,6 +121,7 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
 }
 
 /* ====================
@@ -136,48 +134,48 @@ body {
 }
 
 /* ====================
-   SIDEBAR (Removed - no longer used)
+   SEARCH BOX
    ==================== */
-
-/* Search Box - Base styles (header version overrides above) */
 .search-box {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--space-md);
 }
 
 #searchInput {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 2px solid var(--gray-light);
+    border: 2px solid var(--border-light);
     border-radius: var(--radius-md);
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    background: var(--off-white);
-    color: var(--teal-dark);
+    background: var(--bg-page);
+    color: var(--primary-dark);
 }
 
 #searchInput:focus {
     outline: none;
-    border-color: var(--amber);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.1);
-    background: white;
+    background: var(--white);
 }
 
 #searchInput::placeholder {
-    color: var(--gray-medium);
+    color: var(--text-secondary);
 }
 
-/* Home Button */
+/* ====================
+   HOME BUTTON
+   ==================== */
 .home-btn {
     width: 100%;
-    background: var(--amber);
-    color: white;
+    background: var(--accent);
+    color: var(--white);
     border: none;
     padding: 0.75rem 1rem;
     border-radius: var(--radius-md);
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--space-md);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -186,7 +184,7 @@ body {
 }
 
 .home-btn:hover {
-    background: var(--amber-light);
+    background: var(--accent-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
 }
@@ -199,20 +197,20 @@ body {
    CALENDAR VIEW
    ==================== */
 #calendarView {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--space-lg);
 }
 
 /* Month Calendar Container */
 .month-calendar {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
     box-shadow: var(--shadow-sm);
-    border-left: 5px solid var(--teal-medium);
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid var(--border-light);
 }
 
 /* Month Header */
@@ -220,24 +218,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: var(--spacing-md);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 2px solid var(--gray-light);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
     cursor: pointer;
     user-select: none;
 }
 
 .month-header:hover {
-    color: var(--teal-medium);
+    color: var(--primary-medium);
 }
 
 .month-header-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--teal-dark);
+    color: var(--primary-dark);
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
 }
 
 .month-header-arrow {
@@ -252,43 +249,45 @@ body {
 
 .month-header-count {
     font-size: 0.9rem;
-    color: var(--gray-medium);
+    color: var(--text-secondary);
     font-weight: 400;
 }
 
-/* Calendar Grid */
+/* ====================
+   CALENDAR GRID - 優化版
+   ==================== */
 .calendar-grid {
     width: 100%;
     border-collapse: collapse;
-    margin-top: var(--spacing-md);
+    margin-top: var(--space-md);
 }
 
 .calendar-grid th {
-    padding: var(--spacing-sm);
+    padding: var(--space-sm);
     text-align: center;
     font-weight: 600;
-    color: var(--teal-medium);
+    color: var(--primary-medium);
     font-size: 0.9rem;
-    border-bottom: 2px solid var(--gray-light);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .calendar-grid th.weekend {
-    color: var(--gray-medium);
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
 .calendar-grid th.weekday {
-    width: 16.67%; /* Weekdays take more space */
+    width: 16.67%;
 }
 
 .calendar-grid th.weekend {
-    width: 8.33%; /* Weekends take half the space of weekdays */
+    width: 8.33%;
 }
 
 .calendar-grid td {
-    padding: 0.5rem;
+    padding: 0.4rem;
     vertical-align: top;
-    border: 1px solid var(--gray-light);
+    border: 1px solid var(--border-light);
     min-height: 100px;
     height: 100px;
     position: relative;
@@ -297,7 +296,7 @@ body {
 
 .calendar-grid td.weekend {
     width: 8.33%;
-    background: var(--off-white);
+    background: var(--bg-page);
 }
 
 .calendar-grid td.weekday {
@@ -306,72 +305,78 @@ body {
 
 .calendar-grid td.other-month {
     background: #fafafa;
-    color: var(--gray-medium);
+    color: var(--text-secondary);
     opacity: 0.5;
 }
 
 /* Day Number */
 .day-number {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--teal-dark);
-    margin-bottom: 0.3rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.25rem;
+    display: block;
 }
 
 .calendar-grid td.other-month .day-number {
-    color: var(--gray-medium);
+    color: var(--text-secondary);
 }
 
-/* Lesson in Calendar - Multi-line truncation */
+/* Lesson in Calendar - 多行截斷優化 */
 .day-lesson {
-    margin-top: 0.3rem;
-    padding: 0.3rem 0.4rem;
-    background: var(--teal-light);
-    border-radius: var(--radius-sm);
-    font-size: 0.75rem;
-    line-height: 1.3;
+    margin-top: 0.25rem;
+    padding: 0.2rem 0;
+    background: transparent;
+    border-radius: 0;
+    font-size: 0.68rem;
+    line-height: 1.4;
     cursor: pointer;
     transition: all 0.2s ease;
     text-decoration: none;
-    color: white;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Show max 3 lines */
-    -webkit-box-orient: vertical;
+    color: var(--primary-dark);
+    display: block;
+    border-bottom: 1px solid transparent;
+    
+    /* 多行截斷 */
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     word-break: break-word;
-    max-height: calc(1.3em * 3 + 0.6rem); /* 3 lines + padding */
+    max-height: calc(1.4em * 3);
 }
 
 .day-lesson:hover {
-    background: var(--teal-medium);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
-}
-
-.day-lesson.new {
-    background: var(--amber);
-}
-
-.day-lesson.new:hover {
-    background: var(--amber-light);
+    color: var(--primary-medium);
+    border-bottom-color: var(--primary-medium);
+    background: transparent;
+    transform: none;
+    box-shadow: none;
 }
 
 .day-lesson.holiday {
-    background: var(--sage);
+    background: transparent;
+    border: 1px dashed var(--text-secondary);
+    color: var(--text-secondary);
     cursor: default;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 .day-lesson.holiday:hover {
-    background: var(--sage);
+    background: transparent;
+    border-color: var(--text-secondary);
     transform: none;
+    box-shadow: none;
+    opacity: 1;
 }
 
 /* Empty Day */
 .day-empty {
-    color: var(--gray-medium);
-    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-style: italic;
 }
 
 /* Collapsed State */
@@ -379,48 +384,27 @@ body {
     display: none;
 }
 
-/* Responsive Calendar */
-@media (max-width: 768px) {
-    .calendar-grid {
-        font-size: 0.8rem;
-    }
-    
-    .calendar-grid td {
-        height: 60px;
-        padding: 0.3rem;
-    }
-    
-    .day-lesson {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.3rem;
-    }
-    
-    .month-header-title {
-        font-size: 1.2rem;
-    }
-}
-
 /* ====================
    MAIN CONTENT
    ==================== */
 .main-content {
-    padding: var(--spacing-lg);
+    padding: var(--space-lg);
     width: 100%;
 }
 
 /* Welcome Card */
 .welcome-card {
-    background: white;
-    padding: var(--spacing-lg);
+    background: var(--bg-card);
+    padding: var(--space-lg);
     border-radius: var(--radius-lg);
-    border-left: 5px solid var(--amber);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--space-lg);
     box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
 }
 
 .welcome-card h2 {
-    color: var(--teal-medium);
-    margin-bottom: var(--spacing-sm);
+    color: var(--primary-medium);
+    margin-bottom: var(--space-sm);
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -428,61 +412,61 @@ body {
 .welcome-card p {
     margin-bottom: 0.8rem;
     line-height: 1.8;
-    color: var(--teal-dark);
+    color: var(--primary-dark);
 }
 
 .schedule-info {
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-sm);
-    background: var(--off-white);
+    margin-top: var(--space-md);
+    padding: var(--space-sm);
+    background: var(--bg-page);
     border-radius: var(--radius-md);
-    border-left: 3px solid var(--teal-medium);
+    border: 1px solid var(--border-light);
 }
 
 .schedule-info h3 {
-    color: var(--teal-medium);
+    color: var(--primary-medium);
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
 /* Section Title */
 .section-title {
-    color: var(--teal-medium);
+    color: var(--primary-medium);
     font-size: 1.5rem;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--space-md);
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--amber);
     font-weight: 700;
 }
 
 /* Total Count */
 .total-count {
-    color: var(--gray-medium);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     font-weight: 400;
-    margin-left: var(--spacing-sm);
+    margin-left: var(--space-sm);
 }
 
-/* Lesson List - Simple & Clean */
+/* ====================
+   LESSON LIST
+   ==================== */
 .lesson-item {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-md);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
-    border-left: 4px solid transparent;
+    border: 1px solid var(--border-light);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
 }
 
 .lesson-item:hover {
-    transform: translateX(4px);
     box-shadow: var(--shadow-md);
-    border-left-color: var(--amber);
+    border-color: var(--primary-light);
 }
 
 .lesson-title-wrapper {
@@ -490,7 +474,7 @@ body {
 }
 
 .lesson-title {
-    color: var(--teal-dark);
+    color: var(--primary-dark);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
@@ -498,45 +482,40 @@ body {
 }
 
 .lesson-date {
-    color: var(--gray-medium);
+    color: var(--text-secondary);
     font-size: 0.85rem;
     white-space: nowrap;
     padding: 0.3rem 0.7rem;
-    background: var(--off-white);
+    background: var(--bg-page);
     border-radius: var(--radius-sm);
 }
 
-.lesson-date.new {
-    background: var(--amber);
-    color: white;
-    font-weight: 600;
-}
 
 /* No Results Message */
 .no-results {
     text-align: center;
-    padding: var(--spacing-xl);
-    color: var(--gray-medium);
+    padding: var(--space-xl);
+    color: var(--text-secondary);
 }
 
 .no-results p {
     font-size: 1.1rem;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--space-sm);
 }
 
 /* ====================
-   LESSON CONTENT WRAPPER (for loaded HTML)
+   LESSON CONTENT WRAPPER
    ==================== */
 .lesson-content-wrapper {
-    background: white;
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
+    padding: var(--space-lg);
     box-shadow: var(--shadow-sm);
 }
 
 .lesson-content-wrapper h1 {
-    color: var(--teal-medium);
-    margin-bottom: var(--spacing-md);
+    color: var(--primary-medium);
+    margin-bottom: var(--space-md);
 }
 
 .lesson-content-wrapper img {
@@ -544,13 +523,15 @@ body {
     border-radius: var(--radius-md);
 }
 
-/* Back to Top Button */
+/* ====================
+   BACK TO TOP BUTTON
+   ==================== */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: var(--amber);
-    color: white;
+    background: var(--accent);
+    color: var(--white);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -566,7 +547,7 @@ body {
 }
 
 .back-to-top:hover {
-    background: var(--amber-light);
+    background: var(--accent-light);
     transform: translateY(-3px);
 }
 
@@ -581,7 +562,18 @@ body {
 /* Tablet */
 @media (max-width: 1024px) {
     .main-content {
-        padding: var(--spacing-md);
+        padding: var(--space-md);
+    }
+    
+    .calendar-grid td {
+        height: 90px;
+        min-height: 90px;
+    }
+    
+    .day-lesson {
+        font-size: 0.65rem;
+        -webkit-line-clamp: 2;
+        padding: 0.15rem 0;
     }
 }
 
@@ -593,12 +585,12 @@ body {
 
     .header-content {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--space-sm);
         align-items: flex-start;
     }
 
     .header-content h1 {
-        font-size: 1.3rem;
+        font-size: 1.3rem !important;
     }
 
     .level-badge {
@@ -616,7 +608,7 @@ body {
     }
 
     .main-content {
-        padding: var(--spacing-sm);
+        padding: var(--space-sm);
     }
 
     .lesson-item {
@@ -629,7 +621,7 @@ body {
     }
 
     .welcome-card {
-        padding: var(--spacing-md);
+        padding: var(--space-md);
     }
 
     .back-to-top {
@@ -638,12 +630,40 @@ body {
         width: 45px;
         height: 45px;
     }
+    
+    /* Calendar Responsive */
+    .calendar-grid {
+        font-size: 0.8rem;
+    }
+    
+    .calendar-grid td {
+        height: 70px;
+        min-height: 70px;
+        padding: 0.25rem;
+    }
+    
+    .day-number {
+        font-size: 0.7rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .day-lesson {
+        font-size: 0.6rem;
+        padding: 0.15rem 0;
+        line-height: 1.3;
+        -webkit-line-clamp: 2;
+        max-height: calc(1.3em * 2);
+    }
+    
+    .month-header-title {
+        font-size: 1.2rem;
+    }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
     .header-content h1 {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
     }
 
     .main-content {
@@ -651,7 +671,7 @@ body {
     }
 
     .lesson-item {
-        padding: var(--spacing-sm);
+        padding: var(--space-sm);
     }
 
     .lesson-title {
@@ -664,8 +684,8 @@ body {
    ==================== */
 .loading {
     text-align: center;
-    padding: var(--spacing-xl);
-    color: var(--gray-medium);
+    padding: var(--space-xl);
+    color: var(--text-secondary);
 }
 
 .loading::after {
@@ -690,6 +710,6 @@ body {
     text-align: center;
 }
 
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }

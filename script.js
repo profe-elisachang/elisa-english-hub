@@ -5,8 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    lessonFolder: 'intermediate/',
-    newLessonDays: 7 // Show "NEW" badge for lessons within X days
+    lessonFolder: 'intermediate/'
 };
 
 // Global state
@@ -66,6 +65,7 @@ async function scanLessons() {
         { filename: 'Friendly Service or Smart Machines.html', date: '2026-01-30', title: '🤖 Friendly Service or Smart Machines?' },
         { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-04', title: '🕯️ The Uplifting Aroma of Scented Candles' },
         { filename: 'The Science of Memory.html', date: '2026-02-06', title: '🧠 The Science of Memory: Why We Remember and Why We Forget' },
+        { date: '2026-02-02', title: 'Flexible Adjustment Holiday:Día de la Constitución Mexicana - No Class', isHoliday: true }
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
@@ -119,16 +119,6 @@ async function scanLessons() {
     // Sort by date (newest first)
     allLessons = lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
     
-    // 只標記最新的一篇文章為 NEW
-    if (allLessons.length > 0) {
-        // 重置所有文章的 isNew 標記
-        allLessons.forEach(lesson => {
-            lesson.isNew = false;
-        });
-        // 只標記最新的一篇（第一篇）為 NEW
-        allLessons[0].isNew = true;
-    }
-    
     filteredLessons = [...allLessons];
 
     console.log(`✅ Loaded ${allLessons.length} lessons`);
@@ -156,7 +146,6 @@ function createHolidayData(specifiedDate, title, emoji) {
         dateString: formatDate(holidayDate),
         preview: '',
         searchableContent: cleanTitle.toLowerCase(),
-        isNew: false,
         isHoliday: true
     };
 }
@@ -254,8 +243,7 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
         date: lessonDate,
         dateString: formatDate(lessonDate),
         preview: preview,
-        searchableContent: searchableContent.toLowerCase(),
-        isNew: false  // 稍後在排序後會重新設定，只標記最新的一篇
+        searchableContent: searchableContent.toLowerCase()
     };
 }
 
@@ -289,17 +277,12 @@ function generateCalendar() {
     // Group lessons by month
     const lessonsByMonth = groupLessonsByMonth(filteredLessons);
     
-    // Get current month for default expansion
-    const now = new Date();
-    const currentMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-
-    // Generate calendar HTML for each month
+    // Generate calendar HTML for each month (all expanded by default)
     const sortedMonths = Object.keys(lessonsByMonth).sort().reverse();
     
     container.innerHTML = sortedMonths.map(monthKey => {
         const monthData = lessonsByMonth[monthKey];
-        const isCurrentMonth = monthKey === currentMonthKey;
-        const isCollapsed = !isCurrentMonth;
+        const isCollapsed = false; // All months expanded by default
         
         return generateMonthCalendar(monthKey, monthData.lessons, monthData.name, isCollapsed);
     }).join('');
@@ -428,7 +411,7 @@ function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false
                         return; // 跳過週末的一般文章
                     }
                     
-                    const lessonClass = lesson.isNew ? 'day-lesson new' : (lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson');
+                    const lessonClass = lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson';
                     const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
                     // Full title will be displayed with multi-line truncation via CSS
                     
@@ -540,12 +523,6 @@ function formatDate(date) {
     });
 }
 
-function isNewLesson(lessonDate) {
-    const now = new Date();
-    const diffTime = Math.abs(now - lessonDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays <= CONFIG.newLessonDays;
-}
 
 function showLoading() {
     const container = document.getElementById('calendarView');
@@ -572,7 +549,6 @@ window.debugLessons = () => {
         title: l.title,
         emoji: l.emoji,
         date: l.dateString,
-        isNew: l.isNew,
         filename: l.filename
     })));
 };

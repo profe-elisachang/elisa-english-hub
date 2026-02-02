@@ -67,7 +67,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid var(--cyan);
 }
 
 .header-content {
@@ -350,13 +349,6 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.day-lesson.new {
-    background: var(--cyan);
-}
-
-.day-lesson.new:hover {
-    background: var(--cyan-light);
-}
 
 .day-lesson.holiday {
     background: var(--blue-accent);
@@ -413,7 +405,6 @@ body {
     background: white;
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
-    border-left: 5px solid var(--cyan);
     margin-bottom: var(--spacing-lg);
     box-shadow: var(--shadow-sm);
 }
@@ -506,11 +497,6 @@ body {
     border-radius: var(--radius-sm);
 }
 
-.lesson-date.new {
-    background: var(--cyan);
-    color: white;
-    font-weight: 600;
-}
 
 /* No Results Message */
 .no-results {

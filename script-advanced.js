@@ -5,8 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    lessonFolder: 'advanced/',
-    newLessonDays: 7 // Show "NEW" badge for lessons within X days
+    lessonFolder: 'advanced/'
 };
 
 // Global state
@@ -56,34 +55,55 @@ async function scanLessons() {
     //
     // ========================================
     const potentialFiles = [
-        { filename: 'The Fight Against Fake Job Applications.html', date: '2026-01-15' },
-        { filename: 'The New Primetime.html', date: '2026-01-20' },
-        { filename: 'Treasure of the Sea.html', date: '2026-01-22' },
-        { filename: 'Hollywood Means Business.html', date: '2026-01-27' },
-        { filename: 'The Power of Asking for Help.html', date: '2026-01-29' },
-        { filename: 'The Right Way to Motivate.html', date: '2026-02-03' },
+        // 文章格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
+        // 假日通知格式：{ date: 'YYYY-MM-DD', title: '假日名稱（含emoji）', isHoliday: true }
+        { filename: 'The Fight Against Fake Job Applications.html', date: '2026-01-15', title: 'The Fight Against Fake Job Applications' },
+        { filename: 'The New Primetime.html', date: '2026-01-20', title: '📺 The New Primetime: Gen Z and Social Media Creators' },
+        { filename: 'Treasure of the Sea.html', date: '2026-01-22', title: 'Treasure of the Sea: The Seaweed Industry' },
+        { filename: 'Hollywood Means Business.html', date: '2026-01-27', title: 'Hollywood Means Business' },
+        { filename: 'The Power of Asking for Help.html', date: '2026-01-29', title: '🤝 The Power of Asking for Help' },
+        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: '🤝 The Right Way to Motivate' },
         // 👆 在此上方添加新文章，記得加逗號！
-        // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD' }
+        // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
+        // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
     ];
 
     const lessons = [];
 
     for (const fileInfo of potentialFiles) {
         // 支援兩種格式：字串或物件
-        let filename, specifiedDate = null;
+        let filename, specifiedDate = null, specifiedTitle = null, specifiedEmoji = null, isHoliday = false;
         
         if (typeof fileInfo === 'string') {
             filename = fileInfo;
         } else {
             filename = fileInfo.filename;
             specifiedDate = fileInfo.date;
+            specifiedTitle = fileInfo.title;
+            isHoliday = fileInfo.isHoliday || false;
+            
+            // 從標題中提取 emoji
+            if (specifiedTitle) {
+                const emojiMatch = specifiedTitle.match(/[\p{Emoji}]/u);
+                specifiedEmoji = emojiMatch ? emojiMatch[0] : '';
+            }
         }
 
+        // 處理假日通知（不需要載入 HTML 文件）
+        if (isHoliday) {
+            const holidayData = createHolidayData(specifiedDate, specifiedTitle, specifiedEmoji);
+            if (holidayData) {
+                lessons.push(holidayData);
+            }
+            continue;
+        }
+
+        // 處理一般文章（需要載入 HTML 文件）
         try {
             const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
             if (response.ok) {
                 const htmlContent = await response.text();
-                const lessonData = await extractLessonData(filename, htmlContent, specifiedDate);
+                const lessonData = await extractLessonData(filename, htmlContent, specifiedDate, specifiedTitle, specifiedEmoji);
                 if (lessonData) {
                     lessons.push(lessonData);
                 }
@@ -112,24 +132,70 @@ async function scanLessons() {
 }
 
 // ====================
+// CREATE HOLIDAY DATA
+// ====================
+function createHolidayData(specifiedDate, title, emoji) {
+    if (!specifiedDate || !title) return null;
+    
+    const dateParts = specifiedDate.match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (!dateParts) return null;
+    
+    const holidayDate = new Date(dateParts[1], dateParts[2] - 1, dateParts[3]);
+    const cleanTitle = title.replace(/[\p{Emoji}]/gu, '').trim();
+    
+    return {
+        id: `holiday-${specifiedDate}`,
+        filename: null,
+        title: cleanTitle,
+        emoji: emoji || '📅',
+        displayTitle: title,
+        date: holidayDate,
+        dateString: formatDate(holidayDate),
+        preview: '',
+        searchableContent: cleanTitle.toLowerCase(),
+        isNew: false,
+        isHoliday: true
+    };
+}
+
+// ====================
 // EXTRACT LESSON DATA FROM HTML
 // ====================
-async function extractLessonData(filename, htmlContent, specifiedDate = null) {
+async function extractLessonData(filename, htmlContent, specifiedDate = null, specifiedTitle = null, specifiedEmoji = null) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, 'text/html');
 
-    // Extract title from <h1>
-    const h1 = doc.querySelector('h1');
-    if (!h1) return null;
+    // 優先使用 potentialFiles 中提供的標題
+    let titleText, emoji, cleanTitle;
+    
+    if (specifiedTitle) {
+        // 使用 potentialFiles 中提供的標題
+        titleText = specifiedTitle;
+        emoji = specifiedEmoji || '';
+        cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+    } else {
+        // 從 HTML 提取標題（fallback）
+        let h1 = doc.querySelector('.container h1, .main-content h1, main h1, [class*="container"] h1');
+        if (!h1) {
+            const allH1s = doc.querySelectorAll('h1');
+            if (allH1s.length > 1) {
+                h1 = allH1s[1]; // Get the second h1 (article title)
+            } else if (allH1s.length === 1) {
+                const headerH1 = doc.querySelector('header h1');
+                if (headerH1 && headerH1 === allH1s[0]) {
+                    h1 = doc.querySelector('h1:not(header h1)') || doc.querySelector('.section h1') || null;
+                } else {
+                    h1 = allH1s[0];
+                }
+            }
+        }
+        if (!h1) return null;
 
-    const titleText = h1.textContent.trim();
-
-    // Extract emoji from title (if exists)
-    const emojiMatch = titleText.match(/[\p{Emoji}]/u);
-    const emoji = emojiMatch ? emojiMatch[0] : '';
-
-    // Remove emoji from title for clean display
-    const cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+        titleText = h1.textContent.trim();
+        const emojiMatch = titleText.match(/[\p{Emoji}]/u);
+        emoji = emojiMatch ? emojiMatch[0] : '';
+        cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+    }
 
     // 日期提取優先順序：
     // 1. 手動指定的日期（specifiedDate）
@@ -186,7 +252,8 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null) {
         dateString: formatDate(lessonDate),
         preview: preview,
         searchableContent: searchableContent.toLowerCase(),
-        isNew: false  // 稍後在排序後會重新設定，只標記最新的一篇
+        isNew: false,
+        isHoliday: false
     };
 }
 
@@ -220,17 +287,12 @@ function generateCalendar() {
     // Group lessons by month
     const lessonsByMonth = groupLessonsByMonth(filteredLessons);
     
-    // Get current month for default expansion
-    const now = new Date();
-    const currentMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-
-    // Generate calendar HTML for each month
+    // Generate calendar HTML for each month (all expanded by default)
     const sortedMonths = Object.keys(lessonsByMonth).sort().reverse();
     
     container.innerHTML = sortedMonths.map(monthKey => {
         const monthData = lessonsByMonth[monthKey];
-        const isCurrentMonth = monthKey === currentMonthKey;
-        const isCollapsed = !isCurrentMonth;
+        const isCollapsed = false; // All months expanded by default
         
         return generateMonthCalendar(monthKey, monthData.lessons, monthData.name, isCollapsed);
     }).join('');
@@ -359,7 +421,7 @@ function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false
                         return; // 跳過週末的一般文章
                     }
                     
-                    const lessonClass = lesson.isNew ? 'day-lesson new' : (lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson');
+                    const lessonClass = lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson';
                     const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
                     // Full title will be displayed with multi-line truncation via CSS
                     
@@ -467,12 +529,6 @@ function formatDate(date) {
     });
 }
 
-function isNewLesson(lessonDate) {
-    const now = new Date();
-    const diffTime = Math.abs(now - lessonDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays <= CONFIG.newLessonDays;
-}
 
 function showLoading() {
     const container = document.getElementById('calendarView');
@@ -493,7 +549,6 @@ window.debugLessons = () => {
         title: l.title,
         emoji: l.emoji,
         date: l.dateString,
-        isNew: l.isNew,
         filename: l.filename
     })));
 };
