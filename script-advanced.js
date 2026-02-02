@@ -26,54 +26,56 @@ document.addEventListener('DOMContentLoaded', async function() {
 // ====================
 async function scanLessons() {
     // ========================================
-    // ð æåæ·»å æ°æç« çä½ç½®
+    // Ã°ÂÂÂ Ã¦ÂÂÃ¥ÂÂÃ¦Â·Â»Ã¥ÂÂ Ã¦ÂÂ°Ã¦ÂÂÃ§Â«Â Ã§ÂÂÃ¤Â½ÂÃ§Â½Â®
     // ========================================
-    // ç¶æ¨å¨ advanced/ è³æå¤¾ä¸æ°å¢ HTML æç« æï¼
-    // è«å¨æ­¤é£åä¸­æ·»å æªæ¡è³è¨ã
+    // Ã§ÂÂ¶Ã¦ÂÂ¨Ã¥ÂÂ¨ advanced/ Ã¨Â³ÂÃ¦ÂÂÃ¥Â¤Â¾Ã¤Â¸ÂÃ¦ÂÂ°Ã¥Â¢Â HTML Ã¦ÂÂÃ§Â«Â Ã¦ÂÂÃ¯Â¼Â
+    // Ã¨Â«ÂÃ¥ÂÂ¨Ã¦Â­Â¤Ã©ÂÂ£Ã¥ÂÂÃ¤Â¸Â­Ã¦Â·Â»Ã¥ÂÂ Ã¦ÂªÂÃ¦Â¡ÂÃ¨Â³ÂÃ¨Â¨ÂÃ£ÂÂ
     //
-    // ãæ ¼å¼èªªæ - å©ç¨®æ¹å¼ä»»é¸ä¸ç¨®ã
+    // Ã£ÂÂÃ¦Â Â¼Ã¥Â¼ÂÃ¨ÂªÂªÃ¦ÂÂ - Ã¥ÂÂ©Ã§Â¨Â®Ã¦ÂÂ¹Ã¥Â¼ÂÃ¤Â»Â»Ã©ÂÂ¸Ã¤Â¸ÂÃ§Â¨Â®Ã£ÂÂ
     //
-    // æ¹å¼ 1ï¼ç°¡å®å­ä¸²ï¼æªååå«æ¥ææä½¿ç¨ï¼
-    //   æ ¼å¼ï¼'YYYY-MM-DD-topic-name.html'
-    //   ç¯ä¾ï¼'2025-01-15-topic-name.html'
-    //   èªªæï¼ç³»çµ±æèªåå¾æªåè§£ææ¥æ
+    // Ã¦ÂÂ¹Ã¥Â¼Â 1Ã¯Â¼ÂÃ§Â°Â¡Ã¥ÂÂ®Ã¥Â­ÂÃ¤Â¸Â²Ã¯Â¼ÂÃ¦ÂªÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂ«Ã¦ÂÂ¥Ã¦ÂÂÃ¦ÂÂÃ¤Â½Â¿Ã§ÂÂ¨Ã¯Â¼Â
+    //   Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼Â'YYYY-MM-DD-topic-name.html'
+    //   Ã§Â¯ÂÃ¤Â¾ÂÃ¯Â¼Â'2025-01-15-topic-name.html'
+    //   Ã¨ÂªÂªÃ¦ÂÂÃ¯Â¼ÂÃ§Â³Â»Ã§ÂµÂ±Ã¦ÂÂÃ¨ÂÂªÃ¥ÂÂÃ¥Â¾ÂÃ¦ÂªÂÃ¥ÂÂÃ¨Â§Â£Ã¦ÂÂÃ¦ÂÂ¥Ã¦ÂÂ
     //
-    // æ¹å¼ 2ï¼ç©ä»¶æ ¼å¼ï¼æªåä¸åå«æ¥ææä½¿ç¨ï¼
-    //   æ ¼å¼ï¼{ filename: 'æªå.html', date: 'YYYY-MM-DD' }
-    //   ç¯ä¾ï¼{ filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' }
-    //   èªªæï¼æåæå®ç¼ä½æ¥æï¼ç¢ºä¿æ­£ç¢ºæåº
+    // Ã¦ÂÂ¹Ã¥Â¼Â 2Ã¯Â¼ÂÃ§ÂÂ©Ã¤Â»Â¶Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼ÂÃ¦ÂªÂÃ¥ÂÂÃ¤Â¸ÂÃ¥ÂÂÃ¥ÂÂ«Ã¦ÂÂ¥Ã¦ÂÂÃ¦ÂÂÃ¤Â½Â¿Ã§ÂÂ¨Ã¯Â¼Â
+    //   Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼Â{ filename: 'Ã¦ÂªÂÃ¥ÂÂ.html', date: 'YYYY-MM-DD' }
+    //   Ã§Â¯ÂÃ¤Â¾ÂÃ¯Â¼Â{ filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' }
+    //   Ã¨ÂªÂªÃ¦ÂÂÃ¯Â¼ÂÃ¦ÂÂÃ¥ÂÂÃ¦ÂÂÃ¥Â®ÂÃ§ÂÂ¼Ã¤Â½ÂÃ¦ÂÂ¥Ã¦ÂÂÃ¯Â¼ÂÃ§Â¢ÂºÃ¤Â¿ÂÃ¦Â­Â£Ã§Â¢ÂºÃ¦ÂÂÃ¥ÂºÂ
     //
-    // ãæ³¨æäºé ã
-    // - å¦ææªæ¡åç¨±åå«å®å¼èï¼å¦ Don'tï¼ï¼è«ä½¿ç¨åæç·è½ç¾©ï¼Don\'t
-    // - æ¯åé ç®å¾é¢å ä¸éè ,
-    // - å»ºè­°æå­æ¯é åºæåï¼æ¹ä¾¿ç¶­è­·
-    // - æªæ¡åç¨±å¿é è advanced/ è³æå¤¾ä¸çå¯¦éæªæ¡åç¨±å®å¨ä¸è´
+    // Ã£ÂÂÃ¦Â³Â¨Ã¦ÂÂÃ¤ÂºÂÃ©Â ÂÃ£ÂÂ
+    // - Ã¥Â¦ÂÃ¦ÂÂÃ¦ÂªÂÃ¦Â¡ÂÃ¥ÂÂÃ§Â¨Â±Ã¥ÂÂÃ¥ÂÂ«Ã¥ÂÂ®Ã¥Â¼ÂÃ¨ÂÂÃ¯Â¼ÂÃ¥Â¦Â Don'tÃ¯Â¼ÂÃ¯Â¼ÂÃ¨Â«ÂÃ¤Â½Â¿Ã§ÂÂ¨Ã¥ÂÂÃ¦ÂÂÃ§Â·ÂÃ¨Â½ÂÃ§Â¾Â©Ã¯Â¼ÂDon\'t
+    // - Ã¦Â¯ÂÃ¥ÂÂÃ©Â ÂÃ§ÂÂ®Ã¥Â¾ÂÃ©ÂÂ¢Ã¥ÂÂ Ã¤Â¸ÂÃ©ÂÂÃ¨ÂÂ ,
+    // - Ã¥Â»ÂºÃ¨Â­Â°Ã¦ÂÂÃ¥Â­ÂÃ¦Â¯ÂÃ©Â ÂÃ¥ÂºÂÃ¦ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¦ÂÂ¹Ã¤Â¾Â¿Ã§Â¶Â­Ã¨Â­Â·
+    // - Ã¦ÂªÂÃ¦Â¡ÂÃ¥ÂÂÃ§Â¨Â±Ã¥Â¿ÂÃ©Â ÂÃ¨ÂÂ advanced/ Ã¨Â³ÂÃ¦ÂÂÃ¥Â¤Â¾Ã¤Â¸ÂÃ§ÂÂÃ¥Â¯Â¦Ã©ÂÂÃ¦ÂªÂÃ¦Â¡ÂÃ¥ÂÂÃ§Â¨Â±Ã¥Â®ÂÃ¥ÂÂ¨Ã¤Â¸ÂÃ¨ÂÂ´
     //
-    // ãç¯ä¾ã
-    //    '2025-01-15-topic-name.html',              â æ¹å¼ 1ï¼æªååå«æ¥æ
-    //    { filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' },  â æ¹å¼ 2ï¼æåæå®æ¥æ
+    // Ã£ÂÂÃ§Â¯ÂÃ¤Â¾ÂÃ£ÂÂ
+    //    '2025-01-15-topic-name.html',              Ã¢ÂÂ Ã¦ÂÂ¹Ã¥Â¼Â 1Ã¯Â¼ÂÃ¦ÂªÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂ«Ã¦ÂÂ¥Ã¦ÂÂ
+    //    { filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' },  Ã¢ÂÂ Ã¦ÂÂ¹Ã¥Â¼Â 2Ã¯Â¼ÂÃ¦ÂÂÃ¥ÂÂÃ¦ÂÂÃ¥Â®ÂÃ¦ÂÂ¥Ã¦ÂÂ
     //
     // ========================================
     const potentialFiles = [
-        // æç« æ ¼å¼ï¼{ filename: 'æªå.html', date: 'YYYY-MM-DD', title: 'æ¨é¡ï¼å«emojiï¼' }
-        // åæ¥éç¥æ ¼å¼ï¼{ date: 'YYYY-MM-DD', title: 'åæ¥åç¨±ï¼å«emojiï¼', isHoliday: true }
+        // Ã¦ÂÂÃ§Â«Â Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼Â{ filename: 'Ã¦ÂªÂÃ¥ÂÂ.html', date: 'YYYY-MM-DD', title: 'Ã¦Â¨ÂÃ©Â¡ÂÃ¯Â¼ÂÃ¥ÂÂ«emojiÃ¯Â¼Â' }
+        // Ã¥ÂÂÃ¦ÂÂ¥Ã©ÂÂÃ§ÂÂ¥Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼Â{ date: 'YYYY-MM-DD', title: 'Ã¥ÂÂÃ¦ÂÂ¥Ã¥ÂÂÃ§Â¨Â±Ã¯Â¼ÂÃ¥ÂÂ«emojiÃ¯Â¼Â', isHoliday: true }
         { filename: 'The Fight Against Fake Job Applications.html', date: '2026-01-15', title: 'The Fight Against Fake Job Applications' },
-        { filename: 'The New Primetime.html', date: '2026-01-20', title: 'ðº The New Primetime: Gen Z and Social Media Creators' },
+        { filename: 'The New Primetime.html', date: '2026-01-20', title: 'Ã°ÂÂÂº The New Primetime: Gen Z and Social Media Creators' },
         { filename: 'Treasure of the Sea.html', date: '2026-01-22', title: 'Treasure of the Sea: The Seaweed Industry' },
         { filename: 'Hollywood Means Business.html', date: '2026-01-27', title: 'Hollywood Means Business' },
-        { filename: 'The Power of Asking for Help.html', date: '2026-01-29', title: 'ð¤ The Power of Asking for Help' },
-        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: 'ð¤ The Right Way to Motivate' },
+        { filename: 'The Power of Asking for Help.html', date: '2026-01-29', title: 'Ã°ÂÂ¤Â The Power of Asking for Help' },
+        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: 'Ã°ÂÂ¤Â The Right Way to Motivate' },
+        // Ã°ÂÂÂ Ã¥ÂÂ¨Ã¦Â­Â¤Ã¤Â¸ÂÃ¦ÂÂ¹Ã¦Â·Â»Ã¥ÂÂ Ã¦ÂÂ°Ã¦ÂÂÃ§Â«Â Ã¯Â¼ÂÃ¨Â¨ÂÃ¥Â¾ÂÃ¥ÂÂ Ã©ÂÂÃ¨ÂÂÃ¯Â¼Â
+        // Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼Â{ filename: 'Ã¦ÂªÂÃ¥ÂÂ.html', date: 'YYYY-MM-DD', title: 'Ã¦Â¨ÂÃ©Â¡ÂÃ¯Â¼ÂÃ¥ÂÂ«emojiÃ¯Â¼Â' }
+        // Ã¥ÂÂÃ¦ÂÂ¥Ã©ÂÂÃ§ÂÂ¥Ã§Â¯ÂÃ¤Â¾ÂÃ¯Â¼Â{ date: '2026-12-25', title: 'Ã°ÂÂÂ Christmas - No Class', isHoliday: true }
+            { filename: 'The Philosophy of Empathy.html', date: '2026-02-05', title: 'ð§  The Philosophy of Empathy' },
         // ð å¨æ­¤ä¸æ¹æ·»å æ°æç« ï¼è¨å¾å éèï¼
-        // æ ¼å¼ï¼{ filename: 'æªå.html', date: 'YYYY-MM-DD', title: 'æ¨é¡ï¼å«emojiï¼' }
-        // åæ¥éç¥ç¯ä¾ï¼{ date: '2026-12-25', title: 'ð Christmas - No Class', isHoliday: true }
-            { filename: 'The Philosophy of Empathy.html', date: '2026-02-05', title: '🧠 The Philosophy of Empathy' },
+        { filename: 'The Philosophy of Empathy.html', date: '2026-02-05', title: '🧠 The Philosophy of Empathy' },
         // 👆 在此上方添加新文章，記得加逗號！
 ];
 
     const lessons = [];
 
     for (const fileInfo of potentialFiles) {
-        // æ¯æ´å©ç¨®æ ¼å¼ï¼å­ä¸²æç©ä»¶
+        // Ã¦ÂÂ¯Ã¦ÂÂ´Ã¥ÂÂ©Ã§Â¨Â®Ã¦Â Â¼Ã¥Â¼ÂÃ¯Â¼ÂÃ¥Â­ÂÃ¤Â¸Â²Ã¦ÂÂÃ§ÂÂ©Ã¤Â»Â¶
         let filename, specifiedDate = null, specifiedTitle = null, specifiedEmoji = null, isHoliday = false;
         
         if (typeof fileInfo === 'string') {
@@ -84,14 +86,14 @@ async function scanLessons() {
             specifiedTitle = fileInfo.title;
             isHoliday = fileInfo.isHoliday || false;
             
-            // å¾æ¨é¡ä¸­æå emoji
+            // Ã¥Â¾ÂÃ¦Â¨ÂÃ©Â¡ÂÃ¤Â¸Â­Ã¦ÂÂÃ¥ÂÂ emoji
             if (specifiedTitle) {
                 const emojiMatch = specifiedTitle.match(/[\p{Emoji}]/u);
                 specifiedEmoji = emojiMatch ? emojiMatch[0] : '';
             }
         }
 
-        // èçåæ¥éç¥ï¼ä¸éè¦è¼å¥ HTML æä»¶ï¼
+        // Ã¨ÂÂÃ§ÂÂÃ¥ÂÂÃ¦ÂÂ¥Ã©ÂÂÃ§ÂÂ¥Ã¯Â¼ÂÃ¤Â¸ÂÃ©ÂÂÃ¨Â¦ÂÃ¨Â¼ÂÃ¥ÂÂ¥ HTML Ã¦ÂÂÃ¤Â»Â¶Ã¯Â¼Â
         if (isHoliday) {
             const holidayData = createHolidayData(specifiedDate, specifiedTitle, specifiedEmoji);
             if (holidayData) {
@@ -100,7 +102,7 @@ async function scanLessons() {
             continue;
         }
 
-        // èçä¸è¬æç« ï¼éè¦è¼å¥ HTML æä»¶ï¼
+        // Ã¨ÂÂÃ§ÂÂÃ¤Â¸ÂÃ¨ÂÂ¬Ã¦ÂÂÃ§Â«Â Ã¯Â¼ÂÃ©ÂÂÃ¨Â¦ÂÃ¨Â¼ÂÃ¥ÂÂ¥ HTML Ã¦ÂÂÃ¤Â»Â¶Ã¯Â¼Â
         try {
             const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
             if (response.ok) {
@@ -118,19 +120,19 @@ async function scanLessons() {
     // Sort by date (newest first)
     allLessons = lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
     
-    // åªæ¨è¨ææ°çä¸ç¯æç« çº NEW
+    // Ã¥ÂÂªÃ¦Â¨ÂÃ¨Â¨ÂÃ¦ÂÂÃ¦ÂÂ°Ã§ÂÂÃ¤Â¸ÂÃ§Â¯ÂÃ¦ÂÂÃ§Â«Â Ã§ÂÂº NEW
     if (allLessons.length > 0) {
-        // éç½®æææç« ç isNew æ¨è¨
+        // Ã©ÂÂÃ§Â½Â®Ã¦ÂÂÃ¦ÂÂÃ¦ÂÂÃ§Â«Â Ã§ÂÂ isNew Ã¦Â¨ÂÃ¨Â¨Â
         allLessons.forEach(lesson => {
             lesson.isNew = false;
         });
-        // åªæ¨è¨ææ°çä¸ç¯ï¼ç¬¬ä¸ç¯ï¼çº NEW
+        // Ã¥ÂÂªÃ¦Â¨ÂÃ¨Â¨ÂÃ¦ÂÂÃ¦ÂÂ°Ã§ÂÂÃ¤Â¸ÂÃ§Â¯ÂÃ¯Â¼ÂÃ§Â¬Â¬Ã¤Â¸ÂÃ§Â¯ÂÃ¯Â¼ÂÃ§ÂÂº NEW
         allLessons[0].isNew = true;
     }
     
     filteredLessons = [...allLessons];
 
-    console.log(`â Loaded ${allLessons.length} lessons`);
+    console.log(`Ã¢ÂÂ Loaded ${allLessons.length} lessons`);
 }
 
 // ====================
@@ -149,7 +151,7 @@ function createHolidayData(specifiedDate, title, emoji) {
         id: `holiday-${specifiedDate}`,
         filename: null,
         title: cleanTitle,
-        emoji: emoji || 'ð',
+        emoji: emoji || 'Ã°ÂÂÂ',
         displayTitle: title,
         date: holidayDate,
         dateString: formatDate(holidayDate),
@@ -167,16 +169,16 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, 'text/html');
 
-    // åªåä½¿ç¨ potentialFiles ä¸­æä¾çæ¨é¡
+    // Ã¥ÂÂªÃ¥ÂÂÃ¤Â½Â¿Ã§ÂÂ¨ potentialFiles Ã¤Â¸Â­Ã¦ÂÂÃ¤Â¾ÂÃ§ÂÂÃ¦Â¨ÂÃ©Â¡Â
     let titleText, emoji, cleanTitle;
     
     if (specifiedTitle) {
-        // ä½¿ç¨ potentialFiles ä¸­æä¾çæ¨é¡
+        // Ã¤Â½Â¿Ã§ÂÂ¨ potentialFiles Ã¤Â¸Â­Ã¦ÂÂÃ¤Â¾ÂÃ§ÂÂÃ¦Â¨ÂÃ©Â¡Â
         titleText = specifiedTitle;
         emoji = specifiedEmoji || '';
         cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
     } else {
-        // å¾ HTML æåæ¨é¡ï¼fallbackï¼
+        // Ã¥Â¾Â HTML Ã¦ÂÂÃ¥ÂÂÃ¦Â¨ÂÃ©Â¡ÂÃ¯Â¼ÂfallbackÃ¯Â¼Â
         let h1 = doc.querySelector('.container h1, .main-content h1, main h1, [class*="container"] h1');
         if (!h1) {
             const allH1s = doc.querySelectorAll('h1');
@@ -199,16 +201,16 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
         cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
     }
 
-    // æ¥ææååªåé åºï¼
-    // 1. æåæå®çæ¥æï¼specifiedDateï¼
-    // 2. å¾æªåè§£ææ¥æï¼æ ¼å¼ï¼YYYY-MM-DD-slug.htmlï¼
-    // 3. å¾ HTML meta æ¨ç±¤æåï¼å¦ææçè©±ï¼
-    // 4. ä½¿ç¨æªæ¡ä¿®æ¹æéï¼å¦æå¯ç¨ï¼
-    // 5. Fallback: ä½¿ç¨ç¶åæ¥æ
+    // Ã¦ÂÂ¥Ã¦ÂÂÃ¦ÂÂÃ¥ÂÂÃ¥ÂÂªÃ¥ÂÂÃ©Â ÂÃ¥ÂºÂÃ¯Â¼Â
+    // 1. Ã¦ÂÂÃ¥ÂÂÃ¦ÂÂÃ¥Â®ÂÃ§ÂÂÃ¦ÂÂ¥Ã¦ÂÂÃ¯Â¼ÂspecifiedDateÃ¯Â¼Â
+    // 2. Ã¥Â¾ÂÃ¦ÂªÂÃ¥ÂÂÃ¨Â§Â£Ã¦ÂÂÃ¦ÂÂ¥Ã¦ÂÂÃ¯Â¼ÂÃ¦Â Â¼Ã¥Â¼ÂÃ¯Â¼ÂYYYY-MM-DD-slug.htmlÃ¯Â¼Â
+    // 3. Ã¥Â¾Â HTML meta Ã¦Â¨ÂÃ§Â±Â¤Ã¦ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥Â¦ÂÃ¦ÂÂÃ¦ÂÂÃ§ÂÂÃ¨Â©Â±Ã¯Â¼Â
+    // 4. Ã¤Â½Â¿Ã§ÂÂ¨Ã¦ÂªÂÃ¦Â¡ÂÃ¤Â¿Â®Ã¦ÂÂ¹Ã¦ÂÂÃ©ÂÂÃ¯Â¼ÂÃ¥Â¦ÂÃ¦ÂÂÃ¥ÂÂ¯Ã§ÂÂ¨Ã¯Â¼Â
+    // 5. Fallback: Ã¤Â½Â¿Ã§ÂÂ¨Ã§ÂÂ¶Ã¥ÂÂÃ¦ÂÂ¥Ã¦ÂÂ
     let lessonDate;
 
     if (specifiedDate) {
-        // åªåä½¿ç¨æåæå®çæ¥æ
+        // Ã¥ÂÂªÃ¥ÂÂÃ¤Â½Â¿Ã§ÂÂ¨Ã¦ÂÂÃ¥ÂÂÃ¦ÂÂÃ¥Â®ÂÃ§ÂÂÃ¦ÂÂ¥Ã¦ÂÂ
         const dateParts = specifiedDate.match(/(\d{4})-(\d{2})-(\d{2})/);
         if (dateParts) {
             lessonDate = new Date(dateParts[1], dateParts[2] - 1, dateParts[3]);
@@ -216,21 +218,21 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
             lessonDate = new Date(specifiedDate);
         }
     } else {
-        // åè©¦å¾æªåè§£ææ¥æï¼æ ¼å¼ï¼YYYY-MM-DD-slug.htmlï¼
+        // Ã¥ÂÂÃ¨Â©Â¦Ã¥Â¾ÂÃ¦ÂªÂÃ¥ÂÂÃ¨Â§Â£Ã¦ÂÂÃ¦ÂÂ¥Ã¦ÂÂÃ¯Â¼ÂÃ¦Â Â¼Ã¥Â¼ÂÃ¯Â¼ÂYYYY-MM-DD-slug.htmlÃ¯Â¼Â
         const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
         if (dateMatch) {
             lessonDate = new Date(dateMatch[1], dateMatch[2] - 1, dateMatch[3]);
         } else {
-            // åè©¦å¾ HTML meta æ¨ç±¤æåæ¥æ
+            // Ã¥ÂÂÃ¨Â©Â¦Ã¥Â¾Â HTML meta Ã¦Â¨ÂÃ§Â±Â¤Ã¦ÂÂÃ¥ÂÂÃ¦ÂÂ¥Ã¦ÂÂ
             const metaDate = doc.querySelector('meta[name="date"], meta[property="article:published_time"]');
             if (metaDate) {
                 const dateValue = metaDate.getAttribute('content');
                 lessonDate = new Date(dateValue);
                 if (isNaN(lessonDate.getTime())) {
-                    lessonDate = new Date(); // å¦æè§£æå¤±æï¼ä½¿ç¨ç¶åæ¥æ
+                    lessonDate = new Date(); // Ã¥Â¦ÂÃ¦ÂÂÃ¨Â§Â£Ã¦ÂÂÃ¥Â¤Â±Ã¦ÂÂÃ¯Â¼ÂÃ¤Â½Â¿Ã§ÂÂ¨Ã§ÂÂ¶Ã¥ÂÂÃ¦ÂÂ¥Ã¦ÂÂ
                 }
             } else {
-                // Fallback: ä½¿ç¨ç¶åæ¥æ
+                // Fallback: Ã¤Â½Â¿Ã§ÂÂ¨Ã§ÂÂ¶Ã¥ÂÂÃ¦ÂÂ¥Ã¦ÂÂ
                 lessonDate = new Date();
             }
         }
@@ -279,7 +281,7 @@ function generateCalendar() {
     if (filteredLessons.length === 0) {
         container.innerHTML = `
             <div class="no-results">
-                <p>ð No lessons found</p>
+                <p>Ã°ÂÂÂ No lessons found</p>
                 <p style="font-size: 0.9rem;">Try a different search term</p>
             </div>
         `;
@@ -356,7 +358,7 @@ function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false
         <div class="month-calendar ${isCollapsed ? 'collapsed' : ''}" data-month="${monthKey}">
             <div class="month-header" onclick="toggleMonthCalendar('${monthKey}', event)">
                 <div class="month-header-title">
-                    <span class="month-header-arrow">${isCollapsed ? 'â¶' : 'â¼'}</span>
+                    <span class="month-header-arrow">${isCollapsed ? 'Ã¢ÂÂ¶' : 'Ã¢ÂÂ¼'}</span>
                     <span>${monthName}</span>
                 </div>
                 <span class="month-header-count">(${lessons.length})</span>
@@ -418,16 +420,16 @@ function generateMonthCalendar(monthKey, lessons, monthName, isCollapsed = false
             // Add lessons for this day
             if (dayLessons.length > 0 && !cellClass.includes('other-month')) {
                 dayLessons.forEach(lesson => {
-                    // ä¸è¬æç« åªå¨é±ä¸å°é±äºé¡¯ç¤ºï¼åæ¥éç¥å¯ä»¥é¡¯ç¤ºå¨ä»»ä½æ¥æ
+                    // Ã¤Â¸ÂÃ¨ÂÂ¬Ã¦ÂÂÃ§Â«Â Ã¥ÂÂªÃ¥ÂÂ¨Ã©ÂÂ±Ã¤Â¸ÂÃ¥ÂÂ°Ã©ÂÂ±Ã¤ÂºÂÃ©Â¡Â¯Ã§Â¤ÂºÃ¯Â¼ÂÃ¥ÂÂÃ¦ÂÂ¥Ã©ÂÂÃ§ÂÂ¥Ã¥ÂÂ¯Ã¤Â»Â¥Ã©Â¡Â¯Ã§Â¤ÂºÃ¥ÂÂ¨Ã¤Â»Â»Ã¤Â½ÂÃ¦ÂÂ¥Ã¦ÂÂ
                     if (!lesson.isHoliday && dayOfWeek >= 5) {
-                        return; // è·³éé±æ«çä¸è¬æç« 
+                        return; // Ã¨Â·Â³Ã©ÂÂÃ©ÂÂ±Ã¦ÂÂ«Ã§ÂÂÃ¤Â¸ÂÃ¨ÂÂ¬Ã¦ÂÂÃ§Â«Â 
                     }
                     
                     const lessonClass = lesson.isHoliday ? 'day-lesson holiday' : 'day-lesson';
                     const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
                     // Full title will be displayed with multi-line truncation via CSS
                     
-                    // åæ¥éç¥ä¸éè¦é£çµ
+                    // Ã¥ÂÂÃ¦ÂÂ¥Ã©ÂÂÃ§ÂÂ¥Ã¤Â¸ÂÃ©ÂÂÃ¨Â¦ÂÃ©ÂÂ£Ã§ÂµÂ
                     if (lesson.isHoliday) {
                         dayHTML += `<span class="${lessonClass}" title="${fullTitle}">${fullTitle}</span>`;
                     } else {
@@ -466,7 +468,7 @@ function toggleMonthCalendar(monthKey, event) {
     const arrow = monthHeader.querySelector('.month-header-arrow');
     
     monthCalendar.classList.toggle('collapsed');
-    arrow.textContent = monthCalendar.classList.contains('collapsed') ? 'â¶' : 'â¼';
+    arrow.textContent = monthCalendar.classList.contains('collapsed') ? 'Ã¢ÂÂ¶' : 'Ã¢ÂÂ¼';
 }
 
 // ====================
@@ -507,7 +509,7 @@ function setupSearch() {
 function setupBackToTop() {
     const backToTopBtn = document.createElement('button');
     backToTopBtn.className = 'back-to-top';
-    backToTopBtn.innerHTML = 'â';
+    backToTopBtn.innerHTML = 'Ã¢ÂÂ';
     backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
     document.body.appendChild(backToTopBtn);
 
