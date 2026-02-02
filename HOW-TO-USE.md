@@ -43,15 +43,42 @@
 - **檔案名稱**：輸入檔名，例如：`The Science of Memory.html`
 - **HTML 內容**：貼上 AI 生成的完整 HTML 語法
 
-#### **步驟 3：生成檔案**
+#### **步驟 3：生成並上傳/下載檔案**
+
+**方式 A：使用 GitHub 自動上傳（推薦！）** 🚀
+
+1. **先設定 GitHub**（只需設定一次）：
+   - 點擊「GitHub 設定」標籤
+   - 填入 GitHub Personal Access Token（從 `token.md` 複製）
+   - 填入 GitHub 使用者名稱：`profe-elisachang`
+   - 填入 Repository 名稱：`elisa-english-hub`
+   - 分支名稱：`main`
+   - 點擊「儲存設定」→「測試連線」
+
+2. **生成並自動上傳**：
+   - 點擊「生成檔案」按鈕
+   - **系統會自動上傳到 GitHub**（無需點擊任何按鈕！）
+   - 系統會自動：
+     - ✅ 上傳 HTML 檔案到對應資料夾（`intermediate/` 或 `advanced/`）
+     - ✅ 自動更新 `script.js` 或 `script-advanced.js`
+   - **完成！** 完全自動化，檔案已自動上傳到 GitHub
+   - 如果上傳失敗，會顯示「重新上傳」按鈕讓你可以重試
+
+**方式 B：手動下載（如果沒有設定 GitHub）**
+
 1. 點擊「生成檔案」按鈕
-2. 複製生成的 HTML 內容
-3. 建立新檔案並貼上內容，儲存到對應資料夾：
-   - Intermediate → `intermediate/檔名.html`
-   - Advanced → `advanced/檔名.html`
-4. 複製生成的 `script.js` 更新代碼
-5. 打開對應的 `script.js` 或 `script-advanced.js`
-6. 找到 `potentialFiles` 陣列，將代碼貼到陣列中
+2. **HTML 檔案會自動下載** 📥
+   - 檔案會下載到瀏覽器的預設下載資料夾
+   - **設定瀏覽器下載位置**（讓檔案直接下載到指定資料夾）：
+     - **Chrome/Edge：** 設定 → 下載 → 變更下載位置 → 選擇 `advanced` 或 `intermediate` 資料夾
+     - **Firefox：** 選項 → 一般 → 下載 → 選擇資料夾
+   - 或手動將下載的檔案移動到對應資料夾：
+     - Intermediate → `intermediate/檔名.html`
+     - Advanced → `advanced/檔名.html`
+3. **更新 script.js**：
+   - 複製生成的 `script.js` 更新代碼（或點擊「下載 script.js 更新片段」）
+   - 打開對應的 `script.js` 或 `script-advanced.js`
+   - 找到 `potentialFiles` 陣列，將代碼貼到陣列中
 
 #### **完成！** 🎉
 - 重新整理 `index.html` 或 `index-advanced.html` 即可看到新文章
@@ -351,7 +378,10 @@ elisa-english-hub/
 - ✏️ **編輯文章**：查看所有文章列表，點擊編輯即可修改
 - 🖼️ **圖片管理**：可為每篇文章添加圖片 URL
 - 📋 **自動生成**：自動生成 HTML 檔案和 script.js 更新代碼
+- 🚀 **GitHub 整合**：設定後可自動上傳到 GitHub，無需手動操作！
+- 📥 **自動下載**：如果沒有設定 GitHub，HTML 檔案會自動下載
 - 👀 **預覽功能**：在生成前預覽文章效果
+- 🔄 **重新下載**：可以隨時重新下載生成的檔案
 
 **使用方式：**
 1. 開啟 `admin.html`
@@ -399,10 +429,23 @@ debugLessons()
 **Q: 如何使用後台管理系統？**
 A: 
 1. 開啟 `admin.html` 檔案
-2. 點擊「新增文章」標籤
-3. 填寫表單（等級、日期、標題、HTML 內容等）
-4. 點擊「生成檔案」
-5. 複製生成的代碼並更新對應檔案
+2. **首次使用：設定 GitHub**（只需設定一次）
+   - 點擊「GitHub 設定」標籤
+   - 填入 GitHub 資訊並儲存
+3. **新增文章：**
+   - 點擊「新增文章」標籤
+   - 填寫表單（等級、日期、標題、HTML 內容等）
+   - 點擊「生成檔案」
+   - **如果已設定 GitHub：** 系統會自動上傳到 GitHub，無需任何手動操作！
+   - **如果沒有設定 GitHub：** HTML 檔案會自動下載，需要手動移動到對應資料夾並更新 script.js
+
+**Q: 如何讓檔案直接下載到指定資料夾？**
+A: 有兩種方式：
+1. **使用 GitHub 整合（推薦）**：設定 GitHub 後，檔案會自動上傳到正確位置，無需下載
+2. **設定瀏覽器下載位置**：
+   - **Chrome/Edge：** 設定 → 下載 → 變更下載位置 → 選擇 `advanced` 或 `intermediate` 資料夾
+   - **Firefox：** 選項 → 一般 → 下載 → 選擇資料夾
+   - 注意：每次切換 Intermediate/Advanced 時，需要手動切換下載資料夾
 
 **Q: 如何編輯現有文章？**
 A:
