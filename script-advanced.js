@@ -62,9 +62,7 @@ async function scanLessons() {
         { filename: 'Treasure of the Sea.html', date: '2026-01-22', title: 'Treasure of the Sea: The Seaweed Industry' },
         { filename: 'Hollywood Means Business.html', date: '2026-01-27', title: 'Hollywood Means Business' },
         { filename: 'The Power of Asking for Help.html', date: '2026-01-29', title: '🤝 The Power of Asking for Help' },
-        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: '🤝 The Right Way to Motivate' },
-        { filename: 'The Philosophy of Empathy.html', date: '2026-02-05', title: '🧠 The Philosophy of Empathy' },
-        // 👆 在此上方添加新文章，記得加逗號！
+        { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: '🤝 The Right Way to Motivate' },// 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
     ];
