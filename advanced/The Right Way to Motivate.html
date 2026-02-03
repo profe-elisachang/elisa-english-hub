@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Right Way to Motivate - English Lesson</title>
+    <!-- Main Site CSS -->
+    <link rel="stylesheet" href="../style-advanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            line-height: 1.7;
+            color: #333;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #ff9800;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .expressions-section {
+            background-color: #e8f4f8;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border-left: 5px solid #2980b9;
+        }
+        
+        .expression-item {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #bdc3c7;
+        }
+        
+        .expression-item strong {
+            color: #2980b9;
+            font-size: 1.15em;
+        }
+        
+        .expression-item em {
+            color: #7f8c8d;
+            display: block;
+            margin: 8px 0;
+        }
+        
+        .expression-item .example {
+            color: #34495e;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        /* TV-Optimized Highlighting */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .highlight:hover {
+            background-color: #fff59d;
+            border-bottom: 3px solid #ff6f00;
+        }
+        
+        /* Tooltip styling */
+        .highlight::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #263238;
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            transition-delay: 0.2s;
+            z-index: 1000;
+            margin-bottom: 5px;
+        }
+        
+        .highlight:hover::after {
+            opacity: 1;
+        }
+        
+        /* Arrow for tooltip */
+        .highlight::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #263238;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            transition-delay: 0.2s;
+            margin-bottom: -1px;
+        }
+        
+        .highlight:hover::before {
+            opacity: 1;
+        }
+        
+        .vocab-box {
+            background-color: #fef9e7;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 6px;
+            border: 2px solid #f39c12;
+        }
+        
+        .vocab-box h3 {
+            color: #d68910;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .vocab-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .vocab-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .vocab-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .vocab-word {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .speak-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.7em;
+            transition: background-color 0.2s ease;
+        }
+        
+        .speak-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .speak-btn:active {
+            background-color: #1c5985;
+        }
+        
+        .vocab-definition {
+            color: #34495e;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        
+        .vocab-translation {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        .vocab-example {
+            color: #555;
+            font-size: 0.95em;
+            padding: 8px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            margin-top: 8px;
+        }
+        
+        .discussion-questions {
+            background-color: #e8f5e9;
+            padding: 25px;
+            border-radius: 6px;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .discussion-questions ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .discussion-questions li {
+            padding: 12px;
+            margin-bottom: 12px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            border-left: 3px solid #4caf50;
+            font-size: 1.05em;
+        }
+        
+        .discussion-questions li::before {
+            content: "💬 ";
+            margin-right: 8px;
+        }
+        
+        .practice-section {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-radius: 6px;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .practice-question {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        details {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #e67e22;
+            padding: 8px;
+        }
+        
+        summary:hover {
+            color: #d35400;
+        }
+        
+        .answer-content {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .mobile-note {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #1565c0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .article-meta {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 767px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            p {
+                font-size: 1em;
+            }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="data:image/jpeg;base64,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" alt="🤝 The Right Way to Motivate" class="article-image">
+    </div>
+
+    <div class="article-image-container">
+        <img src="https://www.youthrivevictoria.org.au/wp-content/uploads/2020/03/motivation.jpg" alt="🤝 The Right Way to Motivate" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+            <h1>🤝 The Right Way to Motivate</h1>
+        <p class="article-meta"><em>Good managers inspire trust by showing that they understand</em></p>
+        <p class="article-meta">By Josh Davis | © 2025 Fast Company, Mansueto Ventures, LLC. Distributed by Tribune Content Agency, LLC.</p>
+        
+        <!-- Useful Expressions Section -->
+        <div class="expressions-section">
+            <h2>💼 Useful Expressions</h2>
+            
+            <div class="expression-item">
+                <strong>Meet someone where they are</strong><br>
+                <em>Encontrar a alguien donde está / Comprender su situación actual</em><br>
+                <span class="example">Before proposing solutions, we need to meet our team where they are and understand their concerns about the reorganization.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>Be out of touch</strong><br>
+                <em>Estar desconectado / No estar al tanto</em><br>
+                <span class="example">If management ignores employee feedback, they'll seem out of touch with the reality of daily operations.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>Set something aside</strong><br>
+                <em>Dejar algo de lado / Apartar algo</em><br>
+                <span class="example">Once we address their concerns about the process, the team can set aside their frustrations and focus on moving forward.</span>
+            </div>
+            
+            <div class="expression-item">
+                <strong>Stand a chance</strong><br>
+                <em>Tener una oportunidad / Tener posibilidades</em><br>
+                <span class="example">Our proposal stands a chance of approval only if we can demonstrate clear cost benefits to upper management.</span>
+            </div>
+        </div>
+        
+        <!-- Article with Highlighted Vocabulary -->
+        <div class="section">
+            <h2>📄 Article</h2>
+            
+            <h3>Leaders often take the wrong steps</h3>
+            <p>Leaders often take the wrong steps in highly uncertain times—and end up <span class="highlight" title="desmotivando">demotivating</span> the team. What doesn't work is optimism, great arguments, or big-picture vision.</p>
+            
+            <p>There's a time for those approaches, but <span class="highlight" title="apoyarse en / depender de">leaning on</span> them at the wrong time makes the leader seem <span class="highlight" title="desconectado / fuera de contacto">out of touch</span>.</p>
+            
+            <p>Imagine a house sitting on a <span class="highlight" title="falla / fractura geológica">fault</span> line. Then comes an earthquake. After the shaking stops, the house is still standing—but the foundation has visible cracks, and the ground beneath has clearly <span class="highlight" title="se ha desplazado / ha cambiado">shifted</span>. Would you trust someone who charged in optimistically and with a cheery tone told you the house will be just fine and to head back in? Or would you trust someone who <span class="highlight" title="reconoce">acknowledges</span> that there could be <span class="highlight" title="réplicas (de terremoto)">aftershocks</span> and who agrees that it makes sense to test the structure of the house before going back? Most people would trust the second person more. They've acknowledged your reality. They stand a chance of finding out if the house is safe, and if not, what steps are needed to make it so.</p>
+            
+            <p>In highly uncertain times at work, there are psychological earthquakes and aftershocks coming regularly. Each time, no matter how much trust you had built up in the past, because reality has shifted, you need to show you understand the new reality to gain trust again.</p>
+            
+            <!-- Vocabulary Box for Section 1 -->
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Section 1</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            demotivating
+                            <button class="speak-btn" onclick="speak('demotivating')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Making someone feel less enthusiastic or confident</div>
+                        <div class="vocab-translation"><em>desmotivando</em></div>
+                        <div class="vocab-example">Constant criticism can be demotivating for the engineering team.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            leaning on
+                            <button class="speak-btn" onclick="speak('leaning on')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Relying heavily on something or depending on it</div>
+                        <div class="vocab-translation"><em>apoyarse en / depender de</em></div>
+                        <div class="vocab-example">The manager is leaning on data analysis to make the final procurement decision.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            out of touch
+                            <button class="speak-btn" onclick="speak('out of touch')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Not understanding or aware of current situations or feelings</div>
+                        <div class="vocab-translation"><em>desconectado / fuera de contacto</em></div>
+                        <div class="vocab-example">Leadership seems out of touch with the safety concerns raised by the EHS team.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            fault
+                            <button class="speak-btn" onclick="speak('fault')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">A crack or break in the Earth's surface (geological term)</div>
+                        <div class="vocab-translation"><em>falla / fractura geológica</em></div>
+                        <div class="vocab-example">The facility was built near a major fault line, so earthquake safety is critical.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            shifted
+                            <button class="speak-btn" onclick="speak('shifted')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Moved or changed position, often gradually</div>
+                        <div class="vocab-translation"><em>se ha desplazado / ha cambiado</em></div>
+                        <div class="vocab-example">Market priorities have shifted, so we need to adjust our production strategy.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            acknowledges
+                            <button class="speak-btn" onclick="speak('acknowledges')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Recognizes or accepts that something exists or is true</div>
+                        <div class="vocab-translation"><em>reconoce</em></div>
+                        <div class="vocab-example">The project manager acknowledges that the deadline is challenging but achievable.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            aftershocks
+                            <button class="speak-btn" onclick="speak('aftershocks')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Smaller earthquakes that happen after a major earthquake</div>
+                        <div class="vocab-translation"><em>réplicas (de terremoto)</em></div>
+                        <div class="vocab-example">After the organizational change, there were several aftershocks as teams adjusted to new roles.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Meet people where they are</h3>
+            <p>I've seen leaders get people to perform in tough times. They start by meeting the people on the team where they are mentally and emotionally before trying to coach them. They'll acknowledge that it's stressful—and perhaps even <span class="highlight" title="desgarrador">heartbreaking</span>—to give so much to your work and then learn it could end up in the trash. It's <span class="highlight" title="distraído / que distrae">distracting</span> to believe that your job, or at least your current project or function, might become <span class="highlight" title="obsoleto">obsolete</span>. It's natural to wonder whether you'll still be valued in the same way. Those leaders ask questions to ensure they really hear the concerns, perspectives, beliefs and feelings of people on the team.</p>
+            
+            <!-- Vocabulary Box for Section 2 -->
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Section 2</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            heartbreaking
+                            <button class="speak-btn" onclick="speak('heartbreaking')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Extremely sad or emotionally painful</div>
+                        <div class="vocab-translation"><em>desgarrador</em></div>
+                        <div class="vocab-example">It was heartbreaking for the IT team when their innovative project was canceled after months of work.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            distracting
+                            <button class="speak-btn" onclick="speak('distracting')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Taking attention away from what you should be focusing on</div>
+                        <div class="vocab-translation"><em>distraído / que distrae</em></div>
+                        <div class="vocab-example">Constant email notifications during meetings are distracting and reduce productivity.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            obsolete
+                            <button class="speak-btn" onclick="speak('obsolete')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">No longer useful or needed because something newer exists</div>
+                        <div class="vocab-translation"><em>obsoleto</em></div>
+                        <div class="vocab-example">The old inventory system became obsolete after we implemented the new ERP software.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Make people feel heard and seen</h3>
+            <p>When people can't control a situation, they care deeply about whether they can trust the process by which their future will be determined. Whether it be a performance review or budget <span class="highlight" title="trastorno / cambio radical">upheaval</span>, if people felt the process was fair, they're more able to set the past aside and <span class="highlight" title="concentrarse en">focus on</span> what needs to be done.</p>
+            
+            <p>A major part of believing they can trust the process is whether they feel the leaders or authorities have heard and seen them. They want to know if the leaders understand their reality.</p>
+            
+            <!-- Vocabulary Box for Section 3 -->
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Section 3</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            upheaval
+                            <button class="speak-btn" onclick="speak('upheaval')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">A big, sudden change that causes disruption</div>
+                        <div class="vocab-translation"><em>trastorno / cambio radical</em></div>
+                        <div class="vocab-example">The company merger caused major upheaval in the purchasing department's workflow.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            focus on
+                            <button class="speak-btn" onclick="speak('focus on')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Direct attention and effort toward something specific</div>
+                        <div class="vocab-translation"><em>concentrarse en</em></div>
+                        <div class="vocab-example">Let's focus on solving the quality control issues before we address production speed.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>The process is important</h3>
+            <p>Peoples' perception of fairness changes when they focus on a process versus an outcome—say, how leadership took a listening tour before making project cuts, rather than the outcome of the cuts themselves. When we focus on an outcome seeming fair, we primarily use the areas of the brain that <span class="highlight" title="corresponden a">correspond to</span> emotions. But when we focus on the process, we use the regions of the brain that <span class="highlight" title="se relacionan con">relate to</span> social <span class="highlight" title="cognición / conocimiento">cognition</span>. That means people are thinking about other people involved—and good leaders meet them there.</p>
+            
+            <!-- Vocabulary Box for Section 4 -->
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Section 4</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            correspond to
+                            <button class="speak-btn" onclick="speak('correspond to')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Match or be connected with something</div>
+                        <div class="vocab-translation"><em>corresponden a</em></div>
+                        <div class="vocab-example">These safety violations correspond to the issues identified in last month's audit.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            relate to
+                            <button class="speak-btn" onclick="speak('relate to')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Be connected with or relevant to something</div>
+                        <div class="vocab-translation"><em>se relacionan con</em></div>
+                        <div class="vocab-example">The technical specifications relate to the client's requirements outlined in the contract.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            cognition
+                            <button class="speak-btn" onclick="speak('cognition')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">The mental process of understanding and knowing</div>
+                        <div class="vocab-translation"><em>cognición / conocimiento</em></div>
+                        <div class="vocab-example">Training programs should consider how cognition works to design more effective learning experiences.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Earning and keeping trust</h3>
+            <p>Feeling heard and seen leads people to be ready to accept <span class="highlight" title="dificultades">hardships</span> and move forward. After you meet your employees where they are emotionally by letting them know you hear and see them, your team can begin to trust you and your process more. At that point, it can be very helpful to show your optimism, or give your great arguments, or remind them of the big-picture vision.</p>
+            
+            <p>What leaders need to remember is that in times of great uncertainty, we need to <span class="highlight" title="ganarse">earn</span> the right to lead, coach and <span class="highlight" title="influir">influence</span> every time the ground shifts. Some months that means we need to do it in every conversation or meeting we have with our team members. Let them know you get it. Then they will be more likely to let you lead them in whatever ways you need to.</p>
+            
+            <!-- Vocabulary Box for Section 5 -->
+            <div class="vocab-box">
+                <h3>📚 Vocabulary - Section 5</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            hardships
+                            <button class="speak-btn" onclick="speak('hardships')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Difficult situations or conditions that cause suffering</div>
+                        <div class="vocab-translation"><em>dificultades</em></div>
+                        <div class="vocab-example">The team endured several hardships during the factory transition, including equipment failures and schedule delays.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            earn
+                            <button class="speak-btn" onclick="speak('earn')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">Gain or deserve something through actions or qualities</div>
+                        <div class="vocab-translation"><em>ganarse</em></div>
+                        <div class="vocab-example">Managers must earn respect through consistent actions, not just their job title.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div class="vocab-word">
+                            influence
+                            <button class="speak-btn" onclick="speak('influence')">🔊 Speak</button>
+                        </div>
+                        <div class="vocab-definition">The power to affect how someone thinks or behaves</div>
+                        <div class="vocab-translation"><em>influir</em></div>
+                        <div class="vocab-example">Senior engineers have significant influence over which technologies the company adopts.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-note">
+                <strong>📱 Mobile Note:</strong> Hover effects work best on computers. On mobile devices, tap and hold highlighted words briefly to see translations.
+            </div>
+        </div>
+        
+        <!-- Discussion Questions -->
+        <div class="discussion-questions">
+            <h2>💬 Discussion Questions</h2>
+            <ul>
+                <li>Have you ever experienced a situation at work where you felt leadership was "out of touch" with your reality? How did it affect your motivation and trust?</li>
+                
+                <li>The article uses an earthquake metaphor to describe uncertain times. What "earthquake" or major change has your department or company experienced recently? How did leadership respond, and what could they have done differently?</li>
+                
+                <li>Think about a time when you had to trust a process even though you didn't like the outcome. What made you feel the process was fair or unfair? How does this relate to your current workplace?</li>
+            </ul>
+        </div>
+        
+        <!-- Self-Practice Questions -->
+        <div class="practice-section">
+            <h2>✍️ Self-Practice Questions</h2>
+            
+            <div class="practice-question">
+                <strong>Question 1:</strong> Fill in the blank with the correct word from the article:<br><br>
+                "When people can't control a situation, they care deeply about whether they can trust the __________ by which their future will be determined."
+                
+                <details>
+                    <summary>📖 View Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answer:</strong> process<br><br>
+                        <strong>Explanation:</strong> The article emphasizes that when outcomes are uncertain, people focus on whether the process is fair and whether they feel heard during that process.
+                    </div>
+                </details>
+            </div>
+            
+            <div class="practice-question">
+                <strong>Question 2:</strong> According to the article, what are the three approaches that DON'T work well during highly uncertain times?
+                
+                <details>
+                    <summary>📖 View Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answer:</strong> Optimism, great arguments, and big-picture vision<br><br>
+                        <strong>Explanation:</strong> The article states these approaches have their place, but relying on them at the wrong time makes leaders seem "out of touch" with employees' reality.
+                    </div>
+                </details>
+            </div>
+            
+            <div class="practice-question">
+                <strong>Question 3:</strong> The article mentions two different brain areas we use when evaluating fairness. Match each focus with the correct brain function:
+                <ul style="margin-top: 10px;">
+                    <li>A) Focus on the outcome → ___________</li>
+                    <li>B) Focus on the process → ___________</li>
+                </ul>
+                Options: (1) Social cognition / (2) Emotions
+                
+                <details>
+                    <summary>📖 View Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answer:</strong><br>
+                        A) Focus on the outcome → (2) Emotions<br>
+                        B) Focus on the process → (1) Social cognition<br><br>
+                        <strong>Explanation:</strong> When we evaluate outcomes, we use emotional brain areas. When we evaluate processes, we engage social cognition areas and think about the people involved.
+                    </div>
+                </details>
+            </div>
+            
+            <div class="practice-question">
+                <strong>Question 4:</strong> According to the article, what must leaders do repeatedly during uncertain times to maintain trust?
+                
+                <details>
+                    <summary>📖 View Answer</summary>
+                    <div class="answer-content">
+                        <strong>Answer:</strong> Leaders must "earn the right to lead, coach and influence every time the ground shifts." They need to show they understand the new reality and meet employees where they are emotionally—sometimes in every conversation or meeting.<br><br>
+                        <strong>Explanation:</strong> Trust isn't permanent during uncertainty. Each time reality changes (the ground shifts), leaders must re-establish trust by demonstrating understanding and empathy.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Web Speech API for pronunciation
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                
+                // Set voice to US English
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9; // Slightly slower for clarity
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                
+                // Try to find a US English voice
+                const voices = window.speechSynthesis.getVoices();
+                const usVoice = voices.find(voice => voice.lang === 'en-US');
+                if (usVoice) {
+                    utterance.voice = usVoice;
+                }
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Sorry, your browser does not support text-to-speech.');
+            }
+        }
+        
+        // Load voices when they become available
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = function() {
+                window.speechSynthesis.getVoices();
+            };
+        }
+    </script>
+        </main>
+    </div>
+</body>
+</html>
