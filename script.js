@@ -62,7 +62,7 @@ async function scanLessons() {
         { filename: 'Power-Bank.html', date: '2026-01-23', title: '🔋 Could Your Power Bank Catch Fire or Explode?' },
         { filename: 'Cut Grass.html', date: '2026-01-26', title: '🌱 Cut Grass: A Scent of Survival, A Perfume of Pleasure' },
         { filename: 'Shades of Safety.html', date: '2026-01-28', title: '🕶️ Shades of Safety: Choosing the Right Sunglasses' },
-        { filename: 'Friendly Service or Smart Machines.html', date: '2026-01-30', title: '🤖 Friendly Service or Smart Machines?' },
+        { filename: 'Friendly Service or Smart Machines.html', date: '2026-02-04', title: '🤖 Friendly Service or Smart Machines?' },
         { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-04', title: '🕯️ The Uplifting Aroma of Scented Candles' },
         { filename: 'The Science of Memory.html', date: '2026-02-06', title: '🧠 The Science of Memory: Why We Remember and Why We Forget' },
         { date: '2026-02-02', title: 'Flexible Adjustment Holiday:Día de la Constitución Mexicana - No Class', isHoliday: true }
