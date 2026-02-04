@@ -1327,6 +1327,13 @@
                                         data-date="${date}" 
                                         data-title="${htmlEscapedTitle}"
                                         onclick="editLessonFromButton(this)">編輯</button>
+                                <button class="btn btn-small" 
+                                        style="background: #17a2b8; color: white;"
+                                        data-level="${level}" 
+                                        data-filename="${htmlEscapedFilename}" 
+                                        data-date="${date}" 
+                                        data-title="${htmlEscapedTitle}"
+                                        onclick="showDateUpdateDialog(this)">📅 修改日期</button>
                                 <button class="btn btn-small btn-delete" 
                                         data-level="${level}" 
                                         data-filename="${htmlEscapedFilename}" 
@@ -1380,6 +1387,180 @@
             const date = button.getAttribute('data-date');
             const title = button.getAttribute('data-title');
             deleteLesson(level, filename, date, title);
+        }
+
+        // 顯示日期修改對話框
+        function showDateUpdateDialog(button) {
+            const level = button.getAttribute('data-level');
+            let filename = button.getAttribute('data-filename');
+            const oldDate = button.getAttribute('data-date');
+            let title = button.getAttribute('data-title');
+            
+            // HTML 實體解碼
+            if (filename) {
+                filename = filename.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            }
+            if (title) {
+                title = title.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            }
+            
+            // 創建對話框
+            const dialog = document.createElement('div');
+            dialog.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+            `;
+            
+            const dialogContent = document.createElement('div');
+            dialogContent.style.cssText = 'background: white; padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; box-shadow: 0 4px 20px rgba(0,0,0,0.3);';
+            
+            // 使用 textContent 來安全顯示標題
+            const titleElement = document.createElement('p');
+            titleElement.style.cssText = 'color: #666; margin-bottom: 1rem;';
+            titleElement.innerHTML = `<strong>文章：</strong><span id="dialogTitle"></span><br><strong>目前日期：</strong>${oldDate}`;
+            const titleSpan = titleElement.querySelector('#dialogTitle');
+            titleSpan.textContent = title;
+            
+            const dateInput = document.createElement('input');
+            dateInput.type = 'date';
+            dateInput.id = 'newDateInput';
+            dateInput.value = oldDate;
+            dateInput.required = true;
+            dateInput.style.cssText = 'width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;';
+            
+            const label = document.createElement('label');
+            label.style.cssText = 'display: block; margin-bottom: 0.5rem; font-weight: bold;';
+            label.textContent = '新日期 *';
+            label.htmlFor = 'newDateInput';
+            
+            const formGroup = document.createElement('div');
+            formGroup.className = 'form-group';
+            formGroup.style.cssText = 'margin-bottom: 1.5rem;';
+            formGroup.appendChild(label);
+            formGroup.appendChild(dateInput);
+            
+            const buttonContainer = document.createElement('div');
+            buttonContainer.style.cssText = 'display: flex; gap: 0.5rem; justify-content: flex-end;';
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.textContent = '取消';
+            cancelBtn.style.cssText = 'padding: 0.5rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;';
+            cancelBtn.onclick = () => dialog.remove();
+            
+            const confirmBtn = document.createElement('button');
+            confirmBtn.textContent = '確認修改';
+            confirmBtn.style.cssText = 'padding: 0.5rem 1.5rem; background: #17a2b8; color: white; border: none; border-radius: 4px; cursor: pointer;';
+            confirmBtn.onclick = () => {
+                const newDate = dateInput.value;
+                if (!newDate) {
+                    alert('請選擇新日期');
+                    return;
+                }
+                if (newDate === oldDate) {
+                    alert('新日期與目前日期相同，無需修改');
+                    dialog.remove();
+                    return;
+                }
+                if (confirm(`確定要將「${title}」的發布日期從 ${oldDate} 改為 ${newDate} 嗎？`)) {
+                    dialog.remove();
+                    updateArticleDate(level, filename, oldDate, newDate, title);
+                }
+            };
+            
+            buttonContainer.appendChild(cancelBtn);
+            buttonContainer.appendChild(confirmBtn);
+            
+            const heading = document.createElement('h3');
+            heading.textContent = '📅 修改發布日期';
+            heading.style.cssText = 'margin-top: 0; margin-bottom: 1rem;';
+            
+            dialogContent.appendChild(heading);
+            dialogContent.appendChild(titleElement);
+            dialogContent.appendChild(formGroup);
+            dialogContent.appendChild(buttonContainer);
+            dialog.appendChild(dialogContent);
+            document.body.appendChild(dialog);
+            
+            // 點擊背景關閉對話框
+            dialog.addEventListener('click', function(e) {
+                if (e.target === dialog) {
+                    dialog.remove();
+                }
+            });
+            
+            // 聚焦日期輸入框
+            setTimeout(() => {
+                dateInput.focus();
+            }, 100);
+        }
+
+        // 更新文章日期（只更新 script.js 中的日期欄位）
+        async function updateArticleDate(level, filename, oldDate, newDate, title) {
+            const scriptFileName = level === 'intermediate' ? 'script.js' : 'script-advanced.js';
+            
+            try {
+                showAlert('success', `📅 正在更新日期：${oldDate} → ${newDate}...`);
+                
+                // 讀取現有的 script.js
+                let scriptContent = await getFileContent(scriptFileName);
+                
+                if (!scriptContent) {
+                    throw new Error(`找不到 ${scriptFileName} 檔案`);
+                }
+                
+                // 轉義 filename 和 title 中的單引號（用於正則匹配）
+                const escapedFilename = filename.replace(/'/g, "\\'");
+                const escapedTitle = title.replace(/'/g, "\\'");
+                
+                // 建立匹配模式，找到對應的文章行
+                // 匹配格式：{ filename: '檔名.html', date: '舊日期', title: '標題' },
+                const pattern = new RegExp(
+                    `(\\s*\\{\\s*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"]\\s*,\\s*date:\\s*['"])${oldDate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(['"]\\s*(?:,\\s*title:\\s*['"]${escapedTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"])?\\s*\\},?\\s*)`,
+                    'g'
+                );
+                
+                // 替換日期
+                if (!pattern.test(scriptContent)) {
+                    // 如果第一次匹配失敗，嘗試更寬鬆的匹配（不包含 title）
+                    const loosePattern = new RegExp(
+                        `(\\s*\\{\\s*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"]\\s*,\\s*date:\\s*['"])${oldDate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(['"]\\s*[,}])`,
+                        'g'
+                    );
+                    if (loosePattern.test(scriptContent)) {
+                        scriptContent = scriptContent.replace(loosePattern, `$1${newDate}$2`);
+                    } else {
+                        throw new Error('找不到對應的文章記錄，無法更新日期');
+                    }
+                } else {
+                    // 重新執行匹配（因為 test 會改變 lastIndex）
+                    scriptContent = scriptContent.replace(pattern, `$1${newDate}$2`);
+                }
+                
+                // 上傳更新後的 script.js
+                const message = `Update article date: ${title} (${oldDate} → ${newDate})`;
+                await uploadFileToGitHub(scriptFileName, scriptContent, message);
+                
+                showAlert('success', `✅ 日期已成功更新！<br><strong>${title}</strong><br>${oldDate} → ${newDate}<br><small>請重新整理頁面查看更新</small>`);
+                
+                // 重新載入文章列表
+                setTimeout(() => {
+                    loadLessons();
+                }, 1000);
+                
+                return true;
+            } catch (error) {
+                console.error('更新日期錯誤:', error);
+                showAlert('error', `❌ 更新日期失敗：${error.message}`);
+                throw error;
+            }
         }
 
         // 編輯文章
