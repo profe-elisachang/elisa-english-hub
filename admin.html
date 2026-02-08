@@ -663,8 +663,10 @@
         // 更新 script.js 檔案
         async function updateScriptFile(level, filename, date, title) {
             const scriptFileName = level === 'intermediate' ? 'script.js' : 'script-advanced.js';
+            // 清理檔案名稱：移除前後空格，移除 emoji（檔名不應包含 emoji）
+            const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
             // 轉義 filename 和 title 中的單引號
-            const escapedFilename = filename.replace(/'/g, "\\'");
+            const escapedFilename = cleanedFilename.replace(/'/g, "\\'");
             const escapedTitle = title.replace(/'/g, "\\'");
             const scriptLine = `        { filename: '${escapedFilename}', date: '${date}', title: '${escapedTitle}' },\n`;
             
@@ -694,9 +696,18 @@
                     }
                 } else {
                     // 在標記之前插入新行
-                    scriptContent = scriptContent.slice(0, markerIndex) + 
+                    // 確保 markerIndex 之前有換行（如果沒有）
+                    let insertIndex = markerIndex;
+                    if (markerIndex > 0 && scriptContent[markerIndex - 1] !== '\n') {
+                        // 找到 markerIndex 之前的最後一個換行符
+                        const lastNewline = scriptContent.lastIndexOf('\n', markerIndex - 1);
+                        if (lastNewline !== -1) {
+                            insertIndex = lastNewline + 1;
+                        }
+                    }
+                    scriptContent = scriptContent.slice(0, insertIndex) + 
                                   scriptLine + 
-                                  scriptContent.slice(markerIndex);
+                                  scriptContent.slice(insertIndex);
                 }
                 
                 // 上傳更新後的 script.js
@@ -731,8 +742,10 @@
             const filename = document.getElementById('filename').value;
             const htmlContent = document.getElementById('htmlContent').value;
 
+            // 清理檔案名稱：移除前後空格，移除 emoji（檔名不應包含 emoji）
+            const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
             // 確保檔名有 .html 後綴
-            const finalFilename = filename.endsWith('.html') ? filename : filename + '.html';
+            const finalFilename = cleanedFilename.endsWith('.html') ? cleanedFilename : cleanedFilename + '.html';
 
             // 生成完整的 HTML 檔案內容
             let fullHtml = htmlContent;
@@ -904,7 +917,9 @@
             const filename = document.getElementById('filename').value;
             const fullHtml = document.getElementById('outputCode').textContent;
             
-            const finalFilename = filename.endsWith('.html') ? filename : filename + '.html';
+            // 清理檔案名稱：移除前後空格，移除 emoji（檔名不應包含 emoji）
+            const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
+            const finalFilename = cleanedFilename.endsWith('.html') ? cleanedFilename : cleanedFilename + '.html';
             const uploadBtn = document.getElementById('uploadToGitHubBtn');
             
             if (uploadBtn) {
