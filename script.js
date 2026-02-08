@@ -69,7 +69,8 @@ async function scanLessons() {
         { filename: 'McDonald.html', date: '2026-02-13', title: '🤡 The Disappearance of Ronald McDonald' },
         
         { date: '2026-02-02', title: 'Flexible Adjustment Holiday:Día de la Constitución Mexicana - No Class', isHoliday: true }
-        // 👆 在此上方添加新文章，記得加逗號！
+                { filename: 'Pen Caps.html', date: '2026-02-13', title: '🖊️ The Life-Saving Secret behind the Hole in Pen Caps' },
+// 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
     ];
