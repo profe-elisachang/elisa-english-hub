@@ -1,0 +1,703 @@
+📱 Child Privacy <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Privacy Suffers in the Age of Sharenting - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #F5F1E8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* SECTION STYLING */
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #8B6F47;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8B6F47;
+        }
+        
+        /* USEFUL EXPRESSIONS */
+        .expression-item {
+            background: #FFF9F0;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #C19A6B;
+            border-radius: 6px;
+        }
+        
+        .expression-en {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #8B6F47;
+            margin-bottom: 8px;
+        }
+        
+        .expression-es {
+            font-size: 1.05rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .expression-example {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            padding-left: 12px;
+            border-left: 3px solid #4A90E2;
+        }
+        
+        /* ARTICLE STYLING */
+        .article-title {
+            color: #6B4423;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .article-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        
+        /* VOCABULARY HIGHLIGHTING - TV OPTIMIZED */
+        .highlight {
+            background-color: #FFF4B3;
+            font-weight: 700;
+            border-bottom: 2px solid #D4A574;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+        
+        /* HOVER TOOLTIP - ABOVE CURSOR */
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 5px;
+        }
+        
+        /* VOCABULARY BOX */
+        .vocabulary-section {
+            background: #FFFEF8;
+            border-left: 4px solid #8B6F47;
+            padding: 25px;
+            margin: 30px 0 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        
+        .vocabulary-section h3 {
+            color: #8B6F47;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .vocab-item {
+            background: white;
+            padding: 18px;
+            border-radius: 6px;
+            border: 1px solid #E8E0D5;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .vocab-word {
+            color: #8B6F47;
+            font-size: 1.3rem;
+            margin-right: 8px;
+            font-weight: 700;
+        }
+        
+        .vocab-speaker {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .vocab-definition {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        
+        .vocab-translation {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* MOBILE NOTE */
+        .mobile-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #F0EDE5;
+            border-radius: 6px;
+        }
+        
+        /* DISCUSSION QUESTIONS */
+        .discussion-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .discussion-list li {
+            background: #FFF9F0;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-left: 4px solid #C19A6B;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .discussion-list li::before {
+            content: "💭 ";
+            margin-right: 8px;
+        }
+        
+        /* SELF-PRACTICE */
+        .practice-question {
+            background: #F8F6F1;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #D4C4B0;
+        }
+        
+        .practice-question strong {
+            color: #6B4423;
+            font-size: 1.1rem;
+        }
+        
+        details {
+            margin-top: 30px;
+            padding: 20px;
+            background: #FFF9F0;
+            border-radius: 8px;
+            border: 2px solid #C19A6B;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #8B6F47;
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        
+        summary:hover {
+            color: #6B4423;
+        }
+        
+        details ol {
+            margin-top: 15px;
+            padding-left: 25px;
+        }
+        
+        details li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* PARAGRAPH DIVIDER */
+        .paragraph-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #D4C4B0, transparent);
+            margin: 40px 0;
+            border: none;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>  
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://concienciat.gva.es/wp-content/uploads/2025/06/Imagen-campana-sharenting_-cas.jpg" alt="📱 Child Privacy Suffers in the Age of Sharenting" class="article-image">
+    </div>
+
+    
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <main class="main-content">
+            
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <section class="section">
+                <h2 class="section-title">💼 Useful Expressions</h2>
+                
+                <div class="expression-item">
+                    <div class="expression-en">raise concerns about</div>
+                    <div class="expression-es">plantear preocupaciones sobre</div>
+                    <div class="expression-example">The team raised concerns about the new safety procedures being too complex.</div>
+                </div>
+                
+                <div class="expression-item">
+                    <div class="expression-en">blur the boundary between</div>
+                    <div class="expression-es">difuminar la frontera entre</div>
+                    <div class="expression-example">Working from home can blur the boundary between professional and personal life.</div>
+                </div>
+                
+                <div class="expression-item">
+                    <div class="expression-en">weaken one's well-being</div>
+                    <div class="expression-es">debilitar el bienestar de alguien</div>
+                    <div class="expression-example">Constant overtime can weaken employees' well-being and productivity.</div>
+                </div>
+                
+                <div class="expression-item">
+                    <div class="expression-en">it is time for (someone) to...</div>
+                    <div class="expression-es">es hora de que (alguien)...</div>
+                    <div class="expression-example">It is time for management to address the communication issues in our department.</div>
+                </div>
+            </section>
+            
+            <!-- SECTION 2: ARTICLE WITH VOCABULARY -->
+            <section class="section">
+                <h1 class="article-title">📱 Child Privacy Suffers in the Age of Sharenting</h1>
+                
+                <div class="article-content">
+                    <!-- PARAGRAPH 1 -->
+                    <p>
+                        Recently, a New Taipei City couple who are family influencers posted a video of their young child <span class="highlight" title="defecando">defecating</span> in her <span class="highlight" title="pañal">diaper</span> behind a UNIQLO clothing rack. Widely <span class="highlight" title="condenado">condemned</span> as a <span class="highlight" title="esquema">scheme</span> for online attention, the act drew police involvement and raised concerns about privacy and parenting.
+                    </p>
+                    
+                    <!-- VOCABULARY BOX - PARAGRAPH 1 -->
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary - Paragraph 1</h3>
+                        <div class="vocab-container">
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">defecating</strong>
+                                    <button onclick="speakWord('defecating')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Evacuating waste from the bowels</p>
+                                <p class="vocab-translation">defecando</p>
+                                <div class="vocab-example">The incident involved a child defecating in public, which violated hygiene standards.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">diaper</strong>
+                                    <button onclick="speakWord('diaper')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Absorbent garment worn by babies or young children</p>
+                                <p class="vocab-translation">pañal</p>
+                                <div class="vocab-example">Parents should change diapers frequently to maintain the child's comfort and hygiene.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">condemned</strong>
+                                    <button onclick="speakWord('condemned')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Expressed strong disapproval of something</p>
+                                <p class="vocab-translation">condenado</p>
+                                <div class="vocab-example">The company's unethical practices were widely condemned by industry regulators.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">scheme</strong>
+                                    <button onclick="speakWord('scheme')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">A plan or arrangement, often with negative connotations</p>
+                                <p class="vocab-translation">esquema, plan</p>
+                                <div class="vocab-example">The marketing team developed a comprehensive scheme to increase brand awareness.</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <hr class="paragraph-divider">
+                    
+                    <!-- PARAGRAPH 2 -->
+                    <p>
+                        This example shows the darker aspects of sharenting, a term describing how some parents excessively share their children's lives or photos online. Sharenting thrives on social media, where engaging content is rewarded with likes, followers, and revenue from <span class="highlight" title="patrocinios">sponsorships</span> and advertisements. The way in which parents profit from intimate childhood moments has fueled the rapid growth of family influencer accounts and blurred the boundary between genuine care and the <span class="highlight" title="búsqueda">pursuit</span> of popularity.
+                    </p>
+                    
+                    <!-- VOCABULARY BOX - PARAGRAPH 2 -->
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary - Paragraph 2</h3>
+                        <div class="vocab-container">
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">sponsorships</strong>
+                                    <button onclick="speakWord('sponsorships')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Financial support from companies in exchange for promotion</p>
+                                <p class="vocab-translation">patrocinios</p>
+                                <div class="vocab-example">The conference secured several sponsorships from leading technology companies.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">pursuit</strong>
+                                    <button onclick="speakWord('pursuit')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">The act of trying to achieve or obtain something</p>
+                                <p class="vocab-translation">búsqueda, persecución</p>
+                                <div class="vocab-example">The team's pursuit of excellence led to record-breaking sales results.</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <hr class="paragraph-divider">
+                    
+                    <!-- PARAGRAPH 3 -->
+                    <p>
+                        Accompanying this <span class="highlight" title="atractivo">allure</span> are <span class="highlight" title="formidables">formidable</span> risks. <span class="highlight" title="el principal">Foremost</span> among them is the loss of privacy, as parents <span class="highlight" title="meticulosamente">meticulously</span> document and widely <span class="highlight" title="difundir">disseminate</span> the lives of their children who are too young to <span class="highlight" title="consentir">consent</span>. With privacy lost, the boundaries <span class="highlight" title="indispensable">indispensable</span> for a child's well-being may also weaken.
+                    </p>
+                    
+                    <!-- VOCABULARY BOX - PARAGRAPH 3 -->
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary - Paragraph 3</h3>
+                        <div class="vocab-container">
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">allure</strong>
+                                    <button onclick="speakWord('allure')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">The quality of being powerfully attractive or fascinating</p>
+                                <p class="vocab-translation">atractivo, encanto</p>
+                                <div class="vocab-example">The allure of remote work continues to attract talented professionals worldwide.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">formidable</strong>
+                                    <button onclick="speakWord('formidable')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Inspiring fear or respect through being large, powerful, or capable</p>
+                                <p class="vocab-translation">formidable, imponente</p>
+                                <div class="vocab-example">The engineering team faced formidable challenges during the product development phase.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">foremost</strong>
+                                    <button onclick="speakWord('foremost')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Most prominent in rank, importance, or position</p>
+                                <p class="vocab-translation">el principal, el primero</p>
+                                <div class="vocab-example">Safety is foremost among our company's priorities in manufacturing operations.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">meticulously</strong>
+                                    <button onclick="speakWord('meticulously')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">In a way that shows great attention to detail; very carefully</p>
+                                <p class="vocab-translation">meticulosamente</p>
+                                <div class="vocab-example">The quality control team meticulously inspects every component before assembly.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">disseminate</strong>
+                                    <button onclick="speakWord('disseminate')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Spread or distribute something widely, especially information</p>
+                                <p class="vocab-translation">difundir, diseminar</p>
+                                <div class="vocab-example">The company uses internal newsletters to disseminate important policy updates.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">consent</strong>
+                                    <button onclick="speakWord('consent')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Permission for something to happen or agreement to do something</p>
+                                <p class="vocab-translation">consentimiento</p>
+                                <div class="vocab-example">All employees must provide written consent before participating in research studies.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">indispensable</strong>
+                                    <button onclick="speakWord('indispensable')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Absolutely necessary; essential</p>
+                                <p class="vocab-translation">indispensable</p>
+                                <div class="vocab-example">Clear communication is indispensable for effective teamwork in manufacturing.</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <hr class="paragraph-divider">
+                    
+                    <!-- PARAGRAPH 4 -->
+                    <p>
+                        Experts warn of long-term psychological consequences, including identity confusion, anxiety, and the difficulty of developing an authentic sense of self under constant public <span class="highlight" title="escrutinio">scrutiny</span>. Furthermore, embarrassing childhood moments may remain online permanently, affecting future relationships and opportunities.
+                    </p>
+                    
+                    <!-- VOCABULARY BOX - PARAGRAPH 4 -->
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary - Paragraph 4</h3>
+                        <div class="vocab-container">
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">scrutiny</strong>
+                                    <button onclick="speakWord('scrutiny')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Critical observation or examination</p>
+                                <p class="vocab-translation">escrutinio, examen detallado</p>
+                                <div class="vocab-example">The financial reports underwent intense scrutiny from the auditing team.</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <hr class="paragraph-divider">
+                    
+                    <!-- PARAGRAPH 5 -->
+                    <p>
+                        Recognizing these issues, several nations have initiated legislation. France leads global efforts, allowing children to sue their parents for sharing their photos online without consent once they reach adulthood. In 2020, France went further by <span class="highlight" title="promulgando">enacting</span> a <span class="highlight" title="estatuto">statute</span> that requires government <span class="highlight" title="autorización">authorization</span> before children can appear in commercial online videos, with <span class="highlight" title="rigurosas">rigorous</span> regulations on their working hours. Illinois, US, has also passed a law to protect children's rights, requiring that child influencers receive a share of income from their video blogs, with their earnings secured in a trust fund until they turn 18. As more nations address sharenting, it is time for society to question whether the focus should be on the child or the parent holding the camera.
+                    </p>
+                    
+                    <!-- VOCABULARY BOX - PARAGRAPH 5 -->
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary - Paragraph 5</h3>
+                        <div class="vocab-container">
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">enacting</strong>
+                                    <button onclick="speakWord('enacting')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Making a proposal into law; putting into practice</p>
+                                <p class="vocab-translation">promulgando, estableciendo</p>
+                                <div class="vocab-example">The government is enacting new workplace safety regulations next quarter.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">statute</strong>
+                                    <button onclick="speakWord('statute')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">A written law passed by a legislative body</p>
+                                <p class="vocab-translation">estatuto, ley</p>
+                                <div class="vocab-example">The company must comply with all federal statutes regarding employee rights.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">authorization</strong>
+                                    <button onclick="speakWord('authorization')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Official permission or approval</p>
+                                <p class="vocab-translation">autorización</p>
+                                <div class="vocab-example">You need manager authorization before accessing confidential project files.</div>
+                            </div>
+                            
+                            <div class="vocab-item">
+                                <div style="margin-bottom: 10px;">
+                                    <strong class="vocab-word">rigorous</strong>
+                                    <button onclick="speakWord('rigorous')" class="vocab-speaker" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Extremely thorough and careful</p>
+                                <p class="vocab-translation">riguroso, estricto</p>
+                                <div class="vocab-example">Our quality assurance team follows rigorous testing procedures for all products.</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- MOBILE NOTE -->
+                    <p class="mobile-note">
+                        *(On mobile: Tap and hold highlighted words to see translation)*
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <!-- SECTION 3: DISCUSSION QUESTIONS -->
+            <section class="section">
+                <h2 class="section-title">💬 Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>Do you think parents should have the right to profit from posting their children's photos and videos online? Why or why not?</li>
+                    <li>Is France's law allowing children to sue their parents too strict, or is it a necessary protection? What would be a fair approach?</li>
+                    <li>If you were a parent, how would you balance sharing family moments with protecting your child's privacy and future?</li>
+                </ul>
+            </section>
+            
+            <!-- SECTION 4: SELF-PRACTICE QUESTIONS -->
+            <section class="section">
+                <h2 class="section-title">✏️ Self-Practice Questions</h2>
+                
+                <div class="practice-question">
+                    <strong>1. Fill in the blank:</strong><br>
+                    The company __________ inspected every shipment to ensure quality standards were met.
+                    <br><em>(Use a word from the vocabulary that means "very carefully")</em>
+                </div>
+                
+                <div class="practice-question">
+                    <strong>2. True or False:</strong><br>
+                    According to the article, "sharenting" refers to parents carefully protecting their children's privacy online.
+                </div>
+                
+                <div class="practice-question">
+                    <strong>3. Matching:</strong><br>
+                    Match the word with its meaning:<br>
+                    a) scrutiny<br>
+                    b) formidable<br>
+                    c) disseminate<br>
+                    <br>
+                    1) To spread information widely<br>
+                    2) Critical examination<br>
+                    3) Inspiring fear or respect through power
+                </div>
+                
+                <div class="practice-question">
+                    <strong>4. Short answer:</strong><br>
+                    What are two risks mentioned in the article about children whose parents share their photos extensively online?
+                </div>
+                
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>meticulously</strong> - The company meticulously inspected every shipment to ensure quality standards were met.</li>
+                        <li><strong>False</strong> - Sharenting refers to parents excessively sharing their children's lives or photos online, often without considering privacy concerns.</li>
+                        <li>a-2 (scrutiny = critical examination), b-3 (formidable = inspiring fear or respect), c-1 (disseminate = spread information widely)</li>
+                        <li>Two risks include: (1) Loss of privacy and inability to consent, (2) Long-term psychological consequences such as identity confusion and anxiety, (3) Embarrassing moments remaining online permanently affecting future opportunities. (Any two are acceptable)</li>
+                    </ol>
+                </details>
+            </section>
+            
+        </main>
+    </div>
+    
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>Suffers in the Age of Sharenting
