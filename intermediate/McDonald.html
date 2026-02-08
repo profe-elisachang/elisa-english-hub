@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Disappearance of Ronald McDonald - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            background: #fff8e1;
+            color: #1a1a1a;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .level-badge {
+            background: #ffc107;
+            color: #d32f2f;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 3px solid white;
+        }
+
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-calendar-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(211, 47, 47, 0.1);
+            border-left: 6px solid #d32f2f;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #d32f2f;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .expression-card {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 3px solid #ffc107;
+            transition: all 0.3s ease;
+        }
+
+        .expression-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
+        }
+
+        .expression-en {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-bottom: 0.5rem;
+        }
+
+        .expression-es {
+            font-size: 1rem;
+            color: #f57c00;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .expression-example {
+            font-size: 0.95rem;
+            color: #424242;
+            font-style: italic;
+            padding-left: 1rem;
+            border-left: 3px solid #ffc107;
+        }
+
+        .article-title {
+            font-size: 2.2rem;
+            color: #d32f2f;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-intro {
+            background: #ffebee;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 3px solid #ef5350;
+            font-weight: 600;
+            color: #c62828;
+        }
+
+        .paragraph {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: #fff176;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-bottom: 3px solid #f57c00;
+            cursor: help;
+            transition: all 0.2s ease;
+        }
+
+        .highlight:hover {
+            background: #ffd54f;
+            transform: scale(1.05);
+        }
+
+        .vocab-section {
+            background: linear-gradient(135deg, #ffecb3 0%, #ffe082 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 4px solid #ffa726;
+        }
+
+        .vocab-title {
+            font-size: 1.5rem;
+            color: #e65100;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .vocab-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 3px solid #ff6f00;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .speak-btn {
+            background: #ffc107;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #f57c00;
+        }
+
+        .speak-btn:hover {
+            background: #ffb300;
+            transform: scale(1.1);
+        }
+
+        .vocab-meaning {
+            font-size: 1rem;
+            color: #424242;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .vocab-spanish {
+            font-size: 1.1rem;
+            color: #f57c00;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .vocab-example {
+            font-size: 0.95rem;
+            color: #616161;
+            font-style: italic;
+            padding: 0.8rem;
+            background: #fff8e1;
+            border-radius: 6px;
+            border-left: 3px solid #ff6f00;
+        }
+
+        .discussion-section {
+            background: linear-gradient(135deg, #ffccbc 0%, #ffab91 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 4px solid #ff5722;
+        }
+
+        .discussion-questions {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .question-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 6px solid #d32f2f;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .question-number {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            display: inline;
+        }
+
+        .practice-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 4px solid #ffc107;
+        }
+
+        .practice-item {
+            margin-bottom: 2rem;
+            border: 3px solid #ffe082;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .practice-question {
+            background: #fff9c4;
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #f57c00;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .practice-question:hover {
+            background: #fff59d;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d32f2f;
+        }
+
+        .practice-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: white;
+        }
+
+        .practice-answer.active {
+            max-height: 500px;
+        }
+
+        .practice-answer-content {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #424242;
+            border-top: 2px solid #ffe082;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .expressions-grid,
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-title {
+                font-size: 1.6rem;
+            }
+            
+            .paragraph {
+                font-size: 1.1rem;
+            }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://static.bonniernews.se/ba/eb5f1c09-130b-4848-bc3c-844c6da763fa.png?crop=1920%2C1080%2Cx6%2Cy0&width=1920&auto=webp&enable=upscale" alt="🤡 The Disappearance of Ronald McDonald" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <!-- Useful Expressions -->
+        <section class="section">
+            <h2 class="section-title">💬 Useful Expressions</h2>
+            <div class="expressions-grid">
+                <div class="expression-card">
+                    <div class="expression-en">To make an appearance</div>
+                    <div class="expression-es">Hacer una aparición / presentarse</div>
+                    <div class="expression-example">"The CEO made an appearance at the company event."</div>
+                </div>
+                <div class="expression-card">
+                    <div class="expression-en">To call on someone to do something</div>
+                    <div class="expression-es">Pedir a alguien que haga algo / exigir</div>
+                    <div class="expression-example">"Health experts called on the government to ban sugary drinks."</div>
+                </div>
+                <div class="expression-card">
+                    <div class="expression-en">In response (to)</div>
+                    <div class="expression-es">En respuesta a / como reacción</div>
+                    <div class="expression-example">"In response to customer complaints, they improved the service."</div>
+                </div>
+                <div class="expression-card">
+                    <div class="expression-en">Out of step with</div>
+                    <div class="expression-es">Desincronizado con / fuera de lugar</div>
+                    <div class="expression-example">"His old-fashioned ideas were out of step with modern society."</div>
+                </div>
+                <div class="expression-card">
+                    <div class="expression-en">In the background</div>
+                    <div class="expression-es">En segundo plano / discretamente</div>
+                    <div class="expression-example">"She prefers to work in the background rather than take credit."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article -->
+        <section class="section">
+            <h2 class="article-title">🤡 The Disappearance of Ronald McDonald</h2>
+            <div class="article-intro">
+                How quickly we forget a face that was once everywhere.
+            </div>
+
+            <!-- Paragraph 1 -->
+            <div class="paragraph">
+                Ronald McDonald, the <span class="highlight" title="icónico / emblemático">iconic</span> red-haired clown in a yellow <span class="highlight" title="traje / mono">jumpsuit</span>, <span class="highlight" title="hizo su primera aparición">made his first appearance</span> in 1963 as a <span class="highlight" title="vívido / llamativo">vivid</span> tool of brand identity. Ronald was originally introduced with a paper cup for a nose and a food tray for a hat. Over time, his image developed and eventually became the <span class="highlight" title="alegre / animado">cheerful</span>, familiar face of McDonald's <span class="highlight" title="publicidad">advertising</span>.
+            </div>
+
+            <div class="vocab-section">
+                <h3 class="vocab-title">📚 Vocabulary - Paragraph 1</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            iconic
+                            <button class="speak-btn" onclick="speakWord('iconic')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Widely recognized and well-established; representing something important</div>
+                        <div class="vocab-spanish">🇪🇸 icónico, emblemático</div>
+                        <div class="vocab-example">"The Eiffel Tower is an iconic symbol of Paris."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            jumpsuit
+                            <button class="speak-btn" onclick="speakWord('jumpsuit')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">A one-piece garment combining a top and pants</div>
+                        <div class="vocab-spanish">🇪🇸 mono, traje de una pieza</div>
+                        <div class="vocab-example">"The mechanic wore a blue jumpsuit while working."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            made his first appearance
+                            <button class="speak-btn" onclick="speakWord('made his first appearance')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Showed up or was introduced for the first time</div>
+                        <div class="vocab-spanish">🇪🇸 hizo su primera aparición</div>
+                        <div class="vocab-example">"The new product made its first appearance at the tech expo."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            vivid
+                            <button class="speak-btn" onclick="speakWord('vivid')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Bright, intense, and eye-catching in color or appearance</div>
+                        <div class="vocab-spanish">🇪🇸 vívido, llamativo, intenso</div>
+                        <div class="vocab-example">"She painted the room in vivid colors like orange and yellow."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            cheerful
+                            <button class="speak-btn" onclick="speakWord('cheerful')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Happy, positive, and bringing joy</div>
+                        <div class="vocab-spanish">🇪🇸 alegre, animado</div>
+                        <div class="vocab-example">"Her cheerful personality makes everyone feel welcome."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            advertising
+                            <button class="speak-btn" onclick="speakWord('advertising')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">The activity of promoting products or services to customers</div>
+                        <div class="vocab-spanish">🇪🇸 publicidad</div>
+                        <div class="vocab-example">"The company spent millions on advertising during the Super Bowl."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paragraph 2 -->
+            <div class="paragraph">
+                <span class="highlight" title="anunciantes">Advertisers</span> in the 1960s came to realize that children were the most valuable <span class="highlight" title="consumidores">consumers</span>. It began running more Ronald McDonald <span class="highlight" title="anuncios">ads</span> throughout the 1970s. By the 1980s, Ronald had become a <span class="highlight" title="conocido en todo el hogar">household</span> name. As McDonald's <span class="highlight" title="expandió / se expandió">expanded</span> into overseas markets, his image gained global recognition. However, by the 2010s, his presence began to <span class="highlight" title="desvanecerse / decaer">fade</span>.
+            </div>
+
+            <div class="vocab-section">
+                <h3 class="vocab-title">📚 Vocabulary - Paragraph 2</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            advertisers
+                            <button class="speak-btn" onclick="speakWord('advertisers')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">People or companies that promote products through ads</div>
+                        <div class="vocab-spanish">🇪🇸 anunciantes</div>
+                        <div class="vocab-example">"Advertisers target specific audiences based on their interests."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            consumers
+                            <button class="speak-btn" onclick="speakWord('consumers')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">People who buy and use products or services</div>
+                        <div class="vocab-spanish">🇪🇸 consumidores</div>
+                        <div class="vocab-example">"Consumers today prefer eco-friendly products."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            ads
+                            <button class="speak-btn" onclick="speakWord('ads')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Short for advertisements; promotional messages</div>
+                        <div class="vocab-spanish">🇪🇸 anuncios</div>
+                        <div class="vocab-example">"Social media is full of ads for various products."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            household
+                            <button class="speak-btn" onclick="speakWord('household name')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Known by almost everyone; very famous</div>
+                        <div class="vocab-spanish">🇪🇸 conocido por todos, famoso</div>
+                        <div class="vocab-example">"Apple became a household name in the technology industry."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            expanded
+                            <button class="speak-btn" onclick="speakWord('expanded')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Grew larger; extended into new areas</div>
+                        <div class="vocab-spanish">🇪🇸 expandió, se expandió</div>
+                        <div class="vocab-example">"The business expanded to five new countries last year."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            fade
+                            <button class="speak-btn" onclick="speakWord('fade')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Gradually disappear or become less visible</div>
+                        <div class="vocab-spanish">🇪🇸 desvanecerse, decaer</div>
+                        <div class="vocab-example">"His popularity began to fade after the scandal."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paragraph 3 -->
+            <div class="paragraph">
+                In 2004, the popular documentary <em>Super Size Me</em> revealed the negative health effects of eating only McDonald's for a month. This film brought <span class="highlight" title="inmediata">immediate</span> attention to the company's unhealthy meals. In response, McDonald's <span class="highlight" title="rápidamente">swiftly</span> removed its Supersize portions and <span class="highlight" title="lanzó">launched</span> healthier items like salads. Public <span class="highlight" title="desaprobación">disapproval</span> reached a crisis point in 2011. More than 550 health experts <span class="highlight" title="conjuntamente / de manera conjunta">jointly</span> <span class="highlight" title="pidieron / exigieron">called on</span> the company to <span class="highlight" title="retirar / jubilar">retire</span> the clown.
+            </div>
+
+            <div class="vocab-section">
+                <h3 class="vocab-title">📚 Vocabulary - Paragraph 3</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            immediate
+                            <button class="speak-btn" onclick="speakWord('immediate')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Happening right away without delay</div>
+                        <div class="vocab-spanish">🇪🇸 inmediato</div>
+                        <div class="vocab-example">"The issue requires immediate attention."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            swiftly
+                            <button class="speak-btn" onclick="speakWord('swiftly')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Quickly and efficiently</div>
+                        <div class="vocab-spanish">🇪🇸 rápidamente, con prontitud</div>
+                        <div class="vocab-example">"The company swiftly responded to customer complaints."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            launched
+                            <button class="speak-btn" onclick="speakWord('launched')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Introduced or started something new</div>
+                        <div class="vocab-spanish">🇪🇸 lanzó, introdujo</div>
+                        <div class="vocab-example">"They launched a new smartphone model this month."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            disapproval
+                            <button class="speak-btn" onclick="speakWord('disapproval')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">The feeling that something is wrong or bad; criticism</div>
+                        <div class="vocab-spanish">🇪🇸 desaprobación, rechazo</div>
+                        <div class="vocab-example">"The plan met with widespread public disapproval."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            jointly
+                            <button class="speak-btn" onclick="speakWord('jointly')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Together with others; in cooperation</div>
+                        <div class="vocab-spanish">🇪🇸 conjuntamente, de manera conjunta</div>
+                        <div class="vocab-example">"The two companies jointly developed the new technology."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            called on
+                            <button class="speak-btn" onclick="speakWord('called on')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Formally asked or demanded someone to do something</div>
+                        <div class="vocab-spanish">🇪🇸 pidieron, exigieron</div>
+                        <div class="vocab-example">"Activists called on the government to take action."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            retire
+                            <button class="speak-btn" onclick="speakWord('retire')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">To remove from active use; to stop using</div>
+                        <div class="vocab-spanish">🇪🇸 retirar, jubilar</div>
+                        <div class="vocab-example">"The company decided to retire the old logo."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paragraph 4 -->
+            <div class="paragraph">
+                Then came the "killer clown" <span class="highlight" title="locura / moda pasajera">craze</span> of 2016—an odd wave of <span class="highlight" title="alarmantes">alarming</span> clown <span class="highlight" title="avistamientos">sightings</span> across the US, Canada, and beyond. There were reports of clowns hiding near schools or attempting to lead children into the woods. McDonald's responded by reducing Ronald's public appearances, stating this was out of respect for local concerns. The <span class="highlight" title="mascota">mascot</span> suddenly <span class="highlight" title="parecía fuera de sintonía con">seemed out of step with</span> the times. Once a symbol of childhood joy, Ronald now lives quietly <span class="highlight" title="en segundo plano">in the background</span>.
+            </div>
+
+            <div class="vocab-section">
+                <h3 class="vocab-title">📚 Vocabulary - Paragraph 4</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            craze
+                            <button class="speak-btn" onclick="speakWord('craze')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">A widespread but temporary enthusiasm or trend</div>
+                        <div class="vocab-spanish">🇪🇸 locura, moda pasajera</div>
+                        <div class="vocab-example">"The fidget spinner craze swept through schools in 2017."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            alarming
+                            <button class="speak-btn" onclick="speakWord('alarming')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Causing worry or fear; disturbing</div>
+                        <div class="vocab-spanish">🇪🇸 alarmante, preocupante</div>
+                        <div class="vocab-example">"The alarming increase in pollution is affecting public health."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            sightings
+                            <button class="speak-btn" onclick="speakWord('sightings')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Occasions when something or someone is seen</div>
+                        <div class="vocab-spanish">🇪🇸 avistamientos</div>
+                        <div class="vocab-example">"There were multiple UFO sightings reported last night."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            mascot
+                            <button class="speak-btn" onclick="speakWord('mascot')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">A character or figure used to represent a team or brand</div>
+                        <div class="vocab-spanish">🇪🇸 mascota (de marca/equipo)</div>
+                        <div class="vocab-example">"The school's mascot is a tiger."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            seemed out of step with
+                            <button class="speak-btn" onclick="speakWord('seemed out of step with')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Did not match or fit with current trends or values</div>
+                        <div class="vocab-spanish">🇪🇸 parecía fuera de sintonía con, desincronizado</div>
+                        <div class="vocab-example">"His old-fashioned views seemed out of step with modern society."</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-word">
+                            in the background
+                            <button class="speak-btn" onclick="speakWord('in the background')">🔊</button>
+                        </div>
+                        <div class="vocab-meaning">Not in a prominent position; hidden from public view</div>
+                        <div class="vocab-spanish">🇪🇸 en segundo plano, discretamente</div>
+                        <div class="vocab-example">"She prefers to stay in the background and let others take credit."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discussion Questions -->
+        <section class="discussion-section">
+            <h2 class="section-title">💬 Discussion Questions</h2>
+            <div class="discussion-questions">
+                <div class="question-card">
+                    <span class="question-number">1</span>
+                    <span class="question-text">Why do you think companies use mascots like Ronald McDonald to promote their brands? What makes a good mascot?</span>
+                </div>
+                <div class="question-card">
+                    <span class="question-number">2</span>
+                    <span class="question-text">Do you think it's fair to blame a mascot like Ronald McDonald for unhealthy eating habits? Why or why not?</span>
+                </div>
+                <div class="question-card">
+                    <span class="question-number">3</span>
+                    <span class="question-text">How have people's attitudes toward fast food and health changed over the past few decades? What caused these changes?</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Practice -->
+        <section class="practice-section">
+            <h2 class="section-title">🗣️ Self-Practice Questions</h2>
+            
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>What was Ronald McDonald's original purpose when he was created?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    <div class="practice-answer-content">
+                        Ronald McDonald was created as a vivid tool of brand identity to promote McDonald's. He was designed to be a cheerful, recognizable character that would appeal especially to children and make McDonald's memorable.
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>What event in 2004 damaged McDonald's reputation?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    <div class="practice-answer-content">
+                        The documentary "Super Size Me" was released in 2004. It revealed the negative health effects of eating only McDonald's food for a month, bringing immediate attention to the company's unhealthy meals.
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>How did McDonald's respond to public criticism about Ronald McDonald?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    <div class="practice-answer-content">
+                        McDonald's made several changes: they removed Supersize portions, launched healthier menu items like salads, and eventually reduced Ronald's public appearances. By 2016, they significantly limited his visibility, stating it was out of respect for local concerns.
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>What was the "killer clown craze" and how did it affect Ronald McDonald?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    <div class="practice-answer-content">
+                        The "killer clown craze" of 2016 was an odd wave of alarming clown sightings across the US, Canada, and beyond, with reports of clowns hiding near schools. This made Ronald McDonald seem out of step with the times and led McDonald's to further reduce his public appearances.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+    </script>
+</body>
+</html>
