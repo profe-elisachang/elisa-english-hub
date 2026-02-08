@@ -65,6 +65,9 @@ async function scanLessons() {
         { filename: 'Friendly Service or Smart Machines.html', date: '2026-02-04', title: '🤖 Friendly Service or Smart Machines?' },
         { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-09', title: '🕯️ The Uplifting Aroma of Scented Candles' },
         { filename: 'The Science of Memory.html', date: '2026-02-06', title: '🧠 The Science of Memory: Why We Remember and Why We Forget' },
+        { filename: 'Mindfulness.html', date: '2026-02-11', title: '🧘 Mindfulness: Failing to Make the Grade in Schools' },
+        { filename: 'McDonald.html', date: '2026-02-13', title: '🤡 The Disappearance of Ronald McDonald' },
+        
         { date: '2026-02-02', title: 'Flexible Adjustment Holiday:Día de la Constitución Mexicana - No Class', isHoliday: true }
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
