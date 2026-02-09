@@ -72,6 +72,7 @@ async function scanLessons() {
         { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-09', title: '🕯️ The Uplifting Aroma of Scented Candles' },
         { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-09', title: '🕯️ The Uplifting Aroma of Scented Candles' },
         { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-09', title: '🕯️ The Uplifting Aroma of Scented Candles' },
+        { filename: 'The Uplifting Aroma of Scented Candles.html', date: '2026-02-09', title: '🕯️ The Uplifting Aroma of Scented Candles' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
