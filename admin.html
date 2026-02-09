@@ -14,66 +14,274 @@
          body {
              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft JhengHei', sans-serif;
              background: #ecf3f8;
-             min-height: 100vh; 
-             padding: 20px;
+             margin: 0;
+             padding: 0;
+             overflow: hidden;
          }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        
+        /* 頂部工具列 */
+        .top-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-
-         .header {
-             background: #66acd9;
-             color: white;
-             padding: 2rem;
-             text-align: center;
-         }
-
-        .header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            opacity: 0.9;
-        }
-
-        .tabs {
+            border-bottom: 2px solid #e0e0e0;
+            padding: 0.75rem 1.5rem;
             display: flex;
-            background: #f5f5f5;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .toolbar-title {
+            font-size: 1.25rem;
+            margin: 0;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .level-indicator {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .toolbar-center {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .stats-compact {
+            font-size: 0.9rem;
+            color: #666;
+            white-space: nowrap;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .toolbar-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .toolbar-btn:hover {
+            background: #f0f0f0;
+            border-color: #66acd9;
+        }
+        
+        .toolbar-btn.btn-success {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .toolbar-btn.btn-success:hover {
+            background: #218838;
+        }
+        
+        .toolbar-btn.btn-secondary {
+            background: #6c757d;
+            color: white;
+            border-color: #6c757d;
+        }
+        
+        .toolbar-btn.btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        
+        .search-compact {
+            position: relative;
+        }
+        
+        .search-input-compact {
+            width: 250px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .search-input-compact:focus {
+            outline: none;
+            border-color: #66acd9;
+        }
+        
+        .search-results-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 0.25rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .search-result-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .search-result-item:hover {
+            background: #f0f8ff;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* 下拉選單 */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.25rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            min-width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .recent-article-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .recent-article-item:hover {
+            background: #f0f8ff;
+        }
+        
+        .recent-article-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .recent-article-meta {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .dropdown-clear-btn {
+            width: 100%;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            border-radius: 0 0 6px 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #666;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-clear-btn:hover {
+            background: #e9ecef;
+        }
+        
+        /* Modal 樣式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
             border-bottom: 2px solid #e0e0e0;
         }
-
-        .tab {
-            flex: 1;
-            padding: 1rem;
-            text-align: center;
-            cursor: pointer;
-            background: transparent;
+        
+        .modal-header h2 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        
+        .close-modal {
+            background: none;
             border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #666;
-            transition: all 0.3s;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        .tab.active {
-            background: white;
-            color: #66acd9;
-            border-bottom: 3px solid #66acd9;
-        }
-
-        .tab:hover {
-            background: #f0f0f0;
+        
+        .close-modal:hover {
+            color: #333;
         }
 
         .content {
-            padding: 2rem;
+            padding: 0;
+            height: calc(100vh - 80px); /* 工具列高度約 80px */
+            overflow: hidden;
         }
 
         .tab-content {
@@ -82,6 +290,11 @@
 
         .tab-content.active {
             display: block;
+        }
+        
+        /* Modal 內的 tab-content 應該顯示 */
+        .modal .tab-content {
+            display: block !important;
         }
 
         .form-group {
@@ -117,6 +330,50 @@
             min-height: 300px;
             font-family: 'Courier New', monospace;
             resize: vertical;
+        }
+        
+        /* 可摺疊區塊樣式 */
+        .collapsible-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .collapsible-header {
+            transition: background-color 0.2s ease;
+        }
+        
+        .collapsible-header:hover {
+            background-color: #ffe69c !important;
+        }
+        
+        .collapsible-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        
+        .collapsible-content.collapsed {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+        
+        .collapsible-content.collapsed * {
+            opacity: 0;
+            transition: opacity 0.2s ease-out;
+        }
+        
+        .collapsible-content:not(.collapsed) * {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.1s;
+        }
+        
+        #newArticleFormToggleIcon {
+            transition: transform 0.3s ease;
+        }
+        
+        #newArticleFormToggleIcon.rotated {
+            transform: rotate(180deg);
         }
 
         .form-row {
@@ -291,68 +548,247 @@
                 width: 100%;
             }
         }
+
+        /* 分屏編輯器樣式 */
+        #splitEditorContainer {
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #editPanel {
+            flex: 1;
+            min-width: 300px;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+        
+        #previewPanel {
+            flex: 1;
+            min-width: 300px;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            box-sizing: border-box;
+        }
+        
+        /* 可拖拉分隔線 */
+        .resizer {
+            width: 4px;
+            background: #ddd;
+            cursor: col-resize;
+            flex-shrink: 0;
+            transition: background 0.2s;
+            position: relative;
+        }
+        
+        .resizer:hover {
+            background: #66acd9;
+        }
+        
+        .resizer::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            right: -2px;
+            top: 0;
+            bottom: 0;
+        }
+        
+        .resizer.resizing {
+            background: #66acd9;
+        }
+
+        @media (max-width: 1440px) {
+            #splitEditorContainer {
+                flex-direction: column;
+            }
+            
+            #editPanel, #previewPanel {
+                width: 100% !important;
+                min-width: 100% !important;
+                border: none !important;
+                border-bottom: 2px solid #ddd !important;
+            }
+            
+            #previewPanel {
+                border-bottom: none !important;
+            }
+            
+            .resizer {
+                width: 100%;
+                height: 4px;
+                cursor: row-resize;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📚 Elisa English Hub - 後台管理系統</h1>
-            <p>管理 Intermediate 和 Advanced 課程文章</p>
+    <!-- 頂部工具列 -->
+    <div class="top-toolbar">
+        <div class="toolbar-left">
+            <h1 class="toolbar-title">📚 Elisa English Hub</h1>
+            <button class="toolbar-btn btn-secondary" id="quickSwitchLevel" onclick="quickSwitchLevel()" title="切換等級">
+                🔄 切換等級
+            </button>
+            <div id="levelIndicator" class="level-indicator" style="display: none;">
+                <span id="currentLevelText"></span>
+                <a href="admin-intermediate.html" id="switchToIntermediate" style="margin-left: 0.5rem; color: #66acd9; text-decoration: underline; display: none;">切換到 Intermediate</a>
+                <a href="admin-advanced.html" id="switchToAdvanced" style="margin-left: 0.5rem; color: #66acd9; text-decoration: underline; display: none;">切換到 Advanced</a>
+            </div>
         </div>
-
-        <div class="tabs">
-            <button class="tab active" onclick="switchTab('new')">新增文章</button>
-            <button class="tab" onclick="switchTab('edit')">編輯文章</button>
-            <button class="tab" onclick="switchTab('settings')">GitHub 設定</button>
+        
+        <div class="toolbar-center">
+            <!-- 統計資訊 -->
+            <div class="stats-compact">
+                <span>Intermediate: <span id="statIntermediate">-</span> | Advanced: <span id="statAdvanced">-</span> | 總計: <span id="statTotal">-</span></span>
+            </div>
+            
+            <!-- 快捷操作 -->
+            <div class="quick-actions">
+                <button class="toolbar-btn btn-success" onclick="quickNewArticle()" title="快速新增文章">
+                    ➕ 新增
+                </button>
+                <button class="toolbar-btn" onclick="quickEditArticles()" title="編輯文章">
+                    ✏️ 編輯
+                </button>
+                <button class="toolbar-btn" onclick="quickReloadList()" title="重新載入列表">
+                    🔄 重新載入
+                </button>
+            </div>
         </div>
+        
+        <div class="toolbar-right">
+            <!-- GitHub 設定 -->
+            <button class="toolbar-btn btn-secondary" onclick="openGitHubModal()" title="GitHub 設定">
+                ⚙️ 設定
+            </button>
+        </div>
+    </div>
 
         <div class="content">
-            <!-- 新增文章 Tab -->
-            <div id="tab-new" class="tab-content active">
-                <form id="newArticleForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="level">課程等級 *</label>
-                            <select id="level" required>
-                                <option value="intermediate">Intermediate</option>
-                                <option value="advanced">Advanced</option>
-                            </select>
+            <!-- 新增文章區域 -->
+            <div id="tab-new" class="tab-content" style="display: none; height: 100%; overflow: hidden;">
+                <!-- 分屏新增工作區 -->
+                <div id="newArticleContainer" style="display: flex; height: 100%;">
+                    <!-- 左側：編輯區 -->
+                    <div id="newArticleEditPanel" style="flex: 1; min-width: 300px; height: 100%; overflow-y: auto; padding: 1.5rem; box-sizing: border-box;">
+                        <form id="newArticleForm">
+                    <!-- 可摺疊的表單區塊 -->
+                    <div id="newArticleFormCollapsible" class="collapsible-section" style="margin-bottom: 1.5rem;">
+                        <div class="collapsible-header" onclick="toggleNewArticleForm()" style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; cursor: pointer; user-select: none;">
+                            <span style="font-weight: 600; color: #856404;">📋 文章基本資訊</span>
+                            <span id="newArticleFormToggleIcon" style="font-size: 1.2rem; transition: transform 0.3s ease;">▼</span>
                         </div>
-                        <div class="form-group">
-                            <label for="date">發布日期 *</label>
-                            <input type="date" id="date" required>
+                        <div id="newArticleFormContent" class="collapsible-content" style="padding: 1rem; background: #fff; border: 1px solid #e0e0e0; border-top: none; border-radius: 0 0 6px 6px;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="level">課程等級 *</label>
+                                    <select id="level" required>
+                                        <option value="intermediate">Intermediate</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">發布日期 *</label>
+                                    <input type="date" id="date" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                    <label for="title" style="flex-shrink: 0; width: 140px; font-size: 0.9rem; margin: 0;">文章標題（含 emoji）*</label>
+                                    <input type="text" id="title" placeholder="例如：🧠 The Science of Memory" required style="flex: 1;">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;">
+                                    <label for="imageUrl" style="flex-shrink: 0; width: 140px; font-size: 0.9rem; margin: 0;">圖片 URL（選填）</label>
+                                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" style="flex: 1;">
+                                </div>
+                                <small style="color: #999; font-size: 0.75rem; margin-left: 152px; display: block; margin-top: 0.25rem;">圖片會顯示在文章 header 之後</small>
+                                <img id="imagePreview" class="image-preview" style="display: none; margin-top: 0.5rem; margin-left: 152px; max-width: calc(100% - 152px);" alt="預覽">
+                            </div>
+
+                            <div class="form-group">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;">
+                                    <label for="filename" style="flex-shrink: 0; width: 140px; font-size: 0.9rem; margin: 0;">檔案名稱 *</label>
+                                    <input type="text" id="filename" placeholder="例如：The Science of Memory.html" required style="flex: 1;">
+                                </div>
+                                <small style="color: #999; font-size: 0.75rem; margin-left: 152px; display: block; margin-top: 0.25rem;">不需要包含資料夾路徑，系統會自動處理</small>
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="title">文章標題（含 emoji）*</label>
-                        <input type="text" id="title" placeholder="例如：🧠 The Science of Memory" required>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <label for="htmlContent" style="margin: 0;">HTML 內容 *</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button type="button" id="toggleEditorMode" onclick="if(window.toggleEditorMode) window.toggleEditorMode(); else alert('編輯器功能尚未載入，請稍候再試');" 
+                                        style="padding: 0.4rem 0.8rem; background: #17a2b8; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+                                    👁️ 切換到視覺化編輯
+                                </button>
+                                <button type="button" onclick="insertImageInVisualEditor()" 
+                                        style="padding: 0.4rem 0.8rem; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem; display: none;" 
+                                        id="insertImageBtn">
+                                    📷 插入圖片
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- HTML 編輯模式 -->
+                        <textarea id="htmlContent" placeholder="貼上完整的 HTML 語法..." required style="display: block;" oninput="updateNewArticlePreview()"></textarea>
+                        
+                        <!-- 視覺化編輯模式 -->
+                        <div id="visualEditor" style="display: none; min-height: 500px; border: 2px solid #ddd; border-radius: 4px; padding: 1rem; background: white; overflow-y: auto; max-height: 800px;">
+                            <div style="color: #666; font-style: italic; margin-bottom: 1rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px;">
+                                💡 視覺化編輯模式：您可以直接編輯內容、插入圖片。點擊圖片可以調整大小。
+                            </div>
+                            <div id="visualEditorContent" contenteditable="true" style="min-height: 400px; outline: none;" oninput="updateNewArticlePreview()">
+                                <!-- 內容將在這裡顯示 -->
+                            </div>
+                        </div>
+                        
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            💡 提示：切換到視覺化編輯模式可以更方便地插入圖片和編輯內容
+                        </small>
                     </div>
 
-                    <div class="form-group">
-                        <label for="imageUrl">圖片 URL（選填）</label>
-                        <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg">
-                        <small style="color: #666; display: block; margin-top: 0.5rem;">圖片會顯示在文章 header 之後</small>
-                        <img id="imagePreview" class="image-preview" style="display: none;" alt="預覽">
-                    </div>
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary">生成檔案</button>
+                                <button type="button" class="btn btn-secondary" onclick="updateNewArticlePreview()">更新預覽</button>
+                                <button type="reset" class="btn btn-secondary" onclick="clearNewArticlePreview()">清除</button>
+                            </div>
+                        </form>
 
-                    <div class="form-group">
-                        <label for="filename">檔案名稱 *</label>
-                        <input type="text" id="filename" placeholder="例如：The Science of Memory.html" required>
-                        <small style="color: #666; display: block; margin-top: 0.5rem;">不需要包含資料夾路徑，系統會自動處理</small>
+                        <!-- 固定訊息顯示區域 -->
+                        <div id="statusMessage" style="margin-top: 1.5rem; min-height: 0;"></div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="htmlContent">HTML 內容 *</label>
-                        <textarea id="htmlContent" placeholder="貼上完整的 HTML 語法..." required></textarea>
+                    
+                    <!-- 可拖拉分隔線 -->
+                    <div class="resizer" id="newArticleResizer"></div>
+                    
+                    <!-- 右側：預覽區 -->
+                    <div id="newArticlePreviewPanel" style="flex: 1; min-width: 300px; height: 100%; padding: 1.5rem; background: #f8f9fa; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;">
+                        <div style="margin-bottom: 0.75rem; padding: 0.75rem 1rem; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3; flex-shrink: 0;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <strong style="font-size: 0.95rem;">📺 即時預覽</strong>
+                                <span style="color: #666; font-size: 0.85rem;">|</span>
+                                <span id="newPreviewStatus" style="font-size: 0.85rem; color: #666;">等待輸入內容...</span>
+                            </div>
+                        </div>
+                        <div id="newArticlePreviewContent" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex: 1; overflow-y: auto; overflow-x: hidden; min-height: 0; max-height: 100%;">
+                            <div style="text-align: center; color: #999; padding: 4rem 2rem;">
+                                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">👈 請在左側輸入文章內容</p>
+                                <p style="font-size: 0.9rem;">輸入後點擊「更新預覽」或內容會自動更新</p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">生成檔案</button>
-                        <button type="button" class="btn btn-secondary" onclick="previewArticle()">預覽</button>
-                        <button type="reset" class="btn btn-secondary">清除</button>
-                    </div>
-                </form>
+                </div>
 
                 <!-- 固定訊息顯示區域 -->
                 <div id="statusMessage" style="margin-top: 1.5rem; min-height: 0;"></div>
@@ -378,66 +814,229 @@
 
             <!-- 編輯文章 Tab -->
             <div id="tab-edit" class="tab-content">
-                <div class="form-group">
-                    <label for="editLevel">選擇課程等級</label>
-                    <select id="editLevel" onchange="loadLessons()">
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                    </select>
+                <!-- 分屏編輯工作區 -->
+                <div id="splitEditorContainer" style="display: none;">
+                    <!-- 左側：編輯區 -->
+                    <div id="editPanel">
+                        <!-- 編輯表單區域（直接顯示，不需要隱藏） -->
+                        <div id="editFormArea" style="display: block;">
+                            <!-- 關閉按鈕 -->
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+                                <button type="button" onclick="closeEditor()" style="padding: 0.4rem 0.8rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    ✕ 關閉編輯
+                                </button>
+                            </div>
+                            <!-- 可摺疊的「正在編輯」區塊 -->
+                            <div id="editingInfoCollapsible" style="margin-bottom: 1rem;">
+                                <div style="padding: 0.75rem; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50; cursor: pointer;" onclick="toggleEditingInfo()">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <span id="editingInfoToggle" style="font-size: 0.9rem;">▼</span>
+                                            <strong id="editingArticleTitle">正在編輯：</strong>
+                                        </div>
+                                        <button type="button" onclick="event.stopPropagation(); moveArticleToOtherLevel()" id="moveArticleBtn" 
+                                                style="padding: 0.4rem 0.8rem; background: #ff9800; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                                            🔄 移動到 <span id="moveToLevelText">另一個等級</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- 摺疊內容 -->
+                                <div id="editingInfoContent" style="padding: 1rem; background: #f8f9fa; border-radius: 0 0 8px 8px; border-left: 4px solid #4caf50; display: block;">
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.75rem;">
+                                        <div>
+                                            <label for="editTitle" style="font-size: 0.85rem; font-weight: 600; color: #666; margin-bottom: 0.25rem; display: block;">文章標題 *</label>
+                                            <input type="text" id="editTitle" placeholder="文章標題（含 emoji）" required style="width: 100%; padding: 0.5rem; font-size: 0.9rem;">
+                                        </div>
+                                        <div>
+                                            <label for="editDate" style="font-size: 0.85rem; font-weight: 600; color: #666; margin-bottom: 0.25rem; display: block;">發布日期 *</label>
+                                            <input type="date" id="editDate" required style="width: 100%; padding: 0.5rem; font-size: 0.9rem;">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="editFilename" style="font-size: 0.85rem; font-weight: 600; color: #666; margin-bottom: 0.25rem; display: block;">檔案名稱 *</label>
+                                        <input type="text" id="editFilename" placeholder="例如：The Science of Memory.html" required style="width: 100%; padding: 0.5rem; font-size: 0.9rem;">
+                                        <small style="color: #666; font-size: 0.75rem; display: block; margin-top: 0.25rem;">修改檔案名稱會創建新檔案，原檔案不會自動刪除</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- HTML 內容編輯區（主要區域） -->
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <label for="editHtmlContent" style="margin: 0; font-weight: 600;">HTML 內容 *</label>
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <button type="button" id="toggleEditEditorMode" onclick="toggleEditEditorMode()" 
+                                                style="padding: 0.4rem 0.8rem; background: #17a2b8; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+                                            👁️ 切換到視覺化編輯
+                                        </button>
+                                        <button type="button" onclick="insertImageInEditVisualEditor()" 
+                                                style="padding: 0.4rem 0.8rem; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem; display: none;" 
+                                                id="insertImageEditBtn">
+                                            📷 插入圖片
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- HTML 編輯模式 -->
+                                <textarea id="editHtmlContent" placeholder="HTML 內容..." required style="display: block; min-height: calc(100vh - 500px); font-family: monospace; font-size: 0.9rem;" oninput="updateEditPreview()"></textarea>
+                                
+                                <!-- 視覺化編輯模式 -->
+                                <div id="editVisualEditor" style="display: none; min-height: calc(100vh - 500px); border: 2px solid #ddd; border-radius: 4px; padding: 1rem; background: white; overflow-y: auto;">
+                                    <div style="color: #666; font-style: italic; margin-bottom: 1rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
+                                        💡 視覺化編輯模式：您可以直接編輯內容、插入圖片。點擊圖片可以調整大小。
+                                    </div>
+                                    <div id="editVisualEditorContent" contenteditable="true" style="min-height: calc(100vh - 550px); outline: none;" oninput="updateEditPreview()">
+                                        <!-- 內容將在這裡顯示 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 操作按鈕 -->
+                            <div style="display: flex; gap: 0.5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+                                <button type="button" onclick="saveEditedArticle()" class="btn btn-primary" style="flex: 1;">
+                                    💾 儲存變更
+                                </button>
+                                <button type="button" onclick="reloadArticleFromGitHub()" class="btn btn-secondary">
+                                    🔄 重新載入
+                                </button>
+                                <button type="button" onclick="closeEditor()" class="btn btn-secondary">
+                                    取消
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側：預覽區 (50%) -->
+                    <!-- 可拖拉分隔線 -->
+                    <div class="resizer" id="resizer"></div>
+                    
+                    <!-- 右側：預覽區 -->
+                    <div id="previewPanel">
+                        <div style="margin-bottom: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong>📺 即時預覽</strong>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button type="button" onclick="refreshPreview()" 
+                                            style="padding: 0.4rem 0.8rem; background: #2196f3; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+                                        🔄 重新整理預覽
+                                    </button>
+                                    <button type="button" onclick="toggleFullscreenPreview()" 
+                                            style="padding: 0.4rem 0.8rem; background: #9c27b0; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+                                        ⛶ 全螢幕預覽
+                                    </button>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                                <span id="previewStatus">等待載入文章...</span>
+                            </div>
+                        </div>
+
+                        <div id="previewContent" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 400px;">
+                            <div style="text-align: center; color: #999; padding: 4rem 2rem;">
+                                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">👈 請從左側選擇要編輯的文章</p>
+                                <p style="font-size: 0.9rem;">選擇後，預覽會自動顯示在這裡</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="lessonList" class="lesson-list">
-                    <p style="color: #666; text-align: center; padding: 2rem;">載入中...</p>
+                <!-- 初始狀態：文章列表 -->
+                <div id="editInitialView">
+                    <!-- 上方左右分欄：最近編輯 + 搜尋框 -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <!-- 左側：最近編輯 -->
+                        <div style="padding: 1rem; background: #e3f2fd; border-radius: 8px; border-left: 3px solid #2196f3;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleRecentInEditView()">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span id="recentToggleInEditView" style="font-size: 0.9rem;">▼</span>
+                                    <strong style="font-size: 0.9rem; color: #1976d2;">📝 最近編輯</strong>
+                                </div>
+                                <button type="button" onclick="event.stopPropagation(); clearRecentArticles()" style="padding: 0.25rem 0.5rem; background: transparent; border: 1px solid #90caf9; border-radius: 4px; cursor: pointer; font-size: 0.75rem; color: #1976d2;">清除</button>
+                            </div>
+                            <div id="recentArticlesInEditView" style="max-height: 200px; overflow-y: auto; font-size: 0.85rem;">
+                                <p style="color: #999; font-size: 0.8rem; text-align: center; padding: 0.5rem;">載入中...</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 右側：搜尋框 -->
+                        <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <label style="font-weight: 600; margin: 0 0 0.5rem 0; display: block; font-size: 0.9rem; color: #1976d2;">🔍 搜尋文章</label>
+                            <input type="text" id="searchInputInEditView" placeholder="搜尋標題或檔名..." oninput="searchArticlesInEditView(this.value)" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.9rem;">
+                            <div id="searchResultsInEditView" class="search-results-dropdown" style="display: none; position: absolute; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 1000; margin-top: 0.25rem; width: calc(50% - 1.5rem);"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 選擇要編輯的文章 -->
+                    <div style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <div>
+                                <label style="font-weight: 600; margin: 0;">選擇要編輯的文章</label>
+                                <span id="currentLevelBadgeInitial" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem; background: #e3f2fd; color: #1976d2; border-radius: 4px; font-size: 0.85rem; font-weight: 500;"></span>
+                            </div>
+                        </div>
+                        <div id="lessonListInitial" class="lesson-list">
+                            <p style="color: #666; text-align: center; padding: 2rem;">載入中...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- GitHub 設定 Tab -->
-            <div id="tab-settings" class="tab-content">
-                <div class="alert alert-success" style="margin-bottom: 1.5rem;">
-                    <strong>📋 設定說明：</strong><br>
-                    填入你的 GitHub 資訊後，系統可以自動上傳文章到 GitHub，無需手動下載和複製檔案。
-                </div>
+            <!-- GitHub 設定 Modal -->
+            <div id="githubModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>⚙️ GitHub 設定</h2>
+                        <button class="close-modal" onclick="closeGitHubModal()">&times;</button>
+                    </div>
+                    <div id="tab-settings" class="tab-content">
+                        <div class="alert alert-success" style="margin-bottom: 1.5rem;">
+                            <strong>📋 設定說明：</strong><br>
+                            填入你的 GitHub 資訊後，系統可以自動上傳文章到 GitHub，無需手動下載和複製檔案。
+                        </div>
 
-                <div class="form-group">
-                    <label for="githubToken">GitHub Personal Access Token *</label>
-                    <input type="password" id="githubToken" placeholder="github_pat_xxxxxxxxxxxxx" style="font-family: monospace;">
-                    <small style="color: #666; display: block; margin-top: 0.5rem;">
-                        Token 儲存在瀏覽器的 localStorage，不會上傳到伺服器。<br>
-                        如需建立新 Token，請參考 <code>token.md</code> 文件。
-                    </small>
-                </div>
+                        <div class="form-group">
+                            <label for="githubToken">GitHub Personal Access Token *</label>
+                            <input type="password" id="githubToken" placeholder="github_pat_xxxxxxxxxxxxx" style="font-family: monospace;">
+                            <small style="color: #666; display: block; margin-top: 0.5rem;">
+                                Token 儲存在瀏覽器的 localStorage，不會上傳到伺服器。<br>
+                                如需建立新 Token，請參考 <code>token.md</code> 文件。
+                            </small>
+                        </div>
 
-                <div class="form-group">
-                    <label for="githubUsername">GitHub 使用者名稱 *</label>
-                    <input type="text" id="githubUsername" placeholder="profe-elisachang">
-                </div>
+                        <div class="form-group">
+                            <label for="githubUsername">GitHub 使用者名稱 *</label>
+                            <input type="text" id="githubUsername" placeholder="profe-elisachang">
+                        </div>
 
-                <div class="form-group">
-                    <label for="githubRepo">Repository 名稱 *</label>
-                    <input type="text" id="githubRepo" placeholder="elisa-english-hub">
-                </div>
+                        <div class="form-group">
+                            <label for="githubRepo">Repository 名稱 *</label>
+                            <input type="text" id="githubRepo" placeholder="elisa-english-hub">
+                        </div>
 
-                <div class="form-group">
-                    <label for="githubBranch">分支名稱</label>
-                    <input type="text" id="githubBranch" value="main" placeholder="main">
-                    <small style="color: #666; display: block; margin-top: 0.5rem;">預設為 main，如果是 master 請修改</small>
-                </div>
+                        <div class="form-group">
+                            <label for="githubBranch">分支名稱</label>
+                            <input type="text" id="githubBranch" value="main" placeholder="main">
+                            <small style="color: #666; display: block; margin-top: 0.5rem;">預設為 main，如果是 master 請修改</small>
+                        </div>
 
-                <div class="btn-group">
-                    <button class="btn btn-primary" onclick="saveGitHubSettings()">儲存設定</button>
-                    <button class="btn btn-secondary" onclick="checkGitHubConnection()">測試連線</button>
-                </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="saveGitHubSettings()">儲存設定</button>
+                            <button class="btn btn-secondary" onclick="checkGitHubConnection()">測試連線</button>
+                        </div>
 
-                <div style="margin-top: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-                    <h4 style="margin-bottom: 0.5rem;">🔧 修復工具</h4>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
-                        如果 GitHub 上的 script.js 有亂碼問題，可以使用此工具重新上傳正確版本。
-                    </p>
-                    <button class="btn btn-secondary" onclick="fixScriptFile('intermediate')">修復 script.js (Intermediate)</button>
-                    <button class="btn btn-secondary" onclick="fixScriptFile('advanced')" style="margin-left: 0.5rem;">修復 script-advanced.js (Advanced)</button>
-                </div>
+                        <div style="margin-top: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <h4 style="margin-bottom: 0.5rem;">🔧 修復工具</h4>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+                                如果 GitHub 上的 script.js 有亂碼問題，可以使用此工具重新上傳正確版本。
+                            </p>
+                            <button class="btn btn-secondary" onclick="fixScriptFile('intermediate')">修復 script.js (Intermediate)</button>
+                            <button class="btn btn-secondary" onclick="fixScriptFile('advanced')" style="margin-left: 0.5rem;">修復 script-advanced.js (Advanced)</button>
+                        </div>
 
-                <div id="githubSettingsStatus" style="margin-top: 1.5rem;"></div>
+                        <div id="githubSettingsStatus" style="margin-top: 1.5rem;"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -456,6 +1055,71 @@
         // 設定今天的日期為預設值
         document.getElementById('date').valueAsDate = new Date();
 
+        // ====================
+        // URL 參數處理 - 自動選擇等級
+        // ====================
+        const urlParams = new URLSearchParams(window.location.search);
+        const levelParam = urlParams.get('level');
+        
+        // 設定全局等級變數
+        // 優先順序：URL 參數 > 頁面路徑判斷 > 默認值
+        let currentLevel = levelParam;
+        if (!currentLevel) {
+            // 根據頁面路徑判斷等級
+            const pathname = window.location.pathname;
+            if (pathname.includes('admin-intermediate')) {
+                currentLevel = 'intermediate';
+            } else if (pathname.includes('admin-advanced')) {
+                currentLevel = 'advanced';
+            } else {
+                currentLevel = 'intermediate'; // 默認值
+            }
+        }
+        
+        // 設定全局變數
+        window.currentLevel = currentLevel;
+
+        // 如果有 URL 參數，自動設定等級
+        if (currentLevel) {
+            const levelSelect = document.getElementById('level');
+            if (levelSelect) {
+                levelSelect.value = currentLevel;
+                // 鎖定選擇器（可選，讓用戶知道當前等級）
+                levelSelect.style.background = '#e8f5e9';
+                levelSelect.style.fontWeight = 'bold';
+            }
+
+            // 更新標題顯示
+            const levelText = currentLevel === 'intermediate' ? 'Intermediate Level' : 'Advanced Level';
+            const headerSubtitle = document.getElementById('headerSubtitle');
+            if (headerSubtitle) {
+                headerSubtitle.textContent = `管理 ${levelText} 課程文章`;
+            }
+            
+            // 更新等級標籤
+            const currentLevelBadgeInitial = document.getElementById('currentLevelBadgeInitial');
+            if (currentLevelBadgeInitial) {
+                currentLevelBadgeInitial.textContent = levelText.replace(' Level', '');
+            }
+
+            // 顯示等級指示器
+            const levelIndicator = document.getElementById('levelIndicator');
+            const currentLevelText = document.getElementById('currentLevelText');
+            const switchToIntermediate = document.getElementById('switchToIntermediate');
+            const switchToAdvanced = document.getElementById('switchToAdvanced');
+            
+            if (levelIndicator && currentLevelText) {
+                levelIndicator.style.display = 'block';
+                currentLevelText.textContent = `🏷️ 當前等級：${levelText}`;
+                
+                if (currentLevel === 'intermediate' && switchToAdvanced) {
+                    switchToAdvanced.style.display = 'inline';
+                } else if (currentLevel === 'advanced' && switchToIntermediate) {
+                    switchToIntermediate.style.display = 'inline';
+                }
+            }
+        }
+
         // 圖片預覽
         document.getElementById('imageUrl').addEventListener('input', function(e) {
             const url = e.target.value;
@@ -472,23 +1136,7 @@
         });
 
         // Tab 切換
-        function switchTab(tab) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            
-            if (tab === 'new') {
-                document.querySelectorAll('.tab')[0].classList.add('active');
-                document.getElementById('tab-new').classList.add('active');
-            } else if (tab === 'edit') {
-                document.querySelectorAll('.tab')[1].classList.add('active');
-                document.getElementById('tab-edit').classList.add('active');
-                loadLessons();
-            } else if (tab === 'settings') {
-                document.querySelectorAll('.tab')[2].classList.add('active');
-                document.getElementById('tab-settings').classList.add('active');
-                loadGitHubSettings();
-            }
-        }
+        // 已移除 switchTab，改用直接顯示/隱藏區域
 
         // 載入 GitHub 設定
         function loadGitHubSettings() {
@@ -728,6 +1376,14 @@
 
         // 生成檔案
         function generateFiles() {
+            // 如果處於視覺化模式，先同步內容到 HTML
+            if (isVisualMode) {
+                const visualContent = document.getElementById('visualEditorContent');
+                const htmlTextarea = document.getElementById('htmlContent');
+                const fullHtml = convertToFullHtml(visualContent.innerHTML, htmlTextarea.value);
+                htmlTextarea.value = fullHtml;
+            }
+            
             // 清除舊的成功訊息
             const statusMessage = document.getElementById('statusMessage');
             if (statusMessage) {
@@ -1001,18 +1657,85 @@
             statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // 預覽文章
-        function previewArticle() {
-            const htmlContent = document.getElementById('htmlContent').value;
-            const imageUrl = document.getElementById('imageUrl').value;
-            const title = document.getElementById('title').value;
-
-            if (!htmlContent) {
-                showAlert('error', '請先輸入 HTML 內容');
+        // 切換新增文章表單的摺疊/展開狀態
+        function toggleNewArticleForm() {
+            const content = document.getElementById('newArticleFormContent');
+            const icon = document.getElementById('newArticleFormToggleIcon');
+            
+            if (!content || !icon) return;
+            
+            const isCollapsed = content.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                // 展開
+                content.classList.remove('collapsed');
+                icon.classList.remove('rotated');
+            } else {
+                // 摺疊
+                content.classList.add('collapsed');
+                icon.classList.add('rotated');
+            }
+        }
+        
+        // 展開新增文章表單（用於新增時）
+        function expandNewArticleForm() {
+            const content = document.getElementById('newArticleFormContent');
+            const icon = document.getElementById('newArticleFormToggleIcon');
+            
+            if (content && icon) {
+                content.classList.remove('collapsed');
+                icon.classList.remove('rotated');
+            }
+        }
+        
+        // 摺疊新增文章表單（用於開始編輯 HTML 時）
+        function collapseNewArticleForm() {
+            const content = document.getElementById('newArticleFormContent');
+            const icon = document.getElementById('newArticleFormToggleIcon');
+            
+            if (content && icon) {
+                content.classList.add('collapsed');
+                icon.classList.add('rotated');
+            }
+        }
+        
+        // 更新新增文章的預覽
+        function updateNewArticlePreview() {
+            const htmlContent = document.getElementById('htmlContent')?.value || '';
+            const visualContent = document.getElementById('visualEditorContent')?.innerHTML || '';
+            const imageUrl = document.getElementById('imageUrl')?.value || '';
+            const title = document.getElementById('title')?.value || '';
+            const previewContent = document.getElementById('newArticlePreviewContent');
+            const previewStatus = document.getElementById('newPreviewStatus');
+            
+            if (!previewContent) return;
+            
+            // 判斷使用哪個內容來源
+            const isVisualMode = document.getElementById('visualEditor')?.style.display !== 'none';
+            const content = isVisualMode ? visualContent : htmlContent;
+            
+            if (!content || content.trim() === '') {
+                previewContent.innerHTML = `
+                    <div style="text-align: center; color: #999; padding: 4rem 2rem;">
+                        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">👈 請在左側輸入文章內容</p>
+                        <p style="font-size: 0.9rem;">輸入後點擊「更新預覽」或內容會自動更新</p>
+                    </div>
+                `;
+                if (previewStatus) previewStatus.textContent = '等待輸入內容...';
                 return;
             }
-
-            let previewHtml = htmlContent;
+            
+            let previewHtml = isVisualMode ? visualContent : htmlContent;
+            
+            // 如果是視覺化模式，需要轉換為完整 HTML
+            if (isVisualMode && visualContent) {
+                // 從視覺化編輯器提取的內容，需要轉換為完整 HTML
+                // 使用 convertToFullHtml 來轉換（需要傳入 innerHTML 字符串）
+                const originalHtml = htmlContent || '';
+                previewHtml = convertToFullHtml(visualContent, originalHtml);
+            } else {
+                previewHtml = htmlContent;
+            }
             
             // 插入圖片（使用容器）
             if (imageUrl) {
@@ -1071,9 +1794,20 @@
                 }
             }
 
-            const previewWindow = window.open('', '_blank');
-            previewWindow.document.write(previewHtml);
-            previewWindow.document.close();
+            // 更新右側預覽區，而不是打開新視窗
+            if (previewContent) {
+                // 使用 iframe 來顯示預覽（避免樣式衝突）
+                // 轉義 HTML 以安全地放入 srcdoc
+                const escapedHtml = previewHtml
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+                
+                previewContent.innerHTML = `<iframe srcdoc="${escapedHtml}" style="width: 100%; height: 100%; border: none; border-radius: 4px; display: block;"></iframe>`;
+                if (previewStatus) previewStatus.textContent = '預覽已更新';
+            }
         }
 
         // 重新下載生成的 HTML 檔案
@@ -1108,12 +1842,26 @@
 
         // 載入文章列表（用於編輯功能）
         async function loadLessons() {
-            const level = document.getElementById('editLevel').value;
+            // 使用當前等級（從 URL 參數或全局變數）
+            const level = window.currentLevel || 'intermediate';
+            
+            // 更新等級標籤
+            const levelText = level === 'intermediate' ? 'Intermediate' : 'Advanced';
+            const currentLevelBadge = document.getElementById('currentLevelBadge');
+            const currentLevelBadgeInitial = document.getElementById('currentLevelBadgeInitial');
+            if (currentLevelBadge) currentLevelBadge.textContent = levelText;
+            if (currentLevelBadgeInitial) currentLevelBadgeInitial.textContent = levelText;
+            
             const folder = level === 'intermediate' ? 'intermediate/' : 'advanced/';
             const scriptFile = level === 'intermediate' ? 'script.js' : 'script-advanced.js';
 
+            // 更新兩個列表
             const lessonList = document.getElementById('lessonList');
-            lessonList.innerHTML = '<p style="color: #666; text-align: center; padding: 2rem;">載入中...</p>';
+            const lessonListInitial = document.getElementById('lessonListInitial');
+            const loadingMsg = '<p style="color: #666; text-align: center; padding: 2rem;">載入中...</p>';
+            
+            if (lessonList) lessonList.innerHTML = loadingMsg;
+            if (lessonListInitial) lessonListInitial.innerHTML = loadingMsg;
 
             try {
                 // 優先從 GitHub 讀取，如果沒有設定 GitHub 則從本地讀取
@@ -1300,8 +2048,16 @@
                         title = filename.replace('.html', '').replace(/-/g, ' ');
                     }
                     
-                    if (filename && date) {
-                        // 調試：顯示解析結果
+                    // 檢查是否為假日通知（有 date 和 title，但沒有 filename，且有 isHoliday）
+                    const isHolidayMatch = objStr.match(/isHoliday\s*:\s*true/);
+                    const isHoliday = isHolidayMatch !== null;
+                    
+                    if (isHoliday && date && title) {
+                        // 假日通知：不需要 filename
+                        objects.push({ date, title, isHoliday: true });
+                        console.log('解析假日通知:', { date, title, isHoliday: true });
+                    } else if (filename && date) {
+                        // 一般文章：需要 filename 和 date
                         console.log('解析物件:', { filename, date, title });
                         objects.push({ filename, date, title: title || filename.replace('.html', '').replace(/-/g, ' ') });
                     } else {
@@ -1317,7 +2073,12 @@
                 let count = 0;
                 
                 for (const obj of objects) {
-                    const { filename, date, title } = obj;
+                    const { filename, date, title, isHoliday } = obj;
+                    
+                    // 如果是假日通知，跳過（不顯示在編輯列表中）
+                    if (isHoliday) {
+                        continue;
+                    }
 
                     // 使用 textContent 來安全地顯示標題（避免 XSS，但正確顯示 emoji）
                     const titleElement = document.createElement('div');
@@ -1341,7 +2102,7 @@
                                         data-filename="${htmlEscapedFilename}" 
                                         data-date="${date}" 
                                         data-title="${htmlEscapedTitle}"
-                                        onclick="editLessonFromButton(this)">編輯</button>
+                                        onclick="editLessonFromButton(this)">✏️ 編輯 HTML</button>
                                 <button class="btn btn-small" 
                                         style="background: #17a2b8; color: white;"
                                         data-level="${level}" 
@@ -1361,16 +2122,22 @@
                     count++;
                 }
 
-                if (html === '') {
-                    lessonList.innerHTML = '<p style="color: #666; text-align: center; padding: 2rem;">目前沒有文章<br><small>請先在 ' + scriptFile + ' 中添加文章</small></p>';
-                } else {
-                    lessonList.innerHTML = `<p style="color: #666; margin-bottom: 1rem; font-size: 0.9rem;">找到 ${count} 篇文章：</p>` + html;
-                    // 調試：顯示找到的文章數量
+                const resultHtml = html === '' 
+                    ? '<p style="color: #666; text-align: center; padding: 2rem;">目前沒有文章<br><small>請先在 ' + scriptFile + ' 中添加文章</small></p>'
+                    : `<p style="color: #666; margin-bottom: 1rem; font-size: 0.9rem;">找到 ${count} 篇文章：</p>` + html;
+                
+                // 更新兩個列表
+                if (lessonList) lessonList.innerHTML = resultHtml;
+                if (lessonListInitial) lessonListInitial.innerHTML = resultHtml;
+                
+                if (html !== '') {
                     console.log(`成功解析 ${count} 篇文章`);
                 }
             } catch (error) {
                 console.error('載入錯誤:', error);
-                lessonList.innerHTML = '<p style="color: #dc3545; text-align: center; padding: 2rem;">載入失敗：' + error.message + '<br><small>請確認檔案路徑正確</small></p>';
+                const errorMsg = '<p style="color: #dc3545; text-align: center; padding: 2rem;">載入失敗：' + error.message + '<br><small>請確認檔案路徑正確</small></p>';
+                if (lessonList) lessonList.innerHTML = errorMsg;
+                if (lessonListInitial) lessonListInitial.innerHTML = errorMsg;
             }
         }
 
@@ -1381,18 +2148,524 @@
             const date = button.getAttribute('data-date');
             let title = button.getAttribute('data-title');
             
-            // HTML 實體解碼（瀏覽器通常會自動解碼，但確保正確）
-            if (filename) {
-                filename = filename.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            // 還原 HTML 實體
+            filename = filename.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            title = title.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            
+            // 打開分屏編輯器
+            openSplitEditor(level, filename, date, title);
+        }
+        
+        // 打開分屏編輯器
+        window.openSplitEditor = function openSplitEditor(level, filename, date, title) {
+            // 記錄編輯歷史
+            recordEditHistory(level, filename, date, title);
+            
+            // 隱藏初始視圖，顯示分屏編輯器
+            const editInitialView = document.getElementById('editInitialView');
+            const splitEditorContainer = document.getElementById('splitEditorContainer');
+            
+            if (editInitialView) editInitialView.style.display = 'none';
+            if (splitEditorContainer) splitEditorContainer.style.display = 'flex';
+            
+            // 確保預覽面板可見
+            const previewPanel = document.getElementById('previewPanel');
+            if (previewPanel) previewPanel.style.display = 'block';
+            const previewContent = document.getElementById('previewContent');
+            if (previewContent) previewContent.style.display = 'block';
+            
+            // 更新全局等級變數
+            window.currentLevel = level;
+            
+            // 載入文章到編輯器
+            editLessonInSplitEditor(level, filename, date, title);
+        };
+        
+        // 關閉編輯器
+        function closeEditor() {
+            const editInitialView = document.getElementById('editInitialView');
+            const splitEditorContainer = document.getElementById('splitEditorContainer');
+            const editFormArea = document.getElementById('editFormArea');
+            
+            if (editInitialView) editInitialView.style.display = 'block';
+            if (splitEditorContainer) splitEditorContainer.style.display = 'none';
+            // editFormArea 現在直接顯示，不需要隱藏
+            
+            // 清空預覽
+            const previewContent = document.getElementById('previewContent');
+            if (previewContent) {
+                previewContent.innerHTML = '<div style="text-align: center; color: #999; padding: 4rem 2rem;"><p style="font-size: 1.2rem; margin-bottom: 0.5rem;">👈 請從左側選擇要編輯的文章</p><p style="font-size: 0.9rem;">選擇後，預覽會自動顯示在這裡</p></div>';
             }
-            if (title) {
-                title = title.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+        }
+        
+        // 在分屏編輯器中編輯文章
+        async function editLessonInSplitEditor(level, filename, date, title) {
+            const editFormArea = document.getElementById('editFormArea');
+            const editingArticleTitle = document.getElementById('editingArticleTitle');
+            const moveToLevelText = document.getElementById('moveToLevelText');
+            
+            // 顯示編輯表單
+            if (editFormArea) editFormArea.style.display = 'block';
+            
+            // 更新標題資訊
+            if (editingArticleTitle) editingArticleTitle.textContent = '正在編輯：' + title;
+            if (moveToLevelText) moveToLevelText.textContent = level === 'intermediate' ? 'Advanced' : 'Intermediate';
+            
+            // 填入表單
+            const editTitle = document.getElementById('editTitle');
+            const editDate = document.getElementById('editDate');
+            const editFilename = document.getElementById('editFilename');
+            if (editTitle) editTitle.value = title;
+            if (editDate) editDate.value = date;
+            if (editFilename) editFilename.value = filename;
+            
+            // 儲存當前編輯的文章資訊（用於後續操作）
+            window.currentEditingArticle = { level, filename, date, title };
+            
+            // 從 GitHub 載入 HTML 內容
+            await loadArticleContentFromGitHub(level, filename);
+        }
+        
+        // 從 GitHub 載入文章內容
+        async function loadArticleContentFromGitHub(level, filename) {
+            const folder = level === 'intermediate' ? 'intermediate/' : 'advanced/';
+            const filePath = folder + filename;
+            const editHtmlContent = document.getElementById('editHtmlContent');
+            const editVisualEditorContent = document.getElementById('editVisualEditorContent');
+            const previewContent = document.getElementById('previewContent');
+            const previewStatus = document.getElementById('previewStatus');
+            
+            try {
+                if (previewStatus) previewStatus.textContent = '正在從 GitHub 載入文章...';
+                
+                let html;
+                const hasGitHubConfig = githubConfig.token && githubConfig.username && githubConfig.repo;
+                
+                if (hasGitHubConfig) {
+                    try {
+                        html = await getFileContent(filePath);
+                        if (!html) {
+                            throw new Error('GitHub 上找不到檔案');
+                        }
+                    } catch (error) {
+                        console.warn('從 GitHub 讀取失敗，嘗試從本地讀取:', error);
+                        const response = await fetch(filePath);
+                        html = await response.text();
+                    }
+                } else {
+                    const response = await fetch(filePath);
+                    html = await response.text();
+                }
+                
+                // 提取 body 內容（用於視覺化編輯器）
+                const bodyContent = extractBodyContent(html);
+                
+                // 填入 HTML 編輯器
+                if (editHtmlContent) editHtmlContent.value = html;
+                
+                // 填入視覺化編輯器
+                if (editVisualEditorContent) editVisualEditorContent.innerHTML = bodyContent;
+                
+                // 確保預覽面板可見
+                const previewPanel = document.getElementById('previewPanel');
+                if (previewPanel) {
+                    previewPanel.style.display = 'block';
+                }
+                
+                // 更新預覽
+                updatePreview(html);
+                
+                if (previewStatus) previewStatus.textContent = '已載入文章內容';
+                
+                // 初始化圖片調整功能
+                setTimeout(() => {
+                    makeEditImagesResizable();
+                    // 確保預覽區正確顯示
+                    const previewContent = document.getElementById('previewContent');
+                    if (previewContent) {
+                        previewContent.style.display = 'block';
+                    }
+                    const previewPanel = document.getElementById('previewPanel');
+                    if (previewPanel) {
+                        previewPanel.style.display = 'block';
+                    }
+                }, 100);
+                
+            } catch (error) {
+                console.error('載入文章內容錯誤:', error);
+                if (previewStatus) previewStatus.textContent = '載入失敗：' + error.message;
+                showAlert('error', '無法載入文章內容：' + error.message);
+            }
+        }
+        
+        // 更新預覽
+        function updatePreview(html) {
+            const previewContent = document.getElementById('previewContent');
+            if (!previewContent) return;
+            
+            // 確保預覽區可見
+            previewContent.style.display = 'block';
+            
+            // 創建 iframe 來顯示預覽（避免樣式衝突）
+            previewContent.innerHTML = '<iframe id="previewIframe" style="width: 100%; height: 100%; border: none; min-height: 600px;"></iframe>';
+            const iframe = document.getElementById('previewIframe');
+            if (iframe && iframe.contentWindow) {
+                try {
+                    iframe.contentWindow.document.open();
+                    iframe.contentWindow.document.write(html);
+                    iframe.contentWindow.document.close();
+                } catch (error) {
+                    console.error('預覽載入錯誤:', error);
+                    previewContent.innerHTML = '<div style="padding: 2rem; color: #dc3545;">預覽載入失敗：' + error.message + '</div>';
+                }
+            }
+        }
+        
+        // 更新編輯預覽（即時預覽）
+        function updateEditPreview() {
+            const editHtmlContent = document.getElementById('editHtmlContent');
+            const editVisualEditorContent = document.getElementById('editVisualEditorContent');
+            const editVisualEditor = document.getElementById('editVisualEditor');
+            
+            if (!editHtmlContent) return;
+            
+            let html;
+            const isVisualMode = editVisualEditor && editVisualEditor.style.display !== 'none';
+            
+            if (isVisualMode && editVisualEditorContent) {
+                // 從視覺化編輯器轉換
+                const visualHtml = editVisualEditorContent.innerHTML;
+                // 使用當前的 HTML 作為模板來轉換
+                const currentHtml = editHtmlContent.value || '';
+                html = convertToFullHtml(visualHtml, currentHtml);
+            } else {
+                html = editHtmlContent.value;
             }
             
-            // 調試：顯示讀取的參數
-            console.log('編輯文章參數:', { level, filename, date, title });
+            if (html && html.trim()) {
+                updatePreview(html);
+            }
+        }
+        
+        // 重新整理預覽（手動刷新）
+        function refreshPreview() {
+            updateEditPreview();
+        }
+        
+        // 儲存編輯的文章
+        async function saveEditedArticle() {
+            // 使用當前編輯的文章等級
+            const level = window.currentEditingArticle ? window.currentEditingArticle.level : window.currentLevel;
+            const title = document.getElementById('editTitle').value;
+            const date = document.getElementById('editDate').value;
+            let filename = document.getElementById('editFilename').value;
+            const editHtmlContent = document.getElementById('editHtmlContent');
+            const editVisualEditorContent = document.getElementById('editVisualEditorContent');
             
-            editLesson(level, filename, date, title);
+            if (!filename.endsWith('.html')) {
+                filename = filename + '.html';
+            }
+            
+            // 清理檔案名稱
+            const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
+            const finalFilename = cleanedFilename.endsWith('.html') ? cleanedFilename : cleanedFilename + '.html';
+            
+            // 獲取 HTML 內容
+            let fullHtml;
+            if (isEditVisualMode) {
+                const visualHtml = editVisualEditorContent.innerHTML;
+                fullHtml = convertToFullHtml(visualHtml, editHtmlContent.value);
+            } else {
+                fullHtml = editHtmlContent.value;
+            }
+            
+            try {
+                showAlert('success', '💾 正在儲存變更...');
+                
+                const folder = level === 'intermediate' ? 'intermediate/' : 'advanced/';
+                const filePath = folder + finalFilename;
+                const oldFilePath = window.currentEditingArticle ? folder + window.currentEditingArticle.filename : null;
+                
+                // 1. 上傳新的 HTML 檔案
+                await uploadFileToGitHub(filePath, fullHtml, `Update article: ${title}`);
+                
+                // 2. 如果檔案名稱改變，刪除舊檔案
+                if (oldFilePath && oldFilePath !== filePath) {
+                    try {
+                        await deleteFileFromGitHub(oldFilePath, `Rename article: ${title}`);
+                    } catch (error) {
+                        console.warn('刪除舊檔案失敗（可能檔案不存在）:', error);
+                    }
+                }
+                
+                // 3. 更新 script.js
+                await updateScriptFile(level, finalFilename, date, title);
+                
+                // 4. 如果檔案名稱或等級改變，從舊的 script.js 移除
+                if (window.currentEditingArticle) {
+                    const oldLevel = window.currentEditingArticle.level;
+                    const oldFilename = window.currentEditingArticle.filename;
+                    const oldDate = window.currentEditingArticle.date;
+                    const oldTitle = window.currentEditingArticle.title;
+                    
+                    if (oldLevel !== level || oldFilename !== finalFilename) {
+                        const oldScriptFile = oldLevel === 'intermediate' ? 'script.js' : 'script-advanced.js';
+                        await removeFromScriptFile(oldScriptFile, oldFilename, oldDate, oldTitle);
+                    }
+                }
+                
+                // 更新當前編輯的文章資訊
+                window.currentEditingArticle = { level, filename: finalFilename, date, title };
+                
+                showAlert('success', '✅ 文章已成功儲存！<br><small>✅ HTML 檔案已更新<br>✅ script.js 已更新</small>');
+                
+                // 重新載入文章列表
+                await loadLessons();
+                
+            } catch (error) {
+                console.error('儲存錯誤:', error);
+                showAlert('error', '❌ 儲存失敗：' + error.message);
+            }
+        }
+        
+        // 從 GitHub 重新載入文章
+        async function reloadArticleFromGitHub() {
+            if (!window.currentEditingArticle) {
+                showAlert('error', '沒有正在編輯的文章');
+                return;
+            }
+            
+            const { level, filename } = window.currentEditingArticle;
+            if (confirm('確定要重新載入嗎？未儲存的變更將會遺失。')) {
+                await loadArticleContentFromGitHub(level, filename);
+                showAlert('success', '已重新載入最新版本');
+            }
+        }
+        
+        // 移動文章到另一個等級
+        async function moveArticleToOtherLevel() {
+            if (!window.currentEditingArticle) {
+                showAlert('error', '沒有正在編輯的文章');
+                return;
+            }
+            
+            const { level, filename, date, title } = window.currentEditingArticle;
+            const newLevel = level === 'intermediate' ? 'advanced' : 'intermediate';
+            const newLevelText = newLevel === 'intermediate' ? 'Intermediate' : 'Advanced';
+            
+            if (!confirm(`確定要將「${title}」移動到 ${newLevelText} Level 嗎？\n\n此操作會：\n1. 將檔案從 ${level}/ 移動到 ${newLevel}/\n2. 從 ${level === 'intermediate' ? 'script.js' : 'script-advanced.js'} 移除\n3. 添加到 ${newLevel === 'intermediate' ? 'script.js' : 'script-advanced.js'}`)) {
+                return;
+            }
+            
+            try {
+                showAlert('success', '🔄 正在移動文章...');
+                
+                const oldFolder = level === 'intermediate' ? 'intermediate/' : 'advanced/';
+                const newFolder = newLevel === 'intermediate' ? 'intermediate/' : 'advanced/';
+                const oldFilePath = oldFolder + filename;
+                const newFilePath = newFolder + filename;
+                
+                // 1. 讀取原檔案內容
+                let html;
+                const hasGitHubConfig = githubConfig.token && githubConfig.username && githubConfig.repo;
+                if (hasGitHubConfig) {
+                    html = await getFileContent(oldFilePath);
+                } else {
+                    const response = await fetch(oldFilePath);
+                    html = await response.text();
+                }
+                
+                // 2. 上傳到新位置
+                await uploadFileToGitHub(newFilePath, html, `Move article to ${newLevelText}: ${title}`);
+                
+                // 3. 刪除舊檔案
+                await deleteFileFromGitHub(oldFilePath, `Move article to ${newLevelText}: ${title}`);
+                
+                // 4. 從舊的 script.js 移除
+                const oldScriptFile = level === 'intermediate' ? 'script.js' : 'script-advanced.js';
+                await removeFromScriptFile(oldScriptFile, filename, date, title);
+                
+                // 5. 添加到新的 script.js
+                await updateScriptFile(newLevel, filename, date, title);
+                
+                showAlert('success', `✅ 文章已成功移動到 ${newLevelText} Level！`);
+                
+                // 更新當前編輯的文章資訊
+                window.currentEditingArticle = { level: newLevel, filename, date, title };
+                
+                // 更新全局等級變數
+                window.currentLevel = newLevel;
+                
+                // 重新載入文章列表
+                await loadLessons();
+                
+                // 重新載入文章內容
+                await loadArticleContentFromGitHub(newLevel, filename);
+                
+            } catch (error) {
+                console.error('移動文章錯誤:', error);
+                showAlert('error', '❌ 移動失敗：' + error.message);
+            }
+        }
+        
+        // 編輯模式的視覺化編輯器切換
+        let isEditVisualMode = false;
+        window.toggleEditEditorMode = function toggleEditEditorMode() {
+            const editHtmlContent = document.getElementById('editHtmlContent');
+            const editVisualEditor = document.getElementById('editVisualEditor');
+            const editVisualEditorContent = document.getElementById('editVisualEditorContent');
+            const toggleBtn = document.getElementById('toggleEditEditorMode');
+            const insertImageEditBtn = document.getElementById('insertImageEditBtn');
+            
+            if (!editHtmlContent || !editVisualEditor || !editVisualEditorContent) return;
+            
+            if (!isEditVisualMode) {
+                const htmlContent = editHtmlContent.value;
+                if (!htmlContent.trim()) {
+                    alert('請先載入文章內容');
+                    return;
+                }
+                
+                const bodyContent = extractBodyContent(htmlContent);
+                editHtmlContent.style.display = 'none';
+                editVisualEditor.style.display = 'block';
+                editVisualEditorContent.innerHTML = bodyContent;
+                
+                if (toggleBtn) {
+                    toggleBtn.textContent = '📝 切換到 HTML 編輯';
+                    toggleBtn.style.background = '#6c757d';
+                }
+                if (insertImageEditBtn) insertImageEditBtn.style.display = 'inline-block';
+                
+                isEditVisualMode = true;
+                
+                setTimeout(() => {
+                    makeEditImagesResizable();
+                    // 更新預覽
+                    updateEditPreview();
+                }, 100);
+            } else {
+                const visualHtml = editVisualEditorContent.innerHTML;
+                const fullHtml = convertToFullHtml(visualHtml, editHtmlContent.value);
+                
+                editHtmlContent.value = fullHtml;
+                editHtmlContent.style.display = 'block';
+                editVisualEditor.style.display = 'none';
+                
+                if (toggleBtn) {
+                    toggleBtn.textContent = '👁️ 切換到視覺化編輯';
+                    toggleBtn.style.background = '#17a2b8';
+                }
+                if (insertImageEditBtn) insertImageEditBtn.style.display = 'none';
+                
+                isEditVisualMode = false;
+                
+                // 更新預覽
+                updateEditPreview();
+            }
+        };
+        
+        // 在編輯模式的視覺化編輯器中插入圖片
+        window.insertImageInEditVisualEditor = function insertImageInEditVisualEditor() {
+            if (!isEditVisualMode) {
+                alert('請先切換到視覺化編輯模式');
+                return;
+            }
+            
+            const imageUrl = prompt('請輸入圖片 URL:');
+            if (!imageUrl) return;
+            
+            const imageAlt = prompt('請輸入圖片說明（選填）:', '') || '';
+            const editVisualEditorContent = document.getElementById('editVisualEditorContent');
+            const selection = window.getSelection();
+            
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = imageAlt;
+            img.style.cssText = 'max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; cursor: pointer; display: block;';
+            img.className = 'resizable-image';
+            
+            if (selection.rangeCount > 0) {
+                const range = selection.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(img);
+            } else {
+                editVisualEditorContent.appendChild(img);
+            }
+            
+            makeEditImagesResizable();
+            img.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // 更新預覽
+            refreshPreview();
+        };
+        
+        // 讓編輯模式中的圖片可以調整大小
+        function makeEditImagesResizable() {
+            const images = document.querySelectorAll('#editVisualEditorContent img');
+            
+            images.forEach(img => {
+                if (img.dataset.resizable === 'true') return;
+                img.dataset.resizable = 'true';
+                img.classList.add('resizable-image');
+                
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showResizeControls(img);
+                });
+                
+                if (!img.style.width && !img.style.maxWidth) {
+                    img.style.maxWidth = '100%';
+                }
+                img.style.height = 'auto';
+                img.style.cursor = 'pointer';
+                img.style.border = '2px solid transparent';
+                img.style.borderRadius = '8px';
+                img.style.margin = '1rem 0';
+                img.style.display = 'block';
+                
+                img.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('resizing')) {
+                        this.style.border = '2px dashed #17a2b8';
+                        this.style.boxShadow = '0 0 0 2px rgba(23, 162, 184, 0.2)';
+                    }
+                });
+                img.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('resizing')) {
+                        this.style.border = '2px solid transparent';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
+        }
+        
+        // 全螢幕預覽
+        function toggleFullscreenPreview() {
+            const previewContent = document.getElementById('previewContent');
+            if (!previewContent) return;
+            
+            if (!document.fullscreenElement) {
+                previewContent.requestFullscreen().catch(err => {
+                    alert('無法進入全螢幕模式：' + err.message);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // 如果 URL 參數有 level，自動設定編輯等級選擇器
+        if (currentLevel) {
+            // 更新等級標籤
+            const levelText = currentLevel === 'intermediate' ? 'Intermediate' : 'Advanced';
+            const currentLevelBadge = document.getElementById('currentLevelBadge');
+            const currentLevelBadgeInitial = document.getElementById('currentLevelBadgeInitial');
+            if (currentLevelBadge) currentLevelBadge.textContent = levelText;
+            if (currentLevelBadgeInitial) currentLevelBadgeInitial.textContent = levelText;
+            
+            // 自動載入文章列表
+            setTimeout(() => {
+                loadLessons();
+            }, 500);
         }
 
         // 從按鈕讀取參數並刪除文章（避免 JavaScript 語法錯誤）
@@ -1578,8 +2851,16 @@
             }
         }
 
-        // 編輯文章
+        // 編輯文章（舊版本，保留向後兼容，但會調用新的分屏編輯器）
         async function editLesson(level, filename, date, title) {
+            // 切換到編輯文章 tab
+            switchTab('edit');
+            
+            // 打開分屏編輯器
+            openSplitEditor(level, filename, date, title);
+            return;
+            
+            // 以下為舊代碼（保留但不執行）
             // 切換到新增文章 tab 並填入資料
             switchTab('new');
             
@@ -1803,7 +3084,1140 @@
                 checkGitHubConnection().catch(() => {});
             }
         });
+
+        // ====================
+        // 視覺化編輯器功能
+        // ====================
+        let isVisualMode = false;
+        let resizableImages = [];
+
+        // 切換編輯模式（確保全局可用）
+        window.toggleEditorMode = function toggleEditorMode() {
+            try {
+                const htmlTextarea = document.getElementById('htmlContent');
+                const visualEditor = document.getElementById('visualEditor');
+                const visualContent = document.getElementById('visualEditorContent');
+                const toggleBtn = document.getElementById('toggleEditorMode');
+                const insertImageBtn = document.getElementById('insertImageBtn');
+
+                if (!htmlTextarea || !visualEditor || !visualContent || !toggleBtn) {
+                    console.error('找不到必要的 DOM 元素');
+                    alert('錯誤：找不到編輯器元素，請重新整理頁面');
+                    return;
+                }
+
+                // 檢查當前是否為視覺化模式（根據實際 DOM 狀態）
+                // 簡單檢查：如果 visualEditor 顯示且 htmlTextarea 隱藏，則為視覺化模式
+                const visualEditorDisplay = visualEditor.style.display || window.getComputedStyle(visualEditor).display;
+                const htmlTextareaDisplay = htmlTextarea.style.display || window.getComputedStyle(htmlTextarea).display;
+                const currentIsVisualMode = visualEditorDisplay !== 'none' && htmlTextareaDisplay === 'none';
+                
+                console.log('切換編輯模式 - 當前狀態:', {
+                    visualEditorDisplay,
+                    htmlTextareaDisplay,
+                    currentIsVisualMode,
+                    hasHtmlContent: !!htmlTextarea.value
+                });
+                
+                if (!currentIsVisualMode) {
+                    // 切換到視覺化模式
+                    const htmlContent = htmlTextarea.value;
+                    if (!htmlContent.trim()) {
+                        alert('請先貼上 HTML 內容');
+                        return;
+                    }
+
+                    try {
+                        // 提取 body 內容（移除完整的 HTML 結構）
+                        let bodyContent = extractBodyContent(htmlContent);
+                        
+                        console.log('提取的 body 內容長度:', bodyContent ? bodyContent.length : 0);
+                        
+                        if (!bodyContent || bodyContent.trim() === '') {
+                            alert('無法從 HTML 中提取內容。請確認 HTML 格式正確（包含 <body> 標籤或 <main> 標籤）。\n\n如果 HTML 沒有 <body> 標籤，請確保 HTML 格式正確。');
+                            return;
+                        }
+                        
+                        // 顯示視覺化編輯器
+                        htmlTextarea.style.display = 'none';
+                        visualEditor.style.display = 'block';
+                        visualContent.innerHTML = bodyContent;
+                        
+                        // 更新按鈕
+                        toggleBtn.textContent = '📝 切換到 HTML 編輯';
+                        toggleBtn.style.background = '#6c757d';
+                        if (insertImageBtn) {
+                            insertImageBtn.style.display = 'inline-block';
+                        }
+                        
+                        // 更新全局變數
+                        isVisualMode = true;
+                        
+                        // 初始化圖片調整功能
+                        setTimeout(() => {
+                            makeImagesResizable();
+                        }, 100);
+                        
+                        // 更新預覽
+                        updateNewArticlePreview();
+                    } catch (error) {
+                        console.error('切換到視覺化模式時發生錯誤:', error);
+                        alert('切換到視覺化模式時發生錯誤：' + error.message);
+                    }
+                } else {
+                    // 切換回 HTML 模式
+                    try {
+                        const visualHtml = visualContent.innerHTML;
+                        const fullHtml = convertToFullHtml(visualHtml, htmlTextarea.value);
+                        
+                        htmlTextarea.value = fullHtml;
+                        htmlTextarea.style.display = 'block';
+                        visualEditor.style.display = 'none';
+                        
+                        // 更新按鈕
+                        toggleBtn.textContent = '👁️ 切換到視覺化編輯';
+                        toggleBtn.style.background = '#17a2b8';
+                        if (insertImageBtn) {
+                            insertImageBtn.style.display = 'none';
+                        }
+                        
+                        // 更新全局變數
+                        isVisualMode = false;
+                        
+                        // 更新預覽
+                        updateNewArticlePreview();
+                    } catch (error) {
+                        console.error('切換回 HTML 模式時發生錯誤:', error);
+                        alert('切換回 HTML 模式時發生錯誤：' + error.message);
+                    }
+                }
+            } catch (error) {
+                console.error('toggleEditorMode 函數錯誤:', error);
+                alert('發生錯誤：' + error.message + '\n請查看瀏覽器控制台 (F12) 獲取詳細信息');
+            }
+        }
+
+        // 提取 body 內容
+        function extractBodyContent(html) {
+            try {
+                if (!html || !html.trim()) {
+                    return '';
+                }
+                
+                // 使用 DOMParser 來正確解析 HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // 檢查是否有解析錯誤
+                const parserError = doc.querySelector('parsererror');
+                if (parserError) {
+                    console.warn('HTML 解析有警告，嘗試使用備用方法');
+                    // 如果解析失敗，嘗試簡單提取
+                    const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+                    if (bodyMatch) {
+                        return bodyMatch[1];
+                    }
+                    // 如果沒有 body 標籤，返回原始內容（移除 HTML 標籤）
+                    return html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+                               .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+                }
+                
+                // 嘗試獲取 body 內容
+                if (doc.body && doc.body.innerHTML) {
+                    // 移除 script 和 style 標籤（這些不應該在視覺化編輯器中顯示）
+                    const bodyClone = doc.body.cloneNode(true);
+                    bodyClone.querySelectorAll('script, style').forEach(el => el.remove());
+                    return bodyClone.innerHTML;
+                }
+                
+                // 如果沒有 body，嘗試找到 main
+                const main = doc.querySelector('main');
+                if (main && main.innerHTML) {
+                    const mainClone = main.cloneNode(true);
+                    mainClone.querySelectorAll('script, style').forEach(el => el.remove());
+                    return mainClone.innerHTML;
+                }
+                
+                // 如果都沒有，返回整個文檔內容（移除 script 和 style）
+                const allContent = doc.documentElement ? doc.documentElement.innerHTML : '';
+                if (allContent) {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = allContent;
+                    tempDiv.querySelectorAll('script, style').forEach(el => el.remove());
+                    return tempDiv.innerHTML;
+                }
+                
+                // 最後的備用方案：直接返回原始 HTML（移除 script 和 style）
+                return html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+                           .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+            } catch (error) {
+                console.error('extractBodyContent 錯誤:', error);
+                // 如果所有方法都失敗，返回原始 HTML（移除 script 和 style）
+                return html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+                           .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+            }
+        }
+
+        // 轉換為完整的 HTML
+        function convertToFullHtml(visualContent, originalHtml) {
+            // 使用 DOMParser 來正確處理 HTML
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(originalHtml, 'text/html');
+            
+            // 替換 body 內容
+            if (doc.body) {
+                doc.body.innerHTML = visualContent;
+                // 返回完整的 HTML（包括 doctype）
+                return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+            }
+            
+            // 如果沒有 body，嘗試替換 main
+            const main = doc.querySelector('main');
+            if (main) {
+                main.innerHTML = visualContent;
+                return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+            }
+            
+            // 如果都沒有，嘗試用正則表達式替換
+            const bodyMatch = originalHtml.match(/([\s\S]*?<body[^>]*>)([\s\S]*?)(<\/body>[\s\S]*)/i);
+            if (bodyMatch) {
+                return bodyMatch[1] + visualContent + bodyMatch[3];
+            }
+            
+            // 最後的 fallback：直接替換
+            return originalHtml.replace(/(<body[^>]*>)([\s\S]*?)(<\/body>)/i, `$1${visualContent}$3`);
+        }
+
+        // 在視覺化編輯器中插入圖片（定義為全局函數）
+        window.insertImageInVisualEditor = function insertImageInVisualEditor() {
+            if (!isVisualMode) {
+                alert('請先切換到視覺化編輯模式');
+                return;
+            }
+
+            const imageUrl = prompt('請輸入圖片 URL:');
+            if (!imageUrl) return;
+
+            const imageAlt = prompt('請輸入圖片說明（選填）:', '') || '';
+
+            const visualContent = document.getElementById('visualEditorContent');
+            const selection = window.getSelection();
+            
+            // 創建圖片元素
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = imageAlt;
+            img.style.cssText = 'max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; cursor: pointer; display: block;';
+            img.className = 'resizable-image';
+            
+            // 如果沒有選中內容，在游標位置插入
+            if (selection.rangeCount > 0) {
+                const range = selection.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(img);
+            } else {
+                // 插入到末尾
+                visualContent.appendChild(img);
+            }
+
+            // 初始化圖片調整功能
+            makeImagesResizable();
+            
+            // 聚焦到圖片
+            img.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // 讓圖片可以調整大小
+        function makeImagesResizable() {
+            const images = document.querySelectorAll('#visualEditorContent img');
+            
+            images.forEach(img => {
+                // 如果已經有調整功能，跳過
+                if (img.dataset.resizable === 'true') return;
+                img.dataset.resizable = 'true';
+                img.classList.add('resizable-image');
+                
+                // 添加點擊事件顯示調整控制點
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showResizeControls(img);
+                });
+                
+                // 添加樣式
+                if (!img.style.width && !img.style.maxWidth) {
+                    img.style.maxWidth = '100%';
+                }
+                img.style.height = 'auto';
+                img.style.cursor = 'pointer';
+                img.style.border = '2px solid transparent';
+                img.style.borderRadius = '8px';
+                img.style.margin = '1rem 0';
+                img.style.display = 'block';
+                
+                img.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('resizing')) {
+                        this.style.border = '2px dashed #17a2b8';
+                        this.style.boxShadow = '0 0 0 2px rgba(23, 162, 184, 0.2)';
+                    }
+                });
+                img.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('resizing')) {
+                        this.style.border = '2px solid transparent';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
+        }
+
+        // 顯示調整控制點
+        function showResizeControls(img) {
+            // 移除其他圖片的控制點
+            document.querySelectorAll('.resize-handle').forEach(handle => handle.remove());
+            document.querySelectorAll('.resize-container').forEach(container => {
+                const img = container.querySelector('img');
+                if (img) {
+                    container.parentNode.insertBefore(img, container);
+                    container.remove();
+                }
+            });
+            
+            // 如果已經在調整，不重複添加
+            if (img.classList.contains('resizing')) return;
+            
+            img.classList.add('resizing');
+            img.style.border = '2px solid #28a745';
+            img.style.boxShadow = '0 0 0 2px rgba(40, 167, 69, 0.3)';
+            
+            // 創建容器
+            const container = document.createElement('div');
+            container.className = 'resize-container';
+            container.style.cssText = 'position: relative; display: inline-block; max-width: 100%;';
+            
+            // 將圖片移到容器中
+            img.parentNode.insertBefore(container, img);
+            container.appendChild(img);
+            
+            // 創建調整控制點（右下角）
+            const handle = document.createElement('div');
+            handle.className = 'resize-handle';
+            handle.style.cssText = `
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                background: #28a745;
+                border: 3px solid white;
+                border-radius: 50%;
+                cursor: nwse-resize;
+                right: -12px;
+                bottom: -12px;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.1s;
+            `;
+            
+            handle.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.2)';
+            });
+            handle.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            container.appendChild(handle);
+            
+            // 拖曳調整大小
+            let isResizing = false;
+            let startX, startWidth;
+            
+            handle.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                isResizing = true;
+                startX = e.clientX;
+                startWidth = img.offsetWidth;
+                
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', handleMouseUp);
+                
+                // 添加視覺反饋
+                document.body.style.cursor = 'nwse-resize';
+                document.body.style.userSelect = 'none';
+            });
+            
+            function handleMouseMove(e) {
+                if (!isResizing) return;
+                
+                const deltaX = e.clientX - startX;
+                const newWidth = startWidth + deltaX;
+                
+                // 限制最小和最大尺寸
+                const minWidth = 100;
+                const maxWidth = container.parentElement.offsetWidth || 1400;
+                
+                if (newWidth >= minWidth && newWidth <= maxWidth) {
+                    img.style.width = newWidth + 'px';
+                    img.style.height = 'auto'; // 保持比例
+                    img.style.maxWidth = 'none'; // 允許超過 100%
+                }
+            }
+            
+            function handleMouseUp() {
+                isResizing = false;
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+                document.body.style.cursor = '';
+                document.body.style.userSelect = '';
+            }
+            
+            // 點擊其他地方隱藏控制點
+            setTimeout(() => {
+                document.addEventListener('click', function hideControls(e) {
+                    if (!container.contains(e.target) && e.target !== img && e.target !== handle) {
+                        handle.remove();
+                        img.classList.remove('resizing');
+                        img.style.border = '2px solid transparent';
+                        img.style.boxShadow = 'none';
+                        // 如果容器只有圖片，移除容器
+                        if (container.children.length === 1) {
+                            container.parentNode.insertBefore(img, container);
+                            container.remove();
+                        }
+                        document.removeEventListener('click', hideControls);
+                    }
+                }, { once: true });
+            }, 100);
+        }
+
     </script>
+    
+    <script>
+        // ====================
+        // 工具列功能
+        // ====================
+        
+        // 可拖拉分隔線功能
+        let isResizing = false;
+        let startX = 0;
+        let startWidth = 0;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // 編輯模式的分隔線
+            const resizer = document.getElementById('resizer');
+            const editPanel = document.getElementById('editPanel');
+            const previewPanel = document.getElementById('previewPanel');
+            
+            if (resizer && editPanel && previewPanel) {
+                // 載入保存的寬度比例
+                const savedRatio = localStorage.getItem('editPanelRatio');
+                if (savedRatio) {
+                    const ratio = parseFloat(savedRatio);
+                    editPanel.style.flex = ratio;
+                    previewPanel.style.flex = (1 - ratio);
+                }
+                
+                resizer.addEventListener('mousedown', function(e) {
+                    isResizing = true;
+                    startX = e.clientX;
+                    const container = document.getElementById('splitEditorContainer');
+                    startWidth = editPanel.offsetWidth;
+                    resizer.classList.add('resizing');
+                    document.body.style.cursor = 'col-resize';
+                    document.body.style.userSelect = 'none';
+                });
+            }
+            
+            // 新增文章模式的分隔線
+            const newArticleResizer = document.getElementById('newArticleResizer');
+            const newArticleEditPanel = document.getElementById('newArticleEditPanel');
+            const newArticlePreviewPanel = document.getElementById('newArticlePreviewPanel');
+            
+            if (newArticleResizer && newArticleEditPanel && newArticlePreviewPanel) {
+                // 載入保存的寬度比例
+                const savedRatio = localStorage.getItem('newArticlePanelRatio');
+                if (savedRatio) {
+                    const ratio = parseFloat(savedRatio);
+                    newArticleEditPanel.style.flex = ratio;
+                    newArticlePreviewPanel.style.flex = (1 - ratio);
+                }
+                
+                newArticleResizer.addEventListener('mousedown', function(e) {
+                    isResizing = true;
+                    startX = e.clientX;
+                    const container = document.getElementById('newArticleContainer');
+                    startWidth = newArticleEditPanel.offsetWidth;
+                    newArticleResizer.classList.add('resizing');
+                    document.body.style.cursor = 'col-resize';
+                    document.body.style.userSelect = 'none';
+                });
+            }
+            
+            // 統一的 mousemove 和 mouseup 事件處理
+            document.addEventListener('mousemove', function(e) {
+                if (!isResizing) return;
+                
+                // 判斷是編輯模式還是新增模式
+                const editContainer = document.getElementById('splitEditorContainer');
+                const newContainer = document.getElementById('newArticleContainer');
+                let container, leftPanel, rightPanel, resizerElement, storageKey;
+                
+                if (editContainer && editContainer.style.display !== 'none') {
+                    container = editContainer;
+                    leftPanel = editPanel;
+                    rightPanel = previewPanel;
+                    resizerElement = resizer;
+                    storageKey = 'editPanelRatio';
+                } else if (newContainer && newContainer.style.display !== 'none') {
+                    container = newContainer;
+                    leftPanel = newArticleEditPanel;
+                    rightPanel = newArticlePreviewPanel;
+                    resizerElement = newArticleResizer;
+                    storageKey = 'newArticlePanelRatio';
+                } else {
+                    return;
+                }
+                
+                if (!container || !leftPanel || !rightPanel) return;
+                
+                const containerWidth = container.offsetWidth;
+                const deltaX = e.clientX - startX;
+                const newWidth = startWidth + deltaX;
+                const ratio = newWidth / containerWidth;
+                
+                // 限制最小寬度（20% - 80%）
+                const minRatio = 0.2;
+                const maxRatio = 0.8;
+                const clampedRatio = Math.max(minRatio, Math.min(maxRatio, ratio));
+                
+                leftPanel.style.flex = clampedRatio;
+                rightPanel.style.flex = (1 - clampedRatio);
+                
+                // 儲存比例
+                localStorage.setItem(storageKey, clampedRatio.toString());
+            });
+            
+            document.addEventListener('mouseup', function() {
+                if (isResizing) {
+                    isResizing = false;
+                    if (resizer) resizer.classList.remove('resizing');
+                    if (newArticleResizer) newArticleResizer.classList.remove('resizing');
+                    document.body.style.cursor = '';
+                    document.body.style.userSelect = '';
+                }
+            });
+            
+            // 新增文章表單：當 HTML 編輯區獲得焦點時自動摺疊
+            const htmlContentTextarea = document.getElementById('htmlContent');
+            const visualEditorContent = document.getElementById('visualEditorContent');
+            
+            if (htmlContentTextarea) {
+                htmlContentTextarea.addEventListener('focus', function() {
+                    collapseNewArticleForm();
+                });
+            }
+            
+            if (visualEditorContent) {
+                visualEditorContent.addEventListener('focus', function() {
+                    collapseNewArticleForm();
+                });
+            }
+        });
+        
+        // 最近編輯下拉選單
+        function toggleRecentDropdown() {
+            const dropdown = document.getElementById('recentDropdown');
+            if (dropdown) {
+                const isVisible = dropdown.style.display !== 'none';
+                dropdown.style.display = isVisible ? 'none' : 'block';
+                
+                // 點擊外部關閉
+                if (!isVisible) {
+                    setTimeout(() => {
+                        document.addEventListener('click', function closeDropdown(e) {
+                            if (!dropdown.contains(e.target) && e.target.id !== 'recentDropdownBtn') {
+                                dropdown.style.display = 'none';
+                                document.removeEventListener('click', closeDropdown);
+                            }
+                        });
+                    }, 100);
+                }
+            }
+        }
+        
+        // GitHub Modal
+        window.openGitHubModal = function openGitHubModal() {
+            const modal = document.getElementById('githubModal');
+            if (modal) {
+                modal.style.display = 'block';
+                loadGitHubSettings();
+            } else {
+                console.error('找不到 githubModal 元素');
+            }
+        }
+        
+        window.closeGitHubModal = function closeGitHubModal() {
+            const modal = document.getElementById('githubModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // 點擊 Modal 外部關閉
+        window.onclick = function(event) {
+            const modal = document.getElementById('githubModal');
+            if (event.target === modal) {
+                closeGitHubModal();
+            }
+        }
+        
+        // 更新統計資訊
+        async function updateStatistics() {
+            try {
+                let intermediateCount = 0;
+                let advancedCount = 0;
+                
+                // 讀取 Intermediate 文章數量（優先從 GitHub，失敗回退本地）
+                try {
+                    let intermediateScript = null;
+                    try {
+                        intermediateScript = await getFileContent('script.js');
+                    } catch (e) {
+                        // GitHub 讀取失敗，嘗試從本地讀取
+                        try {
+                            const response = await fetch('script.js');
+                            if (response.ok) {
+                                intermediateScript = await response.text();
+                            }
+                        } catch (localError) {
+                            console.warn('本地讀取也失敗:', localError);
+                        }
+                    }
+                    
+                    if (intermediateScript) {
+                        const match = intermediateScript.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                        if (match) {
+                            const items = match[1].match(/\{[^}]*filename[^}]*\}/g);
+                            if (items) {
+                                intermediateCount = items.length;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.warn('無法讀取 Intermediate 統計:', e);
+                }
+                
+                // 讀取 Advanced 文章數量（優先從 GitHub，失敗回退本地）
+                try {
+                    let advancedScript = null;
+                    try {
+                        advancedScript = await getFileContent('script-advanced.js');
+                    } catch (e) {
+                        // GitHub 讀取失敗，嘗試從本地讀取
+                        try {
+                            const response = await fetch('script-advanced.js');
+                            if (response.ok) {
+                                advancedScript = await response.text();
+                            }
+                        } catch (localError) {
+                            console.warn('本地讀取也失敗:', localError);
+                        }
+                    }
+                    
+                    if (advancedScript) {
+                        const match = advancedScript.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                        if (match) {
+                            const items = match[1].match(/\{[^}]*filename[^}]*\}/g);
+                            if (items) {
+                                advancedCount = items.length;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.warn('無法讀取 Advanced 統計:', e);
+                }
+                
+                // 更新顯示
+                const statIntermediate = document.getElementById('statIntermediate');
+                const statAdvanced = document.getElementById('statAdvanced');
+                const statTotal = document.getElementById('statTotal');
+                
+                if (statIntermediate) statIntermediate.textContent = intermediateCount + ' 篇';
+                if (statAdvanced) statAdvanced.textContent = advancedCount + ' 篇';
+                if (statTotal) statTotal.textContent = (intermediateCount + advancedCount) + ' 篇';
+                
+            } catch (error) {
+                console.error('更新統計資訊錯誤:', error);
+            }
+        }
+        
+        // 快速新增文章
+        function quickNewArticle() {
+            // 顯示新增文章區域
+            const tabNew = document.getElementById('tab-new');
+            const tabEdit = document.getElementById('tab-edit');
+            if (tabNew) tabNew.style.display = 'block';
+            if (tabEdit) tabEdit.style.display = 'none';
+            
+            // 確保分屏容器顯示
+            const newArticleContainer = document.getElementById('newArticleContainer');
+            if (newArticleContainer) newArticleContainer.style.display = 'flex';
+            
+            // 確保表單區塊展開（新增時要展開）
+            expandNewArticleForm();
+            
+            const level = currentLevel || document.getElementById('level')?.value;
+            if (level && document.getElementById('level')) {
+                document.getElementById('level').value = level;
+            }
+            if (document.getElementById('date')) {
+                document.getElementById('date').valueAsDate = new Date();
+            }
+            if (document.getElementById('title')) {
+                document.getElementById('title').focus();
+            }
+        }
+        
+        // 快速編輯文章
+        function quickEditArticles() {
+            // 顯示編輯區域
+            const tabNew = document.getElementById('tab-new');
+            const tabEdit = document.getElementById('tab-edit');
+            if (tabNew) tabNew.style.display = 'none';
+            if (tabEdit) tabEdit.style.display = 'block';
+            
+            // 確保顯示初始視圖（文章列表）
+            const editInitialView = document.getElementById('editInitialView');
+            const splitEditorContainer = document.getElementById('splitEditorContainer');
+            if (editInitialView) editInitialView.style.display = 'block';
+            if (splitEditorContainer) splitEditorContainer.style.display = 'none';
+            
+            // 載入最近編輯到編輯視圖
+            loadRecentArticlesInEditView();
+            
+            // 自動載入當前等級的文章列表
+            const currentLevel = window.currentLevel || 'intermediate';
+            loadLessons();
+        }
+        
+        // 快速重新載入列表
+        function quickReloadList() {
+            const tabEdit = document.getElementById('tab-edit');
+            if (tabEdit && tabEdit.style.display !== 'none') {
+                loadLessons();
+                showAlert('success', '✅ 文章列表已重新載入');
+            } else {
+                // 如果編輯區域未顯示，先顯示它
+                quickEditArticles();
+                setTimeout(() => {
+                    showAlert('success', '✅ 文章列表已重新載入');
+                }, 100);
+            }
+        }
+        
+        // 快速切換等級
+        function quickSwitchLevel() {
+            const current = window.currentLevel || 'intermediate';
+            const newLevel = current === 'intermediate' ? 'advanced' : 'intermediate';
+            
+            if (newLevel === 'intermediate') {
+                window.location.href = 'admin-intermediate.html';
+            } else {
+                window.location.href = 'admin-advanced.html';
+            }
+        }
+        
+        // 搜尋文章
+        let searchTimeout;
+        function searchArticles(query, targetElement) {
+            clearTimeout(searchTimeout);
+            
+            const searchResults = targetElement || document.getElementById('searchResults');
+            if (!searchResults) return;
+            
+            if (!query || query.trim() === '') {
+                // 搜尋框為空時，隱藏搜尋結果（不自動顯示最近編輯）
+                searchResults.style.display = 'none';
+                searchResults.innerHTML = '';
+                return;
+            }
+            
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const queryLower = query.toLowerCase().trim();
+                    const results = [];
+                    
+                    // 搜尋 Intermediate（優先從 GitHub，失敗回退本地）
+                    try {
+                        let intermediateScript = null;
+                        try {
+                            intermediateScript = await getFileContent('script.js');
+                        } catch (e) {
+                            // GitHub 讀取失敗，嘗試從本地讀取
+                            try {
+                                const response = await fetch('script.js');
+                                if (response.ok) {
+                                    intermediateScript = await response.text();
+                                }
+                            } catch (localError) {
+                                console.warn('本地讀取也失敗:', localError);
+                            }
+                        }
+                        
+                        if (intermediateScript) {
+                            const match = intermediateScript.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                            if (match) {
+                                const items = match[1].match(/\{[^}]*filename[^}]*\}/g);
+                                if (items) {
+                                    items.forEach(item => {
+                                        const filenameMatch = item.match(/filename:\s*['"]([^'"]+)['"]/);
+                                        const titleMatch = item.match(/title:\s*['"]([^'"]+)['"]/);
+                                        const dateMatch = item.match(/date:\s*['"]([^'"]+)['"]/);
+                                        
+                                        if (filenameMatch || titleMatch) {
+                                            const filename = filenameMatch ? filenameMatch[1] : '';
+                                            const title = titleMatch ? titleMatch[1] : '';
+                                            const date = dateMatch ? dateMatch[1] : '';
+                                            
+                                            if (filename.toLowerCase().includes(queryLower) || 
+                                                title.toLowerCase().includes(queryLower)) {
+                                                results.push({ level: 'intermediate', filename, title, date });
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        console.warn('搜尋 Intermediate 錯誤:', e);
+                    }
+                    
+                    // 搜尋 Advanced（優先從 GitHub，失敗回退本地）
+                    try {
+                        let advancedScript = null;
+                        try {
+                            advancedScript = await getFileContent('script-advanced.js');
+                        } catch (e) {
+                            // GitHub 讀取失敗，嘗試從本地讀取
+                            try {
+                                const response = await fetch('script-advanced.js');
+                                if (response.ok) {
+                                    advancedScript = await response.text();
+                                }
+                            } catch (localError) {
+                                console.warn('本地讀取也失敗:', localError);
+                            }
+                        }
+                        
+                        if (advancedScript) {
+                            const match = advancedScript.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                            if (match) {
+                                const items = match[1].match(/\{[^}]*filename[^}]*\}/g);
+                                if (items) {
+                                    items.forEach(item => {
+                                        const filenameMatch = item.match(/filename:\s*['"]([^'"]+)['"]/);
+                                        const titleMatch = item.match(/title:\s*['"]([^'"]+)['"]/);
+                                        const dateMatch = item.match(/date:\s*['"]([^'"]+)['"]/);
+                                        
+                                        if (filenameMatch || titleMatch) {
+                                            const filename = filenameMatch ? filenameMatch[1] : '';
+                                            const title = titleMatch ? titleMatch[1] : '';
+                                            const date = dateMatch ? dateMatch[1] : '';
+                                            
+                                            if (filename.toLowerCase().includes(queryLower) || 
+                                                title.toLowerCase().includes(queryLower)) {
+                                                results.push({ level: 'advanced', filename, title, date });
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        console.warn('搜尋 Advanced 錯誤:', e);
+                    }
+                    
+                    // 顯示搜尋結果
+                    if (results.length === 0) {
+                        searchResults.innerHTML = '<p style="color: #999; text-align: center; padding: 1rem; margin: 0;">找不到符合的文章</p>';
+                        searchResults.style.display = 'block';
+                    } else {
+                        let html = '';
+                        results.slice(0, 10).forEach(result => {
+                            const levelText = result.level === 'intermediate' ? 'Intermediate' : 'Advanced';
+                            const safeFilename = result.filename.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                            const safeTitle = result.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                            html += `
+                                <div class="search-result-item" onclick="openArticleFromSearch('${result.level}', '${safeFilename}', '${result.date}', '${safeTitle}')">
+                                    <div style="font-weight: 600; margin-bottom: 0.25rem;">${result.title}</div>
+                                    <div style="font-size: 0.8rem; color: #666;">${result.date} | ${levelText}</div>
+                                </div>
+                            `;
+                        });
+                        searchResults.innerHTML = html;
+                        searchResults.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('搜尋錯誤:', error);
+                    searchResults.innerHTML = '<p style="color: #dc3545; text-align: center; padding: 1rem;">搜尋時發生錯誤</p>';
+                    searchResults.style.display = 'block';
+                }
+            }, 300);
+        }
+        
+        // 從搜尋結果打開文章
+        function openArticleFromSearch(level, filename, date, title) {
+            // 還原 HTML 實體
+            filename = filename.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            title = title.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            
+            // 顯示編輯區域
+            const tabNew = document.getElementById('tab-new');
+            const tabEdit = document.getElementById('tab-edit');
+            if (tabNew) tabNew.style.display = 'none';
+            if (tabEdit) tabEdit.style.display = 'block';
+            
+            // 打開分屏編輯器
+            setTimeout(() => {
+                openSplitEditor(level, filename, date, title);
+            }, 100);
+            
+            // 清空搜尋框
+            const searchInput = document.getElementById('sidebarSearchInput');
+            if (searchInput) searchInput.value = '';
+            const searchResults = document.getElementById('searchResults');
+            if (searchResults) searchResults.style.display = 'none';
+        }
+        
+        // 在搜尋結果中顯示最近編輯的文章
+        function showRecentArticlesInSearch() {
+            const searchResults = document.getElementById('searchResults');
+            if (!searchResults) return;
+            
+            try {
+                const recent = JSON.parse(localStorage.getItem('recentEditedArticles') || '[]');
+                
+                if (recent.length === 0) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+                
+                let html = '<div style="padding: 0.5rem; background: #f0f8ff; border-bottom: 2px solid #66acd9; font-weight: 600; color: #2c3e50;">📝 最近編輯</div>';
+                
+                recent.slice(0, 8).forEach((article, index) => {
+                    const levelText = article.level === 'intermediate' ? 'Intermediate' : 'Advanced';
+                    const editTime = new Date(article.editTime).toLocaleString('zh-TW', {
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    const safeFilename = article.filename.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    const safeTitle = article.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    
+                    html += `
+                        <div class="search-result-item" onclick="openArticleFromRecent('${article.level}', '${safeFilename}', '${article.date}', '${safeTitle}')">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">${article.title}</div>
+                            <div style="font-size: 0.8rem; color: #666;">${article.date} | ${levelText} | ${editTime}</div>
+                        </div>
+                    `;
+                });
+                
+                html += '<div style="padding: 0.5rem; text-align: center; border-top: 1px solid #e0e0e0;"><button onclick="clearRecentArticles()" style="padding: 0.25rem 0.5rem; background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">🗑️ 清除記錄</button></div>';
+                
+                searchResults.innerHTML = html;
+                searchResults.style.display = 'block';
+            } catch (error) {
+                console.error('顯示最近編輯錯誤:', error);
+                searchResults.style.display = 'none';
+            }
+        }
+        
+        // 載入最近編輯的文章（保留以兼容性，但不再使用）
+        function loadRecentArticles() {
+            // 此函數保留以兼容性，但不再使用
+            // 最近編輯已整合到搜尋結果中
+            
+            try {
+                const recent = JSON.parse(localStorage.getItem('recentEditedArticles') || '[]');
+                
+                if (recent.length === 0) {
+                    recentArticlesList.innerHTML = '<p style="color: #999; font-size: 0.9rem; text-align: center; padding: 1rem 0;">尚無編輯記錄</p>';
+                    return;
+                }
+                
+                let html = '';
+                recent.slice(0, 5).forEach((article, index) => {
+                    const levelText = article.level === 'intermediate' ? 'Intermediate' : 'Advanced';
+                    const editTime = new Date(article.editTime).toLocaleString('zh-TW', {
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    const safeFilename = article.filename.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    const safeTitle = article.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    
+                    html += `
+                        <div class="recent-article-item" onclick="openArticleFromRecent('${article.level}', '${safeFilename}', '${article.date}', '${safeTitle}')">
+                            <div class="recent-article-title">${index + 1}. ${article.title}</div>
+                            <div class="recent-article-meta">${article.date} | ${levelText}<br><small>${editTime}</small></div>
+                        </div>
+                    `;
+                });
+                
+                recentArticlesList.innerHTML = html;
+            } catch (error) {
+                console.error('載入最近編輯記錄錯誤:', error);
+            }
+        }
+        
+        // 從最近編輯打開文章
+        function openArticleFromRecent(level, filename, date, title) {
+            // 還原 HTML 實體
+            filename = filename.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            title = title.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            
+            // 顯示編輯區域
+            const tabNew = document.getElementById('tab-new');
+            const tabEdit = document.getElementById('tab-edit');
+            if (tabNew) tabNew.style.display = 'none';
+            if (tabEdit) tabEdit.style.display = 'block';
+            
+            // 關閉搜尋結果
+            const searchResults = document.getElementById('searchResults');
+            if (searchResults) searchResults.style.display = 'none';
+            
+            // 打開分屏編輯器
+            setTimeout(() => {
+                openSplitEditor(level, filename, date, title);
+            }, 100);
+        }
+        
+        // 記錄編輯歷史
+        function recordEditHistory(level, filename, date, title) {
+            try {
+                const recent = JSON.parse(localStorage.getItem('recentEditedArticles') || '[]');
+                
+                // 移除重複的（如果存在）
+                const filtered = recent.filter(a => 
+                    !(a.level === level && a.filename === filename)
+                );
+                
+                // 添加到最前面
+                filtered.unshift({
+                    level,
+                    filename,
+                    date,
+                    title,
+                    editTime: new Date().toISOString()
+                });
+                
+                // 只保留最近 20 篇
+                const limited = filtered.slice(0, 20);
+                
+                localStorage.setItem('recentEditedArticles', JSON.stringify(limited));
+                
+                // 如果編輯面板可見，更新最近編輯列表
+                const editInitialView = document.getElementById('editInitialView');
+                if (editInitialView && editInitialView.style.display !== 'none') {
+                    loadRecentArticlesInEditView();
+                }
+            } catch (error) {
+                console.error('記錄編輯歷史錯誤:', error);
+            }
+        }
+        
+        // 清除最近編輯記錄
+        function clearRecentArticles() {
+            if (confirm('確定要清除所有編輯記錄嗎？')) {
+                localStorage.removeItem('recentEditedArticles');
+                // 更新編輯面板的最近編輯列表
+                loadRecentArticlesInEditView();
+                showAlert('success', '✅ 編輯記錄已清除');
+            }
+        }
+        
+        // 載入最近編輯到編輯視圖（editInitialView）
+        function loadRecentArticlesInEditView() {
+            const recentArticlesInEditView = document.getElementById('recentArticlesInEditView');
+            if (!recentArticlesInEditView) return;
+            
+            try {
+                const recent = JSON.parse(localStorage.getItem('recentEditedArticles') || '[]');
+                
+                if (recent.length === 0) {
+                    recentArticlesInEditView.innerHTML = '<p style="color: #999; font-size: 0.8rem; text-align: center; padding: 0.5rem;">尚無編輯記錄</p>';
+                    return;
+                }
+                
+                let html = '';
+                recent.slice(0, 5).forEach((article, index) => {
+                    const levelText = article.level === 'intermediate' ? 'Intermediate' : 'Advanced';
+                    const safeFilename = article.filename.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    const safeTitle = article.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    
+                    html += `
+                        <div class="recent-article-item" onclick="openArticleFromRecent('${article.level}', '${safeFilename}', '${article.date}', '${safeTitle}')" style="padding: 0.5rem; margin-bottom: 0.5rem; background: white; border-radius: 4px; cursor: pointer; border-left: 3px solid #2196f3; transition: background 0.2s;" onmouseover="this.style.background='#f0f7ff'" onmouseout="this.style.background='white'">
+                            <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 0.25rem;">${article.title}</div>
+                            <div style="font-size: 0.75rem; color: #666;">${article.date} | ${levelText}</div>
+                        </div>
+                    `;
+                });
+                recentArticlesInEditView.innerHTML = html;
+            } catch (error) {
+                console.error('載入最近編輯錯誤:', error);
+                recentArticlesInEditView.innerHTML = '<p style="color: #dc3545; font-size: 0.8rem; text-align: center; padding: 0.5rem;">載入錯誤</p>';
+            }
+        }
+        
+        // 切換最近編輯區塊的展開/摺疊
+        function toggleRecentInEditView() {
+            const content = document.getElementById('recentArticlesInEditView');
+            const toggle = document.getElementById('recentToggleInEditView');
+            if (!content || !toggle) return;
+            
+            const isCollapsed = content.style.display === 'none';
+            content.style.display = isCollapsed ? 'block' : 'none';
+            toggle.textContent = isCollapsed ? '▼' : '▶';
+        }
+        
+        // 在編輯視圖中搜尋文章
+        function searchArticlesInEditView(query) {
+            const searchResults = document.getElementById('searchResultsInEditView');
+            if (!searchResults) return;
+            
+            if (!query || !query.trim()) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            // 使用現有的搜尋邏輯
+            searchArticles(query, searchResults);
+        }
+        
+        // 從最近編輯打開文章
+        function openArticleFromRecent(level, filename, date, title) {
+            // 解碼 HTML 實體
+            filename = filename.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            title = title.replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+            
+            // 打開分屏編輯器
+            openSplitEditor(level, filename, date, title);
+        }
+        
+        
+        // 頁面載入時初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStatistics();
+            
+            // 更新快速切換等級按鈕文字
+            const quickSwitchBtn = document.getElementById('quickSwitchLevel');
+            if (quickSwitchBtn && currentLevel) {
+                const switchTo = currentLevel === 'intermediate' ? 'Advanced' : 'Intermediate';
+                quickSwitchBtn.textContent = `🔄 切換到 ${switchTo}`;
+            }
+        });
+    </script>
+        </div>
+    </div>
 </body>
 </html>
 
