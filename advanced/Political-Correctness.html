@@ -1,119 +1,874 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-    <title>Page not found &middot; GitHub Pages</title>
-    <style type="text/css" media="screen">
-      body {
-        background-color: #f1f1f1;
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-
-      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
-
-      a { color: #4183c4; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-
-      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
-      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
-
-      ul { list-style: none; margin: 25px 0; padding: 0; }
-      li { display: table-cell; font-weight: bold; width: 1%; }
-
-      .logo { display: inline-block; margin-top: 35px; }
-      .logo-img-2x { display: none; }
-      @media
-      only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (   min--moz-device-pixel-ratio: 2),
-      only screen and (     -o-min-device-pixel-ratio: 2/1),
-      only screen and (        min-device-pixel-ratio: 2),
-      only screen and (                min-resolution: 192dpi),
-      only screen and (                min-resolution: 2dppx) {
-        .logo-img-1x { display: none; }
-        .logo-img-2x { display: inline-block; }
-      }
-
-      #suggestions {
-        margin-top: 35px;
-        color: #ccc;
-      }
-      #suggestions a {
-        color: #666666;
-        font-weight: 200;
-        font-size: 14px;
-        margin: 0 10px;
-      }
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Correctness: Social Progress or New Censorship? - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff6b35;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+        
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #d64933;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .section h3 {
+            color: #c44536;
+            margin-top: 25px;
+        }
+        
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .expressions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .expression-card {
+            background: #fef8f3;
+            border-left: 4px solid #ff6b35;
+            padding: 18px;
+            border-radius: 6px;
+        }
+        
+        .expression-card .english {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #c44536;
+            margin-bottom: 8px;
+        }
+        
+        .expression-card .spanish {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .expression-card .example {
+            color: #444;
+            line-height: 1.6;
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+        }
+        
+        .article-title {
+            background: linear-gradient(135deg, #d64933 0%, #ff6b35 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .article-title h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 25px 0;
+        }
+        
+        .article-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .paragraph-divider {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff6b35, transparent);
+            margin: 40px 0;
+        }
+        
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #ff6b35;
+            padding: 25px;
+            margin: 20px 0 40px 0;
+            border-radius: 8px;
+        }
+        
+        .vocabulary-section h3 {
+            color: #d64933;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .vocab-item strong {
+            color: #d64933;
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+        
+        .vocab-item button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .vocab-item p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        
+        .vocab-item .definition {
+            color: #333;
+        }
+        
+        .vocab-item .translation {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        .vocab-item .example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .mobile-note {
+            background: #e8f4f8;
+            padding: 12px;
+            border-radius: 6px;
+            font-style: italic;
+            color: #555;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .discussion-questions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .discussion-questions li {
+            background: #fef8f3;
+            padding: 15px;
+            margin: 12px 0;
+            border-left: 4px solid #ff6b35;
+            border-radius: 6px;
+            font-size: 1.05rem;
+        }
+        
+        .practice-questions {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .practice-questions ol {
+            line-height: 2;
+        }
+        
+        .practice-questions li {
+            margin: 15px 0;
+        }
+        
+        details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 6px;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #d64933;
+            padding: 10px;
+        }
+        
+        summary:hover {
+            color: #ff6b35;
+        }
+        
+        .terminology-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .terminology-table thead {
+            background: #d64933;
+            color: white;
+        }
+        
+        .terminology-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+        
+        .terminology-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .terminology-table tbody tr:nth-child(even) {
+            background: #fef8f3;
+        }
+        
+        .terminology-table tbody tr:hover {
+            background: #fff9c4;
+        }
+        
+        .old-term {
+            color: #888;
+            text-decoration: line-through;
+        }
+        
+        .new-term {
+            color: #d64933;
+            font-weight: 600;
+        }
+        
+        .explanation {
+            color: #555;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
     
-.article-image-container {
-    max-width: 1400px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-.article-image-container img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .article-image-container {
-        padding: 0 15px;
-        margin: 15px auto;
-    }
-    
-    .article-image-container img {
-        border-radius: 6px;
-    }
-}
-</style>
-  </head>
-  <body>
-    <div class="article-image-container">
-        <img src="https://ips-dc.org/wp-content/uploads/2015/10/pa268c-815x593.jpg" alt="🗣️ Political Correctness: Social Progress or New Censorship?" class="article-image">
-    </div>
-
-
     <div class="container">
-
-      <h1>404</h1>
-      <p><strong>File not found</strong></p>
-
-      <p>
-        The site configured at this address does not
-        contain the requested file.
-      </p>
-
-      <p>
-        If this is your site, make sure that the filename case matches the URL
-        as well as any file permissions.<br>
-        For root URLs (like <code>http://example.com/</code>) you must provide an
-        <code>index.html</code> file.
-      </p>
-
-      <p>
-        <a href="https://help.github.com/pages/">Read the full documentation</a>
-        for more information about using <strong>GitHub Pages</strong>.
-      </p>
-
-      <div id="suggestions">
-        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
-        <a href="https://twitter.com/githubstatus">@githubstatus</a>
-      </div>
-
-      <a href="/" class="logo logo-img-1x">
-        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTZCRDY3REIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTZCRDY3RUIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdCQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjdDQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+SM9MCAAAA+5JREFUeNrEV11Ik1EY3s4+ddOp29Q5b0opCgKFsoKoi5Kg6CIhuwi6zLJLoYLopq4qsKKgi4i6CYIoU/q5iDAKs6syoS76IRWtyJ+p7cdt7sf1PGOD+e0c3dygAx/67ZzzPM95/877GYdHRg3ZjMXFxepQKNS6sLCwJxqNNuFpiMfjVs4ZjUa/pmmjeD6VlJS8NpvNT4QQ7mxwjSsJiEQim/1+/9lgMHgIr5ohuxG1WCw9Vqv1clFR0dCqBODElV6v90ogEDjGdYbVjXhpaendioqK07CIR7ZAqE49PT09BPL2PMgTByQGsYiZlQD4uMXtdr+JxWINhgINYhGT2MsKgMrm2dnZXgRXhaHAg5jEJodUAHxux4LudHJE9RdEdA+i3Juz7bGHe4mhE9FNrgwBCLirMFV9Okh5eflFh8PR5nK5nDabrR2BNJlKO0T35+Li4n4+/J+/JQCxhmu5h3uJoXNHPbmWZAHMshWB8l5/ipqammaAf0zPDDx1ONV3vurdidqwAQL+pEc8sLcAe1CCvQ3YHxIW8Pl85xSWNC1hADDIv0rIE/o4J0k3kww4xSlwIhcq3EFFOm7KN/hUGOQkt0CFa5WpNJlMvxBEz/IVQAxg/ZRZl9wiHA63yDYieM7DnLP5CiAGsC7I5sgtYKJGWe2A8seFqgFJrJjEPY1Cn3pJ8/9W1e5VWsFDTEmFrBcoDhZJEQkXuhICMyKpjhahqN21hRYATKfUOlDmkygrR4o4C0VOLGJKrOITKB4jijzdXygBKixyC5TDQdnk/Pz8qRw6oOWGlsTKGOQW6OH6FBWsyePxdOXLTgxiyebILZCjz+GLgMIKnXNzc49YMlcRdHXcSwxFVgTInQhC9G33UhNoJLuqq6t345p9y3eUy8OTk5PjAHuI9uo4b07FBaOhsu0A4Unc+T1TU1Nj3KsSSE5yJ65jqF2DDd8QqWYmAZrIM2VlZTdnZmb6AbpdV9V6ec9znf5Q7HjYumdRE0JOp3MjitO4SFa+cZz8Umqe3TCbSLvdfkR/kWDdNQl5InuTcysOcpFT35ZrbBxx4p3JAHlZVVW1D/634VRt+FvLBgK/v5LV9WS+10xMTEwtRw7XvqOL+e2Q8V3AYIOIAXQ26/heWVnZCVfcyKHg2CBgTpmPmjYM8l24GyaUHyaIh7XwfR9ErE8qHoDfn2LTNAVC0HX6MFcBIP8Bi+6F6cdW/DICkANRfx99fEYFQ7Nph5i/uQiA214gno7K+guhaiKg9gC62+M8eR7XsBsYJ4ilam60Fb7r7uAj8wFyuwM1oIOWgfmDy6RXEEQzJMPe23DXrVS7rtyD3Df8z/FPgAEAzWU5Ku59ZAUAAAAASUVORK5CYII=">
-      </a>
-
-      <a href="/" class="logo logo-img-2x">
-        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQUM1QkUxRUI0MUMxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQUM1QkUxRkI0MUMxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdGQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjgwQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+hfPRaQAAB6lJREFUeNrsW2mM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">
-      </a>
+        <main class="main-content">
+            
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <section class="section">
+                <h2>💬 Useful Expressions</h2>
+                <div class="expressions-grid">
+                    
+                    <div class="expression-card">
+                        <div class="english">How do we navigate...?</div>
+                        <div class="spanish">¿Cómo navegamos...?</div>
+                        <div class="example">How do we navigate the complexities of workplace diversity policies?</div>
+                    </div>
+                    
+                    <div class="expression-card">
+                        <div class="english">It lies at the heart of...</div>
+                        <div class="spanish">Está en el corazón de...</div>
+                        <div class="example">Cultural sensitivity lies at the heart of effective international business communication.</div>
+                    </div>
+                    
+                    <div class="expression-card">
+                        <div class="english">To view something reasonably</div>
+                        <div class="spanish">Ver algo razonablemente</div>
+                        <div class="example">To view performance reviews reasonably, we must consider both results and circumstances.</div>
+                    </div>
+                    
+                    <div class="expression-card">
+                        <div class="english">When applied with care...</div>
+                        <div class="spanish">Cuando se aplica con cuidado...</div>
+                        <div class="example">When applied with care, constructive feedback helps team members grow professionally.</div>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <!-- SECTION 2: ARTICLE WITH IMMEDIATE VOCABULARY AFTER EACH PARAGRAPH -->
+            <div class="article-title">
+                <h1>🗣️ Political Correctness: Social Progress or New Censorship?</h1>
+            </div>
+            
+            <div class="mobile-note">
+                *(On mobile: Tap and hold highlighted words to see translation)*
+            </div>
+            
+            <div class="article-content">
+                
+                <!-- ========== PARAGRAPH 1 ========== -->
+                <p class="article-paragraph">
+                    When a casual remark can <span class="highlight" title="ganar">earn</span> you labels like "discriminatory" or "disrespectful," and a single word choice is enough to define your character, how do we <span class="highlight" title="navegar">navigate</span> the <span class="highlight" title="campo minado">minefield</span> of communication? Political correctness, a concept frequently discussed yet difficult to <span class="highlight" title="comprender">grasp</span>, <span class="highlight" title="está en el centro de">lies at the heart of</span> this contemporary challenge.
+                </p>
+                
+                <!-- VOCABULARY - PARAGRAPH 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>earn</strong>
+                                <button onclick="speakWord('earn')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To receive something (often negative) as a result of your actions</p>
+                            <p class="translation">ganar, recibir</p>
+                            <div class="example">His inappropriate comments earned him a warning from HR.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>navigate</strong>
+                                <button onclick="speakWord('navigate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To find a way through or deal with a difficult situation</p>
+                            <p class="translation">navegar, manejar</p>
+                            <div class="example">Managers must navigate complex workplace conflicts carefully.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>minefield</strong>
+                                <button onclick="speakWord('minefield')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A situation full of hidden dangers or difficulties</p>
+                            <p class="translation">campo minado</p>
+                            <div class="example">International business negotiations can be a cultural minefield.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>grasp</strong>
+                                <button onclick="speakWord('grasp')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To understand something completely</p>
+                            <p class="translation">comprender, entender</p>
+                            <div class="example">New employees need time to grasp our company's quality standards.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>lies at the heart of</strong>
+                                <button onclick="speakWord('lies at the heart of')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Is the central or most important part of something</p>
+                            <p class="translation">está en el centro de</p>
+                            <div class="example">Trust lies at the heart of successful team collaboration.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <hr class="paragraph-divider">
+                
+                <!-- ========== PARAGRAPH 2 ========== -->
+                <p class="article-paragraph">
+                    Political correctness refers to using language and behavior that avoid offending or <span class="highlight" title="marginalizar">marginalizing</span> particular groups, especially those considered disadvantaged or discriminated against. <span class="highlight" title="Arraigado en">Rooted in</span> the US civil rights movements of the 1960s and 70s, the concept centers on the belief that how we perceive others is largely shaped by the language we use to describe them. Advocates for political correctness argue that careless or <span class="highlight" title="sesgados">biased</span> terms not only reflect but also <span class="highlight" title="reforzar">reinforce</span> existing prejudices. For instance, replacing "chairman" with "chair" or "chairperson" challenges the <span class="highlight" title="noción">notion</span> that leadership is an <span class="highlight" title="inherentemente">inherently</span> male <span class="highlight" title="esfuerzo">endeavor</span>. Likewise, asking about someone's "partner" instead of their "husband or wife" avoids assumptions about sexual orientation and relationship structure. Through such shifts, political correctness promotes more <span class="highlight" title="inclusivo">inclusive</span> and respectful communication.
+                </p>
+                
+                <!-- VOCABULARY - PARAGRAPH 2 -->
+                <div class="vocabulary-section">
+                    <h3>📖 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>marginalizing</strong>
+                                <button onclick="speakWord('marginalizing')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Treating a person or group as insignificant or excluded</p>
+                            <p class="translation">marginalizar</p>
+                            <div class="example">The company's old policies were marginalizing employees with disabilities.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>rooted in</strong>
+                                <button onclick="speakWord('rooted in')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Having its origin or basis in something</p>
+                            <p class="translation">arraigado en</p>
+                            <div class="example">Our safety culture is rooted in decades of best practices.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>biased</strong>
+                                <button onclick="speakWord('biased')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Unfairly prejudiced for or against something</p>
+                            <p class="translation">sesgado, parcial</p>
+                            <div class="example">Performance reviews should not be biased by personal friendships.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>reinforce</strong>
+                                <button onclick="speakWord('reinforce')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To strengthen or support an idea, feeling, or pattern</p>
+                            <p class="translation">reforzar</p>
+                            <div class="example">Regular training helps reinforce workplace safety procedures.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>notion</strong>
+                                <button onclick="speakWord('notion')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A concept, idea, or belief about something</p>
+                            <p class="translation">noción, idea</p>
+                            <div class="example">The notion that quality equals higher cost is not always true.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>inherently</strong>
+                                <button onclick="speakWord('inherently')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">In a natural or permanent way; essentially</p>
+                            <p class="translation">inherentemente</p>
+                            <div class="example">Manufacturing automation is not inherently better than manual processes.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>endeavor</strong>
+                                <button onclick="speakWord('endeavor')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">An attempt or effort to achieve something</p>
+                            <p class="translation">esfuerzo, empresa</p>
+                            <div class="example">Implementing lean manufacturing is a challenging endeavor.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>inclusive</strong>
+                                <button onclick="speakWord('inclusive')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Including all people without discrimination</p>
+                            <p class="translation">inclusivo</p>
+                            <div class="example">Our company promotes an inclusive workplace culture.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <hr class="paragraph-divider">
+                
+                <!-- ========== PARAGRAPH 3 ========== -->
+                <p class="article-paragraph">
+                    While often most visible in language, political correctness also <span class="highlight" title="ejerce">exerts</span> a broader influence across society. In education, it has prompted curriculum revisions that address colonialism, race, and gender from a wider range of perspectives. In the workplace, it has driven diversity training programs and stricter anti-harassment policies. In public policy, many governments now use gender-neutral language in official documents and recognize non-binary gender identities. In entertainment, the success of Marvel's <em>Black Panther</em> in 2018 demonstrated the impact of inclusive storytelling, with its celebration of African culture and a <span class="highlight" title="predominantemente">predominantly</span> Black cast offering representation rarely seen in <span class="highlight" title="convencional">mainstream</span> cinema. Together, these developments show how political correctness can be a force for social progress, promoting dignity and inclusion across various sectors.
+                </p>
+                
+                <!-- VOCABULARY - PARAGRAPH 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>exerts</strong>
+                                <button onclick="speakWord('exerts')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To apply or use influence, pressure, or power</p>
+                            <p class="translation">ejerce</p>
+                            <div class="example">The new regulation exerts pressure on manufacturers to reduce waste.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>predominantly</strong>
+                                <button onclick="speakWord('predominantly')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Mainly or for the most part</p>
+                            <p class="translation">predominantemente</p>
+                            <div class="example">Our workforce is predominantly composed of skilled technicians.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>mainstream</strong>
+                                <button onclick="speakWord('mainstream')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The ideas, attitudes, or activities that are shared by most people</p>
+                            <p class="translation">convencional, dominante</p>
+                            <div class="example">Electric vehicles are becoming mainstream in the automotive industry.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <hr class="paragraph-divider">
+                
+                <!-- ========== PARAGRAPH 4 ========== -->
+                <p class="article-paragraph">
+                    However, political correctness also faces substantial criticism. Some argue it restricts free speech by creating an atmosphere where people <span class="highlight" title="autocensurarse">self-censor</span> for fear of saying the "wrong" thing. In recent years, public figures have faced strong <span class="highlight" title="reacción negativa">backlash</span> for statements deemed inappropriate, sometimes regardless of context or <span class="highlight" title="intención">intent</span>. Efforts to avoid offense can also result in what some see as overcorrections. When Disney cast a Latina actress as Snow White in its live-action <span class="highlight" title="adaptación">adaptation</span>, debates erupted about whether such choices valued diversity over story <span class="highlight" title="autenticidad">authenticity</span>. There are also concerns about reverse discrimination. Policies like affirmative action and gender quotas aim to support <span class="highlight" title="subrepresentados">underrepresented</span> groups, but can cause <span class="highlight" title="resentimiento">resentment</span> from those who feel identity is valued over <span class="highlight" title="calificaciones">qualifications</span>. A job posting that reserves positions to balance gender representation, for example, may raise questions about fairness.
+                </p>
+                
+                <!-- VOCABULARY - PARAGRAPH 4 -->
+                <div class="vocabulary-section">
+                    <h3>📖 Vocabulary - Paragraph 4</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>self-censor</strong>
+                                <button onclick="speakWord('self-censor')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To control what you say to avoid causing offense</p>
+                            <p class="translation">autocensurarse</p>
+                            <div class="example">Employees sometimes self-censor during meetings to avoid conflict.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>backlash</strong>
+                                <button onclick="speakWord('backlash')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A strong negative reaction to an event or statement</p>
+                            <p class="translation">reacción negativa</p>
+                            <div class="example">The new policy changes faced backlash from union representatives.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>intent</strong>
+                                <button onclick="speakWord('intent')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">What someone means or plans to do</p>
+                            <p class="translation">intención</p>
+                            <div class="example">The manager's intent was to help, not to micromanage the team.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>adaptation</strong>
+                                <button onclick="speakWord('adaptation')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A changed or modified version of something</p>
+                            <p class="translation">adaptación</p>
+                            <div class="example">The machine's adaptation for the new production line took two weeks.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>authenticity</strong>
+                                <button onclick="speakWord('authenticity')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The quality of being genuine or true to the original</p>
+                            <p class="translation">autenticidad</p>
+                            <div class="example">Customers value the authenticity of handcrafted products.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>underrepresented</strong>
+                                <button onclick="speakWord('underrepresented')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Not having enough presence or voice in a group</p>
+                            <p class="translation">subrepresentados</p>
+                            <div class="example">Women remain underrepresented in senior engineering positions.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>resentment</strong>
+                                <button onclick="speakWord('resentment')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Bitter feelings of anger about unfair treatment</p>
+                            <p class="translation">resentimiento</p>
+                            <div class="example">Favoritism in promotions can create resentment among team members.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>qualifications</strong>
+                                <button onclick="speakWord('qualifications')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Skills, knowledge, or experience needed for a job</p>
+                            <p class="translation">calificaciones</p>
+                            <div class="example">The job posting lists specific technical qualifications required.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <hr class="paragraph-divider">
+                
+                <!-- ========== PARAGRAPH 5 ========== -->
+                <p class="article-paragraph">
+                    What makes political correctness so complex is that it asks society to <span class="highlight" title="confrontar">confront</span> unspoken advantages. Discussions around race, gender, or privilege are rarely easy, especially when many in dominant groups are unaware of the benefits they receive. For instance, a student from a wealthy family may believe university admissions should <span class="highlight" title="únicamente">rely solely</span> on merit. However, this view often overlooks how financial stability provides access to quality private tutoring, <span class="highlight" title="extracurricular">extracurricular</span> activities, and a less stressful learning environment—advantages others may lack.
+                </p>
+                
+                <!-- VOCABULARY - PARAGRAPH 5 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 5</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>confront</strong>
+                                <button onclick="speakWord('confront')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To deal with or face a difficult situation directly</p>
+                            <p class="translation">confrontar, enfrentar</p>
+                            <div class="example">Management must confront the safety issues before production continues.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>rely solely</strong>
+                                <button onclick="speakWord('rely solely')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">To depend only on one thing</p>
+                            <p class="translation">depender únicamente</p>
+                            <div class="example">We cannot rely solely on visual inspection for quality control.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div>
+                                <strong>extracurricular</strong>
+                                <button onclick="speakWord('extracurricular')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Activities outside of regular work or school hours</p>
+                            <p class="translation">extracurricular</p>
+                            <div class="example">The company offers extracurricular training programs for skill development.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <hr class="paragraph-divider">
+                
+                <!-- ========== PARAGRAPH 6 ========== -->
+                <p class="article-paragraph">
+                    To view political correctness reasonably, we must return to its core value: respect. It's not about silencing others or following a strict set of approved terms, but about recognizing how our words and actions shape the experiences of those around us. When applied with care, it helps us build a more respectful society. When applied without thought, it risks becoming another form of control.
+                </p>
+                
+            </div>
+            
+            <!-- POLITICALLY CORRECT TERMINOLOGY TABLE -->
+            <section class="section">
+                <h2>📋 Politically Correct Language Changes</h2>
+                <p>Beyond "chair/chairperson" mentioned in the article, here are other common language shifts that reflect political correctness principles:</p>
+                
+                <table class="terminology-table">
+                    <thead>
+                        <tr>
+                            <th>Old Term</th>
+                            <th>New Term</th>
+                            <th>Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="old-term">Mankind</td>
+                            <td class="new-term">Humankind / Humanity</td>
+                            <td class="explanation">Includes all genders, not just men</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Disabled person</td>
+                            <td class="new-term">Person with a disability</td>
+                            <td class="explanation">Emphasizes the person first, not the disability. Uses person-centered language</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Illegal immigrant</td>
+                            <td class="new-term">Undocumented immigrant</td>
+                            <td class="explanation">Avoids criminalizing the person; describes their documentation status neutrally</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Crazy / Insane</td>
+                            <td class="new-term">Person with mental illness</td>
+                            <td class="explanation">Avoids stigmatizing mental health issues</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Old person</td>
+                            <td class="new-term">Older adult / Senior</td>
+                            <td class="explanation">Uses more respectful and neutral language</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Man-made</td>
+                            <td class="new-term">Artificial / Human-made</td>
+                            <td class="explanation">Avoids the term "man-made" which implies gender bias; makes language gender-neutral</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Waiter / Waitress</td>
+                            <td class="new-term">Server</td>
+                            <td class="explanation">Gender-neutral job title that doesn't assume gender</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">Housewife</td>
+                            <td class="new-term">Homemaker</td>
+                            <td class="explanation">Removes the gendered stereotype of only women as homemakers</td>
+                        </tr>
+                        <tr>
+                            <td class="old-term">He / She</td>
+                            <td class="new-term">They</td>
+                            <td class="explanation">Includes non-binary gender identities; uses singular "they"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <section class="section discussion-questions">
+                <h2>💭 Discussion Questions</h2>
+                <ul>
+                    <li>In your workplace, have you noticed any shifts toward more inclusive language? How have employees responded to these changes?</li>
+                    <li>Do you think there's a difference between being respectful and being politically correct? Where would you draw the line?</li>
+                    <li>Have you ever felt pressure to self-censor in professional settings? What were the circumstances, and how did it affect communication?</li>
+                </ul>
+            </section>
+            
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <section class="section">
+                <h2>✍️ Self-Practice Questions</h2>
+                <div class="practice-questions">
+                    <ol>
+                        <li><strong>Fill in the blank:</strong> The company's diversity initiative aims to support __________ groups in our industry.
+                            <br><em>(Hint: subrepresentados)</em>
+                        </li>
+                        
+                        <li><strong>True or False:</strong> According to the article, political correctness is rooted in US civil rights movements of the 1960s and 70s.</li>
+                        
+                        <li><strong>Short answer:</strong> Explain in your own words why replacing "chairman" with "chair" is considered politically correct.</li>
+                        
+                        <li><strong>Matching:</strong> Match the politically correct term with its explanation:
+                            <br>A) Person with a disability
+                            <br>B) Undocumented immigrant
+                            <br>C) They (singular)
+                            <br><br>
+                            1) Includes non-binary gender identities
+                            <br>2) Emphasizes the person first, not their condition
+                            <br>3) Describes documentation status neutrally
+                        </li>
+                    </ol>
+                    
+                    <details>
+                        <summary><strong>Reference Answers</strong></summary>
+                        <ol>
+                            <li>underrepresented</li>
+                            <li>True</li>
+                            <li>Sample answer: Replacing "chairman" with "chair" challenges the notion that leadership positions are inherently male. It makes the language gender-neutral and more inclusive.</li>
+                            <li>A-2, B-3, C-1</li>
+                        </ol>
+                    </details>
+                </div>
+            </section>
+            
+        </main>
     </div>
-  </body>
+    
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
 </html>
