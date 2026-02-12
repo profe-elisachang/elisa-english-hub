@@ -66,6 +66,7 @@ async function scanLessons() {
         { filename: 'The Right Way to Motivate.html', date: '2026-02-03', title: '🤝 The Right Way to Motivate' },
         { filename: 'Child Privacy Suffers in the Age of Sharenting.html', date: '2026-02-10', title: '📱 Child Privacy Suffers in the Age of Sharenting' },
         { filename: 'Political-Correctness.html', date: '2026-02-12', title: '🗣️ Political Correctness: Social Progress or New Censorship?' },
+        { filename: 'Political-Correctness.html', date: '2026-02-12', title: '🗣️ Political Correctness: Social Progress' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
