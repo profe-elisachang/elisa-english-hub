@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Up with All Those Bricked-Up Windows in England? - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            background: #f5ebe0;
+            color: #2d1810;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Article Section */
+        .article-section {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+            border: 3px solid #c1875c;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.3;
+            border-bottom: 4px solid #d4a574;
+            padding-bottom: 1rem;
+        }
+
+        .article-content {
+            font-size: 1.3rem;
+            line-height: 1.9;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-bottom: 3px solid #d4711e;
+            border-radius: 3px;
+            cursor: help;
+            transition: all 0.3s ease;
+        }
+
+        .highlight:hover {
+            background: #ffd966;
+            transform: scale(1.05);
+        }
+
+        /* Vocabulary Box - After Each Paragraph */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+            border: 3px solid #c1875c;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem 0;
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .vocab-box h3 {
+            color: #8b4513;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid #d4a574;
+            padding-bottom: 0.5rem;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .vocab-item {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #d4a574;
+            transition: all 0.3s ease;
+        }
+
+        .vocab-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.25);
+            border-color: #8b4513;
+        }
+
+        .vocab-word {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .speak-btn {
+            background: #d4711e;
+            color: white;
+            border: none;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .speak-btn:hover {
+            background: #8b4513;
+            transform: scale(1.1);
+        }
+
+        .vocab-meaning {
+            font-size: 1.1rem;
+            color: #5d4037;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .vocab-spanish {
+            font-size: 1rem;
+            color: #d4711e;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .vocab-example {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+            border-left: 3px solid #d4a574;
+            padding-left: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Useful Expressions Section */
+        .expressions-section {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+            border: 3px solid #d4a574;
+        }
+
+        .expressions-section h2 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .expression-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 6px solid #d4711e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .expression-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .expression-english {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .expression-spanish {
+            font-size: 1.2rem;
+            color: #d4711e;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .expression-example {
+            font-size: 1.1rem;
+            color: #5d4037;
+            font-style: italic;
+            border-left: 3px solid #d4a574;
+            padding-left: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        /* Phrasal Verb Corner - NEW */
+        .phrasal-corner {
+            background: linear-gradient(135deg, #ffd966 0%, #ffb347 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            box-shadow: 0 8px 20px rgba(212, 113, 30, 0.3);
+            border: 4px solid #d4711e;
+        }
+
+        .phrasal-corner h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .phrasal-corner-subtitle {
+            text-align: center;
+            color: #5d4037;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .phrasal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .phrasal-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 3px solid #d4711e;
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .phrasal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(139, 69, 19, 0.35);
+        }
+
+        .phrasal-verb-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4711e;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phrasal-meaning {
+            font-size: 1.2rem;
+            color: #5d4037;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .phrasal-spanish {
+            font-size: 1.1rem;
+            color: #8b4513;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .phrasal-examples {
+            background: #fff8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #d4a574;
+        }
+
+        .phrasal-examples p {
+            font-size: 1.05rem;
+            color: #5d4037;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .phrasal-examples p:last-child {
+            margin-bottom: 0;
+        }
+
+        .practice-prompt {
+            background: #ffe8d6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 2px dashed #d4711e;
+        }
+
+        .practice-prompt strong {
+            color: #8b4513;
+            font-size: 1.1rem;
+        }
+
+        .practice-prompt p {
+            color: #5d4037;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Discussion Questions */
+        .discussion-section {
+            background: linear-gradient(135deg, #c1875c 0%, #a0785a 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+            border: 3px solid #8b4513;
+        }
+
+        .discussion-section h2 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .question-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 6px solid #8b4513;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .question-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .question-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4711e;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            color: #2d1810;
+            font-weight: 600;
+        }
+
+        /* Self-Practice Section */
+        .practice-section {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+            border: 3px solid #d4a574;
+        }
+
+        .practice-section h2 {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 3px solid #d4a574;
+            padding-bottom: 1rem;
+        }
+
+        .practice-item {
+            background: #fff8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 2px solid #d4a574;
+        }
+
+        .practice-question {
+            font-size: 1.3rem;
+            color: #2d1810;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-icon {
+            background: #d4711e;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .practice-answer {
+            display: none;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #8b4513;
+            font-size: 1.1rem;
+            color: #5d4037;
+            line-height: 1.8;
+        }
+
+        .practice-answer.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-content {
+                font-size: 1.1rem;
+            }
+
+            .vocab-grid, .phrasal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expressions-section h2,
+            .discussion-section h2,
+            .practice-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Useful Expressions Section -->
+        <section class="expressions-section">
+            <h2>🎯 Useful Expressions</h2>
+            
+            <div class="expression-item">
+                <div class="expression-english">What's up with...?</div>
+                <div class="expression-spanish">¿Qué pasa con...? / ¿Por qué...?</div>
+                <div class="expression-example">💬 Example: "What's up with all these canceled flights today?"</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">That dates back to...</div>
+                <div class="expression-spanish">Eso se remonta a... / Eso data de...</div>
+                <div class="expression-example">💬 Example: "Our company's policy dates back to the 1990s."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">To make up for (something)</div>
+                <div class="expression-spanish">Compensar (algo) / Recuperar</div>
+                <div class="expression-example">💬 Example: "We need to work overtime to make up for the delay."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">It led to unintended consequences</div>
+                <div class="expression-spanish">Condujo a consecuencias no previstas</div>
+                <div class="expression-example">💬 Example: "The new rule led to unintended consequences for small businesses."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">As awareness grew...</div>
+                <div class="expression-spanish">A medida que la conciencia creció...</div>
+                <div class="expression-example">💬 Example: "As awareness grew about safety issues, the company changed its procedures."</div>
+            </div>
+        </section>
+
+        <!-- Article Section -->
+        <section class="article-section">
+            <h1 class="article-title">🏛️ What's Up with All Those Bricked-Up Windows in England?</h1>
+            
+            <div class="article-content">
+                <p>Visitors walking down the streets of London and other major English cities might notice a <span class="highlight" title="curioso, extraño">curious</span> sight. Many of the old structures have some of their windows <span class="highlight" title="tapiar, cubrir con tablas">boarded up</span>. What's even stranger is that there doesn't appear to be any <span class="highlight" title="consistente, coherente">consistent</span> pattern as to which windows get covered.</p>
+
+                <!-- Vocabulary Box 1 -->
+                <div class="vocab-box">
+                    <h3>📚 Key Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                curious
+                                <button class="speak-btn" onclick="speakWord('curious')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">strange or unusual; causing interest</div>
+                            <div class="vocab-spanish">curioso, extraño</div>
+                            <div class="vocab-example">"It's curious that he never mentioned his previous job."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                board up
+                                <button class="speak-btn" onclick="speakWord('board up')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to cover with wooden boards</div>
+                            <div class="vocab-spanish">tapiar, cubrir con tablas</div>
+                            <div class="vocab-example">"The shop owner boarded up the windows before the storm."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                consistent
+                                <button class="speak-btn" onclick="speakWord('consistent')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">always following the same pattern; uniform</div>
+                            <div class="vocab-spanish">consistente, coherente</div>
+                            <div class="vocab-example">"Quality control requires consistent testing procedures."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>This architectural <span class="highlight" title="característica, aspecto">feature</span> <span class="highlight" title="se remonta a">dates back</span> over 300 years during a time when "coin <span class="highlight" title="recortar los bordes (de monedas)">clipping</span>" was a common <span class="highlight" title="crimen, delito">crime</span> in England. Back then, silver coins had simple designs with smooth, unmarked edges. Without any pattern <span class="highlight" title="extendiéndose">extending</span> to the coins' rims, it was difficult to tell if the edges had been <span class="highlight" title="afeitado, recortado">shaved off</span>. This made it easy for criminals to clip thin pieces of silver from around the edges of coins.</p>
+
+                <!-- Vocabulary Box 2 -->
+                <div class="vocab-box">
+                    <h3>📚 Key Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                feature
+                                <button class="speak-btn" onclick="speakWord('feature')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">a distinctive characteristic or aspect</div>
+                            <div class="vocab-spanish">característica, aspecto</div>
+                            <div class="vocab-example">"The new software has many useful features."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                date back
+                                <button class="speak-btn" onclick="speakWord('date back')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to have existed since a particular time in the past</div>
+                            <div class="vocab-spanish">remontarse a, datar de</div>
+                            <div class="vocab-example">"This tradition dates back to the 16th century."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                crime
+                                <button class="speak-btn" onclick="speakWord('crime')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">an illegal action</div>
+                            <div class="vocab-spanish">crimen, delito</div>
+                            <div class="vocab-example">"Identity theft is a serious crime."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                shave off
+                                <button class="speak-btn" onclick="speakWord('shave off')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to remove by cutting very thin pieces</div>
+                            <div class="vocab-spanish">afeitar, recortar, raspar</div>
+                            <div class="vocab-example">"They shaved off a few millimeters to make it fit."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Since the coins' value came from the <span class="highlight" title="peso">weight</span> of silver they contained, a clipped coin was worth less than a full one. This became a real <span class="highlight" title="problema financiero">financial</span> problem when taxes were paid with these lighter coins. The government <span class="highlight" title="terminó">ended up</span> receiving less <span class="highlight" title="ingresos, recaudación">revenue</span> than expected. To <span class="highlight" title="compensar">make up for</span> the loss, the government <span class="highlight" title="introdujo">introduced</span> a <span class="highlight" title="propiedad">property</span> tax based on the number of windows in a building.</p>
+
+                <!-- Vocabulary Box 3 -->
+                <div class="vocab-box">
+                    <h3>📚 Key Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                weight
+                                <button class="speak-btn" onclick="speakWord('weight')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">how heavy something is</div>
+                            <div class="vocab-spanish">peso</div>
+                            <div class="vocab-example">"Check the weight of the package before shipping."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                financial
+                                <button class="speak-btn" onclick="speakWord('financial')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">relating to money or finances</div>
+                            <div class="vocab-spanish">financiero</div>
+                            <div class="vocab-example">"We need to review our financial reports quarterly."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                end up
+                                <button class="speak-btn" onclick="speakWord('end up')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to finally be in a particular situation</div>
+                            <div class="vocab-spanish">terminar, acabar</div>
+                            <div class="vocab-example">"If we don't plan carefully, we'll end up over budget."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                revenue
+                                <button class="speak-btn" onclick="speakWord('revenue')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">income, especially of a company or government</div>
+                            <div class="vocab-spanish">ingresos, recaudación</div>
+                            <div class="vocab-example">"Our company's revenue increased by 15% this year."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                make up for
+                                <button class="speak-btn" onclick="speakWord('make up for')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to compensate for something; to do something good to balance something bad</div>
+                            <div class="vocab-spanish">compensar, recuperar</div>
+                            <div class="vocab-example">"We worked extra hours to make up for the production delay."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>However, the policy led to unintended <span class="highlight" title="consecuencias">consequences</span>. Many property owners <span class="highlight" title="pasaron, transfirieron">passed</span> the cost <span class="highlight" title="a">on to</span> the tenants through higher <span class="highlight" title="alquileres">rents</span>. To avoid paying even more, many landlords began <span class="highlight" title="sellando, tapiando">sealing</span> windows or building houses with fewer of them. As a result, working-class families, who could only <span class="highlight" title="permitirse">afford</span> to live in small, shared apartments, <span class="highlight" title="sufrieron">suffered from</span> a lack of fresh air and sunlight. Many <span class="highlight" title="cayeron enfermos">fell ill</span>, and diseases spread quickly through these buildings.</p>
+
+                <!-- Vocabulary Box 4 -->
+                <div class="vocab-box">
+                    <h3>📚 Key Vocabulary - Paragraph 4</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                consequences
+                                <button class="speak-btn" onclick="speakWord('consequences')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">results or effects of an action or decision</div>
+                            <div class="vocab-spanish">consecuencias</div>
+                            <div class="vocab-example">"Every decision has consequences that we must consider."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                pass on
+                                <button class="speak-btn" onclick="speakWord('pass on')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to transfer or give something to someone else</div>
+                            <div class="vocab-spanish">transferir, traspasar</div>
+                            <div class="vocab-example">"The supplier passed the cost increase on to retailers."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                rents
+                                <button class="speak-btn" onclick="speakWord('rents')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">money paid regularly for the use of property</div>
+                            <div class="vocab-spanish">alquileres, rentas</div>
+                            <div class="vocab-example">"Office rents in the city center are very high."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                afford
+                                <button class="speak-btn" onclick="speakWord('afford')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to have enough money to pay for something</div>
+                            <div class="vocab-spanish">permitirse, costear</div>
+                            <div class="vocab-example">"Can we afford to upgrade our equipment this year?"</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                suffer from
+                                <button class="speak-btn" onclick="speakWord('suffer from')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">to experience pain or difficulty because of something</div>
+                            <div class="vocab-spanish">sufrir de, padecer</div>
+                            <div class="vocab-example">"The production line suffered from frequent breakdowns."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                fell ill
+                                <button class="speak-btn" onclick="speakWord('fell ill')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">became sick</div>
+                            <div class="vocab-spanish">cayeron enfermos, se enfermaron</div>
+                            <div class="vocab-example">"Several workers fell ill after exposure to chemicals."</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>As <span class="highlight" title="conciencia, conocimiento">awareness</span> grew about the link between poor housing conditions and the health dangers, public <span class="highlight" title="llamados, demandas">calls</span> to end the tax became louder. Finally, in 1851, the window tax was removed, and people in England were allowed to see the light again.</p>
+
+                <!-- Vocabulary Box 5 -->
+                <div class="vocab-box">
+                    <h3>📚 Key Vocabulary - Paragraph 5</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                awareness
+                                <button class="speak-btn" onclick="speakWord('awareness')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">knowledge or understanding of a situation or subject</div>
+                            <div class="vocab-spanish">conciencia, conocimiento</div>
+                            <div class="vocab-example">"We need to increase safety awareness among all employees."</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word">
+                                calls
+                                <button class="speak-btn" onclick="speakWord('calls')">🔊</button>
+                            </div>
+                            <div class="vocab-meaning">demands or requests (in this context)</div>
+                            <div class="vocab-spanish">llamados, demandas, peticiones</div>
+                            <div class="vocab-example">"There are growing calls for better working conditions."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phrasal Verb Corner - NEW SECTION -->
+        <section class="phrasal-corner">
+            <h2>💡 Phrasal Verb Corner - Practice Time!</h2>
+            <p class="phrasal-corner-subtitle">Master these super useful phrasal verbs from the story</p>
+            
+            <div class="phrasal-grid">
+                <div class="phrasal-card">
+                    <div class="phrasal-verb-title">
+                        board up
+                        <button class="speak-btn" onclick="speakWord('board up')">🔊</button>
+                    </div>
+                    <div class="phrasal-meaning">to cover with wooden boards (for protection)</div>
+                    <div class="phrasal-spanish">tapiar, cubrir con tablas</div>
+                    <div class="phrasal-examples">
+                        <p>✅ "The shop was boarded up after the fire."</p>
+                        <p>✅ "They boarded up the warehouse before the typhoon."</p>
+                    </div>
+                    <div class="practice-prompt">
+                        <strong>🗣️ Your turn!</strong>
+                        <p>When would you need to board up a building in Taiwan?</p>
+                    </div>
+                </div>
+
+                <div class="phrasal-card">
+                    <div class="phrasal-verb-title">
+                        date back (to)
+                        <button class="speak-btn" onclick="speakWord('date back')">🔊</button>
+                    </div>
+                    <div class="phrasal-meaning">to have existed since a time in the past</div>
+                    <div class="phrasal-spanish">remontarse a, datar de</div>
+                    <div class="phrasal-examples">
+                        <p>✅ "Our factory dates back to 1985."</p>
+                        <p>✅ "This quality control system dates back to the company's founding."</p>
+                    </div>
+                    <div class="practice-prompt">
+                        <strong>🗣️ Your turn!</strong>
+                        <p>What in your company dates back to when it first started?</p>
+                    </div>
+                </div>
+
+                <div class="phrasal-card">
+                    <div class="phrasal-verb-title">
+                        end up
+                        <button class="speak-btn" onclick="speakWord('end up')">🔊</button>
+                    </div>
+                    <div class="phrasal-meaning">to finally be in a particular situation (often unexpected)</div>
+                    <div class="phrasal-spanish">terminar, acabar</div>
+                    <div class="phrasal-examples">
+                        <p>✅ "We ended up working late to finish the shipment."</p>
+                        <p>✅ "If we don't check carefully, we'll end up with defects."</p>
+                    </div>
+                    <div class="practice-prompt">
+                        <strong>🗣️ Your turn!</strong>
+                        <p>Describe a time when you ended up doing something unexpected at work.</p>
+                    </div>
+                </div>
+
+                <div class="phrasal-card">
+                    <div class="phrasal-verb-title">
+                        make up for
+                        <button class="speak-btn" onclick="speakWord('make up for')">🔊</button>
+                    </div>
+                    <div class="phrasal-meaning">to compensate for something; to do something good to balance something bad</div>
+                    <div class="phrasal-spanish">compensar, recuperar</div>
+                    <div class="phrasal-examples">
+                        <p>✅ "How can we make up for the delivery delay?"</p>
+                        <p>✅ "They offered a discount to make up for the damaged goods."</p>
+                    </div>
+                    <div class="practice-prompt">
+                        <strong>🗣️ Your turn!</strong>
+                        <p>How do you make up for mistakes in your work?</p>
+                    </div>
+                </div>
+
+                <div class="phrasal-card">
+                    <div class="phrasal-verb-title">
+                        pass on
+                        <button class="speak-btn" onclick="speakWord('pass on')">🔊</button>
+                    </div>
+                    <div class="phrasal-meaning">to transfer or give something to someone else</div>
+                    <div class="phrasal-spanish">transferir, traspasar, pasar</div>
+                    <div class="phrasal-examples">
+                        <p>✅ "We can't pass these costs on to customers."</p>
+                        <p>✅ "Please pass this information on to your team."</p>
+                    </div>
+                    <div class="practice-prompt">
+                        <strong>🗣️ Your turn!</strong>
+                        <p>What information do you regularly pass on to your colleagues?</p>
+                    </div>
+                </div>
+
+                <div class="phrasal-card">
+                    <div class="phrasal-verb-title">
+                        suffer from
+                        <button class="speak-btn" onclick="speakWord('suffer from')">🔊</button>
+                    </div>
+                    <div class="phrasal-meaning">to experience pain or difficulty because of something</div>
+                    <div class="phrasal-spanish">sufrir de, padecer</div>
+                    <div class="phrasal-examples">
+                        <p>✅ "Our production line suffers from equipment breakdowns."</p>
+                        <p>✅ "The team suffers from poor communication."</p>
+                    </div>
+                    <div class="practice-prompt">
+                        <strong>🗣️ Your turn!</strong>
+                        <p>What problems does your department suffer from?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discussion Questions -->
+        <section class="discussion-section">
+            <h2>💬 Discussion Questions</h2>
+            
+            <div class="question-item">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">Does your country have any unusual or strange taxes that affect daily life? How do people react to them?</div>
+            </div>
+
+            <div class="question-item">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Have you ever heard of a government policy or company rule that had unexpected negative consequences? What happened?</div>
+            </div>
+
+            <div class="question-item">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">If you could invent a "funny tax" (not serious, just for fun), what would it be and why? For example: a tax on people who talk too loudly on their phones!</div>
+            </div>
+        </section>
+
+        <!-- Self-Practice Section -->
+        <section class="practice-section">
+            <h2>✍️ Self-Practice Questions</h2>
+            
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer('answer1')">
+                    <span class="toggle-icon" id="icon1">+</span>
+                    <span>Why did the English government create the window tax?</span>
+                </div>
+                <div class="practice-answer" id="answer1">
+                    The government created the window tax to make up for the revenue they lost because of "coin clipping." Criminals were shaving off pieces of silver from coins, making them lighter and worth less. When people paid taxes with these clipped coins, the government received less money than expected. To compensate for this financial loss, they introduced a property tax based on the number of windows in a building.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer('answer2')">
+                    <span class="toggle-icon" id="icon2">+</span>
+                    <span>What were the unintended consequences of the window tax?</span>
+                </div>
+                <div class="practice-answer" id="answer2">
+                    The window tax had several negative consequences that the government didn't expect. Property owners passed the cost on to tenants through higher rents. Many landlords began sealing up windows or building houses with fewer windows to avoid paying more tax. This meant that working-class families, who lived in small apartments, suffered from a lack of fresh air and sunlight. As a result, many people fell ill and diseases spread quickly through these buildings.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer('answer3')">
+                    <span class="toggle-icon" id="icon3">+</span>
+                    <span>Can you think of a modern example where a well-intended policy led to unexpected problems?</span>
+                </div>
+                <div class="practice-answer" id="answer3">
+                    <strong>Example answer (you can create your own!):</strong><br>
+                    In some cities, rent control policies were created to help people afford housing. However, this sometimes led landlords to stop maintaining their properties or stop building new rental units because they couldn't make enough profit. As a result, the housing quality decreased and there were fewer apartments available, which made the problem worse for some people looking for housing.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer('answer4')">
+                    <span class="toggle-icon" id="icon4">+</span>
+                    <span>Practice using the phrasal verb "end up": Describe what happened when you didn't plan something carefully at work.</span>
+                </div>
+                <div class="practice-answer" id="answer4">
+                    <strong>Example answer (create your own!):</strong><br>
+                    "Last month, we didn't plan our inventory carefully. We ended up running out of important materials and had to stop production for two days. Now we always check our stock levels at the end of each week to make sure we don't end up in that situation again."
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Text-to-Speech Function
+        function speakWord(word) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('Sorry, your browser does not support text-to-speech.');
+            }
+        }
+
+        // Toggle Answer Function
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            const iconId = answerId.replace('answer', 'icon');
+            const icon = document.getElementById(iconId);
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('show');
+                icon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>

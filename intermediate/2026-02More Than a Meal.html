@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Than a Meal: How You Eat Matters - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+            color: #2c1810;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Useful Expressions Section */
+        .expressions-section {
+            background: #ff7043;
+            border: 4px solid #d84315;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(216, 67, 21, 0.3);
+        }
+
+        .expressions-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .expression-item {
+            background: white;
+            border-left: 6px solid #ff9800;
+            padding: 1.5rem;
+            margin: 1.2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .expression-english {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #d84315;
+            margin-bottom: 0.5rem;
+        }
+
+        .expression-spanish {
+            font-size: 1.2rem;
+            color: #5d4037;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .expression-example {
+            font-size: 1.1rem;
+            color: #424242;
+            padding-left: 1.5rem;
+            border-left: 3px solid #ffb74d;
+        }
+
+        /* Article Section */
+        .article-section {
+            background: white;
+            border: 5px solid #ff5722;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.2);
+        }
+
+        .article-section h2 {
+            color: #d84315;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 4px solid #ff9800;
+            padding-bottom: 1rem;
+        }
+
+        .article-content {
+            font-size: 1.3rem;
+            color: #2c1810;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: #fff3e0;
+            font-weight: 700;
+            border-bottom: 3px solid #ff9800;
+            padding: 2px 4px;
+            cursor: help;
+            transition: all 0.3s ease;
+        }
+
+        .highlight:hover {
+            background: #ffe0b2;
+            border-bottom-color: #f57c00;
+        }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #ffccbc 0%, #ffab91 100%);
+            border: 4px solid #ff5722;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3);
+        }
+
+        .vocab-box h3 {
+            color: #bf360c;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .vocab-item {
+            background: white;
+            border: 3px solid #ff7043;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d84315;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .speak-btn {
+            background: #ff9800;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .speak-btn:hover {
+            background: #f57c00;
+            transform: scale(1.1);
+        }
+
+        .vocab-explanation {
+            font-size: 1.1rem;
+            color: #424242;
+            margin-bottom: 0.5rem;
+        }
+
+        .vocab-spanish {
+            font-size: 1.05rem;
+            color: #6d4c41;
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+
+        .vocab-example {
+            font-size: 1rem;
+            color: #5d4037;
+            padding: 0.8rem;
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            border-radius: 8px;
+        }
+
+        /* Discussion Questions */
+        .discussion-section {
+            background: #ffab91;
+            border: 4px solid #f4511e;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(244, 81, 30, 0.3);
+        }
+
+        .discussion-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .question-item {
+            background: white;
+            border-left: 6px solid #ff5722;
+            padding: 1.5rem;
+            margin: 1.2rem 0;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            color: #2c1810;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-weight: 600;
+        }
+
+        /* Self-Practice Section */
+        .practice-section {
+            background: #ff8a65;
+            border: 4px solid #e64a19;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(230, 74, 25, 0.3);
+        }
+
+        .practice-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .practice-item {
+            background: white;
+            border: 3px solid #ff5722;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .practice-question {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #d84315;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-icon {
+            background: #ff9800;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .practice-answer {
+            display: none;
+            font-size: 1.15rem;
+            color: #424242;
+            padding: 1.2rem;
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .practice-answer.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .expressions-section h2,
+            .discussion-section h2,
+            .practice-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .article-section h2 {
+                font-size: 2rem;
+            }
+
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expression-english {
+                font-size: 1.2rem;
+            }
+
+            .expression-spanish {
+                font-size: 1.05rem;
+            }
+
+            .expression-example {
+                font-size: 1rem;
+            }
+
+            .article-content {
+                font-size: 1.1rem;
+            }
+
+            .question-item {
+                font-size: 1.15rem;
+            }
+
+            .practice-question {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Useful Expressions -->
+        <section class="expressions-section">
+            <h2>💬 Useful Expressions</h2>
+            
+            <div class="expression-item">
+                <div class="expression-english">Catch up on something</div>
+                <div class="expression-spanish">Ponerse al día con algo</div>
+                <div class="expression-example">"Let's meet for coffee and <strong>catch up on</strong> each other's news."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">Set aside</div>
+                <div class="expression-spanish">Dejar a un lado, apartar</div>
+                <div class="expression-example">"We need to <strong>set aside</strong> our phones during dinner to really connect."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">Place emphasis on something</div>
+                <div class="expression-spanish">Poner énfasis en algo, dar importancia a</div>
+                <div class="expression-example">"The company <strong>places emphasis on</strong> teamwork and collaboration."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">Shift away from</div>
+                <div class="expression-spanish">Alejarse de, cambiar desde</div>
+                <div class="expression-example">"Many companies are <strong>shifting away from</strong> traditional office work to remote positions."</div>
+            </div>
+
+            <div class="expression-item">
+                <div class="expression-english">Recharge and reduce stress</div>
+                <div class="expression-spanish">Recargarse y reducir el estrés</div>
+                <div class="expression-example">"Taking short breaks helps me <strong>recharge and reduce stress</strong> during busy workdays."</div>
+            </div>
+        </section>
+
+        <!-- Article with Highlighted Vocabulary -->
+        <section class="article-section">
+            <h2>🍽️ More Than a Meal: How You Eat Matters</h2>
+            
+            <div class="article-content">
+                <p>When I was growing up, my family shared a home-cooked dinner every night. We'd <span class="highlight" title="ponerse al día">catch up on</span> each other's days and make plans. <span class="highlight" title="apenas, raramente">Scarcely</span> a dinner went by without a guest joining us, adding to the fun. I now prioritize dinnertime with my own family. Setting cellphones <span class="highlight" title="a un lado">aside</span>, we strengthen our connection over a meal.</p>
+            </div>
+        </section>
+
+        <!-- Vocabulary Box 1 -->
+        <section class="vocab-box">
+            <h3>📖 Key Vocabulary - Part 1</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Catch up on
+                        <button class="speak-btn" onclick="speakWord('catch up on')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To learn the latest news or do something you haven't had time to do</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Ponerse al día</div>
+                    <div class="vocab-example">"I need to catch up on my emails after vacation."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Scarcely
+                        <button class="speak-btn" onclick="speakWord('scarcely')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Hardly, barely, only just</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Apenas, raramente</div>
+                    <div class="vocab-example">"She had scarcely finished speaking when the phone rang."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Set aside
+                        <button class="speak-btn" onclick="speakWord('set aside')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To save for a particular purpose; to put something to one side</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Dejar a un lado, apartar</div>
+                    <div class="vocab-example">"Let's set aside our differences and work together."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Disorders
+                        <button class="speak-btn" onclick="speakWord('disorders')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Illnesses or conditions that disrupt normal functioning</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Trastornos</div>
+                    <div class="vocab-example">"Eating disorders affect millions of people worldwide."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Section - Paragraph 2 -->
+        <section class="article-section">
+            <div class="article-content">
+                <p>Studies <span class="highlight" title="confirmar">confirm</span> that shared family meals have physical and emotional benefits for children and youth. It reduces unhealthy eating habits, eating <span class="highlight" title="trastornos">disorders</span>, substance use and depression. The benefits of <span class="highlight" title="comunal">communal</span> eating aren't just <span class="highlight" title="confinado, limitado">confined</span> to family meals. A University of Oxford study found that people who <span class="highlight" title="poner énfasis">place an emphasis</span> on eating with others tend to feel happier and less alone. They feel better connected to their community and experience greater life satisfaction than those who usually eat alone.</p>
+            </div>
+        </section>
+
+        <!-- Vocabulary Box 2 -->
+        <section class="vocab-box">
+            <h3>📖 Key Vocabulary - Part 2</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Communal
+                        <button class="speak-btn" onclick="speakWord('communal')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Shared by a group of people</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Comunal</div>
+                    <div class="vocab-example">"The apartment building has a communal garden."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Confined
+                        <button class="speak-btn" onclick="speakWord('confined')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Limited to a particular place, time, or group</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Confinado, limitado</div>
+                    <div class="vocab-example">"The problem is not confined to one department."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Place emphasis on
+                        <button class="speak-btn" onclick="speakWord('place emphasis on')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To give special importance or attention to something</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Poner énfasis en</div>
+                    <div class="vocab-example">"Our school places emphasis on critical thinking skills."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Shift away from
+                        <button class="speak-btn" onclick="speakWord('shift away from')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To move or change from one thing to another</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Alejarse de, cambiar desde</div>
+                    <div class="vocab-example">"The industry is shifting away from fossil fuels."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Section - Paragraph 3 -->
+        <section class="article-section">
+            <div class="article-content">
+                <p>Yet, modern culture has <span class="highlight" title="cambiar lejos de">shifted away from</span> communal meals and toward eating alone as people move farther from home, live alone and work at jobs with <span class="highlight" title="variados">varying</span> hours. According to Psychology Today, Americans are eating nearly half of their meals alone! East Asian countries like Japan and Korea are also experiencing this <span class="highlight" title="tendencia">trend</span> toward eating solo.</p>
+            </div>
+        </section>
+
+        <!-- Vocabulary Box 3 -->
+        <section class="vocab-box">
+            <h3>📖 Key Vocabulary - Part 3</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Varying
+                        <button class="speak-btn" onclick="speakWord('varying')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Different, not the same; changing</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Variados, diversos</div>
+                    <div class="vocab-example">"Team members have varying levels of experience."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Trend
+                        <button class="speak-btn" onclick="speakWord('trend')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">A general direction in which something is developing or changing</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Tendencia</div>
+                    <div class="vocab-example">"Remote work is a growing trend in many industries."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Aspects
+                        <button class="speak-btn" onclick="speakWord('aspects')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Particular parts or features of something</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Aspectos</div>
+                    <div class="vocab-example">"We need to consider all aspects of the project."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Recharge
+                        <button class="speak-btn" onclick="speakWord('recharge')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To restore energy; to rest and recover</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Recargar(se)</div>
+                    <div class="vocab-example">"I need to recharge my batteries after this busy week."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Section - Paragraph 4 -->
+        <section class="article-section">
+            <div class="article-content">
+                <p>Does this mean there are no benefits to solo dining? Not at all! While communal dining has health benefits, there are positive <span class="highlight" title="aspectos">aspects</span> to eating alone as well. For some, eating alone helps them <span class="highlight" title="recargar">recharge</span> and reduce stress after being in a socially <span class="highlight" title="exigente">demanding</span> environment all day. There is also more personal choice and independence when eating alone with no need to consider others' food needs or preferences.</p>
+            </div>
+        </section>
+
+        <!-- Vocabulary Box 4 -->
+        <section class="vocab-box">
+            <h3>📖 Key Vocabulary - Part 4</h3>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Demanding
+                        <button class="speak-btn" onclick="speakWord('demanding')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Requiring much time, effort, or attention</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Exigente</div>
+                    <div class="vocab-example">"Her job is very demanding and requires long hours."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Capturing
+                        <button class="speak-btn" onclick="speakWord('capturing')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Taking hold of; attracting and holding attention</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Capturando, atrapando</div>
+                    <div class="vocab-example">"The documentary is great at capturing the spirit of the era."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Textures
+                        <button class="speak-btn" onclick="speakWord('textures')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">The feel, appearance, or consistency of a surface or substance</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Texturas</div>
+                    <div class="vocab-example">"This dish has interesting textures - crunchy, smooth, and creamy."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Distract
+                        <button class="speak-btn" onclick="speakWord('distract')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To prevent someone from concentrating on something</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Distraer</div>
+                    <div class="vocab-example">"Please don't distract me while I'm working."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Spark
+                        <button class="speak-btn" onclick="speakWord('spark')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">To cause something to start or develop</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Generar, chispa</div>
+                    <div class="vocab-example">"The meeting sparked an interesting discussion about innovation."</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        Apparent
+                        <button class="speak-btn" onclick="speakWord('apparent')">🔊</button>
+                    </div>
+                    <div class="vocab-explanation">Clearly visible or understood; obvious</div>
+                    <div class="vocab-spanish"><strong>Spanish:</strong> Aparente, evidente</div>
+                    <div class="vocab-example">"It became apparent that we needed more time to finish."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Section - Remaining Paragraphs -->
+        <section class="article-section">
+            <div class="article-content">
+                <p>To get the full benefits of eating alone, distractions must be <span class="highlight" title="dejadas a un lado">set aside</span>. Without conversation or digital screens <span class="highlight" title="capturando">capturing</span> your attention, the flavors, smells and <span class="highlight" title="texturas">textures</span> of the food become more enjoyable. Quiet moments of eating with nothing else to <span class="highlight" title="distraer">distract</span> you can also <span class="highlight" title="chispa, generar">spark</span> creativity. Rarely does a good idea become <span class="highlight" title="aparente, evidente">apparent</span> to a person without the brain having the time and freedom to wander. Quietly eating a meal is an opportunity for this.</p>
+
+                <p>Eating with others and dining alone both have value. Shared meals build connection, while solo meals offer space to recharge. The key is being present. So, the next time you sit down to eat, turn off your screen, slow down and enjoy the moment — whether you're with other people or on your own.</p>
+            </div>
+        </section>
+
+        <!-- Discussion Questions -->
+        <section class="discussion-section">
+            <h2>💭 Discussion Questions</h2>
+            
+            <div class="question-item">
+                1. Do you prefer to eat with others or alone? Why? How does each experience make you feel?
+            </div>
+
+            <div class="question-item">
+                2. Are you surprised by the benefits of eating with others? Can you share a memorable meal you had with family or friends?
+            </div>
+
+            <div class="question-item">
+                3. In your culture, how important are shared meals? Has this tradition changed over time?
+            </div>
+        </section>
+
+        <!-- Self-Practice Questions -->
+        <section class="practice-section">
+            <h2>✍️ Self-Practice Questions</h2>
+            
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span class="toggle-icon">+</span>
+                    1. What does "catch up on" mean? Can you use it in a sentence about your work?
+                </div>
+                <div class="practice-answer">
+                    <strong>Answer:</strong> "Catch up on" means to learn the latest news or do something you haven't had time to do. <br><br>
+                    <strong>Example:</strong> "After my vacation, I need to catch up on all the orders that came in while I was away."<br><br>
+                    <strong>Work context:</strong> "Let me catch up on the meeting notes before we start the discussion."
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span class="toggle-icon">+</span>
+                    2. According to the article, what are TWO benefits of eating alone?
+                </div>
+                <div class="practice-answer">
+                    <strong>Answer:</strong> The article mentions several benefits:<br><br>
+                    1. <strong>Helps recharge and reduce stress</strong> - especially after being in a socially demanding environment all day<br><br>
+                    2. <strong>More personal choice and independence</strong> - no need to consider others' food needs or preferences<br><br>
+                    3. <strong>Better appreciation of food</strong> - without distractions, you can enjoy flavors, smells, and textures more<br><br>
+                    4. <strong>Sparks creativity</strong> - quiet moments allow your brain time to wander and generate ideas
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span class="toggle-icon">+</span>
+                    3. How has modern culture "shifted away from" communal meals? Give examples from the article.
+                </div>
+                <div class="practice-answer">
+                    <strong>Answer:</strong> Modern culture has shifted away from communal meals because:<br><br>
+                    • People <strong>move farther from home</strong> (away from family)<br>
+                    • Many people <strong>live alone</strong><br>
+                    • Jobs have <strong>varying hours</strong> (not everyone eats at the same time)<br><br>
+                    <strong>Result:</strong> Americans eat nearly half their meals alone, and this trend is also happening in East Asian countries like Japan and Korea.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span class="toggle-icon">+</span>
+                    4. What is the main message of the article? Do you agree with it?
+                </div>
+                <div class="practice-answer">
+                    <strong>Main message:</strong> Both eating with others and eating alone have value. The key is being present and mindful - turning off screens and enjoying the moment, whether you're with people or alone.<br><br>
+                    <strong>Key takeaway:</strong> Shared meals build connection, while solo meals offer space to recharge. Both are important for different reasons.<br><br>
+                    <strong>Personal reflection:</strong> Think about your own eating habits. Do you take time to be present during meals, or are you usually distracted by your phone or TV?
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            
+            answer.classList.toggle('show');
+            icon.textContent = answer.classList.contains('show') ? '−' : '+';
+        }
+    </script>
+</body>
+</html>

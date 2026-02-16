@@ -68,9 +68,13 @@ async function scanLessons() {
         { filename: 'Mindfulness.html', date: '2026-02-11', title: '🧘 Mindfulness: Failing to Make the Grade in Schools' },
         { filename: 'McDonald.html', date: '2026-02-13', title: '🤡 The Disappearance of Ronald McDonald' },
         { date: '2026-02-02', title: 'Flexible Adjustment Holiday:Día de la Constitución Mexicana - No Class', isHoliday: true },
-        { filename: 'Pen Caps.html', date: '2026-02-13', title: '🖊️ The Life-Saving Secret behind the Hole in Pen Caps' },
-   
-// 👆 在此上方添加新文章，記得加逗號！
+        { filename: 'Pen Caps.html', date: '2026-02-16', title: '🖊️ The Life-Saving Secret behind the Hole in Pen Caps' },
+        { filename: 'Mindfulness.html', date: '2026-02-16', title: '🧘 Mindfulness: Failing to Make the Grade in Schools' },
+        { filename: '2026-02More Than a Meal.html', date: '2026-02-18', title: '🍽️ More Than a Meal: How You Eat Matters' },
+        { filename: '2026-02Bricked-Up Windows in England.html', date: '2026-02-18', title: '🏛️ What\'s Up with All Those Bricked-Up Windows in England?' },
+        { filename: '2026-02Bricked-Up Windows in England.html', date: '2026-02-20', title: '🏺 The Beauty of Broken Things' }, 
+        
+        // 👆 在此上方添加新文章，記得加逗號！  
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
     ];
@@ -161,7 +165,7 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, 'text/html');
 
-    // 優先使用 potentialFiles 中提供的標題
+    // 優先使用 potentialFiles 中提供的標題，但如果沒有提供則自動從 HTML 提取
     let titleText, emoji, cleanTitle;
     
     if (specifiedTitle) {
@@ -170,27 +174,61 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
         emoji = specifiedEmoji || '';
         cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
     } else {
-        // 從 HTML 提取標題（fallback）
-        let h1 = doc.querySelector('.container h1, .main-content h1, main h1, [class*="container"] h1');
+        // 從 HTML 自動提取標題（多種選擇器策略）
+        let h1 = null;
+        
+        // 策略 1: 優先尋找文章標題（最常見的結構）
+        h1 = doc.querySelector('.article-title, .article-section h1, section.article-section h1');
+        
+        // 策略 2: 尋找容器內的 h1（排除 header）
+        if (!h1) {
+            h1 = doc.querySelector('.container h1:not(header h1), .main-content h1:not(header h1), main h1:not(header h1)');
+        }
+        
+        // 策略 3: 尋找所有 h1，排除 header 中的
         if (!h1) {
             const allH1s = doc.querySelectorAll('h1');
+            const headerH1 = doc.querySelector('header h1');
+            
             if (allH1s.length > 1) {
-                h1 = allH1s[1]; // Get the second h1 (article title)
+                // 有多個 h1，找第一個不在 header 中的
+                for (let i = 0; i < allH1s.length; i++) {
+                    if (!headerH1 || allH1s[i] !== headerH1) {
+                        h1 = allH1s[i];
+                        break;
+                    }
+                }
+                // 如果還是沒找到，使用第二個（通常是文章標題）
+                if (!h1 && allH1s.length > 1) {
+                    h1 = allH1s[1];
+                }
             } else if (allH1s.length === 1) {
-                const headerH1 = doc.querySelector('header h1');
-                if (headerH1 && headerH1 === allH1s[0]) {
-                    h1 = doc.querySelector('h1:not(header h1)') || doc.querySelector('.section h1') || null;
-                } else {
+                // 只有一個 h1，檢查是否在 header 中
+                if (!headerH1 || allH1s[0] !== headerH1) {
                     h1 = allH1s[0];
+                } else {
+                    // 在 header 中，嘗試找其他標題元素
+                    h1 = doc.querySelector('h2.article-title, .article-section h2, section h2') || null;
                 }
             }
         }
-        if (!h1) return null;
+        
+        // 策略 4: 如果還是找不到，嘗試找任何 section 中的 h1
+        if (!h1) {
+            h1 = doc.querySelector('section h1, article h1');
+        }
+        
+        if (!h1) {
+            console.warn(`無法從 ${filename} 中提取標題`);
+            return null;
+        }
 
         titleText = h1.textContent.trim();
         const emojiMatch = titleText.match(/[\p{Emoji}]/u);
         emoji = emojiMatch ? emojiMatch[0] : '';
         cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+        
+        console.log(`✅ 自動提取標題: ${titleText} (來自 ${filename})`);
     }
 
     // 日期提取優先順序：
@@ -556,5 +594,7 @@ window.debugLessons = () => {
         filename: l.filename
     })));
 };
+
+
 
 

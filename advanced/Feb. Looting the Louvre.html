@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looting the Louvre - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f1e8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* FLOATING VIDEO PLAYER */
+        .video-container {
+            position: sticky;
+            top: 100px;
+            float: right;
+            width: 380px;
+            margin: 0 0 20px 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            z-index: 100;
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-caption {
+            padding: 12px 15px;
+            background: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 1024px) {
+            .video-container {
+                float: none;
+                width: 100%;
+                margin: 0 0 30px 0;
+                position: relative;
+            }
+        }
+        
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+        
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+        
+        /* BILINGUAL LAYOUT */
+        .bilingual-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .bilingual-section .column {
+            padding: 0 15px;
+        }
+        
+        .bilingual-section .column:first-child {
+            border-right: 2px solid #d4a574;
+        }
+        
+        .bilingual-section h4 {
+            color: #d4a574;
+            margin-top: 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            .bilingual-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .bilingual-section .column:first-child {
+                border-right: none;
+                border-bottom: 2px solid #d4a574;
+                padding-bottom: 20px;
+            }
+        }
+        
+        /* VOCABULARY BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #d4a574;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .vocabulary-section h3 {
+            color: #d4a574;
+            margin-top: 0;
+        }
+        
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .vocab-word {
+            color: #d4a574;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .vocab-pronunciation {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+        
+        .vocab-explanation {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        
+        .vocab-spanish {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* CONTENT SECTIONS */
+        .content-section {
+            background: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .content-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #d4a574;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .expression-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #d4a574;
+            border-radius: 4px;
+        }
+        
+        .expression-en {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .expression-es {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .expression-example {
+            color: #555;
+            padding-left: 15px;
+            border-left: 2px solid #4A90E2;
+            margin-top: 8px;
+        }
+        
+        /* DISCUSSION & PRACTICE */
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-section ul li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #d4a574;
+            border-radius: 4px;
+        }
+        
+        .content-section ul li::before {
+            content: "💬 ";
+            margin-right: 8px;
+        }
+        
+        details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 6px;
+        }
+        
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px;
+        }
+        
+        details summary:hover {
+            color: #d4a574;
+        }
+        
+        /* MOBILE NOTE */
+        .mobile-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>  
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <main class="main-content">
+            
+            <!-- ARTICLE TITLE -->
+            <div class="content-section">
+                <h1 style="color: #2c3e50; font-size: 2.5rem; margin-bottom: 10px;">
+                    🏛️ Looting the Louvre
+                </h1>
+                <p style="color: #666; font-size: 1.1rem; font-style: italic;">
+                    The Famous Parisian Museum Suffers a Major Break-In
+                </p>
+                <p style="color: #999; font-size: 0.95rem; margin-top: 15px;">
+                    <strong>Date:</strong> October 19, 2025 | <strong>Location:</strong> Galerie d'Apollon, Louvre Museum, Paris
+                </p>
+            </div>
+            
+            <!-- FLOATING VIDEO PLAYER -->
+            <div class="video-container">
+                <video controls>
+                    <source src="https://storage.liveabc.com/qrcode/1cb8f20c-dc65-41d0-976e-e6e9eee028f8/mi4c65cc/%E6%B3%95%E5%9C%8B%E7%BE%85%E6%B5%AE%E5%AE%AE%E4%B8%96%E7%B4%80%E9%A9%9A%E5%A4%A9%E7%AB%8A%E6%A1%88/3.+Louvre+Theft.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">
+                    📺 CNN News Report (3:49)
+                </div>
+            </div>
+            
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="content-section">
+                <h2>💼 Useful Expressions</h2>
+                
+                <div class="expression-item">
+                    <div class="expression-en">broke into</div>
+                    <div class="expression-es">irrumpir en / entrar por la fuerza</div>
+                    <div class="expression-example">The thieves broke into the museum through an upstairs window.</div>
+                </div>
+                
+                <div class="expression-item">
+                    <div class="expression-en">for the sake of</div>
+                    <div class="expression-es">por el bien de / en aras de</div>
+                    <div class="expression-example">They stole these cultural treasures for the sake of profit, not art.</div>
+                </div>
+                
+                <div class="expression-item">
+                    <div class="expression-en">go down</div>
+                    <div class="expression-es">ocurrir / llevarse a cabo</div>
+                    <div class="expression-example">How typical is it for a heist to go down in seven minutes?</div>
+                </div>
+                
+                <div class="expression-item">
+                    <div class="expression-en">make the news</div>
+                    <div class="expression-es">aparecer en las noticias / ser noticia</div>
+                    <div class="expression-example">Art thefts from private homes rarely make the news.</div>
+                </div>
+            </div>
+            
+            <!-- SECTION 2: CASE INTRODUCTION (BILINGUAL) -->
+            <div class="content-section">
+                <h2>📰 Case Introduction</h2>
+                
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            Investigators are now searching for the thieves who <span class="highlight" title="irrumpir en">broke into</span> the Louvre during a <span class="highlight" title="impresionante">stunning</span> robbery just minutes after the museum opened for the day. Police say the thieves used a truck lift to break into an upstairs window in just seven minutes. They <span class="highlight" title="escaparon">escaped</span> on motorcycles with rare, historic jewelry.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Los investigadores ahora están buscando a los ladrones que irrumpieron en el Louvre durante un robo impresionante solo minutos después de que el museo abriera sus puertas ese día. La policía dice que los ladrones usaron una plataforma elevadora de camión para romper una ventana del piso superior en solo siete minutos. Escaparon en motocicletas con joyas históricas raras.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mobile-note">
+                    *(On mobile: Tap and hold highlighted words to see Spanish translation)*
+                </div>
+            </div>
+            
+            <!-- VOCABULARY BOX - INTRODUCTION -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary - Introduction</h3>
+                <div class="vocab-container">
+                    
+                    <div class="vocab-item">
+                        <div style="margin-bottom: 10px;">
+                            <span class="vocab-word">broke into</span>
+                            <button onclick="speakWord('broke into')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-explanation">To enter a place by force or illegally</p>
+                        <p class="vocab-spanish">irrumpir en / entrar por la fuerza</p>
+                        <div class="vocab-example">Thieves broke into the warehouse and stole equipment worth thousands.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div style="margin-bottom: 10px;">
+                            <span class="vocab-word">stunning</span>
+                            <button onclick="speakWord('stunning')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-explanation">Extremely impressive or surprising</p>
+                        <p class="vocab-spanish">impresionante / sorprendente</p>
+                        <div class="vocab-example">The company announced a stunning turnaround in quarterly profits.</div>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <div style="margin-bottom: 10px;">
+                            <span class="vocab-word">escaped</span>
+                            <button onclick="speakWord('escaped')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-explanation">To get away from a dangerous or unpleasant situation</p>
+                        <p class="vocab-spanish">escaparon / huyeron</p>
+                        <div class="vocab-example">The suspects escaped before security could arrive.</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- SECTION 3: CNN TRANSCRIPT (BILINGUAL) -->
+            <div class="content-section">
+                <h2>🎤 CNN Interview Transcript</h2>
+                <p style="color: #666; font-style: italic; margin-bottom: 20px;">
+                    CNN's Jessica Dean interviews Anthony Amore, author of "The Rembrandt Heist" and art theft expert
+                </p>
+                
+                <!-- PARAGRAPH 1 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            Anthony Amore joins us now. He's an art theft and museum security expert who spent 20 years investigating art <span class="highlight" title="robos">heists</span>. His book, <em>The Rembrandt Heist</em>, is out November 4.
+                        </p>
+                        <p>
+                            Anthony, thanks for being here with us on, I think, what is everyone's, like… Everyone is talking about this story today. And so, I first... Just as an expert in this <span class="highlight" title="ámbito">realm</span>, what was your <span class="highlight" title="inicial">initial</span> reaction to this theft?
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Anthony Amore se une a nosotros ahora. Es un experto en robo de arte y seguridad de museos que pasó 20 años investigando robos de arte. Su libro, <em>The Rembrandt Heist</em>, sale el 4 de noviembre.
+                        </p>
+                        <p>
+                            Anthony, gracias por estar aquí con nosotros en, creo, lo que es de todos, como... Todos están hablando de esta historia hoy. Y entonces, primero... Solo como experto en este ámbito, ¿cuál fue tu reacción inicial a este robo?
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">heists</span>
+                                <button onclick="speakWord('heists')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Robberies, especially of valuable items from a building</p>
+                            <p class="vocab-spanish">robos / atracos</p>
+                            <div class="vocab-example">Bank heists require careful planning and inside knowledge.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">realm</span>
+                                <button onclick="speakWord('realm')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">An area of activity, interest, or knowledge</p>
+                            <p class="vocab-spanish">ámbito / campo</p>
+                            <div class="vocab-example">Quality control falls within the realm of operations management.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">initial</span>
+                                <button onclick="speakWord('initial')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Happening at the beginning; first</p>
+                            <p class="vocab-spanish">inicial / primero</p>
+                            <div class="vocab-example">The initial inspection revealed several quality issues.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 2 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            Well, it's heartbreaking. You know, I... as a person who's protected museums for a few decades, you <span class="highlight" title="simpatizar">sympathize</span> with the Louvre and the people that work there and care for these items—and for the French people and all people, <span class="highlight" title="francamente">frankly</span>—because the thieves who did this really stole important cultural <span class="highlight" title="patrimonio">patrimony</span>. It really did a <span class="highlight" title="perjuicio">disservice</span> to the people, all <span class="highlight" title="por el bien de">for the sake of</span> profit.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Bueno, es desgarrador. Sabes, yo... como persona que ha protegido museos durante unas décadas, simpatizas con el Louvre y las personas que trabajan allí y cuidan estos objetos—y para el pueblo francés y todas las personas, francamente—porque los ladrones que hicieron esto realmente robaron patrimonio cultural importante. Realmente hizo un perjuicio a las personas, todo por el bien de las ganancias.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 2 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">sympathize</span>
+                                <button onclick="speakWord('sympathize')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To understand and share the feelings of another</p>
+                            <p class="vocab-spanish">simpatizar / comprender</p>
+                            <div class="vocab-example">I sympathize with teams facing tight production deadlines.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">frankly</span>
+                                <button onclick="speakWord('frankly')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">In an honest and direct manner</p>
+                            <p class="vocab-spanish">francamente / honestamente</p>
+                            <div class="vocab-example">Frankly, we need to improve our safety procedures.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">patrimony</span>
+                                <button onclick="speakWord('patrimony')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Property inherited from one's ancestors; cultural heritage</p>
+                            <p class="vocab-spanish">patrimonio</p>
+                            <div class="vocab-example">The factory preserves the industrial patrimony of the region.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">disservice</span>
+                                <button onclick="speakWord('disservice')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">A harmful action; something that causes damage</p>
+                            <p class="vocab-spanish">perjuicio / daño</p>
+                            <div class="vocab-example">Cutting corners on quality does a disservice to our customers.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">for the sake of</span>
+                                <button onclick="speakWord('for the sake of')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">In order to achieve or preserve something</p>
+                            <p class="vocab-spanish">por el bien de / en aras de</p>
+                            <div class="vocab-example">We revised the schedule for the sake of workplace safety.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 3 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            Right. So, because these are... It's not even about the <span class="highlight" title="monetario">monetary</span> value, which is <span class="highlight" title="astronómico">astronomical</span>, but it's also about the fact that they can't be <span class="highlight" title="replicado">replicated</span>—the history that comes with these items.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Correcto. Entonces, porque estos son... Ni siquiera se trata del valor monetario, que es astronómico, sino también del hecho de que no se pueden replicar—la historia que viene con estos objetos.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">monetary</span>
+                                <button onclick="speakWord('monetary')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Related to money</p>
+                            <p class="vocab-spanish">monetario</p>
+                            <div class="vocab-example">Beyond monetary value, employee safety is our priority.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">astronomical</span>
+                                <button onclick="speakWord('astronomical')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Extremely large in amount</p>
+                            <p class="vocab-spanish">astronómico</p>
+                            <div class="vocab-example">The cost of equipment failure would be astronomical.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">replicated</span>
+                                <button onclick="speakWord('replicated')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Made an exact copy of something</p>
+                            <p class="vocab-spanish">replicado / copiado</p>
+                            <div class="vocab-example">This manufacturing process cannot be easily replicated by competitors.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 4 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            You said it perfectly. You know, many people miss that point, and they wonder "What is the dollar value?" But the dollar value isn't what's important; it's the cultural significance of these items. It's not like they were ever gonna be sold by the French government. So, you said it perfectly. It's a great loss to the people.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Lo dijiste perfectamente. Sabes, muchas personas pierden ese punto, y se preguntan "¿Cuál es el valor en dólares?" Pero el valor en dólares no es lo importante; es el significado cultural de estos objetos. No es como si alguna vez fueran a ser vendidos por el gobierno francés. Entonces, lo dijiste perfectamente. Es una gran pérdida para las personas.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 5 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            Yeah. And two things: One, how <span class="highlight" title="típico">typical</span> is it for a heist to <span class="highlight" title="ocurrir">go down</span> in seven minutes? That seems fast to me, but what would you say to that?
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Sí. Y dos cosas: Una, ¿qué tan típico es que un robo ocurra en siete minutos? Eso me parece rápido, pero ¿qué dirías a eso?
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 5 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 5</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">typical</span>
+                                <button onclick="speakWord('typical')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Showing the usual characteristics; normal</p>
+                            <p class="vocab-spanish">típico</p>
+                            <div class="vocab-example">This is a typical safety protocol in manufacturing plants.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">go down</span>
+                                <button onclick="speakWord('go down')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To happen or take place</p>
+                            <p class="vocab-spanish">ocurrir / llevarse a cabo</p>
+                            <div class="vocab-example">The system upgrade will go down during the night shift.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 6 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            It's very typical. Throughout the course of my career, I've <span class="highlight" title="compilado">compiled</span> a database that I constantly <span class="highlight" title="analizar">analyze</span>, and I found that the normal curve has museum thefts between three... excuse me... three and nine minutes.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Es muy típico. A lo largo de mi carrera, he compilado una base de datos que constantemente analizo, y descubrí que la curva normal tiene robos de museos entre tres... discúlpame... tres y nueve minutos.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 6 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 6</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">compiled</span>
+                                <button onclick="speakWord('compiled')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Collected and assembled information from various sources</p>
+                            <p class="vocab-spanish">compilado / recopilado</p>
+                            <div class="vocab-example">We compiled safety data from all production lines.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">analyze</span>
+                                <button onclick="speakWord('analyze')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To examine something in detail to understand it</p>
+                            <p class="vocab-spanish">analizar</p>
+                            <div class="vocab-example">We analyze defect rates to improve quality control.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 7 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            There's no buyers for these things. It's, sort of, similar to stealing a Rembrandt, or a Vermeer or a Picasso. Everybody knows that anyone you <span class="highlight" title="acercarse a">approach</span> with these things—first, you're gonna want a lot of money for them—they're gonna understand, just from press reports, that these things are stolen. But unlike a painting, what <span class="highlight" title="asusta">scares</span> me about this sort of theft is the idea that thieves could <span class="highlight" title="desmontar">disassemble</span> these cultural pieces. Take a <span class="highlight" title="tiara">tiara</span>, for instance. And [They could] take all of the jewels out of it and sell it [them] separately, which would be <span class="highlight" title="catastrófico">catastrophic</span> but would be a way that money could be made.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            No hay compradores para estas cosas. Es, de alguna manera, similar a robar un Rembrandt, o un Vermeer o un Picasso. Todo el mundo sabe que cualquiera a quien te acerques con estas cosas—primero, vas a querer mucho dinero por ellas—van a entender, solo por informes de prensa, que estas cosas están robadas. Pero a diferencia de una pintura, lo que me asusta de este tipo de robo es la idea de que los ladrones podrían desmontar estas piezas culturales. Toma una tiara, por ejemplo. Y [Podrían] sacar todas las joyas de ella y venderlas por separado, lo cual sería catastrófico pero sería una forma en que se podría ganar dinero.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 7 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 7</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">approach</span>
+                                <button onclick="speakWord('approach')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To come near or contact someone</p>
+                            <p class="vocab-spanish">acercarse a / contactar</p>
+                            <div class="vocab-example">Approach your supervisor if you notice any safety issues.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">scares</span>
+                                <button onclick="speakWord('scares')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To frighten or cause fear</p>
+                            <p class="vocab-spanish">asusta / atemoriza</p>
+                            <div class="vocab-example">Equipment failure scares operators who depend on safety systems.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">disassemble</span>
+                                <button onclick="speakWord('disassemble')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To take something apart into pieces</p>
+                            <p class="vocab-spanish">desmontar / desarmar</p>
+                            <div class="vocab-example">Technicians must disassemble the machine for maintenance.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">tiara</span>
+                                <button onclick="speakWord('tiara')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">A jeweled crown worn on formal occasions</p>
+                            <p class="vocab-spanish">tiara / diadema</p>
+                            <div class="vocab-example">The stolen tiara belonged to Queen Marie-Amélie.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">catastrophic</span>
+                                <button onclick="speakWord('catastrophic')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Extremely harmful or damaging</p>
+                            <p class="vocab-spanish">catastrófico</p>
+                            <div class="vocab-example">A power failure could have catastrophic consequences for production.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 8 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            How... I mean, this, obviously... I mean, look, this sounds like a, you know, plot to a film or something, but how typical is it that an <span class="highlight" title="institución">institution</span> like the Louvre has a theft like this?
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Cómo... Quiero decir, esto, obviamente... Quiero decir, mira, esto suena como, ya sabes, la trama de una película o algo así, pero ¿qué tan típico es que una institución como el Louvre tenga un robo como este?
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 8 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 8</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">institution</span>
+                                <button onclick="speakWord('institution')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">An important organization or established place</p>
+                            <p class="vocab-spanish">institución</p>
+                            <div class="vocab-example">Our company is an institution in the automotive industry.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- PARAGRAPH 9 -->
+                <div class="bilingual-section">
+                    <div class="column">
+                        <h4>🇬🇧 English</h4>
+                        <p>
+                            You know, these things at a famous museum happen a few times a year, but art is stolen constantly around the globe. And here in the West, you see, you know, the thefts that never <span class="highlight" title="aparecer en las noticias">make the news</span>: things stolen from people's homes or stolen from galleries or libraries that have really valuable <span class="highlight" title="colecciones">holdings</span>. So, art theft is very, very common, but to see a place like the Louvre hit—in addition to it being heartbreaking—it is, sort of, rare to see a major museum [hit]. But again, a couple of times a year, you'll see a major institution hit, and there's no place in the world that's <span class="highlight" title="impenetrable">impenetrable</span>.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h4>🇪🇸 Español</h4>
+                        <p>
+                            Sabes, estas cosas en un museo famoso suceden algunas veces al año, pero el arte se roba constantemente en todo el mundo. Y aquí en Occidente, ves, ya sabes, los robos que nunca aparecen en las noticias: cosas robadas de casas de personas o robadas de galerías o bibliotecas que tienen colecciones realmente valiosas. Entonces, el robo de arte es muy, muy común, pero ver un lugar como el Louvre golpeado—además de ser desgarrador—es, de alguna manera, raro ver un museo importante [golpeado]. Pero nuevamente, un par de veces al año, verás una institución importante golpeada, y no hay lugar en el mundo que sea impenetrable.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- VOCABULARY BOX - PARAGRAPH 9 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 9</h3>
+                    <div class="vocab-container">
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">make the news</span>
+                                <button onclick="speakWord('make the news')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">To become reported in the media</p>
+                            <p class="vocab-spanish">aparecer en las noticias / ser noticia</p>
+                            <div class="vocab-example">Small workplace accidents rarely make the news.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">holdings</span>
+                                <button onclick="speakWord('holdings')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Items or assets owned, especially valuable collections</p>
+                            <p class="vocab-spanish">colecciones / bienes</p>
+                            <div class="vocab-example">The company's holdings include patents and equipment.</div>
+                        </div>
+                        
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="vocab-word">impenetrable</span>
+                                <button onclick="speakWord('impenetrable')" class="vocab-pronunciation" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-explanation">Impossible to enter or pass through</p>
+                            <p class="vocab-spanish">impenetrable</p>
+                            <div class="vocab-example">We designed security systems that are nearly impenetrable.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="content-section">
+                <h2>💬 Discussion Questions</h2>
+                <p style="color: #666; margin-bottom: 20px;">Think about these questions and discuss with your teacher or colleagues:</p>
+                
+                <ul>
+                    <li>Why do you think the thieves were able to execute the heist so quickly? What does this tell us about security planning?</li>
+                    <li>Anthony Amore mentions that the cultural significance is more important than the monetary value. Do you agree? How does this apply to other areas like manufacturing or business?</li>
+                    <li>What security measures could museums or factories implement to prevent such incidents? Share examples from your workplace.</li>
+                </ul>
+            </div>
+            
+            <!-- SECTION 5: SELF-PRACTICE QUESTIONS -->
+            <div class="content-section">
+                <h2>✍️ Self-Practice Questions</h2>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <p><strong>1. Fill in the blank:</strong></p>
+                    <p>The thieves __________ the museum using a truck lift and escaped on motorcycles.</p>
+                    <p style="margin-top: 15px;"><strong>2. True or False:</strong></p>
+                    <p>Most museum heists take between 30 minutes to an hour to complete.</p>
+                    <p style="margin-top: 15px;"><strong>3. Vocabulary matching:</strong></p>
+                    <p>Match the word with its meaning:</p>
+                    <ul style="list-style-type: none;">
+                        <li>a) disassemble - i) to understand and share feelings</li>
+                        <li>b) sympathize - ii) to take apart into pieces</li>
+                        <li>c) catastrophic - iii) extremely harmful</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>4. Short answer:</strong></p>
+                    <p>Why does Anthony Amore say that destroying the cultural pieces would be more concerning than simply stealing them intact?</p>
+                </div>
+                
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol style="margin-top: 15px;">
+                        <li><strong>broke into</strong> (The thieves broke into the museum using a truck lift and escaped on motorcycles.)</li>
+                        <li><strong>False</strong> - According to the expert, most museum heists occur between 3 and 9 minutes.</li>
+                        <li>a-ii, b-i, c-iii</li>
+                        <li>Because if thieves disassemble the pieces (like removing jewels from a tiara), the historical and cultural integrity is permanently destroyed. While the monetary value might be realized through selling individual parts, the irreplaceable cultural significance would be lost forever.</li>
+                    </ol>
+                </details>
+            </div>
+            
+        </main>
+    </div>
+    
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
