@@ -3,45 +3,1484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文章管理系統 - Advanced Level</title>
+    <title>Advanced 文章管理 - Elisa English Hub</title>
+    <link rel="stylesheet" href="style-advanced.css">
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Admin 專用樣式 */
+        .admin-header {
+            background: linear-gradient(135deg, #2b5278 0%, #3a6b91 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+        
+        .admin-header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .admin-title {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin: 0;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .admin-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .admin-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .admin-btn-primary {
+            background: #ffc93c;
+            color: #1e3a5f;
+        }
+        
+        .admin-btn-primary:hover {
+            background: #ffd966;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .admin-btn-secondary {
+            background: #e3e8ef;
+            color: #1e3a5f;
+            border: 2px solid #c4cbd6;
+        }
+        
+        .admin-btn-secondary:hover {
+            background: #d4dbe5;
+            border-color: #a8b3c4;
+        }
+        
+        .admin-main {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .admin-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        /* 月曆視圖容器 */
+        #calendarViewContainer {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* 月曆編輯模式樣式 */
+        .day-lesson.editable {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .day-lesson.editable::after {
+            content: '✏️';
+            position: absolute;
+            right: 0.2rem;
+            top: 0.1rem;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .day-lesson.editable:hover::after {
+            opacity: 1;
+        }
+        
+        /* 分屏編輯器樣式 */
+        #splitEditorContainer {
+            display: none;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #splitEditorContainer.active {
+            display: flex;
+        }
+        
+        #editPanel {
+            flex: 1;
+            min-width: 300px;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            background: white;
+        }
+        
+        #previewPanel {
+            flex: 1;
+            min-width: 300px;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            box-sizing: border-box;
+        }
+        
+        /* 可拖拉分隔線 */
+        .resizer {
+            width: 4px;
+            background: #ddd;
+            cursor: col-resize;
+            flex-shrink: 0;
+            transition: background 0.2s;
+            position: relative;
+        }
+        
+        .resizer:hover {
+            background: #ffc93c;
+        }
+        
+        .resizer::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            right: -2px;
+            top: 0;
+            bottom: 0;
+        }
+        
+        .resizer.resizing {
+            background: #ffc93c;
+        }
+        
+        /* 模式標籤 */
+        .mode-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .mode-edit {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .mode-new {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        /* 表單樣式 */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e3e8ef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #ffc93c;
+            box-shadow: 0 0 0 3px rgba(255, 201, 60, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 400px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        /* 警告訊息 */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        /* 草稿提示 */
+        .draft-indicator {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #ffc93c;
+            color: #1e3a5f;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-weight: 600;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 999;
+        }
+        
+        .draft-indicator.active {
+            display: flex;
+        }
+        
+        /* Loading */
+        .loading-spinner {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid rgba(30, 58, 95, 0.3);
+            border-top-color: #1e3a5f;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 編輯器頂部信息欄 */
+        .editor-header {
+            background: #f5f7fa;
+            padding: 1rem 1.5rem;
+            border-bottom: 2px solid #e3e8ef;
+            margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .editor-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        /* 視覺化編輯器 */
+        .visual-editor {
+            border: 2px solid #e3e8ef;
+            border-radius: 8px;
+            padding: 1rem;
+            background: white;
+            min-height: 400px;
+        }
+        
+        .visual-editor[contenteditable="true"] {
+            outline: none;
+        }
+        
+        .visual-editor[contenteditable="true"]:focus {
+            border-color: #ffc93c;
+            box-shadow: 0 0 0 3px rgba(255, 201, 60, 0.1);
+        }
+        
+        /* 預覽面板樣式 */
+        .preview-header {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            margin-bottom: 1rem;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .preview-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .preview-btn-primary {
+            background: #2196f3;
             color: white;
         }
-        .loading-container {
-            text-align: center;
+        
+        .preview-btn-primary:hover {
+            background: #1976d2;
         }
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid white;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
+        
+        .preview-btn-secondary {
+            background: #9c27b0;
+            color: white;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        
+        .preview-btn-secondary:hover {
+            background: #7b1fa2;
+        }
+        
+        .preview-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+        
+        /* 響應式設計 */
+        @media (max-width: 1440px) {
+            #splitEditorContainer {
+                flex-direction: column;
+            }
+            
+            #editPanel, #previewPanel {
+                width: 100% !important;
+                min-width: 100% !important;
+                height: 50% !important;
+            }
+            
+            .resizer {
+                width: 100%;
+                height: 4px;
+                cursor: row-resize;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="loading-container">
-        <div class="spinner"></div>
-        <h2>正在載入 Advanced Level 管理頁面...</h2>
+    
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-header-content">
+            <h1 class="admin-title">📝 Advanced 文章管理</h1>
+            <div class="admin-actions">
+                <button class="admin-btn admin-btn-primary" onclick="openNewArticleEditor()" id="newArticleBtn">
+                    ➕ 新增文章
+                </button>
+                <button class="admin-btn admin-btn-secondary" onclick="window.location.href='index-advanced.html'">
+                    🏠 學生頁面
+                </button>
+                <button class="admin-btn admin-btn-secondary" onclick="window.location.href='admin-intermediate.html'">
+                    ⬇️ Intermediate 管理
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main class="admin-main">
+        
+        <!-- 月曆視圖（主頁） -->
+        <div class="admin-container" id="calendarViewContainer">
+            <!-- 搜尋框 -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 搜尋文章標題或內容..."
+                    aria-label="搜尋文章"
+                >
+            </div>
+            
+            <!-- 月曆視圖 -->
+            <div id="calendarView">
+                <div class="loading">載入中...</div>
+            </div>
+        </div>
+        
+        <!-- 分屏編輯器 -->
+        <div id="splitEditorContainer">
+            <!-- 左側：編輯區 -->
+            <div id="editPanel">
+                <!-- 編輯器頂部信息欄 -->
+                <div class="editor-header">
+                    <div>
+                        <span class="editor-title" id="editorTitle">新增文章</span>
+                        <span class="mode-badge mode-new" id="modeBadge">新增模式</span>
+                    </div>
+                    <button class="admin-btn admin-btn-secondary" onclick="closeEditor()">
+                        ✕ 關閉
+                    </button>
+                </div>
+                
+                <!-- 警告訊息 -->
+                <div id="alertContainer"></div>
+                
+                <!-- 編輯表單 -->
+                <form id="articleForm">
+                    <div class="form-group">
+                        <label class="form-label">文章標題</label>
+                        <input type="text" class="form-input" id="articleTitle" required 
+                               placeholder="如：🧠 The Science of Memory">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">發布日期</label>
+                        <input type="date" class="form-input" id="articleDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">檔案名稱</label>
+                        <input type="text" class="form-input" id="articleFilename" required
+                               placeholder="如：The Science of Memory">
+                        <small style="color: #5a6c7d; margin-top: 0.25rem; display: block;">
+                            會自動加上 .html 後綴
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            HTML 內容
+                            <button type="button" class="admin-btn admin-btn-secondary" 
+                                    onclick="toggleEditorMode()" id="toggleEditorBtn"
+                                    style="margin-left: 1rem; padding: 0.4rem 0.8rem;">
+                                👁️ 視覺化編輯
+                            </button>
+                        </label>
+                        
+                        <!-- HTML 編輯模式 -->
+                        <textarea class="form-input form-textarea" id="articleHtml" 
+                                  style="display: block;"
+                                  oninput="updatePreview()"
+                                  placeholder="貼上完整的 HTML 內容..."></textarea>
+                        
+                        <!-- 視覺化編輯模式 -->
+                        <div class="visual-editor" id="visualEditor" 
+                             style="display: none;" 
+                             contenteditable="true"
+                             oninput="updatePreview()">
+                        </div>
+                    </div>
+                    
+                    <!-- 操作按鈕 -->
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e3e8ef;">
+                        <button type="button" class="admin-btn admin-btn-secondary" onclick="saveDraft()">
+                            💾 儲存草稿
+                        </button>
+                        <button type="button" class="admin-btn admin-btn-primary" onclick="saveArticle()" style="flex: 1;">
+                            <span id="saveButtonText">✅ 發布文章</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- 可拖拉分隔線 -->
+            <div class="resizer" id="resizer"></div>
+            
+            <!-- 右側：預覽區 -->
+            <div id="previewPanel">
+                <div class="preview-header">
+                    <strong style="font-size: 1.1rem;">📺 即時預覽</strong>
+                    <div class="preview-actions">
+                        <button class="preview-btn preview-btn-primary" onclick="refreshPreview()">
+                            🔄 重新整理
+                        </button>
+                        <button class="preview-btn preview-btn-secondary" onclick="toggleFullscreenPreview()">
+                            ⛶ 全螢幕
+                        </button>
+                    </div>
+                    <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                        <span id="previewStatus">預覽會自動更新</span>
+                    </div>
+                </div>
+                
+                <div class="preview-content" id="previewContent">
+                    <div style="text-align: center; color: #999; padding: 4rem 2rem;">
+                        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">👈 開始編輯以查看預覽</p>
+                        <p style="font-size: 0.9rem;">編輯內容會即時顯示在這裡</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    <!-- 草稿提示 -->
+    <div class="draft-indicator" id="draftIndicator">
+        💾 草稿已自動儲存
     </div>
+    
+    <!-- JavaScript -->
     <script>
-        // 重定向到 admin.html 並帶上 level 參數
-        window.location.href = 'admin.html?level=advanced';
+        // ==================== 設定 ====================
+        const CONFIG = {
+            level: 'advanced',
+            lessonFolder: 'advanced/',
+            scriptFile: 'script-advanced.js'
+        };
+        
+        // GitHub 設定
+        const githubConfig = {
+            token: localStorage.getItem('github_token') || '',
+            username: localStorage.getItem('github_username') || '',
+            repo: localStorage.getItem('github_repo') || '',
+            branch: 'main'
+        };
+        
+        // 全域變數
+        let allLessons = [];
+        let filteredLessons = [];
+        let currentMode = 'new'; // 'new' or 'edit'
+        let currentEditingArticle = null;
+        let isVisualMode = false;
+        
+        // ==================== 初始化 ====================
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadLessons();
+            setupSearch();
+            setupResizer();
+            loadDraftIfExists();
+        });
+        
+        // ==================== 載入文章列表 ====================
+        async function loadLessons() {
+            try {
+                const response = await fetch(CONFIG.scriptFile);
+                const scriptContent = await response.text();
+                
+                const match = scriptContent.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                if (!match) {
+                    showError('無法解析文章列表');
+                    return;
+                }
+                
+                allLessons = parsePotentialFiles(match[1]);
+                filteredLessons = [...allLessons];
+                generateCalendar();
+                
+            } catch (error) {
+                console.error('載入錯誤:', error);
+                showError('載入文章列表失敗: ' + error.message);
+            }
+        }
+        
+        // ==================== 解析 potentialFiles ====================
+        function parsePotentialFiles(content) {
+            const lessons = [];
+            const lines = content.split('\n').filter(line => {
+                const trimmed = line.trim();
+                return trimmed && !trimmed.startsWith('//') && !trimmed.startsWith('*');
+            });
+            
+            const fullContent = lines.join('\n');
+            let pos = 0;
+            
+            while (pos < fullContent.length) {
+                const objStart = fullContent.indexOf('{', pos);
+                if (objStart === -1) break;
+                
+                let braceCount = 0;
+                let objEnd = objStart;
+                let inString = false;
+                let stringChar = null;
+                
+                for (let i = objStart; i < fullContent.length; i++) {
+                    const char = fullContent[i];
+                    const prevChar = i > 0 ? fullContent[i - 1] : '';
+                    
+                    if (!inString && (char === '"' || char === "'")) {
+                        inString = true;
+                        stringChar = char;
+                    } else if (inString && char === stringChar && prevChar !== '\\') {
+                        inString = false;
+                        stringChar = null;
+                    }
+                    
+                    if (!inString) {
+                        if (char === '{') braceCount++;
+                        if (char === '}') {
+                            braceCount--;
+                            if (braceCount === 0) {
+                                objEnd = i + 1;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                if (objEnd <= objStart) break;
+                
+                const objStr = fullContent.substring(objStart, objEnd);
+                const lesson = parseLesson(objStr);
+                
+                if (lesson && !lesson.isHoliday) {
+                    lessons.push(lesson);
+                }
+                
+                pos = objEnd;
+            }
+            
+            return lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+        
+        // ==================== 解析單個文章物件 ====================
+        function parseLesson(objStr) {
+            const filenameMatch = objStr.match(/filename:\s*['"]([^'"]+)['"]/);
+            const titleMatch = objStr.match(/title:\s*['"]([^'"]+)['"]/);
+            const dateMatch = objStr.match(/date:\s*['"]([^'"]+)['"]/);
+            const isHolidayMatch = objStr.match(/isHoliday\s*:\s*true/);
+            
+            if (!filenameMatch || !dateMatch) return null;
+            if (isHolidayMatch) return { isHoliday: true };
+            
+            const filename = filenameMatch[1].replace(/\\'/g, "'").replace(/\\"/g, '"');
+            const title = titleMatch ? titleMatch[1].replace(/\\'/g, "'").replace(/\\"/g, '"') : filename.replace('.html', '');
+            const dateString = dateMatch[1];
+            
+            // 修正時區問題：手動解析日期避免 UTC 轉換
+            const [year, month, day] = dateString.split('-').map(Number);
+            const date = new Date(year, month - 1, day);
+            
+            const emojiMatch = title.match(/[\p{Emoji}]/u);
+            const emoji = emojiMatch ? emojiMatch[0] : '';
+            const cleanTitle = title.replace(/[\p{Emoji}]/gu, '').trim();
+            
+            return {
+                filename,
+                title: cleanTitle,
+                emoji,
+                displayTitle: title,
+                date: date,
+                dateString: dateString,
+                id: filename.replace('.html', '')
+            };
+        }
+        
+        // ==================== 生成月曆 ====================
+        function generateCalendar() {
+            const container = document.getElementById('calendarView');
+            if (!container) return;
+            
+            if (filteredLessons.length === 0) {
+                container.innerHTML = '<div class="no-results"><p>😔 找不到文章</p></div>';
+                return;
+            }
+            
+            const lessonsByMonth = {};
+            filteredLessons.forEach(lesson => {
+                const date = new Date(lesson.date);
+                const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+                const monthName = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                
+                if (!lessonsByMonth[monthKey]) {
+                    lessonsByMonth[monthKey] = { name: monthName, lessons: [] };
+                }
+                lessonsByMonth[monthKey].lessons.push(lesson);
+            });
+            
+            const sortedMonths = Object.keys(lessonsByMonth).sort().reverse();
+            container.innerHTML = sortedMonths.map(monthKey => {
+                return generateMonthCalendar(monthKey, lessonsByMonth[monthKey].lessons, lessonsByMonth[monthKey].name);
+            }).join('');
+        }
+        
+        // ==================== 生成單月月曆 ====================
+        function generateMonthCalendar(monthKey, lessons, monthName) {
+            const [year, month] = monthKey.split('-').map(Number);
+            const monthIndex = month - 1;
+            
+            const firstDay = new Date(year, monthIndex, 1);
+            const lastDay = new Date(year, monthIndex + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            
+            let firstDayOfWeek = firstDay.getDay();
+            firstDayOfWeek = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
+            
+            const prevMonthLastDay = new Date(year, monthIndex, 0).getDate();
+            
+            const lessonsByDate = {};
+            lessons.forEach(lesson => {
+                const day = new Date(lesson.date).getDate();
+                if (!lessonsByDate[day]) lessonsByDate[day] = [];
+                lessonsByDate[day].push(lesson);
+            });
+            
+            let html = `
+                <div class="month-calendar" data-month="${monthKey}">
+                    <div class="month-header" onclick="toggleMonth('${monthKey}')">
+                        <div class="month-header-title">
+                            <span class="month-header-arrow">▼</span>
+                            <span>${monthName}</span>
+                        </div>
+                        <span class="month-header-count">(${lessons.length} 篇文章)</span>
+                    </div>
+                    <table class="calendar-grid">
+                        <thead>
+                            <tr>
+                                <th class="weekday">Mon</th>
+                                <th class="weekday">Tue</th>
+                                <th class="weekday">Wed</th>
+                                <th class="weekday">Thu</th>
+                                <th class="weekday">Fri</th>
+                                <th class="weekend">Sat</th>
+                                <th class="weekend">Sun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            let currentDate = 1;
+            let nextMonthDate = 1;
+            const totalCells = 42;
+            let cellCount = 0;
+            
+            while (cellCount < totalCells) {
+                html += '<tr>';
+                
+                for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+                    let dayNumber = '';
+                    let cellClass = '';
+                    let dayLessons = [];
+                    
+                    if (cellCount < firstDayOfWeek) {
+                        dayNumber = prevMonthLastDay - (firstDayOfWeek - cellCount - 1);
+                        cellClass = 'other-month';
+                    } else if (currentDate <= daysInMonth) {
+                        dayNumber = currentDate;
+                        dayLessons = lessonsByDate[currentDate] || [];
+                        cellClass = dayOfWeek >= 5 ? 'weekend' : 'weekday';
+                        currentDate++;
+                    } else {
+                        dayNumber = nextMonthDate;
+                        cellClass = 'other-month';
+                        nextMonthDate++;
+                    }
+                    
+                    html += `<td class="${cellClass}">`;
+                    html += `<div class="day-number">${dayNumber}</div>`;
+                    
+                    if (dayLessons.length > 0 && !cellClass.includes('other-month')) {
+                        dayLessons.forEach(lesson => {
+                            if (dayOfWeek < 5) {
+                                const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
+                                const lessonData = JSON.stringify(lesson).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                                html += `<a href="javascript:void(0)" class="day-lesson editable" onclick='openEditArticleEditor(${lessonData})' title="${fullTitle}">${fullTitle}</a>`;
+                            }
+                        });
+                    }
+                    
+                    html += '</td>';
+                    cellCount++;
+                }
+                
+                html += '</tr>';
+                
+                if (currentDate > daysInMonth && cellCount >= (firstDayOfWeek + daysInMonth)) {
+                    break;
+                }
+            }
+            
+            html += `
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            
+            return html;
+        }
+        
+        // ==================== 切換月份 ====================
+        function toggleMonth(monthKey) {
+            const monthCalendar = document.querySelector(`.month-calendar[data-month="${monthKey}"]`);
+            if (!monthCalendar) return;
+            
+            const grid = monthCalendar.querySelector('.calendar-grid');
+            const arrow = monthCalendar.querySelector('.month-header-arrow');
+            
+            if (grid.style.display === 'none') {
+                grid.style.display = '';
+                arrow.textContent = '▼';
+            } else {
+                grid.style.display = 'none';
+                arrow.textContent = '▶';
+            }
+        }
+        
+        // ==================== 搜尋功能 ====================
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    filteredLessons = [...allLessons];
+                } else {
+                    filteredLessons = allLessons.filter(lesson => {
+                        return lesson.title.toLowerCase().includes(searchTerm) ||
+                               lesson.displayTitle.toLowerCase().includes(searchTerm) ||
+                               lesson.filename.toLowerCase().includes(searchTerm);
+                    });
+                }
+                
+                generateCalendar();
+            });
+        }
+        
+        // ==================== 開啟新增文章編輯器 ====================
+        function openNewArticleEditor() {
+            currentMode = 'new';
+            currentEditingArticle = null;
+            
+            document.getElementById('editorTitle').textContent = '新增文章';
+            document.getElementById('modeBadge').textContent = '新增模式';
+            document.getElementById('modeBadge').className = 'mode-badge mode-new';
+            document.getElementById('saveButtonText').textContent = '✅ 發布文章';
+            
+            document.getElementById('articleTitle').value = '';
+            document.getElementById('articleDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('articleFilename').value = '';
+            document.getElementById('articleHtml').value = '';
+            document.getElementById('visualEditor').innerHTML = '';
+            document.getElementById('previewContent').innerHTML = '<div style="text-align: center; color: #999; padding: 4rem 2rem;"><p style="font-size: 1.2rem;">👈 開始編輯以查看預覽</p></div>';
+            
+            showEditor();
+        }
+        
+        // ==================== 開啟編輯文章編輯器 ====================
+        async function openEditArticleEditor(lesson) {
+            // 解析 JSON（如果是字串）
+            if (typeof lesson === 'string') {
+                lesson = JSON.parse(lesson.replace(/&quot;/g, '"').replace(/&#39;/g, "'"));
+            }
+            
+            currentMode = 'edit';
+            currentEditingArticle = lesson;
+            
+            document.getElementById('editorTitle').textContent = '編輯文章：' + lesson.displayTitle;
+            document.getElementById('modeBadge').textContent = '更新模式';
+            document.getElementById('modeBadge').className = 'mode-badge mode-edit';
+            document.getElementById('saveButtonText').textContent = '✅ 儲存更新';
+            
+            document.getElementById('articleTitle').value = lesson.displayTitle;
+            document.getElementById('articleDate').value = lesson.dateString;
+            document.getElementById('articleFilename').value = lesson.filename.replace('.html', '');
+            
+            // 載入 HTML 內容
+            try {
+                document.getElementById('previewStatus').textContent = '正在載入文章...';
+                const response = await fetch(CONFIG.lessonFolder + lesson.filename);
+                const htmlContent = await response.text();
+                document.getElementById('articleHtml').value = htmlContent;
+                
+                if (isVisualMode) {
+                    document.getElementById('visualEditor').innerHTML = htmlContent;
+                }
+                
+                updatePreview();
+                document.getElementById('previewStatus').textContent = '預覽會自動更新';
+            } catch (error) {
+                showAlert('error', '載入文章內容失敗: ' + error.message);
+            }
+            
+            showEditor();
+        }
+        
+        // ==================== 顯示編輯器 ====================
+        function showEditor() {
+            document.getElementById('calendarViewContainer').style.display = 'none';
+            document.getElementById('splitEditorContainer').classList.add('active');
+            document.getElementById('newArticleBtn').style.display = 'none';
+        }
+        
+        // ==================== 關閉編輯器 ====================
+        function closeEditor() {
+            if (confirm('確定要關閉嗎？未儲存的變更將會遺失。')) {
+                document.getElementById('calendarViewContainer').style.display = 'block';
+                document.getElementById('splitEditorContainer').classList.remove('active');
+                document.getElementById('newArticleBtn').style.display = 'inline-block';
+                document.getElementById('alertContainer').innerHTML = '';
+            }
+        }
+        
+        // ==================== 切換編輯模式 ====================
+        function toggleEditorMode() {
+            isVisualMode = !isVisualMode;
+            const htmlTextarea = document.getElementById('articleHtml');
+            const visualEditor = document.getElementById('visualEditor');
+            const toggleBtn = document.getElementById('toggleEditorBtn');
+            
+            if (isVisualMode) {
+                htmlTextarea.style.display = 'none';
+                visualEditor.style.display = 'block';
+                visualEditor.innerHTML = htmlTextarea.value;
+                toggleBtn.textContent = '📝 HTML 編輯';
+            } else {
+                visualEditor.style.display = 'none';
+                htmlTextarea.style.display = 'block';
+                htmlTextarea.value = visualEditor.innerHTML;
+                toggleBtn.textContent = '👁️ 視覺化編輯';
+            }
+        }
+        
+        // ==================== 更新預覽 ====================
+        function updatePreview() {
+            const previewContent = document.getElementById('previewContent');
+            const htmlContent = isVisualMode ? 
+                document.getElementById('visualEditor').innerHTML : 
+                document.getElementById('articleHtml').value;
+            
+            if (htmlContent.trim()) {
+                previewContent.innerHTML = htmlContent;
+                document.getElementById('previewStatus').textContent = '預覽已更新 - ' + new Date().toLocaleTimeString();
+            }
+        }
+        
+        // ==================== 重新整理預覽 ====================
+        function refreshPreview() {
+            updatePreview();
+            showAlert('success', '✅ 預覽已重新整理');
+        }
+        
+        // ==================== 全螢幕預覽 ====================
+        function toggleFullscreenPreview() {
+            const previewContent = document.getElementById('previewContent');
+            
+            if (!document.fullscreenElement) {
+                previewContent.requestFullscreen().catch(err => {
+                    showAlert('error', '無法進入全螢幕模式');
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // ==================== 儲存文章 ====================
+        async function saveArticle() {
+            const title = document.getElementById('articleTitle').value;
+            const date = document.getElementById('articleDate').value;
+            let filename = document.getElementById('articleFilename').value;
+            const htmlContent = isVisualMode ? 
+                document.getElementById('visualEditor').innerHTML : 
+                document.getElementById('articleHtml').value;
+            
+            filename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
+            if (!filename.endsWith('.html')) {
+                filename += '.html';
+            }
+            
+            try {
+                const saveBtn = document.querySelector('#saveButtonText').parentElement;
+                saveBtn.disabled = true;
+                saveBtn.innerHTML = '<span class="loading-spinner"></span> 儲存中...';
+                
+                if (currentMode === 'edit') {
+                    await updateArticle(filename, date, title, htmlContent);
+                } else {
+                    await createArticle(filename, date, title, htmlContent);
+                }
+                
+                showAlert('success', `✅ ${currentMode === 'edit' ? '更新' : '新增'}成功！`);
+                
+                await loadLessons();
+                
+                setTimeout(() => {
+                    closeEditor();
+                }, 1500);
+                
+            } catch (error) {
+                showAlert('error', '❌ 儲存失敗: ' + error.message);
+            } finally {
+                const saveBtn = document.querySelector('#saveButtonText').parentElement;
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = `<span id="saveButtonText">${currentMode === 'edit' ? '✅ 儲存更新' : '✅ 發布文章'}</span>`;
+            }
+        }
+        
+        // ==================== GitHub API 輔助函數 ====================
+        
+        // 取得檔案內容
+        async function getFileContent(filePath) {
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/${filePath}?ref=${githubConfig.branch}`,
+                    {
+                        headers: {
+                            'Authorization': `token ${githubConfig.token}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    // 解碼 base64 內容
+                    try {
+                        const bytes = Uint8Array.from(atob(data.content.replace(/\s/g, '')), c => c.charCodeAt(0));
+                        const decoder = new TextDecoder('utf-8');
+                        return decoder.decode(bytes);
+                    } catch (e) {
+                        return decodeURIComponent(escape(atob(data.content.replace(/\s/g, ''))));
+                    }
+                } else if (response.status === 404) {
+                    return null;
+                } else {
+                    throw new Error(`讀取失敗: ${response.statusText}`);
+                }
+            } catch (error) {
+                throw new Error(`讀取檔案錯誤：${error.message}`);
+            }
+        }
+        
+        // 上傳檔案到 GitHub
+        async function uploadFileToGitHub(filePath, content, message) {
+            try {
+                // 先檢查檔案是否存在
+                let sha = null;
+                try {
+                    const existingFile = await fetch(
+                        `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/${filePath}?ref=${githubConfig.branch}`,
+                        {
+                            headers: {
+                                'Authorization': `token ${githubConfig.token}`,
+                                'Accept': 'application/vnd.github.v3+json'
+                            }
+                        }
+                    );
+                    
+                    if (existingFile.ok) {
+                        const data = await existingFile.json();
+                        sha = data.sha;
+                    }
+                } catch (e) {
+                    // 檔案不存在
+                }
+                
+                // 編碼內容為 base64
+                let encodedContent;
+                try {
+                    const encoder = new TextEncoder();
+                    const bytes = encoder.encode(content);
+                    encodedContent = btoa(String.fromCharCode(...bytes));
+                } catch (e) {
+                    encodedContent = btoa(unescape(encodeURIComponent(content)));
+                }
+                
+                const body = {
+                    message: message,
+                    content: encodedContent,
+                    branch: githubConfig.branch
+                };
+                
+                if (sha) {
+                    body.sha = sha;
+                }
+                
+                const response = await fetch(
+                    `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/${filePath}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${githubConfig.token}`,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(body)
+                    }
+                );
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    return { success: true, data: data };
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || '上傳失敗');
+                }
+            } catch (error) {
+                throw new Error(`上傳檔案錯誤：${error.message}`);
+            }
+        }
+        
+        // 刪除 GitHub 檔案
+        async function deleteFileFromGitHub(filePath, message) {
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/${filePath}?ref=${githubConfig.branch}`,
+                    {
+                        headers: {
+                            'Authorization': `token ${githubConfig.token}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        return { success: true };
+                    }
+                    throw new Error(`無法讀取檔案：${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const sha = data.sha;
+
+                const deleteResponse = await fetch(
+                    `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/${filePath}`,
+                    {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `token ${githubConfig.token}`,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            sha: sha,
+                            branch: githubConfig.branch
+                        })
+                    }
+                );
+
+                if (deleteResponse.ok) {
+                    return { success: true };
+                } else {
+                    const error = await deleteResponse.json();
+                    throw new Error(error.message || '刪除失敗');
+                }
+            } catch (error) {
+                throw new Error(`刪除檔案錯誤：${error.message}`);
+            }
+        }
+        
+        // 更新 script.js 檔案
+        async function updateScriptFile(filename, date, title) {
+            const scriptFileName = CONFIG.scriptFile;
+            const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
+            const escapedFilename = cleanedFilename.replace(/'/g, "\\'");
+            const escapedTitle = title.replace(/'/g, "\\'");
+            const scriptLine = `        { filename: '${escapedFilename}', date: '${date}', title: '${escapedTitle}' },\n`;
+            
+            try {
+                let scriptContent = await getFileContent(scriptFileName);
+                
+                if (!scriptContent) {
+                    throw new Error(`找不到 ${scriptFileName} 檔案`);
+                }
+                
+                // 檢查是否已存在該文章
+                const existingPattern = new RegExp(`\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*\\}`, 'g');
+                
+                if (existingPattern.test(scriptContent)) {
+                    // 更新現有記錄
+                    scriptContent = scriptContent.replace(existingPattern, scriptLine.trim());
+                } else {
+                    // 添加新記錄
+                    const marker = '// 👆 在此上方添加新文章';
+                    const markerIndex = scriptContent.indexOf(marker);
+                    
+                    if (markerIndex === -1) {
+                        const arrayEndMatch = scriptContent.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                        if (arrayEndMatch) {
+                            const arrayEndIndex = scriptContent.indexOf('];', arrayEndMatch.index);
+                            scriptContent = scriptContent.slice(0, arrayEndIndex) + 
+                                          scriptLine + 
+                                          '        // 👆 在此上方添加新文章，記得加逗號！\n' +
+                                          scriptContent.slice(arrayEndIndex);
+                        } else {
+                            throw new Error('無法找到 potentialFiles 陣列');
+                        }
+                    } else {
+                        let insertIndex = markerIndex;
+                        if (markerIndex > 0 && scriptContent[markerIndex - 1] !== '\n') {
+                            const lastNewline = scriptContent.lastIndexOf('\n', markerIndex - 1);
+                            if (lastNewline !== -1) {
+                                insertIndex = lastNewline + 1;
+                            }
+                        }
+                        scriptContent = scriptContent.slice(0, insertIndex) + 
+                                      scriptLine + 
+                                      scriptContent.slice(insertIndex);
+                    }
+                }
+                
+                const message = `Update ${scriptFileName}: ${title}`;
+                await uploadFileToGitHub(scriptFileName, scriptContent, message);
+                
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        // 從 script.js 移除文章記錄
+        async function removeFromScriptFile(filename, date, title) {
+            const scriptFileName = CONFIG.scriptFile;
+            const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
+            const escapedFilename = cleanedFilename.replace(/'/g, "\\'");
+            
+            try {
+                let scriptContent = await getFileContent(scriptFileName);
+                
+                if (!scriptContent) {
+                    throw new Error(`找不到 ${scriptFileName} 檔案`);
+                }
+                
+                // 移除對應的行
+                const pattern = new RegExp(`\\s*\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*\\},?\\n?`, 'g');
+                scriptContent = scriptContent.replace(pattern, '');
+                
+                const message = `Remove from ${scriptFileName}: ${title}`;
+                await uploadFileToGitHub(scriptFileName, scriptContent, message);
+                
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        // ==================== 更新文章 ====================
+        async function updateArticle(filename, date, title, htmlContent) {
+            if (!githubConfig.token || !githubConfig.username || !githubConfig.repo) {
+                throw new Error('請先設定 GitHub Token（在瀏覽器 Console 執行：localStorage.setItem("github_token", "your_token_here")）');
+            }
+            
+            const filePath = CONFIG.lessonFolder + filename;
+            const oldFilePath = currentEditingArticle ? CONFIG.lessonFolder + currentEditingArticle.filename : null;
+            
+            try {
+                // 1. 上傳 HTML 檔案
+                await uploadFileToGitHub(filePath, htmlContent, `Update article: ${title}`);
+                
+                // 2. 如果檔名改變，刪除舊檔案
+                if (oldFilePath && oldFilePath !== filePath) {
+                    try {
+                        await deleteFileFromGitHub(oldFilePath, `Rename article: ${title}`);
+                    } catch (error) {
+                        console.warn('刪除舊檔案失敗:', error);
+                    }
+                }
+                
+                // 3. 更新 script.js
+                await updateScriptFile(filename, date, title);
+                
+                // 4. 如果檔名改變，從 script.js 移除舊記錄
+                if (currentEditingArticle && currentEditingArticle.filename !== filename) {
+                    try {
+                        await removeFromScriptFile(
+                            currentEditingArticle.filename,
+                            currentEditingArticle.date,
+                            currentEditingArticle.title
+                        );
+                    } catch (error) {
+                        console.warn('移除舊記錄失敗:', error);
+                    }
+                }
+                
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        // ==================== 新增文章 ====================
+        async function createArticle(filename, date, title, htmlContent) {
+            if (!githubConfig.token || !githubConfig.username || !githubConfig.repo) {
+                throw new Error('請先設定 GitHub Token（在瀏覽器 Console 執行：localStorage.setItem("github_token", "your_token_here")）');
+            }
+            
+            const filePath = CONFIG.lessonFolder + filename;
+            
+            try {
+                // 檢查檔案是否已存在
+                const existingContent = await getFileContent(filePath);
+                if (existingContent) {
+                    if (!confirm(`檔案 ${filename} 已存在，確定要覆蓋嗎？`)) {
+                        throw new Error('取消操作');
+                    }
+                }
+                
+                // 1. 上傳 HTML 檔案
+                await uploadFileToGitHub(filePath, htmlContent, `Create article: ${title}`);
+                
+                // 2. 更新 script.js
+                await updateScriptFile(filename, date, title);
+                
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        // ==================== 草稿功能 ====================
+        function saveDraft() {
+            const draft = {
+                mode: currentMode,
+                article: currentEditingArticle,
+                title: document.getElementById('articleTitle').value,
+                date: document.getElementById('articleDate').value,
+                filename: document.getElementById('articleFilename').value,
+                html: isVisualMode ? document.getElementById('visualEditor').innerHTML : document.getElementById('articleHtml').value,
+                isVisualMode: isVisualMode,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('admin_draft_advanced', JSON.stringify(draft));
+            showDraftIndicator();
+            showAlert('success', '💾 草稿已儲存');
+        }
+        
+        function loadDraftIfExists() {
+            const draft = localStorage.getItem('admin_draft_advanced');
+            if (draft) {
+                const draftData = JSON.parse(draft);
+                if (confirm(`找到草稿（${new Date(draftData.timestamp).toLocaleString()}），要載入嗎？`)) {
+                    currentMode = draftData.mode;
+                    currentEditingArticle = draftData.article;
+                    isVisualMode = draftData.isVisualMode || false;
+                    
+                    document.getElementById('articleTitle').value = draftData.title;
+                    document.getElementById('articleDate').value = draftData.date;
+                    document.getElementById('articleFilename').value = draftData.filename;
+                    
+                    if (isVisualMode) {
+                        document.getElementById('visualEditor').innerHTML = draftData.html;
+                        document.getElementById('articleHtml').value = draftData.html;
+                        toggleEditorMode();
+                    } else {
+                        document.getElementById('articleHtml').value = draftData.html;
+                    }
+                    
+                    showEditor();
+                    updatePreview();
+                }
+            }
+        }
+        
+        function showDraftIndicator() {
+            const indicator = document.getElementById('draftIndicator');
+            indicator.classList.add('active');
+            setTimeout(() => {
+                indicator.classList.remove('active');
+            }, 2000);
+        }
+        
+        // ==================== 分隔線拖拉功能 ====================
+        function setupResizer() {
+            const resizer = document.getElementById('resizer');
+            const editPanel = document.getElementById('editPanel');
+            const previewPanel = document.getElementById('previewPanel');
+            let isResizing = false;
+            let startX = 0;
+            let startWidth = 0;
+            
+            const savedRatio = localStorage.getItem('editPanelRatio_advanced');
+            if (savedRatio) {
+                const ratio = parseFloat(savedRatio);
+                editPanel.style.flex = ratio;
+                previewPanel.style.flex = (1 - ratio);
+            }
+            
+            resizer.addEventListener('mousedown', function(e) {
+                isResizing = true;
+                startX = e.clientX;
+                const container = document.getElementById('splitEditorContainer');
+                startWidth = editPanel.offsetWidth;
+                resizer.classList.add('resizing');
+                document.body.style.cursor = 'col-resize';
+                document.body.style.userSelect = 'none';
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (!isResizing) return;
+                
+                const container = document.getElementById('splitEditorContainer');
+                const containerWidth = container.offsetWidth;
+                const deltaX = e.clientX - startX;
+                const newWidth = startWidth + deltaX;
+                const ratio = newWidth / containerWidth;
+                
+                const minRatio = 0.2;
+                const maxRatio = 0.8;
+                const clampedRatio = Math.max(minRatio, Math.min(maxRatio, ratio));
+                
+                editPanel.style.flex = clampedRatio;
+                previewPanel.style.flex = (1 - clampedRatio);
+                
+                localStorage.setItem('editPanelRatio_advanced', clampedRatio.toString());
+            });
+            
+            document.addEventListener('mouseup', function() {
+                if (isResizing) {
+                    isResizing = false;
+                    resizer.classList.remove('resizing');
+                    document.body.style.cursor = '';
+                    document.body.style.userSelect = '';
+                }
+            });
+        }
+        
+        // ==================== 顯示警告訊息 ====================
+        function showAlert(type, message) {
+            const container = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.innerHTML = message;
+            
+            container.innerHTML = '';
+            container.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+        
+        function showError(message) {
+            showAlert('error', '❌ ' + message);
+        }
     </script>
+
 </body>
 </html>
-
