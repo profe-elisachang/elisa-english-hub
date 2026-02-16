@@ -15,7 +15,7 @@
         
         /* Admin 專用樣式 */
         .admin-header {
-            background: linear-gradient(135deg, #2b5278 0%, #3a6b91 100%);
+            background: linear-gradient(135deg, #2e7a64 0%, #3a915b 100%);
             color: white;
             padding: 1rem 2rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -330,6 +330,78 @@
             box-shadow: 0 0 0 3px rgba(255, 201, 60, 0.1);
         }
         
+        /* 可調整大小的圖片 */
+        .resizable-image {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .resizable-image:hover {
+            border-color: #ffc93c;
+            box-shadow: 0 0 0 3px rgba(255, 201, 60, 0.2);
+            transform: scale(1.01);
+        }
+        
+        /* 視覺化編輯器內的圖片提示 */
+        .visual-editor img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+            cursor: pointer;
+            display: block;
+            border: 2px dashed #e3e8ef;
+            padding: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .visual-editor img:hover {
+            border-color: #17a2b8;
+            border-style: dashed;
+            box-shadow: 0 0 0 2px rgba(23, 162, 184, 0.2);
+        }
+        
+        /* 調整容器 */
+        .resize-container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        /* 布局控制面板 */
+        .layout-control-panel {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        /* 併排圖片樣式（符合語言學習網站風格） */
+        .visual-editor img[data-layout="inline"] {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0.5rem;
+            max-width: 48%;
+        }
+        
+        /* 文繞圖樣式 */
+        .visual-editor img[data-layout="float-left"],
+        .visual-editor img[data-layout="float-right"] {
+            max-width: 40%;
+        }
+        
+        /* 插入圖片按鈕 */
+        .insert-image-btn {
+            background: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+        }
+        
+        .insert-image-btn:hover {
+            background: #218838;
+            border-color: #218838;
+        }
+        
         /* 預覽面板樣式 */
         .preview-header {
             background: #e3f2fd;
@@ -379,6 +451,80 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             min-height: 400px;
+            overflow: hidden; /* 支持 float 布局 */
+        }
+        
+        /* 預覽區域支持文繞圖 */
+        .preview-content::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .preview-content img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* 支持 float 元素的容器 */
+        .preview-content p,
+        .preview-content div {
+            overflow: hidden; /* 確保 float 元素不會溢出 */
+        }
+        
+        /* Modal 樣式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: #333;
         }
         
         /* 響應式設計 */
@@ -416,6 +562,9 @@
                 </button>
                 <button class="admin-btn admin-btn-secondary" onclick="window.location.href='admin-intermediate.html'">
                     ⬇️ Intermediate 管理
+                </button>
+                <button class="admin-btn admin-btn-secondary" onclick="openGitHubModal()" title="GitHub 設定">
+                    ⚙️ GitHub 設定
                 </button>
             </div>
         </div>
@@ -490,6 +639,11 @@
                                     style="margin-left: 1rem; padding: 0.4rem 0.8rem;">
                                 👁️ 視覺化編輯
                             </button>
+                            <button type="button" class="admin-btn insert-image-btn" 
+                                    onclick="insertImage()" id="insertImageBtn"
+                                    style="margin-left: 0.5rem; padding: 0.4rem 0.8rem; display: none;">
+                                📷 插入圖片
+                            </button>
                         </label>
                         
                         <!-- HTML 編輯模式 -->
@@ -554,6 +708,54 @@
         💾 草稿已自動儲存
     </div>
     
+    <!-- GitHub 設定 Modal -->
+    <div id="githubModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ GitHub 設定</h2>
+                <button class="close-modal" onclick="closeGitHubModal()">&times;</button>
+            </div>
+            <div id="tab-settings" class="tab-content">
+                <div class="alert alert-success" style="margin-bottom: 1.5rem; padding: 1rem; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; color: #155724;">
+                    <strong>📋 設定說明：</strong><br>
+                    填入你的 GitHub 資訊後，系統可以自動上傳文章到 GitHub，無需手動下載和複製檔案。
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="githubToken" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">GitHub Personal Access Token *</label>
+                    <input type="password" id="githubToken" placeholder="github_pat_xxxxxxxxxxxxx" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px; font-family: monospace; font-size: 0.9rem;">
+                    <small style="color: #666; display: block; margin-top: 0.5rem; font-size: 0.85rem;">
+                        Token 儲存在瀏覽器的 localStorage，不會上傳到伺服器。<br>
+                        如需建立新 Token，請訪問 <a href="https://github.com/settings/tokens" target="_blank">GitHub Settings → Developer settings → Personal access tokens</a>
+                    </small>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="githubUsername" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">GitHub 使用者名稱 *</label>
+                    <input type="text" id="githubUsername" placeholder="your-username" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="githubRepo" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Repository 名稱 *</label>
+                    <input type="text" id="githubRepo" placeholder="elisa-english-hub" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="githubBranch" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">分支名稱</label>
+                    <input type="text" id="githubBranch" value="main" placeholder="main" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px;">
+                    <small style="color: #666; display: block; margin-top: 0.5rem; font-size: 0.85rem;">預設為 main，如果是 master 請修改</small>
+                </div>
+
+                <div class="btn-group" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <button class="admin-btn admin-btn-primary" onclick="saveGitHubSettings()" style="flex: 1;">💾 儲存設定</button>
+                    <button class="admin-btn admin-btn-secondary" onclick="checkGitHubConnection()" style="flex: 1;">🔍 測試連線</button>
+                </div>
+
+                <div id="githubSettingsStatus" style="margin-top: 1.5rem;"></div>
+            </div>
+        </div>
+    </div>
+    
     <!-- JavaScript -->
     <script>
         // ==================== 設定 ====================
@@ -563,13 +765,21 @@
             scriptFile: 'script-advanced.js'
         };
         
-        // GitHub 設定
-        const githubConfig = {
+        // GitHub 設定（使用 let 以便更新）
+        let githubConfig = {
             token: localStorage.getItem('github_token') || '',
             username: localStorage.getItem('github_username') || '',
             repo: localStorage.getItem('github_repo') || '',
-            branch: 'main'
+            branch: localStorage.getItem('github_branch') || 'main'
         };
+        
+        // 更新 GitHub 配置（從 localStorage 重新讀取）
+        function updateGitHubConfig() {
+            githubConfig.token = localStorage.getItem('github_token') || '';
+            githubConfig.username = localStorage.getItem('github_username') || '';
+            githubConfig.repo = localStorage.getItem('github_repo') || '';
+            githubConfig.branch = localStorage.getItem('github_branch') || 'main';
+        }
         
         // 全域變數
         let allLessons = [];
@@ -577,6 +787,7 @@
         let currentMode = 'new'; // 'new' or 'edit'
         let currentEditingArticle = null;
         let isVisualMode = false;
+        let draftPromptShown = false; // 防止重複彈窗
         
         // ==================== 初始化 ====================
         document.addEventListener('DOMContentLoaded', async function() {
@@ -726,6 +937,24 @@
             container.innerHTML = sortedMonths.map(monthKey => {
                 return generateMonthCalendar(monthKey, lessonsByMonth[monthKey].lessons, lessonsByMonth[monthKey].name);
             }).join('');
+            
+            // 添加事件委派：點擊文章標題時打開編輯器（只添加一次）
+            if (!container.dataset.listenerAdded) {
+                container.addEventListener('click', function(e) {
+                    const lessonLink = e.target.closest('.day-lesson.editable');
+                    if (lessonLink && lessonLink.dataset.lesson) {
+                        e.preventDefault();
+                        try {
+                            const lesson = JSON.parse(decodeURIComponent(lessonLink.dataset.lesson));
+                            openEditArticleEditor(lesson);
+                        } catch (error) {
+                            console.error('解析文章資料失敗:', error);
+                            showAlert('error', '無法載入文章資料');
+                        }
+                    }
+                });
+                container.dataset.listenerAdded = 'true';
+            }
         }
         
         // ==================== 生成單月月曆 ====================
@@ -804,11 +1033,12 @@
                     html += `<div class="day-number">${dayNumber}</div>`;
                     
                     if (dayLessons.length > 0 && !cellClass.includes('other-month')) {
-                        dayLessons.forEach(lesson => {
+                        dayLessons.forEach((lesson, index) => {
                             if (dayOfWeek < 5) {
                                 const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
-                                const lessonData = JSON.stringify(lesson).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-                                html += `<a href="javascript:void(0)" class="day-lesson editable" onclick='openEditArticleEditor(${lessonData})' title="${fullTitle}">${fullTitle}</a>`;
+                                // 使用 data 屬性存儲 lesson 資料，使用事件委派處理點擊
+                                const lessonData = encodeURIComponent(JSON.stringify(lesson));
+                                html += `<a href="javascript:void(0)" class="day-lesson editable" data-lesson="${lessonData}" title="${fullTitle}">${fullTitle}</a>`;
                             }
                         });
                     }
@@ -891,10 +1121,16 @@
         }
         
         // ==================== 開啟編輯文章編輯器 ====================
-        async function openEditArticleEditor(lesson) {
+        window.openEditArticleEditor = async function openEditArticleEditor(lesson) {
             // 解析 JSON（如果是字串）
             if (typeof lesson === 'string') {
-                lesson = JSON.parse(lesson.replace(/&quot;/g, '"').replace(/&#39;/g, "'"));
+                try {
+                    lesson = JSON.parse(lesson.replace(/&quot;/g, '"').replace(/&#39;/g, "'"));
+                } catch (e) {
+                    console.error('解析 lesson 資料失敗:', e, lesson);
+                    showAlert('error', '無法解析文章資料');
+                    return;
+                }
             }
             
             currentMode = 'edit';
@@ -937,12 +1173,24 @@
         }
         
         // ==================== 關閉編輯器 ====================
-        function closeEditor() {
-            if (confirm('確定要關閉嗎？未儲存的變更將會遺失。')) {
+        function closeEditor(skipConfirm = false) {
+            if (skipConfirm || confirm('確定要關閉嗎？未儲存的變更將會遺失。')) {
                 document.getElementById('calendarViewContainer').style.display = 'block';
                 document.getElementById('splitEditorContainer').classList.remove('active');
                 document.getElementById('newArticleBtn').style.display = 'inline-block';
                 document.getElementById('alertContainer').innerHTML = '';
+                
+                // 重置編輯器狀態
+                currentMode = 'new';
+                currentEditingArticle = null;
+                isVisualMode = false;
+                
+                // 清空表單
+                document.getElementById('articleForm').reset();
+                document.getElementById('articleHtml').value = '';
+                document.getElementById('visualEditor').innerHTML = '';
+                document.getElementById('previewContent').innerHTML = '<div style="text-align: center; color: #999; padding: 4rem 2rem;"><p style="font-size: 1.2rem; margin-bottom: 0.5rem;">👈 開始編輯以查看預覽</p><p style="font-size: 0.9rem;">編輯內容會即時顯示在這裡</p></div>';
+                document.getElementById('previewStatus').textContent = '等待輸入內容...';
             }
         }
         
@@ -952,29 +1200,556 @@
             const htmlTextarea = document.getElementById('articleHtml');
             const visualEditor = document.getElementById('visualEditor');
             const toggleBtn = document.getElementById('toggleEditorBtn');
+            const insertImageBtn = document.getElementById('insertImageBtn');
             
             if (isVisualMode) {
                 htmlTextarea.style.display = 'none';
                 visualEditor.style.display = 'block';
                 visualEditor.innerHTML = htmlTextarea.value;
                 toggleBtn.textContent = '📝 HTML 編輯';
+                insertImageBtn.style.display = 'inline-block';
+                
+                // 初始化圖片調整功能
+                setTimeout(() => makeImagesResizable(), 100);
             } else {
                 visualEditor.style.display = 'none';
                 htmlTextarea.style.display = 'block';
                 htmlTextarea.value = visualEditor.innerHTML;
                 toggleBtn.textContent = '👁️ 視覺化編輯';
+                insertImageBtn.style.display = 'none';
             }
+        }
+        
+        // ==================== 插入圖片 ====================
+        function insertImage() {
+            if (!isVisualMode) {
+                showAlert('warning', '⚠️ 請先切換到視覺化編輯模式');
+                return;
+            }
+
+            const imageUrl = prompt(
+                '📷 插入圖片\n\n' +
+                '請輸入圖片 URL:\n' +
+                '（例如：https://example.com/image.jpg）'
+            );
+            if (!imageUrl) return;
+
+            const imageAlt = prompt(
+                '📝 圖片說明（選填）\n\n' +
+                '請輸入圖片的替代文字說明:\n' +
+                '（用於無障礙閱讀和 SEO）'
+            ) || '';
+
+            const visualEditor = document.getElementById('visualEditor');
+            const selection = window.getSelection();
+            
+            // 創建圖片元素
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = imageAlt;
+            img.style.cssText = 'max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; cursor: pointer; display: block; border: 2px dashed #e3e8ef; padding: 4px;';
+            img.className = 'resizable-image';
+            img.contentEditable = 'false'; // 防止 contenteditable 攔截點擊
+            img.draggable = false; // 防止拖拽
+            // 不設置 dataset.resizable，讓 makeImagesResizable() 來處理
+            img.dataset.layout = 'full-width'; // 預設全寬布局
+            
+            // 在游標位置插入
+            if (selection.rangeCount > 0 && visualEditor.contains(selection.anchorNode)) {
+                const range = selection.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(img);
+                
+                // 在圖片後添加空段落，方便繼續輸入
+                const p = document.createElement('p');
+                p.innerHTML = '<br>';
+                
+                // 找到圖片的父節點，並在圖片後插入段落
+                const imgParent = img.parentNode;
+                if (img.nextSibling) {
+                    imgParent.insertBefore(p, img.nextSibling);
+                } else {
+                    imgParent.appendChild(p);
+                }
+                
+                // 將游標移到新段落
+                const newRange = document.createRange();
+                newRange.setStart(p, 0);
+                newRange.collapse(true);
+                selection.removeAllRanges();
+                selection.addRange(newRange);
+            } else {
+                // 插入到末尾
+                visualEditor.appendChild(img);
+                const p = document.createElement('p');
+                p.innerHTML = '<br>';
+                visualEditor.appendChild(p);
+            }
+
+            // 初始化圖片調整功能（確保圖片已插入到 DOM）
+            setTimeout(() => {
+                // 只初始化這張新插入的圖片
+                if (img.dataset.resizable !== 'true') {
+                    img.dataset.resizable = 'true';
+                    img.classList.add('resizable-image');
+                    
+                    // 添加樣式
+                    img.contentEditable = 'false'; // 防止 contenteditable 攔截點擊
+                    img.draggable = false; // 防止拖拽
+                    if (!img.style.width && !img.style.maxWidth) {
+                        img.style.maxWidth = '100%';
+                    }
+                    img.style.height = 'auto';
+                    img.style.cursor = 'pointer';
+                    img.style.border = '2px solid transparent';
+                    img.style.borderRadius = '8px';
+                    img.style.margin = '1rem 0';
+                    img.style.display = 'block';
+                    
+                    // Hover 效果
+                    img.addEventListener('mouseenter', function() {
+                        if (!this.classList.contains('resizing')) {
+                            this.style.border = '2px dashed #17a2b8';
+                            this.style.boxShadow = '0 0 0 2px rgba(23, 162, 184, 0.2)';
+                        }
+                    });
+                    
+                    img.addEventListener('mouseleave', function() {
+                        if (!this.classList.contains('resizing')) {
+                            this.style.border = '2px solid transparent';
+                            this.style.boxShadow = 'none';
+                        }
+                    });
+                    
+                    // 點擊圖片顯示控制點和布局面板
+                    img.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        showResizeControls(this);
+                    });
+                }
+            }, 200);
+            
+            // 滾動到圖片位置
+            img.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // 更新預覽
+            updatePreview();
+            
+            showAlert('success', '✅ 圖片已插入！將滑鼠移到圖片上可看到提示，點擊可調整大小');
+        }
+        
+        // ==================== 讓圖片可調整大小 ====================
+        function makeImagesResizable() {
+            const images = document.querySelectorAll('#visualEditor img');
+            
+            images.forEach(img => {
+                // 如果已經有調整功能，跳過
+                if (img.dataset.resizable === 'true') return;
+                img.dataset.resizable = 'true';
+                img.classList.add('resizable-image');
+                img.contentEditable = 'false'; // 防止 contenteditable 攔截點擊
+                img.draggable = false; // 防止拖拽
+                
+                // 添加樣式
+                if (!img.style.width && !img.style.maxWidth) {
+                    img.style.maxWidth = '100%';
+                }
+                img.style.height = 'auto';
+                img.style.cursor = 'pointer';
+                img.style.border = '2px solid transparent';
+                img.style.borderRadius = '8px';
+                img.style.margin = '1rem 0';
+                img.style.display = 'block';
+                
+                // Hover 效果
+                img.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('resizing')) {
+                        this.style.border = '2px dashed #17a2b8';
+                        this.style.boxShadow = '0 0 0 2px rgba(23, 162, 184, 0.2)';
+                    }
+                });
+                
+                img.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('resizing')) {
+                        this.style.border = '2px solid transparent';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+                
+                // 點擊圖片顯示控制點和布局面板
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    showResizeControls(this);
+                });
+            });
+        }
+        
+        // ==================== 顯示調整控制點和布局面板 ====================
+        function showResizeControls(img) {
+            // 移除其他圖片的控制點
+            document.querySelectorAll('.resize-handle').forEach(handle => handle.remove());
+            document.querySelectorAll('.resize-container').forEach(container => {
+                const img = container.querySelector('img');
+                if (img) {
+                    container.parentNode.insertBefore(img, container);
+                    container.remove();
+                }
+            });
+            document.querySelectorAll('.layout-control-panel').forEach(panel => panel.remove());
+            
+            // 如果已經在調整，先移除標記
+            if (img.classList.contains('resizing')) {
+                img.classList.remove('resizing');
+                img.style.border = '2px solid transparent';
+                img.style.boxShadow = 'none';
+            }
+            
+            img.classList.add('resizing');
+            img.style.border = '2px solid #28a745';
+            img.style.boxShadow = '0 0 0 2px rgba(40, 167, 69, 0.3)';
+            
+            // 檢查圖片是否已經在容器中
+            let container = img.parentElement;
+            if (!container || !container.classList.contains('resize-container')) {
+                // 創建容器
+                container = document.createElement('div');
+                container.className = 'resize-container';
+                container.style.position = 'relative';
+                container.style.display = 'inline-block';
+                container.style.width = img.offsetWidth + 'px'; // 使用圖片實際寬度
+                container.style.margin = '1rem 0';
+                
+                // 將圖片移到容器中
+                img.parentNode.insertBefore(container, img);
+                container.appendChild(img);
+                
+                // 確保圖片填滿容器
+                img.style.width = '100%';
+                img.style.display = 'block';
+            }
+            
+            // 確保容器有正確的定位和尺寸
+            container.style.position = 'relative';
+            container.style.width = img.offsetWidth + 'px';
+            
+            // 創建調整控制點（右下角）
+            const handle = document.createElement('div');
+            handle.className = 'resize-handle';
+            handle.style.cssText = `
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                background: #28a745;
+                border: 3px solid white;
+                border-radius: 50%;
+                cursor: nwse-resize;
+                right: -12px;
+                bottom: -12px;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                transition: transform 0.1s;
+            `;
+            
+            handle.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.2)';
+            });
+            handle.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            container.appendChild(handle);
+            
+            // 創建布局控制面板
+            const layoutPanel = createLayoutControlPanel(img, container);
+            container.appendChild(layoutPanel);
+            
+            // 拖曳調整大小
+            let isResizing = false;
+            let startX, startWidth;
+            
+            handle.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                isResizing = true;
+                startX = e.clientX;
+                startWidth = img.offsetWidth;
+                
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', handleMouseUp);
+                
+                // 添加視覺反饋
+                document.body.style.cursor = 'nwse-resize';
+                document.body.style.userSelect = 'none';
+            });
+            
+            function handleMouseMove(e) {
+                if (!isResizing) return;
+                
+                const deltaX = e.clientX - startX;
+                const newWidth = startWidth + deltaX;
+                
+                // 限制最小和最大尺寸
+                const minWidth = 100;
+                const maxWidth = container.parentElement.offsetWidth || 1400;
+                
+                if (newWidth >= minWidth && newWidth <= maxWidth) {
+                    img.style.width = newWidth + 'px';
+                    img.style.height = 'auto'; // 保持比例
+                    img.style.maxWidth = 'none'; // 允許超過 100%
+                    updatePreview();
+                }
+            }
+            
+            function handleMouseUp() {
+                isResizing = false;
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+                document.body.style.cursor = '';
+                document.body.style.userSelect = '';
+            }
+            
+            // 點擊其他地方隱藏控制點
+            setTimeout(() => {
+                document.addEventListener('click', function hideControls(e) {
+                    if (!container.contains(e.target) && e.target !== img && e.target !== handle) {
+                        handle.remove();
+                        layoutPanel.remove();
+                        img.classList.remove('resizing');
+                        img.style.border = '2px solid transparent';
+                        img.style.boxShadow = 'none';
+                        // 如果容器只有圖片，移除容器
+                        if (container.children.length === 1) {
+                            container.parentNode.insertBefore(img, container);
+                            container.remove();
+                        }
+                        document.removeEventListener('click', hideControls);
+                    }
+                }, { once: true });
+            }, 100);
+        }
+        
+        // ==================== 創建布局控制面板 ====================
+        function createLayoutControlPanel(img, container) {
+            const panel = document.createElement('div');
+            panel.className = 'layout-control-panel';
+            panel.style.cssText = `
+                position: absolute;
+                top: -120px;
+                left: 0;
+                background: white;
+                border: 2px solid #28a745;
+                border-radius: 8px;
+                padding: 0.75rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 1001;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                min-width: 200px;
+            `;
+            
+            // 阻止面板上的點擊事件冒泡
+            panel.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+            });
+            
+            // 布局選項標題
+            const title = document.createElement('div');
+            title.textContent = '📐 布局選項';
+            title.style.cssText = 'font-weight: 600; color: #28a745; margin-bottom: 0.25rem; font-size: 0.9rem;';
+            panel.appendChild(title);
+            
+            // 按鈕容器
+            const buttonContainer = document.createElement('div');
+            buttonContainer.style.cssText = 'display: flex; flex-wrap: wrap; gap: 0.5rem;';
+            
+            // 併排按鈕
+            const inlineBtn = createLayoutButton('併排', () => {
+                setImageLayout(img, 'inline');
+                updatePreview();
+            });
+            
+            // 文繞圖左按鈕
+            const floatLeftBtn = createLayoutButton('文繞圖左', () => {
+                setImageLayout(img, 'float-left');
+                updatePreview();
+            });
+            
+            // 文繞圖右按鈕
+            const floatRightBtn = createLayoutButton('文繞圖右', () => {
+                setImageLayout(img, 'float-right');
+                updatePreview();
+            });
+            
+            // 全寬按鈕
+            const fullWidthBtn = createLayoutButton('全寬', () => {
+                setImageLayout(img, 'full-width');
+                updatePreview();
+            });
+            
+            // 刪除按鈕
+            const deleteBtn = createLayoutButton('🗑️ 刪除', () => {
+                if (confirm('確定要刪除這張圖片嗎？')) {
+                    img.remove();
+                    updatePreview();
+                    showAlert('success', '✅ 圖片已刪除');
+                }
+            }, true);
+            
+            buttonContainer.appendChild(inlineBtn);
+            buttonContainer.appendChild(floatLeftBtn);
+            buttonContainer.appendChild(floatRightBtn);
+            buttonContainer.appendChild(fullWidthBtn);
+            buttonContainer.appendChild(deleteBtn);
+            
+            panel.appendChild(buttonContainer);
+            
+            return panel;
+        }
+        
+        // ==================== 創建布局按鈕 ====================
+        function createLayoutButton(text, onClick, isDelete = false) {
+            const btn = document.createElement('button');
+            btn.type = 'button'; // 明確設定為 button，防止表單提交
+            btn.textContent = text;
+            btn.style.cssText = `
+                padding: 0.4rem 0.8rem;
+                border: 1px solid ${isDelete ? '#dc3545' : '#28a745'};
+                background: ${isDelete ? '#dc3545' : '#28a745'};
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.2s;
+                white-space: nowrap;
+            `;
+            
+            btn.addEventListener('mouseenter', function() {
+                this.style.background = isDelete ? '#c82333' : '#218838';
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.background = isDelete ? '#dc3545' : '#28a745';
+                this.style.transform = 'scale(1)';
+            });
+            
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); // 防止默認行為
+                e.stopPropagation(); // 防止事件冒泡
+                e.stopImmediatePropagation(); // 徹底阻止事件傳播
+                onClick();
+            });
+            
+            return btn;
+        }
+        
+        // ==================== 設定圖片布局 ====================
+        function setImageLayout(img, layout) {
+            img.dataset.layout = layout;
+            
+            // 移除所有布局樣式
+            img.style.display = '';
+            img.style.float = '';
+            img.style.margin = '';
+            img.style.width = '';
+            img.style.maxWidth = '';
+            
+            switch(layout) {
+                case 'inline':
+                    // 併排模式：inline-block，適合多張圖片併排
+                    img.style.display = 'inline-block';
+                    img.style.verticalAlign = 'top';
+                    img.style.margin = '0.5rem';
+                    img.style.maxWidth = '48%'; // 預設兩張併排
+                    break;
+                    
+                case 'float-left':
+                    // 文繞圖左
+                    img.style.float = 'left';
+                    img.style.margin = '0 1.5rem 1rem 0';
+                    img.style.maxWidth = '40%';
+                    break;
+                    
+                case 'float-right':
+                    // 文繞圖右
+                    img.style.float = 'right';
+                    img.style.margin = '0 0 1rem 1.5rem';
+                    img.style.maxWidth = '40%';
+                    break;
+                    
+                case 'full-width':
+                    // 全寬模式
+                    img.style.display = 'block';
+                    img.style.width = '100%';
+                    img.style.maxWidth = '100%';
+                    img.style.margin = '1rem 0';
+                    break;
+            }
+            
+            showAlert('success', `✅ 已切換為「${getLayoutName(layout)}」布局`);
+        }
+        
+        // ==================== 取得布局名稱 ====================
+        function getLayoutName(layout) {
+            const names = {
+                'inline': '併排',
+                'float-left': '文繞圖左',
+                'float-right': '文繞圖右',
+                'full-width': '全寬'
+            };
+            return names[layout] || layout;
+        }
+        
+        // ==================== 清理 HTML（移除控制元素，保留樣式）====================
+        function cleanHtmlForPublish(html) {
+            if (!html || !html.trim()) return html;
+            
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            
+            // 移除所有控制元素
+            tempDiv.querySelectorAll('.resize-handle').forEach(el => el.remove());
+            tempDiv.querySelectorAll('.layout-control-panel').forEach(el => el.remove());
+            
+            // 移除容器，保留圖片及其樣式
+            tempDiv.querySelectorAll('.resize-container').forEach(container => {
+                const img = container.querySelector('img');
+                if (img) {
+                    // 保留圖片的內聯樣式（包括 float）
+                    const imgStyles = img.getAttribute('style') || '';
+                    container.parentNode.insertBefore(img, container);
+                    // 確保樣式被保留
+                    if (imgStyles) {
+                        img.setAttribute('style', imgStyles);
+                    }
+                    container.remove();
+                }
+            });
+            
+            // 清理圖片上的 resizing class
+            tempDiv.querySelectorAll('img.resizing').forEach(img => {
+                img.classList.remove('resizing');
+            });
+            
+            return tempDiv.innerHTML;
         }
         
         // ==================== 更新預覽 ====================
         function updatePreview() {
             const previewContent = document.getElementById('previewContent');
-            const htmlContent = isVisualMode ? 
+            let htmlContent = isVisualMode ? 
                 document.getElementById('visualEditor').innerHTML : 
                 document.getElementById('articleHtml').value;
             
             if (htmlContent.trim()) {
-                previewContent.innerHTML = htmlContent;
+                // 使用相同的清理邏輯，確保預覽和發布版本一致
+                const cleanedHtml = cleanHtmlForPublish(htmlContent);
+                previewContent.innerHTML = cleanedHtml;
                 document.getElementById('previewStatus').textContent = '預覽已更新 - ' + new Date().toLocaleTimeString();
             }
         }
@@ -1000,12 +1775,18 @@
         
         // ==================== 儲存文章 ====================
         async function saveArticle() {
+            // 更新 GitHub 配置（確保使用最新設定）
+            updateGitHubConfig();
+            
             const title = document.getElementById('articleTitle').value;
             const date = document.getElementById('articleDate').value;
             let filename = document.getElementById('articleFilename').value;
-            const htmlContent = isVisualMode ? 
+            let htmlContent = isVisualMode ? 
                 document.getElementById('visualEditor').innerHTML : 
                 document.getElementById('articleHtml').value;
+            
+            // 清理 HTML（移除控制元素，保留樣式）
+            htmlContent = cleanHtmlForPublish(htmlContent);
             
             filename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
             if (!filename.endsWith('.html')) {
@@ -1025,10 +1806,13 @@
                 
                 showAlert('success', `✅ ${currentMode === 'edit' ? '更新' : '新增'}成功！`);
                 
+                // 清除草稿
+                localStorage.removeItem('admin_draft_advanced');
+                
                 await loadLessons();
                 
                 setTimeout(() => {
-                    closeEditor();
+                    closeEditor(true); // 跳過確認彈窗，直接關閉
                 }, 1500);
                 
             } catch (error) {
@@ -1373,29 +2157,57 @@
         }
         
         function loadDraftIfExists() {
+            // 防止重複彈窗
+            if (draftPromptShown) {
+                console.log('草稿提示已顯示過，跳過');
+                return;
+            }
+            
             const draft = localStorage.getItem('admin_draft_advanced');
-            if (draft) {
+            if (!draft) {
+                console.log('沒有草稿');
+                return;
+            }
+            
+            draftPromptShown = true; // 立即標記，防止重複
+            console.log('找到草稿，準備彈窗');
+            
+            try {
                 const draftData = JSON.parse(draft);
-                if (confirm(`找到草稿（${new Date(draftData.timestamp).toLocaleString()}），要載入嗎？`)) {
+                const timestamp = new Date(draftData.timestamp).toLocaleString('zh-TW');
+                
+                // 使用 setTimeout 確保在 DOM 完全載入後才彈窗
+                setTimeout(() => {
+                    if (confirm(`找到草稿（${timestamp}），要載入嗎？`)) {
                     currentMode = draftData.mode;
                     currentEditingArticle = draftData.article;
                     isVisualMode = draftData.isVisualMode || false;
                     
-                    document.getElementById('articleTitle').value = draftData.title;
-                    document.getElementById('articleDate').value = draftData.date;
-                    document.getElementById('articleFilename').value = draftData.filename;
+                        document.getElementById('articleTitle').value = draftData.title || '';
+                        document.getElementById('articleDate').value = draftData.date || '';
+                        document.getElementById('articleFilename').value = draftData.filename || '';
                     
                     if (isVisualMode) {
-                        document.getElementById('visualEditor').innerHTML = draftData.html;
-                        document.getElementById('articleHtml').value = draftData.html;
+                            document.getElementById('visualEditor').innerHTML = draftData.html || '';
+                            document.getElementById('articleHtml').value = draftData.html || '';
                         toggleEditorMode();
                     } else {
-                        document.getElementById('articleHtml').value = draftData.html;
+                            document.getElementById('articleHtml').value = draftData.html || '';
                     }
                     
                     showEditor();
                     updatePreview();
-                }
+                    } else {
+                        // 用戶選擇不載入，清除草稿
+                        localStorage.removeItem('admin_draft_advanced');
+                        console.log('草稿已清除');
+                    }
+                }, 500); // 延遲 500ms 確保不會在初始化時衝突
+                
+            } catch (e) {
+                console.error('草稿資料錯誤:', e);
+                localStorage.removeItem('admin_draft_advanced');
+                showAlert('error', '草稿資料損壞，已自動清除');
             }
         }
         
@@ -1479,6 +2291,123 @@
         
         function showError(message) {
             showAlert('error', '❌ ' + message);
+        }
+        
+        // ==================== GitHub 設定相關函數 ====================
+        
+        // 打開 GitHub 設定 Modal
+        function openGitHubModal() {
+            const modal = document.getElementById('githubModal');
+            if (modal) {
+                modal.style.display = 'block';
+                loadGitHubSettings();
+            } else {
+                console.error('找不到 githubModal 元素');
+            }
+        }
+        
+        // 關閉 GitHub 設定 Modal
+        function closeGitHubModal() {
+            const modal = document.getElementById('githubModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // 點擊 Modal 外部關閉
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('githubModal');
+            if (event.target === modal) {
+                closeGitHubModal();
+            }
+        });
+        
+        // 載入 GitHub 設定
+        function loadGitHubSettings() {
+            updateGitHubConfig(); // 重新讀取 localStorage
+            const tokenInput = document.getElementById('githubToken');
+            const usernameInput = document.getElementById('githubUsername');
+            const repoInput = document.getElementById('githubRepo');
+            const branchInput = document.getElementById('githubBranch');
+            
+            if (tokenInput) tokenInput.value = githubConfig.token;
+            if (usernameInput) usernameInput.value = githubConfig.username;
+            if (repoInput) repoInput.value = githubConfig.repo;
+            if (branchInput) branchInput.value = githubConfig.branch;
+        }
+        
+        // 儲存 GitHub 設定
+        function saveGitHubSettings() {
+            const tokenInput = document.getElementById('githubToken');
+            const usernameInput = document.getElementById('githubUsername');
+            const repoInput = document.getElementById('githubRepo');
+            const branchInput = document.getElementById('githubBranch');
+            
+            if (!tokenInput || !usernameInput || !repoInput) {
+                showAlert('error', '❌ 找不到設定欄位');
+                return;
+            }
+            
+            const token = tokenInput.value.trim();
+            const username = usernameInput.value.trim();
+            const repo = repoInput.value.trim();
+            const branch = (branchInput ? branchInput.value.trim() : 'main') || 'main';
+            
+            if (!token || !username || !repo) {
+                showAlert('error', '❌ 請填寫所有必填欄位');
+                return;
+            }
+            
+            // 儲存到 localStorage
+            localStorage.setItem('github_token', token);
+            localStorage.setItem('github_username', username);
+            localStorage.setItem('github_repo', repo);
+            localStorage.setItem('github_branch', branch);
+            
+            // 更新配置對象
+            updateGitHubConfig();
+            
+            showAlert('success', '✅ GitHub 設定已儲存！');
+            checkGitHubConnection();
+        }
+        
+        // 檢查 GitHub 連線
+        async function checkGitHubConnection() {
+            const statusDiv = document.getElementById('githubSettingsStatus');
+            if (!statusDiv) {
+                showAlert('error', '❌ 找不到狀態顯示區域');
+                return false;
+            }
+            
+            updateGitHubConfig(); // 確保使用最新配置
+            
+            if (!githubConfig.token || !githubConfig.username || !githubConfig.repo) {
+                statusDiv.innerHTML = '<div style="padding: 1rem; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24;">❌ 請先填寫所有必填欄位</div>';
+                return false;
+            }
+            
+            statusDiv.innerHTML = '<div style="padding: 1rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; color: #856404;">⏳ 正在測試連線...</div>';
+            
+            try {
+                const response = await fetch(`https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}`, {
+                    headers: {
+                        'Authorization': `token ${githubConfig.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                if (response.ok) {
+                    statusDiv.innerHTML = '<div style="padding: 1rem; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; color: #155724;">✅ GitHub 連線成功！可以開始使用上傳功能了。</div>';
+                    return true;
+                } else {
+                    const error = await response.json();
+                    statusDiv.innerHTML = `<div style="padding: 1rem; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24;">❌ GitHub 連線失敗：${error.message || response.statusText}</div>`;
+                    return false;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div style="padding: 1rem; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24;">❌ GitHub 連線錯誤：${error.message}</div>`;
+                return false;
+            }
         }
     </script>
 
