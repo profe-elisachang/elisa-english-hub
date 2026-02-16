@@ -686,9 +686,16 @@ body {
     text-align: center;
     padding: var(--space-xl);
     color: var(--text-secondary);
+    font-size: 1.1rem;
 }
 
-.loading::after {
+.loading-dots {
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+}
+
+.loading-dots::after {
     content: '...';
     animation: dots 1.5s steps(4, end) infinite;
 }

@@ -79,7 +79,11 @@ async function scanLessons() {
     ];
 
     const lessons = [];
-
+    
+    // 先處理假日通知（不需要載入文件）
+    const holidayItems = [];
+    const fileItems = [];
+    
     for (const fileInfo of potentialFiles) {
         // 跳過 undefined 或 null 的元素
         if (!fileInfo) {
@@ -108,7 +112,7 @@ async function scanLessons() {
         if (isHoliday) {
             const holidayData = createHolidayData(specifiedDate, specifiedTitle, specifiedEmoji);
             if (holidayData) {
-                lessons.push(holidayData);
+                holidayItems.push(holidayData);
             }
             continue;
         }
@@ -120,19 +124,44 @@ async function scanLessons() {
             continue;
         }
         
+        fileItems.push({ filename, specifiedDate, specifiedTitle, specifiedEmoji });
+    }
+    
+    // 將假日項目加入 lessons
+    lessons.push(...holidayItems);
+    
+    // 並行載入所有文件（優化 GitHub Pages 載入速度）
+    const totalFiles = fileItems.length;
+    let loadedCount = 0;
+    
+    const loadPromises = fileItems.map(async ({ filename, specifiedDate, specifiedTitle, specifiedEmoji }) => {
         try {
             const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
             if (response.ok) {
                 const htmlContent = await response.text();
                 const lessonData = await extractLessonData(filename, htmlContent, specifiedDate, specifiedTitle, specifiedEmoji);
-                if (lessonData) {
-                    lessons.push(lessonData);
-                }
+                loadedCount++;
+                updateLoadingProgress(loadedCount, totalFiles);
+                return lessonData;
             }
         } catch (error) {
             console.warn(`Could not load ${filename}:`, error);
+            loadedCount++;
+            updateLoadingProgress(loadedCount, totalFiles);
+            return null;
         }
-    }
+        return null;
+    });
+    
+    // 等待所有文件載入完成
+    const loadedLessons = await Promise.all(loadPromises);
+    
+    // 過濾掉 null 值並加入 lessons
+    loadedLessons.forEach(lesson => {
+        if (lesson) {
+            lessons.push(lesson);
+        }
+    });
 
     // Sort by date (newest first)
     allLessons = lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -579,7 +608,15 @@ function formatDate(date) {
 function showLoading() {
     const container = document.getElementById('calendarView');
     if (container) {
-        container.innerHTML = '<div class="loading">Loading lessons</div>';
+        container.innerHTML = '<div class="loading">Loading lessons<span class="loading-dots"></span></div>';
+    }
+}
+
+function updateLoadingProgress(loaded, total) {
+    const container = document.getElementById('calendarView');
+    if (container) {
+        const percentage = Math.round((loaded / total) * 100);
+        container.innerHTML = `<div class="loading">Loading lessons... ${loaded}/${total} (${percentage}%)<span class="loading-dots"></span></div>`;
     }
 }
 
