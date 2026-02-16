@@ -70,12 +70,9 @@ async function scanLessons() {
         { date: '2026-02-02', title: 'Flexible Adjustment Holiday:Día de la Constitución Mexicana - No Class', isHoliday: true },
         { filename: 'Pen Caps.html', date: '2026-02-16', title: '🖊️ The Life-Saving Secret behind the Hole in Pen Caps' },
         { filename: 'Mindfulness.html', date: '2026-02-16', title: '🧘 Mindfulness: Failing to Make the Grade in Schools' },
-        { filename: '2026-02More Than a Meal.html', date: '2026-02-18', title: '🍽️ More Than a Meal: How You Eat Matters' },
-        { filename: '2026-02Bricked-Up Windows in England.html', date: '2026-02-18', title: '🏛️ What\'s Up with All Those Bricked-Up Windows in England?' },
-        { filename: '2026-02 The Beauty of Broken Things.html', date: '2026-02-20', title: '🏺 The Beauty of Broken Things' }, 
-        
-        { filename: 'test.html', date: '2026-02-16', title: 'test' },,,
         { filename: '-More Than a Meal.html', date: '2026-02-18', title: '🍽️ More Than a Meal: How You Eat Matters' },
+        { filename: '2026-02Bricked-Up Windows in England.html', date: '2026-02-18', title: '🏛️ What\'s Up with All Those Bricked-Up Windows in England?' },
+        { filename: '2026-02 The Beauty of Broken Things.html', date: '2026-02-20', title: '🏺 The Beauty of Broken Things' },
         // 👆 在此上方添加新文章，記得加逗號！  
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
@@ -84,6 +81,11 @@ async function scanLessons() {
     const lessons = [];
 
     for (const fileInfo of potentialFiles) {
+        // 跳過 undefined 或 null 的元素
+        if (!fileInfo) {
+            continue;
+        }
+        
         // 支援兩種格式：字串或物件
         let filename, specifiedDate = null, specifiedTitle = null, specifiedEmoji = null, isHoliday = false;
         
@@ -112,6 +114,12 @@ async function scanLessons() {
         }
 
         // 處理一般文章（需要載入 HTML 文件）
+        // 確保有 filename 才繼續處理
+        if (!filename) {
+            console.warn('Skipping item without filename:', fileInfo);
+            continue;
+        }
+        
         try {
             const response = await fetch(`${CONFIG.lessonFolder}${filename}`);
             if (response.ok) {
