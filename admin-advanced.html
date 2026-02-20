@@ -1980,7 +1980,7 @@
         }
         
         // 更新 script.js 檔案
-        async function updateScriptFile(filename, date, title) {
+        async function updateScriptFile(filename, date, title, oldDate = null) {
             const scriptFileName = CONFIG.scriptFile;
             const cleanedFilename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
             const escapedFilename = cleanedFilename.replace(/'/g, "\\'");
@@ -1995,11 +1995,71 @@
                 }
                 
                 // 檢查是否已存在該文章
-                const existingPattern = new RegExp(`\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*\\}`, 'g');
+                // 如果有舊日期，使用舊日期和 filename 來精確匹配
+                let existingPattern;
+                let match = null;
                 
-                if (existingPattern.test(scriptContent)) {
-                    // 更新現有記錄
-                    scriptContent = scriptContent.replace(existingPattern, scriptLine.trim());
+                if (oldDate) {
+                    const escapedOldDate = oldDate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    // 匹配包含 filename 和舊日期的記錄（考慮屬性順序可能不同）
+                    // 方式1：filename 在前，date 在後
+                    existingPattern = new RegExp(
+                        `(\\s*\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*date:\\s*['"])${escapedOldDate}(['"][^}]*\\},?\\s*)`,
+                        'g'
+                    );
+                    match = scriptContent.match(existingPattern);
+                    
+                    // 方式2：如果方式1沒匹配到，嘗試 date 在前，filename 在後
+                    if (!match) {
+                        existingPattern = new RegExp(
+                            `(\\s*\\{[^}]*date:\\s*['"])${escapedOldDate}(['"][^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*\\},?\\s*)`,
+                            'g'
+                        );
+                        match = scriptContent.match(existingPattern);
+                    }
+                    
+                    // 如果還是沒匹配到，嘗試更寬鬆的匹配（只要包含 filename 和舊日期）
+                    if (!match) {
+                        existingPattern = new RegExp(
+                            `\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*date:\\s*['"]${escapedOldDate}['"][^}]*\\}`,
+                            'g'
+                        );
+                        match = scriptContent.match(existingPattern);
+                    }
+                } else {
+                    // 只使用 filename 匹配（向後兼容）
+                    existingPattern = new RegExp(`\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*\\}`, 'g');
+                    match = scriptContent.match(existingPattern);
+                }
+                
+                // 調試信息
+                console.log('更新 script.js 調試信息:', {
+                    filename: cleanedFilename,
+                    oldDate: oldDate,
+                    newDate: date,
+                    pattern: existingPattern.toString(),
+                    matched: !!match,
+                    matchCount: match ? match.length : 0
+                });
+                
+                if (match) {
+                    // 更新現有記錄 - 直接替換整個記錄行
+                    // 找到匹配的完整行（包括前後的空白和逗號）
+                    let fullLinePattern;
+                    if (oldDate) {
+                        const escapedOldDate = oldDate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        fullLinePattern = new RegExp(
+                            `\\s*\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*date:\\s*['"]${escapedOldDate}['"][^}]*\\},?\\s*`,
+                            'g'
+                        );
+                    } else {
+                        fullLinePattern = new RegExp(
+                            `\\s*\\{[^}]*filename:\\s*['"]${escapedFilename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][^}]*\\},?\\s*`,
+                            'g'
+                        );
+                    }
+                    scriptContent = scriptContent.replace(fullLinePattern, scriptLine);
+                    console.log('✅ 已更新記錄:', cleanedFilename);
                 } else {
                     // 添加新記錄
                     const marker = '// 👆 在此上方添加新文章';
@@ -2087,8 +2147,21 @@
                     }
                 }
                 
-                // 3. 更新 script.js
-                await updateScriptFile(filename, date, title);
+                // 3. 更新 script.js（傳遞舊日期以便精確匹配）
+                let oldDate = null;
+                if (currentEditingArticle) {
+                    // 將 Date 對象轉換為 YYYY-MM-DD 格式
+                    if (currentEditingArticle.date instanceof Date) {
+                        const year = currentEditingArticle.date.getFullYear();
+                        const month = String(currentEditingArticle.date.getMonth() + 1).padStart(2, '0');
+                        const day = String(currentEditingArticle.date.getDate()).padStart(2, '0');
+                        oldDate = `${year}-${month}-${day}`;
+                    } else if (currentEditingArticle.dateString) {
+                        // 如果 dateString 已經是 YYYY-MM-DD 格式，直接使用
+                        oldDate = currentEditingArticle.dateString;
+                    }
+                }
+                await updateScriptFile(filename, date, title, oldDate);
                 
                 // 4. 如果檔名改變，從 script.js 移除舊記錄
                 if (currentEditingArticle && currentEditingArticle.filename !== filename) {
