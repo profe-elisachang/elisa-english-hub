@@ -73,6 +73,7 @@ async function scanLessons() {
         { filename: '-More Than a Meal.html', date: '2026-02-18', title: '🍽️ More Than a Meal: How You Eat Matters' },
         { filename: '2026-02Bricked-Up Windows in England.html', date: '2026-02-18', title: '🏛️ What\'s Up with All Those Bricked-Up Windows in England?' },
         { filename: '2026-02 The Beauty of Broken Things.html', date: '2026-02-20', title: '🏺 The Beauty of Broken Things' },
+        { filename: '- The Beauty of Broken Things.html', date: '2026-02-23', title: '🏺 The Beauty of Broken Things' },
         // 👆 在此上方添加新文章，記得加逗號！  
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
