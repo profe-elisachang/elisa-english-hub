@@ -68,7 +68,7 @@ async function scanLessons() {
         { filename: 'Political-Correctness.html', date: '2026-02-12', title: '🗣️ Political Correctness: Social Progress' },
         { filename: 'Seeing Is Believing.html', date: '2026-02-17', title: '👓 Meta Ray-Ban Display: AI-Powered Smart Glasses for the Workplace' },
         { filename: 'Feb. Looting the Louvre.html', date: '2026-02-19', title: '🖼️ Feb. Looting the Louvre' },
-        { filename: 'Why You Can’t Remember Being a Toddler.html', date: '2026-02-24', title: 'Why You Can’t Remember Being a Toddler' },
+        { filename: 'Why You Can’t Remember Being a Toddler.html', date: '2026-02-24', title: '🧸 Why You Can’t Remember Being a Toddler' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
