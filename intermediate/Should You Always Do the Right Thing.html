@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should You Always Do the Right Thing? - English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            background-color: #f5f0e8;
+            color: #2c2c2c;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* HEADER */
+        .header {
+            background: #c0392b;
+            padding: 1.2rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 900;
+            flex: 1;
+        }
+        .level-badge {
+            background: #fff;
+            color: #c0392b;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #c0392b;
+            border-left: 8px solid #e67e22;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SECTION CARD */
+        .section-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 2px solid #e0d5c5;
+            box-shadow: 4px 4px 0px #d5c9b5;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .expression-table th {
+            background: #c0392b;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .expression-table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid #e0d5c5;
+            vertical-align: top;
+            font-size: 1rem;
+        }
+        .expression-table tr:nth-child(even) td { background: #fdf8f0; }
+        .expression-table tr:hover td { background: #fef3e2; }
+        .expr-en { font-weight: 700; color: #c0392b; font-size: 1.05rem; }
+        .expr-es { color: #7f6000; font-style: italic; }
+        .expr-ex { color: #444; }
+
+        /* ARTICLE */
+        .article-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
+        .article-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+        .article-byline {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .article-divider {
+            height: 3px;
+            background: #c0392b;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .article-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .article-p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .article-p:first-child::first-letter {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1;
+            float: left;
+            margin-right: 0.1rem;
+            color: #c0392b;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background: #fff176;
+            font-weight: 700;
+            border-bottom: 2.5px solid #f39c12;
+            padding: 0 2px;
+            border-radius: 2px;
+            cursor: help;
+            transition: background 0.2s;
+        }
+        .highlight:hover { background: #ffe082; }
+
+        /* PHRASAL VERB highlight */
+        .highlight-pv {
+            background: #b2ebf2;
+            font-weight: 700;
+            border-bottom: 2.5px solid #00acc1;
+            padding: 0 2px;
+            border-radius: 2px;
+            cursor: help;
+        }
+        .highlight-pv:hover { background: #80deea; }
+
+        /* SIDEBAR BOX (Usage Tip / Talk About It) */
+        .sidebar-box {
+            background: #fff8e1;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .sidebar-box h4 {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #e67e22;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.4rem;
+        }
+        .sidebar-box p, .sidebar-box ul {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-box ul { padding-left: 1.2rem; }
+        .sidebar-box li { margin-bottom: 0.3rem; }
+
+        /* DIALOG SECTION */
+        .dialog-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 0.5rem;
+        }
+        .dialog-line {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.9rem;
+            align-items: flex-start;
+        }
+        .speaker {
+            font-weight: 900;
+            color: #c0392b;
+            min-width: 60px;
+            font-size: 1rem;
+            padding-top: 0.1rem;
+        }
+        .dialog-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        /* HIGHLIGHT BOXES in dialog */
+        .dbox {
+            display: inline;
+            background: #fce4ec;
+            border: 1px solid #e91e63;
+            border-radius: 4px;
+            padding: 1px 4px;
+        }
+
+        /* VOCAB GRID */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+        @media (max-width: 1000px) {
+            .vocab-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 700px) {
+            .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+        }
+
+        .vocab-card {
+            border-radius: 10px;
+            padding: 1rem;
+            border: 2px solid;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        /* Vocab color themes */
+        .vocab-card.theme-red {
+            background: #fdecea;
+            border-color: #e57373;
+        }
+        .vocab-card.theme-orange {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        .vocab-card.theme-teal {
+            background: #e0f2f1;
+            border-color: #26a69a;
+        }
+        .vocab-card.theme-amber {
+            background: #fffde7;
+            border-color: #ffc107;
+        }
+        .vocab-card.theme-brown {
+            background: #efebe9;
+            border-color: #8d6e63;
+        }
+        .vocab-card.theme-green {
+            background: #e8f5e9;
+            border-color: #66bb6a;
+        }
+        .vocab-card.theme-blue {
+            background: #e3f2fd;
+            border-color: #42a5f5;
+        }
+        .vocab-card.theme-pink {
+            background: #fce4ec;
+            border-color: #ec407a;
+        }
+
+        .vocab-word {
+            font-weight: 900;
+            font-size: 1.05rem;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .speak-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            transition: transform 0.15s;
+        }
+        .speak-btn:hover { transform: scale(1.3); }
+        .vocab-def {
+            font-size: 0.88rem;
+            color: #333;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+        .vocab-es {
+            font-size: 0.82rem;
+            color: #7f6000;
+            font-style: italic;
+        }
+        .vocab-ex {
+            font-size: 0.82rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.35rem;
+            margin-top: 0.2rem;
+            line-height: 1.5;
+        }
+        .vocab-ex em { color: #c0392b; font-style: normal; font-weight: 600; }
+
+        /* VOCAB SECTION label */
+        .vocab-section-label {
+            display: inline-block;
+            background: #c0392b;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        /* DISCUSSION QUESTIONS */
+        .question-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .question-list li {
+            background: #fdf8f0;
+            border-left: 6px solid #c0392b;
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #222;
+            counter-increment: question;
+        }
+        .question-list li::before {
+            content: "Q" counter(question) ". ";
+            color: #c0392b;
+            font-weight: 900;
+        }
+        .question-list { counter-reset: question; }
+
+        /* SELF PRACTICE */
+        .practice-item {
+            background: #fdf8f0;
+            border: 2px solid #e0d5c5;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .practice-question {
+            padding: 1rem 1.2rem;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #222;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background: #fff;
+        }
+        .practice-question:hover { background: #fef3e2; }
+        .toggle-icon {
+            font-size: 1.2rem;
+            color: #c0392b;
+            font-weight: 900;
+            transition: transform 0.3s;
+        }
+        .practice-answer {
+            display: none;
+            padding: 1rem 1.2rem;
+            border-top: 2px dashed #e0d5c5;
+            background: #fdf8f0;
+            font-size: 0.97rem;
+            color: #333;
+            line-height: 1.7;
+        }
+        .practice-answer.open { display: block; }
+
+        /* IN MY VIEW BADGE */
+        .imv-badge {
+            display: inline-block;
+            background: #c0392b;
+            color: white;
+            font-weight: 900;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.9rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+        .imv-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        /* COLUMNS inside article section */
+        .col-left, .col-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        /* TEST YOURSELF BOX */
+        .test-box {
+            background: #fdecea;
+            border: 2px solid #c0392b;
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1rem;
+        }
+        .test-box h4 {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #c0392b;
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid #c0392b;
+            padding-bottom: 0.4rem;
+        }
+        .test-option {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 0.4rem;
+            padding-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.3rem; }
+            .article-title { font-size: 1.4rem; }
+            .section-card { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- ============================
+         1. USEFUL EXPRESSIONS
+    ============================= -->
+    <div class="section-card">
+        <div class="section-title">💬 Useful Expressions</div>
+        <table class="expression-table">
+            <thead>
+                <tr>
+                    <th>Expression (English)</th>
+                    <th>Spanish</th>
+                    <th>Example Sentence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="expr-en">struggle with</span></td>
+                    <td><span class="expr-es">luchar con / tener dificultades con</span></td>
+                    <td><span class="expr-ex">I always <strong>struggle with</strong> deciding whether to tell the truth or protect someone's feelings.</span></td>
+                </tr>
+                <tr>
+                    <td><span class="expr-en">end up</span></td>
+                    <td><span class="expr-es">terminar / acabar</span></td>
+                    <td><span class="expr-ex">If you work without rest, you'll <strong>end up</strong> exhausted and burned out.</span></td>
+                </tr>
+                <tr>
+                    <td><span class="expr-en">stand up for</span></td>
+                    <td><span class="expr-es">defender / apoyar</span></td>
+                    <td><span class="expr-ex">It's important to <strong>stand up for</strong> someone who is being treated unfairly.</span></td>
+                </tr>
+                <tr>
+                    <td><span class="expr-en">be on the fence</span></td>
+                    <td><span class="expr-es">estar indeciso / no saber qué hacer</span></td>
+                    <td><span class="expr-ex">I'm really <strong>on the fence</strong> about whether to take the new job offer.</span></td>
+                </tr>
+                <tr>
+                    <td><span class="expr-en">prevent someone from</span></td>
+                    <td><span class="expr-es">evitar que alguien / impedir que</span></td>
+                    <td><span class="expr-ex">Always putting others first could <strong>prevent you from</strong> pursuing your own dreams.</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ============================
+         2. ARTICLE
+    ============================= -->
+    <div class="section-card">
+        <span class="imv-badge">In My View</span>
+        <div class="imv-date">◆ 2026 March 30, 31</div>
+
+        <div class="article-title">⚖️ Should You Always Do the Right Thing?</div>
+        <div class="article-subtitle">How important is personal happiness?</div>
+        <div class="article-byline">by Ruth Devlin and Linda Ludwig · Page Design by Angela Chang</div>
+        <div class="article-divider"></div>
+
+        <div class="article-grid">
+            <!-- LEFT COLUMN -->
+            <div class="col-left">
+                <p class="article-p">No matter who you are, you likely <span class="highlight-pv" title="luchar con, tener dificultades con">struggle with</span> the question of whether doing the right thing should always come before your own happiness.</p>
+
+                <p class="article-p">On one hand, making good <span class="highlight" title="moral, ético">moral</span> choices earns the trust and respect of others. It also gives you a clear <span class="highlight" title="conciencia">conscience</span>. An example is telling the truth when you'd rather avoid <span class="highlight-pv" title="meterse en problemas">getting in trouble</span>. That may be difficult in the moment, but it often prevents bigger problems later. Also, <span class="highlight-pv" title="defender, apoyar">standing up for</span> someone who is being <span class="highlight" title="intimidado, víctima de acoso">bullied</span> might not be comfortable, but it helps protect others and shows courage. Living with <span class="highlight" title="integridad">integrity</span> usually makes you feel better than chasing short-term pleasure.</p>
+
+                <!-- VOCAB BLOCK 1 -->
+                <div style="margin-bottom: 1.2rem;">
+                    <span class="vocab-section-label">📖 Vocabulary — Paragraph 1 & 2</span>
+                    <div class="vocab-grid">
+                        <div class="vocab-card theme-red">
+                            <div class="vocab-word">moral <button class="speak-btn" onclick="speakWord('moral')">🔊</button></div>
+                            <div class="vocab-def">related to right and wrong behavior</div>
+                            <div class="vocab-es">moral, ético</div>
+                            <div class="vocab-ex"><em>moral</em> choices affect how others see you.</div>
+                        </div>
+                        <div class="vocab-card theme-orange">
+                            <div class="vocab-word">conscience <button class="speak-btn" onclick="speakWord('conscience')">🔊</button></div>
+                            <div class="vocab-def">inner sense of what is right or wrong</div>
+                            <div class="vocab-es">conciencia</div>
+                            <div class="vocab-ex">A clear <em>conscience</em> helps you sleep well.</div>
+                        </div>
+                        <div class="vocab-card theme-teal">
+                            <div class="vocab-word">bullied <button class="speak-btn" onclick="speakWord('bullied')">🔊</button></div>
+                            <div class="vocab-def">treated in a cruel or aggressive way</div>
+                            <div class="vocab-es">intimidado, víctima de acoso</div>
+                            <div class="vocab-ex">She was <em>bullied</em> at school for being different.</div>
+                        </div>
+                        <div class="vocab-card theme-amber">
+                            <div class="vocab-word">integrity <button class="speak-btn" onclick="speakWord('integrity')">🔊</button></div>
+                            <div class="vocab-def">quality of being honest and having strong moral values</div>
+                            <div class="vocab-es">integridad</div>
+                            <div class="vocab-ex">People with <em>integrity</em> are trusted by others.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <h4>🗣 Talk About It</h4>
+                    <ul>
+                        <li>How important is personal happiness to you?<br><em style="color:#888;">- Personal happiness is …</em></li>
+                        <li>Do you always put others before yourself? Why or why not?<br><em style="color:#888;">- Not always because …</em><br><em style="color:#888;">- Sometimes, because …</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="col-right">
+                <p class="article-p">On the other hand, personal happiness is also important. If people always <span class="highlight" title="sacrificar">sacrifice</span> their own well-being for what they believe is "right," they hurt themselves. They can <span class="highlight-pv" title="terminar, acabar">end up</span> <span class="highlight" title="agotado, exhausto">exhausted</span> and angry. For instance, always putting others first could <span class="highlight-pv" title="evitar que alguien haga algo">prevent someone from pursuing their own dreams</span>. Another example is spending money on a much-needed vacation instead of helping a struggling family member. Happiness and self-care are not selfish; they are necessary for a balanced life.</p>
+
+                <!-- VOCAB BLOCK 2 -->
+                <div style="margin-bottom: 1.2rem;">
+                    <span class="vocab-section-label">📖 Vocabulary — Paragraph 3</span>
+                    <div class="vocab-grid">
+                        <div class="vocab-card theme-brown">
+                            <div class="vocab-word">sacrifice <button class="speak-btn" onclick="speakWord('sacrifice')">🔊</button></div>
+                            <div class="vocab-def">give up something important for someone else</div>
+                            <div class="vocab-es">sacrificar</div>
+                            <div class="vocab-ex">She <em>sacrificed</em> her free time to help her team.</div>
+                        </div>
+                        <div class="vocab-card theme-green">
+                            <div class="vocab-word">exhausted <button class="speak-btn" onclick="speakWord('exhausted')">🔊</button></div>
+                            <div class="vocab-def">extremely tired, with no energy left</div>
+                            <div class="vocab-es">agotado, exhausto</div>
+                            <div class="vocab-ex">After 12 hours of work, he felt completely <em>exhausted</em>.</div>
+                        </div>
+                        <div class="vocab-card theme-blue">
+                            <div class="vocab-word">well-being <button class="speak-btn" onclick="speakWord('well-being')">🔊</button></div>
+                            <div class="vocab-def">state of being comfortable, healthy, and happy</div>
+                            <div class="vocab-es">bienestar</div>
+                            <div class="vocab-ex">Good sleep improves your overall <em>well-being</em>.</div>
+                        </div>
+                        <div class="vocab-card theme-pink">
+                            <div class="vocab-word">self-care <button class="speak-btn" onclick="speakWord('self-care')">🔊</button></div>
+                            <div class="vocab-def">activities done to maintain one's own health and happiness</div>
+                            <div class="vocab-es">autocuidado</div>
+                            <div class="vocab-ex"><em>Self-care</em> is not selfish — it's necessary.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="article-p" style="font-weight:700; color:#444;">What do you think?</p>
+
+                <div class="sidebar-box">
+                    <h4>💡 Usage Tip</h4>
+
+                    <!-- PREVENT -->
+                    <p style="margin-bottom:0.5rem;"><strong>① prevent + O + from V-ing</strong></p>
+                    <p style="font-size:0.93rem; margin-bottom:0.4rem;">Use this structure to say that someone or something <strong>stops another person from doing</strong> an action.</p>
+                    <p style="font-size:0.88rem; color:#7f6000; font-style:italic; margin-bottom:0.6rem;">Usa esta estructura para decir que alguien o algo <strong>impide que otra persona haga</strong> una acción.</p>
+                    <p style="font-size:0.9rem; margin-bottom:0.3rem;">Similar verbs (each with slightly different strength):</p>
+                    <ul style="font-size:0.9rem; padding-left:1.2rem; margin-bottom:0.3rem;">
+                        <li><strong>keep</strong> sb from V-ing — neutral tone / <em style="color:#7f6000;">tono neutro</em></li>
+                        <li><strong>stop</strong> sb from V-ing — stronger / <em style="color:#7f6000;">más directo</em></li>
+                        <li><strong>discourage</strong> sb from V-ing — gentle / <em style="color:#7f6000;">más suave, disuadir</em></li>
+                    </ul>
+                    <p style="font-size:0.88rem; background:#fff9c4; border-left:3px solid #f39c12; padding:0.4rem 0.7rem; border-radius:4px; margin-bottom:1rem;">
+                        📌 <em>Always putting others first could <strong>prevent someone from pursuing</strong> their own dreams.</em><br>
+                        <span style="color:#7f6000;">Poner siempre a los demás primero podría <strong>impedir que alguien persiga</strong> sus propios sueños.</span>
+                    </p>
+
+                    <!-- END UP -->
+                    <p style="margin-bottom:0.5rem;"><strong>② end up + V-ing &nbsp;/&nbsp; end up + Adj. or N.</strong></p>
+                    <p style="font-size:0.93rem; margin-bottom:0.4rem;">Use <strong>end up</strong> to describe a final result — often unexpected or undesired — after a series of events.</p>
+                    <p style="font-size:0.88rem; color:#7f6000; font-style:italic; margin-bottom:0.8rem;">Usa <strong>end up</strong> para describir un resultado final — a menudo inesperado o no deseado — después de una serie de eventos.</p>
+
+                    <table style="width:100%; border-collapse:collapse; font-size:0.9rem; margin-bottom:0.5rem;">
+                        <thead>
+                            <tr>
+                                <th style="background:#e67e22; color:white; padding:0.5rem 0.7rem; text-align:left; border-radius:4px 0 0 0;">Structure</th>
+                                <th style="background:#e67e22; color:white; padding:0.5rem 0.7rem; text-align:left;">Example</th>
+                                <th style="background:#e67e22; color:white; padding:0.5rem 0.7rem; text-align:left; border-radius:0 4px 0 0;">Spanish</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background:#fff8e1;">
+                                <td style="padding:0.5rem 0.7rem; font-weight:700; border-bottom:1px solid #f0e0c0; white-space:nowrap;">end up + V-ing</td>
+                                <td style="padding:0.5rem 0.7rem; border-bottom:1px solid #f0e0c0;"><em>I meant to leave early, but I ended up <strong>staying</strong> until midnight.</em></td>
+                                <td style="padding:0.5rem 0.7rem; border-bottom:1px solid #f0e0c0; color:#7f6000; font-style:italic;">Terminé quedándome hasta medianoche.</td>
+                            </tr>
+                            <tr style="background:#fdf8f0;">
+                                <td style="padding:0.5rem 0.7rem; font-weight:700; border-bottom:1px solid #f0e0c0; white-space:nowrap;">end up + Adj.</td>
+                                <td style="padding:0.5rem 0.7rem; border-bottom:1px solid #f0e0c0;"><em>They can end up <strong>exhausted</strong> and angry.</em></td>
+                                <td style="padding:0.5rem 0.7rem; border-bottom:1px solid #f0e0c0; color:#7f6000; font-style:italic;">Pueden terminar agotados y enojados.</td>
+                            </tr>
+                            <tr style="background:#fff8e1;">
+                                <td style="padding:0.5rem 0.7rem; font-weight:700; white-space:nowrap;">end up + N.</td>
+                                <td style="padding:0.5rem 0.7rem;"><em>If he doesn't study, he'll end up <strong>a failure</strong>.</em></td>
+                                <td style="padding:0.5rem 0.7rem; color:#7f6000; font-style:italic;">Si no estudia, terminará siendo un fracaso.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size:0.85rem; background:#e8f5e9; border-left:3px solid #66bb6a; padding:0.4rem 0.7rem; border-radius:4px;">
+                        ⚠️ <strong>end up + Adj.</strong> → NO need for "being"! <br>
+                        ✅ <em>end up <strong>exhausted</strong></em> &nbsp;|&nbsp; ❌ <del>end up being exhausted</del> (grammatically possible but unnatural)<br>
+                        <span style="color:#7f6000;">Con adjetivos, NO se necesita "being" — suena más natural sin él.</span>
+                    </p>
+                </div>
+
+                <div class="test-box">
+                    <h4>✅ Test Yourself</h4>
+                    <p style="font-size:0.95rem; margin-bottom:0.7rem; font-weight:600;">● Which of the following is an example of making a good moral choice?</p>
+                    <div class="test-option">(A) Taking a vacation instead of helping a family member</div>
+                    <div class="test-option">(B) Spending money on short-term pleasure</div>
+                    <div class="test-option">(C) Telling the truth when you'd rather avoid trouble</div>
+                    <div class="test-option">(D) Ignoring someone who is being bullied</div>
+                    <div style="margin-top:0.8rem;">
+                        <div onclick="toggleTestAnswer(this)" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; background:#c0392b; color:white; border:none; padding:0.4rem 1rem; border-radius:20px; font-size:0.88rem; font-weight:700; user-select:none;">
+                            <span>Show Answer</span><span class="test-toggle-icon">▼</span>
+                        </div>
+                        <div class="test-answer" style="display:none; margin-top:0.7rem; background:#fff; border:2px solid #c0392b; border-radius:8px; padding:0.7rem 1rem; font-size:0.95rem;">
+                            ✅ <strong>Answer: (C)</strong> — Telling the truth when you'd rather avoid trouble is a good moral choice. It shows <em>integrity</em> and gives you a clear <em>conscience</em>, even when it's difficult.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================
+         3. DIALOG (Page 31)
+    ============================= -->
+    <div class="section-card">
+        <div class="dialog-title">🤝 Conversation — Balance is the Key</div>
+        <div class="article-grid">
+            <div>
+                <div class="dialog-line">
+                    <span class="speaker">Aiden:</span>
+                    <span class="dialog-text">Can you give me some advice? I'm really <span class="dbox">on the fence</span>.</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Sofia:</span>
+                    <span class="dialog-text">I can try. What's going on?</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Aiden:</span>
+                    <span class="dialog-text">My mom wants me to <span class="highlight" title="ayudar, asistir"><strong>assist</strong></span> my grandma with <span class="highlight-pv" title="limpiar / vaciar un lugar por completo">cleaning out</span> her house on Saturday. She's lived there for 50 years, and it's <span class="highlight" title="abarrotado, lleno hasta el tope">crammed</span> full of stuff, so it'll be a big job. Problem is, there's a concert on Saturday night that I really want to go to.</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Sofia:</span>
+                    <span class="dialog-text">That's <span class="highlight" title="difícil, duro"><strong>tough</strong></span>. Of course you want to help your grandma.</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Aiden:</span>
+                    <span class="dialog-text">I do. But I've worked hard for weeks without a break, and I need one before I have a <span class="highlight" title="colapso mental / físico por estrés">breakdown</span>.</span>
+                </div>
+
+                <!-- VOCAB BLOCK 3 -->
+                <div style="margin-top:1.2rem;">
+                    <span class="vocab-section-label">📖 Vocabulary — Dialog Part 1</span>
+                    <div class="vocab-grid">
+                        <div class="vocab-card theme-orange">
+                            <div class="vocab-word">assist <button class="speak-btn" onclick="speakWord('assist')">🔊</button></div>
+                            <div class="vocab-def">to help someone with a task</div>
+                            <div class="vocab-es">ayudar, asistir</div>
+                            <div class="vocab-ex">Can you <em>assist</em> me with this report?</div>
+                        </div>
+                        <div class="vocab-card theme-red">
+                            <div class="vocab-word">crammed <button class="speak-btn" onclick="speakWord('crammed')">🔊</button></div>
+                            <div class="vocab-def">completely full, packed tight</div>
+                            <div class="vocab-es">abarrotado, repleto</div>
+                            <div class="vocab-ex">The storage room is <em>crammed</em> with old files.</div>
+                        </div>
+                        <div class="vocab-card theme-teal">
+                            <div class="vocab-word">tough <button class="speak-btn" onclick="speakWord('tough')">🔊</button></div>
+                            <div class="vocab-def">difficult or challenging (also: hard, rough)</div>
+                            <div class="vocab-es">difícil, duro</div>
+                            <div class="vocab-ex">It was a <em>tough</em> decision to make.</div>
+                        </div>
+                        <div class="vocab-card theme-brown">
+                            <div class="vocab-word">breakdown <button class="speak-btn" onclick="speakWord('breakdown')">🔊</button></div>
+                            <div class="vocab-def">a physical or mental collapse from stress</div>
+                            <div class="vocab-es">colapso, crisis nerviosa</div>
+                            <div class="vocab-ex">She had a <em>breakdown</em> after months of overwork.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="dialog-line">
+                    <span class="speaker">Sofia:</span>
+                    <span class="dialog-text">What if you help your grandma during the day and then go to the concert at night?</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Aiden:</span>
+                    <span class="dialog-text"><span class="dbox">I'd be too exhausted to enjoy it.</span> And my grandma's schedule isn't <span class="highlight" title="flexible, adaptable"><strong>flexible</strong></span>. She's sold her house, and everything has to be moved out by Saturday evening.</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Sofia:</span>
+                    <span class="dialog-text">Well, Aiden, balance is the key — helping when you can but also taking care of your own needs.</span>
+                </div>
+                <div class="dialog-line">
+                    <span class="speaker">Aiden:</span>
+                    <span class="dialog-text">I know. But I'll feel really <span class="highlight" title="culpable"><strong>guilty</strong></span> if I don't do the "right" thing. Still, I need to take care of myself, or I will have that breakdown! 🙈</span>
+                </div>
+
+                <!-- VOCAB BLOCK 4 -->
+                <div style="margin-top:1.2rem;">
+                    <span class="vocab-section-label">📖 Vocabulary — Dialog Part 2</span>
+                    <div class="vocab-grid">
+                        <div class="vocab-card theme-green">
+                            <div class="vocab-word">flexible <button class="speak-btn" onclick="speakWord('flexible')">🔊</button></div>
+                            <div class="vocab-def">able to change or adapt easily</div>
+                            <div class="vocab-es">flexible, adaptable</div>
+                            <div class="vocab-ex">Our work schedule is <em>flexible</em> this week.</div>
+                        </div>
+                        <div class="vocab-card theme-pink">
+                            <div class="vocab-word">guilty <button class="speak-btn" onclick="speakWord('guilty')">🔊</button></div>
+                            <div class="vocab-def">feeling bad because you did something wrong</div>
+                            <div class="vocab-es">culpable</div>
+                            <div class="vocab-ex">He felt <em>guilty</em> for missing his friend's birthday.</div>
+                        </div>
+                        <div class="vocab-card theme-amber">
+                            <div class="vocab-word">on the fence <button class="speak-btn" onclick="speakWord('on the fence')">🔊</button></div>
+                            <div class="vocab-def">undecided, unable to choose between two options</div>
+                            <div class="vocab-es">estar indeciso, sin decidir</div>
+                            <div class="vocab-ex">I'm <em>on the fence</em> about which supplier to choose.</div>
+                        </div>
+                        <div class="vocab-card theme-blue">
+                            <div class="vocab-word">cleaning out <button class="speak-btn" onclick="speakWord('cleaning out')">🔊</button></div>
+                            <div class="vocab-def">removing everything from a place; tidying completely</div>
+                            <div class="vocab-es">vaciar, limpiar por completo</div>
+                            <div class="vocab-ex">We're <em>cleaning out</em> the warehouse this weekend.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================
+         4. DISCUSSION QUESTIONS
+    ============================= -->
+    <div class="section-card">
+        <div class="section-title">🗣 Discussion Questions</div>
+        <ol class="question-list">
+            <li>Have you ever had to choose between helping someone else and taking care of yourself? What did you decide, and do you regret it?</li>
+            <li>Do you think it is selfish to say "no" when a family member asks for help? Why or why not?</li>
+            <li>In your work or personal life, how do you find "balance" between doing the right thing and protecting your own well-being?</li>
+        </ol>
+    </div>
+
+    <!-- ============================
+         5. SELF-PRACTICE QUESTIONS
+    ============================= -->
+    <div class="section-card">
+        <div class="section-title">✍️ Self-Practice Questions</div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>1. What does "struggle with" mean? Use it in a sentence about your own life.</span>
+                <span class="toggle-icon">＋</span>
+            </div>
+            <div class="practice-answer">
+                <strong>"Struggle with"</strong> means to have difficulty with something or to find it hard to deal with. <br><br>
+                Example answer: "I <em>struggle with</em> speaking English on the phone because I can't see the other person's face."<br><br>
+                Your turn: Think of something at work or at home that is hard for you. Try: "I struggle with _____ because _____."
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>2. According to the article, what are TWO reasons why doing the right thing is good?</span>
+                <span class="toggle-icon">＋</span>
+            </div>
+            <div class="practice-answer">
+                According to the article:<br><br>
+                1. Making good <strong>moral</strong> choices earns the <strong>trust and respect</strong> of others.<br>
+                2. It also gives you a clear <strong>conscience</strong> (you feel good inside).<br><br>
+                Bonus: The article also says that <em>standing up for</em> someone who is being bullied shows courage and helps protect others.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>3. In the dialog, why can't Aiden go to the concert AND help his grandma?</span>
+                <span class="toggle-icon">＋</span>
+            </div>
+            <div class="practice-answer">
+                Aiden says he would be <strong>too exhausted</strong> to enjoy the concert if he worked all day. Also, his grandma's schedule is not <strong>flexible</strong> — she has already sold her house, and everything must be moved out <strong>by Saturday evening</strong>. So there is no time to do both activities.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>4. The article says "happiness and self-care are not selfish." Do you agree? Give a reason.</span>
+                <span class="toggle-icon">＋</span>
+            </div>
+            <div class="practice-answer">
+                Sample answer: "I <strong>agree</strong> because if you don't take care of yourself, you will <em>end up</em> exhausted and you won't be able to help anyone. For example, if I don't sleep enough, I make more mistakes at work. So <em>self-care</em> helps me perform better and be a better teammate."<br><br>
+                Try to give your own opinion + one personal example!
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- /container -->
+
+<script>
+function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+}
+
+function toggleTestAnswer(el) {
+    const answer = el.nextElementSibling;
+    const icon = el.querySelector('.test-toggle-icon');
+    const isOpen = answer.style.display === 'block';
+    answer.style.display = isOpen ? 'none' : 'block';
+    icon.textContent = isOpen ? '▼' : '▲';
+    el.querySelector('span').textContent = isOpen ? 'Show Answer' : 'Hide Answer';
+}
+
+function toggleAnswer(el) {
+    const answer = el.nextElementSibling;
+    const icon = el.querySelector('.toggle-icon');
+    answer.classList.toggle('open');
+    icon.textContent = answer.classList.contains('open') ? '－' : '＋';
+}
+</script>
+
+</body>
+</html>
