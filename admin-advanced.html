@@ -632,6 +632,16 @@
                     </div>
                     
                     <div class="form-group">
+                        <label class="form-label">Header 圖片 URL（選填）</label>
+                        <input type="text" class="form-input" id="articleHeaderImage"
+                               placeholder="貼上要放在標題下方的大圖網址，例如：https://.../image.jpg"
+                               oninput="updatePreview()">
+                        <small style="color: #5a6c7d; margin-top: 0.25rem; display: block;">
+                            如果有填，系統會自動在文章的 &lt;header&gt; 下方插入一張大圖，並套用一致的 RWD 樣式。
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
                         <label class="form-label">
                             HTML 內容
                             <button type="button" class="admin-btn admin-btn-secondary" 
@@ -1742,6 +1752,8 @@
         // ==================== 更新預覽 ====================
         function updatePreview() {
             const previewContent = document.getElementById('previewContent');
+            const title = document.getElementById('articleTitle').value;
+            const headerImageUrl = document.getElementById('articleHeaderImage').value.trim();
             let htmlContent = isVisualMode ? 
                 document.getElementById('visualEditor').innerHTML : 
                 document.getElementById('articleHtml').value;
@@ -1749,7 +1761,68 @@
             if (htmlContent.trim()) {
                 // 使用相同的清理邏輯，確保預覽和發布版本一致
                 const cleanedHtml = cleanHtmlForPublish(htmlContent);
-                previewContent.innerHTML = cleanedHtml;
+                let fullHtml = cleanedHtml;
+
+                // 如果有 header 圖片 URL，預覽中也插入圖片容器與 CSS
+                if (headerImageUrl) {
+                    const imageContainerHtml = `\n    <div class="article-image-container">\n        <img src="${headerImageUrl}" alt="${title}" class="article-image">\n    </div>\n`;
+                    
+                    const imageContainerCSS = `
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}`;
+                    
+                    const hasImageContainerCSS = fullHtml.includes('.article-image-container') || 
+                                                fullHtml.includes('article-image-container');
+                    
+                    if (!hasImageContainerCSS) {
+                        const styleEndIndex = fullHtml.lastIndexOf('</style>');
+                        if (styleEndIndex !== -1) {
+                            fullHtml = fullHtml.slice(0, styleEndIndex) + imageContainerCSS + '\n' + fullHtml.slice(styleEndIndex);
+                        } else {
+                            const headEndIndex = fullHtml.indexOf('</head>');
+                            if (headEndIndex !== -1) {
+                                const styleTag = `<style>${imageContainerCSS}\n</style>`;
+                                fullHtml = fullHtml.slice(0, headEndIndex) + styleTag + '\n    ' + fullHtml.slice(headEndIndex);
+                            }
+                        }
+                    }
+                    
+                    const headerEndIndex = fullHtml.indexOf('</header>');
+                    if (headerEndIndex !== -1) {
+                        fullHtml = fullHtml.slice(0, headerEndIndex + 9) + imageContainerHtml + fullHtml.slice(headerEndIndex + 9);
+                    } else {
+                        const bodyIndex = fullHtml.indexOf('<body>');
+                        if (bodyIndex !== -1) {
+                            const bodyEndIndex = fullHtml.indexOf('>', bodyIndex) + 1;
+                            fullHtml = fullHtml.slice(0, bodyEndIndex) + imageContainerHtml + fullHtml.slice(bodyEndIndex);
+                        }
+                    }
+                }
+
+                previewContent.innerHTML = fullHtml;
                 document.getElementById('previewStatus').textContent = '預覽已更新 - ' + new Date().toLocaleTimeString();
             }
         }
@@ -1781,6 +1854,7 @@
             const title = document.getElementById('articleTitle').value;
             const date = document.getElementById('articleDate').value;
             let filename = document.getElementById('articleFilename').value;
+            const headerImageUrl = document.getElementById('articleHeaderImage').value.trim();
             let htmlContent = isVisualMode ? 
                 document.getElementById('visualEditor').innerHTML : 
                 document.getElementById('articleHtml').value;
@@ -1791,6 +1865,69 @@
             filename = filename.trim().replace(/[\p{Emoji}]/gu, '').trim();
             if (!filename.endsWith('.html')) {
                 filename += '.html';
+            }
+            
+            // 如果有 header 圖片 URL，將圖片容器與 CSS 插入到 HTML 中
+            if (headerImageUrl) {
+                let fullHtml = htmlContent;
+                
+                const imageContainerHtml = `\n    <div class="article-image-container">\n        <img src="${headerImageUrl}" alt="${title}" class="article-image">\n    </div>\n`;
+                
+                const imageContainerCSS = `
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}`;
+                
+                const hasImageContainerCSS = fullHtml.includes('.article-image-container') || 
+                                            fullHtml.includes('article-image-container');
+                
+                if (!hasImageContainerCSS) {
+                    const styleEndIndex = fullHtml.lastIndexOf('</style>');
+                    if (styleEndIndex !== -1) {
+                        fullHtml = fullHtml.slice(0, styleEndIndex) + imageContainerCSS + '\n' + fullHtml.slice(styleEndIndex);
+                    } else {
+                        const headEndIndex = fullHtml.indexOf('</head>');
+                        if (headEndIndex !== -1) {
+                            const styleTag = `<style>${imageContainerCSS}\n</style>`;
+                            fullHtml = fullHtml.slice(0, headEndIndex) + styleTag + '\n    ' + fullHtml.slice(headEndIndex);
+                        }
+                    }
+                }
+                
+                const headerEndIndex = fullHtml.indexOf('</header>');
+                if (headerEndIndex !== -1) {
+                    fullHtml = fullHtml.slice(0, headerEndIndex + 9) + imageContainerHtml + fullHtml.slice(headerEndIndex + 9);
+                } else {
+                    const bodyIndex = fullHtml.indexOf('<body>');
+                    if (bodyIndex !== -1) {
+                        const bodyEndIndex = fullHtml.indexOf('>', bodyIndex) + 1;
+                        fullHtml = fullHtml.slice(0, bodyEndIndex) + imageContainerHtml + fullHtml.slice(bodyEndIndex);
+                    }
+                }
+                
+                htmlContent = fullHtml;
             }
             
             try {
@@ -2219,6 +2356,7 @@
                 title: document.getElementById('articleTitle').value,
                 date: document.getElementById('articleDate').value,
                 filename: document.getElementById('articleFilename').value,
+                headerImageUrl: document.getElementById('articleHeaderImage').value,
                 html: isVisualMode ? document.getElementById('visualEditor').innerHTML : document.getElementById('articleHtml').value,
                 isVisualMode: isVisualMode,
                 timestamp: new Date().toISOString()
@@ -2259,6 +2397,7 @@
                         document.getElementById('articleTitle').value = draftData.title || '';
                         document.getElementById('articleDate').value = draftData.date || '';
                         document.getElementById('articleFilename').value = draftData.filename || '';
+                        document.getElementById('articleHeaderImage').value = draftData.headerImageUrl || '';
                     
                     if (isVisualMode) {
                             document.getElementById('visualEditor').innerHTML = draftData.html || '';
