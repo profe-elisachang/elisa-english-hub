@@ -351,13 +351,30 @@ body {
 
 
 .day-lesson.holiday {
-    background: var(--blue-accent);
+    background: #fff4e5;
+    color: var(--blue-dark);
+    border: 1px dashed #f0a500;
     cursor: default;
+    font-weight: 600;
+    position: relative;
 }
 
 .day-lesson.holiday:hover {
-    background: var(--blue-accent);
+    background: #fff4e5;
     transform: none;
+    box-shadow: none;
+}
+
+.day-lesson.holiday::before {
+    content: 'NO CLASS';
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #d35400;
+    background: #ffe0b2;
+    border-radius: 999px;
+    padding: 0.05rem 0.4rem;
+    margin-right: 0.35rem;
 }
 
 /* Empty Day */
