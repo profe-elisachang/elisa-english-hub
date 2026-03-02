@@ -50,6 +50,8 @@ async function scanLessons() {
     // - 標題會優先使用這裡提供的，如果沒有提供才會從 HTML 提取
     // - 假日通知不需要 filename，會顯示在月曆上但不可點擊
     //
+    // Schedule: Intermediate class meets Mon/Wed/Fri. Teacher off 3/3–3/17; classes resume 3/18.
+    //
     // ========================================
     const potentialFiles = [
         // 文章格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
@@ -76,6 +78,16 @@ async function scanLessons() {
         { filename: 'Should You Always Do the Right Thing.html', date: '2026-02-25', title: '🤔 Should You Always Do the Right Thing?' },
         { filename: '- The Beauty of Broken Things.html', date: '2026-02-27', title: '🏺 The Beauty of Broken Things' },
         { filename: '-More Than a Meal.html', date: '2026-02-27', title: '🍽️ More Than a Meal: How You Eat Matters' },
+        { filename: 'Should You Always Do the Right Thing.html', date: '2026-03-02', title: '🤔 Should You Always Do the Right Thing?' },
+        { filename: '- The Beauty of Broken Things.html', date: '026-03-02', title: '🏺 The Beauty of Broken Things' },
+        { filename: '-More Than a Meal.html', date: '026-03-02', title: '🍽️ More Than a Meal: How You Eat Matters' },
+        // Teacher off 3/3–3/17, classes resume 3/18 (Intermediate Mon/Wed/Fri)
+        { date: '2026-03-04', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-06', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-09', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-11', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-13', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-16', title: '🏖️ Teacher Off - No Class', isHoliday: true },
 
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }

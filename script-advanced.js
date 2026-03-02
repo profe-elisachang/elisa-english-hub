@@ -53,6 +53,8 @@ async function scanLessons() {
     //    '2025-01-15-topic-name.html',              ← 方式 1：檔名包含日期
     //    { filename: 'The Fight Against Fake Job Applications.html', date: '2025-01-20' },  ← 方式 2：手動指定日期
     //
+    // Schedule: Advanced class meets Tue/Thu. Teacher off 3/3–3/17; classes resume 3/18.
+    //
     // ========================================
     const potentialFiles = [
         // 文章格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
@@ -68,9 +70,19 @@ async function scanLessons() {
         { filename: 'Political-Correctness.html', date: '2026-02-12', title: '🗣️ Political Correctness: Social Progress' },
         { filename: 'Seeing Is Believing.html', date: '2026-02-17', title: '👓 Meta Ray-Ban Display: AI-Powered Smart Glasses for the Workplace' },
         { filename: 'Feb. Looting the Louvre.html', date: '2026-02-19', title: '🖼️ Feb. Looting the Louvre' },
+        { date: '2026-02-24, title: 'Classes suspended due to state safety measures. - No Class', isHoliday: true },
+        { date: '2026-02-26', title: 'Classes suspended due to state safety measures. - No Class', isHoliday: true },
         { filename: 'Why You Can’t Remember Being a Toddler.html', date: '2026-02-24', title: '🧸 Why You Can’t Remember Being a Toddler' },
         { filename: 'Bad Bunny Super Bowl Halftime Show.html', date: '2026-02-26', title: '🏈 GOP Lawmaker Calls for Probe Into NFL and NBC Over \'Indecent\' Bad Bunny Super Bowl Halftime Show' },
-// 👆 在此上方添加新文章，記得加逗號！
+        // Teacher off 3/3–3/17, classes resume 3/18 (Advanced Tue/Thu)
+        { date: '2026-03-03', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-05', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-10', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-12', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-03-17', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { filename: 'Why You Can’t Remember Being a Toddler.html', date: '2026-03-19', title: '🧸 Why You Can’t Remember Being a Toddler' },
+        { filename: 'Bad Bunny Super Bowl Halftime Show.html', date: '2026-03-24', title: '🏈 GOP Lawmaker Calls for Probe Into NFL and NBC Over \'Indecent\' Bad Bunny Super Bowl Halftime Show' },
+        // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
     ];
