@@ -458,7 +458,33 @@
                 font-size: 1.5rem;
             }
         }
-    </style>
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
 
 
     <header class="header">
@@ -481,6 +507,10 @@
             </div>
         </div>
     </header>
+    <div class="article-image-container">
+        <img src="https://bernardaud-prod.s3.eu-west-3.amazonaws.com/atmosphere_images/files/000/000/398/original/Kintsugi-Visuels-Collection.jpg?1587981154" alt="🏺 The Beauty of Broken Things" class="article-image">
+    </div>
+
 
     <div class="container">
         <!-- Useful Expressions Section -->
