@@ -1,0 +1,829 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Don't Trains Have Seatbelts? | English with Elisa</title>
+  <link rel="stylesheet" href="../style-intermediate.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       PAGE THEME: Steel & Olive — Industrial warmth, train vibes
+       ============================================================ */
+    :root {
+      --bg:         #f5f0e8;
+      --surface:    #ffffff;
+      --border:     #b5a48a;
+      --accent1:    #3a6351;   /* forest green */
+      --accent2:    #c0392b;   /* signal red   */
+      --accent3:    #e67e22;   /* amber         */
+      --text:       #2c2c2c;
+      --muted:      #6b6252;
+      --highlight-bg:  #fff3cd;
+      --highlight-bd:  #e67e22;
+      --card-radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Open Sans', 'Noto Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    /* ---- HEADER ---- */
+    .header {
+      background: var(--accent1);
+      padding: 1.2rem 2rem;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .header h1 {
+      color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      flex: 1;
+    }
+    .level-badge {
+      background: var(--accent3);
+      color: #fff;
+      font-weight: 700;
+      font-size: .82rem;
+      padding: .3rem .85rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .search-box { display: flex; align-items: center; }
+
+    /* ---- LAYOUT ---- */
+    .page-wrap {
+      max-width: 1400px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      gap: 2.2rem;
+    }
+
+    /* ---- SECTION CARDS ---- */
+    .card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 2rem 2.2rem;
+      box-shadow: 4px 4px 0 var(--border);
+    }
+
+    .section-title {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.45rem;
+      color: var(--accent1);
+      margin-bottom: 1.2rem;
+      padding-bottom: .5rem;
+      border-bottom: 3px solid var(--accent1);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    /* ---- USEFUL EXPRESSIONS ---- */
+    .expr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+    }
+    .expr-card {
+      background: #f0f7f4;
+      border: 2px solid var(--accent1);
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+    }
+    .expr-en {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent1);
+      margin-bottom: .18rem;
+    }
+    .expr-es {
+      font-size: .9rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: .4rem;
+    }
+    .expr-example {
+      font-size: .95rem;
+      color: var(--text);
+      border-left: 3px solid var(--accent3);
+      padding-left: .7rem;
+    }
+
+    /* ---- ARTICLE ---- */
+    .article-title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+    .article p {
+      margin-bottom: 1.2rem;
+      font-size: 1.08rem;
+    }
+
+    /* highlighted vocab */
+    span.highlight {
+      background: var(--highlight-bg);
+      font-weight: 700;
+      border-bottom: 2.5px solid var(--highlight-bd);
+      padding: 0 2px;
+      border-radius: 3px;
+      cursor: help;
+    }
+
+    /* ---- VOCAB BOXES ---- */
+    .vocab-section {
+      background: #fafafa;
+      border: 2px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 1.4rem 1.6rem;
+      margin-top: .4rem;
+      margin-bottom: 1.6rem;
+    }
+    .vocab-section-title {
+      font-size: .9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .9rem;
+    }
+    @media (max-width: 1100px) {
+      .vocab-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 750px) {
+      .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .vocab-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Each vocab card gets its own color via inline style */
+    .vocab-card {
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      border: 2px solid;
+    }
+    .vocab-word-row {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-bottom: .3rem;
+    }
+    .vocab-word {
+      font-weight: 800;
+      font-size: 1.08rem;
+    }
+    .speak-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 0;
+      transition: transform .15s;
+    }
+    .speak-btn:hover { transform: scale(1.3); }
+    .vocab-meaning {
+      font-size: .88rem;
+      font-weight: 600;
+      margin-bottom: .25rem;
+    }
+    .vocab-es {
+      font-size: .83rem;
+      font-style: italic;
+      opacity: .8;
+      margin-bottom: .3rem;
+    }
+    .vocab-example {
+      font-size: .85rem;
+      border-left: 3px solid rgba(0,0,0,.2);
+      padding-left: .5rem;
+      line-height: 1.45;
+    }
+
+    /* ---- DISCUSSION ---- */
+    .disc-list {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+    .disc-list li {
+      background: #f0f7f4;
+      border: 2px solid var(--accent1);
+      border-radius: 10px;
+      padding: 1rem 1.3rem;
+      font-size: 1.05rem;
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+    .disc-num {
+      background: var(--accent1);
+      color: #fff;
+      font-weight: 900;
+      font-size: .9rem;
+      border-radius: 50%;
+      width: 28px; height: 28px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    /* ---- SELF-PRACTICE ---- */
+    .practice-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+    .practice-item {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .practice-question {
+      background: #fff8ee;
+      padding: .9rem 1.2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      gap: 1rem;
+    }
+    .practice-question:hover { background: #fff0d4; }
+    .toggle-icon {
+      font-size: 1.2rem;
+      transition: transform .3s;
+      flex-shrink: 0;
+    }
+    .practice-answer {
+      display: none;
+      background: #f8fff8;
+      padding: .9rem 1.2rem;
+      border-top: 2px solid var(--border);
+      font-size: .97rem;
+      color: var(--text);
+    }
+    .practice-answer.open { display: block; }
+    .practice-question.active .toggle-icon { transform: rotate(180deg); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 700px) {
+      .card { padding: 1.2rem 1rem; }
+      .article-title { font-size: 1.5rem; }
+      .section-title { font-size: 1.2rem; }
+    }
+  
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ======================== HEADER (EXACT TEMPLATE) ======================== -->
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Intermediate Level</span>
+    <div class="search-box">
+      <a href="../index.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1774287766/Trains_Have_no_Seatbelts_wyshmx.jpg" alt="🚆 Why Don't Trains Have Seatbelts?" class="article-image">
+    </div>
+
+
+<!-- ======================== MAIN CONTENT ======================== -->
+<div class="page-wrap">
+
+  <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+  <div class="card">
+    <h2 class="section-title">🗣️ Useful Expressions</h2>
+    <div class="expr-grid">
+
+      <div class="expr-card">
+        <div class="expr-en">comes down to</div>
+        <div class="expr-es">se reduce a / depende de</div>
+        <div class="expr-example">"The problem <em>comes down to</em> cost and design."</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">for example / take ... for example</div>
+        <div class="expr-es">por ejemplo</div>
+        <div class="expr-example">"<em>Take</em> the two-point belt <em>for example</em> — it only covers your waist."</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">comes at a cost</div>
+        <div class="expr-es">tiene un precio / trae consecuencias</div>
+        <div class="expr-example">"Strengthening the seats <em>comes at a cost</em> — it makes them harder and more dangerous."</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">allows for</div>
+        <div class="expr-es">permite / da espacio para</div>
+        <div class="expr-example">"Train design <em>allows for</em> standing passengers in the aisle."</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">set apart</div>
+        <div class="expr-es">distinguir / diferenciar</div>
+        <div class="expr-example">"These safety features <em>set</em> modern trains <em>apart</em> from older designs."</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ===== SECTION 2 + 3: ARTICLE + VOCAB (interleaved) ===== -->
+  <div class="card article">
+    <h2 class="section-title">📖 Article &amp; Vocabulary</h2>
+
+    <h1 class="article-title">🚆 Why Don't Trains Have Seatbelts?</h1>
+
+    <!-- PARAGRAPH 1 -->
+    <p>
+      When you <span class="highlight" title="abrocharse el cinturón">buckle up</span> in a car or on a plane, you probably feel safer.
+      So, when you board a train and find no seatbelts, you might wonder why.
+      This absence is not due to <span class="highlight" title="negligencia / descuido">neglect</span>.
+      Instead, it <span class="highlight" title="proviene de / tiene su origen en">stems from</span> fundamental differences
+      that <span class="highlight" title="distinguen / diferencian">set</span> trains <span class="highlight" title="aparte">apart</span>.
+    </p>
+
+    <!-- VOCAB BOX 1 -->
+    <div class="vocab-section">
+      <div class="vocab-section-title">📦 Paragraph 1 Vocabulary</div>
+      <div class="vocab-grid">
+
+        <div class="vocab-card" style="background:#e8f5e9; border-color:#388e3c; color:#1b5e20;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">buckle up</span>
+            <button class="speak-btn" onclick="speakWord('buckle up')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">to fasten your seatbelt</div>
+          <div class="vocab-es">abrocharse el cinturón</div>
+          <div class="vocab-example">"Always <em>buckle up</em> before the car moves."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fff3e0; border-color:#e65100; color:#bf360c;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">neglect</span>
+            <button class="speak-btn" onclick="speakWord('neglect')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">failure to take care of something</div>
+          <div class="vocab-es">negligencia / descuido</div>
+          <div class="vocab-example">"The accident was caused by <em>neglect</em>, not bad luck."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#e3f2fd; border-color:#1565c0; color:#0d2a6a;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">stems from</span>
+            <button class="speak-btn" onclick="speakWord('stems from')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">originates from / is caused by</div>
+          <div class="vocab-es">proviene de</div>
+          <div class="vocab-example">"The delay <em>stems from</em> a mechanical issue."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fce4ec; border-color:#c62828; color:#7b1a1a;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">set apart</span>
+            <button class="speak-btn" onclick="speakWord('set apart')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">to make different or special</div>
+          <div class="vocab-es">distinguir / diferenciar</div>
+          <div class="vocab-example">"Quality materials <em>set</em> this product <em>apart</em>."</div>
+        </div>
+
+      </div>
+    </div><!-- /vocab box 1 -->
+
+    <!-- PARAGRAPH 2 -->
+    <p>
+      The challenge <span class="highlight" title="se reduce a">comes down to</span> how seatbelts would work on trains.
+      Take the two-point belt <span class="highlight" title="por ejemplo">for example</span>.
+      It <span class="highlight" title="asegura / sujeta">secures</span> only your waist, so when a
+      <span class="highlight" title="choque / colisión">crash</span> happens, your lower body stays
+      <span class="highlight" title="fija / inmóvil">fixed</span> while your head and upper body could
+      <span class="highlight" title="golpear con fuerza">slam</span> into the seat in front of you.
+      Train accidents often involve sudden, high-speed stops, which would make matters worse.
+      The force could be strong enough to break your neck or damage
+      <span class="highlight" title="órganos internos">internal organs</span>.
+    </p>
+
+    <!-- VOCAB BOX 2 -->
+    <div class="vocab-section">
+      <div class="vocab-section-title">📦 Paragraph 2 Vocabulary</div>
+      <div class="vocab-grid">
+
+        <div class="vocab-card" style="background:#f3e5f5; border-color:#6a1b9a; color:#4a0072;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">secures</span>
+            <button class="speak-btn" onclick="speakWord('secures')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">holds something firmly in place</div>
+          <div class="vocab-es">asegura / sujeta</div>
+          <div class="vocab-example">"The strap <em>secures</em> the box to the pallet."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#e8eaf6; border-color:#283593; color:#1a237e;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">crash</span>
+            <button class="speak-btn" onclick="speakWord('crash')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">a sudden violent accident</div>
+          <div class="vocab-es">choque / colisión</div>
+          <div class="vocab-example">"The <em>crash</em> damaged the front car badly."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fff8e1; border-color:#f57f17; color:#7a4400;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">fixed</span>
+            <button class="speak-btn" onclick="speakWord('fixed')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">not moving; held in position</div>
+          <div class="vocab-es">fija / inmóvil</div>
+          <div class="vocab-example">"The lower body stays <em>fixed</em> but the head moves forward."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#e0f2f1; border-color:#00695c; color:#003d33;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">slam</span>
+            <button class="speak-btn" onclick="speakWord('slam')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">to hit something hard and fast</div>
+          <div class="vocab-es">golpear con fuerza</div>
+          <div class="vocab-example">"His head could <em>slam</em> into the seat in front."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fbe9e7; border-color:#bf360c; color:#7f2400;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">internal organs</span>
+            <button class="speak-btn" onclick="speakWord('internal organs')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">body parts inside (liver, lungs, etc.)</div>
+          <div class="vocab-es">órganos internos</div>
+          <div class="vocab-example">"The impact can damage <em>internal organs</em>."</div>
+        </div>
+
+      </div>
+    </div><!-- /vocab box 2 -->
+
+    <!-- PARAGRAPH 3 -->
+    <p>
+      Three-point belts, like those found in cars, include both lap and shoulder
+      <span class="highlight" title="correas / tirantes">straps</span>, which
+      <span class="highlight" title="limitan / restringen">limit</span> dangerous body movement.
+      But this creates a problem. In cars, the vehicle's
+      <span class="highlight" title="estructura / armazón">frame</span> supports the upper strap,
+      taking the pressure off the seat.
+      On trains, however, there is no wall or frame next to the
+      <span class="highlight" title="pasillo">aisle</span> seat.
+      This means the seat alone must be strong enough to hold the passenger in place.
+      To <span class="highlight" title="soportar / aguantar">withstand</span> the weight of a person being thrown forward,
+      the seat would need a much stronger and more
+      <span class="highlight" title="rígida">rigid</span>
+      <span class="highlight" title="estructura interna">inner structure</span>.
+    </p>
+
+    <!-- VOCAB BOX 3 -->
+    <div class="vocab-section">
+      <div class="vocab-section-title">📦 Paragraph 3 Vocabulary</div>
+      <div class="vocab-grid">
+
+        <div class="vocab-card" style="background:#e8f5e9; border-color:#2e7d32; color:#1b4332;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">straps</span>
+            <button class="speak-btn" onclick="speakWord('straps')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">long narrow bands used to fasten things</div>
+          <div class="vocab-es">correas / tirantes</div>
+          <div class="vocab-example">"The backpack has two shoulder <em>straps</em>."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fff3e0; border-color:#e65100; color:#7a2800;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">frame</span>
+            <button class="speak-btn" onclick="speakWord('frame')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">the structural skeleton of a vehicle or building</div>
+          <div class="vocab-es">estructura / armazón</div>
+          <div class="vocab-example">"The car's <em>frame</em> supports the door and roof."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#e8eaf6; border-color:#303f9f; color:#1a237e;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">aisle</span>
+            <button class="speak-btn" onclick="speakWord('aisle')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">a passage between rows of seats</div>
+          <div class="vocab-es">pasillo</div>
+          <div class="vocab-example">"Please keep the <em>aisle</em> clear during boarding."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#f9fbe7; border-color:#827717; color:#524c00;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">withstand</span>
+            <button class="speak-btn" onclick="speakWord('withstand')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">to resist or survive a force or pressure</div>
+          <div class="vocab-es">soportar / aguantar</div>
+          <div class="vocab-example">"The packaging must <em>withstand</em> rough handling."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fce4ec; border-color:#880e4f; color:#560029;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">rigid</span>
+            <button class="speak-btn" onclick="speakWord('rigid')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">stiff; does not bend easily</div>
+          <div class="vocab-es">rígida / dura</div>
+          <div class="vocab-example">"A <em>rigid</em> structure is stronger but less flexible."</div>
+        </div>
+
+      </div>
+    </div><!-- /vocab box 3 -->
+
+    <!-- PARAGRAPH 4 -->
+    <p>
+      However, <span class="highlight" title="fortalecer / reforzar">strengthening</span> the seats
+      <span class="highlight" title="tiene un precio / trae consecuencias">comes at a cost</span>.
+      This change turns the train into a dangerous space for standing passengers.
+      Since train design <span class="highlight" title="permite / da espacio para">allows for</span> standing,
+      some people will always remain
+      <span class="highlight" title="sin cinturón">unbelted</span>.
+      During a sudden <span class="highlight" title="colisión">collision</span>, these passengers
+      get thrown forward.
+      Rather than falling against a soft surface, they would hit the hard seats.
+      Even worse, they could strike the passengers who are secured in their seats and unable to move out of the way.
+    </p>
+
+    <!-- VOCAB BOX 4 -->
+    <div class="vocab-section">
+      <div class="vocab-section-title">📦 Paragraph 4 Vocabulary</div>
+      <div class="vocab-grid">
+
+        <div class="vocab-card" style="background:#e0f7fa; border-color:#006064; color:#003740;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">strengthening</span>
+            <button class="speak-btn" onclick="speakWord('strengthening')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">making something stronger</div>
+          <div class="vocab-es">fortalecer / reforzar</div>
+          <div class="vocab-example">"<em>Strengthening</em> the packaging reduced damage during shipping."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fff8e1; border-color:#ff6f00; color:#7a3400;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">comes at a cost</span>
+            <button class="speak-btn" onclick="speakWord('comes at a cost')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">has a negative consequence or trade-off</div>
+          <div class="vocab-es">tiene un precio</div>
+          <div class="vocab-example">"Speed <em>comes at a cost</em> — more fuel is used."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#f3e5f5; border-color:#7b1fa2; color:#4a0072;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">unbelted</span>
+            <button class="speak-btn" onclick="speakWord('unbelted')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">not wearing a seatbelt</div>
+          <div class="vocab-es">sin cinturón</div>
+          <div class="vocab-example">"<em>Unbelted</em> passengers are at higher risk in a crash."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#ffebee; border-color:#b71c1c; color:#7f0000;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">collision</span>
+            <button class="speak-btn" onclick="speakWord('collision')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">a crash between two moving objects</div>
+          <div class="vocab-es">colisión / choque</div>
+          <div class="vocab-example">"The <em>collision</em> caused serious delays on the line."</div>
+        </div>
+
+      </div>
+    </div><!-- /vocab box 4 -->
+
+    <!-- PARAGRAPH 5 -->
+    <p>
+      A better safety solution for trains involves seats designed to
+      <span class="highlight" title="equilibrar / balancear">balance</span> two needs.
+      They must be <span class="highlight" title="flexible">flexible</span> enough to
+      <span class="highlight" title="absorber">absorb</span>
+      <span class="highlight" title="impacto / fuerza">impact</span> energy,
+      yet <span class="highlight" title="firme / rígida">stiff</span> enough to
+      <span class="highlight" title="contener / mantener">contain</span> passengers between rows
+      and prevent them from hitting other people or objects.
+    </p>
+
+    <!-- VOCAB BOX 5 -->
+    <div class="vocab-section">
+      <div class="vocab-section-title">📦 Paragraph 5 Vocabulary</div>
+      <div class="vocab-grid">
+
+        <div class="vocab-card" style="background:#e8f5e9; border-color:#1b5e20; color:#0a2e0a;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">flexible</span>
+            <button class="speak-btn" onclick="speakWord('flexible')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">able to bend without breaking</div>
+          <div class="vocab-es">flexible</div>
+          <div class="vocab-example">"The material is <em>flexible</em>, so it absorbs shock."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#e3f2fd; border-color:#0d47a1; color:#001d6b;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">absorb</span>
+            <button class="speak-btn" onclick="speakWord('absorb')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">to take in or reduce a force or energy</div>
+          <div class="vocab-es">absorber</div>
+          <div class="vocab-example">"Foam can <em>absorb</em> impact and protect the product."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fff3e0; border-color:#bf360c; color:#7a1f00;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">impact</span>
+            <button class="speak-btn" onclick="speakWord('impact')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">a powerful hit or collision force</div>
+          <div class="vocab-es">impacto / golpe</div>
+          <div class="vocab-example">"The <em>impact</em> of the fall broke the screen."</div>
+        </div>
+
+        <div class="vocab-card" style="background:#fafafa; border-color:#616161; color:#212121;">
+          <div class="vocab-word-row">
+            <span class="vocab-word">stiff</span>
+            <button class="speak-btn" onclick="speakWord('stiff')" title="Pronounce">🔊</button>
+          </div>
+          <div class="vocab-meaning">firm; difficult to bend or move</div>
+          <div class="vocab-es">firme / rígida</div>
+          <div class="vocab-example">"A <em>stiff</em> seat keeps passengers from sliding forward."</div>
+        </div>
+
+      </div>
+    </div><!-- /vocab box 5 -->
+
+  </div><!-- /article card -->
+
+
+  <!-- ===== SECTION 4: DISCUSSION QUESTIONS ===== -->
+  <div class="card">
+    <h2 class="section-title">💬 Discussion Questions</h2>
+    <ul class="disc-list">
+      <li>
+        <span class="disc-num">1</span>
+        <span>Have you ever thought about safety differences between trains, buses, and cars? Which do you feel safest in, and why?</span>
+      </li>
+      <li>
+        <span class="disc-num">2</span>
+        <span>In your job — QA, logistics, purchasing, or sales — how do you balance safety and cost when making decisions? Can you give a real example?</span>
+      </li>
+      <li>
+        <span class="disc-num">3</span>
+        <span>The article says that a solution for one group (seated passengers) can create a new danger for another group (standing passengers). Can you think of a similar trade-off in a product or process at your company?</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ===== SECTION 5: SELF-PRACTICE ===== -->
+  <div class="card">
+    <h2 class="section-title">✏️ Self-Practice Questions</h2>
+    <div class="practice-list">
+
+      <div class="practice-item">
+        <div class="practice-question" onclick="toggleAnswer(this)">
+          <span>1. Why is a two-point belt dangerous on a train during a crash?</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="practice-answer">
+          A two-point belt only secures your waist. If the train stops suddenly, your lower body stays fixed but your head and upper body can slam into the seat in front, which could break your neck or damage internal organs.
+        </div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-question" onclick="toggleAnswer(this)">
+          <span>2. What problem does the train's aisle seat create for using a three-point belt?</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="practice-answer">
+          In a car, the vehicle's frame supports the upper strap. On a train, there is no wall or frame beside the aisle seat, so the seat itself would need to hold all the force — meaning it would need a much stronger, more rigid inner structure.
+        </div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-question" onclick="toggleAnswer(this)">
+          <span>3. Why does strengthening train seats "come at a cost"?</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="practice-answer">
+          If the seats become harder and more rigid to hold belted passengers, they become dangerous for standing passengers. In a collision, unbelted standing passengers would be thrown forward and hit the hard seats — or even strike the people who are sitting down.
+        </div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-question" onclick="toggleAnswer(this)">
+          <span>4. What is the ideal solution for train seat safety described in the article?</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="practice-answer">
+          The ideal train seat must balance two needs: it should be flexible enough to absorb impact energy, but still stiff enough to contain passengers between rows and stop them from hitting other people or objects.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+
+<!-- ======================== SCRIPTS ======================== -->
+<script>
+  function speakWord(word) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang  = 'en-US';
+    utterance.rate  = 0.9;
+    speechSynthesis.speak(utterance);
+  }
+
+  function toggleAnswer(btn) {
+    btn.classList.toggle('active');
+    const answer = btn.nextElementSibling;
+    answer.classList.toggle('open');
+  }
+</script>
+
+
