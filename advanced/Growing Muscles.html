@@ -1,0 +1,1000 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing Muscles, Growing Markets - English Conversation with Elisa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f4f0e8;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #2e6b4f;
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: #e8a230;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* ARTICLE TITLE CARD */
+        .article-hero {
+            background: #2e6b4f;
+            color: white;
+            padding: 40px 30px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 6px solid #e8a230;
+        }
+
+        .article-hero h1 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            line-height: 1.3;
+            color: white;
+        }
+
+        .article-hero .subtitle {
+            font-size: 1.1rem;
+            color: #b8dcc8;
+            margin: 0;
+            font-style: italic;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #8cc4a8;
+            margin-top: 12px;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-card h2 {
+            color: #2e6b4f;
+            font-size: 1.4rem;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8f4ee;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-item {
+            background: #f9f6f0;
+            border-left: 4px solid #e8a230;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+        }
+
+        .expression-english {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2e6b4f;
+            margin-bottom: 4px;
+        }
+
+        .expression-spanish {
+            font-size: 0.95rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .expression-example {
+            font-size: 0.95rem;
+            color: #444;
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+        }
+
+        /* ARTICLE TEXT */
+        .article-text p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #333;
+            margin-bottom: 1.2em;
+        }
+
+        .subsection-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2e6b4f;
+            background: #e8f4ee;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin: 24px 0 16px 0;
+            display: inline-block;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 6px;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* ── INLINE VOCAB BOX (appears right after each paragraph) ── */
+        .inline-vocab {
+            background: #fffef8;
+            border: 1px solid #d4e8da;
+            border-left: 4px solid #2e6b4f;
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 4px 0 28px 0;
+        }
+
+        .inline-vocab-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #2e6b4f;
+            margin-bottom: 12px;
+            opacity: 0.75;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        /* 2 cards: 50% each; 3+ cards: up to 3 per row */
+        @media (min-width: 640px) {
+            .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1100px) {
+            .vocab-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* 1 card only: always fills full width */
+        .vocab-grid .vocab-item:only-child {
+            grid-column: 1 / -1;
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 14px 16px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
+        .vocab-word {
+            color: #2e6b4f;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+            padding: 0;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0 4px;
+            line-height: 1.5;
+            font-size: 0.96rem;
+        }
+
+        .vocab-spanish {
+            color: #666;
+            font-style: italic;
+            margin: 4px 0 6px;
+            font-size: 0.92rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 10px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        /* ARTICLE WRAPPER CARD */
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .article-card h2 {
+            color: #2e6b4f;
+            font-size: 1.4rem;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8f4ee;
+            margin-bottom: 24px;
+        }
+
+        /* DISCUSSION & PRACTICE */
+        .section-card ul {
+            padding-left: 22px;
+        }
+
+        .section-card ul li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .practice-questions ol {
+            padding-left: 22px;
+        }
+
+        .practice-questions li {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        details {
+            margin-top: 20px;
+            background: #f4f9f6;
+            border: 1px solid #b8dcc8;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #2e6b4f;
+            font-size: 1rem;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        details li {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 0.98rem;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div>
+                <a href="../index.html" class="back-to-calendar-btn">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1774284341/Growing_Muscles_Growing_Markets_mawz86.jpg" alt="💪 Growing Muscles, Growing Markets" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main>
+
+            <!-- ARTICLE HERO -->
+            <div class="article-hero">
+                <h1>💪 Growing Muscles, Growing Markets</h1>
+                <p class="subtitle">Women and older adults are driving sales of creatine higher</p>
+                <p class="article-meta">by Redd Brown / © 2025, Bloomberg News. Distributed by Tribune Content Agency, LLC.</p>
+            </div>
+
+            <!-- ══════════════════════════════════════════════ -->
+            <!-- USEFUL EXPRESSIONS -->
+            <!-- ══════════════════════════════════════════════ -->
+            <div class="section-card">
+                <h2>💬 Useful Expressions</h2>
+
+                <div class="expression-item">
+                    <div class="expression-english">get wise to something</div>
+                    <div class="expression-spanish">darse cuenta de algo / entender algo</div>
+                    <div class="expression-example">Many employees are finally getting wise to the benefits of regular exercise.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">front and center</div>
+                    <div class="expression-spanish">en primer plano / ser la prioridad principal</div>
+                    <div class="expression-example">Safety protocols are front and center in our new manufacturing guidelines.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">riding the same wave</div>
+                    <div class="expression-spanish">aprovechar la misma tendencia / subirse a la misma ola</div>
+                    <div class="expression-example">Our competitor is riding the same wave of health-conscious consumers.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">aside from / enthusiasm aside</div>
+                    <div class="expression-spanish">dejando de lado / aparte de</div>
+                    <div class="expression-example">Budget concerns aside, this new system would greatly improve our efficiency.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">turns out</div>
+                    <div class="expression-spanish">resulta que</div>
+                    <div class="expression-example">Turns out the new supplier has better quality control than the previous one.</div>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════════════ -->
+            <!-- ARTICLE — paragraph by paragraph with inline vocab -->
+            <!-- ══════════════════════════════════════════════ -->
+            <div class="article-card">
+                <h2>📰 Article: Growing Muscles, Growing Markets</h2>
+
+                <!-- ── PARAGRAPH 1 ── -->
+                <div class="article-text">
+                    <p>
+                        Creatine is shedding its <span class="highlight" title="健身狂 / 健身達人">gym-bro</span> reputation, unlocking lucrative new markets as women and older Americans <span class="highlight" title="darse cuenta de los beneficios">get wise to</span> the benefits of the long-<span class="highlight" title="estigmatizado">stigmatized</span> supplement. Sales are <span class="highlight" title="aumentando rápidamente">booming</span> as a result.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">gym-bro</span>
+                                <button class="speak-btn" onclick="speakWord('gym bro')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">An informal term for a man who spends a lot of time at the gym and is very focused on building muscles</p>
+                            <p class="vocab-spanish">健身狂 / 健身達人 (hombre obsesionado con el gimnasio)</p>
+                            <div class="vocab-example">The brand used to appeal only to gym-bros, but now it targets a much wider audience.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">stigmatized</span>
+                                <button class="speak-btn" onclick="speakWord('stigmatized')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Treated or regarded as socially unacceptable, causing shame or disgrace</p>
+                            <p class="vocab-spanish">estigmatizado</p>
+                            <div class="vocab-example">Mental health issues have been stigmatized for decades, but attitudes are slowly changing.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">booming</span>
+                                <button class="speak-btn" onclick="speakWord('booming')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Growing or increasing very rapidly and successfully</p>
+                            <p class="vocab-spanish">en auge / disparado</p>
+                            <div class="vocab-example">The electric vehicle market is booming despite global supply chain challenges.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 2 ── -->
+                <div class="article-text">
+                    <p>
+                        As the COVID-19 pandemic put health and well-being front and center for many Americans, creatine started <span class="highlight" title="aprovechar la misma tendencia">riding the same wave</span> that pushed up demand for anything from high-protein food products and weight-loss drugs to an interest in weightlifting, among other lifestyle changes.
+                    </p>
+                </div>
+                <!-- No new vocabulary in this paragraph — wave of expressions already covered above -->
+
+                <!-- ── PARAGRAPH 3 ── -->
+                <div class="article-text">
+                    <p>
+                        Vitamin- and supplement-seller GNC, which has over 4,000 locations across the U.S., has seen creatine sales <span class="highlight" title="dispararse / aumentar de golpe">surge</span> 75% from 2020. "Creatine is now in more baskets than almost any other supplement we carry," said Mark Butera, GNC's vice president of <span class="highlight" title="comercialización / mercadotecnia de productos">merchandising</span>.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">surge</span>
+                                <button class="speak-btn" onclick="speakWord('surge')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A sudden large increase in something</p>
+                            <p class="vocab-spanish">aumento repentino / dispararse</p>
+                            <div class="vocab-example">We saw a surge in orders after the product was featured in a major publication.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">merchandising</span>
+                                <button class="speak-btn" onclick="speakWord('merchandising')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The activity of promoting and selling products, including how they are displayed and marketed</p>
+                            <p class="vocab-spanish">comercialización / mercadotecnia de productos</p>
+                            <div class="vocab-example">Good merchandising strategies can significantly increase sales in retail stores.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 4 ── -->
+                <div class="article-text">
+                    <p>
+                        Consumer <span class="highlight" title="datos demográficos / perfil del consumidor">demographics</span> are changing, too. Women now account for 30% of all creatine purchases at the retailer, up from 18% in 2020, while buyers' average age has risen to 35 years from 30.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">demographics</span>
+                                <button class="speak-btn" onclick="speakWord('demographics')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Statistical data about a population, such as age, gender, and income</p>
+                            <p class="vocab-spanish">datos demográficos / perfil del consumidor</p>
+                            <div class="vocab-example">Understanding your customer demographics helps you design better marketing campaigns.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── SUBSECTION: What it is and isn't ── -->
+                <div class="subsection-title">📌 What it is and isn't</div>
+
+                <!-- ── PARAGRAPH 5 ── -->
+                <div class="article-text">
+                    <p>
+                        Creatine is a naturally occurring <span class="highlight" title="compuesto">compound</span> produced by the body for energy production—indirectly contributing to muscle growth by enabling more training. It's different from protein, which supplies the materials for actual tissue growth.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">compound</span>
+                                <button class="speak-btn" onclick="speakWord('compound')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A substance made up of two or more elements combined together</p>
+                            <p class="vocab-spanish">compuesto</p>
+                            <div class="vocab-example">The lab team identified a new chemical compound that could improve battery performance.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 6 ── -->
+                <div class="article-text">
+                    <p>
+                        Research into creatine—first discovered and isolated in 1832—has largely focused on adult male athletes, with new <span class="highlight" title="investigaciones / consultas">inquiries</span> increasingly focusing on the benefits beyond muscle building, including on bone and <span class="highlight" title="cognitivo">cognitive</span> health across all ages and genders.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">inquiries</span>
+                                <button class="speak-btn" onclick="speakWord('inquiries')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Formal investigations or research efforts to find out information</p>
+                            <p class="vocab-spanish">investigaciones / consultas</p>
+                            <div class="vocab-example">We received several inquiries about our new product line from overseas distributors.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">cognitive</span>
+                                <button class="speak-btn" onclick="speakWord('cognitive')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Related to mental processes such as thinking, learning, and memory</p>
+                            <p class="vocab-spanish">cognitivo</p>
+                            <div class="vocab-example">Regular breaks during work can improve employees' cognitive performance.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 7 ── -->
+                <div class="article-text">
+                    <p>
+                        AlzChem Group AG, the most prominent creatine producer outside China, is a major <span class="highlight" title="patrocinador / financiador">funder</span> of such research, supporting studies of over 30 scientists in female health, <span class="highlight" title="longevidad">longevity</span> and cognitive performance. AlzChem doubled its production <span class="highlight" title="capacidad">capacity</span> in 2022 amid "exceptionally strong" demand.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">funder</span>
+                                <button class="speak-btn" onclick="speakWord('funder')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A person or organization that provides money to support a project or research</p>
+                            <p class="vocab-spanish">patrocinador / financiador</p>
+                            <div class="vocab-example">Finding a reliable funder is essential for long-term research projects.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">longevity</span>
+                                <button class="speak-btn" onclick="speakWord('longevity')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Long life or the long duration of something</p>
+                            <p class="vocab-spanish">longevidad</p>
+                            <div class="vocab-example">The longevity of our machines depends on proper maintenance schedules.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 8 ── -->
+                <div class="article-text">
+                    <p>
+                        Enthusiasm aside, creatine supplements alone won't result in the rapid body transformations <span class="highlight" title="promocionadas exageradamente / anunciadas en exceso">touted</span> online.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">touted</span>
+                                <button class="speak-btn" onclick="speakWord('touted')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Praised or promoted enthusiastically, sometimes excessively</p>
+                            <p class="vocab-spanish">promocionado exageradamente / anunciado con entusiasmo</p>
+                            <div class="vocab-example">The new software was touted as a revolution, but it had many early bugs.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 9 ── -->
+                <div class="article-text">
+                    <p>
+                        "Creatine is both underrated because there's a lot of people that are still kind of <span class="highlight" title="temerosos / asustados">fearful</span> of creatine and there's so many benefits to it, but I also think it's one of the most overrated supplements as well," said Scott Forbes, an associate professor at Brandon University studying creatine's effectiveness on athletic performance and brain health.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">fearful</span>
+                                <button class="speak-btn" onclick="speakWord('fearful')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Feeling afraid or worried about something; full of fear</p>
+                            <p class="vocab-spanish">temeroso / asustado</p>
+                            <div class="vocab-example">Many consumers are fearful of new ingredients they don't recognise on product labels.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── SUBSECTION: Stigmatization ── -->
+                <div class="subsection-title">⚠️ Stigmatization</div>
+
+                <!-- ── PARAGRAPH 10 ── -->
+                <div class="article-text">
+                    <p>
+                        Creatine's growing popularity is overcoming decades of <span class="highlight" title="estigmatización">stigmatization</span> through associations with performance-enhancing drugs.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">stigmatization</span>
+                                <button class="speak-btn" onclick="speakWord('stigmatization')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The process of treating someone or something as shameful or socially unacceptable</p>
+                            <p class="vocab-spanish">estigmatización</p>
+                            <div class="vocab-example">The stigmatization of certain supplements has prevented athletes from using safe products.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 11 ── -->
+                <div class="article-text">
+                    <p>
+                        During the 1992 Barcelona Summer Olympics, British athletes <span class="highlight" title="polémicamente / de manera controvertida">controversially</span> used the little-known supplement, including Linford Christie, who went on to win the gold medal in the men's 100-meter race. Creatine's reputation was further <span class="highlight" title="manchada / dañada">tarnished</span> during Major League Baseball's so-called "<span class="highlight" title="esteroide">steroid</span> era."
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">controversially</span>
+                                <button class="speak-btn" onclick="speakWord('controversially')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">In a way that causes public disagreement or debate</p>
+                            <p class="vocab-spanish">polémicamente / de manera controvertida</p>
+                            <div class="vocab-example">The company controversially decided to outsource its entire quality control department.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">tarnished</span>
+                                <button class="speak-btn" onclick="speakWord('tarnished')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Damaged or made worse, especially someone's reputation or image</p>
+                            <p class="vocab-spanish">manchado / dañado</p>
+                            <div class="vocab-example">The brand's image was tarnished after the safety recall of its flagship product.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">steroid</span>
+                                <button class="speak-btn" onclick="speakWord('steroid')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A type of chemical substance, sometimes used illegally to enhance athletic performance</p>
+                            <p class="vocab-spanish">esteroide</p>
+                            <div class="vocab-example">The athlete was banned after testing positive for a steroid compound.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 12 ── -->
+                <div class="article-text">
+                    <p>
+                        "Turns out that everyone in the MLB that was taking steroids was also taking creatine, and so in the hearts and minds of the American consumer creatine was, therefore, a steroid," said Dan McCormick, co-founder and chief executive officer of Create Wellness, which sells flavored creatine gummies.
+                    </p>
+                </div>
+                <!-- No new vocabulary — "steroid" already covered above -->
+
+                <!-- ── PARAGRAPH 13 ── -->
+                <div class="article-text">
+                    <p>
+                        <span class="highlight" title="persistentes / que no desaparecen">Lingering</span> misconceptions about side effects ranging from hair loss and kidney damage have contributed to its reputation, <span class="highlight" title="relegándolo / enviándolo al olvido">casting it into obscurity</span> in niche bodybuilding and athletic communities.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">lingering</span>
+                                <button class="speak-btn" onclick="speakWord('lingering')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Continuing to exist or remain longer than expected, often something negative</p>
+                            <p class="vocab-spanish">persistente / que no desaparece</p>
+                            <div class="vocab-example">There are lingering concerns about the long-term effects of this new production method.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">casting into obscurity</span>
+                                <button class="speak-btn" onclick="speakWord('casting into obscurity')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To push something to the margins, making it little-known or forgotten</p>
+                            <p class="vocab-spanish">relegar al olvido / enviar a la oscuridad</p>
+                            <div class="vocab-example">Outdated technology is quickly cast into obscurity when better alternatives emerge.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 14 ── -->
+                <div class="article-text">
+                    <p>
+                        In reality, creatine is among the most well-studied, <span class="highlight" title="eficaz / que da resultados">efficacious</span> and safe supplements in sports science, according to Darren Candow, a professor at the University of Regina focusing on exercise physiology, nutrition and aging.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">efficacious</span>
+                                <button class="speak-btn" onclick="speakWord('efficacious')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Effective at producing the desired result, especially in a medical or scientific context</p>
+                            <p class="vocab-spanish">eficaz</p>
+                            <div class="vocab-example">The new treatment proved to be highly efficacious in clinical trials.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── SUBSECTION: More than muscles ── -->
+                <div class="subsection-title">💪 More than muscles</div>
+
+                <!-- ── PARAGRAPH 15 ── -->
+                <div class="article-text">
+                    <p>
+                        Online "wellness translators"—such as podcast hosts Andrew Huberman, Joe Rogan and Tim Ferriss—helped <span class="highlight" title="impulsar la demanda">drive demand</span>, translating scientific research for listeners "in a way that's applicable to their lives," McCormick said.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">drive demand</span>
+                                <button class="speak-btn" onclick="speakWord('drive demand')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To cause or increase the desire for a product or service</p>
+                            <p class="vocab-spanish">impulsar la demanda</p>
+                            <div class="vocab-example">Social media influencers helped drive demand for the new fitness tracker.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 16 ── -->
+                <div class="article-text">
+                    <p>
+                        Globally, the creatine market is seen <span class="highlight" title="cuadruplicándose">quadrupling</span> from 2024 levels to $4.2 billion by 2030, according to Grand View Research. At an annual growth rate of 25%, that's well ahead of the projected 6.4% for the wider supplement market.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">quadrupling</span>
+                                <button class="speak-btn" onclick="speakWord('quadrupling')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Becoming four times as large or as much</p>
+                            <p class="vocab-spanish">cuadruplicándose</p>
+                            <div class="vocab-example">Production costs are quadrupling due to the new environmental regulations.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 17 ── -->
+                <div class="article-text">
+                    <p>
+                        Applications of creatine have expanded to helping women <span class="highlight" title="mitigar / reducir">mitigate</span> some symptoms of <span class="highlight" title="menopausia">menopause</span>, including <span class="highlight" title="niebla mental / dificultad para concentrarse">brain fog</span>, and—alongside semi-regular weightlifting sessions—improved bone <span class="highlight" title="integridad / firmeza">integrity</span> which <span class="highlight" title="disminuye / decrece">declines</span> with age.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">mitigate</span>
+                                <button class="speak-btn" onclick="speakWord('mitigate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To reduce the severity or impact of something negative</p>
+                            <p class="vocab-spanish">mitigar / reducir</p>
+                            <div class="vocab-example">We implemented new ventilation systems to mitigate the risk of air pollution on the factory floor.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">menopause</span>
+                                <button class="speak-btn" onclick="speakWord('menopause')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The time in a woman's life when her menstrual periods permanently stop, usually in middle age</p>
+                            <p class="vocab-spanish">menopausia</p>
+                            <div class="vocab-example">Research into menopause health has been historically underfunded.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">brain fog</span>
+                                <button class="speak-btn" onclick="speakWord('brain fog')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A state of mental confusion, difficulty concentrating, or feeling mentally slow</p>
+                            <p class="vocab-spanish">niebla mental / dificultad para concentrarse</p>
+                            <div class="vocab-example">Many workers reported experiencing brain fog after long overnight shifts.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">integrity</span>
+                                <button class="speak-btn" onclick="speakWord('integrity')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The state of being whole, strong, and undamaged</p>
+                            <p class="vocab-spanish">integridad / firmeza estructural</p>
+                            <div class="vocab-example">Engineers must test the structural integrity of all components before final assembly.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 18 ── -->
+                <div class="article-text">
+                    <p>
+                        Uses could increase in the future as researchers aim to study its impact on women during pregnancy, cancer prevention and healthier aging, said Candow. Further research shows signs the supplement may improve symptoms with some of the most <span class="highlight" title="dañinas / muy perjudiciales">pernicious</span>, <span class="highlight" title="degenerativas / que empeoran progresivamente">degenerative</span> brain diseases as well.
+                    </p>
+                </div>
+                <div class="inline-vocab">
+                    <div class="inline-vocab-label">📚 Vocabulary</div>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">pernicious</span>
+                                <button class="speak-btn" onclick="speakWord('pernicious')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Having a very harmful or destructive effect, often in a way that is not immediately obvious</p>
+                            <p class="vocab-spanish">pernicioso / muy dañino</p>
+                            <div class="vocab-example">The pernicious effects of chronic stress on employee health should not be ignored.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">degenerative</span>
+                                <button class="speak-btn" onclick="speakWord('degenerative')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Describing a condition that gradually gets worse and is hard to stop</p>
+                            <p class="vocab-spanish">degenerativo / que empeora progresivamente</p>
+                            <div class="vocab-example">Early diagnosis is critical for managing degenerative diseases effectively.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PARAGRAPH 19 ── -->
+                <div class="article-text">
+                    <p>
+                        "One study on Alzheimer's disease that showed that, if they supplement with creatine, they can actually increase the creatine stores within the brain and they also improved cognitive function," Brandon University's Forbes said.
+                    </p>
+                </div>
+                <!-- No new vocabulary in final paragraph -->
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+
+            </div><!-- end article-card -->
+
+            <!-- ══════════════════════════════════════════════ -->
+            <!-- DISCUSSION QUESTIONS -->
+            <!-- ══════════════════════════════════════════════ -->
+            <div class="section-card">
+                <h2>🗣️ Discussion Questions</h2>
+                <ul>
+                    <li>Before reading this article, what did you know about creatine? Has your opinion changed after reading it?</li>
+                    <li>The article mentions that "wellness translators" like podcast hosts played a big role in changing public perception. Do you think influencers and podcasters are reliable sources of health information? Why or why not?</li>
+                    <li>The creatine market is projected to grow at 25% annually. What factors in your industry have driven similar unexpected market growth?</li>
+                </ul>
+            </div>
+
+            <!-- ══════════════════════════════════════════════ -->
+            <!-- SELF-PRACTICE -->
+            <!-- ══════════════════════════════════════════════ -->
+            <div class="section-card">
+                <h2>✏️ Self-Practice Questions</h2>
+                <div class="practice-questions">
+                    <ol>
+                        <li>Fill in the blank: Creatine sales at GNC have __________ 75% since 2020, making it one of the most popular supplements in the store. <em>(Use a word from the article)</em></li>
+
+                        <li>True or False: According to the article, creatine and steroids are essentially the same type of supplement.<br><em>Explain your answer in one sentence.</em></li>
+
+                        <li>Match the word to its meaning:<br>
+                            <strong>a)</strong> touted &nbsp;&nbsp; <strong>b)</strong> tarnished &nbsp;&nbsp; <strong>c)</strong> lingering &nbsp;&nbsp; <strong>d)</strong> mitigate<br><br>
+                            <strong>1.</strong> damaged or made worse &nbsp;&nbsp;
+                            <strong>2.</strong> to reduce the impact of something &nbsp;&nbsp;
+                            <strong>3.</strong> praised or promoted enthusiastically &nbsp;&nbsp;
+                            <strong>4.</strong> continuing longer than expected
+                        </li>
+
+                        <li>Short answer: Name TWO ways creatine is now being studied for benefits beyond muscle building. Use your own words.</li>
+                    </ol>
+
+                    <details>
+                        <summary><strong>Reference Answers</strong></summary>
+                        <ol>
+                            <li><strong>surged</strong> — "creatine sales surge 75% from 2020"</li>
+                            <li><strong>False.</strong> The article explains that creatine is a naturally occurring compound completely different from steroids. The association was a misconception caused by athletes using both simultaneously during the MLB "steroid era."</li>
+                            <li>a-3, b-1, c-4, d-2</li>
+                            <li>Possible answers include: bone health / bone integrity; cognitive health / brain health; symptoms of menopause; pregnancy research; cancer prevention; healthier aging; Alzheimer's disease / degenerative brain diseases.</li>
+                        </ol>
+                    </details>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
