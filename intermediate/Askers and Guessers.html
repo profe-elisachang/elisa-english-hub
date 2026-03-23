@@ -1,0 +1,898 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridging the Gap Between Askers and Guessers</title>
+  <link rel="stylesheet" href="../style-intermediate.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== THEME: Warm Terracotta + Deep Teal + Cream ===== */
+    :root {
+      --bg:         #fdf6ee;
+      --surface:    #ffffff;
+      --primary:    #c0533a;
+      --primary-dk: #8f3422;
+      --accent:     #1a6e72;
+      --accent-lt:  #e4f4f5;
+      --warm:       #f0a868;
+      --warm-lt:    #fef3e2;
+      --text:       #2c2018;
+      --text-muted: #6b5744;
+      --border:     #ddc9b4;
+      --hi-bg:      #fff176;
+      --hi-border:  #f4a120;
+      --shadow:     0 4px 18px rgba(44,32,24,0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans', 'Open Sans', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* ===== HEADER (exact template) ===== */
+    .header {
+      background: var(--primary);
+      padding: 1.2rem 2rem;
+      border-bottom: 5px solid var(--primary-dk);
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .header-content h1 {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 800;
+      flex: 1;
+    }
+    .level-badge {
+      background: var(--warm);
+      color: var(--primary-dk);
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== MAIN WRAPPER ===== */
+    .main-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ===== ARTICLE TITLE BLOCK ===== */
+    .article-hero {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.2rem 2.5rem 1.8rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '🤝';
+      position: absolute;
+      right: 2rem; top: 1rem;
+      font-size: 6rem;
+      opacity: 0.15;
+    }
+    .article-hero .topic-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 0.5rem;
+    }
+    .article-hero h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.7rem;
+    }
+    .article-hero .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.88);
+      font-style: italic;
+      max-width: 720px;
+    }
+
+    /* ===== IMAGE PLACEHOLDER ===== */
+    .img-slot {
+      border: 3px dashed var(--primary);
+      border-radius: 12px;
+      background: var(--warm-lt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin: 1.5rem 0;
+    }
+    .img-slot .img-icon { font-size: 2.5rem; }
+    .img-slot .img-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: monospace;
+      background: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      margin-top: 0.3rem;
+      word-break: break-all;
+    }
+
+    /* Actual <img> when URL is inserted */
+    .img-slot img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 6px solid var(--primary);
+      padding-left: 0.9rem;
+      margin: 2.5rem 0 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== USEFUL EXPRESSIONS ===== */
+    .expressions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .expr-card {
+      background: var(--accent);
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .expr-card .phrase {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+    }
+    .expr-card .esp {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 0.6rem;
+      font-style: italic;
+    }
+    .expr-card .example {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.92);
+      border-top: 1px solid rgba(255,255,255,0.25);
+      padding-top: 0.5rem;
+    }
+
+    /* ===== ARTICLE TEXT ===== */
+    .article-body p {
+      margin-bottom: 1.4rem;
+      font-size: 1.1rem;
+      line-height: 1.85;
+    }
+    .article-body p.lead {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary-dk);
+      border-left: 4px solid var(--warm);
+      padding-left: 1rem;
+      background: var(--warm-lt);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1rem 1rem 1.2rem;
+    }
+    .article-body blockquote {
+      border-left: 5px solid var(--primary);
+      background: #fff5f3;
+      padding: 1rem 1.5rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--primary-dk);
+      font-weight: 600;
+    }
+
+    /* Highlighted vocabulary */
+    .highlight {
+      background: var(--hi-bg);
+      font-weight: 700;
+      border-bottom: 2.5px solid var(--hi-border);
+      border-radius: 3px;
+      padding: 0 2px;
+      cursor: help;
+      position: relative;
+    }
+    .highlight:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-dk);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    /* Phrasal verb highlight */
+    .ph {
+      background: #e0f7fa;
+      font-weight: 700;
+      border-bottom: 2.5px solid var(--accent);
+      border-radius: 3px;
+      padding: 0 2px;
+      cursor: help;
+      position: relative;
+    }
+    .ph:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    /* ===== PARAGRAPH + VOCAB WRAPPER ===== */
+    .para-block { margin-bottom: 2.5rem; }
+
+    /* ===== VOCAB BOX ===== */
+    .vocab-box {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      margin-top: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .vocab-box-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+    }
+    .vocab-card {
+      background: var(--accent-lt);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      border-left: 4px solid var(--accent);
+    }
+    .vocab-card .vc-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .vocab-card .vc-word {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--primary-dk);
+    }
+    .speak-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 28px; height: 28px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .speak-btn:hover { background: var(--primary); }
+    .vocab-card .vc-es {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+    .vocab-card .vc-def {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .vocab-card .vc-ex {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-style: italic;
+      border-top: 1px solid rgba(26,110,114,0.2);
+      padding-top: 0.3rem;
+    }
+
+    /* ===== TWO-COLUMN LAYOUT for p.47 content ===== */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ===== DISCUSSION QUESTIONS ===== */
+    .discussion-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .discussion-list li {
+      background: var(--warm-lt);
+      border-left: 6px solid var(--warm);
+      padding: 1rem 1.3rem;
+      border-radius: 0 10px 10px 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .discussion-list li::before {
+      content: '💬';
+      margin-right: 0.6rem;
+    }
+
+    /* ===== SELF-PRACTICE (foldable) ===== */
+    .practice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    details.practice-item {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    details.practice-item summary {
+      padding: 1rem 1.4rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--primary-dk);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    details.practice-item summary::-webkit-details-marker { display: none; }
+    details.practice-item summary::after {
+      content: '▼ Show Answer';
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    details.practice-item[open] summary::after {
+      content: '▲ Hide Answer';
+    }
+    .practice-answer {
+      padding: 0 1.4rem 1.2rem;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      line-height: 1.75;
+    }
+    .practice-answer strong {
+      color: var(--primary);
+    }
+
+    /* ===== CULTURE CARD (aside) ===== */
+    .culture-card {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow);
+    }
+    .culture-card h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--warm);
+    }
+    .culture-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .culture-card ul li::before {
+      content: '→ ';
+      font-weight: 700;
+      color: var(--warm);
+    }
+
+    /* ===== CLOSING QUOTE ===== */
+    .closing-quote {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-style: italic;
+      box-shadow: var(--shadow);
+    }
+
+    /* ===== FOOTER ===== */
+    .page-footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .main-wrap { padding: 1rem 1rem 3rem; }
+      .article-hero { padding: 1.5rem; }
+      .vocab-grid { grid-template-columns: 1fr 1fr; }
+      .expressions-grid { grid-template-columns: 1fr; }
+    }
+  
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ========== FIXED HEADER (exact template) ========== -->
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Intermediate Level</span>
+    <div class="search-box">
+      <a href="../index.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255,255,255,0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1774280261/asker_guessers_r04h9t.png" alt="🤝 Bridging the Gap Between Askers and Guessers" class="article-image">
+    </div>
+
+
+<!-- ========== MAIN CONTENT ========== -->
+<div class="main-wrap">
+
+  <!-- ARTICLE TITLE BLOCK -->
+  <div class="article-hero">
+    <div class="topic-label">🧠 Psychology · Cross-Cultural Communication</div>
+    <h2>🤝 Bridging the Gap Between Askers and Guessers</h2>
+    <p class="subtitle">Strategies for improving cross-cultural interactions</p>
+  </div>
+  <p style="background:#fef3e2; border-left:5px solid #f0a868; padding:1rem 1.2rem; border-radius:0 10px 10px 0; font-size:1.05rem; margin-bottom:2rem; font-weight:600; color:#2c2018;">
+    Understanding Ask versus Guess communication styles and learning to adapt when communicating with someone of the opposite style can help make misunderstandings fewer and improve cross-cultural relationships.
+  </p>
+
+  <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+  <div class="section-title">💬 Useful Expressions</div>
+  <div class="expressions-grid">
+
+    <div class="expr-card">
+      <div class="phrase">put someone on the spot</div>
+      <div class="esp">poner a alguien en aprietos / en un apuro</div>
+      <div class="example">📌 <em>My boss put me on the spot by asking me to present without warning.</em></div>
+    </div>
+
+    <div class="expr-card">
+      <div class="phrase">read between the lines</div>
+      <div class="esp">leer entre líneas / entender el mensaje oculto</div>
+      <div class="example">📌 <em>She didn't say she was upset, but I could read between the lines.</em></div>
+    </div>
+
+    <div class="expr-card">
+      <div class="phrase">give someone the benefit of the doubt</div>
+      <div class="esp">darle a alguien el beneficio de la duda</div>
+      <div class="example">📌 <em>He was late, but I'll give him the benefit of the doubt — traffic was bad.</em></div>
+    </div>
+
+    <div class="expr-card">
+      <div class="phrase">make light of something</div>
+      <div class="esp">quitarle importancia / tomarlo a la ligera</div>
+      <div class="example">📌 <em>They made light of the misunderstanding so no one felt uncomfortable.</em></div>
+    </div>
+
+    <div class="expr-card">
+      <div class="phrase">set yourself up for success</div>
+      <div class="esp">prepararte para tener éxito</div>
+      <div class="example">📌 <em>Learning about different cultures sets you up for success at work.</em></div>
+    </div>
+
+  </div>
+
+
+  <!-- ===== SECTION 2: ARTICLE ===== -->
+  <div class="section-title">📖 Article</div>
+
+
+
+  <div class="article-body">
+
+    <!-- ── PARAGRAPH 1 ── -->
+    <div class="para-block">
+      <p>As Grace and Allison <span class="ph" title="适应；安顿下来 / adaptarse; instalarse">settled into</span> Allison's room to study, Allison asked, "Do you want anything to eat or drink?"</p>
+      <p>"No, thanks," Grace replied politely, expecting Allison to extend the offer a second time as was <span class="highlight" title="habitual; acostumbrado / 习惯性的">customary</span> in her experience.</p>
+      <p>Moments later, Allison returned with a drink for herself but nothing for Grace. Allison neither repeated her offer nor suggested sharing her own drink. Grace left Allison's house feeling thirsty, upset and neglected.</p>
+
+      <div class="vocab-box">
+        <div class="vocab-box-title">📚 Vocabulary — Paragraph 1</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">customary</span>
+              <button class="speak-btn" onclick="speakWord('customary')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">habitual / acostumbrado</div>
+            <div class="vc-def">(adj) usual or traditional in a particular situation</div>
+            <div class="vc-ex"><em>It is customary to bow when greeting someone in Japan.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">settle into</span>
+              <button class="speak-btn" onclick="speakWord('settle into')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">adaptarse a / instalarse</div>
+            <div class="vc-def">(phrasal v.) to become comfortable in a new place or situation</div>
+            <div class="vc-ex"><em>It took a few weeks to settle into the new office.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">neglected</span>
+              <button class="speak-btn" onclick="speakWord('neglected')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">ignorado / descuidado</div>
+            <div class="vc-def">(adj) feeling like nobody cares about you</div>
+            <div class="vc-ex"><em>She felt neglected when her colleague didn't reply to her messages.</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PARAGRAPH 2 ── -->
+    <div class="para-block">
+      <p>This incident <span class="highlight" title="ilustrar / demostrar">illustrates</span> a classic clash between Ask and Guess Cultures. Allison is part of the Ask Culture, which emphasizes direct, <span class="highlight" title="verbal / de palabra">verbal</span> communication and assumes people will state their needs clearly. Allison, an Asker, tends to ask for what she wants directly, confident that people will respond with "yes" if they are willing or able and "no" if not. In contrast, Grace grew up in the Guess Culture, where people avoid making direct requests, not wanting to impose or <span class="ph" title="poner a alguien en aprietos / 使人為難">put people on the spot</span>. And although in this culture, one might ask for something when the answer is a guaranteed "yes," Grace, a Guesser, is <span class="highlight" title="acostumbrada a / 习惯于">accustomed</span> to saying no first before accepting food or drink. Guess Culture members are good at <span class="ph" title="leer entre líneas / 看出字裡行間的意思">reading between the lines</span>. They show their care for others by <span class="highlight" title="percibir / darse cuenta de / 感知">perceiving</span> their needs. From Grace's <span class="highlight" title="perspectiva / punto de vista / 角度">perspective</span>, Allison should have offered her a drink again or simply brought her one, guessing Grace was thirsty.</p>
+
+      <div class="vocab-box">
+        <div class="vocab-box-title">📚 Vocabulary — Paragraph 2</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">illustrates</span>
+              <button class="speak-btn" onclick="speakWord('illustrates')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">ilustra / demuestra</div>
+            <div class="vc-def">(v) to show clearly; to be a good example of something</div>
+            <div class="vc-ex"><em>This story illustrates how culture affects communication.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">verbal</span>
+              <button class="speak-btn" onclick="speakWord('verbal')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">verbal / de palabra</div>
+            <div class="vc-def">(adj) using spoken words, not written or implied</div>
+            <div class="vc-ex"><em>I prefer verbal instructions in meetings.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">accustomed</span>
+              <button class="speak-btn" onclick="speakWord('accustomed')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">acostumbrado a</div>
+            <div class="vc-def">(adj) used to something through habit or experience</div>
+            <div class="vc-ex"><em>I'm not accustomed to such direct questions.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">perceiving</span>
+              <button class="speak-btn" onclick="speakWord('perceiving')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">percibir / notar</div>
+            <div class="vc-def">(v) noticing or becoming aware of something</div>
+            <div class="vc-ex"><em>She is good at perceiving when someone is uncomfortable.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">perspective</span>
+              <button class="speak-btn" onclick="speakWord('perspective')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">perspectiva / punto de vista</div>
+            <div class="vc-def">(n) a particular way of thinking about something</div>
+            <div class="vc-ex"><em>From the customer's perspective, the process is too slow.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">put on the spot</span>
+              <button class="speak-btn" onclick="speakWord('put on the spot')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">poner en aprietos</div>
+            <div class="vc-def">(phrasal v.) to force someone into an awkward or difficult situation</div>
+            <div class="vc-ex"><em>The manager put me on the spot by asking for numbers I didn't have.</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── IMAGE SLOT 2: p.47 diagram ── -->
+    <div class="img-slot" style="min-height:200px;">
+ 
+    <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1774280420/asker_guessers_w8nkfs.png">
+    </div>
+
+    <!-- ── PARAGRAPH 3 ── -->
+    <div class="para-block">
+      <p>Communication styles of the Ask and Guess Cultures are common across the world. Most people of Asian, Middle Eastern and African <span class="highlight" title="herencia / herencia cultural / 血統">heritage</span> come from Guess Cultures, while Europeans and North Americans are more likely to belong to Ask Cultures. Note, though, that all societies have elements of both cultures and that cultural background alone does not determine a person's communication style.</p>
+      <p>Having awareness of these communication differences is an <span class="highlight" title="ventaja / activo / 資產">asset</span> within today's <span class="highlight" title="globalizado / globalizado">globalized</span> world. By understanding Ask Culture and Guess Culture, respecting the differences and being flexible, you can navigate interactions with ease, <span class="ph" title="prepararte para el éxito / 為…做好準備">setting</span> yourself <span class="ph" title="prepararte para el éxito / 為…做好準備">up for</span> success.</p>
+
+      <div class="vocab-box">
+        <div class="vocab-box-title">📚 Vocabulary — Paragraphs 3 &amp; 4</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">heritage</span>
+              <button class="speak-btn" onclick="speakWord('heritage')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">herencia / tradición cultural</div>
+            <div class="vc-def">(n) cultural traditions and values passed down through generations</div>
+            <div class="vc-ex"><em>She is proud of her Mexican heritage.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">asset</span>
+              <button class="speak-btn" onclick="speakWord('asset')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">ventaja / activo</div>
+            <div class="vc-def">(n) a useful or valuable quality, skill, or advantage</div>
+            <div class="vc-ex"><em>Speaking two languages is a real asset in global business.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">globalized</span>
+              <button class="speak-btn" onclick="speakWord('globalized')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">globalizado</div>
+            <div class="vc-def">(adj) connected and integrated across countries worldwide</div>
+            <div class="vc-ex"><em>Our company works in a globalized market with partners in 10 countries.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">set up for success</span>
+              <button class="speak-btn" onclick="speakWord('set up for success')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">prepararse para tener éxito</div>
+            <div class="vc-def">(phrase) to create conditions that make success more likely</div>
+            <div class="vc-ex"><em>Good preparation sets you up for success in negotiations.</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── IMAGE SLOT 3: p.48 ── -->
+    <div class="img-slot" style="min-height:200px;">
+
+      <!-- ✏️ INSERT: replace placeholder below with your image URL -->
+      <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1774280422/asker_guessers_Culture_wy5k7z.png"> 
+
+    </div>
+
+    <!-- ── PARAGRAPH 4 (Strategies) ── -->
+    <div class="para-block">
+      <p>First, <span class="ph" title="averiguar / darte cuenta / 弄清楚">figure out</span> if you're an Asker or a Guesser. Then establish that you have different communication styles and <span class="ph" title="quitarle importancia / tomarlo a la ligera / 輕鬆看待">make light of</span> it, so no one is offended. Next, <span class="highlight" title="adaptar / ajustar">adapt</span> your approach <span class="highlight" title="en consecuencia / correspondientemente / 相應地">accordingly</span>. Guessers can learn to accept Askers' direct style as sincere rather than <span class="highlight" title="agresivo / insistente / 咄咄逼人的">pushy</span>, while Askers can avoid putting pressure on Guessers by framing requests in ways that allow a graceful refusal. Guessers can also practice being more direct, while Askers can pay attention to hints and body language. If misunderstandings arise, both sides need to give each other <span class="ph" title="darle a alguien el beneficio de la duda / 往好的方面想">the benefit of the doubt</span> and be respectful.</p>
+
+      <div class="vocab-box">
+        <div class="vocab-box-title">📚 Vocabulary — Paragraph 5 (Strategies)</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">figure out</span>
+              <button class="speak-btn" onclick="speakWord('figure out')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">averiguar / entender</div>
+            <div class="vc-def">(phrasal v.) to understand or find the answer to something</div>
+            <div class="vc-ex"><em>I need to figure out the best way to ask my boss for a raise.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">adapt</span>
+              <button class="speak-btn" onclick="speakWord('adapt')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">adaptarse / ajustarse</div>
+            <div class="vc-def">(v) to change your behavior to fit a new situation</div>
+            <div class="vc-ex"><em>Good employees adapt quickly to new environments.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">accordingly</span>
+              <button class="speak-btn" onclick="speakWord('accordingly')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">en consecuencia / correspondientemente</div>
+            <div class="vc-def">(adv) in a way that fits the situation or information given</div>
+            <div class="vc-ex"><em>The client changed the deadline, so we planned accordingly.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">pushy</span>
+              <button class="speak-btn" onclick="speakWord('pushy')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">agresivo / insistente / metiche</div>
+            <div class="vc-def">(adj) too forceful in trying to get what you want</div>
+            <div class="vc-ex"><em>Some salespeople are too pushy and it drives customers away.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">benefit of the doubt</span>
+              <button class="speak-btn" onclick="speakWord('benefit of the doubt')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">beneficio de la duda</div>
+            <div class="vc-def">(phrase) trusting someone even when you're not completely sure</div>
+            <div class="vc-ex"><em>She seemed distracted, but I'll give her the benefit of the doubt.</em></div>
+          </div>
+          <div class="vocab-card">
+            <div class="vc-top">
+              <span class="vc-word">make light of</span>
+              <button class="speak-btn" onclick="speakWord('make light of')" title="Pronounce">🔊</button>
+            </div>
+            <div class="vc-es">quitarle importancia</div>
+            <div class="vc-def">(phrasal v.) to treat something as less serious than it is</div>
+            <div class="vc-ex"><em>He made light of the error so the team wouldn't panic.</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLOSING QUOTE -->
+    <div class="closing-quote">
+      "In the end, it's not about whether Ask Culture or Guess Culture is right or wrong —<br>
+      it's about <em>respecting each other's differences.</em> 🐾"
+    </div>
+
+  </div><!-- /article-body -->
+
+
+  <!-- ===== SECTION 3: DISCUSSION QUESTIONS ===== -->
+  <div class="section-title">💡 Discussion Questions</div>
+  <ul class="discussion-list">
+    <li>Are you more of an Asker or a Guesser? Can you give an example from your work experience?</li>
+    <li>Have you ever experienced a misunderstanding at work because of different communication styles? What happened?</li>
+    <li>How can understanding Ask and Guess Cultures help you work better with international clients or colleagues in Taiwan?</li>
+  </ul>
+
+
+  <!-- ===== SECTION 4: SELF-PRACTICE ===== -->
+  <div class="section-title">✏️ Self-Practice Questions</div>
+  <div class="practice-list">
+
+    <details class="practice-item">
+      <summary>1. What is the main difference between Ask Culture and Guess Culture?</summary>
+      <div class="practice-answer">
+        In <strong>Ask Culture</strong>, people ask directly for what they want and expect a direct yes or no. In <strong>Guess Culture</strong>, people avoid direct requests and instead rely on hints and indirect signals, expecting others to sense their needs.
+      </div>
+    </details>
+
+    <details class="practice-item">
+      <summary>2. Why did Grace feel upset at the end of the story?</summary>
+      <div class="practice-answer">
+        Grace felt upset because she expected Allison to <strong>read between the lines</strong> and offer her a drink a second time — as was customary in Guess Culture. Allison, as an Asker, took Grace's "No, thanks" at face value and didn't repeat the offer.
+      </div>
+    </details>
+
+    <details class="practice-item">
+      <summary>3. What are two strategies for bridging the gap between Askers and Guessers?</summary>
+      <div class="practice-answer">
+        <strong>Guessers</strong> can try to accept Askers' direct style as sincere rather than pushy, and practice being more direct themselves. <strong>Askers</strong> can frame requests in ways that allow a graceful refusal, and pay more attention to hints and body language. Both sides should give each other <strong>the benefit of the doubt</strong>.
+      </div>
+    </details>
+
+    <details class="practice-item">
+      <summary>4. Use "accordingly" in a sentence about your job.</summary>
+      <div class="practice-answer">
+        <strong>Sample answer:</strong> "Our supplier changed the delivery date, so we adjusted our production schedule <strong>accordingly</strong>." — Any sentence that uses "accordingly" after describing a situation that requires a response is correct!
+      </div>
+    </details>
+
+  </div>
+
+  <div class="page-footer">
+    English Conversation with Elisa · Psychology Unit · April 2026
+  </div>
+
+</div><!-- /main-wrap -->
+
+<script>
+  function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+  }
+</script>
+
