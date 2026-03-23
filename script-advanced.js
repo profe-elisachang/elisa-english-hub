@@ -82,6 +82,7 @@ async function scanLessons() {
         { date: '2026-03-17', title: '🏖️ Teacher Off - No Class', isHoliday: true },
         { filename: 'Why You Can’t Remember Being a Toddler.html', date: '2026-03-19', title: '🧸 Why You Can’t Remember Being a Toddler' },
         { filename: 'Bad Bunny Super Bowl Halftime Show.html', date: '2026-03-24', title: '🏈 GOP Lawmaker Calls for Probe Into NFL and NBC Over \'Indecent\' Bad Bunny Super Bowl Halftime Show' },
+        { filename: 'Growing Muscles.html', date: '2026-03-26', title: '💪 Growing Muscles, Growing Markets' },
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
