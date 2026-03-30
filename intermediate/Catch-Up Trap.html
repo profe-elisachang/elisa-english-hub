@@ -1,0 +1,927 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caught in a Catch-Up Trap – English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ===== THEME: Warm Terracotta & Forest Green ===== */
+        :root {
+            --primary: #c0392b;
+            --primary-light: #e8c4c0;
+            --accent: #2e7d52;
+            --accent-light: #c8e6d8;
+            --bg: #fdf6f0;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #6b6b6b;
+            --border: #ddd0c8;
+            --highlight-bg: #fff3cd;
+            --highlight-border: #e67e22;
+            --section-title: #1a1a1a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--primary);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.5px;
+            flex: 1;
+        }
+        .level-badge {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.35);
+            white-space: nowrap;
+        }
+        .search-box { display: flex; align-items: center; }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2.5rem 2rem 4rem;
+        }
+
+        /* ===== LESSON TITLE ===== */
+        .lesson-hero {
+            background: var(--primary);
+            color: #fff;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .lesson-hero::before {
+            content: '🤝';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 6rem;
+            opacity: 0.15;
+        }
+        .lesson-hero .date-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: #ffe0db;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+        .lesson-hero h2 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .lesson-hero p {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.4rem;
+        }
+        .section-label .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .section-label h3 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--section-title);
+            letter-spacing: -0.3px;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        /* ===== USEFUL EXPRESSIONS ===== */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .expression-card {
+            background: var(--accent-light);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+        }
+        .expression-card .phrase {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+        .expression-card .spanish {
+            font-size: 0.85rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 0.6rem;
+        }
+        .expression-card .example {
+            font-size: 0.95rem;
+            color: #2c2c2c;
+            border-left: 3px solid var(--accent);
+            padding-left: 0.7rem;
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-body p {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin-bottom: 1.4rem;
+            color: #1e1e1e;
+        }
+        .article-body p:last-child { margin-bottom: 0; }
+
+        /* Highlighted vocabulary */
+        span.highlight {
+            background: var(--highlight-bg);
+            font-weight: 700;
+            border-bottom: 2.5px solid var(--highlight-border);
+            padding: 0 3px;
+            border-radius: 3px;
+            cursor: help;
+        }
+        span.highlight-pv {
+            background: #dceefb;
+            font-weight: 700;
+            border-bottom: 2.5px solid #2980b9;
+            padding: 0 3px;
+            border-radius: 3px;
+            cursor: help;
+        }
+
+        /* ===== VOCAB BOXES ===== */
+        .vocab-section {
+            background: #f8f4f0;
+            border: 1.5px solid #e0d4cc;
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2rem;
+        }
+        .vocab-section-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.9rem;
+        }
+        @media (max-width: 1100px) { .vocab-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 750px)  { .vocab-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px)  { .vocab-grid { grid-template-columns: 1fr; } }
+
+        .vocab-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1.5px solid #e0d4cc;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+        .vocab-card .word-line {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .vocab-card .word {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        .vocab-card .speak-btn {
+            background: none;
+            border: 1.5px solid var(--accent);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--accent);
+            transition: background 0.2s;
+        }
+        .vocab-card .speak-btn:hover { background: var(--accent); color: #fff; }
+        .vocab-card .pos {
+            font-size: 0.75rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 0.35rem;
+        }
+        .vocab-card .definition {
+            font-size: 0.88rem;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+        .vocab-card .spanish-trans {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        .vocab-card .ex {
+            font-size: 0.82rem;
+            color: #555;
+            font-style: italic;
+            border-left: 3px solid var(--highlight-border);
+            padding-left: 0.5rem;
+        }
+
+        /* ===== SUPPLEMENT BOXES ===== */
+        .supplement-section {
+            background: #f0f7f3;
+            border: 2px solid var(--accent);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .supplement-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.4rem;
+        }
+        .supplement-header h3 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+        @media (max-width: 700px) { .tips-grid { grid-template-columns: 1fr; } }
+
+        .tip-box {
+            background: #fff;
+            border-radius: 10px;
+            border: 1.5px solid #b2d8c4;
+            overflow: hidden;
+        }
+        .tip-box-header {
+            background: #a8d5b8;
+            padding: 0.8rem 1.1rem;
+            font-weight: 700;
+            font-size: 0.97rem;
+            color: #1a4a30;
+            border-bottom: 2px solid #7fbf98;
+        }
+        .tip-box-body {
+            padding: 1rem 1.1rem;
+            font-size: 0.93rem;
+            color: #2c2c2c;
+            line-height: 1.65;
+        }
+
+        /* ===== DISCUSSION QUESTIONS ===== */
+        .discussion-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .discussion-list li {
+            background: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 1rem 1.3rem;
+            border-radius: 0 10px 10px 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .discussion-list li span.q-num {
+            color: var(--primary);
+            font-weight: 900;
+            margin-right: 0.5rem;
+        }
+
+        /* ===== SELF-PRACTICE ===== */
+        .practice-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .practice-item {
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .practice-question {
+            background: #fff;
+            padding: 1rem 1.3rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .practice-question:hover { background: #fdf0ec; }
+        .practice-question .toggle-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 900;
+            transition: transform 0.3s;
+        }
+        .practice-answer {
+            display: none;
+            padding: 1rem 1.3rem;
+            background: var(--accent-light);
+            font-size: 0.97rem;
+            border-top: 1.5px solid var(--border);
+            color: #1a1a1a;
+        }
+        .practice-answer.open { display: block; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .lesson-hero { padding: 1.8rem 1.5rem; }
+            .lesson-hero h2 { font-size: 1.7rem; }
+            .main-container { padding: 1.5rem 1rem 3rem; }
+            .card { padding: 1.4rem; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- FIXED HEADER -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://st3.depositphotos.com/2619031/31651/i/450/depositphotos_316516568-stock-photo-top-view-of-happy-friends.jpg" alt="🤝 Caught in a Catch-Up Trap" class="article-image">
+    </div>
+
+
+<div class="main-container">
+
+    <!-- LESSON HERO -->
+    <div class="lesson-hero">
+        <div class="date-tag">April 15 · Social Life &amp; Relationships</div>
+        <h2>🤝 Caught in a Catch-Up Trap</h2>
+        <p>Why busy adults struggle to truly connect with friends — and how to break the cycle.</p>
+    </div>
+
+    <!-- SECTION 1: USEFUL EXPRESSIONS -->
+    <div class="card">
+        <div class="section-label">
+            <div class="icon-box" style="background:#c0392b20;">💬</div>
+            <h3>Useful Expressions</h3>
+        </div>
+        <div class="expressions-grid">
+            <div class="expression-card">
+                <div class="phrase">set aside time</div>
+                <div class="spanish">reservar / dedicar tiempo</div>
+                <div class="example">"I try to <strong>set aside time</strong> every week for my friends."</div>
+            </div>
+            <div class="expression-card">
+                <div class="phrase">catch up with someone</div>
+                <div class="spanish">ponerse al día con alguien</div>
+                <div class="example">"We finally had coffee to <strong>catch up with</strong> each other."</div>
+            </div>
+            <div class="expression-card">
+                <div class="phrase">end up doing something</div>
+                <div class="spanish">terminar haciendo algo</div>
+                <div class="example">"We always <strong>end up</strong> talking about the past instead of the present."</div>
+            </div>
+            <div class="expression-card">
+                <div class="phrase">break free from</div>
+                <div class="spanish">liberarse de / romper con</div>
+                <div class="example">"It's hard to <strong>break free from</strong> old habits."</div>
+            </div>
+            <div class="expression-card">
+                <div class="phrase">invest in a relationship</div>
+                <div class="spanish">invertir en una relación</div>
+                <div class="example">"You need to <strong>invest in</strong> friendships to keep them strong."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2 & 3: ARTICLE + VOCAB BOXES -->
+    <div class="card">
+        <div class="section-label">
+            <div class="icon-box" style="background:#2e7d5220;">📖</div>
+            <h3>Article: 🤝 Caught in a Catch-Up Trap</h3>
+        </div>
+        <div class="article-body">
+
+            <!-- PARAGRAPH 1 -->
+            <p>
+                Modern life is <span class="highlight" title="agitado / caótico">hectic</span>.
+                With work and family <span class="highlight" title="responsabilidades">responsibilities</span> filling most of the day, many people find it difficult to
+                <span class="highlight-pv" title="reservar / apartar">set aside</span> even a small part of their lives for friends or personal interests.
+                This becomes even more <span class="highlight" title="difícil / complicado">challenging</span> once children enter the picture.
+                Most people's time is <span class="highlight" title="consumido / absorbido">consumed</span> by either their jobs or their families.
+                As a result, far less time is spent connecting with friends, and these relationships often suffer.
+                In the end, many adults find themselves caught in what has been called the catch-up trap.
+            </p>
+        </div>
+
+        <!-- VOCAB BOX 1 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📦 Vocabulary – Paragraph 1</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">hectic</span>
+                        <button class="speak-btn" onclick="speakWord('hectic')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">very busy and full of activity</div>
+                    <div class="spanish-trans">agitado / caótico</div>
+                    <div class="ex">"My schedule is really hectic this month."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">responsibilities</span>
+                        <button class="speak-btn" onclick="speakWord('responsibilities')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">noun (plural)</div>
+                    <div class="definition">duties or tasks you must do</div>
+                    <div class="spanish-trans">responsabilidades</div>
+                    <div class="ex">"Balancing work responsibilities is exhausting."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">set aside</span>
+                        <button class="speak-btn" onclick="speakWord('set aside')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">phrasal verb</div>
+                    <div class="definition">to keep time or resources for a specific purpose</div>
+                    <div class="spanish-trans">reservar / apartar</div>
+                    <div class="ex">"Set aside one hour a day for yourself."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">challenging</span>
+                        <button class="speak-btn" onclick="speakWord('challenging')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">difficult but in a meaningful way</div>
+                    <div class="spanish-trans">difícil / complicado</div>
+                    <div class="ex">"Parenting is rewarding but challenging."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">consumed</span>
+                        <button class="speak-btn" onclick="speakWord('consumed')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective / verb (past)</div>
+                    <div class="definition">fully taken up or used by something</div>
+                    <div class="spanish-trans">consumido / absorbido</div>
+                    <div class="ex">"She was consumed by her work."</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <!-- PARAGRAPH 2 -->
+            <p>
+                The catch-up trap is a new term that recently spread on social media.
+                It describes friendships that <span class="highlight" title="giran / orbitan">revolve</span> entirely around
+                <span class="highlight" title="actualizarse mutuamente">updating</span> one another.
+                When schedules become <span class="highlight" title="llenos / saturados">packed</span> and the opportunities to
+                <span class="highlight-pv" title="encontrarse con / reunirse con">meet up with</span> friends
+                <span class="highlight" title="disminuir / reducirse">shrink</span>, the amount of information we want to share with them grows.
+                On the rare <span class="highlight" title="ocasiones">occasions</span> when friends do get together, they
+                <span class="highlight-pv" title="terminan / acaban">end up</span> spending most of the time talking about what has already happened instead of making new memories.
+            </p>
+        </div>
+
+        <!-- VOCAB BOX 2 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📦 Vocabulary – Paragraph 2</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">revolve around</span>
+                        <button class="speak-btn" onclick="speakWord('revolve around')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">phrasal verb</div>
+                    <div class="definition">to focus mainly on something</div>
+                    <div class="spanish-trans">girar en torno a</div>
+                    <div class="ex">"Our conversations always revolve around work."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">packed</span>
+                        <button class="speak-btn" onclick="speakWord('packed')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">completely full, leaving no room</div>
+                    <div class="spanish-trans">lleno / saturado</div>
+                    <div class="ex">"My calendar is packed this week."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">meet up with</span>
+                        <button class="speak-btn" onclick="speakWord('meet up with')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">phrasal verb</div>
+                    <div class="definition">to get together with someone</div>
+                    <div class="spanish-trans">encontrarse con</div>
+                    <div class="ex">"Let's meet up with the team on Friday."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">shrink</span>
+                        <button class="speak-btn" onclick="speakWord('shrink')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">verb</div>
+                    <div class="definition">to become smaller or fewer</div>
+                    <div class="spanish-trans">reducirse / disminuir</div>
+                    <div class="ex">"Our social circle has shrunk since moving."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">occasions</span>
+                        <button class="speak-btn" onclick="speakWord('occasions')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">noun (plural)</div>
+                    <div class="definition">specific times when something happens</div>
+                    <div class="spanish-trans">ocasiones</div>
+                    <div class="ex">"There are few occasions when we all meet."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">end up</span>
+                        <button class="speak-btn" onclick="speakWord('end up')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">phrasal verb</div>
+                    <div class="definition">to finally be in a situation you didn't plan</div>
+                    <div class="spanish-trans">terminar / acabar</div>
+                    <div class="ex">"We ended up talking for three hours."</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <!-- PARAGRAPH 3 -->
+            <p>
+                While it's nice to stay <span class="highlight" title="informado / al tanto">informed</span> about each other's lives, relationships can start to feel stuck when every meetup is just catching up.
+                Friendships begin to feel like a <span class="highlight" title="tarea aburrida / obligación">chore</span> rather than something that continues to grow.
+                Dinner and coffee dates with friends become less <span class="highlight" title="emocionante / interesante">exciting</span> when the focus is always on the past.
+            </p>
+        </div>
+
+        <!-- VOCAB BOX 3 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📦 Vocabulary – Paragraph 3</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">informed</span>
+                        <button class="speak-btn" onclick="speakWord('informed')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">having up-to-date knowledge about something</div>
+                    <div class="spanish-trans">informado / al tanto</div>
+                    <div class="ex">"Stay informed about company changes."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">chore</span>
+                        <button class="speak-btn" onclick="speakWord('chore')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">noun</div>
+                    <div class="definition">a boring or tiring task you have to do</div>
+                    <div class="spanish-trans">tarea aburrida / obligación</div>
+                    <div class="ex">"Cooking every day starts to feel like a chore."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">stuck</span>
+                        <button class="speak-btn" onclick="speakWord('stuck')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">unable to move forward or change</div>
+                    <div class="spanish-trans">atascado / estancado</div>
+                    <div class="ex">"I feel stuck in the same routine."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">exciting</span>
+                        <button class="speak-btn" onclick="speakWord('exciting')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">causing enthusiasm or interest</div>
+                    <div class="spanish-trans">emocionante</div>
+                    <div class="ex">"Try something exciting next time you meet."</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <!-- PARAGRAPH 4 -->
+            <p>
+                <span class="highlight-pv" title="liberarse de">Breaking free from</span> the catch-up trap requires
+                <span class="highlight" title="intencional / deliberado">intentional</span> change.
+                Instead of meeting with friends for coffee or drinks, pick something more
+                <span class="highlight" title="activo / dinámico">active</span>.
+                You could either go on a hike or attend a concert together.
+                These shared experiences create fresh memories and
+                <span class="highlight" title="revivir / renovar">revive</span> a sense of connection.
+                You can also save your catching up for phone calls or messages so that in-person time is spent creating new memories.
+                No matter how you do it,
+                <span class="highlight-pv" title="invertir en">investing in</span> friendships is
+                <span class="highlight" title="esencial / fundamental">essential</span> for a healthy and
+                <span class="highlight" title="satisfactorio / pleno">fulfilling</span> life.
+            </p>
+        </div>
+
+        <!-- VOCAB BOX 4 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📦 Vocabulary – Paragraph 4</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">break free from</span>
+                        <button class="speak-btn" onclick="speakWord('break free from')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">phrasal verb</div>
+                    <div class="definition">to escape from a situation that limits you</div>
+                    <div class="spanish-trans">liberarse de</div>
+                    <div class="ex">"She decided to break free from her routine."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">intentional</span>
+                        <button class="speak-btn" onclick="speakWord('intentional')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">done on purpose, with a clear goal</div>
+                    <div class="spanish-trans">intencional / deliberado</div>
+                    <div class="ex">"Be intentional about how you spend free time."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">revive</span>
+                        <button class="speak-btn" onclick="speakWord('revive')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">verb</div>
+                    <div class="definition">to bring something back to life or energy</div>
+                    <div class="spanish-trans">revivir / renovar</div>
+                    <div class="ex">"A trip can revive a friendship."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">investing in</span>
+                        <button class="speak-btn" onclick="speakWord('investing in')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">phrasal verb</div>
+                    <div class="definition">to give time/energy to something for future benefit</div>
+                    <div class="spanish-trans">invertir en</div>
+                    <div class="ex">"Investing in friendships pays off long-term."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">essential</span>
+                        <button class="speak-btn" onclick="speakWord('essential')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">absolutely necessary</div>
+                    <div class="spanish-trans">esencial / fundamental</div>
+                    <div class="ex">"Sleep is essential for good performance."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word-line">
+                        <span class="word">fulfilling</span>
+                        <button class="speak-btn" onclick="speakWord('fulfilling')" title="Listen">🔊</button>
+                    </div>
+                    <div class="pos">adjective</div>
+                    <div class="definition">giving a deep sense of satisfaction</div>
+                    <div class="spanish-trans">satisfactorio / pleno</div>
+                    <div class="ex">"She finds her job very fulfilling."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: SUPPLEMENTARY INFO (4 GREEN BOXES) -->
+    <div class="supplement-section">
+        <div class="supplement-header">
+            <span style="font-size:1.5rem;">🌿</span>
+            <h3>How to Get Out of the Catch-Up Trap</h3>
+        </div>
+        <p style="font-size:0.97rem; color:#3a5a48; margin-bottom:1.3rem;">In addition to the methods mentioned in the article, there are a few other ways to escape the catch-up trap.</p>
+        <div class="tips-grid">
+            <div class="tip-box">
+                <div class="tip-box-header">💚 Be honest and vulnerable with your friends</div>
+                <div class="tip-box-body">Instead of sharing only polished highlights, talk about the messy and unfinished parts of your life. Opening up emotionally often invites others to respond with the same level of honesty.</div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-box-header">💬 Move past small talk and surface-level check-ins</div>
+                <div class="tip-box-body">Skipping routine greetings and jumping into real conversations can make interactions feel more engaging and help friendships feel alive, even when time together is limited.</div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-box-header">📞 Use calls and voice messages when possible</div>
+                <div class="tip-box-body">Hearing someone's voice adds warmth and personal connection that texting often lacks, making communication feel more intentional and less transactional.</div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-box-header">🌊 Accept that friendships have different depths</div>
+                <div class="tip-box-body">Not every friendship will become deeply emotional, and that's okay. Both close and casual friendships can play meaningful roles when expectations are clear.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: DISCUSSION QUESTIONS -->
+    <div class="card">
+        <div class="section-label">
+            <div class="icon-box" style="background:#e67e2220;">🗣️</div>
+            <h3>Discussion Questions</h3>
+        </div>
+        <ul class="discussion-list">
+            <li><span class="q-num">1.</span> Have you ever felt like you were "stuck" catching up with a friend every time you met? What did it feel like?</li>
+            <li><span class="q-num">2.</span> What is one <em>intentional</em> change you could make to improve a friendship in your life right now?</li>
+            <li><span class="q-num">3.</span> Do you prefer deep conversations or casual small talk with friends — or does it depend on the person? Why?</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 5: SELF-PRACTICE -->
+    <div class="card">
+        <div class="section-label">
+            <div class="icon-box" style="background:#2e7d5220;">✏️</div>
+            <h3>Self-Practice Questions</h3>
+        </div>
+        <p style="font-size:0.9rem; color:#666; margin-bottom:1.2rem;">Try to answer on your own first, then click to check a sample answer. 👇</p>
+        <ul class="practice-list">
+
+            <li class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>What is the "catch-up trap" and why does it happen?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    The catch-up trap is when friends only talk about past events every time they meet, because their busy lives leave little time to actually make new memories together. It happens because modern schedules are so hectic that opportunities to connect become rare.
+                </div>
+            </li>
+
+            <li class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>Why can the catch-up trap make friendships feel like a chore?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    When every meeting focuses only on updating each other about the past, the friendship stops growing. Instead of creating new experiences and memories together, it becomes repetitive and feels more like an obligation than something enjoyable.
+                </div>
+            </li>
+
+            <li class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>Name two strategies from the article or tips section to escape the catch-up trap.</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    Two strategies are: (1) doing something active together, like hiking or going to a concert, to create new shared memories; and (2) using calls or voice messages for catching up, so that in-person time can be used for deeper connection and new experiences.
+                </div>
+            </li>
+
+            <li class="practice-item">
+                <div class="practice-question" onclick="toggleAnswer(this)">
+                    <span>What does "accepting that friendships have different depths" mean to you personally?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="practice-answer">
+                    It means understanding that not all friendships need to be deeply emotional to be valuable. Some friends are close confidants, while others are great for casual fun. Both types are important, and we shouldn't put the same expectations on every friendship.
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+
+    function toggleAnswer(el) {
+        const answer = el.nextElementSibling;
+        const icon = el.querySelector('.toggle-icon');
+        answer.classList.toggle('open');
+        icon.textContent = answer.classList.contains('open') ? '−' : '+';
+        icon.style.transform = answer.classList.contains('open') ? 'rotate(0deg)' : '';
+    }
+</script>
+
+
