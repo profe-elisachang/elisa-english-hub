@@ -1,0 +1,998 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hero Tax - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f4f0e8;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #b5451b;
+            color: white;
+            padding: 1.2rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff3b0;
+            font-weight: 700;
+            border-bottom: 2px solid #e07b00;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c2c2c;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+        }
+
+        /* ARTICLE */
+        .article-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 32px 36px;
+            margin: 24px 0;
+            border-top: 5px solid #b5451b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+
+        .article-section h1 {
+            color: #b5451b;
+            font-size: 1.7rem;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .article-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .article-section p {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            margin: 16px 0;
+        }
+
+        .mobile-note {
+            background: #fdf3e3;
+            border-left: 4px solid #e07b00;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #7a5c1e;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* VOCABULARY BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #b5451b;
+            padding: 24px 28px;
+            margin: 24px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+
+        .vocabulary-section h3 {
+            color: #b5451b;
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e0d8cc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .vocab-word {
+            color: #b5451b;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.98rem;
+        }
+
+        .vocab-spanish {
+            color: #777;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.93rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* EXPRESSIONS SECTION */
+        .expressions-section {
+            background: #fff8f5;
+            border-left: 4px solid #d96f3a;
+            padding: 24px 28px;
+            margin: 24px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+
+        .expressions-section h2 {
+            color: #b5451b;
+            margin-top: 0;
+        }
+
+        .expression-item {
+            background: white;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            border: 1px solid #e8d8cc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .expression-english {
+            font-weight: 700;
+            color: #b5451b;
+            font-size: 1.1rem;
+        }
+
+        .expression-spanish {
+            color: #777;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 4px 0;
+        }
+
+        .expression-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION SECTION */
+        .discussion-section {
+            background: #f0f5f0;
+            border-left: 4px solid #4a7c59;
+            padding: 24px 28px;
+            margin: 24px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+
+        .discussion-section h2 {
+            color: #4a7c59;
+            margin-top: 0;
+        }
+
+        .discussion-section ul {
+            padding-left: 20px;
+        }
+
+        .discussion-section li {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* SELF-PRACTICE SECTION */
+        .practice-section {
+            background: #f5f7fa;
+            border-left: 4px solid #4a6fa5;
+            padding: 24px 28px;
+            margin: 24px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+
+        .practice-section h2 {
+            color: #4a6fa5;
+            margin-top: 0;
+        }
+
+        .practice-section ol {
+            padding-left: 20px;
+        }
+
+        .practice-section li {
+            margin-bottom: 18px;
+            font-size: 1.03rem;
+            line-height: 1.7;
+        }
+
+        details {
+            margin-top: 20px;
+            background: white;
+            border: 1px solid #c5d0e0;
+            border-radius: 8px;
+            padding: 14px 20px;
+        }
+
+        details summary {
+            cursor: pointer;
+            color: #4a6fa5;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        details li {
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 0.97rem;
+            line-height: 1.6;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 2px dashed #d8cfc3;
+            margin: 10px 0 24px 0;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://ychef.files.bbci.co.uk/1600x900/p0hpss91.webp" alt="🦸 The Hero Tax: Why 'Selfless' Workers Are Professionally Exploited" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="expressions-section">
+                <h2>💬 Useful Expressions</h2>
+
+                <div class="expression-item">
+                    <div class="expression-english">Turn a blind eye to something</div>
+                    <div class="expression-spanish">hacer la vista gorda a algo / ignorar algo a propósito</div>
+                    <div class="expression-example">Management tends to turn a blind eye to overtime issues when workers are seen as dedicated heroes.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">It's little wonder that…</div>
+                    <div class="expression-spanish">No es de extrañar que… / Es comprensible que…</div>
+                    <div class="expression-example">It's little wonder that nurses feel frustrated when their expertise is not fairly compensated.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">Come up with (a solution / an idea)</div>
+                    <div class="expression-spanish">encontrar / proponer / idear</div>
+                    <div class="expression-example">The research team came up with a new approach to reduce bias in hiring decisions.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">Fit neatly with</div>
+                    <div class="expression-spanish">encajar perfectamente con / estar en línea con</div>
+                    <div class="expression-example">These results fit neatly with earlier studies on workplace stereotypes.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">Draw inferences from</div>
+                    <div class="expression-spanish">sacar conclusiones a partir de / inferir de</div>
+                    <div class="expression-example">Managers often draw inferences from job titles instead of evaluating employees individually.</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+
+            <div class="article-section">
+                <h1>🦸 The Hero Tax: Why 'Selfless' Workers Are Professionally Exploited</h1>
+                <div class="article-meta">By David Robson · BBC Worklife · April 15, 2024</div>
+
+                <!-- PARAGRAPH 1 -->
+                <p>
+                    Few people would <span class="highlight" title="negar">deny</span> that some professions <span class="highlight" title="inspirar / provocar">command</span> a certain <span class="highlight" title="reverencia / admiración profunda">reverence</span>. Veterans, firefighters, health workers and teachers ensure our security, save our lives and <span class="highlight" title="nutrir / formar">nurture</span> future generations. It's little wonder that we label them as "heroes" – a word that <span class="highlight" title="evoca / sugiere">evokes</span> the strength and <span class="highlight" title="altruismo / generosidad">selflessness</span> that seem <span class="highlight" title="evidente / obvio">evident</span> in the day-to-day responsibilities of these jobs.
+                </p>
+
+                <p>
+                    The warmth of these <span class="highlight" title="sentimientos / opiniones">sentiments</span> may be appreciated, but recent research suggests that the hero label is also loaded with unhelpful <span class="highlight" title="suposiciones / preconcepciones">assumptions</span> about these workers' personal needs and <span class="highlight" title="ambiciones">ambitions</span>. People largely assume, for instance, that heroes simply don't care so much about things like fair <span class="highlight" title="compensación / remuneración">compensation</span> for the work that they do. "This is a clear <span class="highlight" title="falacia / error lógico">fallacy</span> in <span class="highlight" title="razonamiento inferencial">inferential reasoning</span> and logic," explains Matthew Stanley, a post-doctoral research <span class="highlight" title="asociado / colaborador">associate</span> at Fuqua School of Business at Duke University, US.
+                </p>
+            </div>
+
+            <!-- VOCABULARY - PARAGRAPH 1 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 1</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">deny</span>
+                            <button class="speak-btn" onclick="speakWord('deny')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To say that something is not true or refuse to accept it</p>
+                        <p class="vocab-spanish">negar</p>
+                        <div class="vocab-example">Few people would deny that teachers play a crucial role in society.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">command reverence</span>
+                            <button class="speak-btn" onclick="speakWord('command reverence')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To inspire deep respect or admiration from others</p>
+                        <p class="vocab-spanish">inspirar reverencia / ser muy respetado</p>
+                        <div class="vocab-example">Senior engineers who solve complex problems command reverence from the whole team.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">nurture</span>
+                            <button class="speak-btn" onclick="speakWord('nurture')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To care for and help someone or something grow and develop</p>
+                        <p class="vocab-spanish">nutrir / formar / desarrollar</p>
+                        <div class="vocab-example">Good managers nurture talent by giving employees opportunities to grow.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">evoke</span>
+                            <button class="speak-btn" onclick="speakWord('evoke')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To bring a feeling, memory, or idea to mind</p>
+                        <p class="vocab-spanish">evocar / despertar</p>
+                        <div class="vocab-example">The word "hero" evokes images of sacrifice and courage.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">selflessness</span>
+                            <button class="speak-btn" onclick="speakWord('selflessness')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The quality of caring more about others than about yourself</p>
+                        <p class="vocab-spanish">altruismo / desinterés</p>
+                        <div class="vocab-example">The selflessness of volunteer workers is admirable, but they still deserve fair pay.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">sentiments</span>
+                            <button class="speak-btn" onclick="speakWord('sentiments')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Feelings or opinions about a particular topic</p>
+                        <p class="vocab-spanish">sentimientos / opiniones</p>
+                        <div class="vocab-example">The survey revealed mixed sentiments about the new company policy.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">assumptions</span>
+                            <button class="speak-btn" onclick="speakWord('assumptions')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Things you believe to be true without proof</p>
+                        <p class="vocab-spanish">suposiciones / preconcepciones</p>
+                        <div class="vocab-example">We should avoid making assumptions about what motivates our colleagues.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">compensation</span>
+                            <button class="speak-btn" onclick="speakWord('compensation')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Money or benefits received in exchange for work done</p>
+                        <p class="vocab-spanish">compensación / remuneración</p>
+                        <div class="vocab-example">The union demanded fair compensation for all overtime hours worked.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">fallacy</span>
+                            <button class="speak-btn" onclick="speakWord('fallacy')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">A wrong belief or a mistaken way of thinking</p>
+                        <p class="vocab-spanish">falacia / error de razonamiento</p>
+                        <div class="vocab-example">It's a fallacy to think that dedicated workers don't need financial recognition.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- PARAGRAPH 2 -->
+            <div class="article-section">
+                <p>
+                    The consequences in the workplace can be serious. Stanley's research suggests that "<span class="highlight" title="heroización / convertir en héroe">heroisation</span>" may lead to poorer <span class="highlight" title="remuneración / pago">remuneration</span>, and it can lead others to <span class="highlight" title="hacer la vista gorda / ignorar">turn a blind eye</span> to policies that result in worse working conditions. "We're less concerned about poor treatment," says Stanley, "if the people who are being <span class="highlight" title="explotados / aprovechados">exploited</span> are 'heroes'."
+                </p>
+
+                <p>
+                    Stanley was inspired by the experiences of healthcare workers during the early stages of the Covid-19 <span class="highlight" title="pandemia">pandemic</span>. Many people in his social circle – including his wife – were <span class="highlight" title="luchando bajo / agobiados por">struggling under</span> the workload, and felt that they were not given the support they needed. "Politicians would <span class="highlight" title="sacar a relucir / repetir sin convicción">trot out</span> the 'hero label' as praise and appreciation, but it felt pretty <span class="highlight" title="vacío / sin contenido real">empty</span>," he says.
+                </p>
+
+                <p>
+                    As a psychologist, Stanley began to wonder whether the very idea of the selfless hero might contribute to their needs being <span class="highlight" title="ignorados / pasados por alto">overlooked</span>. If so, this would influence the conditions in many professions besides medicine. Working with Aaron C Kay, a professor at the Fuqua School of Business, he has since designed a series of studies to <span class="highlight" title="investigar / explorar en profundidad">probe</span> people's assumptions about "heroic" professions. The result is a couple of highly <span class="highlight" title="intrigantes / que despiertan mucho interés">intriguing</span> papers.
+                </p>
+            </div>
+
+            <!-- VOCABULARY - PARAGRAPH 2 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 2</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">heroisation</span>
+                            <button class="speak-btn" onclick="speakWord('heroisation')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The act of treating or describing someone as a hero</p>
+                        <p class="vocab-spanish">heroización / convertir en héroe</p>
+                        <div class="vocab-example">The heroisation of essential workers during the pandemic ignored their real need for better pay.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">remuneration</span>
+                            <button class="speak-btn" onclick="speakWord('remuneration')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Payment or reward for work or services</p>
+                        <p class="vocab-spanish">remuneración / pago</p>
+                        <div class="vocab-example">The new contract includes improved remuneration for night shift workers.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">exploited</span>
+                            <button class="speak-btn" onclick="speakWord('exploited')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Treated unfairly to gain an advantage, often by overworking and underpaying</p>
+                        <p class="vocab-spanish">explotados / aprovechados injustamente</p>
+                        <div class="vocab-example">Workers who are seen as passionate about their jobs are sometimes exploited by employers.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">struggling under</span>
+                            <button class="speak-btn" onclick="speakWord('struggling under')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Having difficulty dealing with a heavy burden or pressure</p>
+                        <p class="vocab-spanish">agobiado por / luchando bajo el peso de</p>
+                        <div class="vocab-example">The production team was struggling under the pressure of meeting the new deadlines.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">trot out</span>
+                            <button class="speak-btn" onclick="speakWord('trot out')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To repeat something that has been said many times before, often without sincerity</p>
+                        <p class="vocab-spanish">repetir sin convicción / sacar a relucir</p>
+                        <div class="vocab-example">The manager kept trotting out the same excuses every time the budget was questioned.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">overlooked</span>
+                            <button class="speak-btn" onclick="speakWord('overlooked')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Not noticed or given attention; ignored</p>
+                        <p class="vocab-spanish">ignorado / pasado por alto</p>
+                        <div class="vocab-example">Safety concerns were overlooked in the rush to meet production targets.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">probe</span>
+                            <button class="speak-btn" onclick="speakWord('probe')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To investigate or examine something carefully and deeply</p>
+                        <p class="vocab-spanish">investigar / explorar a fondo</p>
+                        <div class="vocab-example">The audit team probed the company's financial records for any irregularities.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">intriguing</span>
+                            <button class="speak-btn" onclick="speakWord('intriguing')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Very interesting or fascinating, especially because it is unusual or unexpected</p>
+                        <p class="vocab-spanish">intrigante / muy interesante</p>
+                        <div class="vocab-example">The engineer presented an intriguing solution that no one had considered before.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- PARAGRAPH 3 -->
+            <div class="article-section">
+                <p>
+                    In their initial two surveys, Stanley and Kay confirmed people consider veterans far more heroic than the average US citizen, and that this was linked to <span class="highlight" title="percepciones / opiniones">perceptions</span> of selflessness and self-<span class="highlight" title="sacrificio">sacrifice</span>. The psychologists next examined people's perceptions of the jobs that veterans should <span class="highlight" title="buscar / perseguir">seek</span> after leaving the military. In various questionnaires, participants assumed that veterans would find a better <span class="highlight" title="encaje / compatibilidad">fit</span> in roles involving the service of others – such as being a fundraiser, paramedic or home-health <span class="highlight" title="asistente / auxiliar">aide</span> – than in higher-paying positions that are associated with greater self-interest, such as being a private banker or insurance agent.
+                </p>
+
+                <p>
+                    Crucially, the researchers found that <span class="highlight" title="reforzar / fortalecer">reinforcing</span> the hero <span class="highlight" title="estereotipo">stereotype</span> increases the size of the effect. When the participants saw a logo saying "hire our heroes" alongside their questionnaires, for example, they were even more likely to <span class="highlight" title="respaldar / apoyar">endorse</span> charity work for the veterans. Some veterans may genuinely prefer a lower-paying job that involves serving others, of course – but there will be a large <span class="highlight" title="variación / diferencia">variation</span> in people's tastes. Stanley suspects these underlying assumptions could unfairly <span class="highlight" title="empujar sutilmente / dirigir">nudge</span> individuals into those professions that fit the selfless stereotype.
+                </p>
+            </div>
+
+            <!-- VOCABULARY - PARAGRAPH 3 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 3</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">perceptions</span>
+                            <button class="speak-btn" onclick="speakWord('perceptions')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The way people understand or think about something or someone</p>
+                        <p class="vocab-spanish">percepciones / opiniones / impresiones</p>
+                        <div class="vocab-example">Changing public perceptions of a brand takes time and consistent communication.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">self-sacrifice</span>
+                            <button class="speak-btn" onclick="speakWord('self sacrifice')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Giving up personal comfort or benefit for the good of others</p>
+                        <p class="vocab-spanish">autosacrificio / sacrificio personal</p>
+                        <div class="vocab-example">Self-sacrifice is admirable, but it should not be expected as a condition of employment.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">aide</span>
+                            <button class="speak-btn" onclick="speakWord('aide')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">A person who assists or supports someone in their work</p>
+                        <p class="vocab-spanish">asistente / auxiliar / ayudante</p>
+                        <div class="vocab-example">She worked as a healthcare aide before becoming a registered nurse.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">reinforcing</span>
+                            <button class="speak-btn" onclick="speakWord('reinforcing')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Making something stronger or more established</p>
+                        <p class="vocab-spanish">reforzar / fortalecer</p>
+                        <div class="vocab-example">Using the same messaging repeatedly risks reinforcing negative stereotypes.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">stereotype</span>
+                            <button class="speak-btn" onclick="speakWord('stereotype')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">A fixed, oversimplified image or idea about a group of people</p>
+                        <p class="vocab-spanish">estereotipo</p>
+                        <div class="vocab-example">The stereotype that engineers don't have good communication skills is outdated.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">endorse</span>
+                            <button class="speak-btn" onclick="speakWord('endorse')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To officially approve or support something</p>
+                        <p class="vocab-spanish">respaldar / apoyar / avalar</p>
+                        <div class="vocab-example">The committee endorsed the new safety protocol after reviewing the data.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">nudge</span>
+                            <button class="speak-btn" onclick="speakWord('nudge')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To gently push or guide someone toward a particular choice or action</p>
+                        <p class="vocab-spanish">empujar sutilmente / dirigir / orientar</p>
+                        <div class="vocab-example">The performance review process can nudge employees toward certain career paths without them realizing it.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- PARAGRAPH 4 -->
+            <div class="article-section">
+                <p>
+                    Stanley and Kay's second paper looked at the ways that heroisation may encourage <span class="highlight" title="explotación / abuso">exploitation</span> at the workplace across many different fields, such as teaching, nursing, social work and policing. Participants were first asked to <span class="highlight" title="calificar / evaluar">rate</span> whether the typical worker in each profession was a hero. They then had to judge how likely that person would be to <span class="highlight" title="ofrecerse / presentarse voluntario">volunteer</span> to work an extra day without any reward. As expected, the participants' responses were <span class="highlight" title="correlacionados / relacionados">correlated</span>. When the participants considered a job to be heroic, they had much higher expectations that the workers would <span class="highlight" title="sacrificar / renunciar a">sacrifice</span> their day off for free.
+                </p>
+
+<p>
+    The researchers provided text detailing a policy to cut schools' budgets, then asked participants to declare their opposition on a scale of one (strongly oppose) to seven (strongly support). In some cases, the text was accompanied by a cartoon image of teachers dressed in superhero <span class="highlight" title="disfraces / trajes">costumes</span> and <span class="highlight" title="capas de superhéroe">capes</span>; in others, they simply saw the plain text.
+</p>
+
+                <p>
+                    The researchers' final experiments studied the participants' <span class="highlight" title="oposición / rechazo">opposition</span> to policies that would harm workers' rights. You might expect that the natural respect we hold for heroes would reduce support for the pay cuts – but this was not the case. Thanks, apparently, to the associations with selfless <span class="highlight" title="altruismo">altruism</span>, the participants tended to show less opposition to the policy when they saw the picture of the teachers in the <span class="highlight" title="capas de superhéroe">capes</span>. "It's <span class="highlight" title="brutalmente / cruelmente">brutally</span> ironic," says Stanley. "Because of our <span class="highlight" title="veneración / adoración">veneration</span>, we're more <span class="highlight" title="tolerantes / comprensivos">tolerant</span> of them being treated badly."
+                </p>
+            </div>
+
+            <!-- VOCABULARY - PARAGRAPH 4 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 4</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">exploitation</span>
+                            <button class="speak-btn" onclick="speakWord('exploitation')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The act of using someone unfairly for personal gain</p>
+                        <p class="vocab-spanish">explotación / abuso</p>
+                        <div class="vocab-example">Labor laws exist to prevent the exploitation of workers in the manufacturing sector.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">rate</span>
+                            <button class="speak-btn" onclick="speakWord('rate')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To evaluate or give a score to something or someone</p>
+                        <p class="vocab-spanish">calificar / evaluar / clasificar</p>
+                        <div class="vocab-example">Employees were asked to rate their job satisfaction on a scale from one to ten.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">volunteer</span>
+                            <button class="speak-btn" onclick="speakWord('volunteer')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To offer to do something without being asked or paid</p>
+                        <p class="vocab-spanish">ofrecerse voluntariamente / presentarse voluntario</p>
+                        <div class="vocab-example">Several team members volunteered to work the weekend shift to meet the deadline.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">correlated</span>
+                            <button class="speak-btn" onclick="speakWord('correlated')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Showing a mutual relationship where two things change together</p>
+                        <p class="vocab-spanish">correlacionados / relacionados entre sí</p>
+                        <div class="vocab-example">Employee engagement was closely correlated with team productivity in the annual report.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">opposition</span>
+                            <button class="speak-btn" onclick="speakWord('opposition')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Strong disagreement with or resistance to something</p>
+                        <p class="vocab-spanish">oposición / rechazo / resistencia</p>
+                        <div class="vocab-example">There was significant opposition to the new shift schedule among the factory workers.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">altruism</span>
+                            <button class="speak-btn" onclick="speakWord('altruism')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Unselfish concern for the well-being of others</p>
+                        <p class="vocab-spanish">altruismo / generosidad desinteresada</p>
+                        <div class="vocab-example">Altruism is valued, but it should not become an excuse to deny workers fair wages.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">veneration</span>
+                            <button class="speak-btn" onclick="speakWord('veneration')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Great respect or admiration, especially for something or someone considered sacred or special</p>
+                        <p class="vocab-spanish">veneración / admiración profunda</p>
+                        <div class="vocab-example">The public's veneration of healthcare workers did not translate into better salaries during the crisis.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- PARAGRAPH 5 -->
+            <div class="article-section">
+                <p>
+                    Stanley's findings <span class="highlight" title="coinciden con / están en línea con">chime with</span> the opinions of Nicki Credland, a reader in critical care nursing at the University of Hull, UK. She argues that the hero <span class="highlight" title="narrativa / relato">narrative</span> can <span class="highlight" title="menoscabar / socavar">undermine</span> the skill and education of her colleagues. "[It suggests] we do our jobs because we have a calling and an <span class="highlight" title="innata / natural / interna">innate</span> desire to help people – but that's no more true of nursing than it is of many other professions," she says. "And it has a negative impact when we want to be appropriately <span class="highlight" title="remunerados / compensados">remunerated</span> for the skills and expertise that we have."
+                </p>
+
+                <p>
+                    Sapna Cheryan compares the hero effect to the "poor but happy" idea – the <span class="highlight" title="noción / idea">notion</span> that people on lower incomes somehow live simpler and happier lives – which can reduce people's concerns about the causes of <span class="highlight" title="desigualdad">inequality</span>. "We <span class="highlight" title="concedemos / otorgamos">grant</span> people some positivity and then we undermine them," she says. Nadav Klein argues that we will need further research to show that heroisation influences real-world behaviour, though he agrees it is possible. Like other <span class="highlight" title="sesgos / prejuicios">biases</span>, it emerges from our tendency to draw inferences from a "skeletal understanding of others," he says. "People can make mistaken assumptions based on tiny <span class="highlight" title="retazos de información / datos insignificantes">titbits</span> of information."
+                </p>
+
+                <p>
+                    The most obvious solution may be to discourage the use of the "hero" label – but Stanley doesn't think this would be <span class="highlight" title="factible / viable">feasible</span>. Instead, he thinks the answer may lie in <span class="highlight" title="cultivar / fomentar">cultivating</span> greater awareness of the many different reasons that someone could choose a "heroic" profession. We are all <span class="highlight" title="multifacéticos / complejos">multifaceted</span> individuals, after all, with many competing needs and ambitions – and recognising this fact need not undermine our respect and admiration for the people who keep us safe, secure and healthy.
+                </p>
+
+                <div class="mobile-note">
+                    📱 <em>On mobile: Tap and hold highlighted words to see the translation.</em>
+                </div>
+            </div>
+
+            <!-- VOCABULARY - PARAGRAPH 5 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 5</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">chime with</span>
+                            <button class="speak-btn" onclick="speakWord('chime with')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To agree or be consistent with another idea or finding</p>
+                        <p class="vocab-spanish">coincidir con / estar en línea con</p>
+                        <div class="vocab-example">The new quality data chimes with what the production team has been reporting for months.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">narrative</span>
+                            <button class="speak-btn" onclick="speakWord('narrative')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">A story or account used to explain or justify a situation</p>
+                        <p class="vocab-spanish">narrativa / relato / discurso</p>
+                        <div class="vocab-example">The company needs to change its narrative around work-life balance to attract better talent.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">undermine</span>
+                            <button class="speak-btn" onclick="speakWord('undermine')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To weaken or damage something gradually, often without being obvious</p>
+                        <p class="vocab-spanish">socavar / menoscabar / debilitar</p>
+                        <div class="vocab-example">Constant micromanagement can undermine employee confidence and creativity.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">innate</span>
+                            <button class="speak-btn" onclick="speakWord('innate')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Something you are born with; a natural quality that is not learned</p>
+                        <p class="vocab-spanish">innato / natural / inherente</p>
+                        <div class="vocab-example">Some leaders have an innate ability to motivate others, but leadership skills can also be developed.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">notion</span>
+                            <button class="speak-btn" onclick="speakWord('notion')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">A belief or idea, often one that is not fully proven</p>
+                        <p class="vocab-spanish">noción / idea / concepción</p>
+                        <div class="vocab-example">The notion that workers are motivated only by money has been challenged by recent research.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">biases</span>
+                            <button class="speak-btn" onclick="speakWord('biases')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Unfair preferences or opinions that affect judgment</p>
+                        <p class="vocab-spanish">sesgos / prejuicios / tendencias</p>
+                        <div class="vocab-example">Unconscious biases in hiring can prevent qualified candidates from being selected.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">feasible</span>
+                            <button class="speak-btn" onclick="speakWord('feasible')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Possible to do easily or conveniently; practical</p>
+                        <p class="vocab-spanish">factible / viable / realizable</p>
+                        <div class="vocab-example">Completing the entire project in one week is not feasible with our current staffing levels.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">multifaceted</span>
+                            <button class="speak-btn" onclick="speakWord('multifaceted')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Having many different aspects, qualities, or dimensions</p>
+                        <p class="vocab-spanish">multifacético / complejo / de múltiples aspectos</p>
+                        <div class="vocab-example">A multifaceted approach is needed to address workplace burnout effectively.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="discussion-section">
+                <h2>🗣️ Discussion Questions</h2>
+                <ul>
+                    <li>In your workplace or industry, are any professions treated as "heroic"? How does that affect how those workers are treated or paid?</li>
+                    <li>Have you ever volunteered to do extra work without compensation? What motivated you, and do you think it was fair?</li>
+                    <li>What do you think companies and governments could do to better recognize both the dedication <em>and</em> the professional needs of essential workers?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="practice-section">
+                <h2>✏️ Self-Practice</h2>
+                <ol>
+                    <li>
+                        Fill in the blank: "Politicians would __________ the 'hero label' as praise, but workers felt the appreciation was empty."
+                        <br><em>(Hint: a phrasal verb meaning to repeat something without real conviction)</em>
+                    </li>
+                    <li>
+                        True or False: According to the research, people tend to be <strong>more</strong> opposed to pay cuts when workers are described as heroes.
+                    </li>
+                    <li>
+                        Choose the correct word: "The study found that the two results were closely __________ (correlated / cultivated / commanded)."
+                    </li>
+                    <li>
+                        Short answer: In your own words, what does Stanley suggest as a solution to the problem of heroisation? (2–3 sentences)
+                    </li>
+                </ol>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>trot out</strong> — "Politicians would trot out the 'hero label' as praise, but workers felt the appreciation was empty."</li>
+                        <li><strong>False.</strong> The research found that people are actually <em>less</em> opposed to pay cuts when workers are framed as selfless heroes.</li>
+                        <li><strong>correlated</strong> — "The study found that the two results were closely correlated."</li>
+                        <li>Stanley suggests that instead of removing the "hero" label (which is not feasible), society should cultivate greater awareness of the diverse reasons people choose these professions — beyond just altruism. By highlighting the many different motivations workers have, people will rely less on stereotypes and make fairer assumptions about what those workers deserve.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
