@@ -1,0 +1,669 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis en el Golfo Pérsico - Warm-up | English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans 3', 'Noto Sans', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+            color: #2c2c2c;
+        }
+
+        /* ── HEADER ── */
+        .header { background: #1a3a2a; padding: 0; }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .header-content h1 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #e8d5a3;
+            margin: 0;
+            flex: 1;
+        }
+        .level-badge {
+            background: #c8973a;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.15);
+            color: #e8d5a3;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(232,213,163,0.35);
+            transition: all 0.3s ease;
+        }
+        .back-to-calendar-btn:hover { background: rgba(255,255,255,0.25); }
+
+        /* ── HERO ── */
+        .hero-banner {
+            background: #1a3a2a;
+            color: #e8d5a3;
+            padding: 40px 24px 48px;
+            text-align: center;
+            border-bottom: 6px solid #c8973a;
+        }
+        .hero-banner .topic-tag {
+            display: inline-block;
+            background: #c8973a;
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+        }
+        .hero-banner .warm-up-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            color: #a8c4a8;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 3px 14px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+            margin-left: 8px;
+            border: 1px solid rgba(168,196,168,0.4);
+        }
+        .hero-banner h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            margin: 0 0 10px;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+        .hero-banner .subtitle {
+            font-size: 1rem;
+            color: #a8c4a8;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 36px 20px 60px;
+        }
+        .main-content { display: flex; flex-direction: column; gap: 32px; }
+
+        /* ── INSTRUCTION BOX ── */
+        .instruction-box {
+            background: #1a3a2a;
+            color: #e8d5a3;
+            border-radius: 10px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .instruction-box .icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+        .instruction-box h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #c8973a;
+            margin: 0 0 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .instruction-box p { margin: 0; font-size: 1rem; line-height: 1.65; color: #d8e8d8; }
+
+        /* ── SECTION CARDS ── */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 32px 36px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .section-card.green-top  { border-top: 5px solid #2e7d5e; }
+        .section-card.amber-top  { border-top: 5px solid #c8973a; }
+        .section-card.rust-top   { border-top: 5px solid #b84c2a; }
+        .section-card.dark-top   { border-top: 5px solid #1a3a2a; }
+
+        .section-card h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            color: #1a3a2a;
+            margin: 0 0 22px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e8e0d0;
+        }
+
+        /* ── STORY BLOCKS ── */
+        .story-block {
+            margin-bottom: 28px;
+        }
+        .story-block:last-child { margin-bottom: 0; }
+
+        .story-block .block-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: white;
+            background: #2e7d5e;
+            padding: 3px 12px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .story-block p {
+            font-size: 1.08rem;
+            color: #333;
+            margin: 0;
+            line-height: 1.8;
+        }
+        .story-block .big-stat {
+            display: inline-block;
+            background: #fff2b0;
+            font-weight: 700;
+            color: #1a3a2a;
+            padding: 1px 6px;
+            border-radius: 3px;
+            border-bottom: 2px solid #c8973a;
+        }
+
+        .story-divider {
+            border: none;
+            border-top: 1px dashed #d0c8b0;
+            margin: 24px 0;
+        }
+
+        /* ── INDUSTRY CONNECTION ── */
+        .industry-box {
+            background: #fdf8ee;
+            border: 2px solid #c8973a;
+            border-radius: 10px;
+            padding: 24px 28px;
+        }
+        .industry-box .industry-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .industry-box .industry-icon { font-size: 2rem; }
+        .industry-box h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            color: #1a3a2a;
+            margin: 0;
+        }
+        .industry-box p {
+            font-size: 1.05rem;
+            color: #333;
+            margin: 0 0 14px;
+            line-height: 1.75;
+        }
+        .industry-box p:last-child { margin-bottom: 0; }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.95rem;
+        }
+        .comparison-table th {
+            background: #1a3a2a;
+            color: #e8d5a3;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table th:first-child { border-radius: 6px 0 0 0; }
+        .comparison-table th:last-child  { border-radius: 0 6px 0 0; }
+        .comparison-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e8e0d0;
+            color: #333;
+            vertical-align: top;
+        }
+        .comparison-table tr:nth-child(even) td { background: #faf6ee; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .row-label {
+            font-weight: 700;
+            color: #1a3a2a;
+            white-space: nowrap;
+        }
+
+        /* ── SPEAKING CHALLENGE ── */
+        .challenge-intro {
+            font-size: 1.05rem;
+            color: #444;
+            margin: 0 0 24px;
+            line-height: 1.75;
+        }
+        .challenge-intro strong { color: #1a3a2a; }
+
+        .question-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .question-list li {
+            background: #f4f9f6;
+            border: 1px solid #cce5d8;
+            border-radius: 8px;
+            padding: 16px 20px 16px 52px;
+            position: relative;
+            font-size: 1.05rem;
+            color: #222;
+            line-height: 1.6;
+        }
+        .question-list li .q-num {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            background: #2e7d5e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .question-list li .q-hint {
+            display: block;
+            font-size: 0.85rem;
+            color: #7a6a50;
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        /* ── KEY WORDS BOX ── */
+        .keywords-box {
+            background: #faf8f3;
+            border: 1px solid #e0d8c8;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-top: 24px;
+        }
+        .keywords-box h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #c8973a;
+            margin: 0 0 12px;
+        }
+        .keywords-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .kw-chip {
+            background: white;
+            border: 1px solid #d0c8b0;
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 0.92rem;
+            color: #1a3a2a;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .kw-chip:hover {
+            background: #1a3a2a;
+            color: #e8d5a3;
+            border-color: #1a3a2a;
+        }
+        .kw-chip span {
+            font-weight: 400;
+            color: #7a6a50;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        .kw-chip:hover span { color: #a8c4a8; }
+
+        /* ── NEXT STEP ── */
+        .next-step-box {
+            background: #1a3a2a;
+            color: #e8d5a3;
+            border-radius: 10px;
+            padding: 24px 28px;
+            text-align: center;
+        }
+        .next-step-box h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            color: white;
+            margin: 0 0 10px;
+        }
+        .next-step-box p {
+            font-size: 1rem;
+            color: #a8c4a8;
+            margin: 0;
+            line-height: 1.7;
+        }
+        .next-step-box .arrow {
+            font-size: 2rem;
+            display: block;
+            margin: 12px 0 8px;
+            color: #c8973a;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- FIXED HEADER -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Advanced Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/18-03-2021-ship-NOLA2.jpg/image1170x530cropped.jpg" alt="Crisis en el Golfo Pérsico" class="article-image">
+    </div>
+
+
+<!-- HERO -->
+<div class="hero-banner">
+    <div>
+        <span class="topic-tag">🌍 Actividad de Calentamiento</span>
+        <span class="warm-up-label">Warm-up</span>
+    </div>
+    <h2>Crisis en el Golfo Pérsico:<br>¿Qué está pasando?</h2>
+    <p class="subtitle">Lee primero en español — luego intenta explicarlo en inglés</p>
+</div>
+
+<div class="container">
+<main class="main-content">
+
+    <!-- INSTRUCTION BOX -->
+    <div class="instruction-box">
+        <div class="icon">💡</div>
+        <div>
+            <h3>¿Cómo usar esta actividad?</h3>
+            <p>Lee el resumen en español y asegúrate de entender bien la historia. Después, intenta explicar lo que pasó <strong style="color:#e8d5a3;">usando tus propias palabras en inglés</strong>. Puedes buscar palabras en el diccionario. No hay respuestas incorrectas — el objetivo es <em>intentarlo</em>.</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SECCIÓN 1 — RESUMEN EN ESPAÑOL
+    ════════════════════════════════════════ -->
+    <div class="section-card green-top">
+        <h2>📋 ¿Qué está pasando en el Golfo Pérsico?</h2>
+
+        <div class="story-block">
+            <span class="block-label">El problema</span>
+            <p>
+                Hay un conflicto armado en el Golfo Pérsico que está bloqueando el
+                <strong>Estrecho de Ormuz</strong> — uno de los pasos marítimos más importantes del mundo.
+                Desde que empezó la guerra, el tráfico de barcos petroleros en esa zona
+                cayó más de <span class="big-stat">90%</span>.
+            </p>
+        </div>
+
+        <hr class="story-divider">
+
+        <div class="story-block">
+            <span class="block-label">¿Por qué es tan importante ese estrecho?</span>
+            <p>
+                Cada día, por ese corredor pasan normalmente:
+                el <span class="big-stat">35%</span> del petróleo crudo del mundo,
+                el <span class="big-stat">30%</span> del comercio mundial de fertilizantes,
+                y una quinta parte del gas natural licuado del planeta.
+                Si ese paso está bloqueado, todo eso deja de fluir.
+            </p>
+        </div>
+
+        <hr class="story-divider">
+
+        <div class="story-block">
+            <span class="block-label">¿Quién sufre más?</span>
+            <p>
+                Los agricultores de todo el mundo están recibiendo un <strong>"doble golpe"</strong>:
+                suben los precios del fertilizante <em>y</em> del combustible al mismo tiempo,
+                y los dos son esenciales para producir alimentos.
+                Los países más vulnerables son los que dependen de importaciones,
+                como Bangladesh, Sri Lanka y muchas naciones africanas.
+                En Irán, los precios de los alimentos ya están <strong>por las nubes</strong>.
+                Países como Qatar y los Emiratos Árabes Unidos, que importan casi todo su alimento,
+                también están en problemas porque ningún barco llega a la región.
+            </p>
+        </div>
+
+        <hr class="story-divider">
+
+        <div class="story-block">
+            <span class="block-label">¿Y los trabajadores migrantes?</span>
+            <p>
+                Millones de trabajadores de Asia del Sur y África Oriental trabajan en países del Golfo.
+                Si la crisis continúa, podrían mandar <strong>menos dinero</strong> a sus familias en sus países de origen —
+                lo que afectaría también las economías locales de esas regiones.
+            </p>
+        </div>
+
+        <hr class="story-divider">
+
+        <div class="story-block">
+            <span class="block-label">¿Qué se necesita hacer?</span>
+            <p>
+                El economista de la FAO (la agencia de la ONU para la alimentación) dice que
+                hay que actuar <strong>ya</strong> en tres niveles:
+                a corto plazo, encontrar rutas marítimas alternativas y dar apoyo financiero
+                de emergencia a los países que dependen de importaciones;
+                a mediano plazo, diversificar las fuentes de fertilizantes y compartir reservas entre regiones;
+                a largo plazo, tratar los sistemas alimentarios con la misma importancia estratégica
+                que el sector energético o el transporte.
+            </p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SECCIÓN 2 — CONEXIÓN CON TU INDUSTRIA
+    ════════════════════════════════════════ -->
+    <div class="section-card amber-top">
+        <h2>🚗 Conexión con tu industria</h2>
+
+        <div class="industry-box">
+            <div class="industry-header">
+                <span class="industry-icon">🧲</span>
+                <h3>¿Suena familiar? La crisis de los imanes en la industria automotriz</h3>
+            </div>
+
+            <p>
+                Lo que le está pasando al mundo con el Estrecho de Ormuz es exactamente
+                lo que le pasó — y sigue pasando — a la industria automotriz con los
+                <strong>imanes de tierras raras</strong>.
+                China controla más del 85% de la producción mundial de estos minerales,
+                que son esenciales para los motores eléctricos y los sistemas de tracción de los autos.
+                Cuando China restringe las exportaciones, toda la cadena de suministro se paraliza.
+            </p>
+
+            <p>
+                En ambos casos, el problema es el mismo: <strong>demasiada dependencia de una sola fuente</strong>.
+                Y la solución también es la misma: encontrar <em>alternativas</em>.
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Situación</th>
+                        <th>Crisis del Golfo Pérsico</th>
+                        <th>Crisis de imanes automotriz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-label">El problema</td>
+                        <td>Ruta marítima bloqueada</td>
+                        <td>Suministro de tierras raras restringido</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">¿Qué falta?</td>
+                        <td>Petróleo, fertilizantes, gas</td>
+                        <td>Neodimio, disprosio (para imanes)</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">¿Quién sufre?</td>
+                        <td>Países importadores de alimentos</td>
+                        <td>Fabricantes de autos eléctricos</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">La solución</td>
+                        <td>Rutas marítimas alternativas</td>
+                        <td>Materiales o procesos alternativos</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">Largo plazo</td>
+                        <td>Más resiliencia en sistemas alimentarios</td>
+                        <td>Más resiliencia en cadena de suministro</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SECCIÓN 3 — SPEAKING CHALLENGE
+    ════════════════════════════════════════ -->
+    <div class="section-card rust-top">
+        <h2>🗣️ Now… can you say it in English?</h2>
+
+        <p class="challenge-intro">
+            Ya entendiste la historia en español. Ahora intenta <strong>contarla en inglés</strong>.
+            No necesitas traducir todo — solo intenta expresar las ideas más importantes.
+            Usa el diccionario si necesitas. Las preguntas de abajo te pueden ayudar a organizar tus ideas.
+        </p>
+
+        <ul class="question-list">
+            <li>
+                <span class="q-num">1</span>
+                What happened in the Persian Gulf? What is blocked?
+                <span class="q-hint">Pista: conflict / strait / tanker traffic / declined</span>
+            </li>
+            <li>
+                <span class="q-num">2</span>
+                Why is this strait so important for the world?
+                <span class="q-hint">Pista: oil / fertilizer / natural gas / passes through</span>
+            </li>
+            <li>
+                <span class="q-num">3</span>
+                Which countries are most affected, and why?
+                <span class="q-hint">Pista: import-dependent / vulnerable / food prices / skyrocketing</span>
+            </li>
+            <li>
+                <span class="q-num">4</span>
+                What does the FAO say needs to happen?
+                <span class="q-hint">Pista: alternative routes / diversify / resilience / short term / long term</span>
+            </li>
+            <li>
+                <span class="q-num">5</span>
+                How is this similar to a challenge in the automotive industry?
+                <span class="q-hint">Pista: rare earth magnets / single source / alternative materials / supply chain</span>
+            </li>
+        </ul>
+
+        <!-- KEY WORDS -->
+        <div class="keywords-box">
+            <h4>🔑 Palabras clave que puedes usar</h4>
+            <div class="keywords-grid">
+                <span class="kw-chip" onclick="speakWord('blockade')">blockade <span>bloqueo</span></span>
+                <span class="kw-chip" onclick="speakWord('disruption')">disruption <span>interrupción</span></span>
+                <span class="kw-chip" onclick="speakWord('fertilizer')">fertilizer <span>fertilizante</span></span>
+                <span class="kw-chip" onclick="speakWord('commodity')">commodity <span>materia prima</span></span>
+                <span class="kw-chip" onclick="speakWord('vulnerable')">vulnerable <span>vulnerable</span></span>
+                <span class="kw-chip" onclick="speakWord('skyrocketing')">skyrocketing <span>por las nubes</span></span>
+                <span class="kw-chip" onclick="speakWord('resilience')">resilience <span>resiliencia</span></span>
+                <span class="kw-chip" onclick="speakWord('diversify')">diversify <span>diversificar</span></span>
+                <span class="kw-chip" onclick="speakWord('alternative routes')">alternative routes <span>rutas alternativas</span></span>
+                <span class="kw-chip" onclick="speakWord('supply chain')">supply chain <span>cadena de suministro</span></span>
+                <span class="kw-chip" onclick="speakWord('import dependent')">import-dependent <span>dependiente de importaciones</span></span>
+                <span class="kw-chip" onclick="speakWord('rare earth magnets')">rare earth magnets <span>imanes de tierras raras</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEXT STEP -->
+    <div class="next-step-box">
+        <h3>¿Listos para leer el artículo original?</h3>
+        <span class="arrow">↓</span>
+        <p>Ahora que ya conocen la historia, abran el artículo completo en inglés.<br>
+        Van a reconocer las ideas — el reto es ver <em>cómo</em> las expresa un economista de la ONU.</p>
+    </div>
+
+</main>
+</div>
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.8;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
+
