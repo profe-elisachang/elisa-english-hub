@@ -84,6 +84,7 @@ async function scanLessons() {
         { filename: 'Bad Bunny Super Bowl Halftime Show.html', date: '2026-03-24', title: '🏈 GOP Lawmaker Calls for Probe Into NFL and NBC Over \'Indecent\' Bad Bunny Super Bowl Halftime Show' },
         { filename: 'Growing Muscles.html', date: '2026-03-26', title: '💪 Growing Muscles, Growing Markets' },        { filename: 'Hero Tax.html', date: '2026-03-31', title: '🦸 The Hero Tax: Why \'Selfless\' Workers Are Professionally Exploited' },
         { filename: 'Persian Gulf Crisis.html', date: '2026-04-02', title: 'Persian Gulf Crisis Impacting Food Security' },
+        { filename: 'Crisis en el Golfo Pérsico.html', date: '2026-04-02', title: 'Crisis en el Golfo Pérsico' },
         // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
