@@ -1,0 +1,628 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice – Robotaxis Lesson</title>
+  <link rel="stylesheet" href="../style-intermediate.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #f0f4f0;
+      --surface:   #ffffff;
+      --accent1:   #2e7d52;
+      --accent2:   #e65100;
+      --accent3:   #1565c0;
+      --soft:      #e8f5e9;
+      --soft2:     #fff3e0;
+      --soft3:     #e3f2fd;
+      --text:      #1a1a1a;
+      --muted:     #5a6a5a;
+      --radius:    14px;
+      --correct:   #2e7d52;
+      --wrong:     #c62828;
+      --neutral:   #455a64;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Open Sans', 'Noto Sans', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #1b5e20 0%, #e65100 100%);
+      padding: 1.2rem 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .header h1 { font-size: 1.5rem; font-weight: 900; color: #fff; flex: 1; min-width: 180px; }
+    .level-badge {
+      background: rgba(255,255,255,0.22);
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.35);
+      white-space: nowrap;
+    }
+
+    /* WRAPPER */
+    .page { max-width: 1400px; margin: 2.5rem auto; padding: 0 1.5rem; }
+
+    /* SECTION TITLES */
+    .sec-title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--accent1);
+      border-left: 6px solid var(--accent2);
+      padding-left: 0.9rem;
+      margin-bottom: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .section-wrap {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin-bottom: 3rem;
+      border: 1.5px solid #c8e6c9;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+
+    /* ══ PART 1 – GAINS OF ___ ══ */
+    .pattern-intro {
+      background: var(--soft);
+      border: 2px solid var(--accent1);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 1.8rem;
+      font-size: 1.2rem;
+    }
+    .pattern-intro strong { color: var(--accent2); font-size: 1.35rem; }
+
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .ex-card {
+      background: var(--soft);
+      border: 1.5px solid #a5d6a7;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+    }
+    .ex-phrase { font-weight: 700; color: var(--accent1); font-size: 1rem; margin-bottom: 0.25rem; }
+    .ex-sent   { font-size: 0.95rem; color: var(--text); margin-bottom: 0.2rem; }
+    .ex-es     { font-size: 0.87rem; color: var(--muted); font-style: italic; }
+
+    /* Fill-in practice */
+    .fill-title { font-weight: 700; color: var(--accent3); font-size: 1.05rem; margin-bottom: 1rem; }
+    .fill-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .fill-item  {
+      background: var(--soft3);
+      border: 1.5px solid #90caf9;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+    }
+    .fill-q   { font-size: 1rem; color: var(--text); margin-bottom: 0.6rem; line-height: 1.5; }
+    .fill-q em { color: var(--accent2); font-style: normal; font-weight: 700; }
+    .fill-input {
+      width: 100%;
+      padding: 0.5rem 0.8rem;
+      font-size: 1rem;
+      border: 1.5px solid #90caf9;
+      border-radius: 8px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .fill-input:focus { outline: none; border-color: var(--accent3); }
+    .fill-hint-btn {
+      background: var(--accent3);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.88rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .fill-hint-btn:hover { opacity: 0.82; }
+    .fill-hint {
+      display: none;
+      background: #fff;
+      border-left: 3px solid var(--accent3);
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      border-radius: 0 6px 6px 0;
+      color: var(--muted);
+    }
+    .fill-hint.show { display: block; }
+
+    /* ══ PART 2 – TRAFFIC WORDS ══ */
+    .traffic-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .tc-card {
+      border-radius: 12px;
+      padding: 1.3rem 1.4rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .tc-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .tc-card.jam    { background: #fff8e1; border-color: #ffca28; }
+    .tc-card.cong   { background: #fff3e0; border-color: #fb8c00; }
+    .tc-card.grid   { background: #fce4ec; border-color: #e91e63; }
+    .tc-card.bottle { background: #e8f5e9; border-color: #43a047; }
+
+    .tc-word   { font-size: 1.3rem; font-weight: 900; margin-bottom: 0.3rem; }
+    .tc-card.jam  .tc-word { color: #f57f17; }
+    .tc-card.cong .tc-word { color: #e65100; }
+    .tc-card.grid .tc-word { color: #c62828; }
+    .tc-card.bottle .tc-word { color: #2e7d32; }
+
+    .tc-meter { display: flex; gap: 4px; margin: 0.4rem 0; }
+    .tc-dot {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: #ddd;
+    }
+    .tc-card.jam    .tc-dot.on { background: #ffca28; }
+    .tc-card.cong   .tc-dot.on { background: #fb8c00; }
+    .tc-card.grid   .tc-dot.on { background: #e91e63; }
+    .tc-card.bottle .tc-dot.on { background: #43a047; }
+
+    .tc-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.5rem; }
+    .tc-def   { font-size: 0.92rem; color: var(--text); margin-bottom: 0.4rem; }
+    .tc-es    { font-size: 0.85rem; color: var(--muted); font-style: italic; margin-bottom: 0.6rem; }
+    .tc-ex    { font-size: 0.88rem; background: rgba(255,255,255,0.6); border-radius: 6px; padding: 0.4rem 0.6rem; font-style: italic; color: #333; }
+
+    /* Situation quiz */
+    .quiz-title { font-weight: 700; color: var(--accent2); font-size: 1.05rem; margin: 1.8rem 0 1rem; }
+    .quiz-item  { background: var(--soft2); border: 1.5px solid #ffcc80; border-radius: 10px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+    .quiz-q     { font-size: 1rem; color: var(--text); margin-bottom: 0.8rem; font-weight: 600; }
+    .quiz-opts  { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .quiz-btn {
+      background: #fff;
+      border: 2px solid #ffb74d;
+      border-radius: 8px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .quiz-btn:hover   { background: #fff3e0; }
+    .quiz-btn.correct { background: #e8f5e9; border-color: var(--correct); color: var(--correct); }
+    .quiz-btn.wrong   { background: #ffebee; border-color: var(--wrong);   color: var(--wrong);   }
+    .quiz-feedback { font-size: 0.9rem; margin-top: 0.7rem; font-weight: 700; display: none; }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.ok  { color: var(--correct); }
+    .quiz-feedback.bad { color: var(--wrong); }
+
+    /* ══ PART 3 – USEFUL EXPRESSIONS ══ */
+    .expr-review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .er-card {
+      background: #f3e5f5;
+      border: 2px solid #ce93d8;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+    }
+    .er-phrase { font-size: 1.1rem; font-weight: 900; color: #6a1b9a; margin-bottom: 0.25rem; }
+    .er-es     { font-size: 0.88rem; color: #7b1fa2; font-style: italic; margin-bottom: 0.5rem; }
+    .er-ex     { font-size: 0.92rem; color: #333; background: rgba(255,255,255,0.65); border-radius: 6px; padding: 0.4rem 0.6rem; }
+
+    /* Expression prompt challenge */
+    .prompt-title { font-weight: 700; color: #6a1b9a; font-size: 1.05rem; margin-bottom: 1rem; }
+    .prompt-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .prompt-card  {
+      background: #fce4ec;
+      border: 1.5px solid #f48fb1;
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+    }
+    .prompt-situation { font-size: 0.9rem; color: #880e4f; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .prompt-q { font-size: 1rem; color: var(--text); margin-bottom: 0.7rem; line-height: 1.5; }
+    .prompt-hint { font-size: 0.85rem; color: #ad1457; font-style: italic; margin-bottom: 0.7rem; }
+    .prompt-textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      border: 1.5px solid #f48fb1;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      resize: vertical;
+    }
+    .prompt-textarea:focus { outline: none; border-color: #e91e63; }
+    .prompt-share-btn {
+      margin-top: 0.5rem;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.4rem 1rem;
+      font-size: 0.88rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: inherit;
+      transition: opacity 0.15s;
+    }
+    .prompt-share-btn:hover { opacity: 0.82; }
+
+    /* SCORE BANNER */
+    .score-bar {
+      background: var(--accent1);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      letter-spacing: 0.03em;
+      display: none;
+    }
+    .score-bar.show { display: block; }
+
+    @media (max-width: 600px) {
+      .section-wrap { padding: 1.2rem 1rem; }
+      .header h1 { font-size: 1.2rem; }
+    }
+  </style>
+
+
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Practice Page</span>
+    <div class="search-box">
+      <a href="../index.html" class="back-to-calendar-btn" style="
+        display:inline-block;padding:0.5rem 1rem;
+        background:rgba(255,255,255,0.25);color:white;
+        text-decoration:none;border-radius:20px;font-size:0.9rem;
+        font-weight:600;border:1px solid rgba(255,255,255,0.3);
+        transition:all 0.3s ease;">Home</a>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════
+       PART 1 · GAINS OF ___
+  ══════════════════════════════════ -->
+  <div class="section-wrap">
+    <h2 class="sec-title">📈 Part 1 · The "___ gains of ___" Pattern</h2>
+
+    <div class="pattern-intro">
+      Pattern: &nbsp;<strong>[adjective] gains of [noun phrase]</strong><br>
+      <span style="font-size:0.95rem;color:var(--muted);">= the benefits / improvements produced by something</span>
+    </div>
+
+    <div class="examples-grid">
+      <div class="ex-card">
+        <div class="ex-phrase">climate gains of electrification</div>
+        <div class="ex-sent">"The <strong>climate gains of electrification</strong> depend on using renewable energy."</div>
+        <div class="ex-es">🇪🇸 los beneficios climáticos de la electrificación</div>
+      </div>
+      <div class="ex-card">
+        <div class="ex-phrase">health gains of exercise</div>
+        <div class="ex-sent">"The <strong>health gains of exercise</strong> include stronger muscles and better mental health."</div>
+        <div class="ex-es">🇪🇸 los beneficios de salud del ejercicio</div>
+      </div>
+      <div class="ex-card">
+        <div class="ex-phrase">economic gains of globalization</div>
+        <div class="ex-sent">"The <strong>economic gains of globalization</strong> have boosted trade but also created inequality."</div>
+        <div class="ex-es">🇪🇸 los beneficios económicos de la globalización</div>
+      </div>
+      <div class="ex-card">
+        <div class="ex-phrase">productivity gains of automation</div>
+        <div class="ex-sent">"The <strong>productivity gains of automation</strong> allow companies to produce more with fewer workers."</div>
+        <div class="ex-es">🇪🇸 las ganancias de productividad por la automatización</div>
+      </div>
+      <div class="ex-card">
+        <div class="ex-phrase">social gains of education</div>
+        <div class="ex-sent">"The <strong>social gains of education</strong> include reduced poverty and greater civic participation."</div>
+        <div class="ex-es">🇪🇸 los beneficios sociales de la educación</div>
+      </div>
+    </div>
+
+    <!-- Fill-in practice -->
+    <div class="fill-title">✏️ Now you try — complete each sentence using the pattern:</div>
+    <div class="fill-grid">
+
+      <div class="fill-item">
+        <div class="fill-q">The <em>______</em> gains of working from home include less commuting time and lower stress.</div>
+        <input class="fill-input" placeholder="What kind of gains? (e.g. lifestyle / productivity)">
+        <button class="fill-hint-btn" onclick="showHint(this)">Show hint</button>
+        <div class="fill-hint">Try: <strong>productivity</strong> or <strong>lifestyle</strong> gains of working from home</div>
+      </div>
+
+      <div class="fill-item">
+        <div class="fill-q">The efficiency gains of _______ allow our factory to ship 30% faster.</div>
+        <input class="fill-input" placeholder="What change? (e.g. a new system / automation)">
+        <button class="fill-hint-btn" onclick="showHint(this)">Show hint</button>
+        <div class="fill-hint">Try: <strong>the new ERP system</strong> or <strong>automation</strong></div>
+      </div>
+
+      <div class="fill-item">
+        <div class="fill-q">In your job, what are the _______ gains of using better software or technology?</div>
+        <input class="fill-input" placeholder="Write your own answer!">
+        <button class="fill-hint-btn" onclick="showHint(this)">Show hint</button>
+        <div class="fill-hint">Example: "The <strong>efficiency gains of</strong> our new tracking software are huge — we spend less time on emails."</div>
+      </div>
+
+    </div>
+  </div><!-- /part 1 -->
+
+
+  <!-- ══════════════════════════════════
+       PART 2 · TRAFFIC WORDS
+  ══════════════════════════════════ -->
+  <div class="section-wrap">
+    <h2 class="sec-title">🚦 Part 2 · Traffic Words Compared</h2>
+
+    <div class="traffic-compare">
+
+      <div class="tc-card jam">
+        <div class="tc-word">traffic jam</div>
+        <div class="tc-label">severity</div>
+        <div class="tc-meter">
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot"></div>
+          <div class="tc-dot"></div>
+          <div class="tc-dot"></div>
+        </div>
+        <div class="tc-def">Cars are moving slowly or stopped temporarily.</div>
+        <div class="tc-es">🇪🇸 embotellamiento / atasco</div>
+        <div class="tc-ex">"There's a traffic jam on the highway — try a different route."</div>
+      </div>
+
+      <div class="tc-card cong">
+        <div class="tc-word">congestion</div>
+        <div class="tc-label">severity</div>
+        <div class="tc-meter">
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot"></div>
+          <div class="tc-dot"></div>
+        </div>
+        <div class="tc-def">Too much traffic making roads slow — a general condition, not one event.</div>
+        <div class="tc-es">🇪🇸 congestión de tráfico</div>
+        <div class="tc-ex">"Urban congestion has increased 20% in the last five years."</div>
+      </div>
+
+      <div class="tc-card grid">
+        <div class="tc-word">gridlock</div>
+        <div class="tc-label">severity</div>
+        <div class="tc-meter">
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+        </div>
+        <div class="tc-def">Complete standstill — nothing moves at all. Also used for political/business deadlock.</div>
+        <div class="tc-es">🇪🇸 parálisis total de tráfico / punto muerto</div>
+        <div class="tc-ex">"The city reached total gridlock after the stadium event ended."</div>
+      </div>
+
+      <div class="tc-card bottle">
+        <div class="tc-word">bottleneck</div>
+        <div class="tc-label">type</div>
+        <div class="tc-meter">
+          <div class="tc-dot on"></div>
+          <div class="tc-dot on"></div>
+          <div class="tc-dot"></div>
+          <div class="tc-dot"></div>
+          <div class="tc-dot"></div>
+        </div>
+        <div class="tc-def">One specific narrow point that slows everything down. Common in logistics and production.</div>
+        <div class="tc-es">🇪🇸 cuello de botella</div>
+        <div class="tc-ex">"The customs inspection is a bottleneck in our supply chain."</div>
+      </div>
+
+    </div><!-- /traffic-compare -->
+
+    <!-- Situation quiz -->
+    <div class="quiz-title">🎯 Situation Quiz — which word fits best?</div>
+
+    <div class="quiz-item" data-answer="bottleneck">
+      <div class="quiz-q">1. "Our delivery process is fine — but the warehouse inspection step takes 3 hours and holds everything up." What word describes this?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this,'traffic jam')">traffic jam</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'gridlock')">gridlock</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'bottleneck')">bottleneck</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'congestion')">congestion</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="gridlock">
+      <div class="quiz-q">2. "The two departments can't agree on the budget. The project has been stuck for three weeks — no decision has been made." What word fits?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this,'traffic jam')">traffic jam</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'gridlock')">gridlock</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'bottleneck')">bottleneck</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'congestion')">congestion</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-item" data-answer="congestion">
+      <div class="quiz-q">3. "Every morning from 7 to 9 am, there are too many cars on the roads in our city. Speeds are slow everywhere." What is this?</div>
+      <div class="quiz-opts">
+        <button class="quiz-btn" onclick="checkQuiz(this,'traffic jam')">traffic jam</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'gridlock')">gridlock</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'bottleneck')">bottleneck</button>
+        <button class="quiz-btn" onclick="checkQuiz(this,'congestion')">congestion</button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+
+    <div id="score-bar" class="score-bar"></div>
+
+  </div><!-- /part 2 -->
+
+
+  <!-- ══════════════════════════════════
+       PART 3 · USEFUL EXPRESSIONS
+  ══════════════════════════════════ -->
+  <div class="section-wrap">
+    <h2 class="sec-title">💬 Part 3 · Useful Expressions Review</h2>
+
+    <div class="expr-review-grid">
+      <div class="er-card">
+        <div class="er-phrase">raise alarms</div>
+        <div class="er-es">🇪🇸 generar preocupación / dar la voz de alarma</div>
+        <div class="er-ex">"The new data is <strong>raising alarms</strong> about product quality."</div>
+      </div>
+      <div class="er-card">
+        <div class="er-phrase">rather than</div>
+        <div class="er-es">🇪🇸 en lugar de / en vez de</div>
+        <div class="er-ex">"We should fix the root cause <strong>rather than</strong> just the symptoms."</div>
+      </div>
+      <div class="er-card">
+        <div class="er-phrase">rely heavily on</div>
+        <div class="er-es">🇪🇸 depender mucho de</div>
+        <div class="er-ex">"Our logistics team <strong>relies heavily on</strong> real-time GPS tracking."</div>
+      </div>
+      <div class="er-card">
+        <div class="er-phrase">play a role in</div>
+        <div class="er-es">🇪🇸 desempeñar un papel en</div>
+        <div class="er-ex">"Good communication <strong>plays a key role in</strong> successful projects."</div>
+      </div>
+      <div class="er-card">
+        <div class="er-phrase">on their own</div>
+        <div class="er-es">🇪🇸 por sí solos / sin ayuda</div>
+        <div class="er-ex">"New tools cannot improve quality <strong>on their own</strong> — training matters too."</div>
+      </div>
+    </div>
+
+    <!-- Expression prompts -->
+    <div class="prompt-title">🗣️ Your turn — answer these work situations using the expression shown:</div>
+    <div class="prompt-grid">
+
+      <div class="prompt-card">
+        <div class="prompt-situation">For: Sales / Purchasing</div>
+        <div class="prompt-q">A client says your prices are too high. You want to suggest a different solution instead of just lowering the price.</div>
+        <div class="prompt-hint">Try using: <strong>"rather than"</strong></div>
+        <textarea class="prompt-textarea" placeholder="Example: &quot;Rather than lowering the price, we can offer...&quot;"></textarea>
+        <button class="prompt-share-btn" onclick="sharePrompt(this)">Share with class ↗</button>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-situation">For: QA / Logistics</div>
+        <div class="prompt-q">You notice a trend in defect reports that worries you. How do you tell your manager?</div>
+        <div class="prompt-hint">Try using: <strong>"raising alarms"</strong></div>
+        <textarea class="prompt-textarea" placeholder="&quot;The latest inspection data is raising alarms about...&quot;"></textarea>
+        <button class="prompt-share-btn" onclick="sharePrompt(this)">Share with class ↗</button>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-situation">For: Any role</div>
+        <div class="prompt-q">What is one thing your team or department depends on a lot to do your work well?</div>
+        <div class="prompt-hint">Try using: <strong>"rely heavily on"</strong></div>
+        <textarea class="prompt-textarea" placeholder="&quot;Our team relies heavily on...&quot;"></textarea>
+        <button class="prompt-share-btn" onclick="sharePrompt(this)">Share with class ↗</button>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-situation">For: Any role</div>
+        <div class="prompt-q">What do you think is most important for a company to succeed? Is one factor enough?</div>
+        <div class="prompt-hint">Try using: <strong>"play a role in"</strong> + <strong>"on their own"</strong></div>
+        <textarea class="prompt-textarea" placeholder="&quot;Quality products play a role in success, but they cannot...&quot;"></textarea>
+        <button class="prompt-share-btn" onclick="sharePrompt(this)">Share with class ↗</button>
+      </div>
+
+    </div>
+  </div><!-- /part 3 -->
+
+</div><!-- /page -->
+
+<script>
+  function showHint(btn) {
+    const hint = btn.nextElementSibling;
+    hint.classList.toggle('show');
+    btn.textContent = hint.classList.contains('show') ? 'Hide hint' : 'Show hint';
+  }
+
+  let quizScores = {};
+
+  function checkQuiz(btn, chosen) {
+    const item = btn.closest('.quiz-item');
+    const answer = item.dataset.answer;
+    const feedback = item.querySelector('.quiz-feedback');
+    const allBtns = item.querySelectorAll('.quiz-btn');
+
+    allBtns.forEach(b => { b.disabled = true; b.classList.remove('correct','wrong'); });
+
+    if (chosen === answer) {
+      btn.classList.add('correct');
+      feedback.textContent = '✅ Correct! "' + answer + '" is the best word here.';
+      feedback.className = 'quiz-feedback show ok';
+      quizScores[item.dataset.answer] = true;
+    } else {
+      btn.classList.add('wrong');
+      allBtns.forEach(b => { if (b.textContent === answer) b.classList.add('correct'); });
+      feedback.textContent = '❌ Not quite. The best answer is "' + answer + '".';
+      feedback.className = 'quiz-feedback show bad';
+      quizScores[item.dataset.answer] = false;
+    }
+
+    const total = document.querySelectorAll('.quiz-item').length;
+    const done  = Object.keys(quizScores).length;
+    if (done === total) {
+      const correct = Object.values(quizScores).filter(Boolean).length;
+      const bar = document.getElementById('score-bar');
+      bar.textContent = '🏆 Quiz complete! You got ' + correct + ' / ' + total + ' correct.';
+      bar.classList.add('show');
+    }
+  }
+
+  function sharePrompt(btn) {
+    const card = btn.closest('.prompt-card');
+    const situation = card.querySelector('.prompt-situation').textContent;
+    const question  = card.querySelector('.prompt-q').textContent;
+    const answer    = card.querySelector('.prompt-textarea').value.trim();
+    if (!answer) { alert('Please write your answer first!'); return; }
+    alert('📣 Share with class:\n\n' + situation + '\n"' + answer + '"');
+  }
+</script>
+
+
