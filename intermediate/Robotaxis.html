@@ -1,0 +1,848 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotaxis May Increase Traffic – English with Elisa</title>
+  <link rel="stylesheet" href="../style-intermediate.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    /* ── THEME: Urban Steel & Amber ── */
+    :root {
+      --bg:          #1a1a2e;
+      --surface:     #16213e;
+      --card:        #0f3460;
+      --accent1:     #e94560;
+      --accent2:     #f5a623;
+      --accent3:     #00d4aa;
+      --text:        #eaeaea;
+      --text-muted:  #a0aec0;
+      --highlight-bg:#fff176;
+      --highlight-border:#f5a623;
+      --radius:      12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Open Sans', 'Noto Sans', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER (exact template) ── */
+    .header {
+      background: linear-gradient(135deg, #0f3460 0%, #e94560 100%);
+      padding: 1.2rem 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .header h1 {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #fff;
+      flex: 1;
+      min-width: 200px;
+    }
+    .level-badge {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.35);
+      white-space: nowrap;
+    }
+
+    /* ── MAIN WRAPPER ── */
+    .page-wrapper {
+      max-width: 1400px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--accent2);
+      border-left: 6px solid var(--accent1);
+      padding-left: 0.9rem;
+      margin-bottom: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ══════════════════════════════════════
+       1. USEFUL EXPRESSIONS
+    ══════════════════════════════════════ */
+    .expressions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .expr-card {
+      background: var(--card);
+      border: 1px solid var(--accent2);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    }
+    .expr-phrase {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent2);
+      margin-bottom: 0.3rem;
+    }
+    .expr-spanish {
+      font-size: 0.9rem;
+      color: var(--accent3);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .expr-example {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 0.5rem;
+    }
+
+    /* ══════════════════════════════════════
+       2. ARTICLE
+    ══════════════════════════════════════ */
+    .article-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 6px 28px rgba(0,0,0,0.45);
+    }
+    .article-title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1.6rem;
+      line-height: 1.3;
+      border-bottom: 3px solid var(--accent1);
+      padding-bottom: 0.8rem;
+    }
+    .article-para {
+      margin-bottom: 1.6rem;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    /* Highlighted vocab inside article */
+    .highlight {
+      background: var(--highlight-bg);
+      color: #111;
+      font-weight: 700;
+      border-bottom: 3px solid var(--highlight-border);
+      padding: 0 3px;
+      border-radius: 3px;
+      cursor: help;
+    }
+    .highlight-phrasal {
+      background: #b2ebf2;
+      color: #004d40;
+      font-weight: 700;
+      border-bottom: 3px solid #00acc1;
+      padding: 0 3px;
+      border-radius: 3px;
+      cursor: help;
+    }
+
+    /* ══════════════════════════════════════
+       3. VOCAB BOXES  (紧接在每段后)
+    ══════════════════════════════════════ */
+    .vocab-box {
+      background: #0a2540;
+      border: 2px solid var(--accent3);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      margin-bottom: 2.2rem;
+    }
+    .vocab-box-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1100px) { .vocab-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 760px)  { .vocab-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px)  { .vocab-grid { grid-template-columns: 1fr; } }
+
+    .vocab-item {
+      background: #112240;
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+    .vocab-word-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .vocab-word {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .speak-btn {
+      background: var(--accent2);
+      color: #111;
+      border: none;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s;
+    }
+    .speak-btn:hover { transform: scale(1.2); }
+    .vocab-def  { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+    .vocab-es   { font-size: 0.82rem; color: var(--accent3); font-style: italic; margin-bottom: 0.35rem; }
+    .vocab-ex   { font-size: 0.82rem; color: #c0caf5; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.35rem; }
+
+    /* ══════════════════════════════════════
+       4. DISCUSSION QUESTIONS
+    ══════════════════════════════════════ */
+    .discussion-section {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .dq-list { list-style: none; counter-reset: dq; }
+    .dq-list li {
+      counter-increment: dq;
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .dq-list li:last-child { border-bottom: none; }
+    .dq-num {
+      background: var(--accent1);
+      color: #fff;
+      font-weight: 900;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .dq-text { font-size: 1.05rem; color: var(--text); }
+
+    /* ══════════════════════════════════════
+       5. SELF-PRACTICE
+    ══════════════════════════════════════ */
+    .practice-section {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem 2.2rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .practice-item {
+      margin-bottom: 1.6rem;
+    }
+    .practice-q {
+      font-weight: 700;
+      color: var(--accent2);
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+    .toggle-btn {
+      background: var(--card);
+      color: var(--accent3);
+      border: 1px solid var(--accent3);
+      border-radius: 8px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .toggle-btn:hover { background: var(--accent3); color: #111; }
+    .practice-answer {
+      display: none;
+      background: #0a2540;
+      border-left: 4px solid var(--accent3);
+      border-radius: 0 8px 8px 0;
+      padding: 0.9rem 1.2rem;
+      margin-top: 0.7rem;
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+    .practice-answer.open { display: block; }
+  
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ── FIXED HEADER ── -->
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Intermediate Level</span>
+    <div class="search-box">
+      <a href="../index.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255,255,255,0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://articles-img.sftcdn.net/t_article_cover_xl/auto-mapping-folder/sites/2/2025/09/robotaxis.jpg" alt="🚕 Robotaxis May Increase Traffic and Emissions" class="article-image">
+    </div>
+
+
+<!-- ── PAGE CONTENT ── -->
+<div class="page-wrapper">
+
+  <!-- ══ 1. USEFUL EXPRESSIONS ══ -->
+  <h2 class="section-title">💬 Useful Expressions</h2>
+  <div class="expressions-grid">
+
+    <div class="expr-card">
+      <div class="expr-phrase">raise alarms</div>
+      <div class="expr-spanish">🇪🇸 generar preocupación / dar la voz de alarma</div>
+      <div class="expr-example">"Scientists are <strong>raising alarms</strong> about the environmental cost of autonomous vehicles."</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-phrase">rather than</div>
+      <div class="expr-spanish">🇪🇸 en lugar de / en vez de</div>
+      <div class="expr-example">"Cities should improve buses <strong>rather than</strong> relying on robotaxis."</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-phrase">rely on / rely heavily on</div>
+      <div class="expr-spanish">🇪🇸 depender de / depender mucho de</div>
+      <div class="expr-example">"Our logistics team <strong>relies heavily on</strong> real-time tracking data."</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-phrase">play a role in</div>
+      <div class="expr-spanish">🇪🇸 desempeñar un papel en / tener un rol en</div>
+      <div class="expr-example">"Automation will <strong>play a role in</strong> how we manage our supply chain."</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="expr-phrase">on their own</div>
+      <div class="expr-spanish">🇪🇸 por sí solos / sin ayuda</div>
+      <div class="expr-example">"New technology cannot solve urban congestion <strong>on its own</strong>."</div>
+    </div>
+
+  </div><!-- /expressions-grid -->
+
+
+  <!-- ══ 2 & 3. ARTICLE + VOCAB BOXES ══ -->
+  <h2 class="section-title">📰 Article</h2>
+  <div class="article-card">
+    <h2 class="article-title">🚕 Robotaxis May Increase Traffic and Emissions, Analysts Warn</h2>
+
+    <!-- PARAGRAPH 1 -->
+    <p class="article-para">
+      Cities around the world are testing robotaxis, hoping that
+      <span class="highlight" title="autónomo / sin conductor humano">autonomous</span>
+      vehicles will ease traffic and reduce emissions. However, recent
+      <span class="highlight" title="análisis (plural de analysis)">analyses</span>
+      suggest these
+      <span class="highlight" title="expectativas / lo que la gente espera que ocurra">expectations</span>
+      may be overly
+      <span class="highlight" title="optimista / demasiado positivo">optimistic</span>.
+      According to a
+      <span class="highlight" title="empresa de consultoría / asesoría empresarial">consulting</span>
+      firm, robotaxis could actually make
+      <span class="highlight" title="congestión de tráfico / embotellamiento">congestion</span>
+      worse rather than better. Because self-driving rides are expected to be cheaper and more convenient than traditional taxis, more people may
+      <span class="highlight-phrasal" title="elegirlos en lugar de (phrasal verb)">choose them over</span>
+      walking, biking, or using public transportation. This
+      <span class="highlight" title="cambio / desplazamiento de comportamiento">shift</span>
+      would put more cars on already crowded roads.
+    </p>
+  </div><!-- /article-card (paragraph 1) -->
+
+  <!-- VOCAB BOX 1 -->
+  <div class="vocab-box">
+    <div class="vocab-box-title">📦 Vocabulary – Paragraph 1</div>
+    <div class="vocab-grid">
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">autonomous</span>
+          <button class="speak-btn" onclick="speakWord('autonomous')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">operating independently, without human control</div>
+        <div class="vocab-es">🇪🇸 autónomo</div>
+        <div class="vocab-ex">"The factory uses <em>autonomous</em> robots on the assembly line."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">analyses</span>
+          <button class="speak-btn" onclick="speakWord('analyses')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">plural of <em>analysis</em>; careful studies of data</div>
+        <div class="vocab-es">🇪🇸 análisis</div>
+        <div class="vocab-ex">"Our QA team ran several <em>analyses</em> of the defect rate."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">expectations</span>
+          <button class="speak-btn" onclick="speakWord('expectations')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">beliefs about what will happen in the future</div>
+        <div class="vocab-es">🇪🇸 expectativas</div>
+        <div class="vocab-ex">"Customer <em>expectations</em> for fast delivery have increased."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">optimistic</span>
+          <button class="speak-btn" onclick="speakWord('optimistic')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">hopeful that things will turn out well</div>
+        <div class="vocab-es">🇪🇸 optimista</div>
+        <div class="vocab-ex">"I'm <em>optimistic</em> that we can meet the deadline."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">congestion</span>
+          <button class="speak-btn" onclick="speakWord('congestion')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">too much traffic causing slow movement</div>
+        <div class="vocab-es">🇪🇸 congestión, embotellamiento</div>
+        <div class="vocab-ex">"Road <em>congestion</em> delayed our shipment by two hours."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">choose over</span>
+          <button class="speak-btn" onclick="speakWord('choose over')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">to prefer one thing instead of another</div>
+        <div class="vocab-es">🇪🇸 preferir / elegir en lugar de</div>
+        <div class="vocab-ex">"Many buyers <em>choose email over</em> phone calls for purchasing inquiries."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">shift</span>
+          <button class="speak-btn" onclick="speakWord('shift')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">a change in behavior, attitude, or position</div>
+        <div class="vocab-es">🇪🇸 cambio, desplazamiento</div>
+        <div class="vocab-ex">"There has been a <em>shift</em> toward online purchasing since 2020."</div>
+      </div>
+
+    </div>
+  </div><!-- /vocab-box 1 -->
+
+  <div class="article-card">
+    <!-- PARAGRAPH 2 -->
+    <p class="article-para">
+      Another concern is "deadheading," which
+      <span class="highlight-phrasal" title="se refiere a (phrasal verb: refers to)">refers to</span>
+      robotaxis traveling without passengers between rides. Since autonomous
+      <span class="highlight" title="flotas / grupos de vehículos que operan juntos">fleets</span>
+      need to
+      <span class="highlight" title="reposicionarse / moverse a una nueva ubicación">reposition</span>
+      themselves throughout the day, these empty trips could greatly increase total vehicle miles traveled. In
+      <span class="highlight" title="densamente / con mucha población en poco espacio">densely</span>
+      populated cities, even a small rise in traffic volume can slow speeds and worsen gridlock.
+    </p>
+  </div>
+
+  <!-- VOCAB BOX 2 -->
+  <div class="vocab-box">
+    <div class="vocab-box-title">📦 Vocabulary – Paragraph 2</div>
+    <div class="vocab-grid">
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">deadheading</span>
+          <button class="speak-btn" onclick="speakWord('deadheading')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">vehicles traveling empty, with no passengers or cargo</div>
+        <div class="vocab-es">🇪🇸 viaje en vacío</div>
+        <div class="vocab-ex">"<em>Deadheading</em> trucks add costs and emissions to logistics operations."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">refers to</span>
+          <button class="speak-btn" onclick="speakWord('refers to')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">means; describes; is about</div>
+        <div class="vocab-es">🇪🇸 se refiere a, significa</div>
+        <div class="vocab-ex">"'Lead time' <em>refers to</em> the time between order and delivery."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">fleets</span>
+          <button class="speak-btn" onclick="speakWord('fleets')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">a group of vehicles owned or operated together</div>
+        <div class="vocab-es">🇪🇸 flotas</div>
+        <div class="vocab-ex">"Our company manages a <em>fleet</em> of 50 delivery trucks."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">reposition</span>
+          <button class="speak-btn" onclick="speakWord('reposition')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">to move to a different place or market position</div>
+        <div class="vocab-es">🇪🇸 reposicionar, cambiar de posición</div>
+        <div class="vocab-ex">"We need to <em>reposition</em> our inventory closer to the port."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">densely</span>
+          <button class="speak-btn" onclick="speakWord('densely')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">with a large number of things in a small space</div>
+        <div class="vocab-es">🇪🇸 densamente</div>
+        <div class="vocab-ex">"Taipei is one of the most <em>densely</em> populated cities in Asia."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">gridlock</span>
+          <button class="speak-btn" onclick="speakWord('gridlock')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">complete traffic jam with no movement at all</div>
+        <div class="vocab-es">🇪🇸 parálisis de tráfico</div>
+        <div class="vocab-ex">"The city center reaches total <em>gridlock</em> during rush hour."</div>
+      </div>
+
+    </div>
+  </div><!-- /vocab-box 2 -->
+
+  <div class="article-card">
+    <!-- PARAGRAPH 3 -->
+    <p class="article-para">
+      Environmental
+      <span class="highlight" title="impactos / efectos (en este contexto, ambientales)">impacts</span>
+      are also raising alarms. Autonomous cars require large amounts of
+      <span class="highlight" title="potencia de procesamiento / cómputo">computing</span>
+      power for
+      <span class="highlight" title="sensores / dispositivos que detectan cambios en el entorno">sensors</span>
+      and real-time decision-making. This energy
+      <span class="highlight" title="demanda / consumo (de energía)">demand</span>
+      may
+      <span class="highlight" title="socavar / debilitar / perjudicar">undermine</span>
+      the climate gains of
+      <span class="highlight" title="electrificación / transición a motores eléctricos">electrification</span>.
+      If cities
+      <span class="highlight-phrasal" title="dependen mucho de (phrasal verb)">rely heavily on</span>
+      robotaxis instead of improving buses, subways, and walkable neighborhoods, emissions could remain high or even rise.
+    </p>
+  </div>
+
+  <!-- VOCAB BOX 3 -->
+  <div class="vocab-box">
+    <div class="vocab-box-title">📦 Vocabulary – Paragraph 3</div>
+    <div class="vocab-grid">
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">impacts</span>
+          <button class="speak-btn" onclick="speakWord('impacts')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">effects or results, especially strong ones</div>
+        <div class="vocab-es">🇪🇸 impactos, efectos</div>
+        <div class="vocab-ex">"We measured the <em>impact</em> of the new policy on delivery times."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">computing power</span>
+          <button class="speak-btn" onclick="speakWord('computing power')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">the processing capacity of computers or electronic systems</div>
+        <div class="vocab-es">🇪🇸 potencia de cómputo</div>
+        <div class="vocab-ex">"AI applications require enormous <em>computing power</em>."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">sensors</span>
+          <button class="speak-btn" onclick="speakWord('sensors')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">devices that detect and respond to physical inputs</div>
+        <div class="vocab-es">🇪🇸 sensores</div>
+        <div class="vocab-ex">"The warehouse uses motion <em>sensors</em> to track inventory movement."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">demand</span>
+          <button class="speak-btn" onclick="speakWord('demand')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">the need or requirement for something</div>
+        <div class="vocab-es">🇪🇸 demanda, consumo</div>
+        <div class="vocab-ex">"High customer <em>demand</em> has stressed our supply chain."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">undermine</span>
+          <button class="speak-btn" onclick="speakWord('undermine')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">to weaken or damage something gradually</div>
+        <div class="vocab-es">🇪🇸 socavar, perjudicar, debilitar</div>
+        <div class="vocab-ex">"Repeated delays will <em>undermine</em> client trust in our company."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">rely heavily on</span>
+          <button class="speak-btn" onclick="speakWord('rely heavily on')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">to depend a lot on something or someone</div>
+        <div class="vocab-es">🇪🇸 depender mucho de</div>
+        <div class="vocab-ex">"Our purchasing team <em>relies heavily on</em> supplier relationships."</div>
+      </div>
+
+    </div>
+  </div><!-- /vocab-box 3 -->
+
+  <div class="article-card">
+    <!-- PARAGRAPH 4 -->
+    <p class="article-para">
+      Experts argue that robotaxis should support—not replace—public transportation. Without strong urban planning and clear policies, autonomous fleets may strengthen car-
+      <span class="highlight" title="dependiente / que depende demasiado del auto">dependent</span>
+      habits and change cities in ways that are less
+      <span class="highlight" title="sostenible / que puede continuar a largo plazo sin dañar el medio ambiente">sustainable</span>.
+      The real challenge for governments is balancing
+      <span class="highlight" title="innovación / introducción de nuevas ideas o tecnologías">innovation</span>
+      with environmental responsibility. Robotaxis may still
+      <span class="highlight-phrasal" title="desempeñar un papel en (expresión idiomática)">play a role in</span>
+      future
+      <span class="highlight" title="movilidad / capacidad de moverse / sistema de transporte">mobility</span>,
+      but they are unlikely to solve congestion on their own.
+    </p>
+  </div>
+
+  <!-- VOCAB BOX 4 -->
+  <div class="vocab-box">
+    <div class="vocab-box-title">📦 Vocabulary – Paragraph 4</div>
+    <div class="vocab-grid">
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">car-dependent</span>
+          <button class="speak-btn" onclick="speakWord('car dependent')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">designed in a way that requires people to use cars</div>
+        <div class="vocab-es">🇪🇸 dependiente del automóvil</div>
+        <div class="vocab-ex">"Suburban areas are often very <em>car-dependent</em> due to poor bus routes."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">sustainable</span>
+          <button class="speak-btn" onclick="speakWord('sustainable')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">able to continue long-term without harming the environment</div>
+        <div class="vocab-es">🇪🇸 sostenible</div>
+        <div class="vocab-ex">"We are looking for more <em>sustainable</em> packaging for our products."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">innovation</span>
+          <button class="speak-btn" onclick="speakWord('innovation')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">the introduction of new ideas, methods, or technology</div>
+        <div class="vocab-es">🇪🇸 innovación</div>
+        <div class="vocab-ex">"Product <em>innovation</em> is key to staying competitive in our market."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">play a role in</span>
+          <button class="speak-btn" onclick="speakWord('play a role in')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">to have an important function or effect in something</div>
+        <div class="vocab-es">🇪🇸 desempeñar un papel en</div>
+        <div class="vocab-ex">"Sales teams <em>play a key role in</em> gathering customer feedback."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">mobility</span>
+          <button class="speak-btn" onclick="speakWord('mobility')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">the ability to move freely; systems that allow movement</div>
+        <div class="vocab-es">🇪🇸 movilidad</div>
+        <div class="vocab-ex">"Urban <em>mobility</em> solutions must include cycling and public transit."</div>
+      </div>
+
+      <div class="vocab-item">
+        <div class="vocab-word-row">
+          <span class="vocab-word">on their own</span>
+          <button class="speak-btn" onclick="speakWord('on their own')" title="Listen">🔊</button>
+        </div>
+        <div class="vocab-def">without help; by themselves alone</div>
+        <div class="vocab-es">🇪🇸 por sí solos, sin ayuda</div>
+        <div class="vocab-ex">"New tools cannot fix poor processes <em>on their own</em>."</div>
+      </div>
+
+    </div>
+  </div><!-- /vocab-box 4 -->
+
+
+  <!-- ══ 4. DISCUSSION QUESTIONS ══ -->
+  <h2 class="section-title">🗣️ Discussion Questions</h2>
+  <div class="discussion-section">
+    <ul class="dq-list">
+      <li>
+        <div class="dq-num">1</div>
+        <div class="dq-text">Do you think robotaxis could be useful in the city where you live or work? What benefits or problems do you imagine?</div>
+      </li>
+      <li>
+        <div class="dq-num">2</div>
+        <div class="dq-text">In your job (logistics, purchasing, QA, or sales), how does traffic or transportation affect your daily work? Can you give a specific example?</div>
+      </li>
+      <li>
+        <div class="dq-num">3</div>
+        <div class="dq-text">The article says cities should improve public transportation instead of relying on robotaxis. Do you agree? What other solutions would you suggest for reducing urban congestion?</div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ══ 5. SELF-PRACTICE QUESTIONS ══ -->
+  <h2 class="section-title">✍️ Self-Practice Questions</h2>
+  <div class="practice-section">
+
+    <div class="practice-item">
+      <div class="practice-q">1. According to the article, why might robotaxis make traffic worse instead of better?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="practice-answer">
+        Because more people may choose robotaxis over walking, biking, or using public transportation, since they are cheaper and more convenient. This shift would put more cars on already crowded roads. Also, empty robotaxis repositioning between rides ("deadheading") would further increase total vehicle miles traveled.
+      </div>
+    </div>
+
+    <div class="practice-item">
+      <div class="practice-q">2. What is "deadheading" and why is it a problem?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="practice-answer">
+        Deadheading refers to robotaxis traveling without passengers between rides. It is a problem because autonomous fleets need to reposition themselves throughout the day, so these empty trips greatly increase the total number of vehicle miles on the road, making congestion worse.
+      </div>
+    </div>
+
+    <div class="practice-item">
+      <div class="practice-q">3. How could robotaxis undermine the environmental benefits of electric vehicles?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="practice-answer">
+        Autonomous cars require large amounts of computing power for their sensors and real-time decision-making. This high energy demand could cancel out the climate gains from switching to electric vehicles, especially if cities rely heavily on robotaxis instead of developing more efficient public transportation.
+      </div>
+    </div>
+
+    <div class="practice-item">
+      <div class="practice-q">4. In your own words, what is the main message of this article?</div>
+      <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+      <div class="practice-answer">
+        (Sample answer) The main message is that robotaxis may not solve urban traffic or environmental problems on their own. Without strong planning and policies, they could actually make congestion and emissions worse. Experts say robotaxis should complement—not replace—public transportation, and that governments need to balance innovation with environmental responsibility.
+      </div>
+    </div>
+
+  </div><!-- /practice-section -->
+
+</div><!-- /page-wrapper -->
+
+<script>
+  function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+  }
+
+  function toggleAnswer(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    answer.classList.toggle('open', !isOpen);
+    btn.textContent = isOpen ? 'Show Answer' : 'Hide Answer';
+  }
+</script>
+
+
