@@ -1,0 +1,1217 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developing Countries Priced Out - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&amp;family=Source+Serif+4:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a18;
+            --paper: #f5f0e8;
+            --cream: #fffdf7;
+            --accent: #b5451b;
+            --accent-light: #e8c4b8;
+            --gold: #c9982a;
+            --slate: #4a5568;
+            --rule: #d4c9b0;
+            --highlight-bg: #fff9c4;
+            --highlight-border: #e67e22;
+            --quote-bg: #fdf6ec;
+            --section-bg: #f0ebe0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.8;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: var(--ink);
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .level-badge {
+            background: var(--accent);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: 'Source Serif 4', serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            font-family: 'Source Serif 4', serif;
+        }
+        .back-to-calendar-btn:hover { background: rgba(255,255,255,0.25); }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ── ARTICLE MASTHEAD ── */
+        .masthead {
+            border-top: 4px solid var(--ink);
+            border-bottom: 1px solid var(--rule);
+            padding: 30px 0 24px;
+            margin-bottom: 40px;
+        }
+        .masthead .kicker {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .masthead h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        .masthead .dateline {
+            font-size: 0.82rem;
+            color: var(--slate);
+            letter-spacing: 0.05em;
+        }
+        .masthead .dateline a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .masthead .dateline a:hover { text-decoration: underline; }
+
+        /* ── SECTIONS ── */
+        .lesson-section {
+            background: var(--cream);
+            border-radius: 4px;
+            padding: 36px 40px;
+            margin-bottom: 36px;
+            border: 1px solid var(--rule);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--ink);
+            border-bottom: 2px solid var(--rule);
+            padding-bottom: 14px;
+            margin-bottom: 28px;
+        }
+
+        /* ── USEFUL EXPRESSIONS ── */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        @media (min-width: 768px) {
+            .expressions-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1200px) {
+            .expressions-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .expression-card {
+            background: white;
+            border: 1px solid var(--rule);
+            border-left: 4px solid var(--accent);
+            padding: 18px 20px;
+            border-radius: 3px;
+        }
+        .expression-card .phrase {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            color: var(--ink);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .expression-card .translation {
+            font-size: 0.85rem;
+            color: var(--slate);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .expression-card .example {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.6;
+            border-left: 2px solid var(--gold);
+            padding-left: 10px;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-lead {
+            background: var(--section-bg);
+            border-left: 5px solid var(--accent);
+            padding: 22px 28px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+        .article-lead p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.75;
+            color: var(--ink);
+        }
+
+        .article-subhead {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent-light);
+            padding-bottom: 8px;
+            margin: 36px 0 18px;
+        }
+
+        .article-body p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.85;
+            color: #222;
+        }
+
+        .pull-quote {
+            background: var(--quote-bg);
+            border: 1px solid var(--rule);
+            border-top: 3px solid var(--gold);
+            padding: 20px 26px;
+            margin: 24px 0;
+            border-radius: 0 0 4px 4px;
+        }
+        .pull-quote p {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--ink);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .pull-quote .attribution {
+            font-family: 'Source Serif 4', serif;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--slate);
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+        .stat-callout {
+            background: var(--ink);
+            color: white;
+            padding: 20px 26px;
+            margin: 24px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .stat-callout .number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            color: var(--gold);
+            line-height: 1;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .stat-callout .stat-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #e8e8e8;
+        }
+
+        /* ── HIGHLIGHT ── */
+        .highlight {
+            background: var(--highlight-bg);
+            font-weight: 700;
+            border-bottom: 2px solid var(--highlight-border);
+            position: relative;
+            cursor: help;
+            padding: 1px 3px;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #222;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            font-weight: normal;
+            z-index: 1000;
+            font-family: 'Source Serif 4', serif;
+            margin-bottom: 4px;
+        }
+
+        /* ── KEY SENTENCE ── */
+        .key-sentence {
+            background: #e8f4f8;
+            border-left: 4px solid #2980b9;
+            padding: 2px 6px;
+            border-radius: 0 3px 3px 0;
+            font-style: italic;
+        }
+
+        /* ── VOCAB BOX ── */
+        .vocab-section {
+            background: #fffef8;
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            margin: 30px 0;
+            border-radius: 0 6px 6px 0;
+            border: 1px solid var(--rule);
+            border-left-width: 4px;
+        }
+        .vocab-section h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .vocab-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1200px) {
+            .vocab-container { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 16px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+        .vocab-item .word-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .vocab-item strong {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        .vocab-item .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+        .vocab-item .definition {
+            color: #333;
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.93rem;
+        }
+        .vocab-item .spanish {
+            color: #777;
+            font-style: italic;
+            margin: 4px 0;
+            font-size: 0.88rem;
+        }
+        .vocab-item .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 10px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* ── QUOTES SECTION ── */
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 900px) {
+            .quotes-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .quote-card {
+            background: var(--ink);
+            color: white;
+            padding: 24px 26px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .quote-card::before {
+            content: '"';
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            line-height: 1;
+        }
+        .quote-card .quote-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .quote-card .think-prompt {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 12px 14px;
+            font-size: 0.85rem;
+            color: #ddd;
+            line-height: 1.55;
+        }
+        .quote-card .think-prompt strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── DISCUSSION ── */
+        .discussion-list {
+            list-style: none;
+            padding: 0;
+        }
+        .discussion-list li {
+            padding: 16px 20px 16px 50px;
+            background: white;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.65;
+            font-size: 0.97rem;
+        }
+        .discussion-list li::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .sentence-hint {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+            font-style: normal;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        /* ── SELF PRACTICE ── */
+        .practice-item {
+            background: white;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .practice-item .q-num {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .practice-item p {
+            font-size: 0.97rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .blank {
+            display: inline-block;
+            border-bottom: 2px solid var(--ink);
+            min-width: 120px;
+            margin: 0 4px;
+        }
+
+        details {
+            margin-top: 30px;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        details summary {
+            background: var(--section-bg);
+            padding: 14px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.93rem;
+            color: var(--ink);
+            letter-spacing: 0.02em;
+        }
+        details summary:hover { background: var(--accent-light); }
+        details .answers-body {
+            padding: 20px 24px;
+            background: white;
+        }
+        details ol {
+            padding-left: 20px;
+        }
+        details ol li {
+            margin-bottom: 10px;
+            line-height: 1.65;
+            font-size: 0.93rem;
+        }
+
+        .mobile-note {
+            font-size: 0.8rem;
+            color: var(--slate);
+            font-style: italic;
+            margin-top: 12px;
+            padding: 8px 14px;
+            background: var(--section-bg);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* ── KEY SENTENCES SECTION ── */
+        .key-sentences-list {
+            list-style: none;
+            padding: 0;
+        }
+        .key-sentences-list li {
+            background: white;
+            border: 1px solid var(--rule);
+            border-left: 4px solid #2980b9;
+            border-radius: 0 4px 4px 0;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+        }
+        .ks-pattern {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #2980b9;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .ks-sentence {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--ink);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .ks-note {
+            font-size: 0.87rem;
+            color: var(--slate);
+            line-height: 1.55;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/19-03-2026_AU_Water_Africa.jpg/image560x340cropped.jpg" alt="Developing Countries Are Being Priced Out, in Struggle for Affordable Finance" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- MASTHEAD -->
+            <div class="masthead">
+                <div class="kicker">💰 UN News · Economic Development · 30 March 2026</div>
+                <h2>Developing Countries Are Being Priced Out, in Struggle for Affordable Finance</h2>
+                <div class="dateline">
+                    Source: <a href="https://news.un.org/en/story/2026/03/1167219" target="_blank">UN News — Read original article ↗</a>
+                </div>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="lesson-section">
+                <div class="section-label">Section 1</div>
+                <h2 class="section-title">🗣️ Useful Expressions</h2>
+                <div class="expressions-grid">
+
+                    <div class="expression-card">
+                        <div class="phrase">be priced out (of something)</div>
+                        <div class="translation">ser excluido por el precio</div>
+                        <div class="example">Small suppliers are being priced out of the market because they can't compete with larger companies.</div>
+                    </div>
+
+                    <div class="expression-card">
+                        <div class="phrase">rely on</div>
+                        <div class="translation">depender de / basarse en</div>
+                        <div class="example">The current system relies on outdated data, which leads to unfair assessments.</div>
+                    </div>
+
+                    <div class="expression-card">
+                        <div class="phrase">point to</div>
+                        <div class="translation">señalar / destacar (como evidencia)</div>
+                        <div class="example">The report points to rising debt costs as the main obstacle to development.</div>
+                    </div>
+
+                    <div class="expression-card">
+                        <div class="phrase">call for</div>
+                        <div class="translation">exigir / pedir (un cambio)</div>
+                        <div class="example">The UN called for fairer methodologies in how countries are assessed.</div>
+                    </div>
+
+                    <div class="expression-card">
+                        <div class="phrase">link (something) to (something)</div>
+                        <div class="translation">vincular / relacionar con</div>
+                        <div class="example">She linked rising borrowing costs to slower growth in developing nations.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 2+3: ARTICLE + VOCAB -->
+            <div class="lesson-section">
+                <div class="section-label">Section 2 &amp; 3</div>
+                <h2 class="section-title">📰 Article with Vocabulary</h2>
+
+                <p class="mobile-note">💡 On mobile: tap and hold highlighted words to see translation. On desktop: hover over them.</p>
+
+                <!-- LEAD -->
+                <div class="article-lead" style="margin-top: 24px;">
+                    <p>Developing countries are being <span class="highlight" title="excluidos por el precio">priced out</span> of the <span class="highlight" title="financiamiento accesible">affordable finance</span> they <span class="highlight" title="desesperadamente necesitan">desperately need</span> for <span class="highlight" title="desarrollo sostenible">sustainable development</span>, with <span class="highlight" title="calificaciones crediticias soberanas">sovereign credit ratings</span> often <span class="highlight" title="sobreestimando">overstating</span> risk and <span class="highlight" title="ignorando / pasando por alto">overlooking</span> long-term economic <span class="highlight" title="potencial">potential</span>, the UN said on Monday.</p>
+                </div>
+
+                <!-- PARAGRAPH 1 -->
+                <div class="article-body">
+                    <p>A <span class="highlight" title="calificación crediticia">credit rating</span> is an <span class="highlight" title="evaluación">assessment</span> of how likely a <span class="highlight" title="prestatario">borrower</span>, such as a government, is to <span class="highlight" title="pagar / reembolsar">repay</span> its <span class="highlight" title="deuda">debt</span> on time and in full. For <span class="highlight" title="estados soberanos (países)">sovereign states</span>, ratings <span class="highlight" title="influyen en">influence</span> how much countries pay to <span class="highlight" title="pedir prestado / endeudarse">borrow</span> in <span class="highlight" title="mercados internacionales">international markets</span>: <span class="key-sentence">the lower the rating, the higher the <span class="highlight" title="riesgo percibido">perceived risk</span> and usually the higher the <span class="highlight" title="costos de interés">interest costs</span>.</span></p>
+
+                    <p>The current system too often <span class="highlight" title="depende de / se basa en">relies on</span> "outdated and incomplete information", leaving countries unfairly <span class="highlight" title="penalizados / castigados">penalised</span> in <span class="highlight" title="mercados de capital globales">global capital markets</span>, the <span class="highlight" title="subjefa de la ONU">deputy UN chief</span> Amina Mohammed told the opening of the UN's Economic and Social Council, ECOSOC, Special Meeting on Credit Ratings, delivering remarks on behalf of Secretary-General António Guterres.</p>
+                </div>
+
+                <!-- VOCAB BOX 1 -->
+                <div class="vocab-section">
+                    <h3>📚 Vocabulary — Paragraphs 1 &amp; 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>priced out</strong>
+                                <button class="speak-btn" onclick="speakWord('priced out')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">When something becomes too expensive for you to afford or compete in</p>
+                            <p class="spanish">excluido por el precio</p>
+                            <div class="vocab-example">Small factories are being priced out of raw materials because of global inflation.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>sovereign credit rating</strong>
+                                <button class="speak-btn" onclick="speakWord('sovereign credit rating')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">An official score that tells investors how risky it is to lend money to a country</p>
+                            <p class="spanish">calificación crediticia soberana</p>
+                            <div class="vocab-example">A low sovereign credit rating means a country pays more interest when it borrows money.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>overstating</strong>
+                                <button class="speak-btn" onclick="speakWord('overstating')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Making something seem bigger, worse, or more important than it really is</p>
+                            <p class="spanish">sobreestimando / exagerando</p>
+                            <div class="vocab-example">The report was overstating the safety risks, which caused unnecessary concern.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>assessment</strong>
+                                <button class="speak-btn" onclick="speakWord('assessment')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A careful evaluation or judgment of something</p>
+                            <p class="spanish">evaluación</p>
+                            <div class="vocab-example">HR performs a performance assessment every six months.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>borrower</strong>
+                                <button class="speak-btn" onclick="speakWord('borrower')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A person, company, or country that takes money as a loan and must pay it back</p>
+                            <p class="spanish">prestatario / deudor</p>
+                            <div class="vocab-example">Developing countries are the largest borrowers in international financial markets.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>penalised</strong>
+                                <button class="speak-btn" onclick="speakWord('penalised')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Put at a disadvantage or made to suffer unfairly</p>
+                            <p class="spanish">penalizados / castigados</p>
+                            <div class="vocab-example">Workers are penalised for arriving late more than three times a month.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>capital markets</strong>
+                                <button class="speak-btn" onclick="speakWord('capital markets')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Financial markets where governments and companies raise large amounts of money through bonds and stocks</p>
+                            <p class="spanish">mercados de capital</p>
+                            <div class="vocab-example">Access to capital markets allows countries to fund infrastructure without raising taxes immediately.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 2: QUOTE + STAT -->
+                <div class="article-body">
+                    <div class="pull-quote">
+                        <p>"Adequate and timely finance is the fuel that drives sustainable development — today that fuel is running perilously low, and it's getting more costly."</p>
+                        <div class="attribution">— Amina Mohammed, Deputy UN Secretary-General</div>
+                    </div>
+
+                    <p>She <span class="highlight" title="señaló / destacó">pointed to</span> nearly $1.4 trillion in annual <span class="highlight" title="costos del servicio de la deuda">debt servicing costs</span> across developing countries, while more than <strong>3.4 billion people</strong> live in countries that spend more on <span class="highlight" title="pagos de intereses de la deuda">debt interest payments</span> than on health or education.</p>
+                </div>
+
+                <!-- VOCAB BOX 2 -->
+                <div class="vocab-section">
+                    <h3>📚 Vocabulary — The Finance Paragraph</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>adequate</strong>
+                                <button class="speak-btn" onclick="speakWord('adequate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Enough in quantity or quality; sufficient for the purpose</p>
+                            <p class="spanish">adecuado / suficiente</p>
+                            <div class="vocab-example">We need to ensure adequate safety training before the new equipment arrives.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>perilously</strong>
+                                <button class="speak-btn" onclick="speakWord('perilously')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">In a way that is dangerously close to a serious problem</p>
+                            <p class="spanish">peligrosamente</p>
+                            <div class="vocab-example">The project budget was running perilously low by the third quarter.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>debt servicing costs</strong>
+                                <button class="speak-btn" onclick="speakWord('debt servicing costs')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The money a borrower must regularly pay to cover loan interest and partial repayment</p>
+                            <p class="spanish">costos del servicio de la deuda</p>
+                            <div class="vocab-example">High debt servicing costs left the government unable to invest in public hospitals.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- GLOBAL INSTABILITY SECTION -->
+                <div class="article-subhead">Global Instability</div>
+                <div class="article-body">
+                    <p>Ms. Mohammed added that <strong>global instability is deepening the crisis</strong>. Rising fuel and raw material costs <span class="highlight" title="vinculados a / relacionados con">linked to</span> conflict and <span class="highlight" title="volatilidad económica">economic volatility</span> are <span class="highlight" title="intensificando">intensifying</span> <span class="highlight" title="presiones fiscales">fiscal pressures</span> and <span class="highlight" title="frenando / desacelerando">slowing</span> growth, while <span class="highlight" title="países vulnerables al clima">climate-vulnerable countries</span> continue to face <span class="highlight" title="pérdidas por desastres">disaster losses</span> without access to affordable <span class="highlight" title="financiamiento para la recuperación">recovery financing</span>.</p>
+
+                    <p>"This is a matter of <span class="highlight" title="profunda importancia">profound importance</span>," Ms. Mohammed said.</p>
+                </div>
+
+                <!-- VOCAB BOX 3 -->
+                <div class="vocab-section">
+                    <h3>📚 Vocabulary — Global Instability</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>economic volatility</strong>
+                                <button class="speak-btn" onclick="speakWord('economic volatility')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Unpredictable and rapid changes in economic conditions — prices, growth, exchange rates</p>
+                            <p class="spanish">volatilidad económica</p>
+                            <div class="vocab-example">Economic volatility makes it hard for companies to plan long-term investments.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>fiscal pressures</strong>
+                                <button class="speak-btn" onclick="speakWord('fiscal pressures')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Stress on a government's budget — when spending needs exceed available revenue</p>
+                            <p class="spanish">presiones fiscales / presupuestarias</p>
+                            <div class="vocab-example">Fiscal pressures forced the company to freeze hiring for the rest of the year.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>intensifying</strong>
+                                <button class="speak-btn" onclick="speakWord('intensifying')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Becoming stronger, more serious, or more extreme over time</p>
+                            <p class="spanish">intensificándose / agravándose</p>
+                            <div class="vocab-example">The competition for talent in the tech sector is intensifying every year.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- DEBT REFORM -->
+                <div class="article-subhead">Debt Reform Efforts Broaden</div>
+                <div class="article-body">
+                    <p>Ms. Mohammed also <span class="highlight" title="vinculó / relacionó">linked</span> the credit ratings debate to wider efforts to <span class="highlight" title="reformar">reform</span> the <span class="highlight" title="arquitectura global de la deuda">global debt architecture</span> and pointed to new steps <span class="highlight" title="destinados a">aimed at</span> giving developing countries a stronger <span class="highlight" title="voz / representación">voice</span> in debt discussions.</p>
+
+                    <p>These include a <span class="highlight" title="plataforma de prestatarios">borrowers' platform</span>, work on principles for <span class="highlight" title="endeudamiento soberano responsable">responsible sovereign borrowing</span> and lending, and a UN-led process bringing together <span class="highlight" title="países deudores y acreedores">debtor and creditor countries</span>, <span class="highlight" title="acreedores privados">private creditors</span>, <span class="highlight" title="instituciones financieras internacionales">international financial institutions</span>, academics and civil society.</p>
+
+                    <p>She also <span class="highlight" title="citó / mencionó">cited</span> the planned African Credit Rating Agency as an example of efforts to improve data, <span class="highlight" title="transparencia">transparency</span> and <span class="highlight" title="evaluación de riesgos">risk assessment</span>.</p>
+                </div>
+
+                <!-- VOCAB BOX 4 -->
+                <div class="vocab-section">
+                    <h3>📚 Vocabulary — Debt Reform</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>debt architecture</strong>
+                                <button class="speak-btn" onclick="speakWord('debt architecture')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The overall system and rules that govern how countries borrow, lend, and restructure debt globally</p>
+                            <p class="spanish">arquitectura de la deuda</p>
+                            <div class="vocab-example">Reforming the global debt architecture could give poorer nations more negotiating power.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>creditor</strong>
+                                <button class="speak-btn" onclick="speakWord('creditor')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A person, bank, or country that has lent money and expects repayment</p>
+                            <p class="spanish">acreedor</p>
+                            <div class="vocab-example">The creditor nations demanded stricter repayment conditions before offering new loans.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>debtor</strong>
+                                <button class="speak-btn" onclick="speakWord('debtor')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A person, company, or country that owes money to another</p>
+                            <p class="spanish">deudor</p>
+                            <div class="vocab-example">Debtor countries often have little power in negotiations with large international banks.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>transparency</strong>
+                                <button class="speak-btn" onclick="speakWord('transparency')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Openness — being clear and honest about how decisions are made and data is used</p>
+                            <p class="spanish">transparencia</p>
+                            <div class="vocab-example">Greater transparency in the rating process would help countries understand why their score changed.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>civil society</strong>
+                                <button class="speak-btn" onclick="speakWord('civil society')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Non-government organizations, community groups, and citizens acting together for public interest</p>
+                            <p class="spanish">sociedad civil</p>
+                            <div class="vocab-example">Civil society groups pushed for better environmental standards in the new trade agreement.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CALL TO REIMAGINE -->
+                <div class="article-subhead">Call to Reimagine Ratings</div>
+                <div class="article-body">
+                    <p>Ms. Mohammed <span class="highlight" title="exhortó / instó">urged</span> a major <span class="highlight" title="cambio / giro">shift</span> in how <span class="highlight" title="calificaciones soberanas">sovereign ratings</span> are designed, arguing that <span class="highlight" title="evaluaciones">assessments</span> <span class="key-sentence">should capture not only <span class="highlight" title="vulnerabilidad">vulnerability</span>, but also opportunity.</span></p>
+
+                    <div class="pull-quote">
+                        <p>"We must transform the mindsets from long-term speculation to long-term investment,"</p>
+                        <div class="attribution">— Amina Mohammed</div>
+                    </div>
+
+                    <p>She called for broader, more <span class="highlight" title="transparentes">transparent</span> and <span class="highlight" title="con visión de futuro">forward-looking</span> <span class="highlight" title="metodologías">methodologies</span> that better reflect countries' real <span class="highlight" title="perspectivas / prospectos">prospects</span>.</p>
+
+                    <p>Ms. Mohammed <span class="highlight" title="destacó / subrayó">stressed</span> that affordable borrowing for development can <span class="highlight" title="fortalecer">strengthen</span> a country's future <span class="highlight" title="solvencia">solvency</span>.</p>
+
+                    <p>Investment in health, education, <span class="highlight" title="infraestructura">infrastructure</span>, <span class="highlight" title="resiliencia climática">climate resilience</span> and <span class="highlight" title="energía renovable">renewable energy</span>, she said, can <span class="highlight" title="generar prosperidad">generate prosperity</span>, reduce risk and improve <span class="highlight" title="estabilidad económica">economic stability</span> over time.</p>
+
+                    <p>She also <span class="highlight" title="criticó">criticised</span> <span class="highlight" title="medidas estrechas / limitadas">narrow measures</span> of progress, insisting that <span class="key-sentence">"<strong>GDP tells us the cost of everything and the value of very little</strong>."</span></p>
+
+                    <p>Ms. Mohammed called for greater <span class="highlight" title="rendición de cuentas / responsabilidad">accountability</span> from governments, investors and ratings providers alike, alongside stronger data and <span class="highlight" title="metodologías más justas">fairer methodologies</span>.</p>
+
+                    <div class="pull-quote">
+                        <p>"It's time to turn credit ratings from barriers into contributors to long-term finance and sustainable development."</p>
+                        <div class="attribution">— Amina Mohammed, urging a new approach that helps developing countries secure the financing they need.</div>
+                    </div>
+                </div>
+
+                <!-- VOCAB BOX 5 -->
+                <div class="vocab-section">
+                    <h3>📚 Vocabulary — Call to Reimagine</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>forward-looking</strong>
+                                <button class="speak-btn" onclick="speakWord('forward-looking')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Focused on the future; thinking ahead rather than relying only on past data</p>
+                            <p class="spanish">con visión de futuro / prospectivo</p>
+                            <div class="vocab-example">A forward-looking HR strategy considers future skills needs, not just current headcount.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>methodology</strong>
+                                <button class="speak-btn" onclick="speakWord('methodology')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">A system of methods and rules used to carry out a process or reach a conclusion</p>
+                            <p class="spanish">metodología</p>
+                            <div class="vocab-example">The safety audit methodology needs to be updated to cover remote work risks.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>solvency</strong>
+                                <button class="speak-btn" onclick="speakWord('solvency')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The ability to pay all your debts; being financially stable in the long term</p>
+                            <p class="spanish">solvencia</p>
+                            <div class="vocab-example">Investing in employee wellbeing can actually improve a company's long-term solvency.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>accountability</strong>
+                                <button class="speak-btn" onclick="speakWord('accountability')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">Being responsible for your actions and decisions, and having to explain them to others</p>
+                            <p class="spanish">rendición de cuentas / responsabilidad</p>
+                            <div class="vocab-example">Greater accountability in procurement decisions reduced corruption significantly.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>vulnerability</strong>
+                                <button class="speak-btn" onclick="speakWord('vulnerability')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The state of being exposed to risk or harm; weakness that can be exploited</p>
+                            <p class="spanish">vulnerabilidad</p>
+                            <div class="vocab-example">The IT team identified a critical vulnerability in the company's network security.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="word-row">
+                                <strong>prospects</strong>
+                                <button class="speak-btn" onclick="speakWord('prospects')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="definition">The likelihood of future success; possibilities for what may happen</p>
+                            <p class="spanish">perspectivas / prospectos</p>
+                            <div class="vocab-example">The company's growth prospects improved significantly after the new product launch.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECTION: POWERFUL QUOTES -->
+            <div class="lesson-section">
+                <div class="section-label">Bonus Section</div>
+                <h2 class="section-title">💬 Powerful Quotes — What Do They Really Mean?</h2>
+                <p style="margin-bottom: 24px; color: var(--slate); font-size: 0.95rem;">These quotes use metaphor and strong language to make a point. Can you explain what each one means <em>in your own words</em>?</p>
+
+                <div class="quotes-grid">
+
+                    <div class="quote-card">
+                        <div class="quote-text">"Adequate and timely finance is the fuel that drives sustainable development — today that fuel is running perilously low."</div>
+                        <div class="think-prompt">
+                            <strong>🤔 Think about it</strong>
+                            What is being compared to "fuel"? What happens to a car when it runs out of fuel? How does this apply to a country? Can you think of a similar metaphor in Spanish?
+                        </div>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="quote-text">"GDP tells us the cost of everything and the value of very little."</div>
+                        <div class="think-prompt">
+                            <strong>🤔 Think about it</strong>
+                            This is a play on a famous saying: "a cynic knows the price of everything and the value of nothing." What is the speaker criticising? What does GDP NOT measure? Do you agree?
+                        </div>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="quote-text">"We must transform the mindsets from long-term speculation to long-term investment."</div>
+                        <div class="think-prompt">
+                            <strong>🤔 Think about it</strong>
+                            What is the difference between <em>speculation</em> and <em>investment</em>? Why does the speaker say both are "long-term" but treat them as opposites?
+                        </div>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="quote-text">"It's time to turn credit ratings from barriers into contributors to long-term finance."</div>
+                        <div class="think-prompt">
+                            <strong>🤔 Think about it</strong>
+                            A "barrier" stops you. A "contributor" helps you. What change is being demanded? In your work, can you think of something that acts as a barrier but could become a contributor?
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION: KEY SENTENCES -->
+            <div class="lesson-section">
+                <div class="section-label">Section — Language Focus</div>
+                <h2 class="section-title">🔑 Key Sentence Patterns from the Article</h2>
+                <p style="margin-bottom: 24px; color: var(--slate); font-size: 0.95rem;">These patterns appear in the article. Notice how they work — you already know them, but do you use them naturally when expressing complex ideas?</p>
+
+                <ul class="key-sentences-list">
+
+                    <li>
+                        <div class="ks-pattern">Proportional Relationship</div>
+                        <div class="ks-sentence">"The lower the rating, the higher the perceived risk and usually the higher the interest costs."</div>
+                        <div class="ks-note">→ <strong>The + comparative, the + comparative.</strong> Use this to show that two things change together. Common in economics, engineering, and management discussions.</div>
+                    </li>
+
+                    <li>
+                        <div class="ks-pattern">Contrast: Not only X, but also Y</div>
+                        <div class="ks-sentence">"Assessments should capture not only vulnerability, but also opportunity."</div>
+                        <div class="ks-note">→ Use this to argue for a wider perspective — that something is being looked at too narrowly. Very useful when challenging a limited view in a meeting.</div>
+                    </li>
+
+                    <li>
+                        <div class="ks-pattern">Cause → Unintended Consequence</div>
+                        <div class="ks-sentence">"...leaving countries unfairly penalised in global capital markets."</div>
+                        <div class="ks-note">→ <strong>[action/situation], leaving [someone] [result].</strong> The "-ing" form shows what the consequence is, often negative and unintended. Great for incident reports and root cause analysis.</div>
+                    </li>
+
+                    <li>
+                        <div class="ks-pattern">Linking Two Problems</div>
+                        <div class="ks-sentence">"Rising fuel and raw material costs linked to conflict and economic volatility are intensifying fiscal pressures and slowing growth."</div>
+                        <div class="ks-note">→ Notice how multiple causes connect to multiple effects in one sentence. This is how analysts and senior managers talk. Practice building these compound sentences.</div>
+                    </li>
+
+                    <li>
+                        <div class="ks-pattern">Reframing the Narrative</div>
+                        <div class="ks-sentence">"It's time to turn credit ratings from barriers into contributors."</div>
+                        <div class="ks-note">→ <strong>It's time to turn [X] from [negative role] into [positive role].</strong> Powerful for proposals and advocacy. Use it when you want to suggest a fundamental change in how something is seen.</div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION -->
+            <div class="lesson-section">
+                <div class="section-label">Section 4</div>
+                <h2 class="section-title">💭 Discussion Questions</h2>
+                <p style="margin-bottom: 24px; color: var(--slate); font-size: 0.95rem;">Try to use the sentence patterns and vocabulary from this lesson in your answers. Hints are shown in <span class="sentence-hint">orange tags</span>.</p>
+
+                <ul class="discussion-list">
+                    <li data-num="1">
+                        Think about your own company or industry. Can you think of a situation where a system that was meant to be fair ended up <strong>penalising</strong> someone unfairly — because it relied on outdated or incomplete information?
+                        <span class="sentence-hint">Try: "The lower the _____, the more _____"</span>
+                    </li>
+                    <li data-num="2">
+                        The article argues that GDP is a poor measure of a country's real value. In your own field — HR, IT, or EHS — what official metrics or KPIs do you think fail to capture what really matters? What would you measure instead?
+                        <span class="sentence-hint">Try: "This metric captures not only _____, but it overlooks _____"</span>
+                    </li>
+                    <li data-num="3">
+                        Amina Mohammed says affordable borrowing can actually strengthen long-term solvency — in other words, spending money now can make you financially stronger later. Do you agree with this logic? Can you think of examples from your own company where <em>investing</em> in something prevented much bigger costs later?
+                        <span class="sentence-hint">Try: "It's time to turn _____ from a cost into an investment in _____"</span>
+                    </li>
+                    <li data-num="4">
+                        The article says global instability — conflict, climate disasters, rising material costs — is <em>intensifying fiscal pressures</em>. How have global events in the last two years affected your company's budget, hiring, or operations? How did leadership communicate this to employees?
+                        <span class="sentence-hint">Try: "Rising _____ linked to _____ has been leaving our team _____"</span>
+                    </li>
+                    <li data-num="5">
+                        The UN is calling for <strong>greater accountability</strong> from governments, investors, and rating agencies. In your experience, which group in a company — management, HR, finance, IT, EHS — tends to have the least accountability? What would change if that changed?
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF PRACTICE -->
+            <div class="lesson-section">
+                <div class="section-label">Section 5</div>
+                <h2 class="section-title">✏️ Self-Practice</h2>
+
+                <div class="practice-item">
+                    <div class="q-num">Exercise 1 — Fill in the Blank</div>
+                    <p>Complete the sentences using words from the article: <em>overstating, penalised, solvency, accountability, forward-looking, volatile</em></p>
+                    <br>
+                    <p>a) The current rating system is accused of <span class="blank"></span> the risks that developing countries face.</p>
+                    <br>
+                    <p>b) Countries with low credit ratings are unfairly <span class="blank"></span> in global capital markets, paying more to borrow.</p>
+                    <br>
+                    <p>c) Investing in infrastructure now can actually strengthen a country's long-term <span class="blank"></span>.</p>
+                    <br>
+                    <p>d) The UN called for greater <span class="blank"></span> from both governments and private rating agencies.</p>
+                    <br>
+                    <p>e) A more <span class="blank"></span> approach to ratings would consider future opportunities, not just current risks.</p>
+                </div>
+
+                <div class="practice-item">
+                    <div class="q-num">Exercise 2 — Sentence Building</div>
+                    <p>Use the pattern <strong>"The + comparative, the + comparative"</strong> to complete these sentences:</p>
+                    <br>
+                    <p>a) The higher the employee turnover, <span class="blank"></span> the training costs.</p>
+                    <br>
+                    <p>b) <span class="blank"></span> the safety incidents, the greater the reputational risk to the company.</p>
+                    <br>
+                    <p>c) The more transparent the process, <span class="blank"></span> .</p>
+                </div>
+
+                <div class="practice-item">
+                    <div class="q-num">Exercise 3 — Short Answer</div>
+                    <p>In 2–3 sentences, explain <strong>what a sovereign credit rating is</strong> and <strong>why it matters for ordinary people</strong>. Use at least two vocabulary words from this lesson.</p>
+                </div>
+
+                <div class="practice-item">
+                    <div class="q-num">Exercise 4 — Express Your Opinion</div>
+                    <p>Do you think the same problem exists in the private sector — that companies are sometimes unfairly assessed based on outdated data? Write 3–4 sentences using: <em>"not only... but also"</em>, <em>"linked to"</em>, and <em>"it's time to"</em>.</p>
+                </div>
+
+                <details>
+                    <summary><strong>📋 Reference Answers</strong></summary>
+                    <div class="answers-body">
+                        <p style="font-weight: 600; margin-bottom: 12px;">Exercise 1:</p>
+                        <ol>
+                            <li>a) <strong>overstating</strong></li>
+                            <li>b) <strong>penalised</strong></li>
+                            <li>c) <strong>solvency</strong></li>
+                            <li>d) <strong>accountability</strong></li>
+                            <li>e) <strong>forward-looking</strong></li>
+                        </ol>
+                        <br>
+                        <p style="font-weight: 600; margin-bottom: 12px;">Exercise 2 (suggested answers):</p>
+                        <ol>
+                            <li>a) The higher the employee turnover, <strong>the greater the training costs</strong>.</li>
+                            <li>b) <strong>The more frequent</strong> the safety incidents, the greater the reputational risk.</li>
+                            <li>c) The more transparent the process, <strong>the more trust employees place in management</strong>.</li>
+                        </ol>
+                        <br>
+                        <p style="font-weight: 600; margin-bottom: 12px;">Exercise 3 (sample answer):</p>
+                        <p style="font-size: 0.9rem; line-height: 1.7; color: #444;">A sovereign credit rating is an assessment of how likely a country is to repay its debts. It directly affects borrowing costs — the lower the rating, the more a country pays in interest. This means less money is available for health, education, and infrastructure, which directly impacts the daily lives of ordinary citizens.</p>
+                    </div>
+                </details>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
