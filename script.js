@@ -96,6 +96,8 @@ async function scanLessons() {
         { date: '2026-04-03', title: '🏖️ Semana Santa - No Class', isHoliday: true },
         { filename: 'Robotaxis.html', date: '2026-04-06', title: '🚕 Robotaxis May Increase Traffic and Emissions' },
         { filename: 'Robotaxis -Excercise.html', date: '2026-04-06', title: '🚕 Robotaxis -Excercise' },
+        { filename: 'Robotaxis.html', date: '2026-04-08', title: '🚕 Robotaxis May Increase Traffic and Emissions' },
+        { filename: 'Robotaxis -Excercise.html', date: '2026-04-08', title: '🚕 Robotaxis -Excercise' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
