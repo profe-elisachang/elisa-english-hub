@@ -1,0 +1,838 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodbye, Golden State - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #b5451b;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .level-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ARTICLE HERO */
+        .article-hero {
+            background: #1a3a5c;
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: "🇺🇸";
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            font-size: 4rem;
+            opacity: 0.15;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #a8c4e0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-hero h1 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            color: #f5c842;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .article-hero .subtitle {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #ccdcee;
+            margin: 0 0 12px 0;
+        }
+
+        .article-hero .byline {
+            font-size: 0.82rem;
+            color: #90aac8;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #b5451b;
+            border-bottom: 3px solid #b5451b;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .expression-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .expression-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .expression-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .expression-item {
+            background: #fdf6ef;
+            border-left: 4px solid #b5451b;
+            border-radius: 6px;
+            padding: 14px 16px;
+        }
+
+        .expression-en {
+            font-weight: 700;
+            color: #b5451b;
+            font-size: 1.05rem;
+        }
+
+        .expression-es {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 3px 0 6px 0;
+        }
+
+        .expression-example {
+            color: #444;
+            font-size: 0.93rem;
+            line-height: 1.5;
+        }
+
+        /* ARTICLE BODY */
+        .article-body {
+            background: white;
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .article-body h2 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #1a3a5c;
+            margin-top: 0;
+        }
+
+        .article-body h3.subsection {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #b5451b;
+            margin-top: 28px;
+            margin-bottom: 6px;
+        }
+
+        .article-body p {
+            margin: 0 0 14px 0;
+            font-size: 1.0rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .mobile-tip {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 16px;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #e08c00;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #222;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.88rem;
+            font-weight: normal;
+            z-index: 1000;
+        }
+
+        /* VOCAB BOXES */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #1a3a5c;
+            padding: 22px;
+            margin: 28px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+
+        .vocabulary-section h3 {
+            color: #1a3a5c;
+            margin-top: 0;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .vocab-word {
+            color: #1a3a5c;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .vocab-pos {
+            color: #888;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .vocab-phonetic {
+            color: #777;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .vocab-translation {
+            color: #777;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.92rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        .discussion-list li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 1.0rem;
+        }
+
+        /* PRACTICE */
+        .practice-item {
+            background: #f9f5ff;
+            border: 1px solid #d8cce8;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+        }
+
+        .practice-item p {
+            margin: 0 0 8px 0;
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #b5451b;
+            padding: 8px 0;
+        }
+
+        details ol {
+            margin: 10px 0 0 0;
+            padding-left: 22px;
+            color: #333;
+        }
+
+        details ol li {
+            margin-bottom: 6px;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255,255,255,0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="data:image/jpeg;base64,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" alt="Goodbye, Golden State" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ARTICLE HERO -->
+            <div class="article-hero">
+                <div class="article-meta">Business · March 2, 3</div>
+                <h1>🏙️ Goodbye, Golden State</h1>
+                <p class="subtitle">Why companies born and raised in California are leaving</p>
+                <p class="byline">By Piper Haft &amp; Caroline Petrow-Cohen · © 2025, Los Angeles Times. Distributed by Tribune Content Agency, LLC.</p>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2 class="section-title">💬 Useful Expressions</h2>
+                <div class="expression-grid">
+
+                    <div class="expression-item">
+                        <div class="expression-en">not mince (your) words</div>
+                        <div class="expression-es">no andarse con rodeos / hablar sin tapujos</div>
+                        <div class="expression-example">She didn't mince words when explaining why the company was relocating.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">paint a picture</div>
+                        <div class="expression-es">pintar un panorama / describir una situación</div>
+                        <div class="expression-example">The report paints a more nuanced picture of the business climate in California.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">red tape</div>
+                        <div class="expression-es">trámites burocráticos / papeleo excesivo</div>
+                        <div class="expression-example">Companies complain about the red tape involved in meeting California's environmental regulations.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">signal dissatisfaction</div>
+                        <div class="expression-es">señalar / expresar insatisfacción</div>
+                        <div class="expression-example">In-N-Out's move signaled the company's dissatisfaction with the California business environment.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">come in</div>
+                        <div class="expression-es">llegar / entrar (nuevas empresas)</div>
+                        <div class="expression-example">Texas is eager to attract businesses that are desperately eager to come in.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ARTICLE SECTION -->
+            <div class="article-body">
+                <h2>🏙️ Goodbye, Golden State</h2>
+                <p><em>Why companies born and raised in California are leaving</em></p>
+
+                <p>
+                    Last summer, billionaire In-N-Out owner Lynsi Snyder announced her move from California to Tennessee, where she plans to open new restaurants and <span class="highlight" title="seguir criando a su familia">continue raising her family</span>.
+                </p>
+                <p>
+                    It's a dramatic <span class="highlight" title="cambio / giro">shift</span> for the leader of the beloved West Coast brand, which has become the latest company to <span class="highlight" title="señalar / indicar">signal</span> its dissatisfaction with California in recent years. And she didn't <span class="highlight" title="no andarse con rodeos">mince words</span> in explaining her decision.
+                </p>
+                <p>
+                    "There's a lot of great things about California, but raising a family is not easy here. Doing business is not easy here," Snyder said during an appearance on the "Relatable" podcast, hosted by conservative commentator Allie Beth Stuckey.
+                </p>
+                <p>
+                    In-N-Out's headquarters will remain in California, but the company is <span class="highlight" title="consolidando / reagrupando">consolidating</span> its operations in the state and opening a regional headquarters in Franklin, Tennessee.
+                </p>
+
+                <h3 class="subsection">High-profile exits</h3>
+                <p>
+                    Tesla moved its headquarters out of Palo Alto in 2021, the same year that financial services firm Charles Schwab relocated from San Francisco to north Texas. Elon Musk moved the head offices of his other companies — SpaceX and X — to Texas in 2024, as did Chevron, the oil giant that was started in California.
+                </p>
+                <p>
+                    The <span class="highlight" title="salidas / partidas">departures</span> have contributed to a <span class="highlight" title="narrativa / relato">narrative</span> pushed by some media and politicians that the state's economy is in trouble and is <span class="highlight" title="hostil / poco amigable">unfriendly</span> to businesses.
+                </p>
+            </div>
+
+            <!-- VOCAB BOX - Paragraph 1 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 1</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">shift</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('shift')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/ʃɪft/</div>
+                        <p class="vocab-definition">A change in position, direction, or situation</p>
+                        <p class="vocab-translation">cambio, giro</p>
+                        <div class="vocab-example">The CEO's announcement marked a dramatic shift in the company's strategy.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">mince words</span>
+                            <span class="vocab-pos">(idiom)</span>
+                            <button class="speak-btn" onclick="speakWord('mince words')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To say exactly what you think, even if it might offend people</p>
+                        <p class="vocab-translation">no andarse con rodeos</p>
+                        <div class="vocab-example">The manager didn't mince words when explaining the budget cuts.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">consolidating</span>
+                            <span class="vocab-pos">(v)</span>
+                            <button class="speak-btn" onclick="speakWord('consolidating')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To combine things in order to make them more effective or easier to deal with</p>
+                        <p class="vocab-translation">consolidando, agrupando</p>
+                        <div class="vocab-example">The firm is consolidating its regional offices into one main hub.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">narrative</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('narrative')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/ˈnærətɪv/</div>
+                        <p class="vocab-definition">A description of a situation or series of events that supports a particular viewpoint</p>
+                        <p class="vocab-translation">narrativa, relato</p>
+                        <div class="vocab-example">The media pushed a narrative that the company was failing.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">departures</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('departures')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The act of leaving a place or an organization</p>
+                        <p class="vocab-translation">salidas, partidas</p>
+                        <div class="vocab-example">The departures of several key executives surprised the industry.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">unfriendly</span>
+                            <span class="vocab-pos">(adj)</span>
+                            <button class="speak-btn" onclick="speakWord('unfriendly')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Not welcoming or favorable; creating difficulties</p>
+                        <p class="vocab-translation">hostil, poco amigable</p>
+                        <div class="vocab-example">The new regulations created an unfriendly environment for small businesses.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ARTICLE SECTION 2 -->
+            <div class="article-body">
+                <h3 class="subsection">A one-dimensional picture?</h3>
+                <p>
+                    Experts and economists interviewed by <em>The Times</em> paint a more <span class="highlight" title="matizado / con más detalle">nuanced</span> picture. Although California's steep taxes and stringent environmental regulations have pushed some firms to leave, the state remains the fourth-largest economy in the world, <span class="highlight" title="alardea de / se enorgullece de">boasts</span> a diverse pool of talent and is a <span class="highlight" title="centro / núcleo de actividad">hub</span> of technological innovation, they said.
+                </p>
+                <p>
+                    "The popular media narratives have characterized California as one-dimensional," said William Riggs, a professor at the University of San Francisco School of Management. "We continue to be a magnet for investment in tech, biotech, entertainment and green energy, as well as being an agricultural <span class="highlight" title="caldo de cultivo / lugar fértil para el crecimiento">hotbed</span> for the planet."
+                </p>
+                <p>
+                    "It's being overhyped," Christopher Thornberg of Beacon Economics said of the <span class="highlight" title="supuesto / presunto">purported</span> mass <span class="highlight" title="éxodo masivo">exodus</span> of companies. "California is a big, competitive economy. We've got lots of great stuff here."
+                </p>
+                <p>
+                    To be sure, the state is facing some serious challenges that could threaten its competitive <span class="highlight" title="posición / ventaja competitiva">perch</span> if they are not addressed.
+                </p>
+                <p>
+                    In fact, California has been losing more companies than it's been gaining since 2014, according to the Bureau of Labor Statistics.
+                </p>
+
+                <h3 class="subsection">Taxes and red tape</h3>
+                <p>
+                    One <span class="highlight" title="persistente / recurrente">persistent</span> complaint: Corporate executives have cited California's tax burden as a driver of their decisions to relocate. The state taxes its highest earners at 13.3% on their regular income, and unlike most states, applies the same rate to profits from the sale of investments or business assets.
+                </p>
+                <p>
+                    Companies also face California's complex regulatory environment, with authorities governing matters including environmental standards and workplace safety. Many businesses must <span class="highlight" title="navegar / manejarse en">navigate</span> multiple layers of licensing, labor and compliance matters.
+                </p>
+            </div>
+
+            <!-- VOCAB BOX - Paragraph 2 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 2</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">nuanced</span>
+                            <span class="vocab-pos">(adj)</span>
+                            <button class="speak-btn" onclick="speakWord('nuanced')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/ˈnjuːɑːnst/</div>
+                        <p class="vocab-definition">Showing small but important differences; not oversimplified</p>
+                        <p class="vocab-translation">matizado, con más detalle</p>
+                        <div class="vocab-example">The analyst gave a nuanced view of the market situation.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">boasts</span>
+                            <span class="vocab-pos">(v)</span>
+                            <button class="speak-btn" onclick="speakWord('boasts')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To have something impressive that you are proud of</p>
+                        <p class="vocab-translation">alardea de, se enorgullece de</p>
+                        <div class="vocab-example">The new facility boasts state-of-the-art equipment.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">hub</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('hub')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/hʌb/</div>
+                        <p class="vocab-definition">The central and most important part of an area or system; where all the other parts are connected to</p>
+                        <p class="vocab-translation">centro, núcleo</p>
+                        <div class="vocab-example">Silicon Valley remains a hub for technology startups.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">hotbed</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('hotbed')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/ˈhɒtbɛd/</div>
+                        <p class="vocab-definition">A place that supports quick growth or development of something</p>
+                        <p class="vocab-translation">caldo de cultivo, lugar fértil</p>
+                        <div class="vocab-example">The city became a hotbed for creative startups.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">purported</span>
+                            <span class="vocab-pos">(adj)</span>
+                            <button class="speak-btn" onclick="speakWord('purported')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Claimed to be true or real, even if this is not certain</p>
+                        <p class="vocab-translation">supuesto, presunto</p>
+                        <div class="vocab-example">The purported benefits of the new policy were never proven.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">exodus</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('exodus')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/ˈɛksədəs/</div>
+                        <p class="vocab-definition">A situation in which a lot of people leave a particular place at the same time</p>
+                        <p class="vocab-translation">éxodo masivo</p>
+                        <div class="vocab-example">There has been a mass exodus of workers from the manufacturing sector.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">perch</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('perch')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">A high or secure position or advantage</p>
+                        <p class="vocab-translation">posición, ventaja competitiva</p>
+                        <div class="vocab-example">The company's competitive perch could be threatened by new rivals.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">persistent</span>
+                            <span class="vocab-pos">(adj)</span>
+                            <button class="speak-btn" onclick="speakWord('persistent')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Continuing to exist or happen, especially for longer than is usual or desirable</p>
+                        <p class="vocab-translation">persistente, recurrente</p>
+                        <div class="vocab-example">A persistent problem with supply chain delays affected production.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">navigate</span>
+                            <span class="vocab-pos">(v)</span>
+                            <button class="speak-btn" onclick="speakWord('navigate')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To deal with or manage a complex situation successfully</p>
+                        <p class="vocab-translation">navegar, manejarse en</p>
+                        <div class="vocab-example">New employees must navigate the company's complex approval process.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ARTICLE SECTION 3 -->
+            <div class="article-body">
+                <h3 class="subsection">We can still be friends</h3>
+                <p>
+                    According to Kevin Klowden, executive director of the Milken Institute, states including Florida and Texas attempt to <span class="highlight" title="atraer / captar">attract</span> businesses from California with lower tax rates, fewer regulations and other <span class="highlight" title="incentivos">incentives</span>. In June of 2025, Texas Governor Greg Abbott awarded hair-care brand John Paul Mitchell Systems $640,000 in grant funds to support the company's expansion into Dallas County.
+                </p>
+                <p>
+                    When firms move their headquarters out of California, it doesn't mean they're eliminating all business operations in the state, said Thornberg.
+                </p>
+                <p>
+                    For example, Tesla maintains its design center in Hawthorne and engineering headquarters in Palo Alto, as well as a factory in Fremont. Defense giant Northrop Grumman, which moved from Los Angeles in 2011 and is now based in Virginia, continues development, <span class="highlight" title="creación de prototipos">prototyping</span> and production operations in Palmdale.
+                </p>
+                <p>
+                    Although labeled by some as bad for business, the state retains a strong reputation for innovation.
+                </p>
+                <p>
+                    "California is viewed globally as a place that you go to try out an idea," Klowden said. "You're going to keep seeing businesses under pressure to move, and you'll see other ones that are desperately eager to come in."
+                </p>
+
+                <p class="mobile-tip">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- VOCAB BOX - Paragraph 3 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary – Section 3</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">attract</span>
+                            <span class="vocab-pos">(v)</span>
+                            <button class="speak-btn" onclick="speakWord('attract')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To cause someone or something to come to a place or be interested in something</p>
+                        <p class="vocab-translation">atraer, captar</p>
+                        <div class="vocab-example">The city's low taxes attract many new businesses every year.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">incentives</span>
+                            <span class="vocab-pos">(n)</span>
+                            <button class="speak-btn" onclick="speakWord('incentives')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Things that encourage people or companies to do something</p>
+                        <p class="vocab-translation">incentivos</p>
+                        <div class="vocab-example">The government offered financial incentives to attract foreign investors.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">prototyping</span>
+                            <span class="vocab-pos">(v/n)</span>
+                            <button class="speak-btn" onclick="speakWord('prototyping')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <div class="vocab-phonetic">/ˈproʊtəˌtaɪpɪŋ/</div>
+                        <p class="vocab-definition">Making an original and usually working model of a new product</p>
+                        <p class="vocab-translation">creación de prototipos</p>
+                        <div class="vocab-example">The engineering team spent months prototyping the new device before launch.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2 class="section-title">🗣️ Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>Do you think high taxes and strict regulations are a fair reason for companies to leave a state or country? Why or why not?</li>
+                    <li>In your opinion, what factors are most important when a company decides where to locate its headquarters?</li>
+                    <li>How do you think the departure of large companies affects the workers and communities they leave behind?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card">
+                <h2 class="section-title">✏️ Self-Practice Questions</h2>
+
+                <div class="practice-item">
+                    <p>1. Fill in the blank: In-N-Out is ______________ its operations in California and opening a regional HQ in Tennessee. <em>(consolidating / expanding / closing)</em></p>
+                </div>
+
+                <div class="practice-item">
+                    <p>2. True or False: California has been gaining more companies than it has been losing since 2014.</p>
+                </div>
+
+                <div class="practice-item">
+                    <p>3. Match the word to its meaning:<br>
+                    a. <strong>exodus</strong> — 1. a place where many activities or ideas are developing quickly<br>
+                    b. <strong>hotbed</strong> — 2. a large-scale departure of people or companies<br>
+                    c. <strong>nuanced</strong> — 3. showing small but important differences</p>
+                </div>
+
+                <div class="practice-item">
+                    <p>4. Short answer: According to the article, why do companies like Tesla and Northrop Grumman still keep some operations in California even after moving their headquarters?</p>
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li>consolidating</li>
+                        <li>False — California has been losing more companies than it has been gaining since 2014.</li>
+                        <li>a → 2, b → 1, c → 3</li>
+                        <li>Because California still offers valuable resources such as engineering talent, design centers, and production facilities. Companies like Tesla maintain a design center and engineering headquarters there, and Northrop Grumman continues prototyping and production in the state.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
