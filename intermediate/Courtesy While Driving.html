@@ -1,0 +1,809 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Courtesy While Driving - English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ===== THEME: URBAN ROAD / TRAFFIC ORANGE & ASPHALT ===== */
+        :root {
+            --road-black: #1a1a1a;
+            --asphalt: #2d2d2d;
+            --road-line: #f5a623;
+            --signal-green: #27ae60;
+            --signal-red: #e74c3c;
+            --caution-yellow: #f5a623;
+            --light-bg: #fdf6ec;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555;
+            --border-light: #e0d5c5;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            background-color: #f2ede4;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* ===== HEADER (FIXED - DO NOT MODIFY) ===== */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 4px solid var(--caution-yellow);
+            padding: 1.2rem 2rem;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            color: white;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            flex: 1;
+        }
+        .level-badge {
+            background: var(--caution-yellow);
+            color: #1a1a1a;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .search-box { display: flex; align-items: center; }
+
+        /* ===== MAIN WRAPPER ===== */
+        .main-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero-banner {
+            background: var(--road-black);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--caution-yellow);
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0; right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(90deg, var(--caution-yellow) 0, var(--caution-yellow) 40px, transparent 40px, transparent 70px);
+            transform: translateY(-50%);
+            opacity: 0.15;
+        }
+        .hero-banner h2 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--caution-yellow);
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-banner p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-icons {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--road-black);
+            margin-bottom: 1.2rem;
+            padding-left: 1rem;
+            border-left: 5px solid var(--caution-yellow);
+        }
+
+        /* ===== USEFUL EXPRESSIONS ===== */
+        .expressions-section {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+        .expr-card {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 1.2rem;
+            border-left: 4px solid var(--caution-yellow);
+        }
+        .expr-english {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #1a1a1a;
+            margin-bottom: 0.2rem;
+        }
+        .expr-spanish {
+            font-size: 0.85rem;
+            color: var(--signal-green);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .expr-example {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-section {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+        .article-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--road-black);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .article-section p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #222;
+            margin-bottom: 1.4rem;
+        }
+        .speaker-label {
+            font-weight: 800;
+            color: var(--road-black);
+        }
+        .speaker-peter { color: #c0392b; }
+        .speaker-john { color: #2471a3; }
+
+        /* Highlighted vocabulary */
+        .highlight {
+            background: #fff3cd;
+            font-weight: 700;
+            border-bottom: 2px solid #f5a623;
+            padding: 1px 3px;
+            border-radius: 3px;
+            cursor: help;
+            position: relative;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a1a;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        /* ===== VOCAB BOXES ===== */
+        .vocab-box {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--caution-yellow);
+        }
+        .vocab-box-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--caution-yellow);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.9rem;
+        }
+        .vocab-card {
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid #444;
+            transition: transform 0.2s;
+        }
+        .vocab-card:hover { transform: translateY(-2px); }
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+        .vocab-word {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--caution-yellow);
+        }
+        .speak-btn {
+            background: none;
+            border: 1px solid #f5a62388;
+            color: var(--caution-yellow);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .speak-btn:hover { background: var(--caution-yellow); color: #1a1a1a; }
+        .vocab-explanation {
+            font-size: 0.82rem;
+            color: #aaa;
+            margin-bottom: 0.2rem;
+        }
+        .vocab-spanish {
+            font-size: 0.82rem;
+            color: var(--signal-green);
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+        .vocab-example {
+            font-size: 0.8rem;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.4;
+            border-top: 1px solid #444;
+            padding-top: 0.4rem;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== DISCUSSION QUESTIONS ===== */
+        .discussion-section {
+            background: var(--road-black);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            color: white;
+            border: 2px solid var(--caution-yellow);
+        }
+        .discussion-section .section-title {
+            color: var(--caution-yellow);
+            border-left-color: white;
+        }
+        .discussion-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .discussion-list li {
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--caution-yellow);
+            color: #f0f0f0;
+        }
+        .q-number {
+            font-weight: 800;
+            color: var(--caution-yellow);
+            margin-right: 0.5rem;
+        }
+
+        /* ===== SELF-PRACTICE ===== */
+        .practice-section {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+        .practice-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .practice-question {
+            background: var(--light-bg);
+            padding: 1rem 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--road-black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .practice-question:hover { background: #fdedc8; }
+        .toggle-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--caution-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .practice-answer {
+            display: none;
+            padding: 1rem 1.2rem;
+            background: white;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.65;
+            border-top: 1px dashed #ddd;
+        }
+        .practice-answer.open { display: block; }
+        .toggle-icon.open { transform: rotate(45deg); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.1rem; }
+            .main-wrapper { padding: 1.2rem 1rem 3rem; }
+            .vocab-grid { grid-template-columns: 1fr 1fr; }
+            .expressions-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ===== FIXED HEADER ===== -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://d18hvbbehx7xaf.cloudfront.net/public/uploads/main/images/17-07-2024/6697c1d6b6471.jpeg" alt="🚗 🛵 🚦 Common Courtesy While Driving" class="article-image">
+    </div>
+
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-wrapper">
+
+    <!-- HERO -->
+    <div class="hero-banner">
+        <div class="hero-icons">🚗 🛵 🚦</div>
+        <h2>Common Courtesy While Driving</h2>
+        <p>A conversation between Peter and John about road manners and traffic safety</p>
+    </div>
+
+    <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+    <section class="expressions-section">
+        <div class="section-title">💬 Useful Expressions</div>
+        <div class="expressions-grid">
+
+            <div class="expr-card">
+                <div class="expr-english">It's a big deal.</div>
+                <div class="expr-spanish">Es muy importante / No es poca cosa</div>
+                <div class="expr-example">"Using your turn signal IS a big deal — it prevents accidents."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-english">For starters, …</div>
+                <div class="expr-spanish">Para empezar, …</div>
+                <div class="expr-example">"For starters, you should always check your mirrors before changing lanes."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-english">We need to be mindful of …</div>
+                <div class="expr-spanish">Debemos tener en cuenta / ser conscientes de …</div>
+                <div class="expr-example">"We need to be mindful of other drivers, especially in heavy traffic."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-english">That can be dangerous.</div>
+                <div class="expr-spanish">Eso puede ser peligroso.</div>
+                <div class="expr-example">"Tailgating that can be dangerous, especially at high speeds."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-english">I don't know about that.</div>
+                <div class="expr-spanish">No estoy tan seguro de eso. / Hmm, no sé.</div>
+                <div class="expr-example">"I don't know about that — I think most drivers are actually pretty careful."</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 & 3: ARTICLE + VOCAB (interleaved) ===== -->
+    <section class="article-section">
+        <div class="section-title">📖 Read &amp; Learn</div>
+        <h2 class="article-title">🚦 Common Courtesy While Driving — Is it Really a Big Deal?</h2>
+
+        <!-- PARAGRAPH 1 -->
+        <p>
+            Peter and John use different forms of <span class="highlight" title="transporte">transportation</span> to get to work.
+            Peter likes to ride his <span class="highlight" title="scooter / motocicleta pequeña">scooter</span>, especially when the weather is nice.
+            But if the weather is cold or rainy, he takes the bus. John thinks driving his car to the office is convenient.
+            That way he can get to work quickly, no matter what the weather is like.
+        </p>
+    </section>
+
+    <!-- VOCAB BOX 1 -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 1</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">transportation</span>
+                    <button class="speak-btn" onclick="speakWord('transportation')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) ways of getting from one place to another</div>
+                <div class="vocab-spanish">transporte</div>
+                <div class="vocab-example">"She uses public transportation to get to work."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">scooter</span>
+                    <button class="speak-btn" onclick="speakWord('scooter')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) a small two-wheeled motor vehicle</div>
+                <div class="vocab-spanish">scooter / motocicleta pequeña</div>
+                <div class="vocab-example">"He rides a scooter to school every day."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">convenient</span>
+                    <button class="speak-btn" onclick="speakWord('convenient')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(adj) easy to use; saves time or effort</div>
+                <div class="vocab-spanish">conveniente / cómodo</div>
+                <div class="vocab-example">"Living near the office is very convenient."</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="article-section">
+        <!-- PARAGRAPH 2 -->
+        <p>
+            <span class="speaker-label speaker-john">John:</span> Hey, Peter. How was traffic this morning?<br>
+            <span class="speaker-label speaker-peter">Peter:</span> Traffic was really terrible today, John.<br>
+            <span class="speaker-label speaker-john">John:</span> Why? Did something in particular happen?<br>
+            <span class="speaker-label speaker-peter">Peter:</span> The car in front of me wanted to turn left. But the driver didn't use his
+            <span class="highlight" title="señal de vuelta / direccional">turn signal</span> and stopped suddenly in the
+            <span class="highlight" title="intersección / cruce">intersection</span>. He almost caused an accident!<br>
+            <span class="speaker-label speaker-john">John:</span> I'm glad there was no accident.<br>
+            <span class="speaker-label speaker-peter">Peter:</span> Me, too. People need to use some
+            <span class="highlight" title="cortesía / buenos modales">common courtesy</span> when they drive.
+        </p>
+    </section>
+
+    <!-- VOCAB BOX 2 -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 2</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">turn signal</span>
+                    <button class="speak-btn" onclick="speakWord('turn signal')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) the light on a car that shows you are turning</div>
+                <div class="vocab-spanish">señal de vuelta / direccional</div>
+                <div class="vocab-example">"Always use your turn signal before changing lanes."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">intersection</span>
+                    <button class="speak-btn" onclick="speakWord('intersection')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) a place where two roads cross each other</div>
+                <div class="vocab-spanish">intersección / cruce</div>
+                <div class="vocab-example">"Stop at every intersection and check both ways."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">common courtesy</span>
+                    <button class="speak-btn" onclick="speakWord('common courtesy')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) basic polite behavior that most people follow</div>
+                <div class="vocab-spanish">cortesía básica / buenos modales</div>
+                <div class="vocab-example">"It's common courtesy to hold the door for the next person."</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="article-section">
+        <!-- PARAGRAPH 3 -->
+        <p>
+            <span class="speaker-label speaker-john">John:</span> What do you mean?<br>
+            <span class="speaker-label speaker-peter">Peter:</span> For starters, people should use their turn signals
+            <span class="highlight" title="correctamente / como se debe">properly</span>. That helps others know what you plan to do.<br>
+            <span class="speaker-label speaker-john">John:</span> I don't know. Using turn signals doesn't seem like a big deal to me.
+            Drivers can pay attention to what's happening on the road and respond
+            <span class="highlight" title="según corresponda / en consecuencia">accordingly</span>.<br>
+            <span class="speaker-label speaker-peter">Peter:</span> Showing respect for other drivers doesn't take much effort. For example, allowing someone to
+            <span class="highlight" title="incorporarse al tráfico / entrar al carril">merge</span> in front of you can make a big difference during the morning
+            <span class="highlight" title="trayecto diario al trabajo">commute</span>.<br>
+            <span class="speaker-label speaker-john">John:</span> Allowing other cars to cut in front of you slows you down.<br>
+            <span class="speaker-label speaker-peter">Peter:</span> Not really. Everyone is sharing the same road. So we need to be
+            <span class="highlight" title="conscientes / atentos">mindful</span> of other vehicles.
+        </p>
+    </section>
+
+    <!-- VOCAB BOX 3 -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 3</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">properly</span>
+                    <button class="speak-btn" onclick="speakWord('properly')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(adv) in the correct or right way</div>
+                <div class="vocab-spanish">correctamente / adecuadamente</div>
+                <div class="vocab-example">"Make sure the equipment is installed properly."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">accordingly</span>
+                    <button class="speak-btn" onclick="speakWord('accordingly')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(adv) in a way that fits the situation</div>
+                <div class="vocab-spanish">según corresponda / en consecuencia</div>
+                <div class="vocab-example">"Read the safety report and act accordingly."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">merge</span>
+                    <button class="speak-btn" onclick="speakWord('merge')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(v) to move into a lane of traffic smoothly</div>
+                <div class="vocab-spanish">incorporarse / fusionarse</div>
+                <div class="vocab-example">"The two shipments will merge at the warehouse."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">commute</span>
+                    <button class="speak-btn" onclick="speakWord('commute')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) the regular trip between home and work</div>
+                <div class="vocab-spanish">trayecto diario al trabajo</div>
+                <div class="vocab-example">"Her commute takes about 45 minutes each way."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">mindful</span>
+                    <button class="speak-btn" onclick="speakWord('mindful')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(adj) aware of and paying attention to something</div>
+                <div class="vocab-spanish">consciente / atento</div>
+                <div class="vocab-example">"Be mindful of deadlines when planning the schedule."</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="article-section">
+        <!-- PARAGRAPH 4 -->
+        <p>
+            <span class="speaker-label speaker-john">John:</span> You're one to talk! You ride a scooter.
+            Scooters are always <span class="highlight" title="moverse rápido / pasar zumbando">zooming</span> past me and squeezing in between larger vehicles to pass them.<br>
+            <span class="speaker-label speaker-peter">Peter:</span> That can be dangerous, but it can also be dangerous for scooters to be stuck on the road between cars or buses.
+            <span class="highlight" title="manejar muy pegado al vehículo de enfrente">Tailgating</span> is a serious problem.<br>
+            <span class="speaker-label speaker-john">John:</span> Tailgating is only an issue if people are not paying attention while driving or have bad brakes.<br>
+            <span class="speaker-label speaker-peter">Peter:</span> I don't know about that. I feel nervous when a car is really close behind me. The driver could easily put some space between our vehicles.<br>
+            <span class="speaker-label speaker-john">John:</span> If you're that worried about driving
+            <span class="highlight" title="etiqueta / modales en situaciones específicas">etiquette</span>, maybe you should just take the bus more often.<br>
+            <span class="speaker-label speaker-peter">Peter:</span> Or maybe I should get a new job as a traffic officer! 🚔
+        </p>
+    </section>
+
+    <!-- VOCAB BOX 4 -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 4</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">zoom</span>
+                    <button class="speak-btn" onclick="speakWord('zoom')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(v) to move very fast, often with a buzzing sound</div>
+                <div class="vocab-spanish">pasar zumbando / ir a toda velocidad</div>
+                <div class="vocab-example">"The delivery truck zoomed past the warehouse entrance."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">tailgating</span>
+                    <button class="speak-btn" onclick="speakWord('tailgating')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) driving too close to the car in front of you</div>
+                <div class="vocab-spanish">manejar muy pegado al vehículo de adelante</div>
+                <div class="vocab-example">"Tailgating is one of the top causes of rear-end collisions."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">etiquette</span>
+                    <button class="speak-btn" onclick="speakWord('etiquette')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(n) the rules of polite behavior in a specific situation</div>
+                <div class="vocab-spanish">etiqueta / protocolo</div>
+                <div class="vocab-example">"There is an etiquette for writing professional emails."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word-row">
+                    <span class="vocab-word">squeeze in</span>
+                    <button class="speak-btn" onclick="speakWord('squeeze in')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-explanation">(phrasal v) to fit into a very small space</div>
+                <div class="vocab-spanish">meterse / colarse en un espacio pequeño</div>
+                <div class="vocab-example">"We managed to squeeze in one more item in the shipment."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 4: DISCUSSION QUESTIONS ===== -->
+    <section class="discussion-section">
+        <div class="section-title">🗣️ Discussion Questions</div>
+        <ul class="discussion-list">
+            <li>
+                <span class="q-number">Q1.</span>
+                Do you think it is important to use turn signals while driving? Why or why not? Does everyone do this in your city?
+            </li>
+            <li>
+                <span class="q-number">Q2.</span>
+                Have you ever experienced bad driving behavior on your way to work? What happened and how did you feel?
+            </li>
+            <li>
+                <span class="q-number">Q3.</span>
+                Peter says, "Everyone is sharing the same road." Do you agree that drivers, scooters, and buses should all show more courtesy to each other? What could each group do better?
+            </li>
+        </ul>
+    </section>
+
+    <!-- ===== SECTION 5: SELF-PRACTICE QUESTIONS ===== -->
+    <section class="practice-section">
+        <div class="section-title">✏️ Self-Practice Questions</div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>1. What happened to Peter on his way to work that morning?</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                A car in front of Peter wanted to turn left, but the driver did not use his turn signal. The driver stopped suddenly in the intersection and almost caused an accident.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>2. What does Peter think drivers should do to show "common courtesy"?</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                Peter thinks drivers should use their turn signals properly so others know what they plan to do. He also thinks drivers should allow other vehicles to merge in front of them, especially during the morning commute. He believes everyone should be mindful of other vehicles on the road.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>3. Why does John criticize scooter riders during their conversation?</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                John points out that scooters are always zooming past cars and squeezing in between larger vehicles. He uses this to challenge Peter's argument about road courtesy — since Peter rides a scooter, John feels Peter is not in a position to complain about other drivers.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-question" onclick="toggleAnswer(this)">
+                <span>4. What does the idiom "You're one to talk" mean? Can you use it in a sentence from your work?</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                "You're one to talk" means that the person criticizing others has the same problem or fault. It is used to point out that someone is a hypocrite.<br><br>
+                <strong>Work example:</strong> "You're one to talk about being late — you missed the last two meetings!"
+            </div>
+        </div>
+
+    </section>
+
+</div><!-- end main-wrapper -->
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+
+    function toggleAnswer(questionEl) {
+        const answer = questionEl.nextElementSibling;
+        const icon = questionEl.querySelector('.toggle-icon');
+        answer.classList.toggle('open');
+        icon.classList.toggle('open');
+    }
+</script>
+
+
