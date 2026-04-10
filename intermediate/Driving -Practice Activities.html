@@ -1,0 +1,479 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚦 Driving Vocabulary Activities</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans',sans-serif;background:#f2ede4;color:#1a1a1a;min-height:100vh;}
+header{background:#1a1a1a;border-bottom:4px solid #f5a623;padding:1.2rem 2rem;}
+header h1{color:#f5a623;font-size:1.4rem;font-weight:800;}
+header p{color:#aaa;font-size:0.85rem;margin-top:2px;}
+.main{max-width:900px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+.tab-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem;}
+.tab-btn{padding:8px 16px;border-radius:20px;border:1.5px solid #ccc;background:#fff;color:#555;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.15s;}
+.tab-btn.active{background:#1a1a1a;color:#f5a623;border-color:#1a1a1a;}
+.tab-btn:hover:not(.active){border-color:#f5a623;color:#1a1a1a;}
+.panel{display:none;background:#fff;border-radius:14px;padding:2rem;border:1.5px solid #e0d5c5;box-shadow:0 4px 16px rgba(0,0,0,0.07);}
+.panel.active{display:block;}
+.section-label{font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#888;margin-bottom:1rem;}
+.score-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;flex-wrap:wrap;}
+.check-btn{padding:8px 20px;border-radius:20px;border:none;background:#1a1a1a;color:#f5a623;font-size:0.85rem;font-weight:700;cursor:pointer;font-family:inherit;}
+.check-btn:hover{background:#333;}
+.reset-btn{padding:8px 16px;border-radius:20px;border:1.5px solid #ccc;background:#fff;color:#555;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:inherit;}
+.reset-btn:hover{border-color:#999;}
+.score-pill{background:#f2ede4;border:1.5px solid #e0d5c5;border-radius:20px;padding:5px 14px;font-size:0.85rem;font-weight:700;}
+
+/* MATCHING */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.match-col{display:flex;flex-direction:column;gap:8px;}
+.match-item{padding:11px 14px;border-radius:8px;border:1.5px solid #ddd;background:#fff;font-size:0.9rem;cursor:pointer;transition:all 0.15s;line-height:1.4;}
+.match-item:hover{border-color:#f5a623;}
+.match-item.selected{border:2px solid #f5a623;background:#faeeda;color:#633806;}
+.match-item.matched{border:1.5px solid #9fe1cb;background:#e1f5ee;color:#085041;cursor:default;}
+.match-item.wrong-flash{border-color:#e24b4a;background:#fcebeb;}
+#match-feedback{margin-top:1rem;}
+.fb-ok{background:#e1f5ee;color:#085041;border:1px solid #9fe1cb;border-radius:8px;padding:10px 14px;font-size:0.9rem;}
+.fb-err{background:#fcebeb;color:#a32d2d;border:1px solid #f7c1c1;border-radius:8px;padding:10px 14px;font-size:0.9rem;}
+
+/* GAP FILL */
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem;padding:12px;background:#f9f5ef;border-radius:10px;border:1px dashed #e0d5c5;}
+.word-chip{padding:6px 14px;border-radius:16px;border:1.5px solid #ccc;background:#fff;font-size:0.85rem;cursor:pointer;font-family:inherit;transition:all 0.15s;}
+.word-chip:hover{border-color:#f5a623;background:#faeeda;}
+.word-chip.used{opacity:0.3;pointer-events:none;text-decoration:line-through;}
+.gap-sentence{font-size:1rem;line-height:2.4;margin-bottom:0.8rem;color:#1a1a1a;}
+.gap-input{border:none;border-bottom:2px solid #f5a623;background:transparent;font-size:1rem;width:150px;text-align:center;outline:none;color:#1a1a1a;padding:2px 4px;font-family:inherit;}
+.gap-input.correct{border-bottom-color:#1d9e75;color:#085041;background:#e1f5ee;border-radius:4px;}
+.gap-input.wrong{border-bottom-color:#e24b4a;color:#a32d2d;}
+
+/* TRANSLATION */
+.trans-item{border:1px solid #e0d5c5;border-radius:10px;padding:16px;margin-bottom:12px;}
+.trans-es{font-size:0.95rem;margin-bottom:10px;color:#555;font-style:italic;padding-left:12px;border-left:3px solid #f5a623;}
+.trans-es strong{color:#1a1a1a;font-style:normal;}
+.trans-input{width:100%;border:1.5px solid #ddd;border-radius:8px;padding:10px 12px;font-size:0.9rem;outline:none;font-family:inherit;color:#1a1a1a;}
+.trans-input:focus{border-color:#f5a623;}
+.trans-answer{display:none;margin-top:8px;font-size:0.85rem;padding:8px 12px;border-radius:8px;background:#e1f5ee;color:#085041;border:1px solid #9fe1cb;}
+.trans-answer.show{display:block;}
+.show-btn{padding:7px 16px;border-radius:16px;border:1.5px solid #ccc;background:#fff;color:#555;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:inherit;}
+.show-btn:hover{border-color:#999;}
+
+/* SITUATION */
+.sit-card{border:1px solid #e0d5c5;border-radius:12px;padding:18px;margin-bottom:14px;}
+.sit-scenario{font-size:0.95rem;line-height:1.6;padding:10px 14px;border-left:4px solid #f5a623;background:#f9f5ef;border-radius:0 8px 8px 0;margin-bottom:12px;}
+.sit-hint{font-size:0.8rem;color:#888;margin-bottom:8px;}
+.sit-hint span{background:#fff3cd;border:1px solid #f5a623;border-radius:4px;padding:1px 6px;margin:2px;display:inline-block;font-weight:600;color:#633806;}
+.sit-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.sit-chip{padding:5px 12px;border-radius:14px;border:1.5px solid #ddd;font-size:0.82rem;color:#555;background:#fff;cursor:pointer;font-family:inherit;}
+.sit-chip:hover{background:#faeeda;border-color:#f5a623;color:#633806;}
+.sit-textarea{width:100%;border:1.5px solid #ddd;border-radius:8px;padding:10px 12px;font-size:0.9rem;outline:none;resize:vertical;height:80px;font-family:inherit;color:#1a1a1a;}
+.sit-textarea:focus{border-color:#f5a623;}
+.sit-sample{display:none;margin-top:10px;font-size:0.85rem;padding:10px 14px;border-radius:8px;background:#e6f1fb;color:#0c447c;border:1px solid #b5d4f4;line-height:1.6;}
+.sit-sample.show{display:block;}
+.sit-actions{margin-top:8px;display:flex;gap:8px;}
+
+/* IMAGE DESC */
+.img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.img-card{border:1px solid #e0d5c5;border-radius:12px;overflow:hidden;background:#fff;}
+.img-visual{height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:#f9f5ef;border-bottom:1px solid #e0d5c5;}
+.img-body{padding:12px;}
+.img-desc{font-size:0.82rem;color:#555;margin-bottom:8px;line-height:1.4;}
+.img-select{width:100%;border:1.5px solid #ddd;border-radius:8px;padding:8px 10px;font-size:0.85rem;background:#fff;color:#1a1a1a;outline:none;font-family:inherit;cursor:pointer;}
+.img-select:focus{border-color:#f5a623;}
+.img-answer{display:none;font-size:0.82rem;padding:6px 10px;border-radius:6px;margin-top:6px;}
+.img-answer.correct{display:block;background:#e1f5ee;color:#085041;border:1px solid #9fe1cb;}
+.img-answer.wrong{display:block;background:#fcebeb;color:#a32d2d;border:1px solid #f7c1c1;}
+
+@media(max-width:600px){
+  .match-grid{grid-template-columns:1fr;}
+  .img-grid{grid-template-columns:1fr 1fr;}
+  .main{padding:1rem 0.8rem 3rem;}
+  header{padding:1rem 1.2rem;}
+}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header>
+  <h1>🚦 Driving Vocabulary — Practice Activities</h1>
+  <p>Common Courtesy While Driving &nbsp;|&nbsp; English with Elisa</p>
+</header>
+    <div class="article-image-container">
+        <img src="https://www.forthepeople.com/sites/default/files/2025-02/shutterstock_2521164985.jpg" alt="🚦 Driving -Practice Activities" class="article-image">
+    </div>
+
+
+<div class="main">
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('matching',this)">1 · Matching</button>
+    <button class="tab-btn" onclick="switchTab('gap',this)">2 · Gap Fill</button>
+    <button class="tab-btn" onclick="switchTab('translation',this)">3 · Translation</button>
+    <button class="tab-btn" onclick="switchTab('situation',this)">4 · Situation Talk</button>
+    <button class="tab-btn" onclick="switchTab('image',this)">5 · Picture It</button>
+  </div>
+
+  <!-- PANEL 1: MATCHING -->
+  <div class="panel active" id="panel-matching">
+    <div class="section-label">Click a word, then click its definition</div>
+    <div class="score-bar">
+      <span class="score-pill" id="match-score">0 / 7 matched</span>
+      <button class="reset-btn" onclick="resetMatch()">↺ Reset</button>
+    </div>
+    <div class="match-grid">
+      <div class="match-col" id="words-col"></div>
+      <div class="match-col" id="defs-col"></div>
+    </div>
+    <div id="match-feedback"></div>
+  </div>
+
+  <!-- PANEL 2: GAP FILL -->
+  <div class="panel" id="panel-gap">
+    <div class="section-label">Click a word from the bank, then click an empty blank — or type directly</div>
+    <div class="score-bar">
+      <button class="check-btn" onclick="checkGap()">Check answers</button>
+      <button class="reset-btn" onclick="resetGap()">↺ Reset</button>
+      <span class="score-pill" id="gap-score" style="display:none"></span>
+    </div>
+    <div class="word-bank" id="gap-bank"></div>
+    <div id="gap-sentences"></div>
+  </div>
+
+  <!-- PANEL 3: TRANSLATION -->
+  <div class="panel" id="panel-translation">
+    <div class="section-label">Translate each Spanish sentence into English, then check your answer</div>
+    <div class="score-bar">
+      <button class="show-btn" onclick="revealAllTrans()">Show all answers</button>
+      <button class="reset-btn" onclick="resetTrans()">↺ Reset</button>
+    </div>
+    <div id="trans-items"></div>
+  </div>
+
+  <!-- PANEL 4: SITUATION -->
+  <div class="panel" id="panel-situation">
+    <div class="section-label">Read the situation — write your response in English, then check the sample</div>
+    <div id="sit-items"></div>
+  </div>
+
+  <!-- PANEL 5: IMAGE -->
+  <div class="panel" id="panel-image">
+    <div class="section-label">Look at each picture — choose the correct English word or phrase</div>
+    <div class="score-bar">
+      <button class="check-btn" onclick="checkImages()">Check answers</button>
+      <button class="reset-btn" onclick="resetImages()">↺ Reset</button>
+      <span class="score-pill" id="img-score" style="display:none"></span>
+    </div>
+    <div class="img-grid" id="img-grid"></div>
+  </div>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────
+const matchData = [
+  {word:'turn signal',   def:'The blinking light that shows you plan to turn or change lanes'},
+  {word:'tailgating',    def:'Driving dangerously close to the car in front of you'},
+  {word:'merge',         def:'To move smoothly into a lane of moving traffic'},
+  {word:'commute',       def:'The regular trip between home and work'},
+  {word:'intersection',  def:'A place where two or more roads cross each other'},
+  {word:'mindful',       def:'Aware of and paying careful attention to something'},
+  {word:'etiquette',     def:'The polite rules of behavior in a specific situation'},
+];
+
+const gapData = [
+  {before:'Please use your ', blank:'turn signal', after:' before turning right at the corner.'},
+  {before:'Her morning ', blank:'commute', after:' takes 40 minutes if there is no traffic.'},
+  {before:'', blank:'Tailgating', after:' on the highway is very dangerous — always keep a safe distance.'},
+  {before:'We need to be ', blank:'mindful', after:' of other vehicles, especially scooters and motorcycles.'},
+  {before:'The truck needs to ', blank:'merge', after:' into the left lane before the exit.'},
+  {before:'There was a collision at the ', blank:'intersection', after:' of Zhongshan Road and Minsheng Avenue.'},
+];
+
+const transData = [
+  {es:'Usa tu señal de vuelta antes de cambiar de carril.',
+   answer:'Use your turn signal before changing lanes.'},
+  {es:'El tráfico estaba terrible. Alguien paró de repente en la intersección.',
+   answer:'Traffic was terrible. Someone stopped suddenly at the intersection.'},
+  {es:'Debemos ser conscientes de otros vehículos en la carretera.',
+   answer:'We need to be mindful of other vehicles on the road.'},
+  {es:'Conducir muy pegado al de enfrente es peligroso y descortés.',
+   answer:'Tailgating is dangerous and discourteous.'},
+  {es:'Mi trayecto al trabajo tarda 40 minutos si no hay mucho tráfico.',
+   answer:'My commute takes 40 minutes if there is not much traffic.'},
+];
+
+const sitData = [
+  {scenario:'You are driving and the car in front stops suddenly without using a turn signal. Your colleague asks: "What happened?" — Describe what you saw in English.',
+   hint:['turn signal','stopped suddenly','intersection','almost caused an accident','mindful'],
+   chips:['He didn\'t use his turn signal','stopped suddenly','at the intersection','almost caused an accident','we need to be mindful'],
+   sample:'The car in front of me stopped suddenly at the intersection. The driver didn\'t use his turn signal, so I had no warning at all. He almost caused a serious accident! Drivers really need to be more mindful of other vehicles on the road.'},
+  {scenario:'You are explaining road safety to a new team member. Tell them three important driving rules in English.',
+   hint:['turn signal','merge carefully','mindful','avoid tailgating','properly'],
+   chips:['use your turn signal','merge carefully','be mindful','avoid tailgating','respond accordingly'],
+   sample:'For starters, always use your turn signal properly before turning or changing lanes. Second, when you merge into traffic, do it slowly and carefully so other drivers can react. Third, avoid tailgating — always keep a safe distance from the car in front of you. We need to be mindful of all the other vehicles sharing the road with us.'},
+  {scenario:'Your coworker says: "Using turn signals is not a big deal." — Do you agree or disagree? Explain your opinion in English.',
+   hint:['big deal','for starters','accordingly','common courtesy','dangerous'],
+   chips:['it is a big deal','for starters','common courtesy','respond accordingly','it can be very dangerous'],
+   sample:'I disagree — it is definitely a big deal! For starters, turn signals help other drivers know what you plan to do. Without them, drivers cannot respond accordingly. It is just basic common courtesy. Not using your turn signal can be very dangerous, especially at busy intersections.'},
+];
+
+const imgData = [
+  {emoji:'🚗➡️🚙', desc:'A car moves into the lane next to it — two lanes become one.',
+   options:['tailgating','merging','commuting','zooming'], answer:'merging'},
+  {emoji:'🚗💨🚗', desc:'Car A is driving extremely close behind Car B — almost touching.',
+   options:['merging','signaling','tailgating','intersecting'], answer:'tailgating'},
+  {emoji:'🚘🔄🔶', desc:'A driver activates the blinking orange light before turning left.',
+   options:['turn signal','brake light','hazard light','headlight'], answer:'turn signal'},
+  {emoji:'🏙️→🏠', desc:'Every morning she makes the same 45-minute drive from home to the office.',
+   options:['road trip','commute','detour','merge'], answer:'commute'},
+  {emoji:'🛵💨💨', desc:'A scooter moves very fast, passing all the cars on the highway.',
+   options:['tailgating','merging','zooming past','signaling'], answer:'zooming past'},
+  {emoji:'➕🛣️', desc:'Two busy roads cross at a major point in the city center.',
+   options:['merge lane','detour','intersection','highway'], answer:'intersection'},
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────
+let matchSelected = null;
+let matchCount = 0;
+let activeGapInput = null;
+
+// ── TAB ───────────────────────────────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── MATCHING ──────────────────────────────────────────────────────────
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+function buildMatch() {
+  const wc = document.getElementById('words-col');
+  const dc = document.getElementById('defs-col');
+  wc.innerHTML = ''; dc.innerHTML = '';
+  shuffle(matchData).forEach(d => {
+    const el = document.createElement('div');
+    el.className = 'match-item'; el.dataset.key = d.word; el.dataset.type = 'word';
+    el.textContent = d.word; el.onclick = () => selectMatch(el);
+    wc.appendChild(el);
+  });
+  shuffle(matchData).forEach(d => {
+    const el = document.createElement('div');
+    el.className = 'match-item'; el.dataset.key = d.word; el.dataset.type = 'def';
+    el.textContent = d.def; el.onclick = () => selectMatch(el);
+    dc.appendChild(el);
+  });
+}
+
+function selectMatch(el) {
+  if (el.classList.contains('matched')) return;
+  if (!matchSelected) {
+    el.classList.add('selected');
+    matchSelected = el;
+    return;
+  }
+  if (matchSelected === el) {
+    el.classList.remove('selected');
+    matchSelected = null;
+    return;
+  }
+  if (matchSelected.dataset.type === el.dataset.type) {
+    matchSelected.classList.remove('selected');
+    matchSelected = el; el.classList.add('selected');
+    return;
+  }
+  const a = matchSelected, b = el;
+  matchSelected = null;
+  if (a.dataset.key === b.dataset.key) {
+    a.classList.remove('selected'); a.classList.add('matched');
+    b.classList.add('matched'); matchCount++;
+    document.getElementById('match-score').textContent = matchCount + ' / 7 matched';
+    if (matchCount === 7) document.getElementById('match-feedback').innerHTML = '<div class="fb-ok">🎉 All matched! Excellent work!</div>';
+  } else {
+    a.classList.add('wrong-flash'); b.classList.add('wrong-flash');
+    setTimeout(() => { a.classList.remove('wrong-flash','selected'); b.classList.remove('wrong-flash'); }, 700);
+  }
+}
+
+function resetMatch() {
+  matchSelected = null; matchCount = 0;
+  document.getElementById('match-score').textContent = '0 / 7 matched';
+  document.getElementById('match-feedback').innerHTML = '';
+  buildMatch();
+}
+
+// ── GAP FILL ──────────────────────────────────────────────────────────
+function buildGap() {
+  const bank = document.getElementById('gap-bank');
+  const sents = document.getElementById('gap-sentences');
+  bank.innerHTML = ''; sents.innerHTML = '';
+  const words = shuffle(gapData.map(d => d.blank));
+  words.forEach(w => {
+    const c = document.createElement('button');
+    c.className = 'word-chip'; c.textContent = w; c.dataset.word = w;
+    c.onclick = () => insertWord(w, c);
+    bank.appendChild(c);
+  });
+  gapData.forEach((d, i) => {
+    const p = document.createElement('p');
+    p.className = 'gap-sentence';
+    p.innerHTML = d.before +
+      '<input class="gap-input" id="gi-' + i + '" data-answer="' + d.blank.toLowerCase() + '" placeholder="________" />' +
+      d.after;
+    sents.appendChild(p);
+    document.getElementById('gi-' + i).addEventListener('focus', function(){ activeGapInput = this; });
+  });
+}
+
+function insertWord(word, chip) {
+  const inputs = document.querySelectorAll('.gap-input');
+  let target = (activeGapInput && !activeGapInput.value) ? activeGapInput : null;
+  if (!target) target = Array.from(inputs).find(i => !i.value);
+  if (target) { target.value = word; chip.classList.add('used'); activeGapInput = null; }
+}
+
+function checkGap() {
+  let correct = 0;
+  document.querySelectorAll('.gap-input').forEach(input => {
+    input.classList.remove('correct','wrong');
+    const val = input.value.trim().toLowerCase();
+    const ans = input.dataset.answer.toLowerCase();
+    if (val === ans) { input.classList.add('correct'); correct++; }
+    else if (val) { input.classList.add('wrong'); }
+  });
+  const s = document.getElementById('gap-score');
+  s.style.display = 'inline';
+  s.textContent = correct + ' / ' + gapData.length + ' correct';
+}
+
+function resetGap() {
+  document.querySelectorAll('.gap-input').forEach(i => { i.value=''; i.classList.remove('correct','wrong'); });
+  document.querySelectorAll('.word-chip').forEach(c => c.classList.remove('used'));
+  document.getElementById('gap-score').style.display = 'none';
+  activeGapInput = null;
+}
+
+// ── TRANSLATION ───────────────────────────────────────────────────────
+function buildTrans() {
+  const cont = document.getElementById('trans-items');
+  transData.forEach((d, i) => {
+    cont.innerHTML += `<div class="trans-item">
+      <div class="trans-es"><strong>ES:</strong> ${d.es}</div>
+      <input class="trans-input" id="tr-${i}" placeholder="Write your English translation here..." />
+      <div style="margin-top:8px"><button class="show-btn" onclick="toggleTrans(${i})">Show answer</button></div>
+      <div class="trans-answer" id="tr-ans-${i}"><strong>Model answer:</strong> ${d.answer}</div>
+    </div>`;
+  });
+}
+
+function toggleTrans(i) { document.getElementById('tr-ans-'+i).classList.toggle('show'); }
+function revealAllTrans() { document.querySelectorAll('.trans-answer').forEach(a => a.classList.add('show')); }
+function resetTrans() {
+  document.querySelectorAll('.trans-input').forEach(i => i.value='');
+  document.querySelectorAll('.trans-answer').forEach(a => a.classList.remove('show'));
+}
+
+// ── SITUATION ─────────────────────────────────────────────────────────
+function buildSit() {
+  const cont = document.getElementById('sit-items');
+  sitData.forEach((d, i) => {
+    const hints = d.hint.map(h => `<span>${h}</span>`).join('');
+    const chips = d.chips.map(c => `<button class="sit-chip" onclick="insertChip(${i},'${c.replace(/'/g,"&#39;")}')">${c}</button>`).join('');
+    cont.innerHTML += `<div class="sit-card">
+      <div class="sit-scenario">${d.scenario}</div>
+      <div class="sit-hint">Key words: ${hints}</div>
+      <div class="sit-chips">${chips}</div>
+      <textarea class="sit-textarea" id="sit-${i}" placeholder="Write your response here..."></textarea>
+      <div class="sit-actions">
+        <button class="show-btn" onclick="toggleSample(${i})">Show sample answer</button>
+        <button class="reset-btn" onclick="document.getElementById('sit-${i}').value=''">Clear</button>
+      </div>
+      <div class="sit-sample" id="sit-s-${i}"><strong>Sample answer:</strong><br>${d.sample}</div>
+    </div>`;
+  });
+}
+
+function insertChip(i, word) {
+  const t = document.getElementById('sit-'+i);
+  if (t.value && !t.value.endsWith(' ')) t.value += ' ';
+  t.value += word + ' ';
+  t.focus();
+}
+
+function toggleSample(i) { document.getElementById('sit-s-'+i).classList.toggle('show'); }
+
+// ── IMAGES ────────────────────────────────────────────────────────────
+function buildImages() {
+  const grid = document.getElementById('img-grid');
+  imgData.forEach((d, i) => {
+    const opts = d.options.map(o => `<option value="${o}">${o}</option>`).join('');
+    grid.innerHTML += `<div class="img-card">
+      <div class="img-visual">${d.emoji}</div>
+      <div class="img-body">
+        <div class="img-desc">${d.desc}</div>
+        <select class="img-select" id="img-${i}" data-answer="${d.answer}">
+          <option value="">— choose —</option>${opts}
+        </select>
+        <div class="img-answer" id="img-ans-${i}"></div>
+      </div>
+    </div>`;
+  });
+}
+
+function checkImages() {
+  let correct = 0;
+  imgData.forEach((d, i) => {
+    const sel = document.getElementById('img-'+i);
+    const ans = document.getElementById('img-ans-'+i);
+    ans.className = 'img-answer';
+    if (!sel.value) return;
+    if (sel.value === d.answer) {
+      ans.className = 'img-answer correct';
+      ans.textContent = '✓ Correct! "' + d.answer + '"';
+      correct++;
+    } else {
+      ans.className = 'img-answer wrong';
+      ans.textContent = '✗ Answer: ' + d.answer;
+    }
+  });
+  const s = document.getElementById('img-score');
+  s.style.display = 'inline';
+  s.textContent = correct + ' / ' + imgData.length + ' correct';
+}
+
+function resetImages() {
+  document.querySelectorAll('.img-select').forEach(s => s.value='');
+  document.querySelectorAll('.img-answer').forEach(a => { a.className='img-answer'; a.textContent=''; });
+  document.getElementById('img-score').style.display='none';
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+buildMatch(); buildGap(); buildTrans(); buildSit(); buildImages();
+</script>
+
