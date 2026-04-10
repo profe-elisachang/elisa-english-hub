@@ -393,6 +393,124 @@
         @media (max-width: 480px) {
             .vocab-grid { grid-template-columns: 1fr; }
         }
+
+        /* ===== BONUS VOCAB REFERENCE ===== */
+        .bonus-section {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+        .bonus-intro {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            padding: 0.8rem 1rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--caution-yellow);
+        }
+        .bonus-category {
+            margin-bottom: 1.8rem;
+        }
+        .bonus-cat-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .cat-green  { background: #e1f5ee; color: #085041; }
+        .cat-red    { background: #fcebeb; color: #a32d2d; }
+        .cat-orange { background: #fff3cd; color: #633806; }
+        .cat-blue   { background: #e6f1fb; color: #0c447c; }
+        .cat-gray   { background: #f2ede4; color: #444; }
+        .ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .ref-table thead tr {
+            background: #1a1a1a;
+            color: #f5a623;
+        }
+        .ref-table thead th {
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .ref-table tbody tr {
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.15s;
+        }
+        .ref-table tbody tr:hover { background: var(--light-bg); }
+        .ref-table td {
+            padding: 9px 12px;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .ref-table td:first-child {
+            color: var(--text-muted);
+            font-style: italic;
+            width: 25%;
+        }
+        .ref-table td:nth-child(2) {
+            font-weight: 700;
+            color: #1a1a1a;
+            width: 28%;
+        }
+        .ref-table td:nth-child(2) .speak-sm {
+            background: none;
+            border: 1px solid #f5a62366;
+            color: var(--caution-yellow);
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.65rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        .ref-table td:nth-child(2) .speak-sm:hover { background: var(--caution-yellow); color: #1a1a1a; }
+        .ref-table td:last-child {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-style: italic;
+        }
+        .phrase-say {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .phrase-es {
+            font-size: 0.82rem;
+            color: #27ae60;
+            font-style: italic;
+            min-width: 180px;
+        }
+        .phrase-en {
+            font-size: 0.9rem;
+            color: #f0f0f0;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .ref-table td:first-child { display: none; }
+            .ref-table thead th:first-child { display: none; }
+            .phrase-say { flex-direction: column; gap: 0.4rem; }
+            .phrase-es { min-width: unset; }
+        }
     
 .article-image-container {
     max-width: 1400px;
@@ -445,7 +563,7 @@
     </div>
 </header>
     <div class="article-image-container">
-        <img src="https://d18hvbbehx7xaf.cloudfront.net/public/uploads/main/images/17-07-2024/6697c1d6b6471.jpeg" alt="🚗 🛵 🚦 Common Courtesy While Driving" class="article-image">
+        <img src="data:image/jpeg;base64,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" alt="🚗 🛵 🚦 Common Courtesy While Driving" class="article-image">
     </div>
 
 
@@ -784,6 +902,98 @@
                 "You're one to talk" means that the person criticizing others has the same problem or fault. It is used to point out that someone is a hypocrite.<br><br>
                 <strong>Work example:</strong> "You're one to talk about being late — you missed the last two meetings!"
             </div>
+        </div>
+
+    </section>
+
+    <!-- ===== BONUS: EXTRA DRIVING VOCABULARY ===== -->
+    <section class="bonus-section">
+        <div class="section-title">🗺️ Extra Driving Vocabulary</div>
+        <div class="bonus-intro">
+            These words and phrases go beyond the article — use them to describe road situations, talk about your commute, or discuss traffic safety at work. Each entry shows the Spanish equivalent so you can connect what you already know.
+        </div>
+
+        <!-- GOOD DRIVING -->
+        <div class="bonus-category">
+            <div class="bonus-cat-title cat-green">🟢 Good &amp; Safe Driving</div>
+            <table class="ref-table">
+                <thead><tr><th>Español</th><th>English</th><th>Example sentence</th></tr></thead>
+                <tbody>
+                    <tr><td>conducir de manera estable / suave</td><td>drive smoothly <button class="speak-sm" onclick="speakWord('drive smoothly')">🔊</button></td><td>"She always drives smoothly, even in heavy traffic."</td></tr>
+                    <tr><td>mantener distancia de seguridad</td><td>keep a safe distance <button class="speak-sm" onclick="speakWord('keep a safe distance')">🔊</button></td><td>"Always keep a safe distance from the car ahead."</td></tr>
+                    <tr><td>ceder el paso a los peatones</td><td>yield to pedestrians <button class="speak-sm" onclick="speakWord('yield to pedestrians')">🔊</button></td><td>"You must yield to pedestrians at crosswalks."</td></tr>
+                    <tr><td>orillarse / hacerse a un lado</td><td>pull over <button class="speak-sm" onclick="speakWord('pull over')">🔊</button></td><td>"The police signaled him to pull over."</td></tr>
+                    <tr><td>respetar el límite de velocidad</td><td>obey the speed limit <button class="speak-sm" onclick="speakWord('obey the speed limit')">🔊</button></td><td>"She always obeys the speed limit, even on the highway."</td></tr>
+                    <tr><td>avanzar lentamente</td><td>drive slowly / go slow <button class="speak-sm" onclick="speakWord('go slow')">🔊</button></td><td>"Go slow near the school zone."</td></tr>
+                    <tr><td>dar el paso / ceder</td><td>give way / yield <button class="speak-sm" onclick="speakWord('give way')">🔊</button></td><td>"Give way to vehicles on the main road."</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BAD DRIVING -->
+        <div class="bonus-category">
+            <div class="bonus-cat-title cat-red">🔴 Bad &amp; Dangerous Driving</div>
+            <table class="ref-table">
+                <thead><tr><th>Español</th><th>English</th><th>Example sentence</th></tr></thead>
+                <tbody>
+                    <tr><td>conducir de manera imprudente / temeraria</td><td>drive recklessly <button class="speak-sm" onclick="speakWord('drive recklessly')">🔊</button></td><td>"He was fined for reckless driving on the expressway."</td></tr>
+                    <tr><td>pasarse el semáforo en rojo</td><td>run a red light <button class="speak-sm" onclick="speakWord('run a red light')">🔊</button></td><td>"Running a red light is illegal everywhere."</td></tr>
+                    <tr><td>pasarse el semáforo en amarillo</td><td>run a yellow light <button class="speak-sm" onclick="speakWord('run a yellow light')">🔊</button></td><td>"He ran the yellow light and nearly caused an accident."</td></tr>
+                    <tr><td>exceder la velocidad / ir a exceso de velocidad</td><td>speed / drive over the speed limit <button class="speak-sm" onclick="speakWord('speeding')">🔊</button></td><td>"The driver was speeding on the highway."</td></tr>
+                    <tr><td>cerrarle el paso a alguien / rebasar ilegalmente</td><td>cut someone off <button class="speak-sm" onclick="speakWord('cut someone off')">🔊</button></td><td>"That truck cut me off without any warning!"</td></tr>
+                    <tr><td>manejar en sentido contrario</td><td>drive the wrong way <button class="speak-sm" onclick="speakWord('drive the wrong way')">🔊</button></td><td>"He was driving the wrong way on a one-way street."</td></tr>
+                    <tr><td>manejar distraído / con el celular</td><td>distracted driving <button class="speak-sm" onclick="speakWord('distracted driving')">🔊</button></td><td>"Texting while driving is distracted driving."</td></tr>
+                    <tr><td>conducir ebrio / manejar en estado de ebriedad</td><td>drunk driving / DUI <button class="speak-sm" onclick="speakWord('drunk driving')">🔊</button></td><td>"DUI is a serious criminal offense in every country."</td></tr>
+                    <tr><td>colarse / meterse al carril de alguien</td><td>cut into traffic / cut in line <button class="speak-sm" onclick="speakWord('cut into traffic')">🔊</button></td><td>"That bus just cut into our lane without signaling!"</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ACCIDENTS -->
+        <div class="bonus-category">
+            <div class="bonus-cat-title cat-orange">💥 Accidents &amp; Collisions</div>
+            <table class="ref-table">
+                <thead><tr><th>Español</th><th>English</th><th>Example sentence</th></tr></thead>
+                <tbody>
+                    <tr><td>atropellar a alguien / golpear a un peatón</td><td>hit a pedestrian / knock someone down <button class="speak-sm" onclick="speakWord('hit a pedestrian')">🔊</button></td><td>"The driver hit a pedestrian at the crosswalk."</td></tr>
+                    <tr><td>choque / colisión entre vehículos</td><td>collision / crash <button class="speak-sm" onclick="speakWord('collision')">🔊</button></td><td>"There was a collision between two trucks on the highway."</td></tr>
+                    <tr><td>choque por detrás / alcanzar al de enfrente</td><td>rear-end collision / rear-end someone <button class="speak-sm" onclick="speakWord('rear-end collision')">🔊</button></td><td>"He rear-ended the car in front because he was tailgating."</td></tr>
+                    <tr><td>choque lateral / rozar de lado</td><td>side collision / sideswipe <button class="speak-sm" onclick="speakWord('sideswipe')">🔊</button></td><td>"The bus sideswiped a parked car near the corner."</td></tr>
+                    <tr><td>choque en cadena / accidente múltiple</td><td>pile-up / chain-reaction crash <button class="speak-sm" onclick="speakWord('pile-up')">🔊</button></td><td>"A pile-up involving six cars blocked the freeway for hours."</td></tr>
+                    <tr><td>atropellar y huir / accidente con fuga</td><td>hit-and-run <button class="speak-sm" onclick="speakWord('hit and run')">🔊</button></td><td>"The driver fled the scene — it was a hit-and-run."</td></tr>
+                    <tr><td>sufrir / tener un accidente</td><td>get into an accident / have an accident <button class="speak-sm" onclick="speakWord('get into an accident')">🔊</button></td><td>"I got into an accident on my way to work this morning."</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ROAD ACTIONS -->
+        <div class="bonus-category">
+            <div class="bonus-cat-title cat-blue">🅿️ Road Actions &amp; Maneuvers</div>
+            <table class="ref-table">
+                <thead><tr><th>Español</th><th>English</th><th>Example sentence</th></tr></thead>
+                <tbody>
+                    <tr><td>dar vuelta en U</td><td>make a U-turn <button class="speak-sm" onclick="speakWord('U-turn')">🔊</button></td><td>"You cannot make a U-turn here — it is prohibited."</td></tr>
+                    <tr><td>reversa / ir hacia atrás</td><td>reverse / back up <button class="speak-sm" onclick="speakWord('reverse')">🔊</button></td><td>"She backed up slowly into the parking space."</td></tr>
+                    <tr><td>doblar / girar</td><td>turn / make a turn <button class="speak-sm" onclick="speakWord('make a turn')">🔊</button></td><td>"Turn left at the next intersection."</td></tr>
+                    <tr><td>cambiar de carril</td><td>change lanes <button class="speak-sm" onclick="speakWord('change lanes')">🔊</button></td><td>"Always check your mirrors before changing lanes."</td></tr>
+                    <tr><td>rebasar / adelantar</td><td>overtake / pass a vehicle <button class="speak-sm" onclick="speakWord('overtake')">🔊</button></td><td>"It is dangerous to overtake on a curve."</td></tr>
+                    <tr><td>frenar / aplicar los frenos</td><td>brake / hit the brakes <button class="speak-sm" onclick="speakWord('hit the brakes')">🔊</button></td><td>"He hit the brakes suddenly and I almost crashed into him."</td></tr>
+                    <tr><td>frenar de golpe / frenar en seco</td><td>slam on the brakes <button class="speak-sm" onclick="speakWord('slam on the brakes')">🔊</button></td><td>"She slammed on the brakes to avoid hitting the dog."</td></tr>
+                    <tr><td>acelerar / pisar el acelerador</td><td>accelerate / step on the gas <button class="speak-sm" onclick="speakWord('step on the gas')">🔊</button></td><td>"Don't step on the gas near a school zone."</td></tr>
+                    <tr><td>estacionarse ilegalmente / en doble fila</td><td>park illegally / double-park <button class="speak-sm" onclick="speakWord('double-park')">🔊</button></td><td>"His car was towed for double-parking on a busy street."</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- USEFUL PHRASES -->
+        <div class="bonus-category">
+            <div class="bonus-cat-title cat-gray">🗣️ Useful Phrases to Say</div>
+            <div class="phrase-say"><div class="phrase-es">El tráfico estaba muy lento / había cola.</div><div class="phrase-en">"Traffic was backed up all the way to the highway."</div></div>
+            <div class="phrase-say"><div class="phrase-es">Ese conductor me cerró el paso sin señalar.</div><div class="phrase-en">"That driver cut me off without even signaling!"</div></div>
+            <div class="phrase-say"><div class="phrase-es">Hubo un choque por detrás en la intersección.</div><div class="phrase-en">"There was a rear-end collision at the intersection."</div></div>
+            <div class="phrase-say"><div class="phrase-es">Mi trayecto fue un desastre por el choque en cadena.</div><div class="phrase-en">"My commute was a nightmare this morning because of a pile-up."</div></div>
+            <div class="phrase-say"><div class="phrase-es">Ten cuidado — hay cámara de velocidad en esa calle.</div><div class="phrase-en">"Be careful — there's a speed camera on that road."</div></div>
+            <div class="phrase-say"><div class="phrase-es">El camión se metió a nuestro carril sin avisar.</div><div class="phrase-en">"The truck cut into our lane without any warning."</div></div>
         </div>
 
     </section>
