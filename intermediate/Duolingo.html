@@ -1,0 +1,972 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English with Elisa – Duolingo Lesson</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ===== THEME: Duolingo-inspired but FRESH — Teal + Amber + Cream ===== */
+        :root {
+            --bg:        #f5f0e8;
+            --card:      #ffffff;
+            --primary:   #00897B;   /* deep teal */
+            --accent:    #F4A021;   /* warm amber */
+            --accent2:   #E53935;   /* energetic red */
+            --text:      #1a1a1a;
+            --muted:     #5a5a5a;
+            --border:    #d0c8b8;
+            --hi-bg:     #FFF3CD;
+            --hi-border: #F4A021;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 1.15rem;
+            line-height: 1.75;
+        }
+
+        /* ===== HEADER (EXACT TEMPLATE) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #00695C 100%);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .header h1 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+        .level-badge {
+            background: var(--accent);
+            color: #1a1a1a;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .search-box { display: flex; align-items: center; }
+
+        /* ===== MAIN WRAPPER ===== */
+        .main-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 900;
+            color: var(--primary);
+            border-left: 6px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* ===== SOURCE BADGE ===== */
+        .source-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #e8f5e9;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-decoration: none;
+        }
+        .source-badge:hover { background: var(--primary); color: #fff; }
+
+        /* ===== USEFUL EXPRESSIONS ===== */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .expr-card {
+            background: var(--card);
+            border: 2px solid var(--primary);
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            box-shadow: 4px 4px 0 var(--primary);
+        }
+        .expr-en {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        .expr-es {
+            font-size: 0.95rem;
+            color: var(--accent2);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+        .expr-example {
+            font-size: 0.95rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-card {
+            background: var(--card);
+            border-radius: 18px;
+            border: 2px solid var(--border);
+            padding: 2rem 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+        .article-title {
+            font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+            font-weight: 900;
+            color: var(--text);
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+        .article-byline {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.8rem;
+            font-style: italic;
+        }
+        .article-card p {
+            margin-bottom: 1.4rem;
+            font-size: 1.12rem;
+        }
+
+        /* ===== HIGHLIGHT ===== */
+        .highlight {
+            background: var(--hi-bg);
+            font-weight: 700;
+            border-bottom: 2.5px solid var(--hi-border);
+            border-radius: 3px;
+            padding: 0 3px;
+            cursor: help;
+            position: relative;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* ===== VOCAB BOX ===== */
+        .vocab-section {
+            background: #E8F5F3;
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.4rem 1.6rem;
+            margin: 1.2rem 0 2rem;
+        }
+        .vocab-section-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+        .vocab-card {
+            background: #fff;
+            border: 1.5px solid #B2DFDB;
+            border-radius: 12px;
+            padding: 1rem 1.1rem;
+            box-shadow: 2px 2px 0 #B2DFDB;
+        }
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .vocab-word {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #004D40;
+        }
+        .speak-btn {
+            background: var(--accent);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.15s, background 0.15s;
+        }
+        .speak-btn:hover { transform: scale(1.15); background: #e67e00; }
+        .vocab-def {
+            font-size: 0.92rem;
+            color: var(--muted);
+            margin-bottom: 0.2rem;
+        }
+        .vocab-es {
+            font-size: 0.88rem;
+            color: var(--accent2);
+            font-weight: 700;
+        }
+        .vocab-ex {
+            font-size: 0.88rem;
+            color: #444;
+            font-style: italic;
+            margin-top: 0.3rem;
+            border-top: 1px dashed #ddd;
+            padding-top: 0.3rem;
+        }
+
+        /* ===== DISCUSSION ===== */
+        .discussion-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .discussion-list li {
+            background: var(--card);
+            border: 2px solid var(--accent);
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: 3px 3px 0 var(--accent);
+        }
+        .q-num {
+            background: var(--accent);
+            color: #1a1a1a;
+            font-weight: 900;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        /* ===== SELF-PRACTICE ===== */
+        .practice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .practice-item {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .practice-q {
+            padding: 1.2rem 1.5rem;
+            font-size: 1.08rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text);
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .practice-q:hover { background: #f0ece0; }
+        .practice-q .toggle {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+        .practice-answer {
+            display: none;
+            padding: 1rem 1.5rem 1.3rem;
+            background: #f0faf8;
+            border-top: 2px dashed var(--primary);
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .practice-answer.open { display: block; }
+        .sample-answer {
+            color: var(--primary);
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* ===== SOURCE FOOTER ===== */
+        .source-footer {
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            background: #e8f5e9;
+            border: 2px solid var(--primary);
+            border-radius: 14px;
+            font-size: 0.95rem;
+        }
+        .source-footer strong { color: var(--primary); }
+        .source-footer a { color: var(--primary); font-weight: 600; word-break: break-all; }
+        .source-footer a:hover { color: var(--accent2); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .article-card { padding: 1.2rem 1rem; }
+            .vocab-grid { grid-template-columns: 1fr 1fr; }
+            .expressions-grid { grid-template-columns: 1fr; }
+            .header-content { flex-direction: column; align-items: flex-start; }
+        }
+        @media (max-width: 420px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ===== FIXED HEADER (EXACT TEMPLATE) ===== -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://ychef.files.bbci.co.uk/1280x720/p0jvrn70.webp" alt="🦉 The Simple Formula That Made Duolingo a Daily Habit for Millions" class="article-image">
+    </div>
+
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-wrap">
+
+    <!-- SOURCE BADGE -->
+    <a class="source-badge" href="https://www.bbc.co.uk/worklife/article/20241004-the-simple-formula-that-made-duolingo-a-daily-habit-for-millions" target="_blank" rel="noopener">
+        📰 Source: BBC Worklife — Natalia Guerrero (October 2024)
+    </a>
+
+    <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+    <h2 class="section-title">💬 Useful Expressions</h2>
+    <div class="expressions-grid">
+
+        <div class="expr-card">
+            <div class="expr-en">Word of mouth</div>
+            <div class="expr-es">🇪🇸 De boca en boca / por recomendación</div>
+            <div class="expr-example">"The main way we grow is by word of mouth — people tell their friends."</div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">Stay motivated</div>
+            <div class="expr-es">🇪🇸 Mantenerse motivado/a</div>
+            <div class="expr-example">"The hardest thing about learning by yourself is staying motivated."</div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">Make a big impression on (someone)</div>
+            <div class="expr-es">🇪🇸 Causar una gran impresión / marcar a alguien</div>
+            <div class="expr-example">"Growing up in poverty made a big impression on him."</div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">Trial and error</div>
+            <div class="expr-es">🇪🇸 Por ensayo y error</div>
+            <div class="expr-example">"Most features we have now, we got to by trial and error."</div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">Go around the subject</div>
+            <div class="expr-es">🇪🇸 Rodear el tema / no ir al grano</div>
+            <div class="expr-example">"In our culture, we go around the subject and never say things directly."</div>
+        </div>
+
+    </div>
+
+    <!-- ===== SECTION 2: ARTICLE ===== -->
+    <h2 class="section-title">📱 Article</h2>
+    <div class="article-card">
+        <div class="article-title">🦉 Good, Free, Fun: The Simple Formula That Made Duolingo a Daily Habit for Millions</div>
+        <div class="article-byline">By Natalia Guerrero · BBC Worklife · October 4, 2024</div>
+
+        <!-- PARAGRAPH 1 -->
+        <p>
+            Perhaps no app has <span class="highlight" title="dominado / ganado">mastered</span> user loyalty quite like Duolingo, the
+            <span class="highlight" title="con elementos de juego">gamified</span> language-learning platform that 34 million people a day can't
+            <span class="highlight" title="dejar de usar (lit. 'soltar')">put down</span>.
+            When journalist Natalia Guerrero started researching this story, Duolingo seemed to be everywhere: a friend was celebrating her 800-day Spanish practice
+            <span class="highlight" title="racha / días consecutivos">streak</span>,
+            a journalist had become <span class="highlight" title="adicto/a">addicted</span> to learning Italian,
+            and a Sri Lankan waitress in New York <span class="highlight" title="dando crédito a / atribuyendo su éxito a">crediting</span> Duolingo for her new language skills.
+        </p>
+
+        <!-- VOCAB BOX 1 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 1</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">mastered</span>
+                        <button class="speak-btn" onclick="speakWord('mastered')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to become very skilled at something</div>
+                    <div class="vocab-es">🇪🇸 dominar / perfeccionar</div>
+                    <div class="vocab-ex">"She has mastered customer negotiations."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">gamified</span>
+                        <button class="speak-btn" onclick="speakWord('gamified')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">designed with game-like elements (points, levels, rewards)</div>
+                    <div class="vocab-es">🇪🇸 con mecánicas de juego</div>
+                    <div class="vocab-ex">"Our training program is gamified to boost engagement."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">streak</span>
+                        <button class="speak-btn" onclick="speakWord('streak')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">a series of consecutive days doing something</div>
+                    <div class="vocab-es">🇪🇸 racha</div>
+                    <div class="vocab-ex">"I have a 45-day inspection streak — I check quality every day!"</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">addicted</span>
+                        <button class="speak-btn" onclick="speakWord('addicted')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">unable to stop doing something (here: used informally)</div>
+                    <div class="vocab-es">🇪🇸 adicto/a / enganchado/a</div>
+                    <div class="vocab-ex">"I'm addicted to checking the shipping tracker."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 2 -->
+        <p>
+            Duolingo's CEO and co-founder, Luis von Ahn, was born in Guatemala, a country where
+            <span class="highlight" title="más del 55%">over half</span> the population lives in poverty.
+            He told the BBC: <em>"If you have money, you can buy a very good education, but if you don't have money, sometimes you don't even learn how to read and write. That made a big impression on me."</em>
+            So when Von Ahn and his co-founder Severin Hacker <span class="highlight" title="lanzaron / fundaron">launched</span> Duolingo in 2012, their goal was clear:
+            keep the app <span class="highlight" title="gratis / sin costo">free</span> so that education could reach <span class="highlight" title="todos / cualquier persona">everybody</span>.
+        </p>
+
+        <!-- VOCAB BOX 2 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 2</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">co-founder</span>
+                        <button class="speak-btn" onclick="speakWord('co-founder')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">one of the people who started a company together</div>
+                    <div class="vocab-es">🇪🇸 cofundador/a</div>
+                    <div class="vocab-ex">"The two co-founders met at university."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">launched</span>
+                        <button class="speak-btn" onclick="speakWord('launched')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">officially started / introduced a product</div>
+                    <div class="vocab-es">🇪🇸 lanzar</div>
+                    <div class="vocab-ex">"We launched a new supplier portal last month."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">poverty</span>
+                        <button class="speak-btn" onclick="speakWord('poverty')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">the state of being very poor</div>
+                    <div class="vocab-es">🇪🇸 pobreza</div>
+                    <div class="vocab-ex">"Access to education helps reduce poverty."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">impression</span>
+                        <button class="speak-btn" onclick="speakWord('impression')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">a strong effect on how you think or feel</div>
+                    <div class="vocab-es">🇪🇸 impresión / impacto</div>
+                    <div class="vocab-ex">"The factory visit made a big impression on our team."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 3 -->
+        <p>
+            To make money while staying free, Duolingo uses a
+            <span class="highlight" title="modelo de negocio mixto">hybrid business model</span>:
+            most users see ads and pay nothing, while a small group pays for a
+            <span class="highlight" title="suscripción premium">subscription</span>
+            that removes ads and adds extra features. Amazingly, only about 8% of users pay, yet they
+            <span class="highlight" title="contribuyen / aportan">contribute</span> to 80% of the company's
+            <span class="highlight" title="ingresos / ganancias">revenue</span>.
+            Growth happens mainly through <span class="highlight" title="recomendaciones de persona a persona">word of mouth</span> —
+            including a famous mention by Bill Gates on Reddit in 2015.
+            By 2024, Duolingo's <span class="highlight" title="valor de mercado">market capitalisation</span> had reached $12.27 billion.
+        </p>
+
+        <!-- VOCAB BOX 3 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 3</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">subscription</span>
+                        <button class="speak-btn" onclick="speakWord('subscription')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">a regular payment to use a service</div>
+                    <div class="vocab-es">🇪🇸 suscripción</div>
+                    <div class="vocab-ex">"We have a monthly subscription for our quality software."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">revenue</span>
+                        <button class="speak-btn" onclick="speakWord('revenue')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">the total money a company earns</div>
+                    <div class="vocab-es">🇪🇸 ingresos / facturación</div>
+                    <div class="vocab-ex">"Our Q3 revenue was 15% higher than last year."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">word of mouth</span>
+                        <button class="speak-btn" onclick="speakWord('word of mouth')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">recommendations shared by people talking to each other</div>
+                    <div class="vocab-es">🇪🇸 de boca en boca</div>
+                    <div class="vocab-ex">"Most of our new clients find us by word of mouth."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">freemium</span>
+                        <button class="speak-btn" onclick="speakWord('freemium')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">free basic service + paid premium features</div>
+                    <div class="vocab-es">🇪🇸 modelo freemium (gratis + premium)</div>
+                    <div class="vocab-ex">"Spotify and LinkedIn also use a freemium model."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 4 -->
+        <p>
+            So what <span class="highlight" title="hace que la gente regrese">keeps people coming back</span>?
+            Von Ahn says the answer is <span class="highlight" title="gamificación">gamification</span> and
+            <span class="highlight" title="narrativa / contar historias">storytelling</span> — especially the
+            <span class="highlight" title="mascota">mascot</span>, Duo the green owl, whose
+            <span class="highlight" title="insistente / persistente">insistent</span> personality
+            inspired millions of internet memes.
+            A <span class="highlight" title="sistema de racha / días consecutivos">streak system</span>
+            — where missing one day resets your count to zero — creates powerful
+            <span class="highlight" title="aversión a perder lo ganado">loss aversion</span>.
+            The company also uses <span class="highlight" title="ensayo y error">trial and error</span>
+            to discover which features work: <em>"The ones that are there now worked; many others didn't."</em>
+        </p>
+
+        <!-- VOCAB BOX 4 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 4</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">keep coming back</span>
+                        <button class="speak-btn" onclick="speakWord('keep coming back')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to return repeatedly / continue using something</div>
+                    <div class="vocab-es">🇪🇸 seguir regresando / volver siempre</div>
+                    <div class="vocab-ex">"Our loyal customers keep coming back every quarter."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">mascot</span>
+                        <button class="speak-btn" onclick="speakWord('mascot')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">a character that represents a brand or team</div>
+                    <div class="vocab-es">🇪🇸 mascota (de marca)</div>
+                    <div class="vocab-ex">"Our factory has a mascot on all safety posters."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">loss aversion</span>
+                        <button class="speak-btn" onclick="speakWord('loss aversion')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">the fear of losing something you already have — stronger than the joy of gaining something new</div>
+                    <div class="vocab-es">🇪🇸 aversión a la pérdida</div>
+                    <div class="vocab-ex">"Loss aversion explains why people panic-sell stocks."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">trial and error</span>
+                        <button class="speak-btn" onclick="speakWord('trial and error')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">finding solutions by testing different options and learning from mistakes</div>
+                    <div class="vocab-es">🇪🇸 por ensayo y error</div>
+                    <div class="vocab-ex">"We improved the process through trial and error."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 5 — NEW BRIDGE: Being CEO & Communication Style -->
+        <p><img src="https://ychef.files.bbci.co.uk/1280x720/p0jvrncg.webp" alt="" class="resizable-image" contenteditable="false" draggable="false" data-layout="full-width" style="max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0px; cursor: pointer; display: block; border: 2px solid transparent; padding: 4px; box-shadow: none;" data-resizable="true"></p><p><span style="font-size: 1.12rem;">When the BBC asked about the </span><span class="highlight" title="desafíos / retos" style="font-size: 1.12rem;">challenges</span><span style="font-size: 1.12rem;">
+            of running a large company, Von Ahn was </span><span class="highlight" title="sorprendentemente honesto" style="font-size: 1.12rem;">surprisingly open</span><span style="font-size: 1.12rem;">.
+            He explained that as the company </span><span class="highlight" title="creció" style="font-size: 1.12rem;">grew</span><span style="font-size: 1.12rem;"> from 50 to 850 employees,
+            it became harder to </span><span class="highlight" title="generar confianza" style="font-size: 1.12rem;">build trust</span><span style="font-size: 1.12rem;"> with everyone personally.
+            But his biggest personal challenge is something many of us recognize:
+            he </span><span class="highlight" title="evita los conflictos" style="font-size: 1.12rem;">avoids conflict</span><span style="font-size: 1.12rem;">.
+            </span><em style="font-size: 1.12rem;">"I am a people-pleaser,"</em><span style="font-size: 1.12rem;"> he </span><span class="highlight" title="admitió" style="font-size: 1.12rem;">admitted</span><span style="font-size: 1.12rem;">.
+            </span><em style="font-size: 1.12rem;">"Sometimes I have to tell people something they don't like — and that's hard for me."</em><span style="font-size: 1.12rem;">
+            He </span><span class="highlight" title="atribuyó esto a" style="font-size: 1.12rem;">linked this</span><span style="font-size: 1.12rem;"> to his Latin American upbringing:
+            in Guatemala, people tend to </span><span class="highlight" title="rodear el tema / no ir al grano" style="font-size: 1.12rem;">go around the subject</span><span style="font-size: 1.12rem;">
+            rather than say difficult things directly — a style that
+            </span><span class="highlight" title="puede causar malentendidos" style="font-size: 1.12rem;">can cause misunderstandings</span><span style="font-size: 1.12rem;"> in international business.
+            His Swedish wife, by contrast, is extremely direct: </span><em style="font-size: 1.12rem;">"Swedish people just say: 'I don't like you.' And it's like — wait, why are you saying that?"</em></p><p></p>
+
+        <!-- VOCAB BOX 5 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 5</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">people-pleaser</span>
+                        <button class="speak-btn" onclick="speakWord('people pleaser')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">someone who always tries to make others happy and avoids conflict</div>
+                    <div class="vocab-es">🇪🇸 complaciente / que busca agradar a todos</div>
+                    <div class="vocab-ex">"Being a people-pleaser makes it hard to say no to clients."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">avoid conflict</span>
+                        <button class="speak-btn" onclick="speakWord('avoid conflict')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to stay away from arguments or difficult conversations</div>
+                    <div class="vocab-es">🇪🇸 evitar el conflicto</div>
+                    <div class="vocab-ex">"Avoiding conflict at work can lead to bigger problems later."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">go around the subject</span>
+                        <button class="speak-btn" onclick="speakWord('go around the subject')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to talk around a topic without saying the main point directly</div>
+                    <div class="vocab-es">🇪🇸 rodear el tema / no ir al grano</div>
+                    <div class="vocab-ex">"Stop going around the subject — just tell me the delivery is late."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">upbringing</span>
+                        <button class="speak-btn" onclick="speakWord('upbringing')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">the way you were raised as a child; your cultural background</div>
+                    <div class="vocab-es">🇪🇸 crianza / educación (familiar)</div>
+                    <div class="vocab-ex">"His upbringing in a small town shaped his work values."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 6 — The Firing Story (now natural!) -->
+        <p>
+            This <span class="highlight" title="comunicación indirecta">indirect communication style</span>
+            once caused Von Ahn a very <span class="highlight" title="incómoda / embarazosa">awkward</span> situation.
+            When he needed to <span class="highlight" title="despedir">fire</span> his very first employee —
+            a woman at his small startup — he was so indirect that she never
+            <span class="highlight" title="se dio cuenta">realized</span> she had been dismissed.
+            She came back to work the next day, thinking they had simply had a good conversation.
+            He had to fire her a second time, this time clearly.
+            The lesson he learned: when delivering difficult news, say the hardest words <em>first</em>.
+            <em>"You have to start by saying: 'I am so sorry, I'm going to have to
+            <span class="highlight" title="prescindir de ti / darte de baja">let you go</span>'
+            — say it first, so it's super clear."</em>
+        </p>
+
+        <!-- VOCAB BOX 6 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 6</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">awkward</span>
+                        <button class="speak-btn" onclick="speakWord('awkward')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">uncomfortable or embarrassing (a situation or feeling)</div>
+                    <div class="vocab-es">🇪🇸 incómodo/a / embarazoso/a</div>
+                    <div class="vocab-ex">"It was awkward when the client asked why the shipment was late."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">fire (someone)</span>
+                        <button class="speak-btn" onclick="speakWord('fire someone')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to end someone's employment</div>
+                    <div class="vocab-es">🇪🇸 despedir a alguien</div>
+                    <div class="vocab-ex">"It's never easy to fire someone you've worked with for years."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">let (someone) go</span>
+                        <button class="speak-btn" onclick="speakWord('let someone go')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">a polite phrase meaning: to dismiss or fire someone</div>
+                    <div class="vocab-es">🇪🇸 prescindir de alguien / dar de baja</div>
+                    <div class="vocab-ex">"We had to let three contractors go last quarter."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">realize</span>
+                        <button class="speak-btn" onclick="speakWord('realize')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to become aware of something; to understand a fact</div>
+                    <div class="vocab-es">🇪🇸 darse cuenta</div>
+                    <div class="vocab-ex">"I didn't realize the deadline had changed until this morning."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 7 — NEW: Future Vision -->
+        <p>
+            Looking ahead, Von Ahn has an ambitious vision for Duolingo.
+            The app already teaches 41 languages, plus maths and music.
+            He believes that <span class="highlight" title="con el tiempo / en el futuro">in time</span>,
+            people will be able to learn <span class="highlight" title="casi cualquier cosa">almost anything</span> through an app.
+            However, he does <em>not</em> think apps will
+            <span class="highlight" title="reemplazar">replace</span> schools or universities,
+            because those <span class="highlight" title="instituciones">institutions</span>
+            serve other important purposes — schools provide
+            <span class="highlight" title="cuidado de niños">childcare</span>,
+            and universities teach young people how to
+            <span class="highlight" title="ser adultos / desenvolverse en la vida">be adults</span>.
+            As for <span class="highlight" title="mercados en crecimiento">growth markets</span>,
+            Duolingo is <span class="highlight" title="enfocándose en">focusing on</span>
+            countries like the US, UK, Japan, India, Brazil, and Spanish-speaking Latin America —
+            a region that, for Von Ahn, has always been close to his heart.
+        </p>
+
+        <!-- VOCAB BOX 7 -->
+        <div class="vocab-section">
+            <div class="vocab-section-title">📖 Vocabulary — Paragraph 7</div>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">ambitious</span>
+                        <button class="speak-btn" onclick="speakWord('ambitious')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">having big, challenging goals</div>
+                    <div class="vocab-es">🇪🇸 ambicioso/a</div>
+                    <div class="vocab-ex">"Our sales team set an ambitious target for next quarter."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">replace</span>
+                        <button class="speak-btn" onclick="speakWord('replace')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to take the place of something else; to substitute</div>
+                    <div class="vocab-es">🇪🇸 reemplazar / sustituir</div>
+                    <div class="vocab-ex">"Can AI really replace a human quality inspector?"</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">focus on</span>
+                        <button class="speak-btn" onclick="speakWord('focus on')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">to give most attention or resources to something specific</div>
+                    <div class="vocab-es">🇪🇸 enfocarse en / centrarse en</div>
+                    <div class="vocab-ex">"This quarter we're focusing on reducing defect rates."</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">close to (one's) heart</span>
+                        <button class="speak-btn" onclick="speakWord('close to his heart')" title="Pronounce">🔊</button>
+                    </div>
+                    <div class="vocab-def">something personally very important or meaningful to someone</div>
+                    <div class="vocab-es">🇪🇸 cercano al corazón / muy significativo</div>
+                    <div class="vocab-ex">"Employee wellbeing is a topic close to our director's heart."</div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /article-card -->
+
+    <!-- ===== SECTION 3: DISCUSSION QUESTIONS ===== -->
+    <h2 class="section-title">🗣️ Discussion Questions</h2>
+    <ul class="discussion-list">
+        <li>
+            <span class="q-num">1</span>
+            <span>Do you use Duolingo or another language app? What keeps you motivated to continue — or what makes you stop?</span>
+        </li>
+        <li>
+            <span class="q-num">2</span>
+            <span>Von Ahn says Latin American culture tends to be "indirect" — people go around the subject instead of saying things clearly. Do you think Mexican communication style is indirect? Has this ever caused a misunderstanding with a Taiwanese or foreign colleague?</span>
+        </li>
+        <li>
+            <span class="q-num">3</span>
+            <span>Von Ahn believes apps will eventually teach "almost anything," but will NOT replace schools or universities. Do you agree? What can a classroom give you that an app never can?</span>
+        </li>
+    </ul>
+
+    <!-- ===== SECTION 4: SELF-PRACTICE ===== -->
+    <h2 class="section-title">✏️ Self-Practice Questions</h2>
+    <div class="practice-list">
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                <span>1. Duolingo is free for most users. How does the company make money?</span>
+                <span class="toggle">＋</span>
+            </div>
+            <div class="practice-answer">
+                <p><span class="sample-answer">Sample answer:</span> Duolingo uses a <strong>freemium model</strong>. About 90% of users see ads and pay nothing. Around 8% pay for a premium subscription with extra features like no ads. Even though most users are free, that small group of subscribers brings in about <strong>80% of the company's revenue</strong>. The rest comes from ads.</p>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                <span>2. What is a "streak" and why does Duolingo use it?</span>
+                <span class="toggle">＋</span>
+            </div>
+            <div class="practice-answer">
+                <p><span class="sample-answer">Sample answer:</span> A streak is a <strong>count of consecutive days</strong> you use the app. If you miss one day, it resets to zero. Duolingo uses streaks to create a <strong>daily habit</strong> — people don't want to lose their progress, so they open the app every day. This is called <em>loss aversion</em>: we hate losing something more than we enjoy gaining something new.</p>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                <span>3. Why did Von Ahn describe himself as a "people-pleaser"? How did this cause a problem at work?</span>
+                <span class="toggle">＋</span>
+            </div>
+            <div class="practice-answer">
+                <p><span class="sample-answer">Sample answer:</span> Von Ahn said he hates conflict and always wants to make people happy. This made it very difficult to deliver bad news directly. When he tried to fire his first employee, he was so indirect that she never realized she was dismissed — she came back to work the next day! He learned he needed to say the difficult message <strong>first and clearly</strong>: <em>"I'm sorry, I'm going to have to let you go."</em></p>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                <span>4. Does Von Ahn think apps like Duolingo will replace schools and universities? Why or why not?</span>
+                <span class="toggle">＋</span>
+            </div>
+            <div class="practice-answer">
+                <p><span class="sample-answer">Sample answer:</span> No, he does <strong>not</strong> think apps will fully replace schools or universities. He believes you can learn almost any subject through an app, but schools and universities serve other important purposes. Schools provide <strong>childcare</strong> for families, and universities help young people learn <strong>how to be adults</strong> and navigate life. An app can teach content, but it cannot replace those social and developmental experiences.</p>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                <span>5. In your own words, what is Duolingo's "simple formula" for success?</span>
+                <span class="toggle">＋</span>
+            </div>
+            <div class="practice-answer">
+                <p><span class="sample-answer">Sample answer:</span> The formula is: <strong>Good + Free + Fun</strong>. The app must actually teach well, it must be free so that anyone can access it, and it must feel like a game — not a boring class. They also use <strong>characters with personality</strong>, a <strong>streak system</strong>, social media presence, and continuous <strong>trial and error</strong> to build a brand that people love and recommend to their friends.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== SOURCE FOOTER ===== -->
+    <div class="source-footer">
+        <strong>📰 Original Source:</strong><br>
+        Guerrero, N. (October 4, 2024). <em>Good, free, fun: The simple formula that has made Duolingo a daily habit for millions.</em> BBC Worklife.<br>
+        <a href="https://www.bbc.co.uk/worklife/article/20241004-the-simple-formula-that-made-duolingo-a-daily-habit-for-millions" target="_blank" rel="noopener">
+            🔗 https://www.bbc.co.uk/worklife/article/20241004-the-simple-formula-that-made-duolingo-a-daily-habit-for-millions
+        </a>
+        <br><br>
+        <small>This lesson was adapted for educational use (EFL, A2–B1). Vocabulary, discussion questions, and self-practice exercises were created by Elisa's English class. All article content is credited to BBC Worklife and Natalia Guerrero.</small>
+    </div>
+
+</div><!-- /main-wrap -->
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+
+    function toggleAnswer(el) {
+        const answer = el.nextElementSibling;
+        const toggle = el.querySelector('.toggle');
+        const isOpen = answer.classList.contains('open');
+        answer.classList.toggle('open', !isOpen);
+        toggle.textContent = isOpen ? '＋' : '－';
+    }
+</script>
+
+
