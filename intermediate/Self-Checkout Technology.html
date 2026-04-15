@@ -1,0 +1,626 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Checkout Technology – English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Sans', 'Open Sans', sans-serif; background: #f4f1ec; color: #1a1a1a; line-height: 1.7; }
+
+        .header { background: #c0392b; padding: 1.2rem 2rem; }
+        .header-content { max-width: 1400px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
+        .header h1 { color: #fff; font-size: 1.7rem; font-weight: 800; }
+        .level-badge { background: #f1948a; color: #7b241c; font-weight: 700; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.9rem; }
+
+        .page-wrap { max-width: 1400px; margin: auto; padding: 2rem 1.5rem; }
+
+        /* SOURCE STRIP */
+        .source-strip {
+            background: #fff; border: 1.5px solid #e8d5c4; border-radius: 10px;
+            padding: 0.7rem 1.2rem; font-size: 0.9rem; color: #555;
+            margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+        }
+        .source-strip strong { color: #c0392b; }
+        .source-strip a { color: #c0392b; font-weight: 600; word-break: break-all; }
+        .source-strip a:hover { text-decoration: underline; }
+
+        .section-title {
+            font-size: 1.35rem; font-weight: 800; color: #7b241c;
+            border-left: 6px solid #c0392b; padding-left: 0.8rem;
+            margin: 2.5rem 0 1.2rem;
+        }
+
+        /* EXPRESSIONS */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem; margin-bottom: 1.5rem;
+        }
+        .expr-card {
+            background: #fff; border: 2px solid #e59866; border-radius: 12px;
+            padding: 1rem 1.2rem;
+        }
+        .expr-en { font-size: 1.05rem; font-weight: 700; color: #7b241c; margin-bottom: 0.2rem; }
+        .expr-es { font-size: 0.9rem; color: #b7770d; font-style: italic; margin-bottom: 0.5rem; }
+        .expr-example { font-size: 0.9rem; color: #444; border-left: 3px solid #f0b27a; padding-left: 0.6rem; }
+
+        /* ARTICLE */
+        .article-box {
+            background: #fff; border-radius: 14px; border: 2px solid #e8d5c4;
+            padding: 2rem; margin-bottom: 0;
+        }
+        .article-box h2 { font-size: 1.5rem; font-weight: 800; color: #7b241c; margin-bottom: 0.5rem; }
+        .roman-num { font-size: 1.3rem; font-weight: 800; color: #c0392b; margin: 1.5rem 0 0.4rem; }
+        .article-box p { font-size: 1.05rem; margin-bottom: 0.8rem; }
+        .article-box blockquote {
+            background: #fef9f0; border-left: 5px solid #e59866;
+            padding: 0.8rem 1.2rem; border-radius: 0 8px 8px 0;
+            font-style: italic; color: #5d4037; margin: 1rem 0;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background: #fff176; font-weight: 700;
+            border-bottom: 2.5px solid #f9a825;
+            border-radius: 3px; padding: 0 2px;
+            cursor: help;
+        }
+
+        /* VOCAB BOX */
+        .vocab-section {
+            background: #fef6ee; border: 2px solid #f0b27a; border-radius: 12px;
+            padding: 1.2rem 1.4rem; margin: 1rem 0 1.8rem;
+        }
+        .vocab-label {
+            font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: #b7770d; margin-bottom: 0.8rem;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+        @media (max-width: 1100px) { .vocab-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 750px)  { .vocab-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px)  { .vocab-grid { grid-template-columns: 1fr; } }
+
+        .vocab-card {
+            background: #fff; border: 1.5px solid #f0c89a; border-radius: 10px;
+            padding: 0.75rem 0.9rem;
+        }
+        .vocab-word {
+            font-size: 1rem; font-weight: 700; color: #7b241c;
+            display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;
+        }
+        .speak-btn {
+            background: #c0392b; color: #fff; border: none; border-radius: 50%;
+            width: 24px; height: 24px; font-size: 0.7rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .speak-btn:hover { background: #7b241c; }
+        .vocab-pos  { font-size: 0.75rem; color: #e59866; font-style: italic; margin-bottom: 0.2rem; }
+        .vocab-def  { font-size: 0.85rem; color: #333; margin-bottom: 0.2rem; }
+        .vocab-es   { font-size: 0.8rem; color: #b7770d; font-style: italic; margin-bottom: 0.3rem; }
+        .vocab-ex   { font-size: 0.8rem; color: #555; border-left: 2px solid #f0b27a; padding-left: 0.5rem; }
+
+        /* DISCUSSION */
+        .discussion-list { list-style: none; padding: 0; }
+        .discussion-list li {
+            background: #fff; border: 2px solid #e59866; border-radius: 10px;
+            padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+            font-size: 1.05rem; display: flex; align-items: flex-start; gap: 0.7rem;
+        }
+        .q-num {
+            background: #c0392b; color: #fff; border-radius: 50%;
+            width: 28px; height: 28px; font-weight: 700; font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+
+        /* SELF PRACTICE */
+        .practice-item {
+            background: #fff; border: 2px solid #e8d5c4; border-radius: 12px;
+            padding: 1rem 1.2rem; margin-bottom: 1rem;
+        }
+        .practice-q { font-size: 1.05rem; font-weight: 700; color: #7b241c; margin-bottom: 0.5rem; }
+        .toggle-btn {
+            background: #c0392b; color: #fff; border: none; border-radius: 20px;
+            padding: 0.35rem 1rem; font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; margin-bottom: 0.5rem;
+        }
+        .toggle-btn:hover { background: #7b241c; }
+        .practice-ans {
+            display: none; background: #fef6ee; border-left: 4px solid #e59866;
+            border-radius: 0 8px 8px 0; padding: 0.7rem 1rem; font-size: 0.95rem; color: #5d4037;
+        }
+        .practice-ans.open { display: block; }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.2rem; }
+            .article-box { padding: 1.2rem; }
+            .page-wrap { padding: 1rem; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- HEADER (exact template) -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://ychef.files.bbci.co.uk/1280x720/p0h4gnq3.webp" alt="🛒 The Spectacular Failure of Self-Checkout Technolog" class="article-image">
+    </div>
+
+
+<div class="page-wrap">
+
+    <!-- SOURCE STRIP -->
+    <div class="source-strip">
+        📰 <strong>Source:</strong>
+        <span>'It hasn't delivered': The spectacular failure of self-checkout technology — <em>BBC Worklife</em></span>
+        &nbsp;|&nbsp;
+        <a href="https://www.bbc.co.uk/worklife/article/20240111-it-hasnt-delivered-the-spectacular-failure-of-self-checkout-technology" target="_blank" rel="noopener">🔗 Read original article</a>
+    </div>
+
+    <!-- ══════════════════════════════
+         SECTION 1 · USEFUL EXPRESSIONS
+    ══════════════════════════════ -->
+    <div class="section-title">💬 Useful Expressions</div>
+    <div class="expressions-grid">
+        <div class="expr-card">
+            <div class="expr-en">live up to expectations</div>
+            <div class="expr-es">cumplir con las expectativas</div>
+            <div class="expr-example">"The new system didn't live up to expectations — it was slow and unreliable."</div>
+        </div>
+        <div class="expr-card">
+            <div class="expr-en">reverse course</div>
+            <div class="expr-es">cambiar de rumbo / dar marcha atrás</div>
+            <div class="expr-example">"After poor results, the company decided to reverse course on its automation strategy."</div>
+        </div>
+        <div class="expr-card">
+            <div class="expr-en">lean (heavily) into</div>
+            <div class="expr-es">apostar fuerte por / enfocarse en</div>
+            <div class="expr-example">"Our team leaned heavily into digital tools last year to cut costs."</div>
+        </div>
+        <div class="expr-card">
+            <div class="expr-en">sunk cost</div>
+            <div class="expr-es">costo hundido / inversión irrecuperable</div>
+            <div class="expr-example">"We can't keep a failing project just because of sunk costs — we need results."</div>
+        </div>
+        <div class="expr-card">
+            <div class="expr-en">more trouble than it's worth</div>
+            <div class="expr-es">más problemático de lo que vale</div>
+            <div class="expr-example">"That software update was more trouble than it's worth — nothing works now."</div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         SECTION 2 · ARTICLE + VOCAB BOXES
+    ══════════════════════════════ -->
+    <div class="section-title">📰 Article 🛒</div>
+
+    <!-- PART I -->
+    <div class="article-box">
+        <h2>🛒 "It Hasn't Delivered": The Spectacular Failure of Self-Checkout Technology</h2>
+        <p style="font-size:0.9rem; color:#888; margin-bottom:1.2rem;"><em>Unstaffed tills were supposed to revolutionise shopping. Now, both retailers and customers are bagging many self-checkout kiosks.</em></p>
+
+        <div class="roman-num">I</div>
+        <p>
+            It's a common sight at many <span class="highlight" title="tiendas minoristas">retail stores</span>: a queue of people, waiting to use a
+            <span class="highlight" title="quiosco de autopago">self-checkout kiosk</span>, doing their best to remain patient as a lone store worker
+            <span class="highlight" title="atiende / se ocupa de">attends to</span> multiple
+            <span class="highlight" title="máquinas con fallas">malfunctioning machines</span>. The frustration
+            <span class="highlight" title="aumenta / se acumula">mounts</span> while a dozen darkened,
+            <span class="highlight" title="acordonadas / cerradas con cuerda">roped-off</span> and cashier-less
+            <span class="highlight" title="cajas registradoras (inglés británico)">tills</span> sit in the background.
+        </p>
+        <p>
+            For shoppers, self-checkout was supposed to provide convenience and speed. Retailers hoped it would
+            <span class="highlight" title="dar inicio a / inaugurar una nueva era">usher in</span> a new age of
+            <span class="highlight" title="ahorro de costos">cost savings</span>. Their thinking: why pay six employees when you could pay one to
+            <span class="highlight" title="supervisar">oversee</span> customers at self-service
+            <span class="highlight" title="cajas registradoras">registers</span>, as they do their own
+            <span class="highlight" title="trabajo / esfuerzo">labour</span> of scanning and bagging for free?
+        </p>
+        <p>
+            While self-checkout technology has its theoretical
+            <span class="highlight" title="puntos a favor / ventajas">selling points</span> for both consumers and businesses, it mostly isn't
+            <span class="highlight" title="cumpliendo con las expectativas">living up to expectations</span>. Customers are still queueing. They need store employees to help clear
+            <span class="highlight" title="errores del quiosco">kiosk errors</span> or check their identifications for
+            <span class="highlight" title="artículos de venta restringida por edad">age-restricted items</span>. Stores still need to have workers
+            <span class="highlight" title="disponibles / a la mano">on-hand</span> to help them, and to service the machines.
+        </p>
+        <p>The technology is, in some cases, <span class="highlight" title="más problemático de lo que vale">more trouble than it's worth</span>.</p>
+        <blockquote>
+            "It hasn't delivered anything that it promises," says Christopher Andrews, associate professor and chair of sociology at Drew University, US, and author of <em>The Overworked Consumer: Self-Checkouts, Supermarkets, and the Do-It-Yourself Economy</em>. "Stores saw this as the next frontier… If they could get the consumer to think that [self-checkout] was a preferable way to shop, then they could cut labour costs. But they're finding that people need help doing it, or that they'll steal stuff. They ended up realising that they're not saving money, they're losing money."
+        </blockquote>
+    </div>
+
+    <!-- VOCAB BOX 1 -->
+    <div class="vocab-section">
+        <div class="vocab-label">📖 Vocabulary — Part I</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word">retail store <button class="speak-btn" onclick="speakWord('retail store')">🔊</button></div>
+                <div class="vocab-pos">noun phrase</div>
+                <div class="vocab-def">A shop that sells goods directly to the public</div>
+                <div class="vocab-es">tienda minorista</div>
+                <div class="vocab-ex">"Target and Walmart are large retail stores."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">kiosk <button class="speak-btn" onclick="speakWord('kiosk')">🔊</button></div>
+                <div class="vocab-pos">noun</div>
+                <div class="vocab-def">A small machine or station for self-service</div>
+                <div class="vocab-es">quiosco / terminal de autopago</div>
+                <div class="vocab-ex">"The kiosk was broken, so I had to wait in line."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">malfunctioning <button class="speak-btn" onclick="speakWord('malfunctioning')">🔊</button></div>
+                <div class="vocab-pos">adjective</div>
+                <div class="vocab-def">Not working correctly; broken</div>
+                <div class="vocab-es">con fallas / averiado</div>
+                <div class="vocab-ex">"The malfunctioning printer delayed the whole shipment."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">till <button class="speak-btn" onclick="speakWord('till')">🔊</button></div>
+                <div class="vocab-pos">noun (British English)</div>
+                <div class="vocab-def">A cash register or checkout counter</div>
+                <div class="vocab-es">caja registradora</div>
+                <div class="vocab-ex">"Only two tills were open during the rush hour."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">usher in <button class="speak-btn" onclick="speakWord('usher in')">🔊</button></div>
+                <div class="vocab-pos">phrasal verb</div>
+                <div class="vocab-def">To introduce or begin something new</div>
+                <div class="vocab-es">dar inicio a / inaugurar</div>
+                <div class="vocab-ex">"The new CEO ushered in a major restructuring."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">selling point <button class="speak-btn" onclick="speakWord('selling point')">🔊</button></div>
+                <div class="vocab-pos">noun phrase</div>
+                <div class="vocab-def">A feature that makes something attractive to buyers</div>
+                <div class="vocab-es">punto a favor / ventaja comercial</div>
+                <div class="vocab-ex">"Speed is the main selling point of our new process."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">on-hand <button class="speak-btn" onclick="speakWord('on hand')">🔊</button></div>
+                <div class="vocab-pos">adjective</div>
+                <div class="vocab-def">Available and ready to help</div>
+                <div class="vocab-es">disponible / a la mano</div>
+                <div class="vocab-ex">"We always have a technician on-hand during production."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">mounts <button class="speak-btn" onclick="speakWord('mounts')">🔊</button></div>
+                <div class="vocab-pos">verb</div>
+                <div class="vocab-def">Increases or builds up steadily</div>
+                <div class="vocab-es">aumenta / se acumula</div>
+                <div class="vocab-ex">"Pressure mounts when the deadline is near."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART II -->
+    <div class="article-box">
+        <div class="roman-num">II</div>
+        <p style="font-weight:700; font-size:1.1rem; color:#7b241c; margin-bottom:0.8rem;">Unexpected problems in the bagging area</p>
+        <p>
+            Many retail companies have invested millions – if not billions – of dollars in self-checkout technology, which Andrews says was first developed during the 1980s, and started appearing in stores in the 1990s. They're not exactly cheap to get into stores: some experts estimate a four-kiosk system can
+            <span class="highlight" title="costar seis cifras (más de $100,000)">run six figures</span>.
+        </p>
+        <p>
+            Despite the cost to install them, many retailers are
+            <span class="highlight" title="dando marcha atrás / cambiando de rumbo">reversing course</span> on the tech. Target, for instance, is restricting the number of items self-checkout customers can purchase at one time. Walmart has removed some self-checkout kiosks in certain stores to
+            <span class="highlight" title="disuadir / frenar">deter</span> theft. In the UK, supermarket chain Booths has also
+            <span class="highlight" title="reducido el número de">cut down on</span> the number of self-service kiosks in its stores, as customers say they're slow and
+            <span class="highlight" title="poco confiables / que fallan frecuentemente">unreliable</span>.
+        </p>
+        <p>
+            Dollar General, one of the fastest-growing retailers in the US, is also re-thinking its strategy. In 2022, the
+            <span class="highlight" title="cadena de descuento / tienda de precios bajos">discount chain</span>
+            <span class="highlight" title="apostó fuerte por / se comprometió con">leaned heavily into</span> self-checkout technology – it's not uncommon to see only one or two employees
+            <span class="highlight" title="atendiendo / trabajando en">staffing</span> an entire Dollar General store in some areas. Despite the investment, they are now planning to increase the number of employees in stores "and in particular, the checkout area", according to the company's CEO, Todd Vasos.
+        </p>
+        <blockquote>
+            "We had relied and started to rely too much this year on self-checkout in our stores," he said during the company's Q3 2023 earnings call on 7 December 2023. "We should be using self-checkout as a secondary checkout vehicle, not a primary."
+        </blockquote>
+        <p>
+            Some retailers cite theft as a
+            <span class="highlight" title="motivación / razón principal">motivator</span> for
+            <span class="highlight" title="abandonar / deshacerse de">ditching</span> the unstaffed tills. Customers may be more willing to simply
+            <span class="highlight" title="llevarse mercancía sin pagar / robar">swipe merchandise</span> when using a self-service kiosk than they are when face-to-face with a human cashier. Some data shows retailers utilising self-checkout technology have
+            <span class="highlight" title="tasas de pérdida por robo o merma">loss rates</span> more than twice the industry average.
+        </p>
+        <p>
+            In addition to
+            <span class="highlight" title="merma / pérdida de inventario (término del comercio minorista)">shrink</span> concerns, experts say another failure of self-checkout technology is that, in many cases, it simply doesn't lead to the cost savings businesses hoped for. Just as Dollar General appears
+            <span class="highlight" title="a punto de / listo para">poised to</span> add more employees to its check-out areas, presumably increasing
+            <span class="highlight" title="costos de personal / nómina">staffing costs</span>, other companies have done the same. Despite self-checkout kiosks becoming
+            <span class="highlight" title="ubicuos / presentes en todos lados">ubiquitous</span> throughout the past decade or so, the US still has more than 3.3 million
+            <span class="highlight" title="cajeros">cashiers</span> working around the nation, according to data from the US Bureau of Labor Statistics.
+        </p>
+    </div>
+
+    <!-- VOCAB BOX 2 -->
+    <div class="vocab-section">
+        <div class="vocab-label">📖 Vocabulary — Part II</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word">reverse course <button class="speak-btn" onclick="speakWord('reverse course')">🔊</button></div>
+                <div class="vocab-pos">verb phrase</div>
+                <div class="vocab-def">To change direction or strategy</div>
+                <div class="vocab-es">cambiar de rumbo / dar marcha atrás</div>
+                <div class="vocab-ex">"The supplier reversed course after losing three clients."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">deter <button class="speak-btn" onclick="speakWord('deter')">🔊</button></div>
+                <div class="vocab-pos">verb</div>
+                <div class="vocab-def">To discourage or prevent someone from doing something</div>
+                <div class="vocab-es">disuadir / desalentar</div>
+                <div class="vocab-ex">"Security cameras deter theft in the warehouse."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">cut down on <button class="speak-btn" onclick="speakWord('cut down on')">🔊</button></div>
+                <div class="vocab-pos">phrasal verb</div>
+                <div class="vocab-def">To reduce the amount or number of something</div>
+                <div class="vocab-es">reducir / disminuir</div>
+                <div class="vocab-ex">"We need to cut down on packaging waste this quarter."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">lean into <button class="speak-btn" onclick="speakWord('lean into')">🔊</button></div>
+                <div class="vocab-pos">phrasal verb</div>
+                <div class="vocab-def">To embrace or commit strongly to something</div>
+                <div class="vocab-es">apostar fuerte por / comprometerse con</div>
+                <div class="vocab-ex">"We leaned into digital tools to speed up our workflow."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">staffing <button class="speak-btn" onclick="speakWord('staffing')">🔊</button></div>
+                <div class="vocab-pos">verb / noun</div>
+                <div class="vocab-def">Providing or managing workers for a place</div>
+                <div class="vocab-es">dotación de personal</div>
+                <div class="vocab-ex">"Staffing levels in the factory were too low during peak season."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">ditch <button class="speak-btn" onclick="speakWord('ditch')">🔊</button></div>
+                <div class="vocab-pos">verb (informal)</div>
+                <div class="vocab-def">To get rid of something; to abandon</div>
+                <div class="vocab-es">abandonar / deshacerse de</div>
+                <div class="vocab-ex">"They ditched the old system and switched to SAP."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">shrink <button class="speak-btn" onclick="speakWord('shrink')">🔊</button></div>
+                <div class="vocab-pos">noun (retail term)</div>
+                <div class="vocab-def">Loss of inventory due to theft or error</div>
+                <div class="vocab-es">merma / pérdida de inventario</div>
+                <div class="vocab-ex">"Shrink increased by 15% after removing the security gates."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">ubiquitous <button class="speak-btn" onclick="speakWord('ubiquitous')">🔊</button></div>
+                <div class="vocab-pos">adjective</div>
+                <div class="vocab-def">Found or seen everywhere</div>
+                <div class="vocab-es">ubicuo / presente en todas partes</div>
+                <div class="vocab-ex">"QR codes have become ubiquitous in restaurants."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART III -->
+    <div class="article-box">
+        <div class="roman-num">III</div>
+        <p style="font-weight:700; font-size:1.1rem; color:#7b241c; margin-bottom:0.8rem;">Humans or machines?</p>
+        <p>
+            Consumers want this technology to work, and welcomed it with
+            <span class="highlight" title="con los brazos abiertos / con entusiasmo">open arms</span>. However, years later, they're still queueing for tills; waiting for store-staff assistance with errors or age checks; and searching high and low for the
+            <span class="highlight" title="código de precio por unidad (código PLU usado en frutas y verduras)">PLU code</span> of the Walla Walla Sweet Onions they're trying to purchase.
+        </p>
+        <p>
+            In a 2021 survey of 1,000 American shoppers, 60% of consumers said they prefer to use self-checkout over a
+            <span class="highlight" title="caja atendida por personal">staffed checkout aisle</span> when given the choice, yet 67% of consumers have had the technology fail while trying to use it.
+        </p>
+        <p>
+            The
+            <span class="highlight" title="lo más importante / la conclusión final">bottom line</span> is businesses want to cut costs, and shoppers want to get in and out of a store. If self-checkout isn't the answer, they'll find another
+            <span class="highlight" title="alternativa / vía / camino">avenue</span>.
+        </p>
+        <blockquote>
+            "It's not that self-checkout technology is good or bad,
+            <span class="highlight" title="en sí mismo / por sí solo (expresión en latín)">per se</span>… [but] if we try self-checkout and realise we're not benefitting from it, we might switch back to not using it," says Amit Kumar, an assistant professor of marketing and psychology at the University of Texas, who studies consumer behaviour and decision-making.
+        </blockquote>
+        <p>
+            That appears to be happening in many cases, as customers' frustrations with the technology
+            <span class="highlight" title="persisten / continúan">persist</span>. But Andrews says that while stores may change up their strategies – as seen with Dollar General and others – many large retail chains are likely to keep kiosks in stores due to
+            <span class="highlight" title="costos hundidos / inversiones irrecuperables">sunk costs</span>. "They spent billions putting it in stores, and are hoping they can still get the public to
+            <span class="highlight" title="creer en / adoptar la idea">buy into</span> it," he says.
+        </p>
+        <p>
+            Retailers may continue to rely on the technology, but many aren't putting all their farm-fresh eggs in the self-checkout basket. Instead, they're increasingly giving customers the option to choose between human and machine.
+        </p>
+        <p>
+            For the customers that do choose to do the labour themselves, there's one thing Andrews believes won't change. However ubiquitous the technology is, and however much consumers get used to using the kiosks, shoppers are likely to find themselves disappointed and frustrated most of the time.
+        </p>
+        <blockquote>
+            "It was part of a larger experiment in retail in trying to
+            <span class="highlight" title="condicionar / acostumbrar a la gente">socialise people into</span> using it," he says. Simply, "customers hate it."
+        </blockquote>
+    </div>
+
+    <!-- VOCAB BOX 3 -->
+    <div class="vocab-section">
+        <div class="vocab-label">📖 Vocabulary — Part III</div>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-word">with open arms <button class="speak-btn" onclick="speakWord('with open arms')">🔊</button></div>
+                <div class="vocab-pos">idiom</div>
+                <div class="vocab-def">With great enthusiasm and willingness</div>
+                <div class="vocab-es">con los brazos abiertos / con entusiasmo</div>
+                <div class="vocab-ex">"The team welcomed the new process with open arms."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">the bottom line <button class="speak-btn" onclick="speakWord('the bottom line')">🔊</button></div>
+                <div class="vocab-pos">idiom</div>
+                <div class="vocab-def">The most important fact or the final conclusion</div>
+                <div class="vocab-es">lo más importante / la conclusión final</div>
+                <div class="vocab-ex">"The bottom line is: we need to ship on time."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">avenue <button class="speak-btn" onclick="speakWord('avenue')">🔊</button></div>
+                <div class="vocab-pos">noun</div>
+                <div class="vocab-def">A way of approaching something; an option or path</div>
+                <div class="vocab-es">alternativa / vía / camino</div>
+                <div class="vocab-ex">"We explored every avenue before choosing a new vendor."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">per se <button class="speak-btn" onclick="speakWord('per se')">🔊</button></div>
+                <div class="vocab-pos">adverb (Latin)</div>
+                <div class="vocab-def">By or in itself; intrinsically</div>
+                <div class="vocab-es">en sí mismo / por sí solo</div>
+                <div class="vocab-ex">"It's not the price per se, but the lack of quality."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">persist <button class="speak-btn" onclick="speakWord('persist')">🔊</button></div>
+                <div class="vocab-pos">verb</div>
+                <div class="vocab-def">To continue to exist or happen despite difficulties</div>
+                <div class="vocab-es">persistir / continuar / seguir ocurriendo</div>
+                <div class="vocab-ex">"The quality issue persisted even after the audit."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">sunk cost <button class="speak-btn" onclick="speakWord('sunk cost')">🔊</button></div>
+                <div class="vocab-pos">noun phrase (business)</div>
+                <div class="vocab-def">Money already spent that cannot be recovered</div>
+                <div class="vocab-es">costo hundido / inversión irrecuperable</div>
+                <div class="vocab-ex">"Don't let sunk costs stop you from making the right decision."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">buy into <button class="speak-btn" onclick="speakWord('buy into')">🔊</button></div>
+                <div class="vocab-pos">phrasal verb</div>
+                <div class="vocab-def">To believe in or accept an idea</div>
+                <div class="vocab-es">creer en / aceptar / adoptar</div>
+                <div class="vocab-ex">"Not everyone buys into the idea of fully automated warehouses."</div>
+            </div>
+            <div class="vocab-card">
+                <div class="vocab-word">socialise into <button class="speak-btn" onclick="speakWord('socialise into')">🔊</button></div>
+                <div class="vocab-pos">verb phrase</div>
+                <div class="vocab-def">To gradually train or condition people to accept something</div>
+                <div class="vocab-es">condicionar / acostumbrar a la gente a algo</div>
+                <div class="vocab-ex">"Companies try to socialise customers into new habits gradually."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         SECTION 3 · DISCUSSION QUESTIONS
+    ══════════════════════════════ -->
+    <div class="section-title">🗣️ Discussion Questions</div>
+    <ul class="discussion-list">
+        <li>
+            <span class="q-num">1</span>
+            <span>Have you ever used a self-checkout machine? What was your experience — convenient, frustrating, or somewhere in between? Why?</span>
+        </li>
+        <li>
+            <span class="q-num">2</span>
+            <span>In your work (QA, Logistics, Purchasing, or Sales), have you seen technology introduced to replace a human task that ended up causing more problems? What happened?</span>
+        </li>
+        <li>
+            <span class="q-num">3</span>
+            <span>The article mentions that companies keep self-checkout kiosks because of "sunk costs." Do you think this is a smart business decision? How do companies in Taiwan handle similar situations?</span>
+        </li>
+    </ul>
+
+    <!-- ══════════════════════════════
+         SECTION 4 · SELF-PRACTICE
+    ══════════════════════════════ -->
+    <div class="section-title">✍️ Self-Practice Questions</div>
+
+    <div class="practice-item">
+        <div class="practice-q">1. According to the article, why did retailers originally introduce self-checkout technology?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">👁 Show Answer</button>
+        <div class="practice-ans">
+            Retailers introduced self-checkout to save on labour costs. Instead of paying six cashiers, they could pay just one worker to oversee multiple self-service machines while customers did the scanning and bagging themselves for free.
+        </div>
+    </div>
+
+    <div class="practice-item">
+        <div class="practice-q">2. What is "shrink" in a retail context, and how does self-checkout make it worse?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">👁 Show Answer</button>
+        <div class="practice-ans">
+            "Shrink" refers to inventory loss, mainly due to theft. Self-checkout makes it worse because customers are not face-to-face with a cashier, making it easier to leave without scanning items. Some data shows stores using self-checkout have loss rates more than twice the industry average.
+        </div>
+    </div>
+
+    <div class="practice-item">
+        <div class="practice-q">3. What does Dollar General's CEO mean when he says self-checkout should be "a secondary checkout vehicle, not a primary"?</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">👁 Show Answer</button>
+        <div class="practice-ans">
+            He means self-checkout should be an additional, backup option for customers — not the main way people pay. The company had relied on it too heavily and is now adding more human cashiers to improve the customer experience and reduce losses.
+        </div>
+    </div>
+
+    <div class="practice-item">
+        <div class="practice-q">4. Use the word <strong>ubiquitous</strong> in a sentence related to your own work or industry.</div>
+        <button class="toggle-btn" onclick="toggleAnswer(this)">👁 Show Sample Answer</button>
+        <div class="practice-ans">
+            Sample answers: "Barcode scanners have become ubiquitous in our warehouse — every workstation has at least two." / "Digital signatures are now ubiquitous in our purchasing approval process." / "QR code inspections have become ubiquitous in our quality control procedures."
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+    function toggleAnswer(btn) {
+        const ans = btn.nextElementSibling;
+        ans.classList.toggle('open');
+        btn.textContent = ans.classList.contains('open') ? '🙈 Hide Answer' : '👁 Show Answer';
+    }
+</script>
+
