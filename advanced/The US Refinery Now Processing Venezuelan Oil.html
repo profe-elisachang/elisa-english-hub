@@ -1,0 +1,926 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The US Refinery Now Processing Venezuelan Oil - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'IBM Plex Sans', 'Noto Sans', sans-serif;
+            line-height: 1.7;
+            background: #f5f0e8;
+            color: #1a1a1a;
+        }
+
+        /* HEADER */
+        .header {
+            background: #1c2b1e;
+            padding: 18px 24px;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #c8d9c0;
+            letter-spacing: 0.02em;
+        }
+        .level-badge {
+            background: #2d4a2f;
+            color: #8fbc72;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .back-to-calendar-btn {
+            margin-left: auto;
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(255,255,255,0.1);
+            color: #c8d9c0;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.2s ease;
+        }
+        .back-to-calendar-btn:hover { background: rgba(255,255,255,0.18); }
+
+        /* LAYOUT */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        /* ARTICLE TITLE BLOCK */
+        .article-header {
+            background: #1c2b1e;
+            color: #e8f0e0;
+            padding: 36px 40px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 200px; height: 100%;
+            background: linear-gradient(135deg, transparent 60%, #2d4a2f 100%);
+            opacity: 0.5;
+        }
+        .article-source {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #8fbc72;
+            margin-bottom: 10px;
+        }
+        .article-header h2 {
+            font-size: 1.65rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .article-header p {
+            font-size: 0.9rem;
+            color: #9aab8e;
+            line-height: 1.6;
+            position: relative;
+        }
+        .read-original-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 22px;
+            background: #4a7c3f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background 0.2s;
+            position: relative;
+        }
+        .read-original-btn:hover { background: #3a6030; }
+        .read-original-btn::after { content: ' ↗'; }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 24px;
+            border: 1px solid #e0d8cc;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6b8f5e;
+            margin-bottom: 8px;
+        }
+
+        .section-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1c2b1e;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e8f0e0;
+        }
+
+        /* SECTION 1 - WHY THIS MATTERS */
+        .relevance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        @media (max-width: 640px) { .relevance-grid { grid-template-columns: 1fr; } }
+
+        .relevance-item {
+            background: #f5f9f2;
+            border-left: 3px solid #4a7c3f;
+            padding: 14px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        .relevance-item .ri-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #4a7c3f;
+            margin-bottom: 4px;
+        }
+        .relevance-item p {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* SECTION 2 - BACKGROUND */
+        .bg-subsection {
+            margin-bottom: 24px;
+        }
+        .bg-subsection h4 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #4a7c3f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bg-subsection h4::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 2px;
+            background: #4a7c3f;
+        }
+        .bg-subsection p {
+            font-size: 0.93rem;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+        .stat-box {
+            background: #1c2b1e;
+            color: white;
+            padding: 14px 18px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 160px;
+        }
+        .stat-box .stat-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #8fbc72;
+            display: block;
+        }
+        .stat-box .stat-desc {
+            font-size: 0.78rem;
+            color: #9aab8e;
+            margin-top: 2px;
+        }
+
+        .flow-diagram {
+            background: #f5f0e8;
+            border: 1px solid #d4c9b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+            font-size: 0.88rem;
+        }
+        .flow-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6b8f5e;
+            margin-bottom: 14px;
+        }
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .flow-step {
+            background: white;
+            border: 1px solid #d4c9b8;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.83rem;
+            color: #1c2b1e;
+            font-weight: 500;
+        }
+        .flow-step.highlight-step {
+            background: #1c2b1e;
+            color: #8fbc72;
+            border-color: #1c2b1e;
+        }
+        .flow-arrow {
+            color: #8fbc72;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            background: #fff8ec;
+            border: 1px solid #f0c060;
+            border-left: 4px solid #e6a020;
+            border-radius: 0 8px 8px 0;
+            padding: 14px 16px;
+            margin: 12px 0;
+            font-size: 0.9rem;
+            color: #5a3e10;
+            line-height: 1.6;
+        }
+
+        /* SECTION 3 - VOCABULARY */
+        .para-label {
+            background: #1c2b1e;
+            color: #8fbc72;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            margin-bottom: 16px;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .vocab-card {
+            background: #fafaf8;
+            border: 1px solid #e0d8cc;
+            border-radius: 10px;
+            padding: 16px 18px;
+            transition: box-shadow 0.2s;
+        }
+        .vocab-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .vocab-word {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1c2b1e;
+        }
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 2px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+        .speak-btn:hover { opacity: 1; }
+
+        .vocab-definition {
+            font-size: 0.88rem;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        .vocab-spanish {
+            font-size: 0.83rem;
+            color: #6b6b6b;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .vocab-why {
+            background: #f0f7ec;
+            border-left: 3px solid #4a7c3f;
+            padding: 8px 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.82rem;
+            color: #2d4a20;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .vocab-why strong {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #4a7c3f;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4a90e2;
+            padding-left: 12px;
+            font-size: 0.85rem;
+            color: #444;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .para-divider {
+            border: none;
+            border-top: 2px dashed #d4c9b8;
+            margin: 28px 0;
+        }
+
+        /* SECTION 4 - READING TASKS */
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .task-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: #f5f9f2;
+            border-radius: 10px;
+            padding: 16px 18px;
+        }
+        .task-number {
+            background: #1c2b1e;
+            color: #8fbc72;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .task-content .task-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #4a7c3f;
+            margin-bottom: 4px;
+        }
+        .task-content p {
+            font-size: 0.93rem;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* SECTION 5 - DISCUSSION */
+        .discussion-layer {
+            margin-bottom: 24px;
+        }
+        .layer-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .layer-badge {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .layer-1 .layer-badge { background: #e8f0e0; color: #2d4a20; }
+        .layer-2 .layer-badge { background: #fff8ec; color: #5a3e10; }
+        .layer-3 .layer-badge { background: #1c2b1e; color: #8fbc72; }
+
+        .layer-header h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1c2b1e;
+        }
+
+        .discussion-questions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .dq {
+            background: #fafaf8;
+            border: 1px solid #e0d8cc;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 0.92rem;
+            color: #222;
+            line-height: 1.6;
+        }
+        .dq::before {
+            content: 'Q';
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: #4a7c3f;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 22px;
+            margin-right: 10px;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        /* READ BUTTON SECTION */
+        .read-cta {
+            background: #1c2b1e;
+            border-radius: 12px;
+            padding: 32px 36px;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .read-cta p {
+            color: #9aab8e;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .read-cta p strong {
+            color: #c8d9c0;
+            font-weight: 600;
+        }
+        .read-cta-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #4a7c3f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: background 0.2s;
+        }
+        .read-cta-btn:hover { background: #3a6030; }
+        .read-cta-btn::after { content: ' ↗'; }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <a href="../index.html" class="back-to-calendar-btn">Home</a>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/1c23/live/e6202320-3259-11f1-b297-95b0a0a8331e.jpg.webp" alt="⛽ The US Refinery  Processing Venezuelan Oil -  Why This Matters to You" class="article-image">
+    </div>
+
+
+    <div class="container">
+
+        <!-- ARTICLE TITLE BLOCK -->
+        <div class="article-header">
+            <div class="article-source">BBC News · Business</div>
+            <h2>⛽ The US Refinery Now Processing Venezuelan Oil</h2>
+            <p>By Samira Hussain &amp; Nathalie Jimenez · Pascagoula, Mississippi</p>
+            <a href="https://www.bbc.com/news/articles/cx24n8eqzgyo" target="_blank" class="read-original-btn">Read Original Article</a>
+        </div>
+
+        <!-- SECTION 1: WHY THIS MATTERS -->
+        <div class="section-card">
+            <div class="section-label">Section 1</div>
+            <h3>🎯 Why This Matters to You</h3>
+            <p style="font-size:0.95rem; color:#333; margin-bottom:18px; line-height:1.7;">
+                You work in the Mexican automotive industry — and your factory's costs are connected to global energy markets whether you realize it or not. This article is not just about oil. It is about how decisions made in Washington, Caracas, and Tehran affect the price of energy that powers your plant, the diesel that moves your parts, and the government budget that funds Mexican infrastructure.
+            </p>
+            <div class="relevance-grid">
+                <div class="relevance-item">
+                    <div class="ri-label">🔋 Energy Cost</div>
+                    <p>Oil price changes directly affect electricity and diesel costs in Mexican factories.</p>
+                </div>
+                <div class="relevance-item">
+                    <div class="ri-label">🚛 Logistics</div>
+                    <p>The cost of moving auto parts between suppliers depends heavily on fuel prices.</p>
+                </div>
+                <div class="relevance-item">
+                    <div class="ri-label">🏦 Government Budget</div>
+                    <p>PEMEX revenues fund Mexican government spending — including roads, ports, and infrastructure your supply chain uses.</p>
+                </div>
+                <div class="relevance-item">
+                    <div class="ri-label">🌎 Competition</div>
+                    <p>Venezuelan oil competes with Mexican crude oil in the US market, affecting Mexico's export revenue.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: BACKGROUND KNOWLEDGE -->
+        <div class="section-card">
+            <div class="section-label">Section 2</div>
+            <h3>🌍 Background Knowledge</h3>
+
+            <div class="bg-subsection">
+                <h4>The Global Context</h4>
+                <p>This article takes place during a major geopolitical shock: Iran has blocked the <strong>Strait of Hormuz</strong> — the narrow waterway through which roughly 20% of the world's oil passes. When this route closes, global oil prices spike dramatically, similar to what happened during the 1973 Arab Oil Embargo and the 1990 Gulf War. The US is now under pressure to find alternative oil sources to keep prices from rising even further for American consumers.</p>
+                <p>Venezuela offers a solution: it holds the <strong>world's largest oil reserves</strong>. Under former president Nicolás Maduro, US sanctions had blocked Venezuelan oil exports entirely. But after a dramatic night-time military operation captured Maduro in January, the new government reopened oil exports. Chevron — the only US company with operations in Venezuela — moved quickly to take advantage.</p>
+            </div>
+
+            <hr class="para-divider">
+
+            <div class="bg-subsection">
+                <h4>Mexico's Position — More Complicated Than It Looks</h4>
+                <p>Mexico produces oil. But here is the paradox that most people don't know: <strong>Mexico sells crude oil but buys back gasoline</strong>. PEMEX, the national oil company, lacks sufficient refining capacity to process its own crude into usable fuel. As a result, Mexico imports approximately 1.2 million barrels of refined petroleum products per day from the United States.</p>
+
+                <div class="stat-row">
+                    <div class="stat-box">
+                        <span class="stat-number">~$100B</span>
+                        <span class="stat-desc">PEMEX total debt — world's most indebted energy company</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">1.64M</span>
+                        <span class="stat-desc">barrels/day current Mexican production (declining since 2005)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">7%</span>
+                        <span class="stat-desc">of Mexican government revenue comes from oil sector</span>
+                    </div>
+                </div>
+
+                <div class="flow-diagram">
+                    <div class="flow-title">Mexico's Oil Paradox</div>
+                    <div class="flow-steps">
+                        <div class="flow-step">Mexico extracts crude oil</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">Exports it (revenue)</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step highlight-step">PEMEX can't refine enough</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">Imports gasoline &amp; diesel from the US</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">Sells to Mexican consumers</div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    ⚠️ This means when global oil prices rise, Mexico feels pain from <em>both sides</em>: export revenues may increase slightly, but the cost of importing refined fuel also rises — and PEMEX is too financially weak to benefit fully from higher crude prices.
+                </div>
+            </div>
+
+            <hr class="para-divider">
+
+            <div class="bg-subsection">
+                <h4>What Venezuelan Oil Means for Mexico</h4>
+                <p>Venezuela and Mexico both export <strong>heavy crude oil</strong> — thick, dark, sulfur-rich oil that requires specialized refineries to process. Most US Gulf Coast refineries, including Chevron's Pascagoula plant in this article, were specifically designed to handle heavy crude. This means Venezuela and Mexico are <strong>direct competitors</strong> for the same buyers.</p>
+                <p>When Venezuelan oil flows back into the US market, it increases total supply. In theory, more supply should mean lower prices — which sounds good. But for Mexico, more Venezuelan competition in the US market means downward pressure on the price PEMEX receives for its crude. Combined with PEMEX's already declining production and massive debt, this makes Mexico's fiscal situation more fragile.</p>
+                <p>For your factory specifically: lower government oil revenues → less government spending → potentially slower infrastructure investment → longer-term pressure on roads, ports, and utilities that your supply chain depends on.</p>
+            </div>
+
+            <hr class="para-divider">
+
+            <div class="bg-subsection">
+                <h4>The Key Tension in This Article</h4>
+                <p>The article reveals a fundamental contradiction in oil economics that will help you understand many future news stories:</p>
+                <div class="warning-box">
+                    <strong>Even when you are surrounded by oil, you are not protected from high oil prices.</strong><br>
+                    This is because oil is priced on global markets. A refinery in Mississippi pays the world price for crude — regardless of how close Venezuela or Mexico are. Trump's claim that "we have plenty of gas" does not automatically translate to cheaper prices at the pump. The market does not work that way.
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: VOCABULARY BY PARAGRAPH -->
+        <div class="section-card">
+            <div class="section-label">Section 3</div>
+            <h3>📚 Key Vocabulary</h3>
+            <p style="font-size:0.88rem; color:#666; margin-bottom:24px;">These are the words you need to read this article fluently — and use in professional conversations about energy, supply chain, and business strategy.</p>
+
+            <!-- PARAGRAPH GROUP 1: The Ship & Venezuela -->
+            <div class="para-label">Paragraphs 1–4 · The Ship &amp; Venezuela's Oil</div>
+            <div class="vocab-grid">
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">crude oil</span>
+                        <button class="speak-btn" onclick="speakWord('crude oil')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">Unrefined oil directly from the ground — before it is processed into gasoline, diesel, or other products.</p>
+                    <p class="vocab-spanish">petróleo crudo / crudo</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        When you read financial news about oil prices (WTI, Brent), they are always quoting the price of crude oil — not gasoline. This distinction matters for understanding cost calculations.
+                    </div>
+                    <div class="vocab-example">"The refinery receives crude oil by ship and transforms it into usable fuel."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">sanctions</span>
+                        <button class="speak-btn" onclick="speakWord('sanctions')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">Official penalties imposed by one country on another — usually blocking trade, freezing assets, or banning business dealings.</p>
+                    <p class="vocab-spanish">sanciones</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        Sanctions can instantly block your company from doing business with a supplier or customer in another country. Understanding this word helps you follow geopolitical risk in global supply chains.
+                    </div>
+                    <div class="vocab-example">"US sanctions against Venezuela made it illegal to import Venezuelan oil until the political situation changed."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">reserves</span>
+                        <button class="speak-btn" onclick="speakWord('reserves')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">The total quantity of a natural resource (oil, gas, minerals) that is known to exist underground and can be economically extracted.</p>
+                    <p class="vocab-spanish">reservas</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        "Reserves" appears in annual reports for mining, energy, and even automotive companies (battery material reserves). It signals long-term availability and strategic value.
+                    </div>
+                    <div class="vocab-example">"Venezuela has the world's largest oil reserves, but lack of investment has prevented it from extracting them efficiently."</div>
+                </div>
+
+            </div>
+
+            <hr class="para-divider">
+
+            <!-- PARAGRAPH GROUP 2: The Refinery & Heavy Oil -->
+            <div class="para-label">Paragraphs 5–9 · The Refinery &amp; Why Heavy Oil Matters</div>
+            <div class="vocab-grid">
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">refinery</span>
+                        <button class="speak-btn" onclick="speakWord('refinery')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">An industrial facility that processes crude oil into usable products such as gasoline, diesel, jet fuel, and petrochemicals.</p>
+                    <p class="vocab-spanish">refinería</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        Refineries are the critical bottleneck between raw oil and the fuel that powers factories and vehicles. Mexico's lack of refining capacity is a key reason for its energy vulnerability.
+                    </div>
+                    <div class="vocab-example">"Chevron's refinery in Mississippi was specifically built to process heavy crude oils like those from Venezuela."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">incentive</span>
+                        <button class="speak-btn" onclick="speakWord('incentive')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">A financial or strategic benefit that motivates a company or person to take a specific action.</p>
+                    <p class="vocab-spanish">incentivo</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        This word appears constantly in business strategy, HR (performance incentives), and government policy (tax incentives for manufacturing investment). It is essential vocabulary for any business discussion.
+                    </div>
+                    <div class="vocab-example">"The government offered tax incentives to attract foreign automotive manufacturers to build plants in Mexico."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">downstream</span>
+                        <button class="speak-btn" onclick="speakWord('downstream')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">In the oil industry, the stage of operations involving refining crude oil and distributing the finished products. The opposite of "upstream" (exploration and extraction).</p>
+                    <p class="vocab-spanish">aguas abajo / sector downstream</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        "Upstream" and "downstream" are also used in supply chain management outside the oil industry — upstream = suppliers, downstream = customers and distribution. You will hear this in automotive manufacturing discussions.
+                    </div>
+                    <div class="vocab-example">"The automotive company's downstream operations include vehicle distribution and after-sales service."</div>
+                </div>
+
+            </div>
+
+            <hr class="para-divider">
+
+            <!-- PARAGRAPH GROUP 3: Prices & The Contradiction -->
+            <div class="para-label">Paragraphs 10–15 · Prices &amp; The Market Contradiction</div>
+            <div class="vocab-grid">
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">susceptible to</span>
+                        <button class="speak-btn" onclick="speakWord('susceptible to')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">Unable to avoid being affected or harmed by something; vulnerable to a risk or external force.</p>
+                    <p class="vocab-spanish">susceptible a / vulnerable a</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        This phrase is essential when discussing risk management. "Our supply chain is susceptible to port delays" or "Our costs are susceptible to currency fluctuation" — it signals professional awareness of vulnerability.
+                    </div>
+                    <div class="vocab-example">"Even domestic manufacturers are susceptible to global commodity price changes."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">fluctuations</span>
+                        <button class="speak-btn" onclick="speakWord('fluctuations')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">Irregular and unpredictable changes in price, level, or value — up and down over time.</p>
+                    <p class="vocab-spanish">fluctuaciones</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        One of the most important words in financial and operational reporting. "Currency fluctuations," "price fluctuations," "demand fluctuations" — this word appears in almost every business report and earnings call.
+                    </div>
+                    <div class="vocab-example">"The automotive plant's budget was affected by fluctuations in the price of steel and aluminum."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word-row">
+                        <span class="vocab-word">masking</span>
+                        <button class="speak-btn" onclick="speakWord('masking')" title="Click to hear pronunciation">🔊</button>
+                    </div>
+                    <p class="vocab-definition">Hiding or concealing the true effect of something — often a positive effect that is temporarily hidden by a negative one.</p>
+                    <p class="vocab-spanish">enmascarando / ocultando</p>
+                    <div class="vocab-why">
+                        <strong>⭐ Why it matters in business</strong>
+                        A sophisticated business vocabulary word. "The strong sales in Q3 were masking underlying cost problems" — this kind of analysis signals strategic thinking in executive meetings.
+                    </div>
+                    <div class="vocab-example">"The high demand from one customer was masking a broader decline in the company's market share."</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SECTION 4: READING TASKS -->
+        <div class="section-card">
+            <div class="section-label">Section 4</div>
+            <h3>📋 How to Read This Article</h3>
+            <p style="font-size:0.9rem; color:#555; margin-bottom:20px;">Before you open the article, read these three tasks. They will give your reading a purpose and help you find the most important information.</p>
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-number">1</div>
+                    <div class="task-content">
+                        <div class="task-type">🔍 Find the Fact</div>
+                        <p>The article explains that oil prices are still high even though more Venezuelan oil is available. Find the sentence where a Chevron executive explains <em>why</em> having local oil does not automatically mean cheaper prices for Americans. This same logic applies to Mexico.</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-number">2</div>
+                    <div class="task-content">
+                        <div class="task-type">🔗 Make the Connection</div>
+                        <p>Find any number or statistic in the article. Write it down. Then ask yourself: how does this number connect to something in Mexico's situation? For example, if you find a barrel count, think about what that volume means compared to PEMEX's production.</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-number">3</div>
+                    <div class="task-content">
+                        <div class="task-type">💡 Connect to Your Industry</div>
+                        <p>Find one sentence in the article that you could imagine saying in a meeting at your own company — replacing "oil" or "refinery" with something relevant to automotive manufacturing. Energy costs, supply chain vulnerability, and global market pricing all apply directly to your work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: DISCUSSION FRAMEWORK -->
+        <div class="section-card">
+            <div class="section-label">Section 5</div>
+            <h3>💬 Discussion Framework</h3>
+            <p style="font-size:0.9rem; color:#555; margin-bottom:24px;">Three levels of discussion. Start with facts from the article, build toward connections, and finish with your own professional opinion.</p>
+
+            <div class="discussion-layer layer-1">
+                <div class="layer-header">
+                    <span class="layer-badge">Layer 1</span>
+                    <h4>Facts — What does the article say?</h4>
+                </div>
+                <div class="discussion-questions">
+                    <div class="dq">According to the article, why was Venezuelan oil unavailable to the US before January? What changed?</div>
+                    <div class="dq">The article says oil prices are still high even though more oil is available. What reason does the Chevron executive give for this?</div>
+                </div>
+            </div>
+
+            <hr class="para-divider">
+
+            <div class="discussion-layer layer-2">
+                <div class="layer-header">
+                    <span class="layer-badge">Layer 2</span>
+                    <h4>Connections — How does this relate to Mexico?</h4>
+                </div>
+                <div class="discussion-questions">
+                    <div class="dq">Mexico and Venezuela both export heavy crude oil to US refineries. If Venezuela sends more oil to the US, what might happen to the price PEMEX receives for Mexican crude? Is this good or bad for Mexico?</div>
+                    <div class="dq">The article mentions that oil is priced on world markets, not local ones. How does this explain why fuel prices in Mexico are affected by events in Iran or Venezuela, even though Mexico produces its own oil?</div>
+                </div>
+            </div>
+
+            <hr class="para-divider">
+
+            <div class="discussion-layer layer-3">
+                <div class="layer-header">
+                    <span class="layer-badge">Layer 3</span>
+                    <h4>Your Expert Opinion — As a manufacturing professional in Mexico</h4>
+                </div>
+                <div class="discussion-questions">
+                    <div class="dq">Think about your factory's costs. Which is more directly affected by global oil price changes — your energy bill, your logistics costs, or your raw material costs? Can you give a specific example?</div>
+                    <div class="dq">If you were in a meeting with a foreign executive from your company's headquarters, and they asked: "How does the situation in Venezuela affect your operations in Mexico?" — what would you say in English?</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL READ CTA -->
+        <div class="read-cta">
+            <p>You now have the <strong>context</strong>, the <strong>vocabulary</strong>, and the <strong>questions</strong>.<br>You are ready to read this article like an expert.</p>
+            <a href="https://www.bbc.com/news/articles/cx24n8eqzgyo" target="_blank" class="read-cta-btn">Open Original BBC Article</a>
+        </div>
+
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
