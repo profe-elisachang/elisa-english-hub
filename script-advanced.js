@@ -86,7 +86,9 @@ async function scanLessons() {
         { filename: 'Persian Gulf Crisis.html', date: '2026-04-02', title: 'Persian Gulf Crisis Impacting Food Security' },
         { filename: 'Crisis en el Golfo Pérsico.html', date: '2026-04-02', title: 'Crisis en el Golfo Pérsico' },
         { filename: 'Developing Countries Are Being Priced Out.html', date: '2026-04-07', title: 'Developing Countries Are Being Priced Out, in Struggle for Affordable Finance' },
-        { filename: 'Golden State.html', date: '2026-04-09', title: 'Goodbye, Golden State' },        { filename: 'Venezuelan Oil.html', date: '2026-04-14', title: 'The US Refinery Now Processing Venezuelan Oil' },
+        { filename: 'Golden State.html', date: '2026-04-09', title: 'Goodbye, Golden State' },        
+        { filename: 'Venezuelan Oil.html', date: '2026-04-14', title: 'The US Refinery Now Processing Venezuelan Oil' },
+        { filename: 'Self-Checkout Technology.html', date: '2026-04-16', title: '🛒 The Spectacular Failure of Self-Checkout Technolog' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
