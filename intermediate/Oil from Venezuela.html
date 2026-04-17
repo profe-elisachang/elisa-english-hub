@@ -1,0 +1,574 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil from Venezuela - English with Elisa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:      #EEF4F0;
+            --card:    #ffffff;
+            --ink:     #1c2b22;
+            --mid:     #4a5e52;
+            --light:   #8a9e92;
+            --border:  #d0ddd4;
+            --g1:      #2e7d52;
+            --g2:      #52a877;
+            --g3:      #e0f0e8;
+            --amber:   #d97706;
+            --amb-bg:  #fef3c7;
+            --blue:    #1d6fa4;
+            --blu-bg:  #e8f3fb;
+            --shadow:  0 2px 14px rgba(30,60,40,0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.8; }
+
+        /* HEADER */
+        .header { background: var(--g1); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+        .header h1 { font-family: 'Lora', serif; font-size: 1.15rem; color: #fff; flex: 1; font-weight: 600; }
+        .badge { background: rgba(255,255,255,0.2); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); }
+        .home-btn { display: inline-block; padding: 6px 16px; background: rgba(255,255,255,0.15); color: #fff; text-decoration: none; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); }
+
+        /* HERO */
+        .hero { background: var(--ink); padding: 52px 24px 44px; text-align: center; }
+        .level-tag { display: inline-block; background: var(--g2); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; }
+        .hero h2 { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); color: #fff; line-height: 1.3; max-width: 680px; margin: 0 auto 14px; }
+        .hero-sub { color: #9db8a8; font-size: 1rem; max-width: 520px; margin: 0 auto; }
+        .hero-tip { margin-top: 22px; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 18px; color: #9db8a8; font-size: 0.88rem; }
+        .hero-tip strong { color: #c8e0d0; }
+
+        /* LAYOUT */
+        .container { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+
+        /* CARD */
+        .card { background: var(--card); border-radius: 14px; padding: 36px 40px; margin-bottom: 28px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+        @media (max-width: 600px) { .card { padding: 24px 18px; } }
+
+        .sec-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--g1); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .sec-title { font-family: 'Lora', serif; font-size: 1.45rem; color: var(--ink); margin-bottom: 20px; line-height: 1.3; }
+
+        /* WHY BOX */
+        .why-box { background: var(--g3); border-left: 4px solid var(--g1); border-radius: 0 10px 10px 0; padding: 20px 22px; font-size: 1rem; color: var(--mid); line-height: 1.8; }
+        .why-box strong { color: var(--ink); }
+
+        /* PARAGRAPH GROUP */
+        .para-group { margin-bottom: 28px; }
+        .para-group:last-child { margin-bottom: 0; }
+        .para-wrap { position: relative; padding-left: 36px; margin-bottom: 10px; }
+        .para-num { position: absolute; left: 0; top: 4px; width: 24px; height: 24px; background: var(--g3); color: var(--g1); font-size: 0.72rem; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .para-wrap p { font-size: 1.02rem; color: var(--mid); line-height: 1.9; }
+
+        /* HIGHLIGHT */
+        .hl { background: var(--amb-bg); font-weight: 600; color: var(--ink); border-bottom: 2px solid var(--amber); padding: 1px 3px; border-radius: 2px; cursor: help; position: relative; }
+        .hl:hover::after { content: attr(title); position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 6px 12px; border-radius: 6px; white-space: nowrap; font-size: 0.82rem; font-weight: 400; z-index: 100; pointer-events: none; }
+
+        /* VOCAB STRIP */
+        .vocab-strip { display: flex; flex-direction: column; gap: 8px; padding-left: 36px; }
+        .vocab-pill { display: flex; align-items: flex-start; gap: 12px; background: #f4faf7; border: 1px solid var(--border); border-left: 3px solid var(--g2); border-radius: 0 10px 10px 0; padding: 12px 14px; }
+        .vp-word { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--ink); min-width: 120px; display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+        .speak-btn { background: none; border: 1.5px solid var(--border); border-radius: 50%; width: 24px; height: 24px; cursor: pointer; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; color: var(--light); transition: all 0.15s; flex-shrink: 0; }
+        .speak-btn:hover { background: var(--g1); color: #fff; border-color: var(--g1); }
+        .vp-body { flex: 1; }
+        .vp-def { font-size: 0.88rem; color: var(--mid); margin-bottom: 2px; }
+        .vp-es { font-style: italic; font-size: 0.83rem; color: var(--light); margin-bottom: 5px; }
+        .vp-ex { border-left: 3px solid var(--blue); padding-left: 10px; font-size: 0.84rem; color: var(--mid); font-style: italic; }
+
+        /* TASK ITEMS */
+        .task-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 14px; }
+        .task-item:last-child { margin-bottom: 0; }
+        .task-item.t1 { background: var(--g3); }
+        .task-item.t2 { background: var(--blu-bg); }
+        .task-item.t3 { background: var(--amb-bg); }
+        .task-n { font-family: 'Lora', serif; font-size: 1.8rem; color: var(--border); line-height: 1; min-width: 32px; }
+        .task-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light); margin-bottom: 5px; }
+        .task-q { font-size: 0.97rem; color: var(--ink); line-height: 1.65; margin-bottom: 10px; }
+
+        /* ANSWER TOGGLE */
+        .ans-toggle { background: none; border: 1.5px solid var(--g1); border-radius: 6px; padding: 6px 14px; font-size: 0.8rem; font-weight: 600; color: var(--g1); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; font-family: 'Source Sans 3', sans-serif; }
+        .ans-toggle:hover { background: var(--g3); }
+        .ans-arrow { transition: transform 0.2s; display: inline-block; }
+        .ans-toggle.open .ans-arrow { transform: rotate(90deg); }
+        .ans-box { display: none; margin-top: 10px; background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--g1); border-radius: 0 8px 8px 0; padding: 14px 16px; font-size: 0.9rem; color: var(--mid); line-height: 1.75; }
+        .ans-box.open { display: block; }
+        .ans-box strong { color: var(--ink); }
+
+        /* DISCUSSION */
+        .disc-block { border-radius: 10px; border: 1px solid var(--border); padding: 22px 24px; margin-bottom: 16px; }
+        .disc-block:last-child { margin-bottom: 0; }
+        .disc-block.l1 { background: var(--g3); }
+        .disc-block.l2 { background: var(--blu-bg); }
+        .disc-block.l3 { background: var(--amb-bg); }
+        .disc-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+        .disc-icon { font-size: 1.1rem; }
+        .disc-header h3 { font-family: 'Lora', serif; font-size: 1rem; color: var(--ink); }
+        .disc-header span { font-size: 0.78rem; color: var(--light); }
+        .q-item { background: rgba(255,255,255,0.7); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid rgba(0,0,0,0.05); }
+        .q-item:last-child { margin-bottom: 0; }
+        .q-row { display: flex; gap: 10px; align-items: flex-start; font-size: 0.95rem; color: var(--mid); margin-bottom: 10px; }
+        .q-n { font-weight: 700; color: var(--ink); min-width: 24px; }
+
+        /* SENTENCE FRAMES */
+        .frame-box { background: var(--ink); border-radius: 10px; padding: 20px 24px; margin-top: 16px; }
+        .frame-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--g2); margin-bottom: 12px; }
+        .frame-list { list-style: none; }
+        .frame-list li { font-size: 0.93rem; color: #c8e0d0; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07); line-height: 1.6; }
+        .frame-list li:last-child { border-bottom: none; }
+        .frame-blank { display: inline-block; border-bottom: 1.5px solid var(--g2); min-width: 80px; color: #fff; }
+
+        /* READ ORIGINAL */
+        .read-section { background: var(--ink); border-radius: 14px; padding: 44px 32px; text-align: center; }
+        .read-section h3 { font-family: 'Lora', serif; font-size: 1.4rem; color: #fff; margin-bottom: 10px; }
+        .read-section p { color: #9db8a8; font-size: 0.95rem; max-width: 480px; margin: 0 auto 24px; line-height: 1.7; }
+        .read-btn { display: inline-block; background: var(--g1); color: #fff; text-decoration: none; padding: 15px 34px; border-radius: 8px; font-size: 0.97rem; font-weight: 700; transition: background 0.2s; }
+        .read-btn:hover { background: #256643; }
+        .read-note { margin-top: 18px; font-size: 0.82rem; color: #5a7a66; }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+    <div class="header-inner">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="badge">B1+ Level</span>
+        <a href="../index.html" class="home-btn">Home</a>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/1c23/live/e6202320-3259-11f1-b297-95b0a0a8331e.jpg.webp" alt="🏭Oil from Venezuela" class="article-image">
+    </div>
+
+
+<div class="hero">
+    <div class="level-tag">Simplified Reading · Energy &amp; Trade</div>
+    <h2>Oil from Venezuela — Good News for Prices?</h2>
+    <p class="hero-sub">A simplified article about oil, refineries, and what it means for people in Mexico and the US.</p>
+    <div class="hero-tip">
+        💡 &nbsp; Yellow words = key vocabulary. <strong>Hover to see the meaning.</strong> Vocabulary appears after each paragraph.
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- SECTION 1: WHY THIS MATTERS -->
+    <div class="card">
+        <div class="sec-label">Section 1</div>
+        <div class="sec-title">Why does this topic matter to you?</div>
+        <div class="why-box">
+            The price of <strong>fuel</strong> affects everyone. When diesel is expensive, trucks cost more to operate.
+            This means the products you make or buy also cost more.
+            Right now, something big is happening in global oil markets — and Mexico is directly connected.
+            <strong>Understanding this story can help you talk about energy, costs, and trade in English at work.</strong>
+        </div>
+    </div>
+
+    <!-- SECTION 2: ARTICLE WITH INLINE VOCAB -->
+    <div class="card">
+        <div class="sec-label">Section 2</div>
+        <div class="sec-title">Read the simplified article</div>
+
+        <!-- ¶1 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">1</div>
+                <p>A large ship called the <em>Minerva Gloria</em> is docked in the state of Mississippi, in the southern United States.
+                The ship is carrying 400,000 <span class="hl" title="barrels = large containers for oil (barriles)">barrels</span> of
+                <span class="hl" title="crude oil = oil directly from the ground, not yet processed (petróleo crudo)">crude oil</span> from Venezuela.
+                Six months ago, this was impossible. Now it is happening.</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">crude oil <button class="speak-btn" onclick="speakWord('crude oil')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">Oil that comes directly from the ground — not yet cleaned or made into fuel.</p>
+                        <p class="vp-es">petróleo crudo</p>
+                        <p class="vp-ex">"The ship was carrying 400,000 barrels of crude oil."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶2 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">2</div>
+                <p>Venezuela has the largest oil <span class="hl" title="reserves = oil still in the ground, saved for future use (reservas)">reserves</span> in the world.
+                But for many years, the US had <span class="hl" title="sanctions = official rules that stop trade between countries (sanciones)">sanctions</span> against Venezuela.
+                This means American companies could not buy Venezuelan oil.
+                Then, in January, the US military arrested Venezuela's leader.
+                After that, the sanctions changed, and oil started flowing again.</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">reserves <button class="speak-btn" onclick="speakWord('reserves')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">Oil or other resources still in the ground that can be used in the future.</p>
+                        <p class="vp-es">reservas</p>
+                        <p class="vp-ex">"Venezuela has the largest oil reserves in the world."</p>
+                    </div>
+                </div>
+                <div class="vocab-pill">
+                    <div class="vp-word">sanctions <button class="speak-btn" onclick="speakWord('sanctions')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">Official rules from a government that stop trade or business with another country.</p>
+                        <p class="vp-es">sanciones</p>
+                        <p class="vp-ex">"Because of sanctions, US companies could not buy Venezuelan oil."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶3 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">3</div>
+                <p>In March, Venezuela exported more than one million barrels of oil per day.
+                This was the first time since September.
+                The oil goes to the United States, where companies process it in
+                <span class="hl" title="refineries = factories that convert crude oil into fuels like diesel and gasoline (refinerías)">refineries</span>.</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">refinery <button class="speak-btn" onclick="speakWord('refinery')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">A large factory that takes crude oil and converts it into gasoline, diesel, and other fuels.</p>
+                        <p class="vp-es">refinería</p>
+                        <p class="vp-ex">"Chevron's refinery in Mississippi processes heavy Venezuelan oil."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶4 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">4</div>
+                <p>One of those companies is Chevron.
+                Chevron has a large refinery in Pascagoula, Mississippi.
+                It is the only major American company that can extract oil <em>inside</em> Venezuela.
+                This is very useful — Chevron can take the oil, bring it to the US, and process it all by itself.</p>
+            </div>
+        </div>
+
+        <!-- ¶5 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">5</div>
+                <p>Venezuelan crude oil is a special type of oil. It is very heavy, thick, and dark.
+                It has a lot of sulfur, so people call it "sour oil."
+                This makes it harder to process.
+                But because it is difficult, it is also <strong>cheaper to buy</strong>.
+                The Chevron refinery was built specifically to handle this type of oil.
+                So for Chevron, there is a strong <span class="hl" title="incentive = a reason to do something because you will get a benefit (incentivo)">incentive</span> to use it.</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">incentive <button class="speak-btn" onclick="speakWord('incentive')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">A good reason to do something — usually because you get a benefit or reward.</p>
+                        <p class="vp-es">incentivo</p>
+                        <p class="vp-ex">"Lower prices give companies an incentive to buy more."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶6 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">6</div>
+                <p>Right now, Chevron imports about 250,000 barrels of Venezuelan oil every day.
+                Their goal is to increase this by 50% — to around 350,000–400,000 barrels per day.
+                Venezuela's monthly exports already <span class="hl" title="surpassed = went beyond a previous level or record (superó)">surpassed</span> one million barrels.
+                Other companies also buy Venezuelan oil, not just Chevron.</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">surpassed <button class="speak-btn" onclick="speakWord('surpassed')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">Went beyond a previous level or record — more than before.</p>
+                        <p class="vp-es">superó / sobrepasó</p>
+                        <p class="vp-ex">"Venezuela's exports surpassed one million barrels per day."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶7 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">7</div>
+                <p>There is another important reason why this matters right now.
+                Iran has blocked the Strait of Hormuz — a very important shipping route in the Middle East.
+                A lot of the world's oil normally passes through this route.
+                Because it is blocked, global energy prices are rising.
+                Venezuelan oil helps fill that gap.</p>
+            </div>
+        </div>
+
+        <!-- ¶8 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">8</div>
+                <p>More oil supply should <span class="hl" title="translate to = result in something; have a real, practical effect (traducirse en)">translate to</span> lower gasoline prices for American drivers.
+                The US says it does not need Middle Eastern oil, so the blocked strait is not a big problem for them.
+                But at a gas station near the Chevron refinery in Mississippi, prices are still going up.</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">translate to <button class="speak-btn" onclick="speakWord('translate to')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">To result in something. To have a real, practical effect.</p>
+                        <p class="vp-es">traducirse en / resultar en</p>
+                        <p class="vp-ex">"More supply should translate to lower prices at the pump."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶9 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">9</div>
+                <p>David McQueen is a retired veteran. His only income is social security — government support for older people.
+                He says higher fuel prices are hurting his <span class="hl" title="livelihood = the income someone depends on to live (sustento)">livelihood</span>.
+                "The price has got to go down," he says, "because I'm going down with it."</p>
+            </div>
+            <div class="vocab-strip">
+                <div class="vocab-pill">
+                    <div class="vp-word">livelihood <button class="speak-btn" onclick="speakWord('livelihood')">🔊</button></div>
+                    <div class="vp-body">
+                        <p class="vp-def">The income and basic needs a person depends on to survive — their source of money.</p>
+                        <p class="vp-es">sustento / medio de vida</p>
+                        <p class="vp-ex">"Higher fuel costs are hurting his livelihood."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ¶10 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">10</div>
+                <p>A woman named Donna is also at the gas station. She only puts $30 of fuel in her car.
+                She drives less now and spends less money on other things.
+                She used to visit her grandchildren regularly, but it is now too expensive to drive.</p>
+            </div>
+        </div>
+
+        <!-- ¶11 -->
+        <div class="para-group">
+            <div class="para-wrap">
+                <div class="para-num">11</div>
+                <p>The average gas price in Mississippi is still lower than the national average in the US.
+                But before the conflict with Iran, gas was almost $1 cheaper per gallon.
+                For ordinary people, that difference is significant.</p>
+            </div>
+        </div>
+
+    </div><!-- /article card -->
+
+    <!-- SECTION 3: CHECK YOUR UNDERSTANDING -->
+    <div class="card">
+        <div class="sec-label">Section 3</div>
+        <div class="sec-title">Check your understanding</div>
+
+        <div class="task-item t1">
+            <div class="task-n">1</div>
+            <div style="flex:1">
+                <div class="task-label">Find the fact</div>
+                <p class="task-q">Why was Venezuelan oil impossible to import six months ago? Find the sentence in the article that answers this.</p>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> Six months ago, the US had <em>sanctions</em> against Venezuela. This meant American companies were not allowed to buy Venezuelan oil. The sanctions changed after the US military arrested Venezuela's leader in January. Without that political change, the ship with 400,000 barrels would never have been allowed to dock.
+                </div>
+            </div>
+        </div>
+
+        <div class="task-item t2">
+            <div class="task-n">2</div>
+            <div style="flex:1">
+                <div class="task-label">Make the connection</div>
+                <p class="task-q">The article says Venezuelan crude oil is cheap to buy, but hard to process. How is that different from the oil Mexico's PEMEX produces? What does this mean for competition?</p>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> PEMEX also produces heavy crude oil — similar to Venezuela's. So both countries compete for the same US refinery customers. If Venezuela sends more oil to the US, it becomes harder for Mexico to sell its oil at a good price. However, for Mexican <em>manufacturers</em> (not oil producers), more supply in North America could mean cheaper diesel and lower transportation costs. So the impact is different depending on whether you are a seller or a buyer of oil.
+                </div>
+            </div>
+        </div>
+
+        <div class="task-item t3">
+            <div class="task-n">3</div>
+            <div style="flex:1">
+                <div class="task-label">Think about your own life</div>
+                <p class="task-q">David and Donna are changing their behavior because of fuel prices. Have you or your family done anything different because of higher energy or fuel costs? Share one example.</p>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See example answer</button>
+                <div class="ans-box">
+                    <strong>Example answer</strong> (this is a personal question — your answer will be different!):
+                    <br><br>
+                    <em>"Yes. My wife and I now plan all our errands for one day instead of driving every day. This saves us money on gasoline. We also use the air conditioning less at home to reduce our electricity bill."</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: DISCUSSION -->
+    <div class="card">
+        <div class="sec-label">Section 4</div>
+        <div class="sec-title">Let's talk about it</div>
+
+        <!-- LAYER 1 -->
+        <div class="disc-block l1">
+            <div class="disc-header">
+                <span class="disc-icon">🔍</span>
+                <h3>Layer 1 — What does the article say?</h3>
+                <span>Build confidence first</span>
+            </div>
+
+            <div class="q-item">
+                <div class="q-row"><span class="q-n">Q1</span> How many barrels of Venezuelan oil does Chevron import every day? What is their goal for the future?</div>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> Chevron currently imports about <strong>250,000 barrels</strong> per day. Their goal is to increase this by 50%, reaching around <strong>350,000–400,000 barrels</strong> per day. This would make Venezuelan oil one of their most important sources of supply.
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-row"><span class="q-n">Q2</span> Why is Venezuelan crude oil cheaper than other types of oil?</div>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> Venezuelan crude is cheaper to buy because it is <strong>harder to process</strong>. It is very heavy, thick, dark, and contains a lot of sulfur — that is why it is called "sour oil." Most refineries cannot handle it. Only special refineries — like Chevron's in Mississippi — are designed for this type of oil. Because fewer buyers can use it, the price is lower.
+                </div>
+            </div>
+        </div>
+
+        <!-- LAYER 2 -->
+        <div class="disc-block l2">
+            <div class="disc-header">
+                <span class="disc-icon">🔗</span>
+                <h3>Layer 2 — Connect to Mexico</h3>
+                <span>Use the article + your knowledge</span>
+            </div>
+
+            <div class="q-item">
+                <div class="q-row"><span class="q-n">Q3</span> Iran has blocked the Strait of Hormuz. The US says this is not a big problem for them. But could it affect energy prices in Mexico? Why or why not?</div>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> Yes — indirectly. Mexico does not import much Middle Eastern oil directly. But when a major shipping route is blocked, <strong>global oil prices rise for everyone</strong>. This affects the price of all oil, including what Mexico buys and sells. Higher global prices mean higher fuel costs for factories, trucks, and logistics companies in Mexico. So even a conflict far away — like Iran blocking a shipping route — affects manufacturing costs in Guanajuato or Monterrey.
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-row"><span class="q-n">Q4</span> More Venezuelan oil means more fuel supply in North America. How could this help or hurt manufacturers in Mexico — for example, in transportation costs?</div>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> More Venezuelan oil increases total supply in North America. When supply goes up, prices usually go down. This could <strong>help</strong> Mexican manufacturers by making diesel and gasoline cheaper. Lower fuel costs reduce transportation expenses — for example, moving car parts from Silao to the border, or receiving raw materials from suppliers. Even a small drop in diesel price adds up significantly over a full year across an entire supply chain.
+                </div>
+            </div>
+        </div>
+
+        <!-- LAYER 3 -->
+        <div class="disc-block l3">
+            <div class="disc-header">
+                <span class="disc-icon">💡</span>
+                <h3>Layer 3 — Your opinion</h3>
+                <span>Use your professional experience</span>
+            </div>
+
+            <div class="q-item">
+                <div class="q-row"><span class="q-n">Q5</span> At your company, when fuel or energy prices go up — where do you feel it first? Give a specific example if you can.</div>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See example answer</button>
+                <div class="ans-box">
+                    <strong>Example answer</strong> (personal — your answer will be different!):
+                    <br><br>
+                    <em>"In my experience, we feel it first in transportation. Our logistics provider adds a fuel surcharge when diesel goes above a certain price. This makes every shipment more expensive. We also feel it in our electricity bill, because the plant uses a lot of energy to run the machines."</em>
+                </div>
+            </div>
+
+            <div class="q-item">
+                <div class="q-row"><span class="q-n">Q6</span> The article says more oil supply should translate to lower prices. But at the gas station, prices are still rising. In your experience, why does this happen?</div>
+                <button class="ans-toggle" onclick="toggleAns(this)"><span class="ans-arrow">▶</span>&nbsp; See reference answer</button>
+                <div class="ans-box">
+                    <strong>Reference answer:</strong> There are several reasons why prices do not go down immediately, even when supply increases:
+                    <br><br>
+                    <strong>1. Time lag</strong> — It takes weeks or months for new oil to reach refineries, be processed, and arrive at gas stations.
+                    <br><br>
+                    <strong>2. Taxes and costs</strong> — The pump price includes much more than crude oil: taxes, refining, transport, and retailer margins. These do not go down automatically.
+                    <br><br>
+                    <strong>3. Global uncertainty</strong> — When there is a conflict (like with Iran), companies and traders worry about the future. This fear keeps prices high even if today's supply is enough.
+                    <br><br>
+                    <strong>4. Market speculation</strong> — Oil prices are traded on financial markets. Traders' expectations about the future affect today's price, not just current supply.
+                </div>
+            </div>
+
+            <!-- SENTENCE FRAMES -->
+            <div class="frame-box">
+                <p class="frame-title">💬 Useful sentence frames for discussion</p>
+                <ul class="frame-list">
+                    <li>In my company, when energy prices go up, we usually ......</li>
+                    <li>I think this affects Mexico because ......</li>
+                    <li>From my experience, ___is the biggest impact.</li>
+                    <li>I agree / I'm not sure about that, because ......</li>
+                </ul>
+            </div>
+        </div>
+
+    </div><!-- /discussion card -->
+
+    <!-- SECTION 5: READ ORIGINAL -->
+    <div class="read-section">
+        <div class="sec-label" style="justify-content:center;color:#5a7a66;margin-bottom:16px;">Section 5 — Ready for more?</div>
+        <h3>Read the original BBC article</h3>
+        <p>You now know the vocabulary and the main ideas.<br>
+        <strong style="color:#c8e0d0;">Try the original — you might surprise yourself.</strong></p>
+        <a href="https://www.bbc.com/news/articles/cx24n8eqzgyo" target="_blank" class="read-btn">📰 Read the full BBC article →</a>
+        <p class="read-note">BBC News · Samira Hussain &amp; Nathalie Jimenez · Pascagoula, Mississippi</p>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    function speakWord(word) {
+        const u = new SpeechSynthesisUtterance(word);
+        u.lang = 'en-US'; u.rate = 0.8; u.pitch = 1.0;
+        window.speechSynthesis.speak(u);
+    }
+    function toggleAns(btn) {
+        const box = btn.nextElementSibling;
+        const isOpen = box.classList.contains('open');
+        box.classList.toggle('open', !isOpen);
+        btn.classList.toggle('open', !isOpen);
+        btn.querySelector('.ans-arrow').textContent = isOpen ? '▶' : '▼';
+    }
+</script>
+
