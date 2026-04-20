@@ -137,7 +137,7 @@
       font-size: 1.15rem;
     }
 
-    /* highlighted vocabulary */
+    /* highlighted vocabulary – single words */
     span.highlight {
       background: var(--highlight-bg);
       font-weight: 700;
@@ -145,6 +145,125 @@
       border-radius: 3px;
       padding: 0 2px;
       cursor: help;
+    }
+
+    /* chunk highlight – multi-word phrases (preposition traps, fixed collocations) */
+    span.chunk {
+      background: #fce4ec;
+      font-weight: 700;
+      border-bottom: 2.5px solid #e91e63;
+      border-radius: 3px;
+      padding: 0 3px;
+      cursor: help;
+      color: #880e4f;
+    }
+
+    /* discourse marker highlight */
+    span.discourse {
+      background: #e8eaf6;
+      font-weight: 700;
+      border-bottom: 2.5px solid #3949ab;
+      border-radius: 3px;
+      padding: 0 3px;
+      cursor: help;
+      color: #1a237e;
+    }
+
+    /* ── CHUNK NOTES SECTION ── */
+    .chunk-legend {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.6rem;
+      align-items: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .95rem;
+      font-weight: 600;
+    }
+    .legend-dot {
+      width: 18px; height: 18px;
+      border-radius: 4px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .chunk-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+    .chunk-table th {
+      background: #880e4f;
+      color: #fff;
+      padding: .7rem 1rem;
+      text-align: left;
+      font-size: .95rem;
+    }
+    .chunk-table th:first-child { border-radius: 10px 0 0 0; }
+    .chunk-table th:last-child  { border-radius: 0 10px 0 0; }
+    .chunk-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid #f8bbd0;
+      vertical-align: top;
+    }
+    .chunk-table tr:nth-child(even) td { background: #fce4ec; }
+    .chunk-table tr:nth-child(odd)  td { background: #fff; }
+    .chunk-table tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+    .chunk-table tr:last-child td:last-child  { border-radius: 0 0 10px 0; }
+    .chunk-en   { font-weight: 700; color: #880e4f; }
+    .chunk-trap { font-size: .85rem; color: #c62828; background: #ffebee; border-radius: 4px; padding: .15rem .4rem; display: inline-block; margin-top: .2rem; }
+    .chunk-ok   { font-size: .85rem; color: #1b5e20; background: #e8f5e9; border-radius: 4px; padding: .15rem .4rem; display: inline-block; }
+
+    .discourse-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      margin-top: 1.4rem;
+    }
+    .discourse-table th {
+      background: #1a237e;
+      color: #fff;
+      padding: .7rem 1rem;
+      text-align: left;
+      font-size: .95rem;
+    }
+    .discourse-table th:first-child { border-radius: 10px 0 0 0; }
+    .discourse-table th:last-child  { border-radius: 0 10px 0 0; }
+    .discourse-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid #c5cae9;
+      vertical-align: top;
+    }
+    .discourse-table tr:nth-child(even) td { background: #e8eaf6; }
+    .discourse-table tr:nth-child(odd)  td { background: #fff; }
+    .dm-en { font-weight: 700; color: #1a237e; }
+
+    .chunk-sub {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #880e4f;
+      margin: 1.6rem 0 .8rem;
+      padding-left: .5rem;
+      border-left: 4px solid #e91e63;
+    }
+    .chunk-sub-blue {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a237e;
+      margin: 1.6rem 0 .8rem;
+      padding-left: .5rem;
+      border-left: 4px solid #3949ab;
+    }
+
+    @media (max-width: 700px) {
+      .chunk-table, .discourse-table { font-size: .88rem; }
+      .chunk-table td, .discourse-table td,
+      .chunk-table th, .discourse-table th { padding: .55rem .6rem; }
+      .chunk-legend { gap: .8rem; }
     }
 
     /* ── 3. VOCAB BOXES ── */
@@ -387,14 +506,14 @@
       <!-- PARAGRAPH 1 -->
       <p>
         As <span class="highlight" title="cambio climático">climate change</span> and
-        <span class="highlight" title="urbanización">urbanization</span> push city temperatures higher,
+        <span class="highlight" title="urbanización">urbanization</span> <span class="chunk" title="⚠️ push = hacer subir (no es traducción literal) | push temperatures higher = hacer subir las temperaturas">push city temperatures higher</span>,
         walking outdoors is becoming increasingly
         <span class="highlight" title="incómodo">uncomfortable</span> in many parts of the world,
         especially when <span class="highlight" title="prolongado">prolonged</span> time spent in sunlight is involved.
-        As a result, outdoor lovers are now
+        <span class="discourse" title="Conector de causa-efecto | Como resultado, …">As a result,</span> outdoor lovers are now
         <span class="highlight" title="buscando">seeking</span> cooler, shaded walking
         <span class="highlight" title="rutas">routes</span>.
-        However, most <span class="highlight" title="convencionales / populares">mainstream</span> map apps
+        <span class="discourse" title="Conector de contraste | Sin embargo, …">However,</span> most <span class="highlight" title="convencionales / populares">mainstream</span> map apps
         still do not clearly indicate shaded
         <span class="highlight" title="senderos peatonales">footpaths</span>.
       </p>
@@ -452,8 +571,8 @@
         Enter routing.osm.ch — a Swiss web-based
         <span class="highlight" title="planificador de rutas">route planner</span> that introduces a
         <span class="highlight" title="novedosa">novel</span> solution to this problem.
-        Its "Vampire mode," <span class="highlight" title="llamado así por">named after</span>
-        the legendary creatures' fear of being exposed to natural light, was developed by a Swiss research
+        Its "Vampire mode," <span class="chunk" title="⚠️ after ≠ 'después de' aquí | named after = llamado así por / en honor a | ❌ NO digas: named after of">named after</span>
+        the legendary creatures' fear of being <span class="chunk" title="⚠️ exposed to + SUSTANTIVO (no infinitivo) | expuesto a | ❌ NO: exposed to be in light">exposed to</span> natural light, was developed by a Swiss research
         <span class="highlight" title="equipo">team</span> led by Professor Stefan Keller.
         The platform <span class="highlight" title="combina">combines</span> open data from OpenStreetMap
         with <span class="highlight" title="alta resolución">high-resolution</span> data from the Swiss Federal
@@ -513,10 +632,10 @@
       <p>
         Officially called "Foot (vampire)" mode, the feature uses
         shade-<span class="highlight" title="consciente / con conciencia de">aware</span> routing to
-        <span class="highlight" title="sugerir">suggest</span> paths that remain in the shade.
+        <span class="highlight" title="sugerir">suggest</span> paths that <span class="chunk" title="⚠️ remain IN the shade (no: remain AT / ON the shade) | permanecer a la sombra | En inglés: in the shade">remain in the shade</span>.
         It <span class="highlight" title="dirige / guía">directs</span> people along shaded
         <span class="highlight" title="banquetas">sidewalks</span>, under
-        tree cover, or beside buildings that block the sun. Currently available in Zurich, the mode
+        tree cover, or beside buildings that <span class="chunk" title="⚠️ block = tapar / bloquear (colocación natural) | block the sun, no: stop the sun ❌">block the sun</span>. Currently available in Zurich, the mode
         <span class="highlight" title="permite">enables</span> people to enjoy cooler and more comfortable
         walks during hot summer days.
       </p>
@@ -573,12 +692,12 @@
       <p>
         The benefits are <span class="highlight" title="evidentes / obvios">evident</span>.
         For both locals and tourists, vampire routing
-        <span class="highlight" title="transforma">transforms</span> hot summer walks into pleasant
-        shaded <span class="highlight" title="paseos tranquilos">strolls</span>. Furthermore, for city
+        <span class="chunk" title="⚠️ transforms X INTO Y (no: transforms X TO Y ❌) | convierte X en Y | Siempre: into, nunca to">transforms</span> hot summer walks <span class="chunk" title="⚠️ into (no: to) → transforms … into … | en → convierte en">into</span> pleasant
+        shaded <span class="highlight" title="paseos tranquilos">strolls</span>. <span class="discourse" title="Conector para agregar un punto más | Además, …">Furthermore,</span> for city
         <span class="highlight" title="planificadores">planners</span>, it offers a tool to help reduce
-        <span class="highlight" title="isla de calor urbana">urban heat island</span> effects by
-        <span class="highlight" title="aliviando / reduciendo">easing</span> heat stress in dense urban areas.
-        Finally, vampire routing makes cities easier to walk in and therefore promotes quality of life.
+        <span class="chunk" title="urban heat island = isla de calor urbana | N+N compound: el sustantivo modifica al otro sin 'de' | ❌ NO: island of urban heat">urban heat island</span> effects by
+        <span class="chunk" title="ease + sustantivo negativo (dolor, estrés, tensión…) | aliviar / reducir gradualmente | ease ≠ reduce: ease implica alivio gradual">easing</span> <span class="chunk" title="heat stress = estrés térmico | N+N compound en inglés | ❌ NO: stress of heat">heat stress</span> in dense urban areas.
+        <span class="discourse" title="Conector para el último punto de una lista | Por último / Finalmente, …">Finally,</span> vampire routing makes cities easier to walk in and therefore <span class="chunk" title="promote quality of life = promover la calidad de vida | ⚠️ Sin artículo 'la' en inglés: quality of life (no: the quality of the life ❌)">promotes quality of life</span>.
       </p>
 
       <!-- VOCAB BOX 4 -->
@@ -705,6 +824,156 @@
     </div>
 
   </div><!-- /self-practice -->
+
+  <!-- ── SECTION 6: CHUNK NOTES ── -->
+  <div class="section-card">
+    <div class="section-title">🧩 Chunk Notes — For Spanish Speakers</div>
+
+    <!-- Legend -->
+    <div class="chunk-legend">
+      <div class="legend-item">
+        <span class="legend-dot" style="background:#fce4ec; border: 2px solid #e91e63;"></span>
+        <span style="color:#880e4f;">Preposition trap / Fixed collocation</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:#e8eaf6; border: 2px solid #3949ab;"></span>
+        <span style="color:#1a237e;">Discourse marker</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:#fff9c4; border: 2px solid #f57f17;"></span>
+        <span style="color:#555;">Single vocabulary word</span>
+      </div>
+    </div>
+
+    <!-- Part A: Preposition Traps & Fixed Collocations -->
+    <div class="chunk-sub">⚠️ Part A — Preposition Traps &amp; Fixed Collocations</div>
+    <p style="color:var(--text-muted); font-size:.97rem; margin-bottom:1rem;">
+      These are the chunks where a literal Spanish translation will produce an error in English.
+    </p>
+
+    <table class="chunk-table">
+      <thead>
+        <tr>
+          <th>English Chunk</th>
+          <th>En español</th>
+          <th>❌ Common mistake</th>
+          <th>✅ Correct</th>
+          <th>Example sentence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="chunk-en">named after</span></td>
+          <td>llamado así por / en honor a</td>
+          <td><span class="chunk-trap">named after of ✗<br>nombrado después de ✗</span></td>
+          <td><span class="chunk-ok">named after + noun ✓</span></td>
+          <td><em>"The app is named after vampire legends."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">exposed to</span></td>
+          <td>expuesto a</td>
+          <td><span class="chunk-trap">exposed to + infinitive ✗<br><em>"exposed to be in light"</em></span></td>
+          <td><span class="chunk-ok">exposed to + noun / gerund ✓</span></td>
+          <td><em>"Workers were exposed to extreme heat."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">remain in the shade</span><br><span style="font-size:.85rem;color:#555;">/ walk in the shade</span></td>
+          <td>permanecer a la sombra</td>
+          <td><span class="chunk-trap">remain at the shade ✗<br>remain on the shade ✗</span></td>
+          <td><span class="chunk-ok">in the shade ✓</span></td>
+          <td><em>"We sat in the shade to avoid the sun."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">transforms X into Y</span></td>
+          <td>convierte X en Y</td>
+          <td><span class="chunk-trap">transforms X to Y ✗</span></td>
+          <td><span class="chunk-ok">transforms … into … ✓</span></td>
+          <td><em>"It transforms hot walks into cool strolls."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">on the other hand</span></td>
+          <td>por otro lado</td>
+          <td><span class="chunk-trap">in the other hand ✗</span></td>
+          <td><span class="chunk-ok">on the other hand ✓</span></td>
+          <td><em>"On the other hand, the route is longer."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">quality of life</span></td>
+          <td>calidad de vida</td>
+          <td><span class="chunk-trap">the quality of the life ✗</span></td>
+          <td><span class="chunk-ok">quality of life (no articles) ✓</span></td>
+          <td><em>"This technology promotes quality of life."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">urban heat island</span><br><span style="font-size:.85rem;color:#555;">heat stress</span></td>
+          <td>isla de calor urbana<br><span style="font-size:.85rem;">estrés térmico</span></td>
+          <td><span class="chunk-trap">island of urban heat ✗<br>stress of heat ✗</span></td>
+          <td><span class="chunk-ok">Noun + Noun (no "de") ✓</span></td>
+          <td><em>"Cities suffer from urban heat island effects."</em></td>
+        </tr>
+        <tr>
+          <td><span class="chunk-en">block the sun</span></td>
+          <td>tapar / bloquear el sol</td>
+          <td><span class="chunk-trap">stop the sun ✗<br>cut the sun ✗</span></td>
+          <td><span class="chunk-ok">block the sun ✓</span></td>
+          <td><em>"Tall buildings block the sun on this street."</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Part B: Discourse Markers -->
+    <div class="chunk-sub-blue">🔗 Part B — Discourse Markers (conectores de texto)</div>
+    <p style="color:var(--text-muted); font-size:.97rem; margin-bottom:1rem;">
+      Learn these as complete fixed phrases. They connect ideas in formal and professional English.
+    </p>
+
+    <table class="discourse-table">
+      <thead>
+        <tr>
+          <th>Discourse Marker</th>
+          <th>En español</th>
+          <th>Function</th>
+          <th>In the article…</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="dm-en">As a result,</span></td>
+          <td>Como resultado,</td>
+          <td>Shows cause → effect</td>
+          <td><em>"As a result, people seek shaded routes."</em></td>
+        </tr>
+        <tr>
+          <td><span class="dm-en">However,</span></td>
+          <td>Sin embargo,</td>
+          <td>Introduces a contrast</td>
+          <td><em>"However, most apps don't show shaded paths."</em></td>
+        </tr>
+        <tr>
+          <td><span class="dm-en">Furthermore,</span></td>
+          <td>Además,</td>
+          <td>Adds another supporting point</td>
+          <td><em>"Furthermore, it helps city planners."</em></td>
+        </tr>
+        <tr>
+          <td><span class="dm-en">Finally,</span></td>
+          <td>Por último / Finalmente,</td>
+          <td>Closes a list of points</td>
+          <td><em>"Finally, it promotes quality of life."</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Quick reminder box -->
+    <div style="margin-top:1.6rem; background:#fff8e1; border:2px solid #ffe082; border-radius:12px; padding:1.1rem 1.4rem;">
+      <div style="font-weight:700; color:#e65100; margin-bottom:.5rem; font-size:1.05rem;">💡 Quick practice</div>
+      <p style="font-size:.97rem; color:#333;">
+        Without looking at the article, can you use all four discourse markers to retell the main idea in 4 sentences?
+        Start with <strong>"As a result, …"</strong>
+      </p>
+    </div>
+
+  </div><!-- /chunk notes -->
 
 </div><!-- /main-wrap -->
 
