@@ -89,9 +89,8 @@ async function scanLessons() {
         { filename: 'Golden State.html', date: '2026-04-09', title: 'Goodbye, Golden State' },        
         { filename: 'Venezuelan Oil.html', date: '2026-04-14', title: 'The US Refinery Now Processing Venezuelan Oil' },        { filename: 'Self-Checkout Technology.html', date: '2026-04-16', title: '🛒 The Spectacular Failure of Self-Checkout Technolog' },
 { filename: 'The US Refinery Now Processing Venezuelan Oil.html', date: '2026-04-14', title: '⛽ The US Refinery  Processing Venezuelan Oil -  Why This Matters to You' },
-        { filename: 'The Carpool Detectives.html', date: '2026-04-21', title: '' },
-        { filename: '.html', date: '2026-04-21', title: '🔍 The Carpool Detectives' },
-// 👆 在此上方添加新文章，記得加逗號！
+        { filename: 'The Carpool Detectives.html', date: '2026-04-21', title: '🔍 The Carpool Detectives' },
+      // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
     ];
