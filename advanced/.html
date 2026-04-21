@@ -1,0 +1,740 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Carpool Detectives - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #b5290a;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: #f5c518;
+            color: #1a1a1a;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,255,0.4) !important;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 5px solid #b5290a;
+        }
+
+        .section-card h2 {
+            color: #b5290a;
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #f5c518;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .expression-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .expression-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .expression-item {
+            background: #fffbf0;
+            border: 1px solid #e8d8b0;
+            border-left: 4px solid #f5c518;
+            border-radius: 8px;
+            padding: 16px 18px;
+        }
+
+        .expression-en {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #b5290a;
+            margin-bottom: 4px;
+        }
+
+        .expression-es {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .expression-example {
+            font-size: 0.95rem;
+            color: #444;
+            border-left: 3px solid #4A90E2;
+            padding-left: 10px;
+            line-height: 1.6;
+        }
+
+        /* ARTICLE */
+        .article-title {
+            color: #b5290a;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .article-section-heading {
+            color: #b5290a;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-bottom: 2px solid #f5c518;
+            padding-bottom: 4px;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .article-body p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        /* VOCABULARY SECTION */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #b5290a;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #b5290a;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word {
+            color: #b5290a;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .vocab-speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-spanish {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        .discussion-list li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* PRACTICE */
+        .practice-question {
+            background: #fffbf0;
+            border: 1px solid #e8d8b0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .practice-question p {
+            margin: 0 0 6px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        details summary {
+            cursor: pointer;
+            color: #b5290a;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 8px 0;
+        }
+
+        details ol {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        details ol li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .quote-block {
+            border-left: 4px solid #f5c518;
+            padding: 10px 18px;
+            margin: 12px 0;
+            background: #fffbf0;
+            font-style: italic;
+            color: #555;
+            border-radius: 0 6px 6px 0;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://pds.exblog.jp/pds/1/202604/13/92/c0442892_16424114.jpg" alt="🔍 The Carpool Detectives" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ===================== SECTION 1: USEFUL EXPRESSIONS ===================== -->
+            <div class="section-card">
+                <h2>💬 Useful Expressions</h2>
+                <div class="expression-grid">
+
+                    <div class="expression-item">
+                        <div class="expression-en">We went through phases where…</div>
+                        <div class="expression-es">Pasamos por etapas donde…</div>
+                        <div class="expression-example">We went through phases where the project felt impossible to complete.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">To get to the bottom of it</div>
+                        <div class="expression-es">Llegar al fondo del asunto</div>
+                        <div class="expression-example">The team was determined to get to the bottom of the quality issue.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">To nod their heads in agreement</div>
+                        <div class="expression-es">Asentir con la cabeza</div>
+                        <div class="expression-example">All the managers nodded their heads in agreement with the new policy.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">To get around their concerns</div>
+                        <div class="expression-es">Evitar / manejar sus preocupaciones</div>
+                        <div class="expression-example">To get around their concerns, the team changed some details in the report.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">To truly earn respect</div>
+                        <div class="expression-es">Ganarse verdaderamente el respeto</div>
+                        <div class="expression-example">She worked twice as hard to truly earn respect in her new department.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 2 & 3: ARTICLE + VOCABULARY ===================== -->
+            <div class="section-card">
+                <h2>🔍 The Carpool Detectives</h2>
+                <p style="color:#888; font-style:italic; margin-top:-10px; margin-bottom:20px;">People — 2026 April 24, 25</p>
+
+                <div class="article-body">
+
+                    <!-- PARAGRAPH 1 -->
+                    <p class="article-section-heading" style="color:#b5290a; font-weight:700; border-bottom:2px solid #f5c518; padding-bottom:4px; margin-bottom:12px; margin-top:0;">Introduction</p>
+
+                    <p>
+                        <em>The Carpool Detectives</em>, a true crime mystery that reads like a novel, begins before the COVID-19 pandemic shut down the country and concludes on an upbeat note two and a half years later. Four L.A. moms with no law enforcement training have solved an icy <span class="highlight" title="caso frío / caso sin resolver">cold case</span> and moved on to their next, buoyed by newfound purpose.
+                    </p>
+                    <p>
+                        But as Chuck Hogan's book and conversations with the unlikely crime solvers today make clear, there were plenty of bumps along the way—from dead ends to a potential intruder at one of their homes mid-investigation.
+                    </p>
+                    <p>
+                        "We went through phases where we felt like we hit a wall," says Marissa Pianko, a former <span class="highlight" title="forense">forensic</span> accountant. Pianko first learned about the stalled investigation into an older couple's death during a journalism class and became determined to get to the bottom of it, inviting three acquaintances to help solve the case. "I think each one of us had a time by which we were like, 'OK, are we really continuing with this?'"
+                    </p>
+
+                </div>
+
+                <!-- VOCAB BOX 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 1</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">cold case</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('cold case')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A criminal investigation that has not been solved and is no longer actively worked on</p>
+                            <p class="vocab-spanish">caso frío / caso sin resolver</p>
+                            <div class="vocab-example">The detective reopened a cold case from the 1980s after new evidence appeared.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">forensic</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('forensic')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Relating to scientific methods used for finding out about a crime</p>
+                            <p class="vocab-spanish">forense</p>
+                            <div class="vocab-example">The forensic accountant found hidden transactions in the company's records.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">stalled</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('stalled')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Stopped making progress; stuck without moving forward</p>
+                            <p class="vocab-spanish">estancado / paralizado</p>
+                            <div class="vocab-example">The stalled investigation frustrated the victim's family for years.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">buoyed</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('buoyed')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Kept cheerful and confident; given emotional support</p>
+                            <p class="vocab-spanish">animado / impulsado</p>
+                            <div class="vocab-example">The team was buoyed by the positive feedback from their client.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 2 -->
+                <div class="article-body">
+
+                    <p class="article-section-heading" style="color:#b5290a; font-weight:700; border-bottom:2px solid #f5c518; padding-bottom:4px; margin-bottom:12px;">Taking risks</p>
+
+                    <p>
+                        "There were lots of ups and downs," <span class="highlight" title="concuerda / está de acuerdo">concurs</span> Nicole Landset Blank, a political opposition research pro seated at the very same table in Pianko's backyard where the team figured out the <span class="highlight" title="perpetrador / autor del crimen">perpetrator</span> of a double homicide.
+                    </p>
+                    <p>
+                        Samira Poulos, a puzzle-loving digital advertising project manager who stepped back from her career when she became a mom, and Jeannie Wilkinson, a former entertainment industry research exec, both nod their heads in agreement as their fellow <span class="highlight" title="detectives / investigadores">sleuths</span> describe the sometimes-<span class="highlight" title="lleno de ansiedad / tenso">fraught</span> nature of their first investigation.
+                    </p>
+                    <p>
+                        The quartet is still a bit <span class="highlight" title="aprensiva / nerviosa sobre el futuro">apprehensive</span> about solving a case that involved organized crime and is worried that the book might expose their families to harm. To get around their concerns, some of the details about the case have been changed in <em>The Carpool Detectives</em>, and each of the four detectives is referred to by their first name, like a character in a novel. Reading along, it can be easy to forget that the underlying case is based on real, not fictional, murders.
+                    </p>
+
+                </div>
+
+                <!-- VOCAB BOX 2 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">concur</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('concur')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To agree with someone or have the same opinion as them</p>
+                            <p class="vocab-spanish">concurrir / estar de acuerdo</p>
+                            <div class="vocab-example">All the engineers concurred that the new design was safer than the previous one.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">perpetrator</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('perpetrator')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Someone who has carried out a criminal, violent, or harmful act</p>
+                            <p class="vocab-spanish">perpetrador / autor del crimen</p>
+                            <div class="vocab-example">The perpetrator of the fraud was identified after a six-month investigation.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">sleuth</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('sleuth')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Someone who tries to find out information about a crime; a detective</p>
+                            <p class="vocab-spanish">detective / investigador</p>
+                            <div class="vocab-example">The amateur sleuth uncovered important evidence that the police had missed.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">fraught</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('fraught')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Full of anxiety, stress, or worry</p>
+                            <p class="vocab-spanish">lleno de tensión / angustiante</p>
+                            <div class="vocab-example">The negotiation was fraught with tension as both sides refused to compromise.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">apprehensive</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('apprehensive')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Worried or nervous about something you are going to do or about the future</p>
+                            <p class="vocab-spanish">aprensivo / nervioso / temeroso</p>
+                            <div class="vocab-example">New employees are often apprehensive about making mistakes in front of their manager.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 3 -->
+                <div class="article-body">
+
+                    <p class="article-section-heading" style="color:#b5290a; font-weight:700; border-bottom:2px solid #f5c518; padding-bottom:4px; margin-bottom:12px;">Teaming up</p>
+
+                    <p>
+                        The basic details of the cold case are this: An older couple living a seemingly comfortable life in the L.A. suburbs mysteriously disappeared a couple decades ago. Victims of an apparent road accident, their bodies were found a few months later near their wrecked SUV in a mountainous area. After more than a year, the L.A. County Sheriff's Dept. moved the vehicle due to evidence that the couple's death was suspicious. Although the investigation was covered in the media, it soon faded away.
+                    </p>
+                    <p>
+                        Until, that is, four moms—who became such close friends that they now can finish each other's sentences—started looking into the case a decade later. The women sought out the help of sometimes-reluctant police officers and the victims' family members, <span class="highlight" title="tropezando / actuando torpemente">bumbling</span> at times as newbie investigators.
+                    </p>
+                    <p>
+                        The newbie crime solvers—and their families—undeniably experienced some rough patches over the course of their sleuthing, but none of them were <span class="highlight" title="intimidante / aterradora (de forma que quita la confianza)">daunting</span> enough to deter them from diving into another investigation when a detective they had been working with brought over a trunk full of possibilities. Now, with <em>The Carpool Detectives</em> in bookstores, the crime solvers are closing in on a suspect for an even bigger case—this one involving a potential serial killer of the 1970s and '80s.
+                    </p>
+
+                </div>
+
+                <!-- VOCAB BOX 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 3</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">bumbling</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('bumbling')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Acting or moving in a clumsy, confused, or inefficient way</p>
+                            <p class="vocab-spanish">torpe / que actúa de forma desorganizada</p>
+                            <div class="vocab-example">The bumbling intern accidentally deleted the wrong file during his first week.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">daunting</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('daunting')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Frightening or overwhelming in a way that makes you feel less confident</p>
+                            <p class="vocab-spanish">intimidante / desalentador</p>
+                            <div class="vocab-example">Learning a new ERP system can feel daunting at first, but it gets easier with practice.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">reluctant</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('reluctant')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Not willing to do something; hesitant</p>
+                            <p class="vocab-spanish">reacio / poco dispuesto</p>
+                            <div class="vocab-example">The manager was reluctant to share the full report before the final audit.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 4 -->
+                <div class="article-body">
+
+                    <p class="article-section-heading" style="color:#b5290a; font-weight:700; border-bottom:2px solid #f5c518; padding-bottom:4px; margin-bottom:12px;">Earning respect</p>
+
+                    <p>
+                        Many dead ends and a visit to the crime scene later, the women finally figured out <span class="highlight" title="quién lo hizo (en una historia de crimen)">whodunnit</span>.
+                    </p>
+
+                    <div class="quote-block">
+                        "It was two and a half years before we really broke it, and it was completely different than we thought it was going to be in the beginning," Pianko says.
+                    </div>
+
+                    <div class="quote-block">
+                        "And how law enforcement thought it would be," Landset Blank says.
+                    </div>
+
+                    <p>
+                        For Wilkinson, the biggest surprise was law enforcement's reaction upon hearing that the mom squad had cracked the case.
+                    </p>
+
+                    <div class="quote-block">
+                        "I feel like we really did truly earn respect," she says.
+                    </div>
+
+                </div>
+
+                <!-- VOCAB BOX 4 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 4</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">whodunnit</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('whodunnit')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A book, film, etc. about a murder case in which you do not find out who killed the person until the end; also used informally to mean "who did it"</p>
+                            <p class="vocab-spanish">¿quién lo hizo? / historia de misterio criminal</p>
+                            <div class="vocab-example">The detective novel was a classic whodunnit with a surprising twist at the end.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">cracked the case</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('cracked the case')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Successfully solved a difficult problem or mystery</p>
+                            <p class="vocab-spanish">resolver el caso</p>
+                            <div class="vocab-example">The quality control team finally cracked the case of the recurring defects.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom:10px;">
+                                <span class="vocab-word">dead ends</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('dead ends')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Situations where no further progress is possible; paths that lead nowhere</p>
+                            <p class="vocab-spanish">callejones sin salida / puntos muertos</p>
+                            <div class="vocab-example">After several dead ends, the engineers found a completely new approach to the design problem.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+
+            </div>
+
+            <!-- ===================== SECTION 4: DISCUSSION QUESTIONS ===================== -->
+            <div class="section-card">
+                <h2>🗣️ Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>The four moms had no law enforcement training but still solved a cold case. Do you think ordinary people can contribute to solving problems that "professionals" have given up on? Can you think of an example from your own work?</li>
+                    <li>The women faced "plenty of bumps along the way" and hit walls several times. How do you personally stay motivated when a project seems stuck or impossible?</li>
+                    <li>The detectives changed some details in the book to protect their families. When is it acceptable to change or withhold information to protect people, and when does it become a problem?</li>
+                </ul>
+            </div>
+
+            <!-- ===================== SECTION 5: SELF-PRACTICE ===================== -->
+            <div class="section-card">
+                <h2>✏️ Self-Practice Questions</h2>
+
+                <div class="practice-question">
+                    <p>1. Fill in the blank: The investigation had been ________ for over a decade before the four women decided to look into it again.</p>
+                    <p style="font-weight:400; color:#666;">(stalled / buoyed / bumbling)</p>
+                </div>
+
+                <div class="practice-question">
+                    <p>2. True or False: The four women in <em>The Carpool Detectives</em> were experienced police officers before they solved the case.</p>
+                </div>
+
+                <div class="practice-question">
+                    <p>3. Match the word to its meaning:</p>
+                    <p style="font-weight:400; color:#444; margin:0;">a. <em>fraught</em> &nbsp;&nbsp; b. <em>daunting</em> &nbsp;&nbsp; c. <em>sleuth</em></p>
+                    <p style="font-weight:400; color:#444; margin:4px 0 0 0;">1. An investigator or detective &nbsp;&nbsp; 2. Full of stress and anxiety &nbsp;&nbsp; 3. Frightening in a way that reduces confidence</p>
+                </div>
+
+                <div class="practice-question">
+                    <p>4. In your own words, explain why the four women were still <em>apprehensive</em> even after solving the case.</p>
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>stalled</strong> — The investigation had been stalled for over a decade before the four women decided to look into it again.</li>
+                        <li><strong>False</strong> — They were ordinary moms with no law enforcement training.</li>
+                        <li>a → 2 (full of stress and anxiety) &nbsp;|&nbsp; b → 3 (frightening in a way that reduces confidence) &nbsp;|&nbsp; c → 1 (an investigator or detective)</li>
+                        <li>Even after solving the case, the women were apprehensive because the crime had involved organized crime, and they worried that publishing the book might expose their families to danger or retaliation.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
