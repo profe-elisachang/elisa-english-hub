@@ -100,8 +100,8 @@ async function scanLessons() {
         { filename: 'Robotaxis -Excercise.html', date: '2026-04-08', title: '🚕 Robotaxis -Excercise' },        { filename: 'Courtesy While Driving.html', date: '2026-04-10', title: '🚗 🛵 🚦 Common Courtesy While Driving' },
 { filename: 'Driving -Practice Activities.html', date: '2026-04-10', title: '🚦 Driving -Practice Activities' },
         { filename: 'Duolingo.html', date: '2026-04-13', title: '🦉 The Simple Formula That Made Duolingo a Daily Habit for Millions' },
-        { filename: 'Self-Checkout Technology.html', date: '2026-04-15', title: '🛒 The Spectacular Failure of Self-Checkout Technolog' },
-        { filename: 'Oil from Venezuela.html', date: '2026-04-17', title: '🏭Oil from Venezuela' },        { filename: 'Vampire Routing.html', date: '2026-04-20', title: '🧛 Vampire Routing— The Key to Cooler Urban Walking' },
+        { filename: 'Self-Checkout Technology.html', date: '2026-04-15', title: '🛒 The Spectacular Failure of Self-Checkout Technolog' },        { filename: 'Oil from Venezuela.html', date: '2026-04-22', title: '🏭Oil from Venezuela' },
+{ filename: 'Vampire Routing.html', date: '2026-04-20', title: '🧛 Vampire Routing— The Key to Cooler Urban Walking' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
