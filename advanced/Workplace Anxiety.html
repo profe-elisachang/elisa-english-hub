@@ -1,0 +1,671 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easing Workplace Anxiety - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0eb;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ARTICLE SECTION */
+        .article-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-left: 5px solid #c0704a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .article-section h2 {
+            color: #c0704a;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0ddd4;
+            padding-bottom: 10px;
+        }
+
+        .article-section h3 {
+            color: #7a4a2a;
+            font-size: 1.1rem;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* EXPRESSIONS SECTION */
+        .expressions-section {
+            background: #fff8f4;
+            border-radius: 10px;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-left: 5px solid #e8965a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .expressions-section h2 {
+            color: #c0704a;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0ddd4;
+            padding-bottom: 10px;
+        }
+
+        .expression-card {
+            background: white;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            border: 1px solid #e8d5c8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .expression-english {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #c0704a;
+            margin-bottom: 4px;
+        }
+
+        .expression-spanish {
+            font-size: 0.95rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .expression-example {
+            font-size: 0.95rem;
+            color: #444;
+            border-left: 3px solid #e8965a;
+            padding-left: 12px;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        /* VOCABULARY BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #c0704a;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #c0704a;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .vocab-word {
+            color: #c0704a;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .vocab-speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .vocab-spanish {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION & PRACTICE SECTIONS */
+        .discussion-section,
+        .practice-section {
+            background: #fff8f4;
+            border-radius: 10px;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-left: 5px solid #7a9e6e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .discussion-section h2,
+        .practice-section h2 {
+            color: #4a7a3a;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #c8ddc0;
+            padding-bottom: 10px;
+        }
+
+        .discussion-section ul {
+            padding-left: 1.4em;
+        }
+
+        .discussion-section ul li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .practice-section ol {
+            padding-left: 1.4em;
+        }
+
+        .practice-section ol li {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        details {
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            padding: 16px 20px;
+            border: 1px solid #c8ddc0;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #4a7a3a;
+            font-size: 1rem;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 1.4em;
+        }
+
+        details ol li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* ARTICLE TITLE */
+        .article-title-block {
+            background: #fff8f4;
+            border-radius: 10px;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-left: 5px solid #c0704a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .article-title-block h1 {
+            color: #7a4a2a;
+            font-size: 2rem;
+            margin: 0 0 8px 0;
+        }
+
+        .article-subtitle {
+            color: #888;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        .mobile-note {
+            color: #888;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 16px;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://cdn.shopify.com/s/files/1/0810/1137/6405/files/How_to_Deal_with_Workplace_Anxiety_Without_Losing_Yourself_Blog_Head.png?v=1760991690" alt="😰 Easing Workplace Anxiety" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ARTICLE TITLE BLOCK -->
+            <div class="article-title-block">
+                <h1>😰 Easing Workplace Anxiety</h1>
+                <p class="article-subtitle">The desire to be more productive might be causing greater stress</p>
+                <p class="article-meta">Career | 2026 April 27, 28 &nbsp;·&nbsp; by Stephanie Vozza / © 2024, Fast Company, Mansueto Ventures, LLC. Distributed by Tribune Content Agency, LLC.</p>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="expressions-section">
+                <h2>💬 Useful Expressions</h2>
+
+                <div class="expression-card">
+                    <div class="expression-english">Am I working on the right things?</div>
+                    <div class="expression-spanish">¿Estoy trabajando en las cosas correctas?</div>
+                    <div class="expression-example">"Am I working on the right things?" she says, is a key question employees should ask their manager.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">Be proactive by saying…</div>
+                    <div class="expression-spanish">Sé proactivo diciendo…</div>
+                    <div class="expression-example">Be proactive by saying when you're feeling overwhelmed and asking for help prioritizing your workload.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">Set explicit expectations</div>
+                    <div class="expression-spanish">Establecer expectativas explícitas</div>
+                    <div class="expression-example">Managers need to set explicit expectations so employees know they're working on the right things.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">Watch for out-of-character behaviors</div>
+                    <div class="expression-spanish">Estar atento a comportamientos fuera de lo normal</div>
+                    <div class="expression-example">Leaders should watch for out-of-character behaviors that might indicate there is something going on.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">Take advantage of resources</div>
+                    <div class="expression-spanish">Aprovechar los recursos</div>
+                    <div class="expression-example">They can model good restorative behavior by taking advantage of the resources that the company offers.</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY (Paragraph by Paragraph) -->
+            <div class="article-section">
+                <h2>📖 Easing Workplace Anxiety</h2>
+
+                <!-- PARAGRAPH 1 -->
+                <p>
+                    A lot of us want to learn how to get more done in a day. According to a Human Workplace Index survey of 3,000 full-time employees in the United States, United Kingdom and Ireland, just over half—54%—say they do feel productive at work. While this sounds positive, it comes with <span class="highlight" title="equipaje / carga emocional">baggage</span>. Nearly 83% of respondents said they also have productivity anxiety.
+                </p>
+                <p>
+                    "Productivity anxiety is wondering, 'Am I doing enough,' despite how much you're objectively doing," says Meisha-ann Martin, Ph.D., senior director of people <span class="highlight" title="análisis de datos">analytics</span> and research for the employee recognition platform Workhuman. "It's also questioning, 'Am I working on the right things?'"
+                </p>
+                <p>
+                    Several factors cause productivity anxiety, including companies that encourage a <span class="highlight" title="cultura de trabajo intenso">hustle</span> culture, where employees are encouraged and rewarded for doing more. Today's layoff environment is also <span class="highlight" title="añadiendo combustible al fuego">adding fuel to the fire</span>, inserting a sense of uncertainty. And productivity anxiety also comes when there is a feedback gap issue, says Martin. "Anxiety can get worse in a space where those things are not clear."
+                </p>
+            </div>
+
+            <!-- VOCABULARY BOX - PARAGRAPH 1 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary - Paragraph 1</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">baggage</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('baggage')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The beliefs, opinions and experiences that make it difficult to have good relationships</p>
+                        <p class="vocab-spanish">equipaje / carga emocional</p>
+                        <div class="vocab-example">His past failures came with a lot of emotional baggage that affected his performance.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">analytics</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('analytics')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">The method of logical, detailed examination of something to understand its nature</p>
+                        <p class="vocab-spanish">análisis / analítica</p>
+                        <div class="vocab-example">The HR team used people analytics to identify which departments had the lowest engagement.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">hustle</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('hustle')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">When someone does something quickly, with a lot of effort and eagerness</p>
+                        <p class="vocab-spanish">ajetreo / trabajo intenso</p>
+                        <div class="vocab-example">The startup promoted a hustle culture where employees were expected to work late every night.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">adding fuel to the fire</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('adding fuel to the fire')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To make an argument or disagreement worse</p>
+                        <p class="vocab-spanish">añadir combustible al fuego / empeorar la situación</p>
+                        <div class="vocab-example">Announcing layoffs without explanation was adding fuel to the fire of employee anxiety.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 2 -->
+            <div class="article-section">
+                <h3>What employees can do</h3>
+                <p>
+                    If you're an employee who is feeling productivity anxiety and your manager doesn't actively address it, Martin recommends scheduling your own check-in and being direct.
+                </p>
+                <p>
+                    "Ask targeted and specific questions like, 'Am I working on the right things?'" she says. "Be <span class="highlight" title="proactivo">proactive</span> by saying when you're feeling overwhelmed and asking for help prioritizing your workload."
+                </p>
+                <p>
+                    For example, Martin suggests saying, "It feels like there's a lot on my plate. I want to make sure I'm working on the right things. What is the highest priority right now? Is there anything that I can push until later?"
+                </p>
+
+                <h3>What employers should do</h3>
+                <p>
+                    While employees are feeling the direct impact of productivity anxiety, it also creates issues for employers, says Martin.
+                </p>
+                <p>
+                    "When you're feeling anxious about anything, you're not your best self," she says. "If you're not feeling secure at work, it can affect how you behave, especially around innovation and risk-taking."
+                </p>
+                <p>
+                    To help employees bring their best selves to the job, managers need to set explicit expectations, so employees know they're working on the right things.
+                </p>
+            </div>
+
+            <!-- VOCABULARY BOX - PARAGRAPH 2 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary - Paragraph 2</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">proactive</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('proactive')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Making things happen or change rather than reacting to events</p>
+                        <p class="vocab-spanish">proactivo</p>
+                        <div class="vocab-example">She was proactive in addressing the team's concerns before they became serious problems.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 3 -->
+            <div class="article-section">
+                <p>
+                    [Managers should] clearly define performance goals with milestones and measurements, and prioritize tasks based on key business objectives. "That should take some of the anxiety away," says Martin.
+                </p>
+                <p>
+                    Recognition also plays a part. "When people are recognized, they report lower stress," says Martin. "Recognition sends a signal that says, 'You're doing just fine. We appreciate you. It might be a tough time, but you're doing well.'"
+                </p>
+                <p>
+                    It also helps when leaders establish regular check-in times. If you don't know that a team member is feeling anxious, you can't address it, says Martin. "I'm a big fan of a check-in that isn't just about the tasks that people do or goals and outcomes," she says. "Also check in on the person and how they're doing so that you can provide support as appropriate."
+                </p>
+                <p>
+                    It's not uncommon for an employee to have something in their personal life impact what they're expected to do at work. Leaders should also watch for <span class="highlight" title="comportamientos fuera de lo normal">out-of-character</span> behaviors that might indicate there is something going on.
+                </p>
+                <p>
+                    "When a leader and employee have a great relationship, it is easier to see when things are not what they usually are," says Martin.
+                </p>
+            </div>
+
+            <!-- VOCABULARY BOX - PARAGRAPH 3 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary - Paragraph 3</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">out-of-character</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('out of character')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Not typical of one's usual qualities or traits</p>
+                        <p class="vocab-spanish">fuera de lo normal / no típico de alguien</p>
+                        <div class="vocab-example">His sudden outburst during the meeting was completely out-of-character for someone so calm.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 4 -->
+            <div class="article-section">
+                <h3>The cost of anxiety</h3>
+                <p>
+                    Finally, managers can send signals to their team that their well-being is important. For example, they can model good restorative behavior by taking advantage of the resources that the company offers, such as paid time off, mental health support and flexible working policies.
+                </p>
+                <p>
+                    Productivity anxiety impacts everyone. Individuals suffer in terms of their personal well-being, which <span class="highlight" title="se extiende / se esparce">bleeds</span> into things like <span class="highlight" title="ausentismo">absenteeism</span>, low performance and even leaving the organization. Productivity anxiety can impact organizational culture. Left to <span class="highlight" title="empeorar / pudrirse">fester</span>, it can create a culture of toxic competition, <span class="highlight" title="apagar incendios / resolver urgencias">firefighting</span>, working nights and weekends, and burnout, says Martin.
+                </p>
+                <p>
+                    "The employee has a role, but the organization and the leader need to create that space that is psychologically safe enough for employees to talk about these things," says Martin.
+                </p>
+                <p>
+                    By setting clear expectations and opening lines of communication, you and your team can turn productivity into a positive topic again.
+                </p>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- VOCABULARY BOX - PARAGRAPH 4 -->
+            <div class="vocabulary-section">
+                <h3>📚 Vocabulary - Paragraph 4</h3>
+                <div class="vocab-container">
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">bleeds</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('bleeds')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">To slowly spread into or through something</p>
+                        <p class="vocab-spanish">se extiende / se filtra</p>
+                        <div class="vocab-example">Work stress often bleeds into employees' personal lives and family relationships.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">absenteeism</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('absenteeism')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Regular absence from work or school without a good reason</p>
+                        <p class="vocab-spanish">ausentismo</p>
+                        <div class="vocab-example">High levels of stress in the workplace are strongly linked to increased absenteeism.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">fester</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('fester')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">If an unpleasant feeling or problem festers, it gets worse because it has not been dealt with</p>
+                        <p class="vocab-spanish">empeorar / agravarse</p>
+                        <div class="vocab-example">Resentment between team members was allowed to fester for months before management stepped in.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div class="vocab-word-row">
+                            <span class="vocab-word">firefighting</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('firefighting')" title="Click to hear pronunciation">🔊</button>
+                        </div>
+                        <p class="vocab-definition">Actions taken to deal with sudden or immediate problems related to a particular job</p>
+                        <p class="vocab-spanish">apagar incendios / resolver urgencias constantemente</p>
+                        <div class="vocab-example">The team spent so much time firefighting that they had no energy left for strategic planning.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="discussion-section">
+                <h2>🗣️ Discussion Questions</h2>
+                <ul>
+                    <li>Have you ever experienced productivity anxiety at work? What caused it, and how did you deal with it?</li>
+                    <li>In your workplace, how do managers currently communicate expectations and priorities to their teams?</li>
+                    <li>What kinds of company resources or policies do you think are most effective for reducing employee stress and anxiety?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="practice-section">
+                <h2>✏️ Self-Practice Questions</h2>
+                <ol>
+                    <li>Fill in the blank: Productivity anxiety is wondering, "Am I doing ________, despite how much you're objectively doing."</li>
+                    <li>True or False: According to the article, only employees are affected by productivity anxiety — it does not impact employers.</li>
+                    <li>Match the word to its meaning:<br>
+                        <strong>a)</strong> absenteeism &nbsp; <strong>b)</strong> fester &nbsp; <strong>c)</strong> bleeds<br>
+                        <strong>1.</strong> to slowly spread into something &nbsp;
+                        <strong>2.</strong> to get worse because it hasn't been dealt with &nbsp;
+                        <strong>3.</strong> regular absence from work without a good reason
+                    </li>
+                    <li>Short answer: According to Martin, what is one thing managers can do to help reduce productivity anxiety in their teams?</li>
+                </ol>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li>"enough"</li>
+                        <li>False. The article says productivity anxiety also creates issues for employers — it affects innovation, risk-taking, and overall organizational culture.</li>
+                        <li>a–3, b–2, c–1</li>
+                        <li>Any of the following: set explicit performance goals and priorities / establish regular check-in times / recognize employees' efforts / model restorative behavior by using company resources like paid time off or mental health support.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
