@@ -1,0 +1,682 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English with Elisa – Leadership &amp; Culture</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ── THEME: Deep Teal + Warm Amber + Cream ── */
+        :root {
+            --bg:        #f5f0e8;
+            --surface:   #ffffff;
+            --teal:      #1a6b6b;
+            --teal-dark: #124e4e;
+            --amber:     #e07b00;
+            --amber-lt:  #fff3d6;
+            --red:       #c0392b;
+            --text:      #1c1c1c;
+            --muted:     #555;
+            --border:    #c8bfad;
+            --radius:    12px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* ── HEADER (exact template) ── */
+        .header {
+            background: var(--teal-dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 900;
+            flex: 1;
+        }
+        .level-badge {
+            background: var(--amber);
+            color: #fff;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        /* ── MAIN CONTAINER ── */
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2rem 1.5rem 4rem;
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        /* ── ARTICLE LINK BANNER ── */
+        .article-link-banner {
+            background: var(--teal);
+            border-radius: var(--radius);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .article-link-banner p {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .article-link-banner a {
+            display: inline-block;
+            background: var(--amber);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        .article-link-banner a:hover { background: #c06900; }
+
+        /* ── SECTION CARD ── */
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .card-header {
+            background: var(--teal);
+            color: #fff;
+            padding: 1rem 1.8rem;
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+        .card-body {
+            padding: 1.8rem;
+        }
+
+        /* ── TAKEAWAY ── */
+        .takeaway-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+        .takeaway-list li {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: var(--amber-lt);
+            border-left: 5px solid var(--amber);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .takeaway-list li .icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        /* ── VOCAB GRID ── */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .vocab-card {
+            border: 2px solid #b2dfdb;
+            border-radius: 10px;
+            padding: 1.1rem 1.2rem;
+            background: #e8f5f5;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .vocab-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(26,107,107,0.15);
+        }
+        .vocab-word {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--teal-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .speak-btn {
+            background: var(--teal);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .speak-btn:hover { background: var(--amber); }
+        .vocab-es {
+            font-size: 0.85rem;
+            color: var(--red);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-style: italic;
+        }
+        .vocab-def {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .vocab-ex {
+            font-size: 0.9rem;
+            color: var(--muted);
+            border-left: 3px solid var(--amber);
+            padding-left: 0.7rem;
+            font-style: italic;
+        }
+
+        /* ── SPEAKING PHRASES ── */
+        .phrases-list {
+            display: grid;
+            gap: 1rem;
+        }
+        .phrase-row {
+            background: #fff8ee;
+            border: 2px solid var(--amber);
+            border-radius: 10px;
+            padding: 1rem 1.3rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 1rem;
+        }
+        .phrase-en {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--teal-dark);
+            margin-bottom: 0.2rem;
+        }
+        .phrase-use {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* ── DISCUSSION QUESTIONS ── */
+        .discussion-section { display: grid; gap: 1.5rem; }
+        .discussion-tier { }
+        .tier-label {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+        .tier-warmup .tier-label   { background: #d4edda; color: #155724; }
+        .tier-opinion .tier-label  { background: #d1ecf1; color: #0c5460; }
+        .tier-personal .tier-label { background: #f8d7da; color: #721c24; }
+
+        .q-list { list-style: none; display: grid; gap: 0.7rem; }
+        .q-list li {
+            padding: 0.9rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+        .tier-warmup  .q-list li { background: #f0fff4; border-left: 4px solid #28a745; }
+        .tier-opinion .q-list li { background: #e8f7fb; border-left: 4px solid #17a2b8; }
+        .tier-personal .q-list li { background: #fff5f5; border-left: 4px solid var(--red); }
+        .q-num {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            font-weight: 900;
+        }
+
+        /* ── SELF-PRACTICE ── */
+        .self-practice { display: grid; gap: 1rem; }
+        details {
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 1rem 1.3rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            background: #f9f6f0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: background 0.2s;
+        }
+        summary:hover { background: var(--amber-lt); }
+        summary::before {
+            content: "▶";
+            font-size: 0.75rem;
+            color: var(--amber);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+        details[open] summary::before { transform: rotate(90deg); }
+        .answer {
+            padding: 1.1rem 1.5rem;
+            background: #fff;
+            border-top: 2px solid var(--border);
+            color: #333;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.1rem; }
+            .card-body { padding: 1.2rem; }
+            .phrase-row { grid-template-columns: 1fr; }
+            .vocab-grid { grid-template-columns: 1fr; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ── HEADER (exact template) ── -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/wp-cms-2/2026/04/p-91529962-you-can-upskill-leaders-but-not-culture.jpg" alt=" No, you can't upskill your culture. But you can upskill your leader" class="article-image">
+    </div>
+
+
+<div class="container">
+
+    <!-- ── ARTICLE LINK ── -->
+    <div class="article-link-banner">
+        <p>📰 <strong>Today's Article:</strong> No, you can't upskill your culture. But you can upskill your leaders — <em>Fast Company</em></p>
+        <a href="https://www.fastcompany.com/91529962/no-you-cant-upskill-your-culture-but-you-can-upskill-your-leaders" target="_blank">Read Full Article ↗</a>
+    </div>
+
+    <!-- ── 1. TAKEAWAY ── -->
+    <div class="card">
+        <div class="card-header">💡 Article Takeaway</div>
+        <div class="card-body">
+            <ul class="takeaway-list">
+                <li>
+                    <span class="icon">🏗️</span>
+                    <span><strong>Culture is built by conversations, not posters.</strong> Values workshops and strategy days don't change behavior. Real culture comes from thousands of everyday interactions.</span>
+                </li>
+                <li>
+                    <span class="icon">😴</span>
+                    <span><strong>Most communication failures are unconscious.</strong> Leaders often repeat bad habits without noticing — just like the author who interrupted his manager, then did the same to his own team five minutes later.</span>
+                </li>
+                <li>
+                    <span class="icon">📉</span>
+                    <span><strong>Engagement is falling — and managers are the key.</strong> Global engagement dropped to 20% in 2024. Research shows 70% of team engagement depends on the direct manager.</span>
+                </li>
+                <li>
+                    <span class="icon">🦸</span>
+                    <span><strong>Three communication superpowers make the difference:</strong> <em>Empathy</em> (making people feel they matter), <em>Clarity</em> (giving clear direction people can remember), and <em>Energy</em> (showing genuine passion in how you speak and move).</span>
+                </li>
+                <li>
+                    <span class="icon">✅</span>
+                    <span><strong>Good news: these skills are trainable.</strong> Unlike "culture," communication is something leaders can actually practice and improve.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ── 2. VOCABULARY ── -->
+    <div class="card">
+        <div class="card-header">📖 Key Vocabulary</div>
+        <div class="card-body">
+            <div class="vocab-grid">
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        upskill
+                        <button class="speak-btn" onclick="speakWord('upskill')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: mejorar habilidades / capacitar</div>
+                    <div class="vocab-def">To learn new skills or teach someone new skills, especially for work.</div>
+                    <div class="vocab-ex">"The company wants to upskill its managers in communication."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        unconscious
+                        <button class="speak-btn" onclick="speakWord('unconscious')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: inconsciente</div>
+                    <div class="vocab-def">Done without realizing it; not aware of your own actions or habits.</div>
+                    <div class="vocab-ex">"She has an unconscious habit of interrupting people."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        engagement
+                        <button class="speak-btn" onclick="speakWord('engagement')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: compromiso / motivación laboral</div>
+                    <div class="vocab-def">How motivated and emotionally connected employees feel toward their work.</div>
+                    <div class="vocab-ex">"High engagement means people work harder because they care."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        slip back
+                        <button class="speak-btn" onclick="speakWord('slip back')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: volver a caer / recaer</div>
+                    <div class="vocab-def">To return to a bad habit or behavior you wanted to stop.</div>
+                    <div class="vocab-ex">"Even after training, it's easy to slip back into old habits."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        Quiet Quitting
+                        <button class="speak-btn" onclick="speakWord('quiet quitting')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: renuncia silenciosa</div>
+                    <div class="vocab-def">When an employee does only the minimum required — no extra effort, no initiative.</div>
+                    <div class="vocab-ex">"If the team feels ignored, they start quiet quitting."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        turnover
+                        <button class="speak-btn" onclick="speakWord('turnover')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: rotación de personal</div>
+                    <div class="vocab-def">The rate at which employees leave a company and need to be replaced.</div>
+                    <div class="vocab-ex">"High turnover is expensive and hurts team morale."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        ripple effect
+                        <button class="speak-btn" onclick="speakWord('ripple effect')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: efecto dominó / onda expansiva</div>
+                    <div class="vocab-def">When one event causes a series of other events, like ripples in water.</div>
+                    <div class="vocab-ex">"A manager's bad mood creates a ripple effect on the whole team."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        empathy
+                        <button class="speak-btn" onclick="speakWord('empathy')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: empatía</div>
+                    <div class="vocab-def">The ability to understand and share how another person feels.</div>
+                    <div class="vocab-ex">"Good leaders show empathy by listening before they speak."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        erode
+                        <button class="speak-btn" onclick="speakWord('erode')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: erosionar / desgastar</div>
+                    <div class="vocab-def">To slowly destroy or weaken something over time.</div>
+                    <div class="vocab-ex">"Poor communication erodes trust between managers and teams."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        comply
+                        <button class="speak-btn" onclick="speakWord('comply')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: cumplir / obedecer</div>
+                    <div class="vocab-def">To do what is required, often without enthusiasm or extra effort.</div>
+                    <div class="vocab-ex">"They comply with the rules but don't go above and beyond."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        attribute to
+                        <button class="speak-btn" onclick="speakWord('attribute to')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: atribuir a</div>
+                    <div class="vocab-def">To say that something is caused by or comes from a specific source.</div>
+                    <div class="vocab-ex">"You can attribute most team problems to poor communication."</div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-word">
+                        manifests
+                        <button class="speak-btn" onclick="speakWord('manifests')" title="Listen">🔊</button>
+                    </div>
+                    <div class="vocab-es">ES: se manifiesta / se expresa</div>
+                    <div class="vocab-def">Appears or shows itself in a visible way.</div>
+                    <div class="vocab-ex">"His passion manifests in the way he speaks to the team."</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 3. SPEAKING PHRASES ── -->
+    <div class="card">
+        <div class="card-header">🗣️ Speaking Phrases — Use These Today!</div>
+        <div class="card-body">
+            <div class="phrases-list">
+
+                <div class="phrase-row">
+                    <div>
+                        <div class="phrase-en">"I'd like to think that I've learned something since then."</div>
+                        <div class="phrase-use">💬 Use it when: reflecting on a past mistake or experience</div>
+                    </div>
+                    <button class="speak-btn" onclick="speakWord(`I'd like to think that I've learned something since then.`)" style="width:38px;height:38px;font-size:1rem;">🔊</button>
+                </div>
+
+                <div class="phrase-row">
+                    <div>
+                        <div class="phrase-en">"It's easy to slip back into old habits."</div>
+                        <div class="phrase-use">💬 Use it when: talking about behavior change or challenges</div>
+                    </div>
+                    <button class="speak-btn" onclick="speakWord(`It's easy to slip back into old habits.`)" style="width:38px;height:38px;font-size:1rem;">🔊</button>
+                </div>
+
+                <div class="phrase-row">
+                    <div>
+                        <div class="phrase-en">"They do it because they want to, not because they have to."</div>
+                        <div class="phrase-use">💬 Use it when: comparing motivation — real commitment vs obligation</div>
+                    </div>
+                    <button class="speak-btn" onclick="speakWord(`They do it because they want to, not because they have to.`)" style="width:38px;height:38px;font-size:1rem;">🔊</button>
+                </div>
+
+                <div class="phrase-row">
+                    <div>
+                        <div class="phrase-en">"That moment has stayed with me for a long time."</div>
+                        <div class="phrase-use">💬 Use it when: sharing a memorable experience that changed you</div>
+                    </div>
+                    <button class="speak-btn" onclick="speakWord(`That moment has stayed with me for a long time.`)" style="width:38px;height:38px;font-size:1rem;">🔊</button>
+                </div>
+
+                <div class="phrase-row">
+                    <div>
+                        <div class="phrase-en">"You can't act on what you don't remember."</div>
+                        <div class="phrase-use">💬 Use it when: arguing why clear communication matters</div>
+                    </div>
+                    <button class="speak-btn" onclick="speakWord(`You can't act on what you don't remember.`)" style="width:38px;height:38px;font-size:1rem;">🔊</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 4. DISCUSSION QUESTIONS ── -->
+    <div class="card">
+        <div class="card-header">💬 Discussion Questions</div>
+        <div class="card-body">
+            <div class="discussion-section">
+
+                <!-- WARM-UP -->
+                <div class="discussion-tier tier-warmup">
+                    <div class="tier-label">🌡️ Warm-Up — Let's get talking!</div>
+                    <ul class="q-list">
+                        <li><span class="q-num">1.</span> Think of a manager or teacher you liked. What made them good at communicating?</li>
+                        <li><span class="q-num">2.</span> What does "company culture" mean to you? Can you give an example from your workplace?</li>
+                        <li><span class="q-num">3.</span> On a scale of 1–10, how engaged do you feel at work right now? Why?</li>
+                    </ul>
+                </div>
+
+                <!-- OPINION -->
+                <div class="discussion-tier tier-opinion">
+                    <div class="tier-label">💡 Opinion — What do you think?</div>
+                    <ul class="q-list">
+                        <li><span class="q-num">4.</span> The article says culture comes from conversations, not training programs. Do you agree? Why or why not?</li>
+                        <li><span class="q-num">5.</span> The three "superpowers" are empathy, clarity, and energy. Which one do you think is most important for a leader? Which is hardest to develop?</li>
+                        <li><span class="q-num">6.</span> Global employee engagement fell to 20% in 2024. Why do you think so many people feel disconnected from their work?</li>
+                        <li><span class="q-num">7.</span> Is "Quiet Quitting" the employee's fault, the manager's fault, or the company's fault? Explain your view.</li>
+                    </ul>
+                </div>
+
+                <!-- PERSONAL EXPERIENCE -->
+                <div class="discussion-tier tier-personal">
+                    <div class="tier-label">🙋 Personal Experience — Your story</div>
+                    <ul class="q-list">
+                        <li><span class="q-num">8.</span> Have you ever interrupted someone before they finished speaking — or had someone do that to you? How did it feel?</li>
+                        <li><span class="q-num">9.</span> Can you think of a time when a manager's communication made you feel more motivated — or less motivated? What did they do?</li>
+                        <li><span class="q-num">10.</span> Have you ever "slipped back" into a bad habit at work that you wanted to change? What happened?</li>
+                        <li><span class="q-num">11.</span> In your job, which superpower — empathy, clarity, or energy — do you need the most? Give an example.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 5. SELF-PRACTICE ── -->
+    <div class="card">
+        <div class="card-header">✏️ Self-Practice — Think &amp; Answer</div>
+        <div class="card-body">
+            <div class="self-practice">
+
+                <details>
+                    <summary>❓ The article says "you can't upskill culture." What does that mean?</summary>
+                    <div class="answer">
+                        Culture is too big and abstract to change through a single workshop or training session. Culture is the result of thousands of small conversations and daily behaviors. You can't teach culture directly — but you can teach leaders to communicate better, and that changes behavior, which slowly changes culture.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>❓ What is the difference between "complying" and being "engaged"?</summary>
+                    <div class="answer">
+                        When people comply, they do only what is required — nothing more. They follow the rules because they have to. When people are engaged, they work with energy and creativity because they want to. Engaged employees go beyond the minimum and take initiative.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>❓ Why does the author say that "energy" is a communication skill?</summary>
+                    <div class="answer">
+                        Energy refers to your non-verbal communication — how you look, how you sound, your body language and tone. People read these signals before they even process the words. A leader who speaks in a flat, distracted way signals that the message is not important. Showing genuine enthusiasm tells your team: "This matters."
+                    </div>
+                </details>
+
+                <details>
+                    <summary>❓ The author says 70% of team engagement depends on the manager. Is that surprising? Why?</summary>
+                    <div class="answer">
+                        Many people think engagement depends on salary, company benefits, or the work itself. But Gallup's research shows that the direct manager has the biggest impact — bigger than almost anything else. This means that one person's daily communication habits can make or break an entire team's motivation and results.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+</script>
+
+
