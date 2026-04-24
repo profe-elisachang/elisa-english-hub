@@ -1,0 +1,906 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No, you can't upskill your culture. But you can upskill your leaders - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #1a2e1a;
+            padding: 1.2rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.3rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: #c8a84b;
+            color: #1a2e1a;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .back-to-calendar-btn:hover {
+            background: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        /* ARTICLE HERO */
+        .article-hero {
+            background: #1a2e1a;
+            color: white;
+            padding: 40px 30px 30px;
+            margin-bottom: 30px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: #c8a84b;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin: 0 0 14px 0;
+            color: white;
+        }
+
+        .article-subtitle {
+            font-size: 1.1rem;
+            color: #b8c9b8;
+            margin: 0 0 20px 0;
+            font-style: italic;
+        }
+
+        .source-link {
+            display: inline-block;
+            padding: 0.45rem 1.1rem;
+            background: #c8a84b;
+            color: #1a2e1a;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .source-link:hover {
+            background: #e0c06a;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 4px solid #1a2e1a;
+        }
+
+        .section-card h2 {
+            color: #1a2e1a;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0e8d0;
+        }
+
+        /* EXPRESSIONS */
+        .expression-item {
+            background: #f9f6ef;
+            border-left: 4px solid #c8a84b;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .expression-english {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a2e1a;
+            margin-bottom: 4px;
+        }
+
+        .expression-spanish {
+            font-size: 0.95rem;
+            color: #7a6a3a;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .expression-example {
+            font-size: 0.95rem;
+            color: #444;
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+        }
+
+        /* ARTICLE BODY */
+        .article-body p {
+            font-size: 1.05rem;
+            color: #2a2a2a;
+            margin-bottom: 1.2em;
+        }
+
+        .article-body h3 {
+            color: #1a2e1a;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-top: 28px;
+            margin-bottom: 8px;
+            border-left: 4px solid #c8a84b;
+            padding-left: 12px;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 16px;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #c8a84b;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a2e1a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 6px;
+        }
+
+        /* VOCABULARY BOXES */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #1a2e1a;
+            padding: 20px;
+            margin: 20px 0 30px 0;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #1a2e1a;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word-row {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .vocab-word {
+            color: #1a2e1a;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .vocab-spanish {
+            color: #7a6a3a;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.92rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION & PRACTICE */
+        .discussion-list {
+            padding-left: 20px;
+        }
+
+        .discussion-list li {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            color: #2a2a2a;
+            line-height: 1.6;
+        }
+
+        .practice-question {
+            background: #f5f0e8;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+        }
+
+        .practice-question p {
+            margin: 0;
+            font-size: 1rem;
+            color: #2a2a2a;
+        }
+
+        details {
+            margin-top: 20px;
+        }
+
+        details summary {
+            cursor: pointer;
+            background: #1a2e1a;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            user-select: none;
+        }
+
+        details summary:hover {
+            background: #2d4a2d;
+        }
+
+        details ol {
+            background: #f9f6ef;
+            padding: 20px 20px 20px 40px;
+            border-radius: 0 0 8px 8px;
+            margin: 0;
+            line-height: 1.9;
+        }
+
+        details li {
+            color: #333;
+            font-size: 0.97rem;
+        }
+
+        /* PARAGRAPH DIVIDER */
+        .para-divider {
+            border: none;
+            border-top: 2px dashed #d0c8b0;
+            margin: 28px 0 8px 0;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/wp-cms-2/2026/04/p-91529962-you-can-upskill-leaders-but-not-culture.jpg" alt="No, you can't upskill your culture. But you can upskill your leaders" class="article-image">
+    </div>
+
+
+    <!-- ARTICLE HERO -->
+    <div class="article-hero">
+        <div class="article-meta">04-24-2026 &nbsp;|&nbsp; Leadership</div>
+        <h1>No, you can't upskill your culture. But you can upskill your leaders</h1>
+        <p class="article-subtitle">Conversations and behaviors are the things that build culture.</p>
+        <a href="https://www.fastcompany.com/91529962/no-you-cant-upskill-your-culture-but-you-can-upskill-your-leaders" target="_blank" class="source-link">📰 Read original article →</a>
+    </div>
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2>💬 Useful Expressions</h2>
+
+                <div class="expression-item">
+                    <div class="expression-english">slip back into (something)</div>
+                    <div class="expression-spanish">volver a caer en (algo) / recaer en</div>
+                    <div class="expression-example">After the vacation, it was easy to slip back into old habits and skip morning check-ins.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">set apart</div>
+                    <div class="expression-spanish">distinguir / diferenciar</div>
+                    <div class="expression-example">What sets apart great supervisors is their ability to listen before reacting.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">at best</div>
+                    <div class="expression-spanish">en el mejor de los casos</div>
+                    <div class="expression-example">Without clear direction, employees will comply at best — but never truly commit.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">take the time to</div>
+                    <div class="expression-spanish">tomarse el tiempo para</div>
+                    <div class="expression-example">Leaders who take the time to explain the "why" build stronger, more motivated teams.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">attribute (something) to</div>
+                    <div class="expression-spanish">atribuir (algo) a</div>
+                    <div class="expression-example">We can attribute the drop in morale to the lack of feedback from management last quarter.</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+            <div class="section-card">
+                <h2>🤝 No, You Can't Upskill Your Culture. But You Can Upskill Your Leaders</h2>
+
+                <div class="article-body">
+
+                    <!-- PARAGRAPH 1 -->
+                    <p>
+                        Earlier in my life, I worked for a global company. I passed my manager in the hallway, and wanted to ask her a question. She was stressed and answered before I had even <span class="highlight" title="completado">completed</span> the question. I tried again. She did it again. On the third <span class="highlight" title="intento">attempt</span>, I looked at her and said, "Can you please be <span class="highlight" title="callada / silenciosa">quiet</span> until I have finished my question?" She stopped. I finished. She answered and then <span class="highlight" title="se fue apresuradamente">rushed away</span>.
+                    </p>
+                    <p>
+                        Five minutes later, I did the exact same thing to one of my own people. That moment has <span class="highlight" title="quedado conmigo / marcado">stayed with me</span> for decades. It wasn't the most <span class="highlight" title="dramática / impactante">dramatic</span> experience of my life, but it was one that made me <span class="highlight" title="avergonzado">embarrassed</span>. I'd like to think that I've learned something since then. But it's easy to <span class="highlight" title="volver a caer en">slip back into</span> habits that I wanted to leave behind.
+                    </p>
+
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary — Paragraph 1</h3>
+                        <div class="vocab-container">
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">attempt</span>
+                                    <button class="speak-btn" onclick="speakWord('attempt')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">A try at doing something, especially when it is difficult</p>
+                                <p class="vocab-spanish">intento</p>
+                                <div class="vocab-example">On her third attempt, she finally passed the quality audit.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">rushed away</span>
+                                    <button class="speak-btn" onclick="speakWord('rushed away')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Left very quickly, without taking time to talk or stay</p>
+                                <p class="vocab-spanish">se fue apresuradamente</p>
+                                <div class="vocab-example">The plant manager rushed away after the briefing without answering questions.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">stayed with me</span>
+                                    <button class="speak-btn" onclick="speakWord('stayed with me')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Remained in your memory or affected you for a long time</p>
+                                <p class="vocab-spanish">quedó grabado en mí / me marcó</p>
+                                <div class="vocab-example">That safety incident stayed with me and changed how I lead safety talks.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">embarrassed</span>
+                                    <button class="speak-btn" onclick="speakWord('embarrassed')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Feeling uncomfortable or ashamed because of something you did</p>
+                                <p class="vocab-spanish">avergonzado</p>
+                                <div class="vocab-example">He was embarrassed when he realized he had dismissed his team member's idea too quickly.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">slip back into</span>
+                                    <button class="speak-btn" onclick="speakWord('slip back into')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">To return to a bad habit or behavior without realizing it</p>
+                                <p class="vocab-spanish">volver a caer en / recaer en</p>
+                                <div class="vocab-example">Even after training, it's easy to slip back into old ways of giving feedback.</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr class="para-divider">
+
+                    <!-- PARAGRAPH 2 -->
+                    <p>
+                        Most leadership communication <span class="highlight" title="fracasos / fallas">failures</span> are <span class="highlight" title="inconscientes / sin darse cuenta">unconscious</span>. And you can't train unconscious habits away through values <span class="highlight" title="talleres">workshops</span>, culture decks, or <span class="highlight" title="días de estrategia fuera de la oficina">offsite strategy days</span>.
+                    </p>
+                    <p>
+                        This is the problem with how organizations try to fix culture. The thing is, you can't <span class="highlight" title="mejorar habilidades de">upskill</span> culture. It is too <span class="highlight" title="abstracta / vaga">abstract</span>. Culture <span class="highlight" title="se acumula / se construye poco a poco">accumulates</span> from thousands of conversations within an organization, and shapes how people <span class="highlight" title="se comportan">behave</span>, day after day, in meetings and <span class="highlight" title="pasillos">corridors</span> and one-on-ones.
+                    </p>
+
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary — Paragraph 2</h3>
+                        <div class="vocab-container">
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">unconscious</span>
+                                    <button class="speak-btn" onclick="speakWord('unconscious')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Done without awareness; not deliberate or planned</p>
+                                <p class="vocab-spanish">inconsciente / sin darse cuenta</p>
+                                <div class="vocab-example">Many biases in hiring decisions are unconscious — managers don't even realize they're doing it.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">workshops</span>
+                                    <button class="speak-btn" onclick="speakWord('workshops')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Short training sessions where people practice skills or discuss topics</p>
+                                <p class="vocab-spanish">talleres</p>
+                                <div class="vocab-example">We attended communication workshops, but real change only came from daily practice.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">offsite strategy days</span>
+                                    <button class="speak-btn" onclick="speakWord('offsite strategy days')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Planning meetings held outside the workplace, usually at a hotel or retreat</p>
+                                <p class="vocab-spanish">días de estrategia fuera de la oficina</p>
+                                <div class="vocab-example">The company spent thousands on offsite strategy days, but nothing changed back at the plant.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">upskill</span>
+                                    <button class="speak-btn" onclick="speakWord('upskill')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">To teach someone new skills or improve their existing ones</p>
+                                <p class="vocab-spanish">mejorar habilidades / capacitar</p>
+                                <div class="vocab-example">We need to upskill our team on data analysis before the new system launches.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">accumulates</span>
+                                    <button class="speak-btn" onclick="speakWord('accumulates')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Builds up gradually over time</p>
+                                <p class="vocab-spanish">se acumula</p>
+                                <div class="vocab-example">Trust accumulates slowly through consistent, honest communication.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">corridors</span>
+                                    <button class="speak-btn" onclick="speakWord('corridors')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Long passages or hallways inside a building</p>
+                                <p class="vocab-spanish">pasillos</p>
+                                <div class="vocab-example">Some of the most important feedback happens in corridors, not in formal meetings.</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr class="para-divider">
+
+                    <!-- PARAGRAPH 3 -->
+                    <h3>Communication shapes behavior, but behavior drives results.</h3>
+                    <p>
+                        This is the <span class="highlight" title="secuencia / orden">sequence</span>. Every instruction, presentation, piece of <span class="highlight" title="retroalimentación / comentarios">feedback</span>, and every stressed or friendly hallway exchange moves people toward a desired behavior or away from it.
+                    </p>
+                    <p>
+                        If you want to understand the true state of an organization — its culture, its energy, and its direction — you need to listen to the everyday conversations. Strategy documents tell you what leadership <span class="highlight" title="pretende / tiene la intención de">intends</span>. Conversations tell you what is actually happening. And every conversation will either build or <span class="highlight" title="romper / destruir">break</span> engagement. This is important because engagement is the <span class="highlight" title="puente">bridge</span> between communication and behavior. When people feel <span class="highlight" title="genuinamente / verdaderamente">genuinely</span> engaged, they do things because they <em>want to</em>, not because they <em>have to</em>. That's the big difference. They show more creativity, <span class="highlight" title="colaboración">collaboration</span>, and higher <span class="highlight" title="compromiso">commitment</span>. But when they feel <span class="highlight" title="desconectados">disconnected</span>, they <span class="highlight" title="cumplen / obedecen sin más">comply</span> at best, which we now call Quiet Quitting.
+                    </p>
+                    <p>
+                        Global employee engagement <span class="highlight" title="cayó / disminuyó">fell</span> from 23% to 20% in 2024. This is the second decline in twelve years, and it matched the drop that we saw during the COVID-19 <span class="highlight" title="confinamientos">lockdowns</span>. Manager engagement dropped from 30% to 22% over the same period.
+                    </p>
+                    <p>
+                        Here is another <span class="highlight" title="perturbador / preocupante">disturbing</span> fact: The people most responsible for driving team engagement are themselves disengaging. The <span class="highlight" title="efecto dominó / de onda">ripple effect</span> is predictable. Gallup's data shows that you can <span class="highlight" title="atribuir">attribute</span> 70% of the <span class="highlight" title="variación / diferencia">variance</span> in team engagement to the manager.
+                    </p>
+                    <p>
+                        The largest <span class="highlight" title="palanca / factor de influencia">lever</span> for organizational performance is the person leading the team, and specifically, how that person communicates. Highly engaged teams show a 23% increase in productivity and a 51% <span class="highlight" title="reducción">reduction</span> in <span class="highlight" title="rotación de personal">turnover</span> compared to disengaged ones.
+                    </p>
+
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary — Paragraph 3</h3>
+                        <div class="vocab-container">
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">feedback</span>
+                                    <button class="speak-btn" onclick="speakWord('feedback')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Information or reactions given to someone about their performance or work</p>
+                                <p class="vocab-spanish">retroalimentación / comentarios</p>
+                                <div class="vocab-example">Regular feedback helps employees understand what to improve before the annual review.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">intends</span>
+                                    <button class="speak-btn" onclick="speakWord('intends')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Plans or means to do something</p>
+                                <p class="vocab-spanish">pretende / tiene la intención de</p>
+                                <div class="vocab-example">The strategy document says what management intends, but floor conversations reveal reality.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">genuinely</span>
+                                    <button class="speak-btn" onclick="speakWord('genuinely')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">In a real, sincere, authentic way — not faked</p>
+                                <p class="vocab-spanish">genuinamente / de verdad</p>
+                                <div class="vocab-example">Employees who feel genuinely valued are less likely to look for another job.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">comply</span>
+                                    <button class="speak-btn" onclick="speakWord('comply')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">To follow rules or instructions, but without enthusiasm or real commitment</p>
+                                <p class="vocab-spanish">cumplir / obedecer sin más</p>
+                                <div class="vocab-example">Disengaged workers comply with procedures but rarely go beyond the minimum.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">ripple effect</span>
+                                    <button class="speak-btn" onclick="speakWord('ripple effect')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">A situation where one event causes a series of effects, like ripples in water</p>
+                                <p class="vocab-spanish">efecto dominó / efecto de onda</p>
+                                <div class="vocab-example">One disengaged supervisor creates a ripple effect that impacts the whole production line.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">variance</span>
+                                    <button class="speak-btn" onclick="speakWord('variance')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">The degree to which things differ or change from each other</p>
+                                <p class="vocab-spanish">variación / diferencia</p>
+                                <div class="vocab-example">There is significant variance in productivity between teams with engaged vs. disengaged managers.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">lever</span>
+                                    <button class="speak-btn" onclick="speakWord('lever')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">A tool or factor that gives you power to change or improve a situation</p>
+                                <p class="vocab-spanish">palanca / factor de influencia</p>
+                                <div class="vocab-example">Communication is the biggest lever for improving team performance in any factory.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">turnover</span>
+                                    <button class="speak-btn" onclick="speakWord('turnover')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">The rate at which employees leave a company and are replaced</p>
+                                <p class="vocab-spanish">rotación de personal</p>
+                                <div class="vocab-example">High turnover is expensive — it costs time and money to train every new hire.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">lockdowns</span>
+                                    <button class="speak-btn" onclick="speakWord('lockdowns')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Periods when people were required to stay home and businesses were closed</p>
+                                <p class="vocab-spanish">confinamientos</p>
+                                <div class="vocab-example">Team communication became harder during the COVID-19 lockdowns when everyone worked remotely.</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr class="para-divider">
+
+                    <!-- PARAGRAPH 4 -->
+                    <h3>The three communication superpowers</h3>
+                    <p>
+                        After 20 years of working with leaders across industries and <span class="highlight" title="continentes">continents</span>, I have <span class="highlight" title="identificado">identified</span> three capabilities that <span class="highlight" title="distinguen / diferencian">set apart</span> leaders who build high-performing cultures from those who <span class="highlight" title="las erosionan / las desgastan">erode</span> them. I call them the 'Three Communication Superpowers.'
+                    </p>
+                    <p>
+                        The first is <strong>empathy</strong>. This is genuine <span class="highlight" title="presencia / atención real">presence</span>, real connection, the ability to make the person in front of you feel that they <span class="highlight" title="importan">matter</span>. The team member I <span class="highlight" title="interrumpí">interrupted</span> with a stressed response needed a leader who was actually listening.
+                    </p>
+                    <p>
+                        The second is <strong>clarity</strong>. You need to communicate so that people understand what the company <span class="highlight" title="espera de">expects from</span> them, and remember what matters. Transparency and clarity are <span class="highlight" title="músculos / habilidades distintos">distinct muscles</span>. Clarity is about direction, and direction is what people need to perform. People can't act on what they don't remember, so the content needs to <span class="highlight" title="quedarse grabado / recordarse">stick</span>.
+                    </p>
+                    <p>
+                        The third is <strong>energy</strong>. This is your passion that <span class="highlight" title="se manifiesta / se refleja">manifests</span> in how you look and how you sound, like your <span class="highlight" title="comunicación no verbal">non-verbal communication</span>. It's the oldest form of communication, and people read body language and tone before they process words. A leader who delivers important messages in a <span class="highlight" title="plana / sin emoción">flat</span>, <span class="highlight" title="distraída">distracted</span> way signals that the message itself is low priority. Energy is about letting genuine <span class="highlight" title="compromiso / convicción">commitment</span> show.
+                    </p>
+                    <p>
+                        The good thing is that these three superpowers are <span class="highlight" title="entrenables / que se pueden desarrollar">trainable</span>. These are all examples of skills, which you can develop. When leaders take the time to develop them, engagement rises, behavior <span class="highlight" title="cambia / se transforma">shifts</span>, and results follow.
+                    </p>
+                    <p>
+                        Culture changes because leaders start having different conversations — with more presence, more direction, and more genuine care for the people they lead. That's where it starts, and that's where you can change it.
+                    </p>
+
+                    <div class="vocabulary-section">
+                        <h3>📚 Vocabulary — Paragraph 4</h3>
+                        <div class="vocab-container">
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">erode</span>
+                                    <button class="speak-btn" onclick="speakWord('erode')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">To slowly damage or weaken something over time</p>
+                                <p class="vocab-spanish">erosionar / desgastar</p>
+                                <div class="vocab-example">A manager who ignores problems can erode team morale without realizing it.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">presence</span>
+                                    <button class="speak-btn" onclick="speakWord('presence')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Being fully focused and attentive in a moment, not distracted</p>
+                                <p class="vocab-spanish">presencia / atención real</p>
+                                <div class="vocab-example">She showed real presence in every one-on-one — no phone, full eye contact.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">matter</span>
+                                    <button class="speak-btn" onclick="speakWord('matter')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">To be important; to have value or significance</p>
+                                <p class="vocab-spanish">importar / tener valor</p>
+                                <div class="vocab-example">Good leaders make every team member feel that their ideas matter.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">distinct muscles</span>
+                                    <button class="speak-btn" onclick="speakWord('distinct muscles')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">A metaphor: separate skills that each need to be developed independently</p>
+                                <p class="vocab-spanish">habilidades distintas (metáfora)</p>
+                                <div class="vocab-example">Giving feedback and setting goals are distinct muscles — you need to train both.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">stick</span>
+                                    <button class="speak-btn" onclick="speakWord('stick')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">To be remembered; to stay in someone's memory</p>
+                                <p class="vocab-spanish">quedarse grabado / recordarse</p>
+                                <div class="vocab-example">Use simple language and real examples so that your safety message sticks.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">manifests</span>
+                                    <button class="speak-btn" onclick="speakWord('manifests')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Shows itself clearly; becomes visible or evident</p>
+                                <p class="vocab-spanish">se manifiesta / se refleja</p>
+                                <div class="vocab-example">Stress manifests in body language long before someone says they're struggling.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">flat</span>
+                                    <button class="speak-btn" onclick="speakWord('flat')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Without energy, emotion, or enthusiasm in speech or delivery</p>
+                                <p class="vocab-spanish">plana / sin emoción / monótona</p>
+                                <div class="vocab-example">His flat tone during the announcement made the team think the project wasn't important.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">trainable</span>
+                                    <button class="speak-btn" onclick="speakWord('trainable')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Able to be learned and improved through practice and effort</p>
+                                <p class="vocab-spanish">entrenable / que se puede aprender</p>
+                                <div class="vocab-example">Active listening is trainable — with practice, anyone can get better at it.</div>
+                            </div>
+
+                            <div class="vocab-item">
+                                <div class="vocab-word-row">
+                                    <span class="vocab-word">shifts</span>
+                                    <button class="speak-btn" onclick="speakWord('shifts')" title="Click to hear pronunciation">🔊</button>
+                                </div>
+                                <p class="vocab-definition">Changes direction or moves to a different state</p>
+                                <p class="vocab-spanish">cambia / se transforma</p>
+                                <div class="vocab-example">Once leadership communication improves, team behavior shifts naturally.</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+                </div>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2>💡 Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>Have you ever experienced a manager whose communication style made you feel more — or less — engaged? What did they do differently?</li>
+                    <li>The article says 70% of team engagement depends on the manager. Do you agree? What other factors affect engagement in your workplace?</li>
+                    <li>Of the three communication superpowers — empathy, clarity, and energy — which one do you think is hardest to develop? Why?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card">
+                <h2>✏️ Self-Practice</h2>
+
+                <div class="practice-question">
+                    <p><strong>1.</strong> Fill in the blank: "It's easy to __________ bad habits, even after you've tried to change." <em>(slip back into / rush away / set apart)</em></p>
+                </div>
+
+                <div class="practice-question">
+                    <p><strong>2.</strong> True or False: According to the article, you can fix a company's culture by organizing workshops and offsite strategy days.</p>
+                </div>
+
+                <div class="practice-question">
+                    <p><strong>3.</strong> Match the superpower with its description:<br>
+                    <em>a) Empathy &nbsp;&nbsp; b) Clarity &nbsp;&nbsp; c) Energy</em><br><br>
+                    — "People read your body language before your words." → ___<br>
+                    — "Direction is what people need to perform." → ___<br>
+                    — "Make the person in front of you feel they matter." → ___</p>
+                </div>
+
+                <div class="practice-question">
+                    <p><strong>4.</strong> In your own words, what does "Quiet Quitting" mean? Give an example from a workplace you know.</p>
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>slip back into</strong> — "It's easy to slip back into bad habits, even after you've tried to change."</li>
+                        <li><strong>False</strong> — The article argues that culture cannot be fixed through workshops or offsite days; it changes through daily conversations and leader behavior.</li>
+                        <li>a) Empathy → "Make the person in front of you feel they matter." &nbsp;|&nbsp; b) Clarity → "Direction is what people need to perform." &nbsp;|&nbsp; c) Energy → "People read your body language before your words."</li>
+                        <li><em>Open answer.</em> "Quiet Quitting" means doing the minimum required — following rules and completing tasks, but with no real commitment, creativity, or extra effort. Example: An operator who always clocks out exactly on time, never volunteers ideas, and does only what is asked.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
