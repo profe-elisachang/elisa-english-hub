@@ -106,6 +106,7 @@ async function scanLessons() {
         { filename: 'upskill your comunication.html', date: '2026-04-24', title: 'No, you can\'t upskill your culture. But you can upskill your leaders ' },
         { filename: 'upskill your leaders.html', date: '2026-04-27', title: 'Article Takeaway' },
         { filename: 'upskill your comunication.html', date: '2026-04-27', title: 'No, you can\'t upskill your culture. But you can upskill your leaders ' },
+        { date: '2026-05-01', title: 'Labor Day – No class', isHoliday: true },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
