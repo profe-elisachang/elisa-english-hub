@@ -102,8 +102,10 @@ async function scanLessons() {
         { filename: 'Duolingo.html', date: '2026-04-13', title: '🦉 The Simple Formula That Made Duolingo a Daily Habit for Millions' },
         { filename: 'Self-Checkout Technology.html', date: '2026-04-15', title: '🛒 The Spectacular Failure of Self-Checkout Technolog' },        { filename: 'Oil from Venezuela.html', date: '2026-04-22', title: '🏭Oil from Venezuela' },
 { filename: 'Vampire Routing.html', date: '2026-04-20', title: '🧛 Vampire Routing— The Key to Cooler Urban Walking' },
-        { filename: 'upskill your leaders.html', date: '2026-04-24', title: ' No, you can\'t upskill your culture. But you can upskill your leader' },
+        { filename: 'upskill your leaders.html', date: '2026-04-24', title: 'Article Takeaway' },
         { filename: 'upskill your comunication.html', date: '2026-04-24', title: 'No, you can\'t upskill your culture. But you can upskill your leaders ' },
+        { filename: 'upskill your leaders.html', date: '2026-04-27', title: 'Article Takeaway' },
+        { filename: 'upskill your comunication.html', date: '2026-04-27', title: 'No, you can\'t upskill your culture. But you can upskill your leaders ' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
