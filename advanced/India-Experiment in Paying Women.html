@@ -1,0 +1,857 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Wage for Housework? - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #b5451b;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* ARTICLE TITLE */
+        .article-title {
+            background: #b5451b;
+            color: white;
+            padding: 32px 36px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .article-title h1 {
+            margin: 0 0 8px 0;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+
+        .article-title p {
+            margin: 0;
+            opacity: 0.85;
+            font-size: 1rem;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 4px solid #b5451b;
+        }
+
+        .section-card h2 {
+            color: #b5451b;
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #e8ddd4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .expression-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .expression-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .expression-item {
+            background: #fdf6f0;
+            border-left: 4px solid #e07b4a;
+            border-radius: 0 8px 8px 0;
+            padding: 16px;
+        }
+
+        .expression-en {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #b5451b;
+            margin-bottom: 4px;
+        }
+
+        .expression-es {
+            color: #777;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .expression-example {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ARTICLE PARAGRAPHS */
+        .article-paragraph {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background-color: #fff3cd;
+            font-weight: 700;
+            border-bottom: 2px solid #e07b4a;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c2c2c;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+        }
+
+        /* VOCABULARY BOXES */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #b5451b;
+            padding: 22px 24px;
+            margin: 24px 0 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .vocabulary-section h3 {
+            color: #b5451b;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e8ddd4;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+
+        .vocab-word-row {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .vocab-word {
+            color: #b5451b;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .vocab-speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .vocab-def {
+            color: #333;
+            margin: 6px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .vocab-es {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 4px 0 10px 0;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4a90e2;
+            padding-left: 12px;
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        .discussion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .discussion-list li {
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            background: #fdf6f0;
+            border-radius: 8px;
+            border-left: 4px solid #e07b4a;
+            font-size: 1.02rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .discussion-list li::before {
+            content: "💬 ";
+        }
+
+        /* PRACTICE */
+        .practice-questions ol {
+            padding-left: 20px;
+        }
+
+        .practice-questions li {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .practice-questions li strong {
+            color: #b5451b;
+        }
+
+        details {
+            margin-top: 20px;
+            background: #fdf6f0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            border: 1px solid #e8ddd4;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #b5451b;
+            font-weight: 600;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+            color: #444;
+        }
+
+        details ol li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* PARAGRAPH DIVIDER */
+        .para-divider {
+            border: none;
+            border-top: 1px dashed #d4c4b0;
+            margin: 22px 0;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div>
+                <a href="../index.html" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255,255,255,0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/0bf9/live/985a3d70-ccf5-11f0-8c06-f5d460985095.jpg.webp" alt="💰 A Wage for Housework?" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ARTICLE TITLE -->
+            <div class="article-title">
+                <h1>💰 A Wage for Housework?</h1>
+                <p>India's Sweeping Experiment in Paying Women</p>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2>🗣️ Useful Expressions</h2>
+                <div class="expression-grid">
+
+                    <div class="expression-item">
+                        <div class="expression-en">stumble into something</div>
+                        <div class="expression-es">tropezarse con algo (sin planearlo)</div>
+                        <div class="expression-example">The government stumbled into a major policy shift without realizing its impact.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">set apart from<div class="resize-container" style="position: relative; display: inline-block; width: 190px; margin: 1rem 0px;"></div><p><br></p></div>
+                        <div class="expression-es">distinguirse / diferenciarse de</div>
+                        <div class="expression-example">What sets this program apart from others is that it has no conditions attached.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">on stark display</div>
+                        <div class="expression-es">claramente visible / muy evidente</div>
+                        <div class="expression-example">The inequality in unpaid work was on stark display in the survey results.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">far from</div>
+                        <div class="expression-es">lejos de ser / nada…</div>
+                        <div class="expression-example">The results are far from perfect, but they show a step in the right direction.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">neither … nor …</div>
+                        <div class="expression-es">ni … ni …</div>
+                        <div class="expression-example">The transfers are neither a complete solution nor completely useless.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+            <div class="section-card">
+                <h2>📰 Article</h2>
+ <h3><a href="https://www.bbc.com/news/articles/c5y9ez3kzrdo" target="_blank" class="source-tag">🔗 BBC News Original Article Reference</a></h3>
+
+                <!-- PARAGRAPH 1 -->
+                <p class="article-paragraph">
+                    Across India, 118 million adult women in 12 states now receive <span class="highlight" title="transferencias en efectivo sin condiciones">unconditional cash transfers</span> from their governments — making India the site of one of the world's largest social-policy <span class="highlight" title="experimentos">experiments</span>. Long <span class="highlight" title="acostumbrado a">accustomed to</span> <span class="highlight" title="subsidiar">subsidising</span> grain, fuel and rural jobs, India has <span class="highlight" title="tropezado con algo sin planearlo">stumbled into</span> something more <span class="highlight" title="radical / drástico">radical</span>: paying adult women simply because they <span class="highlight" title="mantienen / sostienen">keep</span> households running, <span class="highlight" title="cargan con la responsabilidad de">bear the burden of</span> unpaid care and form an <span class="highlight" title="electorado">electorate</span> too large to ignore.
+                </p>
+
+                <!-- VOCAB BOX 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary — Paragraph 1</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">unconditional</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('unconditional')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Given without any requirements or rules attached</p>
+                            <p class="vocab-es">incondicional / sin condiciones</p>
+                            <div class="vocab-example">The unconditional support from management boosted team morale significantly.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">cash transfer</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('cash transfer')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Money sent directly from the government to a person's bank account</p>
+                            <p class="vocab-es">transferencia en efectivo</p>
+                            <div class="vocab-example">The cash transfer program helped low-income families cover basic expenses.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">accustomed to</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('accustomed to')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Used to something; familiar with it through habit or experience</p>
+                            <p class="vocab-es">acostumbrado a</p>
+                            <div class="vocab-example">Workers are accustomed to strict quality checks on the production line.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">subsidise</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('subsidise')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To pay part of the cost of something so it is cheaper for people</p>
+                            <p class="vocab-es">subsidiar / subvencionar</p>
+                            <div class="vocab-example">The government subsidised fuel costs to reduce the burden on low-income households.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">stumble into</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('stumble into')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To get into a situation by accident, without planning</p>
+                            <p class="vocab-es">tropezarse con / llegar a algo sin querer</p>
+                            <div class="vocab-example">They stumbled into a major innovation while testing a different product.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">bear the burden of</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('bear the burden of')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To carry or deal with a heavy responsibility or difficulty</p>
+                            <p class="vocab-es">cargar con el peso de</p>
+                            <div class="vocab-example">Frontline workers often bear the burden of enforcing safety regulations.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">electorate</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('electorate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">All the people who are allowed to vote in an election</p>
+                            <p class="vocab-es">electorado</p>
+                            <div class="vocab-example">The electorate's concerns about wages influenced the new labour policy.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="para-divider">
+
+                <!-- PARAGRAPH 2 -->
+                <p class="article-paragraph">
+                    What sets India <span class="highlight" title="diferencia a India de">apart from</span> Mexico, Brazil or Indonesia — countries with large <span class="highlight" title="condicionales (requieren cumplir algo)">conditional</span> cash-transfer <span class="highlight" title="planes / programas">schemes</span> — is the absence of conditions: the money <span class="highlight" title="llega / es entregado">arrives</span> whether or not a child attends school or a household falls below the <span class="highlight" title="línea de pobreza">poverty line</span>. The transfers <span class="highlight" title="van desde ... hasta ...">range from</span> 1,000–2,500 rupees a month — <span class="highlight" title="sumas pequeñas / míseras">meagre</span> sums, worth roughly 5–12% of household income, but <span class="highlight" title="regulares / constantes">regular</span>. Women typically <span class="highlight" title="gastan / destinan">spend</span> the money on children's education, groceries, medical expenses, <span class="highlight" title="saldar pequeñas deudas">retiring small debts</span> and occasional personal items.
+                </p>
+
+                <!-- VOCAB BOX 2 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary — Paragraph 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">set apart from</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('set apart from')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To make something different or special compared to others</p>
+                            <p class="vocab-es">distinguirse de / diferenciarse de</p>
+                            <div class="vocab-example">Attention to detail sets our manufacturing process apart from competitors.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">conditional</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('conditional')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Only given if certain requirements are met</p>
+                            <p class="vocab-es">condicional / con condiciones</p>
+                            <div class="vocab-example">The bonus was conditional on meeting the quarterly production targets.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">scheme</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('scheme')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">An official plan or program organized by a government or institution</p>
+                            <p class="vocab-es">plan / programa / esquema</p>
+                            <div class="vocab-example">The company launched a new scheme to improve worker health and safety.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">poverty line</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('poverty line')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">The minimum income level considered necessary to meet basic needs</p>
+                            <p class="vocab-es">línea de pobreza</p>
+                            <div class="vocab-example">Many factory workers earn just above the poverty line despite long hours.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">range from … to …</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('range from to')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To vary between two amounts or levels</p>
+                            <p class="vocab-es">oscilar entre / ir de … a …</p>
+                            <div class="vocab-example">Delivery times range from two to five business days depending on location.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">meagre</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('meagre')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Very small in amount; not enough</p>
+                            <p class="vocab-es">escaso / ínfimo / miserable</p>
+                            <div class="vocab-example">The meagre budget made it difficult to upgrade the equipment on time.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">retire a debt</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('retire a debt')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To pay off and eliminate a debt completely</p>
+                            <p class="vocab-es">saldar / liquidar una deuda</p>
+                            <div class="vocab-example">The company used its year-end profits to retire the outstanding supplier debt.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="para-divider">
+
+                <!-- PARAGRAPH 3 -->
+                <p class="article-paragraph">
+                    The political <span class="highlight" title="poder / influencia">power</span> of cash transfers was on <span class="highlight" title="claramente visible / muy evidente">stark display</span> in recent elections. In Bihar, the government transferred money to 7.5 million female bank accounts just before <span class="highlight" title="votaciones / elecciones">polling</span>. Women voted in larger numbers than men, <span class="highlight" title="determinando de manera decisiva">decisively shaping</span> the outcome. Critics called it <span class="highlight" title="compra de votos descarada">blatant vote-buying</span>, but the result was clear. In some policy circles, the schemes are <span class="highlight" title="ridiculizados / despreciados">derided</span> as <span class="highlight" title="beneficios gratuitos / dádivas">freebies</span>. They also <span class="highlight" title="presionan / afectan negativamente">put pressure on</span> state <span class="highlight" title="finanzas públicas">finances</span>: 12 states are set to spend around $18bn this year, and half face <span class="highlight" title="déficits de ingresos">revenue deficits</span>.
+                </p>
+
+                <!-- VOCAB BOX 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary — Paragraph 3</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">on stark display</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('on stark display')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Clearly visible and impossible to ignore</p>
+                            <p class="vocab-es">claramente evidente / a la vista de todos</p>
+                            <div class="vocab-example">The gap in wages between departments was on stark display in the annual report.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">polling</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('polling')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">The process of voting in an election</p>
+                            <p class="vocab-es">votación / elecciones</p>
+                            <div class="vocab-example">Polling data showed that workers strongly supported the new benefits package.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">decisively</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('decisively')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">In a way that produces a clear and definite result</p>
+                            <p class="vocab-es">decisivamente / de manera determinante</p>
+                            <div class="vocab-example">The new quality controls decisively reduced the number of defective units.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">blatant</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('blatant')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Done openly without shame; very obvious and offensive</p>
+                            <p class="vocab-es">descarado / flagrante</p>
+                            <div class="vocab-example">It was a blatant violation of the safety regulations everyone had agreed to follow.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">deride</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('deride')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To laugh at or criticize something as worthless or foolish</p>
+                            <p class="vocab-es">ridiculizar / burlarse de</p>
+                            <div class="vocab-example">The proposal was derided by some managers, but proved highly effective in practice.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">revenue deficit</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('revenue deficit')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">When a government spends more on regular expenses than it earns in income</p>
+                            <p class="vocab-es">déficit de ingresos / déficit fiscal</p>
+                            <div class="vocab-example">A revenue deficit forced the department to postpone several planned upgrades.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="para-divider">
+
+                <!-- PARAGRAPH 4 -->
+                <p class="article-paragraph">
+                    Evidence is still <span class="highlight" title="escasa / limitada">thin</span> but <span class="highlight" title="instructiva / que da pistas">instructive</span>. Surveys show that most women <span class="highlight" title="controlaban / administraban">operated</span> their own bank accounts and <span class="highlight" title="decidían">decided</span> how to spend the money — mostly on food, education and medical costs. Women spoke of <span class="highlight" title="tranquilidad">peace of mind</span>, reduced <span class="highlight" title="conflictos matrimoniales">marital conflict</span> and <span class="highlight" title="confianza recién ganada">newfound confidence</span>. Importantly, none of the surveys finds evidence that the money <span class="highlight" title="desalienta / desincentiva">discourages</span> women from seeking paid work or <span class="highlight" title="consolida / refuerza">entrench</span> gender roles. The transfers strengthen <span class="highlight" title="autonomía financiera">financial autonomy</span> and <span class="highlight" title="modestamente / ligeramente">modestly</span> improve <span class="highlight" title="poder de negociación">bargaining power</span>. They are neither <span class="highlight" title="panacea / solución mágica">panacea</span> nor poison: useful but limited tools operating in a <span class="highlight" title="patriarcal">patriarchal</span> society where cash alone cannot <span class="highlight" title="deshacer / revertir">undo</span> <span class="highlight" title="desigualdades estructurales">structural inequities</span>.
+                </p>
+
+                <!-- VOCAB BOX 4 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary — Paragraph 4</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">instructive</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('instructive')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Providing useful information or lessons to learn from</p>
+                            <p class="vocab-es">instructivo / revelador</p>
+                            <div class="vocab-example">The failed product launch was instructive — it revealed weaknesses in our testing process.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">peace of mind</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('peace of mind')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">A feeling of calm and freedom from worry</p>
+                            <p class="vocab-es">tranquilidad / paz mental</p>
+                            <div class="vocab-example">Having clear safety procedures gives workers peace of mind on the factory floor.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">newfound</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('newfound')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Recently discovered or obtained for the first time</p>
+                            <p class="vocab-es">recién descubierto / recién adquirido</p>
+                            <div class="vocab-example">The team's newfound confidence after the successful audit improved overall productivity.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">discourage</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('discourage')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To make someone less likely to do something; to reduce motivation</p>
+                            <p class="vocab-es">desalentar / disuadir</p>
+                            <div class="vocab-example">Poor working conditions can discourage skilled workers from staying long-term.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">entrench</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('entrench')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To establish something so firmly that it is difficult to change</p>
+                            <p class="vocab-es">consolidar / arraigar / perpetuar</p>
+                            <div class="vocab-example">Outdated procedures can become entrenched if no one challenges them over time.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">bargaining power</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('bargaining power')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">The ability to influence decisions or negotiate better terms</p>
+                            <p class="vocab-es">poder de negociación</p>
+                            <div class="vocab-example">Workers with specialized skills have more bargaining power when discussing salaries.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">panacea</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('panacea')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">A solution believed to solve all problems — but usually unrealistic</p>
+                            <p class="vocab-es">panacea / solución mágica</p>
+                            <div class="vocab-example">Automation is not a panacea; it solves some problems but creates new challenges too.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">structural inequity</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('structural inequity')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">Deep, systemic unfairness built into social or economic systems</p>
+                            <p class="vocab-es">desigualdad estructural</p>
+                            <div class="vocab-example">Addressing structural inequity in the workplace requires more than just training programs.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">undo</span>
+                                <button class="vocab-speak-btn" onclick="speakWord('undo')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-def">To reverse or cancel the effects of something</p>
+                            <p class="vocab-es">deshacer / revertir</p>
+                            <div class="vocab-example">It is hard to undo the damage caused by years of poor communication between teams.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2>💬 Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>In your workplace, do you think unpaid or unrecognized work exists? How could it be acknowledged?</li>
+                    <li>Do you think government cash transfers to women are a good policy, or do they risk becoming a political tool? Why?</li>
+                    <li>If you were in charge of designing this kind of program for Mexico, what conditions — if any — would you add?</li>
+ <li><strong>Discuss the risk of "Unconditional" contracts:</strong>  In what scenario would you pay a supplier without specific KPIs? Does it build trust or encourage laziness?</li>
+                <li><strong>"Administratively Simple" systems often hide complex back-ends.</strong>  Discuss the challenges of scaling a database to handle 300 million active users.</li>
+                <li><strong>The "Lopsided Burden" (mental load) often leads to fatigue. </strong> How can we identify workers who are carrying too much stress from home before an accident happens?</li>
+            </ul>
+                
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card">
+                <h2>✏️ Self-Practice</h2>
+                <div class="practice-questions">
+                    <ol>
+                        <li>
+                            Fill in the blank: The new safety policy puts ________ on all department managers to report incidents immediately.<br>
+                            <em>(Hint: a two-word phrase meaning "creates pressure for")</em>
+                        </li>
+                        <li>
+                            True or False: According to the article, the cash transfers caused women to stop looking for paid jobs.
+                        </li>
+                        <li>
+                            Choose the correct word: The small budget was <strong>(meagre / panacea / blatant)</strong>, but the team made the most of it.
+                        </li>
+                        <li>
+                            In your own words: What does it mean when a policy is described as "neither a panacea nor poison"?
+                        </li>
+                    </ol>
+
+                    <details>
+                        <summary><strong>Reference Answers</strong></summary>
+                        <ol>
+                            <li><strong>pressure on</strong> — "puts pressure on all department managers"</li>
+                            <li><strong>False</strong> — The surveys found no evidence that the transfers discouraged women from seeking paid work.</li>
+                            <li><strong>meagre</strong> — meaning very small or insufficient.</li>
+                            <li>It means the policy is not a perfect solution that fixes everything (<em>panacea</em>), but it is also not harmful or damaging (<em>poison</em>). It is useful but limited.</li>
+                        </ol>
+                    </details>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
+<div class="resize-container" style="position: relative; display: inline-block; width: 876px; margin: 1rem 0px;"></div><p><br></p>
