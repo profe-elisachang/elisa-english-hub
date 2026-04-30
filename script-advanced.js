@@ -93,7 +93,7 @@ async function scanLessons() {
         { filename: 'Workplace Anxiety.html', date: '2026-04-23', title: '😰 Easing Workplace Anxiety' },    
          { filename: 'upskill your leaders.html', date: '2026-04-28', title: 'No, you cannot upskill your culture. But you can upskill your leaders' },    
        
-        { filename: 'India-Experiment in Paying Women.html', date: '2026-04-29', title: '💰 A Wage for Housework?' },
+        { filename: 'India-Experiment in Paying Women.html', date: '2026-04-30', title: '💰 A Wage for Housework?' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
