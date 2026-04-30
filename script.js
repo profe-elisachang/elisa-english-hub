@@ -107,9 +107,8 @@ async function scanLessons() {
         { filename: 'upskill your leaders.html', date: '2026-04-27', title: 'Article Takeaway' },
         { filename: 'upskill your comunication.html', date: '2026-04-27', title: 'No, you can\'t upskill your culture. But you can upskill your leaders ' },
         { date: '2026-05-01', title: 'Labor Day – No class', isHoliday: true },
-        { filename: 'India\'s Cash Transfers.html', date: '2026-04-29', title: '💸 India\'s Cash Transfers Recognize Housewives\' Hidden Labor' },
-        { filename: 'The Evolution of the Modern Workweek.html', date: '2026-04-30', title: '🏭 The Evolution of the Modern Workweek' },
-        { filename: '.html', date: '2026-04-30', title: '🕶️ The Return of Retro Aesthetics' },
+        { filename: 'India\'s Cash Transfers.html', date: '2026-04-29', title: '💸 India\'s Cash Transfers Recognize Housewives\' Hidden Labor' },        { filename: 'The Evolution of the Modern Workweek.html', date: '2026-04-30', title: '🏭 The Evolution of the Modern Workweek' },
+{ filename: '.html', date: '2026-04-30', title: '🕶️ The Return of Retro Aesthetics' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
