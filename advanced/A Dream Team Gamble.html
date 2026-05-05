@@ -1,0 +1,803 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Dream Team Gamble? - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f5f0e8;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #1a3a4a;
+            color: white;
+            padding: 1rem 2rem;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+        .level-badge {
+            background: #e07b39;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* ARTICLE TITLE AREA */
+        .article-hero {
+            background: #1a3a4a;
+            color: white;
+            padding: 40px 30px 30px;
+            margin-bottom: 30px;
+            border-radius: 0 0 12px 12px;
+        }
+        .article-category {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #e07b39;
+            margin-bottom: 10px;
+        }
+        .article-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0 0 10px 0;
+            line-height: 1.1;
+        }
+        .article-hero .subtitle {
+            font-size: 1.15rem;
+            color: #b0c8d4;
+            margin: 0 0 10px 0;
+            font-style: italic;
+        }
+        .article-byline {
+            font-size: 0.8rem;
+            color: #8aa8b8;
+            margin-top: 10px;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .section-card h2 {
+            color: #1a3a4a;
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-bottom: 3px solid #e07b39;
+            padding-bottom: 10px;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        @media (min-width: 768px) {
+            .expression-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1200px) {
+            .expression-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .expression-item {
+            background: #f9f6f1;
+            border-left: 4px solid #e07b39;
+            border-radius: 6px;
+            padding: 16px;
+        }
+        .expression-english {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #1a3a4a;
+        }
+        .expression-spanish {
+            font-style: italic;
+            color: #777;
+            font-size: 0.95rem;
+            margin: 4px 0;
+        }
+        .expression-example {
+            color: #444;
+            font-size: 0.93rem;
+            border-left: 3px solid #4A90E2;
+            padding-left: 10px;
+            margin-top: 8px;
+        }
+
+        /* ARTICLE TEXT */
+        .article-text {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #333;
+        }
+        .article-text p {
+            margin-bottom: 18px;
+        }
+        .article-subtitle {
+            color: #1a3a4a;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 24px 0 8px;
+        }
+        .paragraph-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #e07b39;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        /* VOCABULARY HIGHLIGHT */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #e07b39;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a3a4a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+        }
+
+        /* VOCAB BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #1a3a4a;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .vocabulary-section h3 {
+            color: #1a3a4a;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        @media (min-width: 768px) {
+            .vocab-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1200px) {
+            .vocab-container { grid-template-columns: repeat(3, 1fr); }
+        }
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .vocab-word {
+            color: #e07b39;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.97rem;
+        }
+        .vocab-spanish {
+            color: #666;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.93rem;
+        }
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        .discussion-list {
+            list-style: none;
+            padding: 0;
+        }
+        .discussion-list li {
+            background: #f0f6fa;
+            border-left: 4px solid #1a3a4a;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+            font-size: 1.02rem;
+            color: #2c2c2c;
+        }
+
+        /* SELF-PRACTICE */
+        .practice-list {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+        .practice-list li {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            color: #333;
+        }
+        details {
+            margin-top: 20px;
+            background: #f9f6f1;
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+        details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #1a3a4a;
+        }
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        details ol li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* BLOCKQUOTE STYLE for quoted speech in article */
+        .article-quote {
+            border-left: 4px solid #e07b39;
+            background: #fdf6ee;
+            padding: 12px 18px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: #444;
+        }
+    </style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div>
+                <a href="../index-advanced.html" class="back-to-calendar-btn">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ARTICLE HERO -->
+    <div class="article-hero">
+        <div class="article-category">Management</div>
+        <h1>🎲 A Dream Team Gamble?</h1>
+        <p class="subtitle">So many all-stars in Meta's group of AI experts could spell trouble</p>
+        <p class="article-byline">♦ by Jo Constantz / © 2025, Bloomberg News.<br>
+        Distributed by Tribune Content Agency, LLC.<br>
+        PAGE DESIGN BY VICKY TSUNG</p>
+    </div>
+
+    <div class="container">
+        <main class="main-content">
+
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2><img src="data:image/jpeg;base64,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" alt="" class="resizable-image" contenteditable="false" draggable="false" data-layout="full-width" style="height: auto; border-radius: 8px; cursor: pointer; border: 2px solid transparent; padding: 4px; box-shadow: none; display: block; width: 100%; max-width: 100%; margin: 1rem 0px;" data-resizable="true"><p><br></p>💬 Useful Expressions</h2>
+                <div class="expression-grid">
+                    <div class="expression-item">
+                        <div class="expression-english">spell trouble</div>
+                        <div class="expression-spanish">significar / augurar problemas</div>
+                        <div class="expression-example">Having too many managers in one team could spell trouble for the project.</div>
+                    </div>
+                    <div class="expression-item">
+                        <div class="expression-english">fast-track</div>
+                        <div class="expression-spanish">acelerar / hacer avanzar rápidamente</div>
+                        <div class="expression-example">The company wants to fast-track the development of its new software platform.</div>
+                    </div>
+                    <div class="expression-item">
+                        <div class="expression-english">as it turns out</div>
+                        <div class="expression-spanish">resulta que / según parece</div>
+                        <div class="expression-example">As it turns out, hiring more specialists did not improve the team's results.</div>
+                    </div>
+                    <div class="expression-item">
+                        <div class="expression-english">at the outset</div>
+                        <div class="expression-spanish">desde el principio / al comienzo</div>
+                        <div class="expression-example">We need to define each person's role at the outset to avoid conflicts later.</div>
+                    </div>
+                    <div class="expression-item">
+                        <div class="expression-english">remains to be seen</div>
+                        <div class="expression-spanish">está por verse / queda por ver</div>
+                        <div class="expression-example">Whether the new strategy will succeed remains to be seen.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY BOXES -->
+            <div class="section-card">
+                <h2>📊 Article: A Dream Team Gamble?</h2>
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+
+                <!-- PARAGRAPH 1 -->
+                <div class="paragraph-label">Paragraph 1</div>
+                <div class="article-text">
+                    <p>
+                        Meta Platforms, Inc. is spending a fortune to assemble the brightest minds in artificial intelligence. Chief Executive Officer Mark Zuckerberg may want to note: Research suggests that packing a team with too much genius can <span class="highlight" title="salir el tiro por la culata / tener el efecto contrario"><strong>backfire</strong></span>.
+                    </p>
+                    <p>
+                        More than a dozen engineers from OpenAI have <span class="highlight" title="desertar / pasarse al bando contrario">defected</span> to Meta, joined by notable experts from Anthropic and Google's DeepMind. Zuckerberg's <span class="highlight" title="apuesta / jugada">wager</span> is that by concentrating top talent and giving them unlimited resources, he can gain ground on rivals and fast-track the development of AI systems so advanced that they will approach "artificial general intelligence," the hypothetical point at which the model surpasses human-level capacities.
+                    </p>
+                    <p>
+                        As it turns out, loading up a team with multiple superstars is not always a winning strategy, as any frustrated sports fan could tell you. Without expert management, too much talent in one group can lead to <span class="highlight" title="rendimientos decrecientes"><strong><em>diminishing returns</em></strong></span>—or even outright failure—if egos clash and the chemistry is poor enough.
+                    </p>
+                    <div class="article-quote">
+                        "There's this belief on Wall Street and in Silicon Valley that you just bring the most capable people, put them together and magic just happens," said Boris Groysberg, a professor at Harvard Business School who has studied team dynamics for over two decades. "No, magic doesn't happen. What you have in many cases is a lot of jealousy, backstabbing, <strong><em>sabotage</em></strong>."
+                    </div>
+                    <p>
+                        At Meta, keeping the superstars out of these traps is a task that falls to Alexandr Wang, the 28-year-old former CEO of Scale AI, and former GitHub, Inc. CEO Nat Friedman, 48, the newly appointed leaders of Meta's 50-person superintelligence unit.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX PARAGRAPH 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">backfire</span>
+                                <button class="speak-btn" onclick="speakWord('backfire')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">When a plan has the opposite effect of what was intended — it goes wrong and causes harm to the person who made it</p>
+                            <p class="vocab-spanish">salir el tiro por la culata / tener el efecto contrario</p>
+                            <div class="vocab-example">The aggressive marketing campaign backfired and hurt the brand's reputation.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">defect</span>
+                                <button class="speak-btn" onclick="speakWord('defect')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To leave one company or organization to join an opposing one, especially in a surprising or disloyal way</p>
+                            <p class="vocab-spanish">desertar / pasarse al bando contrario</p>
+                            <div class="vocab-example">Several top engineers defected to the competitor after the merger was announced.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">wager</span>
+                                <button class="speak-btn" onclick="speakWord('wager')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A bet or risky decision — an agreement in which you win or lose based on the result of something, like a race</p>
+                            <p class="vocab-spanish">apuesta / jugada</p>
+                            <div class="vocab-example">The CEO's wager on renewable energy paid off when fuel prices rose sharply.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">diminishing returns</span>
+                                <button class="speak-btn" onclick="speakWord('diminishing returns')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">When profits or advantages you get from something stop increasing in relation to the effort you are making — you put in more but get less back</p>
+                            <p class="vocab-spanish">rendimientos decrecientes</p>
+                            <div class="vocab-example">After the tenth revision, the team hit diminishing returns — each change made little difference.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">sabotage</span>
+                                <button class="speak-btn" onclick="speakWord('sabotage')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Deliberate damage done to equipment, vehicles, etc. in order to prevent an enemy or opponent from using them; secretly ruining someone else's work</p>
+                            <p class="vocab-spanish">sabotaje</p>
+                            <div class="vocab-example">The project failed due to internal sabotage from a disgruntled team member.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">backstabbing</span>
+                                <button class="speak-btn" onclick="speakWord('backstabbing')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Doing or saying harmful things to someone who trusts you, especially to get an advantage at work</p>
+                            <p class="vocab-spanish">puñaladas por la espalda / traición</p>
+                            <div class="vocab-example">The toxic workplace culture encouraged gossip and backstabbing among employees.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 2 -->
+                <div class="paragraph-label">Paragraph 2</div>
+                <div class="article-text">
+                    <p class="article-subtitle">Decades of academic studies</p>
+                    <p>
+                        In the 1970s, management scholar Meredith Belbin observed that teams composed entirely of high-IQ individuals were prone to prolonged arguments, showed little <span class="highlight" title="cohesión / unidad"><em>cohesion</em></span> and struggled to reach decisions, with members more interested in debating than collaborating.
+                    </p>
+                    <p>
+                        In 2011, Groysberg and others published a study concluding that on Wall Street, after a certain point, adding more "all-star" analysts to research teams at elite firms actually hurt performance.
+                    </p>
+                    <p>
+                        There appeared to be a <span class="highlight" title="punto de inflexión / momento decisivo"><em>tipping point</em></span>, usually reached when all-stars with overlapping areas of expertise accounted for roughly half the research team, where the analysts' egos took over and they started <span class="highlight" title="acaparar / monopolizar recursos o información"><strong><em>gatekeeping</em></strong></span> information instead of cooperating.
+                    </p>
+                    <p>
+                        Other research shows that a team's performance depends a lot on how well its members communicate and collaborate.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX PARAGRAPH 2 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">cohesion</span>
+                                <button class="speak-btn" onclick="speakWord('cohesion')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">If there is cohesion among a group of people, a set of ideas, etc., all the parts or members of it are connected or related in a reasonable way to form a whole</p>
+                            <p class="vocab-spanish">cohesión / unidad</p>
+                            <div class="vocab-example">The new manager worked hard to build cohesion between the engineering and marketing departments.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">tipping point</span>
+                                <button class="speak-btn" onclick="speakWord('tipping point')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The moment when one particular result of a process becomes the most likely one, after a period when the result is not sure</p>
+                            <p class="vocab-spanish">punto de inflexión / momento decisivo</p>
+                            <div class="vocab-example">The company reached a tipping point when three key clients cancelled their contracts in the same week.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">gatekeeping</span>
+                                <button class="speak-btn" onclick="speakWord('gatekeeping')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Strictly controlling who does not have access to particular resources, power, or opportunities — keeping things for yourself instead of sharing</p>
+                            <p class="vocab-spanish">acaparar recursos / monopolizar información</p>
+                            <div class="vocab-example">The senior engineer was accused of gatekeeping technical knowledge instead of mentoring junior staff.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">prone to</span>
+                                <button class="speak-btn" onclick="speakWord('prone to')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Likely to do something or be affected by something, especially something negative</p>
+                            <p class="vocab-spanish">propenso a / tendente a</p>
+                            <div class="vocab-example">Teams without clear leadership are prone to conflict and miscommunication.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">overlapping</span>
+                                <button class="speak-btn" onclick="speakWord('overlapping')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">When two areas, topics, or responsibilities cover the same ground or share similar elements</p>
+                            <p class="vocab-spanish">superpuestas / traslapadas</p>
+                            <div class="vocab-example">The two departments had overlapping responsibilities, which caused confusion about who was in charge.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 3 -->
+                <div class="paragraph-label">Paragraph 3</div>
+                <div class="article-text">
+                    <p class="article-subtitle">Supergroup management tips</p>
+                    <p>
+                        When overseeing powerhouse teams, each person's lane must be clearly defined.
+                    </p>
+                    <div class="article-quote">
+                        "If everyone has clear swimming lanes, they're not going to see each other as a threat," said Lindred Greer, a professor at the University of Michigan's Ross School of Business. If there are people with similar backgrounds and talents, Greer said that kind of <span class="highlight" title="duplicación / repetición innecesaria"><em>duplication</em></span> is OK—as long as they're kept separate.
+                    </div>
+                    <p>
+                        Another trick is to openly determine at the outset who will hold decision-making rights on key issues; otherwise, competition for authority may destroy the group.
+                    </p>
+                    <p>
+                        Then there's building group chemistry, which means developing trust between team members, communicating openly and establishing a sense of shared purpose.
+                    </p>
+                    <p>
+                        And then there's the money. With all of Zuckerberg's widely publicized poaching efforts, compensation details for many of the new recruits have become public knowledge. That could strain team-building efforts and influence the team's dynamics.
+                    </p>
+                    <p>
+                        Michael Dell, CEO of Dell Technologies, Inc., said that the extravagant compensation packages for new AI hires could <span class="highlight" title="molestar / irritar de manera duradera"><strong><em>rankle</em></strong></span> veteran Meta employees.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX PARAGRAPH 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">overseeing</span>
+                                <button class="speak-btn" onclick="speakWord('overseeing')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Watching and directing a process or activity to make sure it is done correctly</p>
+                            <p class="vocab-spanish">supervisar / vigilar</p>
+                            <div class="vocab-example">She is responsible for overseeing all quality control procedures on the production line.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">powerhouse</span>
+                                <button class="speak-btn" onclick="speakWord('powerhouse')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A person, organization, or team that is extremely strong, energetic, or highly skilled</p>
+                            <p class="vocab-spanish">potencia / equipo de alto rendimiento</p>
+                            <div class="vocab-example">The R&amp;D department has become a powerhouse of innovation within the company.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">duplication</span>
+                                <button class="speak-btn" onclick="speakWord('duplication')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To duplicate something means to repeat something in exactly the same way — doing the same work twice unnecessarily</p>
+                            <p class="vocab-spanish">duplicación / repetición innecesaria</p>
+                            <div class="vocab-example">Having two teams work on the same task leads to duplication of effort and wasted resources.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">strain</span>
+                                <button class="speak-btn" onclick="speakWord('strain')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To put pressure on something or someone, making a relationship or situation more difficult</p>
+                            <p class="vocab-spanish">tensionar / poner a prueba</p>
+                            <div class="vocab-example">The sudden increase in orders strained the relationship between the sales and production teams.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">rankle</span>
+                                <button class="speak-btn" onclick="speakWord('rankle')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">If something rankles, you still remember it angrily because it upset you or annoyed you a lot — a lingering feeling of resentment</p>
+                            <p class="vocab-spanish">molestar / irritar de manera duradera</p>
+                            <div class="vocab-example">The unfair pay difference continued to rankle the experienced employees for months.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">poaching</span>
+                                <button class="speak-btn" onclick="speakWord('poaching')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Illegally or unethically taking something that belongs to someone else — here, recruiting employees from competitor companies</p>
+                            <p class="vocab-spanish">cazar talentos / robar empleados de la competencia</p>
+                            <div class="vocab-example">The tech giant's aggressive poaching of engineers sparked tensions across the industry.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 4 -->
+                <div class="paragraph-label">Paragraph 4</div>
+                <div class="article-text">
+                    <p class="article-subtitle">Stars managing stars</p>
+                    <p>
+                        Zuckerberg disputes some of the press reports about the specific packages he's offering to AI experts but defends his strategy of recruiting an all-star team.
+                    </p>
+                    <p>
+                        [He] has arguably placed his largest bet on Wang. Though Wang has prodigious talent for math and science and a successful track record as a founder, neither he nor his startup has produced breakthrough AI research. Whether what worked at Scale will translate to Meta remains to be seen.
+                    </p>
+                    <div class="article-quote">
+                        "I think Meta got the smartest person that I know," Groysberg said. "In that area, they got the star. And then the question is: Can they build the star team?" 🐾
+                    </div>
+                </div>
+
+                <!-- VOCAB BOX PARAGRAPH 4 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 4</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">disputes</span>
+                                <button class="speak-btn" onclick="speakWord('disputes')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To say that something is not correct or not true; to question or challenge a claim</p>
+                            <p class="vocab-spanish">disputar / contradecir / negar</p>
+                            <div class="vocab-example">The manager disputes the report's findings, saying the data was collected incorrectly.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">arguably</span>
+                                <button class="speak-btn" onclick="speakWord('arguably')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Used to say that there are good reasons to think something is true, even if not everyone agrees</p>
+                            <p class="vocab-spanish">podría decirse que / posiblemente</p>
+                            <div class="vocab-example">This is arguably the most important decision the company has made in the last decade.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">prodigious</span>
+                                <button class="speak-btn" onclick="speakWord('prodigious')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Impressively large or great in amount, skill, or ability — far beyond what is normal</p>
+                            <p class="vocab-spanish">prodigioso / extraordinario</p>
+                            <div class="vocab-example">Her prodigious memory allowed her to recall complex technical details without any notes.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">track record</span>
+                                <button class="speak-btn" onclick="speakWord('track record')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">All the past achievements, successes, or failures of a person or organization that people can judge them by</p>
+                            <p class="vocab-spanish">historial / trayectoria</p>
+                            <div class="vocab-example">Before hiring the consultant, the company reviewed her track record on similar projects.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">breakthrough</span>
+                                <button class="speak-btn" onclick="speakWord('breakthrough')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">An important discovery or development that comes after a lot of hard work and effort</p>
+                            <p class="vocab-spanish">avance / descubrimiento importante</p>
+                            <div class="vocab-example">The engineering team celebrated a breakthrough after solving a problem that had stalled the project for months.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">translate</span>
+                                <button class="speak-btn" onclick="speakWord('translate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To produce a particular result or have a particular effect in a new situation — to transfer successfully from one context to another</p>
+                            <p class="vocab-spanish">transferirse / funcionar en otro contexto</p>
+                            <div class="vocab-example">The skills she developed in manufacturing translated well when she moved into supply chain management.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div><!-- end section-card article -->
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2>🗣️ Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>In your experience, what happens when a team has too many highly skilled or opinionated people? Have you ever seen it lead to conflict?</li>
+                    <li>Zuckerberg believes that concentrating the best talent will lead to breakthroughs. Do you agree that "bringing the best people together" is enough to guarantee success?</li>
+                    <li>The article mentions "swimming lanes" — clearly defined roles. How does your team define responsibilities, and what happens when roles overlap?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card">
+                <h2>✏️ Self-Practice Questions</h2>
+                <ol class="practice-list">
+                    <li>
+                        <strong>Fill in the blank:</strong> Loading up a team with too many superstars can lead to ______________ — meaning you put in more effort but get less results back.<br>
+                        <em>(backfire / diminishing returns / tipping point)</em>
+                    </li>
+                    <li>
+                        <strong>True or False:</strong> According to the article, Meredith Belbin found that teams made entirely of high-IQ people were excellent at making decisions quickly.
+                    </li>
+                    <li>
+                        <strong>Short Answer:</strong> According to Professor Lindred Greer, what is one key strategy for managing a "supergroup" team effectively?
+                    </li>
+                    <li>
+                        <strong>Vocabulary Match:</strong> Match the word to its meaning.<br>
+                        <em>rankle / gatekeeping / wager / cohesion</em><br>
+                        a) A risky bet or decision<br>
+                        b) To continue to bother or irritate someone over time<br>
+                        c) Controlling access to resources or information<br>
+                        d) The quality of being united and working well together
+                    </li>
+                </ol>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>diminishing returns</strong> — putting in more effort but getting less results back.</li>
+                        <li><strong>False.</strong> Belbin found that all-high-IQ teams were prone to prolonged arguments and struggled to reach decisions.</li>
+                        <li>Each person's role must be clearly defined — everyone should have their own "swimming lane" so they don't see each other as a threat.</li>
+                        <li>a) wager &nbsp; b) rankle &nbsp; c) gatekeeping &nbsp; d) cohesion</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+
+<div class="resize-container" style="position: relative; display: inline-block; width: 312px; margin: 1rem 0px;"></div><p><br></p>
