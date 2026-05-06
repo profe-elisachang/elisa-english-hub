@@ -1,89 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 14 – The Return of Retro Aesthetics</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ── THEME: Retro Warmth — Cream · Terracotta · Forest Green · Mustard ── */
+        :root {
+            --bg:           #f5efe6;
+            --surface:      #fffaf3;
+            --card:         #fff8ee;
+            --border:       #d4b896;
+            --terra:        #c0533a;
+            --terra-light:  #e8795e;
+            --terra-dark:   #8b3826;
+            --mustard:      #c9960c;
+            --mustard-light:#f0b429;
+            --forest:       #3a5e40;
+            --forest-light: #5a8a62;
+            --cream:        #f5efe6;
+            --brown:        #5c3d2e;
+            --brown-light:  #8b6352;
+            --text:         #2c1f14;
+            --text-muted:   #7a5c4a;
+            --white:        #fffdf8;
+            --shadow:       rgba(92,61,46,0.13);
+        }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-    <title>Page not found · GitHub Pages</title>
-    <style type="text/css" media="screen">
-      body {
-        background-color: #f1f1f1;
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
+        body {
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(192,83,58,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(58,94,64,0.06) 0%, transparent 50%);
+            color: var(--text);
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
 
-      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
+        /* ── HEADER (exact template) ── */
+        .header {
+            background: var(--terra-dark);
+            border-bottom: 5px solid var(--mustard);
+            padding: 1.2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.03) 0px,
+                rgba(255,255,255,0.03) 1px,
+                transparent 1px,
+                transparent 8px
+            );
+            pointer-events: none;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            color: var(--cream);
+            letter-spacing: 0.01em;
+            flex: 1;
+        }
+        .level-badge {
+            background: var(--mustard);
+            color: var(--brown);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+        }
+        .search-box { margin-left: auto; }
 
-      a { color: #4183c4; text-decoration: none; }
-      a:hover { text-decoration: underline; }
+        /* ── MAIN CONTAINER ── */
+        .main {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2.5rem 2rem;
+        }
 
-      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
-      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+        /* ── UNIT BANNER ── */
+        .unit-banner {
+            background: var(--terra-dark);
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 24px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        .unit-banner::after {
+            content: '🕰️';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 5rem;
+            opacity: 0.12;
+        }
+        .unit-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--mustard);
+            line-height: 1;
+            min-width: 80px;
+        }
+        .unit-title-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--cream);
+            font-weight: 700;
+        }
+        .unit-title-block p {
+            color: rgba(245,239,230,0.7);
+            font-size: 1rem;
+            margin-top: 0.4rem;
+        }
+        .stars { color: var(--mustard); font-size: 1.3rem; }
 
-      ul { list-style: none; margin: 25px 0; padding: 0; }
-      li { display: table-cell; font-weight: bold; width: 1%; }
+        /* ── SECTION TITLES ── */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--terra-dark);
+            border-bottom: 3px solid var(--terra);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
 
-      .logo { display: inline-block; margin-top: 35px; }
-      .logo-img-2x { display: none; }
-      @media
-      only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (   min--moz-device-pixel-ratio: 2),
-      only screen and (     -o-min-device-pixel-ratio: 2/1),
-      only screen and (        min-device-pixel-ratio: 2),
-      only screen and (                min-resolution: 192dpi),
-      only screen and (                min-resolution: 2dppx) {
-        .logo-img-1x { display: none; }
-        .logo-img-2x { display: inline-block; }
-      }
+        /* ── SECTION WRAPPER ── */
+        .section {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 3px 12px var(--shadow);
+        }
 
-      #suggestions {
-        margin-top: 35px;
-        color: #ccc;
-      }
-      #suggestions a {
-        color: #666666;
-        font-weight: 200;
-        font-size: 14px;
-        margin: 0 10px;
-      }
+        /* ── USEFUL EXPRESSIONS ── */
+        .expr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1rem;
+        }
+        .expr-card {
+            background: var(--card);
+            border: 1.5px solid var(--border);
+            border-top: 5px solid var(--terra);
+            border-radius: 8px;
+            padding: 1.2rem 1.4rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .expr-english {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--terra-dark);
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+        .expr-spanish {
+            color: var(--forest);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+        .expr-example {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-left: 3px solid var(--mustard);
+            padding-left: 0.8rem;
+        }
 
+        /* ── ARTICLE ── */
+        .article-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            color: var(--terra-dark);
+            font-weight: 900;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+        .article-byline {
+            color: var(--brown-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.8rem;
+            font-style: italic;
+        }
+        .article-body p {
+            margin-bottom: 1.6rem;
+            color: var(--text);
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        /* ── HIGHLIGHT ── */
+        .highlight {
+            background: #fde68a;
+            color: #1a0a00;
+            font-weight: 700;
+            border-bottom: 2px solid #c9960c;
+            border-radius: 3px;
+            padding: 0 3px;
+            cursor: help;
+            position: relative;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--terra-dark);
+            color: var(--mustard-light);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            border: 1px solid var(--mustard);
+            z-index: 99;
+            pointer-events: none;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        /* ── VOCAB GRID ── */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.9rem;
+            margin-top: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .vocab-card {
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            border: 1.5px solid transparent;
+        }
+
+        /* Color variants — warm retro palette */
+        .vc-terra  { background: #fdf0ed; border-color: #e8a090; }
+        .vc-forest { background: #eef4ee; border-color: #8ab890; }
+        .vc-mustard{ background: #fdf5de; border-color: #e0b840; }
+        .vc-brown  { background: #f5ede6; border-color: #c4987a; }
+        .vc-teal   { background: #e8f4f3; border-color: #7abdb8; }
+        .vc-plum   { background: #f2edf5; border-color: #b090c0; }
+
+        .vocab-word {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--terra-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .speak-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            line-height: 1;
+            opacity: 0.75;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+        .speak-btn:hover { opacity: 1; transform: scale(1.2); }
+        .vocab-pos {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--brown-light);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.05em;
+        }
+        .vocab-def {
+            font-size: 0.92rem;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+            line-height: 1.5;
+        }
+        .vocab-es {
+            font-size: 0.85rem;
+            color: var(--forest);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        .vocab-example {
+            font-size: 0.85rem;
+            color: var(--brown-light);
+            font-style: italic;
+            line-height: 1.5;
+            border-top: 1px solid rgba(92,61,46,0.12);
+            padding-top: 0.4rem;
+            margin-top: 0.2rem;
+        }
+        .vocab-section-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--brown-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+        }
+
+        /* ── PARAGRAPH SEPARATOR ── */
+        .para-separator {
+            border: none;
+            border-top: 1px dashed var(--border);
+            margin: 0.2rem 0 1.3rem 0;
+        }
+
+        /* ── DISCUSSION QUESTIONS ── */
+        .disc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .disc-list li {
+            background: var(--card);
+            border: 1.5px solid var(--border);
+            border-left: 6px solid var(--terra);
+            border-radius: 8px;
+            padding: 1.1rem 1.4rem;
+            font-size: 1.05rem;
+            color: var(--text);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+        .disc-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--terra);
+            font-weight: 700;
+            min-width: 28px;
+            line-height: 1.3;
+        }
+
+        /* ── SELF-PRACTICE ── */
+        .practice-item {
+            background: var(--card);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+        .practice-q {
+            padding: 1.1rem 1.4rem;
+            font-size: 1.05rem;
+            color: var(--text);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        .practice-q:hover { background: rgba(192,83,58,0.05); }
+        .practice-q-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--terra);
+            font-weight: 700;
+            min-width: 28px;
+            line-height: 1.3;
+        }
+        .practice-q-text { flex: 1; }
+        .toggle-icon {
+            color: var(--terra);
+            font-size: 1.4rem;
+            font-weight: 700;
+            transition: transform 0.3s;
+            min-width: 24px;
+            text-align: center;
+        }
+        .practice-answer {
+            display: none;
+            background: #eef4ee;
+            border-top: 2px solid var(--forest);
+            padding: 1rem 1.4rem 1rem 3.8rem;
+            color: var(--forest);
+            font-size: 0.98rem;
+            line-height: 1.75;
+        }
+        .practice-answer.open { display: block; }
+        .practice-item.open .toggle-icon { transform: rotate(45deg); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+            .expr-grid  { grid-template-columns: 1fr; }
+            .unit-banner { flex-direction: column; align-items: flex-start; }
+            .unit-banner::after { display: none; }
+        }
+        @media (max-width: 560px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+            .main { padding: 1.2rem 1rem; }
+            .article-header { font-size: 1.5rem; }
+            .unit-number { font-size: 3rem; }
+        }
     </style>
-  
-  
+</head>
+<body>
 
-    <div class="container">
-
-      <h1>404</h1>
-      <p><strong>File not found</strong></p>
-
-      <p>
-        The site configured at this address does not
-        contain the requested file.
-      </p>
-
-      <p>
-        If this is your site, make sure that the filename case matches the URL
-        as well as any file permissions.<br>
-        For root URLs (like <code>http://example.com/</code>) you must provide an
-        <code>index.html</code> file.
-      </p>
-
-      <p>
-        <a href="https://help.github.com/pages/">Read the full documentation</a>
-        for more information about using <strong>GitHub Pages</strong>.
-      </p>
-
-      <div id="suggestions">
-        <a href="https://githubstatus.com">GitHub Status</a> —
-        <a href="https://twitter.com/githubstatus">@githubstatus</a>
-      </div>
-
-      <a href="/" class="logo logo-img-1x">
-        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTZCRDY3REIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTZCRDY3RUIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdCQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjdDQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+SM9MCAAAA+5JREFUeNrEV11Ik1EY3s4+ddOp29Q5b0opCgKFsoKoi5Kg6CIhuwi6zLJLoYLopq4qsKKgi4i6CYIoU/q5iDAKs6syoS76IRWtyJ+p7cdt7sf1PGOD+e0c3dygAx/67ZzzPM95/877GYdHRg3ZjMXFxepQKNS6sLCwJxqNNuFpiMfjVs4ZjUa/pmmjeD6VlJS8NpvNT4QQ7mxwjSsJiEQim/1+/9lgMHgIr5ohuxG1WCw9Vqv1clFR0dCqBODElV6v90ogEDjGdYbVjXhpaendioqK07CIR7ZAqE49PT09BPL2PMgTByQGsYiZlQD4uMXtdr+JxWINhgINYhGT2MsKgMrm2dnZXgRXhaHAg5jEJodUAHxux4LudHJE9RdEdA+i3Juz7bGHe4mhE9FNrgwBCLirMFV9Okh5eflFh8PR5nK5nDabrR2BNJlKO0T35+Li4n4+/J+/JQCxhmu5h3uJoXNHPbmWZAHMshWB8l5/ipqammaAf0zPDDx1ONV3vurdidqwAQL+pEc8sLcAe1CCvQ3YHxIW8Pl85xSWNC1hADDIv0rIE/o4J0k3kww4xSlwIhcq3EFFOm7KN/hUGOQkt0CFa5WpNJlMvxBEz/IVQAxg/ZRZl9wiHA63yDYieM7DnLP5CiAGsC7I5sgtYKJGWe2A8seFqgFJrJjEPY1Cn3pJ8/9W1e5VWsFDTEmFrBcoDhZJEQkXuhICMyKpjhahqN21hRYATKfUOlDmkygrR4o4C0VOLGJKrOITKB4jijzdXygBKixyC5TDQdnk/Pz8qRw6oOWGlsTKGOQW6OH6FBWsyePxdOXLTgxiyebILZCjz+GLgMIKnXNzc49YMlcRdHXcSwxFVgTInQhC9G33UhNoJLuqq6t345p9y3eUy8OTk5PjAHuI9uo4b07FBaOhsu0A4Unc+T1TU1Nj3KsSSE5yJ65jqF2DDd8QqWYmAZrIM2VlZTdnZmb6AbpdV9V6ec9znf5Q7HjYumdRE0JOp3MjitO4SFa+cZz8Umqe3TCbSLvdfkR/kWDdNQl5InuTcysOcpFT35ZrbBxx4p3JAHlZVVW1D/634VRt+FvLBgK/v5LV9WS+10xMTEwtRw7XvqOL+e2Q8V3AYIOIAXQ26/heWVnZCVfcyKHg2CBgTpmPmjYM8l24GyaUHyaIh7XwfR9ErE8qHoDfn2LTNAVC0HX6MFcBIP8Bi+6F6cdW/DICkANRfx99fEYFQ7Nph5i/uQiA214gno7K+guhaiKg9gC62+M8eR7XsBsYJ4ilam60Fb7r7uAj8wFyuwM1oIOWgfmDy6RXEEQzJMPe23DXrVS7rtyD3Df8z/FPgAEAzWU5Ku59ZAUAAAAASUVORK5CYII=">
-      </a>
-
-      <a href="/" class="logo logo-img-2x">
-        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQUM1QkUxRUI0MUMxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQUM1QkUxRkI0MUMxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdGQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjgwQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+hfPRaQAAB6lJREFUeNrsW2mM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">
-      </a>
+<!-- ══ EXACT HEADER TEMPLATE ══ -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
     </div>
-  
+</header>
 
+<!-- ══ MAIN ══ -->
+<div class="main">
+
+    <!-- Unit Banner -->
+    <div class="unit-banner">
+       
+        <div class="unit-title-block">
+            <div class="stars">★★★</div>
+            <h2>The Return of Retro Aesthetics</h2>
+            <p>Why are young people falling in love with old cameras, vinyl records, and vintage fashion?</p>
+        </div>
+    </div>
+
+    <!-- ══ SECTION 1: USEFUL EXPRESSIONS ══ -->
+    <div class="section">
+        <div class="section-title">💬 Useful Expressions</div>
+        <div class="expr-grid">
+            <div class="expr-card">
+                <div class="expr-english">come and go</div>
+                <div class="expr-spanish">ir y venir, aparecer y desaparecer</div>
+                <div class="expr-example">"Fashion trends come and go, but some styles keep coming back."</div>
+            </div>
+            <div class="expr-card">
+                <div class="expr-english">make a comeback</div>
+                <div class="expr-spanish">volver a ponerse de moda, resurgir</div>
+                <div class="expr-example">"Vinyl records are making a comeback among younger listeners."</div>
+            </div>
+            <div class="expr-card">
+                <div class="expr-english">in contrast to</div>
+                <div class="expr-spanish">a diferencia de, en contraste con</div>
+                <div class="expr-example">"In contrast to fast fashion, vintage clothing tends to last longer."</div>
+            </div>
+            <div class="expr-card">
+                <div class="expr-english">stand out</div>
+                <div class="expr-spanish">destacarse, sobresalir</div>
+                <div class="expr-example">"She wears vintage clothes because she wants to stand out from the crowd."</div>
+            </div>
+            <div class="expr-card">
+                <div class="expr-english">blend old and new</div>
+                <div class="expr-spanish">mezclar lo viejo y lo nuevo</div>
+                <div class="expr-example">"The designer blended old and new styles to create something unique."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ SECTION 2: ARTICLE ══ -->
+    <div class="section">
+        <div class="section-title">📰 Article</div>
+        <div class="article-body">
+
+            <div class="article-header">🕶️ The Return of Retro Aesthetics</div>
+            <div class="article-byline">— Eric Chen</div>
+
+            <!-- PARAGRAPH 1 -->
+            <p>
+                You often hear about fashion being <span class="highlight" title="cíclica">cyclical</span>: trends <span class="highlight" title="ir y venir">come and go</span> like waves crashing and <span class="highlight" title="retrocediendo, alejándose">retreating</span>. While this <span class="highlight" title="fenómeno">phenomenon</span> has been observed since the 1930s, the latest fashion wave among young people is different. It now <span class="highlight" title="abarca, incluye">encompasses</span> just about anything with a retro aesthetic, including vintage technology.
+            </p>
+
+            <div class="vocab-section-label">📖 Vocabulary – Paragraph 1</div>
+            <div class="vocab-grid">
+                <div class="vocab-card vc-terra">
+                    <div class="vocab-word">cyclical <button class="speak-btn" onclick="speakWord('cyclical')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Happening in repeated cycles; returning again and again</div>
+                    <div class="vocab-es">🇪🇸 cíclico</div>
+                    <div class="vocab-example">"The economy is cyclical — growth is followed by slowdowns."</div>
+                </div>
+                <div class="vocab-card vc-forest">
+                    <div class="vocab-word">retreating <button class="speak-btn" onclick="speakWord('retreating')">🔊</button></div>
+                    <div class="vocab-pos">verb (present participle)</div>
+                    <div class="vocab-def">Moving back or away; withdrawing from a position</div>
+                    <div class="vocab-es">🇪🇸 retroceder, alejarse</div>
+                    <div class="vocab-example">"The trend is retreating now — fewer people are buying those products."</div>
+                </div>
+                <div class="vocab-card vc-mustard">
+                    <div class="vocab-word">phenomenon <button class="speak-btn" onclick="speakWord('phenomenon')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A fact or event that is observed and often hard to explain</div>
+                    <div class="vocab-es">🇪🇸 fenómeno</div>
+                    <div class="vocab-example">"The rise of social media is a modern phenomenon."</div>
+                </div>
+                <div class="vocab-card vc-brown">
+                    <div class="vocab-word">encompasses <button class="speak-btn" onclick="speakWord('encompasses')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">Includes or contains a wide range of things</div>
+                    <div class="vocab-es">🇪🇸 abarcar, incluir</div>
+                    <div class="vocab-example">"The new policy encompasses all departments in the company."</div>
+                </div>
+            </div>
+
+            <hr class="para-separator">
+
+            <!-- PARAGRAPH 2 -->
+            <p>
+                One practical reason for the return of retro styles is that vintage clothing offers a <span class="highlight" title="alternativa">sustainable alternative</span> to fast fashion. However, for many people, going retro is really about <span class="highlight" title="destacarse">standing out</span>. <span class="highlight" title="en contraste con">In contrast to</span> fast fashion, vintage clothing gives people more options for expressing their creativity. For example, you could pair '70s bell-bottom jeans with Y2K-style tiny sunglasses, an '80s leather jacket, and modern sneakers. Rather than <span class="highlight" title="replicando, copiando">replicating</span> a single era exactly, people can create their own unique <span class="highlight" title="nostálgico">nostalgic</span> looks.
+            </p>
+
+            <div class="vocab-section-label">📖 Vocabulary – Paragraph 2</div>
+            <div class="vocab-grid">
+                <div class="vocab-card vc-forest">
+                    <div class="vocab-word">alternative <button class="speak-btn" onclick="speakWord('alternative')">🔊</button></div>
+                    <div class="vocab-pos">noun / adjective</div>
+                    <div class="vocab-def">Something you can choose instead of something else</div>
+                    <div class="vocab-es">🇪🇸 alternativa</div>
+                    <div class="vocab-example">"Is there a cheaper alternative to this supplier?"</div>
+                </div>
+                <div class="vocab-card vc-terra">
+                    <div class="vocab-word">stand out <button class="speak-btn" onclick="speakWord('stand out')">🔊</button></div>
+                    <div class="vocab-pos">phrasal verb</div>
+                    <div class="vocab-def">To be clearly different or better than others; to be noticeable</div>
+                    <div class="vocab-es">🇪🇸 destacarse</div>
+                    <div class="vocab-example">"Her presentation really stood out — it was clear and creative."</div>
+                </div>
+                <div class="vocab-card vc-plum">
+                    <div class="vocab-word">replicating <button class="speak-btn" onclick="speakWord('replicating')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">Copying or reproducing something exactly</div>
+                    <div class="vocab-es">🇪🇸 replicar, copiar</div>
+                    <div class="vocab-example">"We need to replicate this process in all our factories."</div>
+                </div>
+                <div class="vocab-card vc-mustard">
+                    <div class="vocab-word">nostalgic <button class="speak-btn" onclick="speakWord('nostalgic')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Feeling a warm, sometimes sad, longing for the past</div>
+                    <div class="vocab-es">🇪🇸 nostálgico</div>
+                    <div class="vocab-example">"That old song makes me feel nostalgic for my university days."</div>
+                </div>
+                <div class="vocab-card vc-teal">
+                    <div class="vocab-word">sustainable <button class="speak-btn" onclick="speakWord('sustainable')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Able to continue long-term without using up resources or causing harm</div>
+                    <div class="vocab-es">🇪🇸 sostenible</div>
+                    <div class="vocab-example">"Buying second-hand is a more sustainable choice."</div>
+                </div>
+                <div class="vocab-card vc-brown">
+                    <div class="vocab-word">era <button class="speak-btn" onclick="speakWord('era')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A long and distinct period of history with a particular character</div>
+                    <div class="vocab-es">🇪🇸 era, época</div>
+                    <div class="vocab-example">"We're living in the digital era — everything is connected."</div>
+                </div>
+            </div>
+
+            <hr class="para-separator">
+
+            <!-- PARAGRAPH 3 -->
+            <p>
+                Retro aesthetics are also <span class="highlight" title="siendo tendencia">trending</span> in technology. Some young people are switching to older cameras such as CCD, film, or instant cameras. Compared to smartphones, these devices produce softer colors, grainier <span class="highlight" title="texturas">textures</span>, and small <span class="highlight" title="imperfecciones">imperfections</span> that feel more romantic and authentic. CD players are another example — they're <span class="highlight" title="volviendo a la moda">making a comeback</span> both as an alternative to music streaming apps and as a fashion <span class="highlight" title="accesorio">accessory</span>. Together, these trends capture the spirit of a <span class="highlight" title="mezcla, remix">remix</span>, blending old and new into <span class="highlight" title="marcadamente, claramente">distinctly</span> personal styles.
+            </p>
+
+            <div class="vocab-section-label">📖 Vocabulary – Paragraph 3</div>
+            <div class="vocab-grid">
+                <div class="vocab-card vc-mustard">
+                    <div class="vocab-word">textures <button class="speak-btn" onclick="speakWord('textures')">🔊</button></div>
+                    <div class="vocab-pos">noun (plural)</div>
+                    <div class="vocab-def">The way a surface feels or looks — rough, smooth, grainy, etc.</div>
+                    <div class="vocab-es">🇪🇸 texturas</div>
+                    <div class="vocab-example">"Film photos have interesting textures that digital photos often lack."</div>
+                </div>
+                <div class="vocab-card vc-terra">
+                    <div class="vocab-word">imperfections <button class="speak-btn" onclick="speakWord('imperfections')">🔊</button></div>
+                    <div class="vocab-pos">noun (plural)</div>
+                    <div class="vocab-def">Small faults or flaws; things that are not quite perfect</div>
+                    <div class="vocab-es">🇪🇸 imperfecciones</div>
+                    <div class="vocab-example">"The handmade bag had small imperfections that made it feel unique."</div>
+                </div>
+                <div class="vocab-card vc-forest">
+                    <div class="vocab-word">make a comeback <button class="speak-btn" onclick="speakWord('make a comeback')">🔊</button></div>
+                    <div class="vocab-pos">phrase</div>
+                    <div class="vocab-def">To become popular or successful again after a period of decline</div>
+                    <div class="vocab-es">🇪🇸 volver a ponerse de moda, resurgir</div>
+                    <div class="vocab-example">"Cassette tapes are making a comeback in niche music communities."</div>
+                </div>
+                <div class="vocab-card vc-plum">
+                    <div class="vocab-word">accessory <button class="speak-btn" onclick="speakWord('accessory')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">An extra item added to something for decoration or style (also: a device add-on)</div>
+                    <div class="vocab-es">🇪🇸 accesorio</div>
+                    <div class="vocab-example">"A good bag is both a useful item and a fashion accessory."</div>
+                </div>
+                <div class="vocab-card vc-teal">
+                    <div class="vocab-word">authentic <button class="speak-btn" onclick="speakWord('authentic')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Real, genuine — not fake or copied</div>
+                    <div class="vocab-es">🇪🇸 auténtico</div>
+                    <div class="vocab-example">"Customers want authentic products, not cheap imitations."</div>
+                </div>
+                <div class="vocab-card vc-brown">
+                    <div class="vocab-word">distinctly <button class="speak-btn" onclick="speakWord('distinctly')">🔊</button></div>
+                    <div class="vocab-pos">adverb</div>
+                    <div class="vocab-def">In a way that is clearly different or recognizable</div>
+                    <div class="vocab-es">🇪🇸 marcadamente, claramente</div>
+                    <div class="vocab-example">"Their company has a distinctly different approach to customer service."</div>
+                </div>
+            </div>
+
+        </div><!-- /article-body -->
+    </div><!-- /section -->
+
+    <!-- ══ SECTION 3: DISCUSSION QUESTIONS ══ -->
+    <div class="section">
+        <div class="section-title">🗣️ Discussion Questions</div>
+        <ul class="disc-list">
+            <li>
+                <span class="disc-num">1</span>
+                <span>Do you own anything "retro" — old technology, vintage clothing, or something from the past that you still use? Why do you keep it? Does it make you feel nostalgic?</span>
+            </li>
+            <li>
+                <span class="disc-num">2</span>
+                <span>The article says young people like vintage styles because they want to <em>stand out</em>. In your workplace or social life, do you prefer to stand out — or to fit in? Is there pressure to dress or look a certain way?</span>
+            </li>
+            <li>
+                <span class="disc-num">3</span>
+                <span>Fast fashion is cheap but not sustainable. Vintage clothing is more sustainable but can be harder to find. What do you think is more important when buying clothes — price, style, or sustainability? Has your thinking on this changed recently?</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ══ SECTION 4: SELF-PRACTICE ══ -->
+    <div class="section">
+        <div class="section-title">✍️ Self-Practice Questions</div>
+        <p style="color:var(--brown-light); margin-bottom:1.2rem; font-size:0.95rem;">Click each question to reveal a model answer.</p>
+
+        <div class="practice-item" onclick="toggleAnswer(this)">
+            <div class="practice-q">
+                <span class="practice-q-num">1</span>
+                <span class="practice-q-text">How would you explain the difference between "replicating" and "being inspired by" something? Give a work example.</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                "Replicating" means copying something exactly — making it identical to the original. "Being inspired by" means using something as a starting point but adding your own ideas. At work, if I replicate a report, I just copy the format. But if I'm inspired by it, I might use a similar structure but change the data presentation to better fit our client's needs.
+            </div>
+        </div>
+
+        <div class="practice-item" onclick="toggleAnswer(this)">
+            <div class="practice-q">
+                <span class="practice-q-num">2</span>
+                <span class="practice-q-text">Describe something in your life or work that is "making a comeback" — an old idea, process, or tool that people are using again.</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                In our purchasing department, we used to track everything in printed spreadsheets before switching to software. Interestingly, some team members are making a comeback with handwritten notes during meetings. They say it helps them focus better than typing. It's a simple tool, but it's coming back because it works.
+            </div>
+        </div>
+
+        <div class="practice-item" onclick="toggleAnswer(this)">
+            <div class="practice-q">
+                <span class="practice-q-num">3</span>
+                <span class="practice-q-text">Use "in contrast to" to compare two things in your industry or daily life.</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                In contrast to our old inspection process, which required printing dozens of forms and filing them manually, our new digital system lets us record data directly on a tablet. The process is faster and errors are easier to catch. However, in contrast to what I expected, some experienced workers still prefer the paper forms because they're easier to read at a glance on the production floor.
+            </div>
+        </div>
+
+        <div class="practice-item" onclick="toggleAnswer(this)">
+            <div class="practice-q">
+                <span class="practice-q-num">4</span>
+                <span class="practice-q-text">Can you think of something "authentic" that your company or region is known for? How important is authenticity in your field?</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="practice-answer">
+                Our factory is known for producing authentic leather goods with traditional stitching techniques. In contrast to mass-produced items, our products have small handmade details that customers value. Authenticity is very important in our field — buyers are willing to pay more for something they know is genuinely handcrafted. We always make sure our marketing is honest about our process.
+            </div>
+        </div>
+
+    </div><!-- /section -->
+
+</div><!-- /main -->
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+
+    function toggleAnswer(item) {
+        const answer = item.querySelector('.practice-answer');
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.practice-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.practice-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) {
+            answer.classList.add('open');
+            item.classList.add('open');
+        }
+    }
+</script>
+
+</body>
+</html>
