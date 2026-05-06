@@ -1,0 +1,684 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Useful Expressions – Practice Hub | Automotive English B1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f4f8;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        /* main container */
+        .practice-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        .header {
+            background: linear-gradient(115deg, #0a0f1c 0%, #101625 100%);
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+            border: 1px solid #2d3748;
+        }
+
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #ffffff, #f5c77e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #f5a62320;
+            border: 1px solid #f5a623;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #f5a623;
+        }
+
+        /* reference card (expressions list) */
+        .ref-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .ref-header {
+            background: #fef9e6;
+            padding: 1rem 1.8rem;
+            border-bottom: 2px solid #f5a623;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #b45309;
+        }
+
+        .expr-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.8rem;
+            padding: 1.5rem;
+            background: #ffffff;
+        }
+
+        .ref-item {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 0.9rem 1.2rem;
+            border-left: 5px solid #f5a623;
+        }
+
+        .ref-en {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #0f172a;
+        }
+
+        .ref-es {
+            font-size: 0.8rem;
+            color: #5b6e8c;
+            margin-top: 0.2rem;
+        }
+
+        /* question sections */
+        .section {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border: 1px solid #e2edf2;
+            overflow: hidden;
+        }
+
+        .section-title {
+            background: #f1f5f9;
+            padding: 1rem 1.8rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #1e293b;
+        }
+
+        .section-content {
+            padding: 1.8rem;
+        }
+
+        /* question styles */
+        .quiz-question {
+            margin-bottom: 2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .quiz-question:last-child {
+            border-bottom: none;
+        }
+
+        .q-text {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            background: #fefce8;
+            padding: 0.6rem 1rem;
+            border-radius: 16px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: #f9fafb;
+            padding: 0.6rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.1s;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background: #fff3e0;
+            border-color: #f5a623;
+        }
+
+        input[type="radio"] {
+            accent-color: #f5a623;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
+        .feedback {
+            font-size: 0.85rem;
+            margin-top: 0.4rem;
+            padding-left: 1rem;
+            border-left: 3px solid #cbd5e1;
+            color: #2c3e50;
+        }
+
+        .feedback.correct {
+            color: #15803d;
+            border-left-color: #22c55e;
+        }
+
+        .feedback.wrong {
+            color: #b91c1c;
+            border-left-color: #ef4444;
+        }
+
+        /* fill in the blank */
+        .fill-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-family: 'Inter', monospace;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: 0.2s;
+        }
+
+        .fill-input:focus {
+            border-color: #f5a623;
+            outline: none;
+            box-shadow: 0 0 0 3px #f5a62330;
+        }
+
+        .check-fill-btn {
+            background: #1e293b;
+            color: white;
+            border: none;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            cursor: pointer;
+            margin-top: 0.3rem;
+            transition: 0.2s;
+        }
+
+        .check-fill-btn:hover {
+            background: #f5a623;
+            color: #0f172a;
+        }
+
+        /* matching grid */
+        .matching-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .match-col {
+            background: #fef9f0;
+            padding: 1rem;
+            border-radius: 20px;
+        }
+
+        .match-item {
+            background: white;
+            margin-bottom: 0.7rem;
+            padding: 0.6rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #e9eef3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match-select {
+            padding: 0.3rem 0.6rem;
+            border-radius: 40px;
+            border: 1px solid #cbd5e1;
+            background: white;
+            font-size: 0.8rem;
+        }
+
+        .match-feedback {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+
+        button.primary-btn {
+            background: #f5a623;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            margin-top: 0.8rem;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+
+        button.primary-btn:hover {
+            background: #e08e1a;
+            transform: scale(1.01);
+        }
+
+        .answer-badge {
+            background: #e6f7ec;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #166534;
+            display: none;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border-color: #eef2f6;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #5b6e8c;
+            margin-top: 2rem;
+            border-top: 1px solid #dce5ef;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 650px) {
+            .section-content {
+                padding: 1rem;
+            }
+            .matching-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
+<div class="practice-container">
+    <!-- header -->
+    <div class="header">
+        <h1>🔧 Useful Expressions · Power Practice</h1>
+        <p>The Evolution of the Modern Workweek <span class="badge">Automotive English B1</span> <span class="badge">Office / Factory professionals</span></p>
+        <p style="margin-top: 0.5rem;">🎯 Master these 5 key phrases: <strong>take for granted</strong> · <strong>come at a cost</strong> · <strong>step in</strong> · <strong>no longer</strong> · <strong>in response to</strong></p>
+    </div>
+
+    <!-- quick reference (expressions + spanish) -->
+    <div class="ref-card">
+        <div class="ref-header">📖 Expression Bank (keep this visible while you practice)</div>
+        <div class="expr-ref-grid">
+            <div class="ref-item"><div class="ref-en">take (something) for granted</div><div class="ref-es">dar algo por sentado</div></div>
+            <div class="ref-item"><div class="ref-en">come at a cost / at a high human cost</div><div class="ref-es">tener un precio / costar muy caro</div></div>
+            <div class="ref-item"><div class="ref-en">step in (to do something)</div><div class="ref-es">intervenir, tomar acción</div></div>
+            <div class="ref-item"><div class="ref-en">no longer + verb</div><div class="ref-es">ya no</div></div>
+            <div class="ref-item"><div class="ref-en">in response to (something)</div><div class="ref-es">en respuesta a</div></div>
+        </div>
+    </div>
+
+    <!-- ========= PART 1: MULTIPLE CHOICE ========= -->
+    <div class="section">
+        <div class="section-title">📌 1. Multiple Choice · Choose the correct expression</div>
+        <div class="section-content" id="mcSection">
+            <!-- Q1 -->
+            <div class="quiz-question" data-correct="take for granted">
+                <div class="q-text">❓ 1. In many factories, workers _____ their safety equipment _____ until an accident happens.</div>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q1" value="step in"> a) step in … for granted</label>
+                    <label class="option"><input type="radio" name="q1" value="take for granted"> b) take … for granted</label>
+                    <label class="option"><input type="radio" name="q1" value="no longer"> c) no longer</label>
+                </div>
+                <div class="feedback" id="fb1"></div>
+            </div>
+            <!-- Q2 -->
+            <div class="quiz-question" data-correct="come at a cost">
+                <div class="q-text">❓ 2. Longer working hours increased production, but it _____ : many workers suffered from exhaustion.</div>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q2" value="stepped in"> a) stepped in</label>
+                    <label class="option"><input type="radio" name="q2" value="come at a cost"> b) came at a cost</label>
+                    <label class="option"><input type="radio" name="q2" value="take for granted"> c) took for granted</label>
+                </div>
+                <div class="feedback" id="fb2"></div>
+            </div>
+            <!-- Q3 -->
+            <div class="quiz-question" data-correct="step in">
+                <div class="q-text">❓ 3. When the conflict between the assembly team and management got worse, the plant director decided to _____ and mediate.</div>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q3" value="step in"> a) step in</label>
+                    <label class="option"><input type="radio" name="q3" value="take for granted"> b) take for granted</label>
+                    <label class="option"><input type="radio" name="q3" value="come at a cost"> c) come at a cost</label>
+                </div>
+                <div class="feedback" id="fb3"></div>
+            </div>
+            <!-- Q4 -->
+            <div class="quiz-question" data-correct="no longer">
+                <div class="q-text">❓ 4. Thanks to labor rights, workers in this plant _____ work 14-hour shifts. The law limits the workday to 8 hours.</div>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q4" value="no longer"> a) no longer</label>
+                    <label class="option"><input type="radio" name="q4" value="still"> b) still</label>
+                    <label class="option"><input type="radio" name="q4" value="step in"> c) step in</label>
+                </div>
+                <div class="feedback" id="fb4"></div>
+            </div>
+            <!-- Q5 -->
+            <div class="quiz-question" data-correct="in response to">
+                <div class="q-text">❓ 5. _____ worker demands for better work-life balance, the company introduced flexible Friday schedules.</div>
+                <div class="options">
+                    <label class="option"><input type="radio" name="q5" value="Take for granted"> a) Take for granted</label>
+                    <label class="option"><input type="radio" name="q5" value="Come at a cost"> b) Come at a cost</label>
+                    <label class="option"><input type="radio" name="q5" value="In response to"> c) In response to</label>
+                </div>
+                <div class="feedback" id="fb5"></div>
+            </div>
+            <button class="primary-btn" id="checkMcBtn">✅ Check multiple choice answers</button>
+        </div>
+    </div>
+
+    <!-- ========= PART 2: FILL IN THE BLANKS ========= -->
+    <div class="section">
+        <div class="section-title">✍️ 2. Fill in the blanks (write the missing expression)</div>
+        <div class="section-content">
+            <div class="quiz-question">
+                <div class="q-text">🔹 1. Many employees _____ their paid lunch break _____ . But in some countries, lunch is not guaranteed.</div>
+                <input type="text" class="fill-input" id="fill1" placeholder="e.g., take ... for granted">
+                <button class="check-fill-btn" data-fillid="fill1" data-answer="take their paid lunch break for granted|take for granted">Check</button>
+                <div class="feedback" id="fillFb1"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">🔹 2. High productivity _____ : many assembly line workers developed chronic back pain.</div>
+                <input type="text" class="fill-input" id="fill2" placeholder="example: came at a cost">
+                <button class="check-fill-btn" data-fillid="fill2" data-answer="came at a cost">Check</button>
+                <div class="feedback" id="fillFb2"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">🔹 3. When the quality issue became serious, the HR manager _____ and organized safety training.</div>
+                <input type="text" class="fill-input" id="fill3" placeholder="phrasal verb meaning 'intervene'">
+                <button class="check-fill-btn" data-fillid="fill3" data-answer="stepped in">Check</button>
+                <div class="feedback" id="fillFb3"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">🔹 4. We _____ use paper reports; everything is digital now.</div>
+                <input type="text" class="fill-input" id="fill4" placeholder="two words: no longer">
+                <button class="check-fill-btn" data-fillid="fill4" data-answer="no longer">Check</button>
+                <div class="feedback" id="fillFb4"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">🔹 5. _____ the strike last year, management agreed to improve ventilation in the painting area.</div>
+                <input type="text" class="fill-input" id="fill5" placeholder="three words">
+                <button class="check-fill-btn" data-fillid="fill5" data-answer="in response to">Check</button>
+                <div class="feedback" id="fillFb5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========= PART 3: MATCHING EXERCISE ========= -->
+    <div class="section">
+        <div class="section-title">🔄 3. Match the expression to its correct meaning / situation</div>
+        <div class="section-content">
+            <div class="matching-grid">
+                <div class="match-col">
+                    <strong>🔹 Expression</strong>
+                    <div class="match-item">1. take something for granted</div>
+                    <div class="match-item">2. come at a cost</div>
+                    <div class="match-item">3. step in</div>
+                    <div class="match-item">4. no longer</div>
+                    <div class="match-item">5. in response to</div>
+                </div>
+                <div class="match-col">
+                    <strong>🔸 Definition / context</strong>
+                    <div class="match-item">
+                        <select id="match1" class="match-select">
+                            <option value="">-- select --</option>
+                            <option value="a">A. because of / as a reaction to</option>
+                            <option value="b">B. not appreciate something because it's always there</option>
+                            <option value="c">C. intervene to solve a problem</option>
+                            <option value="d">D. not anymore</option>
+                            <option value="e">E. has negative consequences / price to pay</option>
+                        </select>
+                    </div>
+                    <div class="match-item">
+                        <select id="match2" class="match-select">
+                            <option value="">-- select --</option>
+                            <option value="a">A. because of / as a reaction to</option>
+                            <option value="b">B. not appreciate something because it's always there</option>
+                            <option value="c">C. intervene to solve a problem</option>
+                            <option value="d">D. not anymore</option>
+                            <option value="e">E. has negative consequences / price to pay</option>
+                        </select>
+                    </div>
+                    <div class="match-item">
+                        <select id="match3" class="match-select">
+                            <option value="">-- select --</option>
+                            <option value="a">A. because of / as a reaction to</option>
+                            <option value="b">B. not appreciate something because it's always there</option>
+                            <option value="c">C. intervene to solve a problem</option>
+                            <option value="d">D. not anymore</option>
+                            <option value="e">E. has negative consequences / price to pay</option>
+                        </select>
+                    </div>
+                    <div class="match-item">
+                        <select id="match4" class="match-select">
+                            <option value="">-- select --</option>
+                            <option value="a">A. because of / as a reaction to</option>
+                            <option value="b">B. not appreciate something because it's always there</option>
+                            <option value="c">C. intervene to solve a problem</option>
+                            <option value="d">D. not anymore</option>
+                            <option value="e">E. has negative consequences / price to pay</option>
+                        </select>
+                    </div>
+                    <div class="match-item">
+                        <select id="match5" class="match-select">
+                            <option value="">-- select --</option>
+                            <option value="a">A. because of / as a reaction to</option>
+                            <option value="b">B. not appreciate something because it's always there</option>
+                            <option value="c">C. intervene to solve a problem</option>
+                            <option value="d">D. not anymore</option>
+                            <option value="e">E. has negative consequences / price to pay</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="primary-btn" id="checkMatchBtn">🔍 Check matching answers</button>
+            <div class="feedback" id="matchFeedback" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <!-- ========= PART 4: SENTENCE REWRITE (using target expressions) ========= -->
+    <div class="section">
+        <div class="section-title">✏️ 4. Rewrite the sentence using the given expression</div>
+        <div class="section-content">
+            <div class="quiz-question">
+                <div class="q-text">📝 Original: <em>"People don't realize how important weekends are until they have to work on Saturday."</em><br>
+                <strong>→ Use "take for granted":</strong></div>
+                <input type="text" class="fill-input" id="rewrite1" placeholder="Write your sentence here...">
+                <button class="check-fill-btn" data-rewrite="1" data-type="granted">Check idea</button>
+                <div class="feedback" id="rewriteFb1"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">📝 Original: <em>"The company increased speed on the line, but many workers got injured. There was a negative price."</em><br>
+                <strong>→ Use "come at a cost":</strong></div>
+                <input type="text" class="fill-input" id="rewrite2" placeholder="Your version...">
+                <button class="check-fill-btn" data-rewrite="2" data-type="cost">Check idea</button>
+                <div class="feedback" id="rewriteFb2"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">📝 Original: <em>"My team had a serious communication issue, so the supervisor intervened and fixed it."</em><br>
+                <strong>→ Use "step in":</strong></div>
+                <input type="text" class="fill-input" id="rewrite3" placeholder="Rewrite...">
+                <button class="check-fill-btn" data-rewrite="3" data-type="step">Check idea</button>
+                <div class="feedback" id="rewriteFb3"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">📝 Original: <em>"Workers don't work 12-hour shifts anymore after the new labor reform."</em><br>
+                <strong>→ Use "no longer":</strong></div>
+                <input type="text" class="fill-input" id="rewrite4" placeholder="Rewrite with 'no longer'...">
+                <button class="check-fill-btn" data-rewrite="4" data-type="noLonger">Check idea</button>
+                <div class="feedback" id="rewriteFb4"></div>
+            </div>
+            <div class="quiz-question">
+                <div class="q-text">📝 Original: <em>"Because employees asked for more breaks, the plant installed new rest areas."</em><br>
+                <strong>→ Use "in response to":</strong></div>
+                <input type="text" class="fill-input" id="rewrite5" placeholder="Start with 'In response to...'">
+                <button class="check-fill-btn" data-rewrite="5" data-type="response">Check idea</button>
+                <div class="feedback" id="rewriteFb5"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        ⚙️ Automotive English – B1 level | Use these expressions at work to talk about schedules, negotiations, and workplace changes.
+    </div>
+</div>
+
+<script>
+    // ---------- MULTIPLE CHOICE CHECK ----------
+    document.getElementById('checkMcBtn').addEventListener('click', function() {
+        const questions = document.querySelectorAll('#mcSection .quiz-question');
+        questions.forEach((q, idx) => {
+            const correctVal = q.getAttribute('data-correct');
+            const selected = q.querySelector('input[type="radio"]:checked');
+            const fb = q.querySelector('.feedback');
+            if (selected && selected.value === correctVal) {
+                fb.innerHTML = '✅ Correct! Good job.';
+                fb.classList.add('correct');
+                fb.classList.remove('wrong');
+            } else if (selected && selected.value !== correctVal) {
+                fb.innerHTML = `❌ Not quite. The correct expression is "${correctVal}". Review the meaning.`;
+                fb.classList.add('wrong');
+                fb.classList.remove('correct');
+            } else {
+                fb.innerHTML = '⚠️ Please select an answer.';
+                fb.classList.remove('correct', 'wrong');
+            }
+        });
+    });
+
+    // ---------- FILL IN THE BLANK (flexible check) ----------
+    const fillButtons = document.querySelectorAll('.check-fill-btn[data-fillId]');
+    fillButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const inputId = this.getAttribute('data-fillId');
+            const inputElem = document.getElementById(inputId);
+            const userAnswer = inputElem.value.trim().toLowerCase();
+            const expectedRaw = this.getAttribute('data-answer').toLowerCase();
+            const expectedList = expectedRaw.split('|');
+            let isCorrect = false;
+            for (let exp of expectedList) {
+                if (userAnswer === exp || (exp === 'take for granted' && userAnswer.includes('take') && userAnswer.includes('for granted'))) {
+                    isCorrect = true;
+                    break;
+                }
+                if (exp === 'came at a cost' && (userAnswer === 'came at a cost' || userAnswer === 'come at a cost')) isCorrect = true;
+                if (exp === 'stepped in' && (userAnswer === 'stepped in' || userAnswer === 'step in')) isCorrect = true;
+                if (exp === 'no longer' && userAnswer === 'no longer') isCorrect = true;
+                if (exp === 'in response to' && userAnswer === 'in response to') isCorrect = true;
+            }
+            const fbDiv = document.getElementById(`fillFb${inputId.slice(-1)}`);
+            if (isCorrect) {
+                fbDiv.innerHTML = '✓ Perfect! Correct usage.';
+                fbDiv.classList.add('correct');
+                fbDiv.classList.remove('wrong');
+            } else {
+                fbDiv.innerHTML = `✗ Try again. Expected something like: "${expectedRaw.split('|')[0]}". Check the expression bank.`;
+                fbDiv.classList.add('wrong');
+                fbDiv.classList.remove('correct');
+            }
+        });
+    });
+
+    // ---------- MATCHING ----------
+    document.getElementById('checkMatchBtn').addEventListener('click', function() {
+        const match1 = document.getElementById('match1').value;
+        const match2 = document.getElementById('match2').value;
+        const match3 = document.getElementById('match3').value;
+        const match4 = document.getElementById('match4').value;
+        const match5 = document.getElementById('match5').value;
+        // correct mapping: 1->B, 2->E, 3->C, 4->D, 5->A
+        let correct = 0;
+        if (match1 === 'b') correct++;
+        if (match2 === 'e') correct++;
+        if (match3 === 'c') correct++;
+        if (match4 === 'd') correct++;
+        if (match5 === 'a') correct++;
+        const feedback = document.getElementById('matchFeedback');
+        if (correct === 5) {
+            feedback.innerHTML = '🎉 Excellent! All matches are correct.';
+            feedback.style.color = '#15803d';
+        } else {
+            feedback.innerHTML = `⚠️ You got ${correct}/5 correct. Review: 1→B (not appreciate), 2→E (negative cost), 3→C (intervene), 4→D (not anymore), 5→A (because of).`;
+            feedback.style.color = '#b45309';
+        }
+    });
+
+    // ---------- REWRITE (flexible open check: gives feedback based on key words) ----------
+    const rewriteBtns = document.querySelectorAll('.check-fill-btn[data-rewrite]');
+    rewriteBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const rewriteId = this.getAttribute('data-rewrite');
+            const inputField = document.getElementById(`rewrite${rewriteId}`);
+            const userText = inputField.value.trim().toLowerCase();
+            const type = this.getAttribute('data-type');
+            let fbDiv = document.getElementById(`rewriteFb${rewriteId}`);
+            let ok = false;
+            if (type === 'granted' && (userText.includes('take') && userText.includes('for granted') && userText.includes('weekend'))) ok = true;
+            else if (type === 'granted' && (userText.includes('take') && userText.includes('for granted'))) ok = true;
+            else if (type === 'cost' && (userText.includes('come at a cost') || userText.includes('came at a cost'))) ok = true;
+            else if (type === 'step' && (userText.includes('step in') || userText.includes('stepped in'))) ok = true;
+            else if (type === 'noLonger' && (userText.includes('no longer'))) ok = true;
+            else if (type === 'response' && (userText.includes('in response to'))) ok = true;
+            
+            if (ok) {
+                fbDiv.innerHTML = '✅ Great! You used the expression naturally.';
+                fbDiv.classList.add('correct');
+                fbDiv.classList.remove('wrong');
+            } else {
+                fbDiv.innerHTML = `💡 Almost there! Make sure you include the target expression. Example: ${type === 'granted' ? '"Workers take weekends for granted."' : type === 'cost' ? '"The productivity came at a human cost."' : type === 'step' ? '"My manager stepped in to solve the conflict."' : type === 'noLonger' ? '"We no longer use that old system."' : '"In response to complaints, the policy changed."'}`;
+                fbDiv.classList.add('wrong');
+                fbDiv.classList.remove('correct');
+            }
+        });
+    });
+</script>
+
