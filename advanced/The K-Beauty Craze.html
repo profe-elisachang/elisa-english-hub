@@ -1,0 +1,546 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>The K-Beauty Craze - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        /* ====================
+           Warm, earthy palette (terracotta + cream + soft olive)
+           NO purple backgrounds, NO gradients
+           Optimized for 65" TV, mobile, and Google Sites
+        ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background: #F8F4EC;  /* warm off-white/cream */
+            color: #2C2A29;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 24px 60px 24px;
+        }
+
+        /* Header — fixed style (but warm to match) */
+        .header {
+            background: #B48C5C;  /* terracotta / saddle brown */
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-content h1 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin: 0;
+        }
+        .level-badge {
+            background: rgba(255,255,240,0.2);
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,245,0.4);
+        }
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.2s ease;
+        }
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,240,0.3);
+        }
+
+        .main-content {
+            background: #FFFFFF;
+            border-radius: 32px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            padding: 2rem 2rem 2.8rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #B48C5C;
+            border-left: 5px solid #D9B48B;
+            padding-left: 18px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* expressions cards */
+        .expressions-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .expr-card {
+            background: #FEFAF5;
+            border-radius: 20px;
+            padding: 1rem 1.5rem;
+            border: 1px solid #E9DFD3;
+        }
+        .expr-card strong {
+            color: #C17A45;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .expr-es {
+            color: #6F5E47;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 0.3rem 0;
+        }
+        .expr-example {
+            color: #3D5A5C;
+            background: #F2ECE4;
+            padding: 0.5rem 1rem;
+            border-radius: 18px;
+            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            border-left: 3px solid #B48C5C;
+        }
+
+        /* article styles + highlight */
+        .article-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #2C2A29;
+        }
+        .highlight {
+            background-color: #FFEFBF;
+            font-weight: 700;
+            border-bottom: 2px solid #E0A158;
+            cursor: help;
+            padding: 0 4px;
+            border-radius: 8px;
+            transition: background 0.1s;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2C3E2B;
+            color: #FFF9EF;
+            padding: 6px 14px;
+            border-radius: 24px;
+            white-space: nowrap;
+            font-size: 0.8rem;
+            font-weight: normal;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+        .highlight {
+            position: relative;
+        }
+
+        /* vocabulary section (per paragraph, directly after the <p>) */
+        .vocabulary-section {
+            background: #FEFAF4;
+            border-left: 5px solid #D0AE87;
+            padding: 1.2rem 1.5rem;
+            margin: 0.5rem 0 2rem 0;
+            border-radius: 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .vocab-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 20px;
+            border: 1px solid #EADDCB;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .vocab-word {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .vocab-word strong {
+            font-size: 1.35rem;
+            color: #B07D4C;
+        }
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0;
+            vertical-align: middle;
+            transition: 0.05s linear;
+        }
+        .easy-explain {
+            color: #2F4F4F;
+            font-size: 0.9rem;
+            margin: 6px 0;
+        }
+        .spanish-trans {
+            color: #7A6A58;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 6px 0;
+        }
+        .example-sentence {
+            border-left: 3px solid #85A389;
+            padding-left: 12px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #415A5B;
+        }
+
+        /* discussion questions: each question gets a details fold */
+        .discuss-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .discuss-list li {
+            margin-bottom: 2rem;
+            background: #FEFAF5;
+            padding: 1rem 1.5rem;
+            border-radius: 24px;
+            border: 1px solid #EAE0D4;
+        }
+        .question-text {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #8B5A2B;
+            margin-bottom: 0.75rem;
+        }
+        details {
+            margin-top: 0.8rem;
+            background: #F9F3EB;
+            padding: 0.75rem 1rem;
+            border-radius: 20px;
+            border: 1px solid #E7DACB;
+        }
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #9B6A3C;
+        }
+        hr {
+            margin: 2rem 0;
+            border: none;
+            height: 2px;
+            background: #EADDCB;
+        }
+        .mobile-note {
+            font-size: 0.8rem;
+            color: #9F8B72;
+            text-align: center;
+            margin-top: 0.3rem;
+            background: #F6EFE6;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #AA9B88;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+            .main-content {
+                padding: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        .cultural-note {
+            background: #F4EFE6;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            margin: 0.5rem 0 1rem 0;
+            font-size: 0.9rem;
+            color: #5B4E3C;
+            border-left: 3px solid #B48C5C;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Advanced / B2+</span>  
+        <div class="search-box">
+            <a href="../index-advanced.html" class="back-to-calendar-btn">🏠 Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://kbeautystore.com/cdn/shop/articles/D8F27AF7-2EF2-4192-97A4-010D1478033D.jpg?v=1653224346&width=1200" alt="🧴 The K-Beauty Craze" class="article-image">
+    </div>
+
+
+<div class="container">
+    <main class="main-content">
+        <!-- ========= SECTION 1: Useful Expressions ========= -->
+        <div class="section">
+            <h2 class="section-title">💼 Useful Expressions</h2>
+            <div class="expressions-grid">
+                <div class="expr-card"><strong>to tap into (a market/trend)</strong><div class="expr-es">Aprovechar / acceder a un mercado o tendencia</div><div class="expr-example">"K-beauty startups tapped into social media virality to scale globally."</div></div>
+                <div class="expr-card"><strong>to do the heavy lifting</strong><div class="expr-es">Hacer la parte más difícil o importante del trabajo</div><div class="expr-example">"Big manufacturers like Cosmax do the heavy lifting for small indie brands."</div></div>
+                <div class="expr-card"><strong>a free-for-all</strong><div class="expr-es">Situación sin restricciones / todos pueden participar</div><div class="expr-example">"Low entry barriers have fueled a free-for-all in the K-beauty industry."</div></div>
+                <div class="expr-card"><strong>to chase the next exciting thing</strong><div class="expr-es">Ir detrás de la próxima novedad</div><div class="expr-example">"Consumers constantly chase the next exciting thing, making loyalty unstable."</div></div>
+            </div>
+        </div>
+
+        <!-- ========= ARTICLE (全文, 每个段落紧接词汇框) ========= -->
+        <div class="section">
+            <h2 class="section-title">🧴 The K-Beauty Craze — What’s behind the South Korean cosmetics boom?</h2>
+            <div class="article-text">
+                <!-- 段落1 -->
+                <p>Following in the <span class="highlight" title="seguir el ejemplo de, aprovechar el éxito de">slipstream of</span> the superstars of K-pop, K-beauty has become a massive global business.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 1</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>slipstream of</strong><button class="speak-btn" onclick="speakWord('slipstream of')">🔊</button></div><div class="easy-explain">following someone's example or success path</div><div class="spanish-trans">estela de, aprovechando el éxito de</div><div class="example-sentence">Many startups grew in the slipstream of tech giants.</div></div></div></div>
+
+                <!-- 段落2 -->
+                <p>The secret of K-beauty’s success has been the unlikely <span class="highlight" title="alianza poco común">alliance</span> of big manufacturers and small <span class="highlight" title="emprendedores">entrepreneurs</span> to develop and supply a <span class="highlight" title="flujo constante">steady stream</span> of new products to consumers and the “skinfluencers” who help them look in on the latest fashions.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 2</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>alliance</strong><button class="speak-btn" onclick="speakWord('alliance')">🔊</button></div><div class="easy-explain">a union or partnership</div><div class="spanish-trans">alianza</div><div class="example-sentence">The alliance between tech and auto companies created new innovations.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>entrepreneurs</strong><button class="speak-btn" onclick="speakWord('entrepreneurs')">🔊</button></div><div class="easy-explain">people who start businesses, taking financial risks</div><div class="spanish-trans">emprendedores</div><div class="example-sentence">Young entrepreneurs are changing the local market.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>steady stream</strong><button class="speak-btn" onclick="speakWord('steady stream')">🔊</button></div><div class="easy-explain">continuous flow</div><div class="spanish-trans">flujo constante</div><div class="example-sentence">The factory produces a steady stream of new designs.</div></div>
+                </div></div>
+
+                <!-- 段落3 -->
+                <p>Popular for offering unique and affordable products—like sunscreens that don’t leave white <span class="highlight" title="manchas">smears</span> while <span class="highlight" title="actuar también como">doubling as</span> <span class="highlight" title="cremas hidratantes">moisturizers</span>—South Korean cosmetics have dominated some social media <span class="highlight" title="publicaciones / contenidos">feeds</span> in recent years. Whether it is Kim Kardashian on Instagram or deals from Walmart or Target, consumers who care about cosmetics are getting constant updates on the ever-changing trends.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 3</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>smears</strong><button class="speak-btn" onclick="speakWord('smears')">🔊</button></div><div class="easy-explain">dirty marks or greasy traces</div><div class="spanish-trans">manchas</div><div class="example-sentence">This formula leaves no sticky smears.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>doubling as</strong><button class="speak-btn" onclick="speakWord('doubling as')">🔊</button></div><div class="easy-explain">serving another function</div><div class="spanish-trans">actuar también como</div><div class="example-sentence">The sofa doubles as a bed for guests.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>moisturizers</strong><button class="speak-btn" onclick="speakWord('moisturizers')">🔊</button></div><div class="easy-explain">creams that add moisture to skin</div><div class="spanish-trans">cremas hidratantes</div><div class="example-sentence">She applies moisturizer every morning.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>feeds</strong><button class="speak-btn" onclick="speakWord('feeds')">🔊</button></div><div class="easy-explain">social media content streams</div><div class="spanish-trans">publicaciones / contenidos</div><div class="example-sentence">My Instagram feed is full of beauty tutorials.</div></div>
+                </div></div>
+
+                <!-- 段落4 -->
+                <p>That online <span class="highlight" title="ruido, entusiasmo viral">buzz</span> has <span class="highlight" title="impulsar de repente">catapulted</span> South Korea’s cosmetics exports to more than $10 billion. [In 2024], it <span class="highlight" title="destronó">dethroned</span> France—home of beauty royalty brands such as L’Oréal and L’Occitane—as the biggest exporter of cosmetics to the U.S.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 4</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>buzz</strong><button class="speak-btn" onclick="speakWord('buzz')">🔊</button></div><div class="easy-explain">excitement or talk about something</div><div class="spanish-trans">entusiasmo, rumor</div><div class="example-sentence">There's a lot of buzz around the new product launch.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>catapulted</strong><button class="speak-btn" onclick="speakWord('catapulted')">🔊</button></div><div class="easy-explain">suddenly pushed to success or fame</div><div class="spanish-trans">impulsó</div><div class="example-sentence">The viral video catapulted her to stardom.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>dethroned</strong><button class="speak-btn" onclick="speakWord('dethroned')">🔊</button></div><div class="easy-explain">removed from a top position</div><div class="spanish-trans">destronó</div><div class="example-sentence">The new brand dethroned the market leader.</div></div>
+                </div></div>
+
+                <!-- "Anyone can do it!" 单独短段落 -->
+                <p>Anyone can do it!</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - "Anyone can do it!"</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>anyone can do it</strong><button class="speak-btn" onclick="speakWord('anyone can do it')">🔊</button></div><div class="easy-explain">expression meaning low barriers to entry</div><div class="spanish-trans">cualquiera puede hacerlo</div><div class="example-sentence">In this industry, anyone can do it with the right idea.</div></div></div></div>
+
+                <!-- 段落6 (Unlike South Korea's marquee exports...) -->
+                <p>Unlike South Korea’s other <span class="highlight" title="emblemáticos, de renombre">marquee</span> exports like semiconductors and automobiles, beauty product exports are largely backed by smaller companies. Two-thirds of [2024’s] cosmetics exports came from small and medium-sized firms, according to the Korea International Trade Association.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 6</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>marquee</strong><button class="speak-btn" onclick="speakWord('marquee')">🔊</button></div><div class="easy-explain">famous, highly popular or top-tier</div><div class="spanish-trans">emblemático, de renombre</div><div class="example-sentence">Marquee events attract global attention.</div></div></div></div>
+
+                <!-- 段落7 -->
+                <p>What has emerged is the hope that anyone, with the right product and a little bit of luck, can make a <span class="highlight" title="fortuna">fortune</span> in K-beauty. Since 2013, the number of registered cosmetics sellers in the country has increased <span class="highlight" title="multiplicado por siete">sevenfold</span>, to over 27,000 [in 2024].</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 7</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>fortune</strong><button class="speak-btn" onclick="speakWord('fortune')">🔊</button></div><div class="easy-explain">a lot of money</div><div class="spanish-trans">fortuna</div><div class="example-sentence">He made a fortune selling handmade cosmetics.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>sevenfold</strong><button class="speak-btn" onclick="speakWord('sevenfold')">🔊</button></div><div class="easy-explain">multiplied by seven</div><div class="spanish-trans">multiplicado por siete</div><div class="example-sentence">Sales increased sevenfold in two years.</div></div>
+                </div></div>
+
+                <!-- 段落8 (TikTok quote) -->
+                <p>“Because of COVID, TikTok really boomed, and I think that was a way for people to discover K-beauty brands, and then those brands went on Amazon and converted that <span class="highlight" title="popularidad viral">virality</span> to sales,” said Sarah Chung Park, the founder and chief executive of Landing International, an L.A.-based company that connects K-beauty brands to American retailers.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 8</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>virality</strong><button class="speak-btn" onclick="speakWord('virality')">🔊</button></div><div class="easy-explain">quality of spreading quickly on social media</div><div class="spanish-trans">popularidad viral</div><div class="example-sentence">The brand's success relied on the virality of short videos.</div></div></div></div>
+
+                <!-- 段落9 -->
+                <p>Behind most of the <span class="highlight" title="emergentes, en desarrollo">budding</span> brands is a <span class="highlight" title="puñado, unos pocos">handful</span> of manufacturers such as Kolmar and Cosmax, largely <span class="highlight" title="invisibles, no conocidos">invisible</span> to ordinary beauty consumers. Unlike other global players like L’Oreal or Estée Lauder, Cosmax has never sold directly under its own name, specializing almost entirely in research and original design manufacturing, or <span class="highlight" title="fabricación por diseño original">ODM</span>.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 9</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>budding</strong><button class="speak-btn" onclick="speakWord('budding')">🔊</button></div><div class="easy-explain">beginning to develop, promising</div><div class="spanish-trans">emergente</div><div class="example-sentence">Budding artists need exposure.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>handful</strong><button class="speak-btn" onclick="speakWord('handful')">🔊</button></div><div class="easy-explain">a small number</div><div class="spanish-trans">puñado, unos pocos</div><div class="example-sentence">Only a handful of companies dominate the market.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>invisible</strong><button class="speak-btn" onclick="speakWord('invisible')">🔊</button></div><div class="easy-explain">not seen or noticed</div><div class="spanish-trans">invisible</div><div class="example-sentence">Logistics providers are often invisible to end customers.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>ODM</strong><button class="speak-btn" onclick="speakWord('ODM')">🔊</button></div><div class="easy-explain">original design manufacturing</div><div class="spanish-trans">fabricación por diseño original</div><div class="example-sentence">ODM allows brands to sell products without owning factories.</div></div>
+                </div></div>
+
+                <!-- "The big guy" 小标题段落 -->
+                <p>The big guy</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - "The big guy"</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>big guy</strong><button class="speak-btn" onclick="speakWord('big guy')">🔊</button></div><div class="easy-explain">dominant player or leader</div><div class="spanish-trans">el grandote, el líder</div><div class="example-sentence">In this sector, Cosmax is the big guy.</div></div></div></div>
+
+                <!-- 段落11 (Cosmax grown) -->
+                <p>Cosmax was founded in 1992 and has grown into the largest cosmetics ODM in the world, supplying 4,500 brands from its factories in South Korea, China, the U.S. and Southeast Asia. And at a time when some of the most well-known beauty brands are in decline or stuck in single-digit growth due to consumer <span class="highlight" title="cansancio, agotamiento">fatigue</span>, Cosmax reported a record $1.7 billion in revenue [in 2024]—a 22% increase from 2023.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 11</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>fatigue</strong><button class="speak-btn" onclick="speakWord('fatigue')">🔊</button></div><div class="easy-explain">tiredness, loss of interest</div><div class="spanish-trans">cansancio, agotamiento</div><div class="example-sentence">Consumers feel fatigue from too many similar products.</div></div></div></div>
+
+                <!-- 段落12 -->
+                <p>The company is a primary reason why South Korean beauty startups have been able to <span class="highlight" title="despegar, tener éxito rápidamente">take off</span> so quickly, <span class="highlight" title="inundando">flooding</span> global markets at a <span class="highlight" title="ritmo">pace</span> that competitors in other countries struggle to <span class="highlight" title="igualar">match</span>. Cosmax <span class="highlight" title="representó, constituyó">accounted for</span> around 26% of all of South Korea’s cosmetics exports [in 2024].</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 12</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>take off</strong><button class="speak-btn" onclick="speakWord('take off')">🔊</button></div><div class="easy-explain">begin to be successful</div><div class="spanish-trans">despegar</div><div class="example-sentence">Her career took off after the viral campaign.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>flooding</strong><button class="speak-btn" onclick="speakWord('flooding')">🔊</button></div><div class="easy-explain">entering in large numbers</div><div class="spanish-trans">inundando</div><div class="example-sentence">Cheap imports are flooding the market.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>pace</strong><button class="speak-btn" onclick="speakWord('pace')">🔊</button></div><div class="easy-explain">speed</div><div class="spanish-trans">ritmo</div><div class="example-sentence">The pace of innovation is accelerating.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>match</strong><button class="speak-btn" onclick="speakWord('match')">🔊</button></div><div class="easy-explain">be equal to</div><div class="spanish-trans">igualar</div><div class="example-sentence">No other region can match their speed.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>accounted for</strong><button class="speak-btn" onclick="speakWord('accounted for')">🔊</button></div><div class="easy-explain">represented, made up a portion</div><div class="spanish-trans">representó</div><div class="example-sentence">Exports accounted for 80% of revenue.</div></div>
+                </div></div>
+
+                <!-- 段落13-14 简短，合并显示但分开vocab? 按原p -->
+                <p>It has a unique ability to develop and launch new products rapidly while still making money supplying even the smallest brands, said Lee Kyung-soo, the company’s 79-year-old chairman and founder.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 13</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>rapidly</strong><button class="speak-btn" onclick="speakWord('rapidly')">🔊</button></div><div class="easy-explain">very quickly</div><div class="spanish-trans">rápidamente</div><div class="example-sentence">Products are developed rapidly.</div></div></div></div>
+                <p>“From the point a brand comes to us with an idea, we can supply them in as little as three to six months,” he said. “In other markets, that can be anywhere between a year to three years. They just can’t compete with South Korea when it comes to speed.”</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 14</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>compete with</strong><button class="speak-btn" onclick="speakWord('compete with')">🔊</button></div><div class="easy-explain">try to be better than others</div><div class="spanish-trans">competir con</div><div class="example-sentence">Small firms cannot compete with giants on price.</div></div></div></div>
+
+                <!-- Fueling a free-for-all 小标题 -->
+                <p>Fueling a free-for-all</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - "Fueling a free-for-all"</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>fueling</strong><button class="speak-btn" onclick="speakWord('fueling')">🔊</button></div><div class="easy-explain">driving, encouraging</div><div class="spanish-trans">alimentando</div><div class="example-sentence">Low prices are fueling demand.</div></div></div></div>
+                <p>Few clients are too small for Lee. The company supplies companies with billions of dollars a year in revenue and also Blue, a three-person lip gloss startup.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 16</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>startup</strong><button class="speak-btn" onclick="speakWord('startup')">🔊</button></div><div class="easy-explain">newly established business</div><div class="spanish-trans">empresa emergente</div><div class="example-sentence">A three-person startup can compete globally.</div></div></div></div>
+
+                <!-- 段落17（重要词汇 heavy lifting, free-for-all, indie, reputable, knack）-->
+                <p>Having big manufacturers like Cosmax do the <span class="highlight" title="la parte más pesada del trabajo">heavy lifting</span> allows many with little experience in cosmetics to join the K-beauty <span class="highlight" title="situación sin restricciones">free-for-all</span>. “Anyone can do it. The <span class="highlight" title="barrera de entrada">barrier to entry</span> isn’t high at all,” said Lee Sun-young, the founder of fruit-based cosmetics startup Kikiglow. “And the market is all about <span class="highlight" title="independiente, pequeña empresa">indie</span> brands right now.”</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 17</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>heavy lifting</strong><button class="speak-btn" onclick="speakWord('heavy lifting')">🔊</button></div><div class="easy-explain">most difficult part</div><div class="spanish-trans">la parte más pesada</div><div class="example-sentence">Marketing does the heavy lifting for sales.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>free-for-all</strong><button class="speak-btn" onclick="speakWord('free for all')">🔊</button></div><div class="easy-explain">unrestricted situation</div><div class="spanish-trans">todos contra todos</div><div class="example-sentence">The market became a free-for-all.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>barrier to entry</strong><button class="speak-btn" onclick="speakWord('barrier to entry')">🔊</button></div><div class="easy-explain">obstacle that makes it hard to enter a market</div><div class="spanish-trans">barrera de entrada</div><div class="example-sentence">Low capital means low barrier to entry.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>indie</strong><button class="speak-btn" onclick="speakWord('indie')">🔊</button></div><div class="easy-explain">small independent company</div><div class="spanish-trans">independiente</div><div class="example-sentence">Indie brands focus on niche audiences.</div></div>
+                </div></div>
+
+                <!-- 段落18 -->
+                <p>As little as $20,000 in starting capital will get beauty entrepreneurs their first batch of product from a <span class="highlight" title="de buena reputación">reputable</span> cosmetics manufacturer in a matter of months. E-commerce platforms like TikTok Shop allow them to sell to global consumers directly. The only things they need are a <span class="highlight" title="concepto, idea">concept</span>, a set of <span class="highlight" title="pulgares (hacer clic/me gusta)">thumbs</span> and a <span class="highlight" title="habilidad natural">knack</span> for social media.</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Paragraph 18</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>reputable</strong><button class="speak-btn" onclick="speakWord('reputable')">🔊</button></div><div class="easy-explain">trusted, good reputation</div><div class="spanish-trans">de buena reputación</div><div class="example-sentence">Choose a reputable supplier.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>concept</strong><button class="speak-btn" onclick="speakWord('concept')">🔊</button></div><div class="easy-explain">original idea</div><div class="spanish-trans">concepto</div><div class="example-sentence">The brand concept is minimal and vegan.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>thumbs</strong><button class="speak-btn" onclick="speakWord('thumbs')">🔊</button></div><div class="easy-explain">metaphor for likes / engagement</div><div class="spanish-trans">pulgares (likes)</div><div class="example-sentence">You need thumbs to tap and engage online.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>knack</strong><button class="speak-btn" onclick="speakWord('knack')">🔊</button></div><div class="easy-explain">natural talent or skill</div><div class="spanish-trans">habilidad natural</div><div class="example-sentence">She has a knack for creating viral content.</div></div>
+                </div></div>
+
+                <!-- A cautionary note -->
+                <p>A cautionary note</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - "Cautionary note"</h3><div class="vocab-container"><div class="vocab-item"><div class="vocab-word"><strong>cautionary</strong><button class="speak-btn" onclick="speakWord('cautionary')">🔊</button></div><div class="easy-explain">giving a warning</div><div class="spanish-trans">de advertencia</div><div class="example-sentence">This is a cautionary tale for new brands.</div></div></div></div>
+                <p>The <span class="highlight" title="fuerte, intensa">fierce</span> competition from the constant <span class="highlight" title="cambio continuo, rotación">churn</span> of new hot products and more affordable options from China and elsewhere makes it harder to stand out, succeed and <span class="highlight" title="retener">retain</span> customers. “In the past, consumers would stick with a brand for 10 years or so and become extremely loyal,” said B.J. Lee, who runs Cosmax’s business in the U.S. and is a son of the founder. “But with K-beauty, the ups and downs are extreme. New brands are coming all the time, and people are constantly chasing the next exciting thing.”</p>
+                <div class="vocabulary-section"><h3 style="color:#B07D4C; margin:0 0 0.8rem 0;">📚 Vocabulary - Final paragraph</h3><div class="vocab-container">
+                    <div class="vocab-item"><div class="vocab-word"><strong>fierce</strong><button class="speak-btn" onclick="speakWord('fierce')">🔊</button></div><div class="easy-explain">intense and aggressive</div><div class="spanish-trans">fuerte, intensa</div><div class="example-sentence">Fierce competition lowers prices.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>churn</strong><button class="speak-btn" onclick="speakWord('churn')">🔊</button></div><div class="easy-explain">rapid, constant change</div><div class="spanish-trans">cambio continuo</div><div class="example-sentence">The constant churn of trends makes planning hard.</div></div>
+                    <div class="vocab-item"><div class="vocab-word"><strong>retain</strong><button class="speak-btn" onclick="speakWord('retain')">🔊</button></div><div class="easy-explain">keep (customers)</div><div class="spanish-trans">retener</div><div class="example-sentence">Loyalty programs help retain buyers.</div></div>
+                </div></div>
+            </div>
+            <div class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</div>
+        </div>
+
+        <!-- ========= SECTION 4: DISCUSSION QUESTIONS (each with folded answers) ========= -->
+        <div class="section">
+            <h2 class="section-title">💬 Discussion Questions</h2>
+            <ul class="discuss-list">
+                <li><div class="question-text">1. In your industry, what are the advantages of being a “first mover” or launching products with exceptional speed, like K-beauty brands?</div>
+                    <details><summary>📌 Suggested Answer (click)</summary><p>Being a first mover allows a company to capture market share, build brand recognition quickly, and set customer expectations. However, speed also risks lower quality. In manufacturing, fast adaptation to trends can be a huge competitive edge.</p></details>
+                </li>
+                <li><div class="question-text">2. How do you think smaller companies can compete against big manufacturers while maintaining originality?</div>
+                    <details><summary>📌 Suggested Answer (click)</summary><p>Smaller companies can focus on niche markets, personalized service, unique storytelling, and leveraging social media virality. They can also partner with ODM manufacturers to reduce production costs while keeping creative control.</p></details>
+                </li>
+                <li><div class="question-text">3. What risks come with a market that constantly “chases the next exciting thing”? Have you seen similar patterns in your professional field?</div>
+                    <details><summary>📌 Suggested Answer (click)</summary><p>Risks include low customer loyalty, short product life cycles, pressure to constantly innovate, and wasted inventory. In tech or fashion, this pattern is common; brands must balance trends with core products.</p></details>
+                </li>
+                <li><div class="question-text">4. Where do women in León typically buy cosmetics when they don't go to department stores? (supermarkets, Sephora, online, OXXO, etc.)</div>
+                    <details><summary>📌 Suggested Answer (click)</summary><p>Many women in León buy cosmetics at supermarkets (Soriana, Walmart), specialty chains like Sephora or Mary Kay, online platforms (Mercado Libre, Instagram shops), and sometimes at local beauty supply stores. OXXO convenience stores are not common for cosmetics beyond basic items.</p></details>
+                </li>
+                <li><div class="cultural-note">💡 <strong>Asian beauty drugstore model explained:</strong> In Japan/Korea, "drugstores" (e.g., Matsumoto Kiyoshi, Olive Young) sell hundreds of affordable cosmetics + some medicines. New items arrive weekly, customers test freely, prices are low. It’s a fast-fashion approach for beauty.</div>
+                    <div class="question-text">5. Do you think a Korean-style beauty drugstore (like Olive Young, with affordable, trendy cosmetics and rapid product turnover) could succeed in León, Mexico? Why or why not? Consider prices, shopping habits, location, competition.</div>
+                    <details><summary>📌 Suggested Answer (click)</summary><p>It could succeed in high-traffic areas or shopping malls if the store offers dramatically lower prices than Sephora and strong social media buzz. However, Mexicans are used to testing products at department stores or buying online. The walking culture in León is lower than in Seoul, so location near universities or plazas would be key. Also, local preferences for trusted international brands (L’Oréal, Maybelline) might require heavy marketing education. With the right adaptation (local brands + Korean trends), it might work.</p></details>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========= SECTION 5: Self-Practice Questions ========= -->
+        <div class="section">
+            <h2 class="section-title">✍️ Self-Practice</h2>
+            <ul class="practice-list" style="list-style-type: decimal; padding-left: 1.5rem;">
+                <li>Fill in the blank: “Thanks to Cosmax’s _________ (heavy lifting / free-for-all), small entrepreneurs can launch products without building a factory.”</li>
+                <li>True or False: “In 2024, France remained the biggest cosmetics exporter to the U.S.”</li>
+                <li>Short answer: According to the article, what two key elements (besides money) do new beauty entrepreneurs need to succeed on social media?</li>
+                <li>Match the word: “virality” — a) capacidad de volverse viral / b) producción masiva / c) estrategia corporativa</li>
+            </ul>
+            <details>
+                <summary><strong>🔍 Reference Answers</strong></summary>
+                <ol style="margin-top: 15px; margin-left: 1rem;">
+                    <li>heavy lifting</li>
+                    <li>False. South Korea dethroned France as the biggest exporter to the U.S. in 2024.</li>
+                    <li>A concept, a set of thumbs (digital engagement) and a knack for social media.</li>
+                    <li>a) capacidad de volverse viral</li>
+                </ol>
+            </details>
+        </div>
+        <hr>
+        <footer>© 2025, Los Angeles Times. Distributed by Tribune Content Agency — Lesson adapted for professional English learners (B1+).</footer>
+    </main>
+</div>
+
+<script>
+    function speakWord(word) {
+        if (!window.speechSynthesis) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
