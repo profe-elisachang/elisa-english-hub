@@ -1,0 +1,789 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Low-Altitude Economy - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f0;
+            color: #222;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #2e6b3e;
+            color: white;
+            padding: 1rem 2rem;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            flex: 1;
+        }
+        .level-badge {
+            background: #f4a300;
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* VIDEO SECTION */
+        .video-section {
+            background: #1a3a24;
+            padding: 24px 0;
+            margin-bottom: 32px;
+        }
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .video-wrapper h2 {
+            color: #a8d5a2;
+            font-size: 1.1rem;
+            margin: 0 0 14px 0;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .video-wrapper video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            display: block;
+        }
+
+        /* ARTICLE TITLE */
+        .article-title-box {
+            background: #2e6b3e;
+            color: white;
+            border-radius: 10px;
+            padding: 24px 30px;
+            margin-bottom: 28px;
+        }
+        .article-title-box h1 {
+            margin: 0 0 6px 0;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+        .article-title-box p {
+            margin: 0;
+            color: #c8e6c9;
+            font-size: 1rem;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .section-card h2 {
+            color: #2e6b3e;
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-bottom: 3px solid #a8d5a2;
+            padding-bottom: 10px;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-item {
+            background: #f9fdf9;
+            border-left: 4px solid #2e6b3e;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+        }
+        .expression-english {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2e6b3e;
+        }
+        .expression-spanish {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+            margin: 4px 0;
+        }
+        .expression-example {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #f4a300;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+        }
+
+        /* ARTICLE */
+        .article-paragraph {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            color: #222;
+        }
+        .paragraph-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #2e6b3e;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        /* VOCABULARY SECTION */
+        .vocabulary-section {
+            background: #f4fdf4;
+            border-left: 4px solid #2e6b3e;
+            padding: 20px 24px;
+            margin: 24px 0 32px 0;
+            border-radius: 8px;
+        }
+        .vocabulary-section h3 {
+            color: #2e6b3e;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #d0e8d0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+        .vocab-word {
+            color: #2e6b3e;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        .vocab-speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+        .vocab-def {
+            color: #333;
+            margin: 8px 0 4px 0;
+            line-height: 1.5;
+            font-size: 0.98rem;
+        }
+        .vocab-es {
+            color: #777;
+            font-style: italic;
+            margin: 4px 0;
+            font-size: 0.93rem;
+        }
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        .discussion-list {
+            padding-left: 20px;
+        }
+        .discussion-list li {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        /* SELF PRACTICE */
+        .practice-question {
+            background: #f9fdf9;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+            border: 1px solid #c8e6c9;
+        }
+        .practice-question p {
+            margin: 0 0 6px 0;
+            font-weight: 600;
+            color: #222;
+        }
+        details {
+            margin-top: 20px;
+            background: #f0f4f0;
+            border-radius: 6px;
+            padding: 14px 18px;
+        }
+        details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #2e6b3e;
+        }
+        details ol {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: #333;
+        }
+        details ol li {
+            margin-bottom: 8px;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div>
+                <a href="../index.html" class="back-to-calendar-btn">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- VIDEO SECTION -->
+    <div class="video-section">
+        <div class="video-wrapper">
+            <h2>🎬 Watch: China Drones</h2>
+            <video controls="">
+                <source src="https://storage.liveabc.com/qrcode/5fe03103-25ce-40ba-bf09-daa867f3e815/mmyc7zuf/%E6%B4%BB%E7%94%A8%E7%84%A1%E4%BA%BA%E6%A9%9F++%E4%B8%AD%E5%9C%8B%E5%89%B5%E9%80%A0%E3%80%8C%E4%BD%8E%E7%A9%BA%E7%B6%93%E6%BF%9F%E3%80%8D/8.+China+Drones.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ARTICLE TITLE -->
+            <div class="article-title-box">
+                <h1>🚁 The Low-Altitude Economy</h1>
+                <p>China Dominates in the Application of Drone Technology</p>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxU6noKsDYqbYOo6dDq24EvI25OIrMjmvdsw&amp;s" alt="" class="resizable-image" contenteditable="false" draggable="false" data-layout="full-width" style="height: auto; border-radius: 8px; cursor: pointer; border: 2px solid transparent; padding: 4px; box-shadow: none; display: block; width: 100%; max-width: 100%; margin: 1rem 0px;" data-resizable="true"><p><br></p>💬 Section 1: Useful Expressions</h2>
+
+                <div class="expression-item">
+                    <div class="expression-english">scale up</div>
+                    <div class="expression-spanish">ampliar; escalar</div>
+                    <div class="expression-example">The government is planning to <strong>scale up</strong> drone manufacturing across the country.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">keep up (with)</div>
+                    <div class="expression-spanish">mantenerse al día; seguir el ritmo</div>
+                    <div class="expression-example">American companies are struggling to <strong>keep up with</strong> China's rapid drone development.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">wipe out</div>
+                    <div class="expression-spanish">eliminar; acabar con</div>
+                    <div class="expression-example">Aggressive pricing strategies can <strong>wipe out</strong> smaller competitors in any market.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">attribute (something) to</div>
+                    <div class="expression-spanish">atribuir algo a</div>
+                    <div class="expression-example">Analysts <strong>attribute</strong> DJI's dominance <strong>to</strong> its combination of low cost and ease of use.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-english">put (something) to work</div>
+                    <div class="expression-spanish">poner algo en práctica; hacer que algo funcione</div>
+                    <div class="expression-example">China is <strong>putting</strong> artificial intelligence <strong>to work</strong> in factories and delivery systems.</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+            <div class="section-card">
+                <h2>📖 Section 2: Article with Vocabulary</h2>
+
+                <!-- PARAGRAPH 1 -->
+                <div class="paragraph-label">Paragraph 1</div>
+                <p class="article-paragraph">
+                    For much of the 20th century, drones and flying cars existed in the <span class="highlight" title="ámbito">realm</span> of science fiction. Writers and filmmakers imagined <span class="highlight" title="enjambres">swarms</span> of unmanned aircraft <span class="highlight" title="soaring = elevándose">soaring</span> above futuristic cities. Today, this future has indeed arrived but not where many might once have expected. This future is in China. It is where drones are no longer just toys for <span class="highlight" title="aficionados">hobbyists</span> or for military purposes but <span class="highlight" title="ubicuos; que están en todas partes">ubiquitous</span> in everyday life. In many cities, delivery drones drop meals at <span class="highlight" title="quioscos">kiosks</span> or onto rooftops. Others <span class="highlight" title="transportar">ferry</span> blood to hospitals, spray <span class="highlight" title="fertilizantes">fertilizers</span> on farms and even carry out emergency rescues in rural areas. According to <em>The Economist</em>, in 2024, China had 2.2 million <span class="highlight" title="civil; no militar">civilian</span> drones in operation — a remarkable 455% increase in just five years.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 1</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">realm</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('realm')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">An area or domain, often used for abstract ideas or fields</p>
+                            <p class="vocab-es">ámbito; reino</p>
+                            <div class="vocab-example">Artificial intelligence was once only in the realm of science fiction.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">swarm</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('swarm')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A large group of flying creatures or objects moving together</p>
+                            <p class="vocab-es">enjambre; gran grupo</p>
+                            <div class="vocab-example">A swarm of delivery drones filled the sky above the city.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">soar</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('soar')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To fly or rise high in the air; to increase rapidly</p>
+                            <p class="vocab-es">elevarse; dispararse</p>
+                            <div class="vocab-example">Drone sales have soared in the past five years.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">hobbyist</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('hobbyist')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A person who does an activity for fun, not for work</p>
+                            <p class="vocab-es">aficionado; entusiasta</p>
+                            <div class="vocab-example">Many hobbyists fly small drones for photography on weekends.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">ubiquitous</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('ubiquitous')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Present or found everywhere; extremely common</p>
+                            <p class="vocab-es">ubicuo; que está en todas partes</p>
+                            <div class="vocab-example">Smartphones have become ubiquitous in modern workplaces.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">kiosk</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('kiosk')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A small structure or stand used for selling or delivering things</p>
+                            <p class="vocab-es">quiosco</p>
+                            <div class="vocab-example">The drone dropped the package at the designated kiosk near the entrance.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">ferry</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('ferry')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To transport people or goods from one place to another</p>
+                            <p class="vocab-es">transportar; llevar</p>
+                            <div class="vocab-example">Medical drones can ferry supplies to remote villages quickly.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">fertilizer</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('fertilizer')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A substance added to soil to help plants grow</p>
+                            <p class="vocab-es">fertilizante; abono</p>
+                            <div class="vocab-example">Agricultural drones can spray fertilizer over large fields in minutes.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">civilian</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('civilian')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Not related to the military; for ordinary people</p>
+                            <p class="vocab-es">civil; no militar</p>
+                            <div class="vocab-example">The government encouraged civilian use of drones for delivery services.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 2 -->
+                <div class="paragraph-label">Paragraph 2</div>
+                <p class="article-paragraph">
+                    The country's drone revolution is the result of a <span class="highlight" title="deliberado; intencional">deliberate</span>, straight-driven push to expand what Beijing calls its low-altitude economy. In recent years, it has rewritten airspace rules and <span class="highlight" title="incentivado; dado incentivos a">incentivized</span> local governments to scale up drone manufacturing. The policies have been a huge success. China now produces at least 70% of the world's commercial drones, according to the group Drone Industry Insights. A similar pattern is <span class="highlight" title="surgiendo; apareciendo">emerging</span> in the Asian <span class="highlight" title="potencia; superpotencia">powerhouse</span> with so-called electric vertical takeoff and landing aircraft — in other words, flying cars — which are set to enter commercial service as early as next year.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 2</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">deliberate</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('deliberate')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Done on purpose; carefully planned and intentional</p>
+                            <p class="vocab-es">deliberado; intencional</p>
+                            <div class="vocab-example">The company made a deliberate decision to invest in drone technology early.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">incentivize</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('incentivize')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To motivate or encourage someone through rewards or benefits</p>
+                            <p class="vocab-es">incentivar; dar incentivos a</p>
+                            <div class="vocab-example">The local government incentivized factories to hire more workers.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">emerge</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('emerge')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To come out or become visible; to develop and appear</p>
+                            <p class="vocab-es">emerger; surgir</p>
+                            <div class="vocab-example">New drone startups are emerging across Southeast Asia.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">powerhouse</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('powerhouse')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A country, person, or organization with great strength or influence</p>
+                            <p class="vocab-es">potencia; fuerza dominante</p>
+                            <div class="vocab-example">Germany is a manufacturing powerhouse in Europe.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 3 -->
+                <div class="paragraph-label">Paragraph 3</div>
+                <p class="article-paragraph">
+                    The U.S., meanwhile, is struggling to keep up. America may have invented modern flight, dominated the <span class="highlight" title="aeroespacial">aerospace</span> sector for a century and largely <span class="highlight" title="pioneered = fue pionera en">pioneered</span> the first military drones, but today, its commercial drone service remains broadly in early testing stages and <span class="highlight" title="confined = limitado; restringido">confined</span> to a handful of urban and rural areas.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 3</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">aerospace</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('aerospace')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">The industry related to aircraft and space travel</p>
+                            <p class="vocab-es">aeroespacial</p>
+                            <div class="vocab-example">She works for an aerospace company that builds commercial satellites.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">pioneer</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('pioneer')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To be the first to develop or use something new</p>
+                            <p class="vocab-es">ser pionero en; abrir camino</p>
+                            <div class="vocab-example">The engineer pioneered a new method of battery cooling for drones.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">confine</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('confine')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To limit something to a specific area or group</p>
+                            <p class="vocab-es">limitar; restringir; confinar</p>
+                            <div class="vocab-example">Drone testing is confined to approved zones outside the city center.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 4 -->
+                <div class="paragraph-label">Paragraph 4</div>
+                <p class="article-paragraph">
+                    The main <span class="highlight" title="barrera; obstáculo">barrier</span> is regulatory. This year, the FAA only just proposed a rule to ease requirements that commercial drones fly within the pilot's line of sight. For all the talk of America's business-friendly regime, the regulatory environment in China has oddly been much more <span class="highlight" title="permisivo; flexible">permissive</span>. Public willingness also plays a role. In a McKinsey survey from last year, 86% of Chinese respondents said they would be willing to switch to commercial drone deliveries, compared with just 53% of Americans.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 4</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">barrier</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('barrier')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Something that blocks progress or prevents an action</p>
+                            <p class="vocab-es">barrera; obstáculo</p>
+                            <div class="vocab-example">Language can be a barrier to effective communication in global teams.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">permissive</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('permissive')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Allowing a lot of freedom; not very strict</p>
+                            <p class="vocab-es">permisivo; flexible; tolerante</p>
+                            <div class="vocab-example">The new regulations are more permissive for small commercial drones.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 5 -->
+                <div class="paragraph-label">Paragraph 5</div>
+                <p class="article-paragraph">
+                    Chinese drones dominate even in the U.S., largely due to one company called DJI. Its drones are easy to use and cheaper than <span class="highlight" title="alternatives = alternativas">alternatives</span>, meaning it controls roughly 80% of America's commercial market. Craig Singleton from the conservative think tank the Foundation for Defense of Democracies <span class="highlight" title="atribuye">attributes</span> DJI's <span class="highlight" title="monumental = enorme; extraordinario">monumental</span> rise to <span class="highlight" title="subsidized = subsidiados; con precio reducido">subsidized</span> prices, massive scale and <span class="highlight" title="aggressive = agresivo">aggressive</span> dumping that <span class="highlight" title="wiped out = eliminó; acabó con">wiped out</span> a lot of Western competitors. This dominance has led a growing bipartisan movement in Congress to restrict the company over national security concerns. Its new import sales could be banned by the end of this month.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 5</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">monumental</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('monumental')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Extremely large or important; very impressive</p>
+                            <p class="vocab-es">monumental; enorme; extraordinario</p>
+                            <div class="vocab-example">Building a factory of that size was a monumental achievement for the company.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">subsidized</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('subsidized')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Supported with government or company money to reduce the price</p>
+                            <p class="vocab-es">subsidiado; con precio reducido por apoyo externo</p>
+                            <div class="vocab-example">Workers received subsidized meals in the factory cafeteria.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">aggressive</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('aggressive')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Very forceful and determined; pushing hard to win or succeed</p>
+                            <p class="vocab-es">agresivo; muy enérgico</p>
+                            <div class="vocab-example">The sales team used an aggressive strategy to enter the new market.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">wipe out</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('wipe out')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To completely destroy or eliminate something</p>
+                            <p class="vocab-es">eliminar; acabar con; arrasar</p>
+                            <div class="vocab-example">The new competitor nearly wiped out our market share in six months.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 6 -->
+                <div class="paragraph-label">Paragraph 6</div>
+                <p class="article-paragraph">
+                    In a new book called <em>Breakneck: China's Quest to Engineer the Future</em>, China expert Dan Wang argues that even though Beijing contributes relatively modestly to scientific breakthroughs, it <span class="highlight" title="excels = sobresale; destaca">excels</span> at what he calls "process knowledge," which is <span class="highlight" title="expertise = conocimiento experto; pericia">expertise</span> gained from practical experience. He <span class="highlight" title="likens = compara; asemeja">likens</span> it to cooking. You can have a fully equipped kitchen and a great recipe in front of you, but if you've never cooked before, you probably won't know how to fry an egg. China's lead in drones reflects precisely this — years spent building an <span class="highlight" title="ecosystem = ecosistema">ecosystem</span> where process knowledge flows freely between workers, factories and firms.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 6</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">excel</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('excel')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To be exceptionally good at something; to stand out</p>
+                            <p class="vocab-es">sobresalir; destacar</p>
+                            <div class="vocab-example">She excels at problem-solving under pressure on the production floor.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">expertise</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('expertise')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A high level of skill or knowledge in a specific area</p>
+                            <p class="vocab-es">pericia; conocimiento experto</p>
+                            <div class="vocab-example">Our team brings decades of expertise in quality control and manufacturing.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">liken</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('liken')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To compare one thing to another because they are similar</p>
+                            <p class="vocab-es">comparar; asemejar</p>
+                            <div class="vocab-example">The manager likened the new process to learning to ride a bicycle — practice makes perfect.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">ecosystem</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('ecosystem')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A system of interconnected businesses, people, or organizations that work together</p>
+                            <p class="vocab-es">ecosistema</p>
+                            <div class="vocab-example">Shenzhen built a strong tech ecosystem that supports hardware startups.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 7 -->
+                <div class="paragraph-label">Paragraph 7</div>
+                <p class="article-paragraph">
+                    Nowhere demonstrates this better than the southern Chinese city of Shenzhen. Once a low-cost <span class="highlight" title="assembly = ensamblaje">assembly</span> <span class="highlight" title="hub = centro; núcleo">hub</span> largely for foreign companies, it has evolved, over decades, to become what some call "the Silicon Valley of hardware." Within a small radius, <span class="highlight" title="entrepreneurs = emprendedores">entrepreneurs</span> can access an <span class="highlight" title="array = variedad; gama">array</span> of <span class="highlight" title="sophisticated = sofisticados; avanzados">sophisticated</span> batteries, sensors, cameras and motors, all of which are key ingredients needed to test and scale drones.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 7</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">assembly</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('assembly')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">The process of putting parts together to make a product</p>
+                            <p class="vocab-es">ensamblaje; montaje</p>
+                            <div class="vocab-example">The assembly line produces 500 drone units per day.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">hub</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('hub')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A central place where activity or business is concentrated</p>
+                            <p class="vocab-es">centro; núcleo</p>
+                            <div class="vocab-example">Monterrey is becoming a major manufacturing hub in Mexico.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">entrepreneur</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('entrepreneur')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A person who starts and runs their own business, taking financial risks</p>
+                            <p class="vocab-es">emprendedor</p>
+                            <div class="vocab-example">Young entrepreneurs in Shenzhen are building drone startups with global reach.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">array</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('array')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A wide variety or impressive collection of things</p>
+                            <p class="vocab-es">variedad; gama; conjunto</p>
+                            <div class="vocab-example">The supplier offers an array of sensor components for industrial use.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">sophisticated</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('sophisticated')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Advanced, complex, and well-developed</p>
+                            <p class="vocab-es">sofisticado; avanzado</p>
+                            <div class="vocab-example">The new inspection system uses sophisticated cameras and AI to detect defects.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 8 -->
+                <div class="paragraph-label">Paragraph 8</div>
+                <p class="article-paragraph">
+                    Drones are just one example of a deeper <span class="highlight" title="divergence = divergencia; diferencia creciente">divergence</span> between the U.S. and China on adopting the technologies of the future. The U.S. is pouring resources into a still largely <span class="highlight" title="abstract = abstracto; teórico">abstract</span> vision of AI known as human-level artificial general intelligence. China, meanwhile, is putting AI to work in the physical economy: automating factories, <span class="highlight" title="deploying = desplegando; implementando">deploying</span> <span class="highlight" title="humanoid = humanoide">humanoid</span> robots and scaling drones. In the race to apply AI to the real world, China is quite literally taking off.
+                </p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 8</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <span class="vocab-word">divergence</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('divergence')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">A growing difference or separation between two things or directions</p>
+                            <p class="vocab-es">divergencia; diferencia creciente</p>
+                            <div class="vocab-example">There is a clear divergence between the two companies' approaches to automation.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">abstract</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('abstract')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Existing as an idea rather than a physical or concrete thing</p>
+                            <p class="vocab-es">abstracto; teórico</p>
+                            <div class="vocab-example">The concept was still abstract — no prototype had been built yet.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">deploy</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('deploy')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">To put something into active use or service</p>
+                            <p class="vocab-es">desplegar; implementar; poner en uso</p>
+                            <div class="vocab-example">The company plans to deploy 200 robots on the factory floor next quarter.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-word">humanoid</span>
+                            <button class="vocab-speak-btn" onclick="speakWord('humanoid')" title="Click to hear pronunciation">🔊</button>
+                            <p class="vocab-def">Having a shape or form similar to a human being</p>
+                            <p class="vocab-es">humanoide</p>
+                            <div class="vocab-example">Humanoid robots are being tested for use in automotive assembly lines.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2>🗣️ Section 4: Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>In your industry, have you seen any drones or automated systems being used? How do they affect the work?</li>
+                    <li>What do you think is the biggest barrier to adopting drone technology in Mexico — regulations, public acceptance, or cost?</li>
+                    <li>China built its drone advantage through "process knowledge" — skills developed through years of practice. Can you think of an example of process knowledge that is important in your own job?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card">
+                <h2>✏️ Section 5: Self-Practice</h2>
+
+                <div class="practice-question">
+                    <p>1. Fill in the blank: China has __________ local governments to expand drone manufacturing by offering financial rewards and policy support.</p>
+                    <p style="font-size:0.9rem;color:#666;">(incentivized / pioneered / confined)</p>
+                </div>
+
+                <div class="practice-question">
+                    <p>2. True or False: The U.S. has a stricter regulatory environment for commercial drones than China.</p>
+                </div>
+
+                <div class="practice-question">
+                    <p>3. Match the word to its meaning:</p>
+                    <p style="font-size:0.95rem;color:#444;">
+                        a. <strong>hub</strong> &nbsp;&nbsp; b. <strong>ubiquitous</strong> &nbsp;&nbsp; c. <strong>divergence</strong>
+                        <br><br>
+                        1. Present everywhere &nbsp; 2. A growing difference &nbsp; 3. A central point of activity
+                    </p>
+                </div>
+
+                <div class="practice-question">
+                    <p>4. In your own words: What does the author mean when he compares China's "process knowledge" to cooking?</p>
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>incentivized</strong> — The government incentivized local governments through policies and support to scale up drone manufacturing.</li>
+                        <li><strong>True</strong> — The article says China's regulatory environment has been "much more permissive" than America's.</li>
+                        <li>a → 3 (A central point of activity) &nbsp;|&nbsp; b → 1 (Present everywhere) &nbsp;|&nbsp; c → 2 (A growing difference)</li>
+                        <li>The author means that just having the right tools or knowledge on paper is not enough. You need hands-on experience to truly master something. China has built expertise by actually doing — manufacturing, testing, and improving drones for years — not just by studying or inventing new ideas.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+<div class="resize-container" style="position: relative; display: inline-block; width: 310px; margin: 1rem 0px;"></div><p><br></p>
