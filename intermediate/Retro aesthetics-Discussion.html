@@ -1,0 +1,610 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 14 – Beyond the Article · Discussion Extension</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg:       #faf7f2;
+    --surface:  #ffffff;
+    --card:     #f5f0e8;
+    --border:   #ddd5c5;
+    --text:     #1e1710;
+    --muted:    #7a6e60;
+    --A-color:  #b84d2a;   /* terracotta */
+    --B-color:  #3d6b52;   /* forest */
+    --D-color:  #2a5c8a;   /* denim blue */
+    --shadow:   rgba(30,23,16,0.09);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+/* ── HEADER ── */
+.header {
+    background: #1e1710;
+    border-bottom: 4px solid #c9960c;
+    padding: 1.1rem 2.5rem;
+}
+.header-content {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.header h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.55rem;
+    color: #faf7f2;
+    flex: 1;
+}
+.level-badge {
+    background: #c9960c;
+    color: #1e1710;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+.home-btn {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    background: rgba(255,255,255,0.15);
+    color: #faf7f2;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: background 0.2s;
+}
+.home-btn:hover { background: rgba(255,255,255,0.25); }
+
+/* ── INTRO BANNER ── */
+.intro-banner {
+    max-width: 1400px;
+    margin: 2rem auto 0;
+    padding: 0 2.5rem;
+}
+.intro-inner {
+    background: #1e1710;
+    border-radius: 10px;
+    padding: 1.6rem 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.intro-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #c9960c;
+    margin-bottom: 0.3rem;
+}
+.intro-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.55rem;
+    color: #faf7f2;
+    line-height: 1.25;
+}
+.intro-sub {
+    color: rgba(250,247,242,0.55);
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+}
+.topic-pills {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+.pill {
+    padding: 0.5rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1.5px solid;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+.pill-A { color: var(--A-color); border-color: var(--A-color); }
+.pill-A:hover { background: var(--A-color); color: white; }
+.pill-B { color: var(--B-color); border-color: var(--B-color); }
+.pill-B:hover { background: var(--B-color); color: white; }
+.pill-D { color: var(--D-color); border-color: var(--D-color); }
+.pill-D:hover { background: var(--D-color); color: white; }
+
+/* ── MAIN ── */
+.main {
+    max-width: 1400px;
+    margin: 2.5rem auto;
+    padding: 0 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* ── TOPIC BLOCK ── */
+.topic-block {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 14px var(--shadow);
+}
+.topic-header {
+    padding: 1.6rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+    border-bottom: 1.5px solid var(--border);
+}
+.topic-letter {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 56px;
+}
+.topic-letter-A { color: var(--A-color); }
+.topic-letter-B { color: var(--B-color); }
+.topic-letter-D { color: var(--D-color); }
+
+.topic-meta {}
+.topic-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+}
+.tag-A { color: var(--A-color); }
+.tag-B { color: var(--B-color); }
+.tag-D { color: var(--D-color); }
+
+.topic-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.45rem;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 0.3rem;
+}
+.topic-sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ── CONTEXT BOX ── */
+.context-box {
+    background: var(--card);
+    border-left: 5px solid;
+    margin: 1.5rem 2rem 0;
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.4rem;
+    font-size: 0.97rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+.context-box-A { border-color: var(--A-color); }
+.context-box-B { border-color: var(--B-color); }
+.context-box-D { border-color: var(--D-color); }
+
+/* ── QUESTIONS ── */
+.questions-section {
+    padding: 1.5rem 2rem 0;
+}
+.questions-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+.q-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ── QUESTION ITEM (with foldable answer) ── */
+.q-item {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.q-question {
+    padding: 1rem 1.3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+    background: var(--surface);
+    transition: background 0.15s;
+}
+.q-question:hover { background: var(--card); }
+.q-num {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    min-width: 26px;
+}
+.q-num-A { color: var(--A-color); }
+.q-num-B { color: var(--B-color); }
+.q-num-D { color: var(--D-color); }
+
+.q-text {
+    flex: 1;
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+.q-toggle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--muted);
+    min-width: 22px;
+    text-align: center;
+    transition: transform 0.3s;
+    line-height: 1.6;
+}
+.q-answer {
+    display: none;
+    padding: 1rem 1.3rem 1rem 3.5rem;
+    border-top: 1.5px solid var(--border);
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: #2a4a34;
+    background: #edf5ef;
+}
+.q-answer.open { display: block; }
+.q-item.open .q-toggle { transform: rotate(45deg); color: var(--text); }
+.q-answer-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--B-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ── VOCAB STRIP ── */
+.vocab-strip {
+    margin: 0 2rem 1.5rem;
+    padding: 0.9rem 1.3rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.vocab-strip-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    white-space: nowrap;
+}
+.vocab-chip {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid;
+    font-family: 'DM Mono', monospace;
+}
+.chip-A { background: #fdf0ec; border-color: #e8b0a0; color: var(--A-color); }
+.chip-B { background: #edf5ef; border-color: #a0c8a8; color: var(--B-color); }
+.chip-D { background: #ecf2f8; border-color: #a0bcd8; color: var(--D-color); }
+
+/* ── DIVIDER ── */
+.topic-footer {
+    height: 6px;
+}
+.footer-A { background: var(--A-color); }
+.footer-B { background: var(--B-color); }
+.footer-D { background: var(--D-color); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+    .main, .intro-banner { padding-left: 1rem; padding-right: 1rem; }
+    .topic-header, .context-box, .questions-section, .vocab-strip { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .topic-letter { font-size: 2.2rem; min-width: 44px; }
+    .topic-title { font-size: 1.2rem; }
+    .intro-inner { flex-direction: column; }
+    .topic-pills { margin-left: 0; }
+}
+</style>
+
+
+
+<!-- ── HEADER ── -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box" style="margin-left:auto;">
+            <a href="../index.html" class="home-btn">Home</a>
+        </div>
+    </div>
+</header>
+
+<!-- ── INTRO BANNER ── -->
+<div class="intro-banner">
+    <div class="intro-inner">
+        <div>
+            <div class="intro-label">&nbsp;Beyond the Article</div>
+            <div class="intro-title">Going Deeper — Three Discussion Themes</div>
+            <div class="intro-sub">Retro aesthetics through the lens of culture, generation, and identity · Self-study version with model answers</div>
+        </div>
+        <div class="topic-pills">
+            <a href="#topic-A" class="pill pill-A">A · Culture Clash</a>
+            <a href="#topic-B" class="pill pill-B">B · Generation Gap</a>
+            <a href="#topic-D" class="pill pill-D">C· MX vs TW</a>
+        </div>
+    </div>
+</div>
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+    <!-- ════ TOPIC A ════ -->
+    <div class="topic-block" id="topic-A">
+        <div class="topic-header">
+            <div class="topic-letter topic-letter-A">A</div>
+            <div class="topic-meta">
+                <div class="topic-tag tag-A">Culture Clash</div>
+                <div class="topic-title">Retro as "creative" vs. retro as "strange"</div>
+                <div class="topic-sub">The same vintage outfit gets very different reactions depending on where you are.</div>
+            </div>
+        </div>
+
+        <div class="context-box context-box-A">
+            In the West — particularly in cities like New York, London, or Berlin — wearing vintage clothing, using a film camera, or carrying a CD player is generally seen as a sign of <strong>creativity and personal style</strong>. It signals that you're thoughtful about your choices and not just following the mainstream. But in many Asian workplace environments — including factories and offices in Taiwan — dressing or behaving in a noticeably different way can be read as <strong>odd, unprofessional, or attention-seeking</strong>. The same object or outfit carries completely different social meaning depending on the context.
+        </div>
+
+        <div class="questions-section">
+            <div class="questions-label">💬 Discussion Questions — click to reveal model answers</div>
+            <div class="q-list">
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-A">1</span>
+                        <span class="q-text">Have you ever worn something or used something "different" — at work or in public — and felt like people were looking at you strangely? What happened?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        Once I wore a pair of slightly wide-leg trousers to the office — not extreme, but different from the usual slim-cut style. A few colleagues made comments like "Are those comfortable?" in a tone that felt more like a judgment than a real question. I think in a factory environment, people notice when you stand out, and the instinct is often to point it out rather than compliment it. It made me understand that fashion choices are never just personal — they're social signals.
+                    </div>
+                </div>
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-A">2</span>
+                        <span class="q-text">Why do you think "being different" is celebrated in some cultures but discouraged in others? Is it about respect, safety, or something else?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        I think it comes down to what a society values more — the individual or the group. In many Western cultures, being unique is a sign of confidence and self-awareness, so standing out is positive. In more collective cultures — which is common in parts of Asia and also in traditional Mexican communities — fitting in shows respect for the group and doesn't disrupt harmony. Neither approach is wrong; they just reflect different priorities. The challenge is that in a globalized world, you're constantly moving between both expectations.
+                    </div>
+                </div>
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-A">3</span>
+                        <span class="q-text">If a young colleague showed up to work with a film camera, a vintage jacket, and a CD player — how would your team react? Honestly.</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        Honestly? People would probably stare and whisper. Someone would definitely ask "Why are you carrying that?" in a confused tone. A few younger colleagues might think it's cool — especially if they've seen that style on social media — but most of the older workers would just find it impractical and unnecessary. I think the reaction would be curiosity mixed with mild confusion. It wouldn't be hostile, but it wouldn't be natural acceptance either. Context matters a lot — the same person doing the same thing at a weekend market would get totally different reactions.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="vocab-strip">
+            <span class="vocab-strip-label">Key vocab for this topic:</span>
+            <span class="vocab-chip chip-A">stand out</span>
+            <span class="vocab-chip chip-A">fit in</span>
+            <span class="vocab-chip chip-A">collective culture</span>
+            <span class="vocab-chip chip-A">social signal</span>
+            <span class="vocab-chip chip-A">unprofessional</span>
+            <span class="vocab-chip chip-A">instinct</span>
+        </div>
+
+        <div class="topic-footer footer-A"></div>
+    </div>
+
+    <!-- ════ TOPIC B ════ -->
+    <div class="topic-block" id="topic-B">
+        <div class="topic-header">
+            <div class="topic-letter topic-letter-B">B</div>
+            <div class="topic-meta">
+                <div class="topic-tag tag-B">Generation Gap</div>
+                <div class="topic-title">Your nostalgia vs. their nostalgia</div>
+                <div class="topic-sub">When young people "rediscover" something you actually lived through — does it feel like flattery, or something else?</div>
+            </div>
+        </div>
+
+        <div class="context-box context-box-B">
+            The retro trend among young people today is largely about things they <em>never experienced</em>. A 22-year-old buying a film camera or wearing 80s fashion is drawn to the <strong>idea</strong> of that era — the aesthetic, the mood, the image. But for someone who actually grew up in the 80s or 90s, nostalgia is tied to real memories: a specific smell, a difficult moment, a friendship. These two kinds of nostalgia — <strong>imagined nostalgia</strong> and <strong>lived nostalgia</strong> — are very different things. And when they meet, interesting conversations happen.
+        </div>
+
+        <div class="questions-section">
+            <div class="questions-label">💬 Discussion Questions — click to reveal model answers</div>
+            <div class="q-list">
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-B">1</span>
+                        <span class="q-text">If you're old enough to remember the 80s or 90s — what's one thing young people romanticize about that era that was actually not that great?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        People romanticize cassette tapes and say the sound was "warmer" and "more authentic." But honestly? They broke constantly. You had to rewind them with a pencil. If you left them in a car on a hot day, they melted. And the sound quality was genuinely worse — we just didn't know any better because we had nothing to compare it to. Young people see the object and think "aesthetic." People who lived it remember the frustration. I think there's something beautiful about that — each generation gets to decide what the past means to them.
+                    </div>
+                </div>
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-B">2</span>
+                        <span class="q-text">When you see young people today adopting styles or objects from your own past — does it feel like appreciation, or does it feel like they're missing the point?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        Mostly it feels like appreciation, and I find it genuinely flattering. If someone today listens to music I grew up with, I feel like saying "Yes! You understand!" But sometimes it feels slightly off — like when a brand sells a "vintage-inspired" product at a very high price, as if the aesthetic is more important than the experience it came from. The 90s weren't cool because of the clothes — they were cool because of what was happening socially, musically, politically. When young people only see the surface, they capture the look but not the feeling.
+                    </div>
+                </div>
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-B">3</span>
+                        <span class="q-text">Is there something from YOUR past that you wish would come back — not because it's trendy, but because it genuinely made life better?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        Honestly, I wish we could bring back the culture of being unreachable after work hours. In the 90s and early 2000s, when you left the office, you left. There was no WhatsApp group, no email on your phone, no expectation that you'd reply immediately. People had real evenings and real weekends. Now even on vacation you're never fully disconnected. That's not an aesthetic thing — it's a quality-of-life thing. And no retro trend seems to be bringing that one back anytime soon.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="vocab-strip">
+            <span class="vocab-strip-label">Key vocab for this topic:</span>
+            <span class="vocab-chip chip-B">nostalgia</span>
+            <span class="vocab-chip chip-B">romanticize</span>
+            <span class="vocab-chip chip-B">flattering</span>
+            <span class="vocab-chip chip-B">aesthetic</span>
+            <span class="vocab-chip chip-B">lived experience</span>
+            <span class="vocab-chip chip-B">surface vs. feeling</span>
+        </div>
+
+        <div class="topic-footer footer-B"></div>
+    </div>
+
+    <!-- ════ TOPIC D ════ -->
+    <div class="topic-block" id="topic-D">
+        <div class="topic-header">
+            <div class="topic-letter topic-letter-D">C</div>
+            <div class="topic-meta">
+                <div class="topic-tag tag-D">Cross-Cultural</div>
+                <div class="topic-title">Is "retro" the same in Mexico and Taiwan?</div>
+                <div class="topic-sub">You've lived in both worlds. What does the past look like from each side?</div>
+            </div>
+        </div>
+
+        <div class="context-box context-box-D">
+            The retro trend described in the article is largely driven by <strong>Western and East Asian pop culture</strong> — think Taiwanese indie film aesthetics, Japanese city-pop nostalgia, or American 90s fashion on TikTok. But Mexico has its own rich retro culture: <em>telenovela</em> fashion, the revival of vinyl cumbia and salsa, vintage lucha libre posters, Volkswagen Beetle nostalgia, and the iconic <em>charro</em> aesthetic. The question is: are these trends happening in parallel — or does one culture's version of "retro" influence the other?
+        </div>
+
+        <div class="questions-section">
+            <div class="questions-label">💬 Discussion Questions — click to reveal model answers</div>
+            <div class="q-list">
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-D">1</span>
+                        <span class="q-text">Is there a "retro trend" happening in Mexico right now? What kinds of old things are people rediscovering or bringing back?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        Yes, definitely. One of the biggest ones is the return of vinyl records — not just for older generations, but young people are buying record players and collecting cumbia, salsa, and classic rock en español albums. There's also a big revival of the "Volkswagen Beetle" (the original vocho), which was produced in Mexico until 2003 and has become a cultural symbol. In fashion, you see a lot of retro 70s and 80s Mexican pop aesthetics — bright colors, the kind of patterns you'd see in old telenovelas — being reinterpreted by young designers. It feels very specifically Mexican, not just a copy of Western retro trends.
+                    </div>
+                </div>
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-D">2</span>
+                        <span class="q-text">Since living in Taiwan, have you noticed any Taiwanese "retro" culture that surprised you, or that reminded you of something from Mexico?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        What surprised me was the nostalgia for old Taiwanese cinema and music from the 70s and 80s — a style they call "Taiwanese City Pop" or just old Mandopop. The soft, warm aesthetic of those old films and album covers is being revived in coffee shops, design, and even clothing. It reminded me of how in Mexico, old ranchera music posters or faded <em>cantina</em> signs have become trendy décor. Both cultures seem to be using visual nostalgia as a way to connect with a sense of identity that feels more "real" or rooted than the globalized present. The objects are different, but the feeling is the same.
+                    </div>
+                </div>
+
+                <div class="q-item" onclick="toggleQ(this)">
+                    <div class="q-question">
+                        <span class="q-num q-num-D">3</span>
+                        <span class="q-text">Is there something you miss from Mexico that you wish existed in Taiwan — a food, a habit, a social tradition — that feels "retro" but was actually just everyday life back home?</span>
+                        <span class="q-toggle">+</span>
+                    </div>
+                    <div class="q-answer">
+                        <div class="q-answer-label">📝 Model Answer</div>
+                        Sunday family lunches. In Mexico, it was completely normal for the extended family — grandparents, aunts, uncles, cousins — to gather at someone's house every Sunday for a long, slow lunch that lasted three or four hours. There was no specific occasion; it was just what you did. Everyone talked, the kids ran around, and the food kept coming. In Taiwan, people are warm and family-oriented, but that particular tradition of the long, unstructured Sunday gathering doesn't exist in the same way. It's not a trendy retro thing I'm nostalgic for — it was just Tuesday for us. But now that it's gone, it feels irreplaceable.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="vocab-strip">
+            <span class="vocab-strip-label">Key vocab for this topic:</span>
+            <span class="vocab-chip chip-D">revival</span>
+            <span class="vocab-chip chip-D">cultural symbol</span>
+            <span class="vocab-chip chip-D">reinterpreted</span>
+            <span class="vocab-chip chip-D">rooted</span>
+            <span class="vocab-chip chip-D">globalized</span>
+            <span class="vocab-chip chip-D">identity</span>
+        </div>
+
+        <div class="topic-footer footer-D"></div>
+    </div>
+
+</div><!-- /main -->
+
+<script>
+function toggleQ(item) {
+    const answer = item.querySelector('.q-answer');
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.q-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.q-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) {
+        answer.classList.add('open');
+        item.classList.add('open');
+    }
+}
+// smooth scroll for pills
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+            .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+</script>
+
+

@@ -115,7 +115,9 @@ async function scanLessons() {
         { filename: 'The Evolution of the Modern Workweek.html', date: '2026-05-11', title: '🏭 The Evolution of the Modern Workweek' },
         { filename: 'Modern Workweek-Practice.html', date: '2026-05-11', title: '🏭  Modern Workweek-Practice' },
         { filename: 'The Return of Retro Aesthetics.html', date: '2026-05-13', title: '🕶️ The Return of Retro Aesthetics' },
-       
+       { filename: 'Era Explorer-Retro Aesthetics.html', date: '2026-05-13', title: 'Era Explorer-Retro Aesthetics' },
+       { filename: 'Retro aesthetics-Discussion.html', date: '2026-05-13', title: 'Retro aesthetics through the lens of culture, generation, and identity ' },
+        
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }

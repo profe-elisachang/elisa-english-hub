@@ -1,0 +1,764 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Era Explorer – Unit 14</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:wght@400;500;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0f0e0d;
+    --surface: #1a1917;
+    --card: #222120;
+    --border: #333230;
+    --text: #f0ece6;
+    --muted: #8a8480;
+    --accent-60s: #e84545;   /* 60s — bold red */
+    --accent-70s: #d4820a;   /* 70s — burnt orange */
+    --accent-80s: #c026d3;   /* 80s — neon magenta */
+    --accent-90s: #16a34a;   /* 90s — grunge green */
+    --accent-y2k: #0ea5e9;   /* Y2K — cyber blue */
+    --active: #f0ece6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+.header-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    line-height: 1;
+}
+.header-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.header-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    background: #2a2825;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.home-btn {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    background: rgba(255,255,255,0.07);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    transition: background 0.2s;
+}
+.home-btn:hover { background: rgba(255,255,255,0.13); }
+
+/* ── ERA SELECTOR ── */
+.era-selector {
+    display: flex;
+    gap: 0;
+    padding: 2rem 2.5rem 0;
+    max-width: 1500px;
+    margin: auto;
+}
+.era-btn {
+    flex: 1;
+    padding: 1.4rem 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.06em;
+    background: var(--surface);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.era-btn:last-child { border-right: 1px solid var(--border); }
+.era-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.era-btn:hover { color: var(--text); background: #242220; }
+.era-btn.active { color: var(--active); background: var(--card); }
+.era-btn.active::after { opacity: 1; }
+
+.era-btn[data-era="60s"] { --era-color: var(--accent-60s); }
+.era-btn[data-era="70s"] { --era-color: var(--accent-70s); }
+.era-btn[data-era="80s"] { --era-color: var(--accent-80s); }
+.era-btn[data-era="90s"] { --era-color: var(--accent-90s); }
+.era-btn[data-era="y2k"] { --era-color: var(--accent-y2k); }
+
+.era-btn.active { color: var(--era-color) !important; }
+.era-btn:hover { color: var(--era-color) !important; }
+
+/* ── ERA PANEL ── */
+.era-panels {
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 2.5rem 2rem;
+}
+.era-panel {
+    display: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 2rem 2.5rem;
+    animation: fadeIn 0.3s ease;
+}
+.era-panel.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.era-panel-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+.era-panel-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+.era-panel-tagline {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-style: italic;
+    padding-bottom: 0.4rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ── CATEGORY GRID ── */
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.cat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1.1rem;
+}
+.cat-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.cat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+}
+.cat-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.cat-items li {
+    font-size: 0.97rem;
+    color: var(--text);
+    line-height: 1.4;
+    padding-left: 0.8rem;
+    position: relative;
+}
+.cat-items li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+}
+
+/* ── SENTENCE BUILDER ── */
+.builder-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.4rem 1.8rem;
+}
+.builder-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+.frames {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.frame-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+}
+.frame-text {
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+}
+.frame-blank {
+    display: inline-block;
+    min-width: 120px;
+    border-bottom: 2px solid currentColor;
+    opacity: 0.6;
+    margin: 0 3px;
+}
+.frame-hint {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* ── ERA COLOR ACCENTS ── */
+.panel-60s .era-panel-title,
+.panel-60s .cat-label { color: var(--accent-60s); }
+.panel-60s .cat-card { border-top: 3px solid var(--accent-60s); }
+.panel-60s .frame-blank { color: var(--accent-60s); }
+
+.panel-70s .era-panel-title,
+.panel-70s .cat-label { color: var(--accent-70s); }
+.panel-70s .cat-card { border-top: 3px solid var(--accent-70s); }
+.panel-70s .frame-blank { color: var(--accent-70s); }
+
+.panel-80s .era-panel-title,
+.panel-80s .cat-label { color: var(--accent-80s); }
+.panel-80s .cat-card { border-top: 3px solid var(--accent-80s); }
+.panel-80s .frame-blank { color: var(--accent-80s); }
+
+.panel-90s .era-panel-title,
+.panel-90s .cat-label { color: var(--accent-90s); }
+.panel-90s .cat-card { border-top: 3px solid var(--accent-90s); }
+.panel-90s .frame-blank { color: var(--accent-90s); }
+
+.panel-y2k .era-panel-title,
+.panel-y2k .cat-label { color: var(--accent-y2k); }
+.panel-y2k .cat-card { border-top: 3px solid var(--accent-y2k); }
+.panel-y2k .frame-blank { color: var(--accent-y2k); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+    .cat-grid { grid-template-columns: repeat(3, 1fr); }
+    .frames { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .era-btn { font-size: 1.6rem; padding: 1rem 0.3rem; }
+    .era-selector, .era-panels { padding-left: 1rem; padding-right: 1rem; }
+}
+</style>
+
+
+
+<div class="header">
+    <div class="header-left">
+        <div class="header-logo">Era Explorer<span style="color: rgb(138, 132, 128); font-family: &quot;DM Mono&quot;, monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">&nbsp;Retro Aesthetics</span></div>
+    </div>
+    <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
+        <span class="header-badge">📚 English with Elisa</span>
+        <a href="../index.html" class="home-btn">Home</a>
+    </div>
+</div>
+
+<!-- ERA SELECTOR TABS -->
+<div class="era-selector">
+    <button class="era-btn active" data-era="60s" onclick="switchEra('60s')">60s</button>
+    <button class="era-btn" data-era="70s" onclick="switchEra('70s')">70s</button>
+    <button class="era-btn" data-era="80s" onclick="switchEra('80s')">80s</button>
+    <button class="era-btn" data-era="90s" onclick="switchEra('90s')">90s</button>
+    <button class="era-btn" data-era="y2k" onclick="switchEra('y2k')">Y2K</button>
+</div>
+
+<!-- ERA PANELS -->
+<div class="era-panels">
+
+    <!-- ── 60s ── -->
+    <div class="era-panel panel-60s active" id="panel-60s">
+        <div class="era-panel-header">
+            <div class="era-panel-title">1960s</div>
+            <div class="era-panel-tagline">"Question everything. Change the world." — The decade of revolution, color, and counterculture.</div>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-card">
+                <span class="cat-icon">🎵</span>
+                <div class="cat-label">Music</div>
+                <ul class="cat-items">
+                    <li>The Beatles, The Rolling Stones</li>
+                    <li>Motown (Stevie Wonder, Diana Ross)</li>
+                    <li>Folk music (Bob Dylan)</li>
+                    <li>Psychedelic rock</li>
+                    <li>Woodstock festival (1969)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">👗</span>
+                <div class="cat-label">Fashion</div>
+                <ul class="cat-items">
+                    <li>Mini skirts</li>
+                    <li>Go-go boots</li>
+                    <li>Bell-bottom jeans (late 60s)</li>
+                    <li>Tie-dye shirts</li>
+                    <li>Mod fashion (geometric patterns)</li>
+                    <li>Hippie style: headbands, fringe</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📺</span>
+                <div class="cat-label">Tech &amp; Media</div>
+                <ul class="cat-items">
+                    <li>Black &amp; white TV (then color)</li>
+                    <li>Apollo 11 moon landing (1969)</li>
+                    <li>Rotary telephone</li>
+                    <li>Polaroid cameras</li>
+                    <li>First video game prototypes</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🌍</span>
+                <div class="cat-label">Big Events</div>
+                <ul class="cat-items">
+                    <li>Civil Rights Movement (MLK)</li>
+                    <li>Vietnam War protests</li>
+                    <li>Space Race (US vs USSR)</li>
+                    <li>Kennedy assassination (1963)</li>
+                    <li>First man on the moon</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">😎</span>
+                <div class="cat-label">Vibe</div>
+                <ul class="cat-items">
+                    <li>Optimism + rebellion</li>
+                    <li>"Peace and love"</li>
+                    <li>Question authority</li>
+                    <li>Youth culture rising</li>
+                    <li>Bright, bold colors everywhere</li>
+                </ul>
+            </div>
+        </div>
+        <div class="builder-section">
+            <div class="builder-title">🗣 Sentence Frames — use the words above to speak!</div>
+            <div class="frames">
+                <div class="frame-card">
+                    <div class="frame-text">From the 60s, I would bring back <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would bring back tie-dye fashion because it lets people express themselves freely."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">I would NOT want <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> to come back because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would not want black &amp; white TV to come back because we have so many better options now."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">Compared to today, the 60s were more <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> but less <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...more rebellious and idealistic, but less connected and technologically advanced."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 70s ── -->
+    <div class="era-panel panel-70s" id="panel-70s">
+        <div class="era-panel-header">
+            <div class="era-panel-title">1970s</div>
+            <div class="era-panel-tagline">"Disco, denim, and drama." — The decade of self-expression, economic chaos, and funky good times.</div>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-card">
+                <span class="cat-icon">🎵</span>
+                <div class="cat-label">Music</div>
+                <ul class="cat-items">
+                    <li>Disco (ABBA, Bee Gees, Donna Summer)</li>
+                    <li>Funk (James Brown)</li>
+                    <li>Rock (Led Zeppelin, Queen, Fleetwood Mac)</li>
+                    <li>Punk rock (late 70s — Sex Pistols)</li>
+                    <li>8-track tapes</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">👗</span>
+                <div class="cat-label">Fashion</div>
+                <ul class="cat-items">
+                    <li>Bell-bottom jeans (very wide)</li>
+                    <li>Platform shoes</li>
+                    <li>Corduroy everything</li>
+                    <li>Halter tops, wrap dresses</li>
+                    <li>Polyester suits</li>
+                    <li>Big hair, long sideburns</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📺</span>
+                <div class="cat-label">Tech &amp; Media</div>
+                <ul class="cat-items">
+                    <li>VHS / Betamax video tapes</li>
+                    <li>First personal computers (Apple I)</li>
+                    <li>Pong — first popular video game</li>
+                    <li>Disco balls &amp; nightclubs</li>
+                    <li>Color TV becomes mainstream</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🌍</span>
+                <div class="cat-label">Big Events</div>
+                <ul class="cat-items">
+                    <li>Oil crisis (1973) — gas shortages</li>
+                    <li>Watergate scandal (Nixon resigns)</li>
+                    <li>End of Vietnam War (1975)</li>
+                    <li>Women's liberation movement grows</li>
+                    <li>Star Wars released (1977)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">😎</span>
+                <div class="cat-label">Vibe</div>
+                <ul class="cat-items">
+                    <li>Carefree, live for tonight</li>
+                    <li>Groovy, laid-back</li>
+                    <li>More individual freedom</li>
+                    <li>Economic anxiety underneath</li>
+                    <li>The birth of cool</li>
+                </ul>
+            </div>
+        </div>
+        <div class="builder-section">
+            <div class="builder-title">🗣 Sentence Frames — use the words above to speak!</div>
+            <div class="frames">
+                <div class="frame-card">
+                    <div class="frame-text">From the 70s, I would bring back <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would bring back disco music because it makes people want to dance and have fun."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">I would NOT want <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> to come back because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would not want polyester suits to come back because they look uncomfortable and very outdated."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">Compared to today, the 70s were more <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> but less <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...more carefree and social, but less convenient — no internet, no smartphones."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 80s ── -->
+    <div class="era-panel panel-80s" id="panel-80s">
+        <div class="era-panel-header">
+            <div class="era-panel-title">1980s</div>
+            <div class="era-panel-tagline">"Bigger, louder, brighter — excess was the point." — Neon lights, power suits, and the birth of pop culture as we know it.</div>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-card">
+                <span class="cat-icon">🎵</span>
+                <div class="cat-label">Music</div>
+                <ul class="cat-items">
+                    <li>MTV launches (1981) — music videos</li>
+                    <li>Michael Jackson — Thriller</li>
+                    <li>Madonna, Prince, David Bowie</li>
+                    <li>Hair metal (Bon Jovi, Guns N' Roses)</li>
+                    <li>Electronic / synth-pop (Depeche Mode)</li>
+                    <li>Walkman — music everywhere</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">👗</span>
+                <div class="cat-label">Fashion</div>
+                <ul class="cat-items">
+                    <li>Shoulder pads (power dressing)</li>
+                    <li>Acid-wash denim</li>
+                    <li>Neon colors</li>
+                    <li>Leg warmers, leotards</li>
+                    <li>Permed / big hair</li>
+                    <li>Ray-Ban Wayfarers</li>
+                    <li>Nike Air Jordan sneakers</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📺</span>
+                <div class="cat-label">Tech &amp; Media</div>
+                <ul class="cat-items">
+                    <li>Walkman (Sony)</li>
+                    <li>VHS — home movies</li>
+                    <li>Arcade games peak (Pac-Man, Tetris)</li>
+                    <li>Nintendo Entertainment System</li>
+                    <li>First mobile phones (brick phones)</li>
+                    <li>Fax machines in offices</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🌍</span>
+                <div class="cat-label">Big Events</div>
+                <ul class="cat-items">
+                    <li>Fall of the Berlin Wall (1989)</li>
+                    <li>AIDS epidemic begins</li>
+                    <li>Chernobyl disaster (1986)</li>
+                    <li>Cold War tensions peak</li>
+                    <li>Live Aid concert (1985)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">😎</span>
+                <div class="cat-label">Vibe</div>
+                <ul class="cat-items">
+                    <li>Greed is good</li>
+                    <li>Show off your success</li>
+                    <li>Work hard, play hard</li>
+                    <li>Loud, confident, unapologetic</li>
+                    <li>Pop culture explosion</li>
+                </ul>
+            </div>
+        </div>
+        <div class="builder-section">
+            <div class="builder-title">🗣 Sentence Frames — use the words above to speak!</div>
+            <div class="frames">
+                <div class="frame-card">
+                    <div class="frame-text">From the 80s, I would bring back <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would bring back arcade game culture because it brought people together in real life."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">I would NOT want <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> to come back because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would not want brick phones to come back — they were huge and could only make calls!"</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">Compared to today, the 80s were more <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> but less <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...more energetic and bold in style, but less aware of social issues like the environment."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 90s ── -->
+    <div class="era-panel panel-90s" id="panel-90s">
+        <div class="era-panel-header">
+            <div class="era-panel-title">1990s</div>
+            <div class="era-panel-tagline">"Whatever." — The decade of irony, grunge, and the internet being born.</div>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-card">
+                <span class="cat-icon">🎵</span>
+                <div class="cat-label">Music</div>
+                <ul class="cat-items">
+                    <li>Grunge (Nirvana, Pearl Jam)</li>
+                    <li>Boy bands (Backstreet Boys, NSYNC)</li>
+                    <li>Britney Spears, Spice Girls</li>
+                    <li>Hip-hop goes mainstream (Tupac, Biggie)</li>
+                    <li>CD players / Discman</li>
+                    <li>Mixtapes still a thing</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">👗</span>
+                <div class="cat-label">Fashion</div>
+                <ul class="cat-items">
+                    <li>Baggy jeans, flannel shirts</li>
+                    <li>Grunge: ripped jeans, Doc Martens</li>
+                    <li>Scrunchies, butterfly clips</li>
+                    <li>Windbreaker jackets</li>
+                    <li>Cargo pants</li>
+                    <li>Platform sneakers (Spice Girls)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📺</span>
+                <div class="cat-label">Tech &amp; Media</div>
+                <ul class="cat-items">
+                    <li>The internet for everyone (dial-up)</li>
+                    <li>AOL instant messenger</li>
+                    <li>Nokia 3310 (indestructible phone)</li>
+                    <li>Tamagotchi</li>
+                    <li>PlayStation 1</li>
+                    <li>DVD replaces VHS</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🌍</span>
+                <div class="cat-label">Big Events</div>
+                <ul class="cat-items">
+                    <li>End of the Cold War</li>
+                    <li>Nelson Mandela freed (1990)</li>
+                    <li>NAFTA trade agreement (1994)</li>
+                    <li>First Gulf War (1991)</li>
+                    <li>Y2K panic begins (late 90s)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">😎</span>
+                <div class="cat-label">Vibe</div>
+                <ul class="cat-items">
+                    <li>Cool = not caring too much</li>
+                    <li>Anti-establishment, ironic</li>
+                    <li>Optimism about technology</li>
+                    <li>Simpler, slower pace</li>
+                    <li>"Real" and authentic</li>
+                </ul>
+            </div>
+        </div>
+        <div class="builder-section">
+            <div class="builder-title">🗣 Sentence Frames — use the words above to speak!</div>
+            <div class="frames">
+                <div class="frame-card">
+                    <div class="frame-text">From the 90s, I would bring back <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would bring back the simpler internet because we didn't have social media pressure back then."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">I would NOT want <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> to come back because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would not want dial-up internet to come back — waiting 5 minutes to load one page was painful."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">Compared to today, the 90s were more <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> but less <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...more relaxed and less connected — you could 'switch off' from work easily after hours."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Y2K ── -->
+    <div class="era-panel panel-y2k" id="panel-y2k">
+        <div class="era-panel-header">
+            <div class="era-panel-title">Y2K (2000–2005)</div>
+            <div class="era-panel-tagline">"The future is now — and it's shiny." — Optimism, tech bubbles, low-rise everything, and the rise of celebrity culture.</div>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-card">
+                <span class="cat-icon">🎵</span>
+                <div class="cat-label">Music</div>
+                <ul class="cat-items">
+                    <li>Pop-punk (Blink-182, Sum 41)</li>
+                    <li>R&amp;B / neo-soul (Beyoncé, Alicia Keys)</li>
+                    <li>Eminem, Jay-Z dominate hip-hop</li>
+                    <li>iPod + iTunes changes music forever</li>
+                    <li>Ringtones as status symbols</li>
+                    <li>Music downloads (Napster)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">👗</span>
+                <div class="cat-label">Fashion</div>
+                <ul class="cat-items">
+                    <li>Low-rise jeans (very low!)</li>
+                    <li>Tiny sunglasses</li>
+                    <li>Velour tracksuits (Juicy Couture)</li>
+                    <li>Trucker hats, Von Dutch</li>
+                    <li>Butterfly clips, frosted tips</li>
+                    <li>Metallic, holographic fabrics</li>
+                    <li>Flip phones as accessories</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">📺</span>
+                <div class="cat-label">Tech &amp; Media</div>
+                <ul class="cat-items">
+                    <li>iPod (2001) — 1,000 songs in your pocket</li>
+                    <li>Motorola Razr (iconic flip phone)</li>
+                    <li>MSN Messenger, AIM</li>
+                    <li>MySpace (first social network)</li>
+                    <li>Digital cameras replacing film</li>
+                    <li>PlayStation 2, Xbox</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">🌍</span>
+                <div class="cat-label">Big Events</div>
+                <ul class="cat-items">
+                    <li>Y2K bug panic → nothing happens</li>
+                    <li>9/11 attacks (2001)</li>
+                    <li>Dot-com bubble bursts</li>
+                    <li>Iraq War begins (2003)</li>
+                    <li>Reality TV explosion (Survivor, Idol)</li>
+                </ul>
+            </div>
+            <div class="cat-card">
+                <span class="cat-icon">😎</span>
+                <div class="cat-label">Vibe</div>
+                <ul class="cat-items">
+                    <li>Anything is possible (tech optimism)</li>
+                    <li>Celebrity obsession</li>
+                    <li>Futuristic but also carefree</li>
+                    <li>Shiny, plastic, maximalist</li>
+                    <li>The world felt smaller (internet)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="builder-section">
+            <div class="builder-title">🗣 Sentence Frames — use the words above to speak!</div>
+            <div class="frames">
+                <div class="frame-card">
+                    <div class="frame-text">From Y2K, I would bring back <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would bring back flip phones because they had better battery life and you didn't stare at them all day."</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">I would NOT want <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> to come back because <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...I would not want low-rise jeans to come back — they were not practical or comfortable for most people!"</div>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-text">Compared to today, Y2K was more <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> but less <span class="frame-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+                    <div class="frame-hint">e.g. "...more optimistic about the future of technology, but less aware of privacy and data security issues."</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /era-panels -->
+
+<script>
+function switchEra(era) {
+    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.era-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('[data-era="' + era + '"]').classList.add('active');
+    document.getElementById('panel-' + era).classList.add('active');
+}
+</script>
+
