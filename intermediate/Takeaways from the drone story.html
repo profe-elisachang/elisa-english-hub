@@ -1,0 +1,716 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Takeaways — Drones &amp; The Low-Altitude Economy</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #0f1923;
+            color: #e8e0d0;
+        }
+
+        /* ── HEADER (exact template) ── */
+        .header {
+            background: #b84a00;
+            color: white;
+            padding: 1rem 2rem;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            flex: 1;
+        }
+        .level-badge {
+            background: #f5c842;
+            color: #1a1a1a;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* ── PAGE INTRO ── */
+        .page-intro {
+            background: #162030;
+            border-bottom: 3px solid #b84a00;
+            padding: 28px 0;
+        }
+        .page-intro-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .page-intro-text { flex: 1; min-width: 260px; }
+        .page-intro-text h2 {
+            color: #f5c842;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 0 0 8px 0;
+        }
+        .page-intro-text p {
+            color: #aab8c8;
+            margin: 0;
+            font-size: 0.97rem;
+        }
+        .lesson-link-box {
+            background: #1e3045;
+            border: 2px solid #b84a00;
+            border-radius: 10px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            white-space: nowrap;
+        }
+        .lesson-link-box span {
+            color: #aab8c8;
+            font-size: 0.85rem;
+        }
+        .lesson-link-box a {
+            color: #f5c842;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.92rem;
+            border-bottom: 2px solid #b84a00;
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px 60px 20px;
+        }
+
+        /* ── SECTION LABEL ── */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 20px 0;
+        }
+        .section-label-text {
+            color: #f5c842;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+        .section-label-line {
+            flex: 1;
+            height: 1px;
+            background: #2a3a4a;
+        }
+
+        /* ── TAKEAWAY CARDS ── */
+        .takeaway-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 900px) {
+            .takeaway-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1300px) {
+            .takeaway-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .takeaway-card {
+            background: #162030;
+            border-radius: 12px;
+            padding: 26px 28px;
+            border: 1px solid #2a3a4a;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .takeaway-card:hover {
+            border-color: #b84a00;
+            transform: translateY(-2px);
+        }
+        .takeaway-number {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #1e3045;
+            line-height: 1;
+            user-select: none;
+        }
+        .takeaway-icon {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .takeaway-title {
+            color: #f5c842;
+            font-size: 1.05rem;
+            font-weight: 900;
+            margin: 0 0 12px 0;
+            line-height: 1.35;
+        }
+        .takeaway-body {
+            color: #c8d8e8;
+            font-size: 0.96rem;
+            line-height: 1.75;
+            margin: 0 0 16px 0;
+        }
+        .takeaway-body strong {
+            color: #f5f0e8;
+        }
+
+        /* ── ACCURACY NOTE (DJI) ── */
+        .accuracy-note {
+            background: #1e2a18;
+            border: 1px solid #4a7a28;
+            border-left: 4px solid #6ab040;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 14px;
+            font-size: 0.86rem;
+            color: #a8d888;
+            line-height: 1.6;
+        }
+        .accuracy-note strong {
+            color: #c8f0a0;
+        }
+
+        /* ── DISCUSSION QUESTIONS ── */
+        .discussion-block {
+            background: #162030;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            border: 1px solid #2a3a4a;
+        }
+        .discussion-block h3 {
+            color: #f5c842;
+            font-size: 1.1rem;
+            font-weight: 900;
+            margin: 0 0 18px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .discussion-block h3 span {
+            background: #b84a00;
+            color: white;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+        }
+
+        .q-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .q-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid #1e3045;
+        }
+        .q-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .q-num {
+            background: #b84a00;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .q-text {
+            color: #e8e0d0;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+        .q-text em {
+            color: #aab8c8;
+            font-size: 0.88rem;
+            font-style: normal;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* ── CLOSING QUESTION ── */
+        .closing-q {
+            background: #b84a00;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .closing-q .cq-label {
+            color: #ffd5b8;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .closing-q .cq-text {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── TEACHER NOTES ── */
+        .teacher-notes {
+            background: #162030;
+            border-radius: 12px;
+            padding: 24px 28px;
+            border: 2px dashed #2a3a4a;
+        }
+        .teacher-notes h3 {
+            color: #aab8c8;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin: 0 0 14px 0;
+        }
+        .teacher-note-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.92rem;
+            color: #8898a8;
+            line-height: 1.65;
+        }
+        .teacher-note-item:last-child { margin-bottom: 0; }
+        .teacher-note-item .tn-icon {
+            color: #f5c842;
+            font-size: 1rem;
+            min-width: 20px;
+        }
+
+        /* ── FOLDABLE ANSWERS ── */
+        .answers-toggle {
+            margin-top: 12px;
+            margin-left: 40px;
+            border-top: none;
+            padding-top: 0;
+        }
+        .answers-toggle summary {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            background: #1e3045;
+            border: 2px solid #2a3a4a;
+            border-radius: 30px;
+            color: #f5c842;
+            font-size: 0.9rem;
+            font-weight: 700;
+            list-style: none;
+            transition: border-color 0.2s, background 0.2s;
+            user-select: none;
+        }
+        .answers-toggle summary::-webkit-details-marker { display: none; }
+        .answers-toggle summary:hover {
+            border-color: #f5c842;
+            background: #24394f;
+        }
+        .answers-toggle[open] summary {
+            border-color: #f5c842;
+            background: #24394f;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+        }
+        .answers-body {
+            background: #1a2d40;
+            border: 2px solid #f5c842;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 20px 24px;
+        }
+        .answer-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #243a50;
+            align-items: flex-start;
+        }
+        .answer-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .ans-num {
+            background: #f5c842;
+            color: #1a1a1a;
+            font-size: 0.78rem;
+            font-weight: 900;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .ans-text {
+            color: #c8d8e8;
+            font-size: 0.94rem;
+            line-height: 1.75;
+            flex: 1;
+        }
+        .ans-text strong {
+            color: #f5f0e8;
+        }
+        .ans-text .key-point {
+            display: inline-block;
+            background: #b84a00;
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .discussion-block { padding: 20px 16px; }
+            .takeaway-card { padding: 20px 18px; }
+            .closing-q { padding: 22px 18px; }
+            .closing-q .cq-text { font-size: 1.05rem; }
+            .answers-body { padding: 16px 14px; }
+        }
+    </style>
+
+
+
+<!-- ══════════════════════════════════
+     FIXED HEADER (exact template)
+══════════════════════════════════ -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+
+<!-- ══════════════════════════════════
+     PAGE INTRO BAR
+══════════════════════════════════ -->
+<div class="page-intro">
+    <div class="page-intro-inner">
+        <div class="page-intro-text">
+            <h2>💡 Economic Takeaways</h2>
+            <p>Five big ideas from the drone story — and what they mean for your work and your industry.</p>
+        </div>
+        <div class="lesson-link-box">
+            <span>← Back to the lesson</span>
+            <a href="https://profe-elisachang.github.io/elisa-english-hub/intermediate/Drones%20Are%20Changing%20the%20World.html">🚁 Drones Are Changing the World</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ══════════════════════════════════
+         FIVE TAKEAWAY CARDS
+    ══════════════════════════════════ -->
+    <div class="section-label">
+        <span class="section-label-text">The Big Ideas</span>
+        <div class="section-label-line"></div>
+    </div>
+
+    <div class="takeaway-grid">
+
+        <!-- CARD 1 -->
+        <div class="takeaway-card">
+            <div class="takeaway-number">1</div>
+            <span class="takeaway-icon">🏛️</span>
+            <p class="takeaway-title">Policy + Industry = Power</p>
+            <p class="takeaway-body">
+                China didn't just invent drones — it <strong>built an entire ecosystem</strong> around them. Government deregulation, local investment, and public acceptance all worked together. Technology alone is not enough. <strong>The environment around it matters just as much.</strong>
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="takeaway-card">
+            <div class="takeaway-number">2</div>
+            <span class="takeaway-icon">🧠</span>
+            <p class="takeaway-title">"Process Knowledge" Is Harder to Copy Than Patents</p>
+            <p class="takeaway-body">
+                Ideas can be stolen. <strong>Decades of hands-on experience cannot.</strong> The workers, factories, and supply chains in Shenzhen took 30 years to develop. This is why China's advantage is so difficult for competitors to close quickly.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="takeaway-card">
+            <div class="takeaway-number">3</div>
+            <span class="takeaway-icon">🏁</span>
+            <p class="takeaway-title">First-Mover Advantage Doesn't Guarantee Long-Term Leadership</p>
+            <p class="takeaway-body">
+                America invented modern flight and pioneered military drones — yet China now produces 70% of the world's commercial drones. <strong>Being first means nothing without execution, scale, and follow-through.</strong>
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="takeaway-card">
+            <div class="takeaway-number">4</div>
+            <span class="takeaway-icon">⚠️</span>
+            <p class="takeaway-title">Geopolitical Risk Is Business Risk</p>
+            <p class="takeaway-body">
+                DJI controls ~80% of the U.S. commercial drone market — and its future there is now uncertain. Supply chains, components, and market access <strong>can be restricted overnight for political reasons.</strong> Diversification is not optional anymore.
+            </p>
+            <div class="accuracy-note">
+                <strong>📌 What actually happened (updated May 2026):</strong> As of December 23, 2025, DJI was added to the FCC "Covered List." This means <em>new</em> DJI drone models can no longer receive U.S. import approval. However, existing models remain legal to buy, sell, and fly. It is a supply restriction on future products — not a full ban on the company or its current drones.
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="takeaway-card">
+            <div class="takeaway-number">5</div>
+            <span class="takeaway-icon">🤖</span>
+            <p class="takeaway-title">The "Physical Economy" May Matter More Than Abstract AI</p>
+            <p class="takeaway-body">
+                While the U.S. invests in human-level AI that doesn't exist yet, China is deploying robots and drones in real factories today. <strong>The country that applies technology to the real world first may win the race</strong> — not the one with the biggest research budget.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- ══════════════════════════════════
+         DISCUSSION — GENERAL
+    ══════════════════════════════════ -->
+    <div class="section-label">
+        <span class="section-label-text">Discussion Questions</span>
+        <div class="section-label-line"></div>
+    </div>
+
+    <div class="discussion-block">
+        <h3>🌍 Global &amp; Economic <span>Open Discussion</span></h3>
+        <ul class="q-list">
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">1</div>
+                    <div class="q-text">
+                        China changed its rules to allow drone use much faster than the U.S. did. When a government makes it easier for companies to operate, who benefits — and who might be at risk?
+                        <em>Think about: workers, consumers, small businesses, national security</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Who benefits / who is at risk</span>
+                            When governments make rules easier, <strong>consumers benefit</strong> from faster, cheaper services — like food delivered by drone in 30 minutes. <strong>Businesses benefit</strong> from lower costs and faster growth. But <strong>workers may be at risk</strong> if automation replaces their jobs, and <strong>the public may face new safety or privacy risks</strong> — drones flying over homes collect data. There is no single "right" answer. The key is that policy always creates winners and losers at the same time.
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">2</div>
+                    <div class="q-text">
+                        The article says 86% of Chinese people are willing to use drone delivery, but only 53% of Americans. Why do you think public acceptance is so different? Does culture play a role?
+                        <em>Think about: trust in technology, privacy, government, convenience</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Culture &amp; public acceptance</span>
+                            Several factors explain the gap. In China, <strong>the government actively promoted drone delivery</strong>, so people saw it as normal and trustworthy. In the U.S., <strong>privacy concerns are stronger</strong> — many Americans worry about drones collecting data on them. There is also more <strong>distrust of new technology</strong> replacing human workers in the U.S. Culture matters: societies that see technology as progress tend to adopt it faster than those that see it as a threat. Ask students: "What about in Mexico — would you trust a drone to deliver your medicine?"
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">3</div>
+                    <div class="q-text">
+                        DJI dominates 80% of the U.S. drone market — but may soon lose access to it for political reasons. Is it dangerous for any country to depend so heavily on one foreign supplier for critical technology?
+                        <em>Think about: supply chain risk in your own industry — electronics, materials, logistics software</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Supplier concentration risk</span>
+                            Yes — depending on one foreign company for 80% of a critical market is extremely risky. When politics change, the supply can be cut off <strong>with no warning and no immediate alternative</strong>. This is called <strong>"single-source dependency."</strong> The U.S. learned this lesson with semiconductors from Taiwan and rare earth minerals from China. The same risk exists for your students' companies: if one supplier disappears, can they find another quickly? This is exactly why purchasing teams need <strong>backup suppliers and diversified supply chains.</strong>
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">4</div>
+                    <div class="q-text">
+                        The U.S. is focused on developing advanced AI for the future. China is putting current AI into real factories and delivery systems today. Which approach do you think is smarter — and why?
+                        <em>Think about: short-term vs. long-term strategy; your own company's R&amp;D decisions</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Short-term vs. long-term strategy</span>
+                            Both approaches have merit — this is genuinely debated by economists. <strong>China's approach</strong> (apply AI now, in real factories) creates immediate economic value, jobs, and competitive advantage today. <strong>The U.S. approach</strong> (invest in foundational AI research) could produce a much larger breakthrough — but the payoff is uncertain and far away. A useful analogy: China is farming the land it has. The U.S. is searching for new land. <strong>The risk for the U.S. is that China wins the present while America waits for the future.</strong> Ask students: "Does your company invest more in improving today's processes, or in long-term R&amp;D?"
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- ══════════════════════════════════
+         DISCUSSION — MANUFACTURING
+    ══════════════════════════════════ -->
+    <div class="discussion-block">
+        <h3>🏭 Manufacturing Perspective <span>León / Guanajuato Angle</span></h3>
+        <ul class="q-list">
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">1</div>
+                    <div class="q-text">
+                        León is a manufacturing hub — similar to what Shenzhen was 30 years ago. What would Mexico need to develop to make a similar leap — from assembly work to high-tech innovation?
+                        <em>Think about: education, government policy, foreign investment, supply chain depth</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">What Mexico would need</span>
+                            Shenzhen's transformation took <strong>three specific ingredients over 30 years:</strong> (1) <strong>Government support</strong> — special economic zones, tax breaks, deregulation; (2) <strong>A deep supply chain</strong> — hundreds of small suppliers for parts and components all within a small area; (3) <strong>Talent concentration</strong> — engineers, technicians, and entrepreneurs all working close together. León already has strength in leather and automotive manufacturing. To make the leap, Mexico would need <strong>stronger technical universities, more R&amp;D investment, and policies that attract high-tech foreign companies</strong> — not just low-cost assembly contracts. The key question: does Mexico want to stay at the bottom of the value chain, or move up?
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">2</div>
+                    <div class="q-text">
+                        China built its advantage by doing things at massive scale for decades. Does your company have any "process knowledge" that took years to develop — knowledge that a new competitor couldn't just copy quickly?
+                        <em>Think about: your QA processes, supplier relationships, production techniques, team expertise</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Your company's process knowledge</span>
+                            This is a personal question — let students answer from their own experience. Guide them with examples: <strong>In QA,</strong> process knowledge might be knowing exactly which defect patterns appear at which stage of production — knowledge that takes years of observation. <strong>In logistics,</strong> it could be knowing which routes fail during rainy season, or which suppliers always deliver late on Fridays. <strong>In purchasing,</strong> it's relationship knowledge — knowing which supplier will negotiate and which won't. The point is: <strong>this knowledge lives in people, not in manuals.</strong> If those people leave, the company loses its advantage. This is why China is hard to beat — its process knowledge is built into entire cities, not just individual companies.
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">3</div>
+                    <div class="q-text">
+                        With new U.S. restrictions on Chinese technology, some companies are looking to "nearshore" — move manufacturing closer to the U.S. market. Is this an opportunity for Mexico? What risks come with it?
+                        <em>Think about: your sector — automotive, leather goods, food processing, electronics assembly</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Nearshoring — opportunity or risk?</span>
+                            <strong>The opportunity is real.</strong> U.S. companies want to reduce their dependence on China. Mexico — especially the Bajío region (Guanajuato, Querétaro, San Luis Potosí) — is already attracting new factories in automotive, electronics, and aerospace. This is called <strong>nearshoring</strong> or the <strong>"China + 1" strategy.</strong> But the risks are also real: <strong>Mexico needs better infrastructure</strong> (reliable electricity, water, roads), <strong>security</strong> (organized crime affects logistics), and <strong>more skilled workers</strong> for high-tech production. Companies that prepare now — investing in English, technical training, and international quality standards — will benefit most. Ask students: "Has your company already seen new foreign customers or projects because of nearshoring?"
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+            <li class="q-item" style="flex-direction:column; gap:0;">
+                <div style="display:flex; gap:14px; align-items:flex-start;">
+                    <div class="q-num">4</div>
+                    <div class="q-text">
+                        In your job — in QA, logistics, purchasing, or sales — is there any task you think could be automated or improved with drone or robot technology in the next 5 years?
+                        <em>Think about: warehouse inspection, inventory counts, last-mile delivery, site monitoring</em>
+                    </div>
+                </div>
+                <details class="answers-toggle">
+                    <summary>💡 Reference Answer</summary>
+                    <div class="answers-body">
+                        <div class="ans-text">
+                            <span class="key-point">Automation in their own jobs</span>
+                            Encourage honest answers — no wrong response here. Some realistic examples by role: <strong>QA:</strong> Drones with cameras can inspect large production areas for defects or safety hazards faster and more consistently than a human walking the floor. <strong>Logistics:</strong> Drones can do inventory counts in large warehouses overnight, without stopping operations. <strong>Purchasing:</strong> AI can monitor supplier performance data and flag risks automatically. <strong>Sales:</strong> Route optimization tools already exist and are widely used. The goal is not to create fear, but to help students see that <strong>workers who understand these tools will be more valuable — not replaced by them.</strong> Ask: "Would you feel comfortable working alongside a robot or drone? What would you need to learn first?"
+                        </div>
+                    </div>
+                </details>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- ══════════════════════════════════
+         CLOSING QUESTION
+    ══════════════════════════════════ -->
+    <div class="closing-q">
+        <div class="cq-label">🎯 Best Closing Question for Class</div>
+        <p class="cq-text">"Which of these five economic lessons do you think is most relevant to your own company or industry — and why?"</p>
+    </div>
+
+   
+
+</div><!-- end .container -->
+
+
