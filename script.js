@@ -118,6 +118,7 @@ async function scanLessons() {
        { filename: 'Era Explorer-Retro Aesthetics.html', date: '2026-05-13', title: 'Era Explorer-Retro Aesthetics' },
        { filename: 'Retro aesthetics-Discussion.html', date: '2026-05-13', title: 'Retro aesthetics through the lens of culture, generation, and identity ' },
         
+        { filename: 'Drones Are Changing the World.html', date: '2026-05-15', title: '' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
