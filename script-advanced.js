@@ -98,6 +98,7 @@ async function scanLessons() {
         { filename: 'K-Beauty Business Deep Dive.html', date: '2026-05-07', title: '💡 K-Beauty Business Deep Dive' },
         { filename: 'The Low-Altitude Economy.html', date: '2026-05-12', title: '🚁 The Low-Altitude Economy' },
         { filename: 'The Low-Altitude Economy.html', date: '2026-05-14', title: '🚁 The Low-Altitude Economy' },
+        { filename: 'The Low-Altitude Economy.html', date: '2026-05-19', title: '🚁 The Low-Altitude Economy' },
         
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
