@@ -122,6 +122,10 @@ async function scanLessons() {
         { filename: 'Takeaways from the drone story.html', date: '2026-05-15', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
         { filename: 'Drones Are Changing the World.html', date: '2026-05-18', title: '' },
         { filename: 'Takeaways from the drone story.html', date: '2026-05-18', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
+
+        { filename: 'Drones Are Changing the World.html', date: '2026-05-20', title: '' },
+        { filename: 'Takeaways from the drone story.html', date: '2026-05-20', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
+
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
