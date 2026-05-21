@@ -1,0 +1,888 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering the Environment - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f0;
+            color: #2c3e2d;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* VOCABULARY HIGHLIGHTING - TV OPTIMIZED */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        /* HOVER TOOLTIP - ABOVE CURSOR */
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        /* VOCABULARY BOX - WIDE SCREEN LAYOUT */
+        @media (min-width: 768px) {
+            .vocab-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* ARTICLE STYLES */
+        .article-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .article-title {
+            color: #2d6a2f;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .article-subtitle {
+            color: #5a7d5b;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a5c8a7;
+            padding-bottom: 12px;
+        }
+
+        .article-byline {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        /* SECTION HEADERS */
+        .section-subheading {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2d6a2f;
+            margin: 24px 0 10px 0;
+            border-left: 4px solid #4caf50;
+            padding-left: 10px;
+        }
+
+        /* EXPRESSIONS SECTION */
+        .expressions-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2d6a2f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .expression-card {
+            background: #f7fdf7;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .expression-english {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 4px;
+        }
+
+        .expression-spanish {
+            font-size: 0.97rem;
+            color: #6a8f6b;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .expression-example {
+            font-size: 0.97rem;
+            color: #444;
+            border-left: 3px solid #4A90E2;
+            padding-left: 10px;
+            margin-top: 8px;
+        }
+
+        /* VOCABULARY BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* DISCUSSION SECTION */
+        .discussion-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .discussion-section ul {
+            padding-left: 20px;
+        }
+
+        .discussion-section ul li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #2c3e2d;
+        }
+
+        /* SELF-PRACTICE SECTION */
+        .practice-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .practice-section ol {
+            padding-left: 20px;
+        }
+
+        .practice-section ol li {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            color: #2c3e2d;
+        }
+
+        details {
+            background: #f7fdf7;
+            border: 1px solid #a5c8a7;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-top: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #2d6a2f;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        details ol li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* MOBILE NOTE */
+        .mobile-note {
+            font-size: 0.88rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* BOLD italic in article (signatories, suppressed, unforeseen, Nordic) */
+        .article-body strong em,
+        .article-body em strong {
+            font-style: italic;
+            font-weight: 700;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+    <!-- FIXED HEADER - NEVER CHANGE -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240430190811/Real-Life-Application-of-Environmental-Engineering.png" alt="🌍 Engineering the Environment" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+            <div class="expressions-section">
+                <div class="section-title">💬 Useful Expressions</div>
+
+                <div class="expression-card">
+                    <div class="expression-english">kick its addiction to</div>
+                    <div class="expression-spanish">librarse de su dependencia de</div>
+                    <div class="expression-example">Our factory needs to kick its addiction to fossil fuels and adopt renewable energy.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">at arm's length</div>
+                    <div class="expression-spanish">a distancia, sin involucrarse</div>
+                    <div class="expression-example">The committee kept the controversial proposal at arm's length until more data was available.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">lean on</div>
+                    <div class="expression-spanish">depender de / apoyarse en</div>
+                    <div class="expression-example">Companies should not lean on unproven technologies to justify delaying emission cuts.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">be doable</div>
+                    <div class="expression-spanish">ser factible / ser posible de realizar</div>
+                    <div class="expression-example">The engineers confirmed the new safety upgrade is doable within the current budget.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-english">when armed with</div>
+                    <div class="expression-spanish">cuando se cuenta con / equipado con</div>
+                    <div class="expression-example">When armed with rigorous research, our team can make better decisions on the production line.</div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 2 & 3: ARTICLE + VOCABULARY ===== -->
+            <div class="article-section">
+                <h1 class="article-title">🌍 Engineering the Environment</h1>
+                <div class="article-subtitle">A powerful approach to climate change raises powerful questions</div>
+                <div class="article-byline">by Karina Atkins / © 2024, Chicago Tribune. Distributed by Tribune Content Agency, LLC. PAGE DESIGN BY VICKY TSUNG</div>
+
+                <!-- PARAGRAPH 1 -->
+                <div class="article-body">
+                    <p>
+                        Could clouds be brightened so they reflect more sunlight back into outer space? If lab-grown seaweed is sunk into the ocean, how much carbon dioxide could it absorb? Would drilling holes into glaciers extract enough heat to slow sea level rise?
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX - Paragraph 1 -->
+                <div class="vocabulary-section">
+                    <h3 style="color: #2d6a2f; margin-top: 0;">📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">brighten</strong>
+                                <button onclick="speakWord('brighten')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To make something lighter or more reflective</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">aclarar, hacer más brillante</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Scientists are studying how to brighten clouds to reflect more sunlight away from Earth.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">absorb</strong>
+                                <button onclick="speakWord('absorb')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To take in or soak up a substance or energy</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">absorber</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The new filtration material can absorb up to 90% of the chemical waste in the water.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">extract</strong>
+                                <button onclick="speakWord('extract')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To remove or take out something from a source</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">extraer</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The machine is designed to extract heat from underground rock formations.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 2 -->
+                <div class="article-body">
+                    <p>
+                        While society is struggling to <span class="highlight" title="librarse de su dependencia de">kick its addiction</span> to fossil fuels, compensating by <span class="highlight" title="entrometerse / interferir">meddling</span> with Earth's atmosphere, oceans and land masses has long been viewed as taboo. Many scientists have argued that <span class="highlight" title="ingeniería geográfica / geoingeniería">geoengineering</span> interventions are a distraction from emissions reductions at best and too dangerous to study at worst.
+                    </p>
+                    <p>
+                        The most controversial, and likely also the fastest-acting method, is shooting <span class="highlight" title="aerosoles">aerosols</span> into the sky to <span class="highlight" title="desviar">deflect</span> the sun's rays, known as solar radiation management or solar geoengineering.
+                    </p>
+                    <p>
+                        The process is anticipated to have a similar effect to massive volcanic eruptions such as the 1815 eruption of Mount Tambora in modern-day Indonesia, which disrupted weather patterns globally for three years. Summer temperatures in Europe were the coldest on record and fog dimmed sunlight in the United States.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX - Paragraph 2 -->
+                <div class="vocabulary-section">
+                    <h3 style="color: #2d6a2f; margin-top: 0;">📚 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">meddle</strong>
+                                <button onclick="speakWord('meddle')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To deliberately try to influence or change a situation that does not concern you, or that you do not understand</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">entrometerse / interferir</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Engineers should not meddle with calibrated equipment without proper authorization.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">geoengineering</strong>
+                                <button onclick="speakWord('geoengineering')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Large-scale deliberate interventions in Earth's natural systems to counteract climate change</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">geoingeniería / ingeniería geográfica</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Geoengineering proposals remain highly controversial because their side effects are unpredictable.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">aerosol</strong>
+                                <button onclick="speakWord('aerosol')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Tiny particles or droplets suspended in the atmosphere, which can scatter sunlight</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">aerosol</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Volcanic eruptions release natural aerosols that can temporarily cool global temperatures.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">deflect</strong>
+                                <button onclick="speakWord('deflect')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">If someone or something deflects something that is moving, or if it deflects, it turns in a different direction</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">desviar</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The reflective coating on the roof helps deflect heat and reduce cooling costs.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">taboo</strong>
+                                <button onclick="speakWord('taboo')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">A social or cultural prohibition; something avoided because it is seen as unacceptable</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">tabú</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Discussing equipment failures used to be taboo in our plant, but now we encourage open reporting.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">anticipated</strong>
+                                <button onclick="speakWord('anticipated')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Expected or predicted to happen in the future</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">previsto / esperado</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The maintenance shutdown is anticipated to last 48 hours based on the inspection schedule.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 3 -->
+                <div class="article-body">
+                    <div class="section-subheading">Could vs. should</div>
+                    <p>
+                        But instead of volcanic ash, man-made aerosols would envelop the world and deflect the sun's rays. Temperatures worldwide would presumably start dropping within a year.
+                    </p>
+                    <p>
+                        But scientists have historically kept geoengineering at arm's length out of concern that rich nations and fossil fuel companies would <span class="highlight" title="apoyarse en / depender de">lean on</span> promises of expensive, yet-to-be-developed technology to avoid changing their emissions-intensive practices. Carbon emissions are the root cause of climate change.
+                    </p>
+                    <p>
+                        However, society is unlikely to cut emissions fast enough to <span class="highlight" title="mantener a raya / contener">stave off</span> the worst of climate change, experts say.
+                    </p>
+                    <p>
+                        The International Energy Agency anticipates that total mineral demand for clean energy technologies, from solar panels to EV batteries, will double or quadruple by 2040. Not only is mining emissions-intensive, but it also takes time.
+                    </p>
+                    <p>
+                        [University of Chicago physicist Peter] Irvine said he's certain solar geoengineering would reduce extreme heat, heavy rainfall and sea-level rise. [But] he admits it may also intensify droughts, increase acid rain and thin the ozone layer. These unknowns could affect food production and biodiversity worldwide.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX - Paragraph 3 -->
+                <div class="vocabulary-section">
+                    <h3 style="color: #2d6a2f; margin-top: 0;">📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">envelop</strong>
+                                <button onclick="speakWord('envelop')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To wrap around or surround something completely</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">envolver / rodear</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Thick smoke began to envelop the warehouse before the fire suppression system activated.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">presumably</strong>
+                                <button onclick="speakWord('presumably')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Used to say that something is likely true based on reasonable assumptions</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">presumiblemente / se supone que</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The delay is presumably caused by the customs inspection at the border.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">stave off</strong>
+                                <button onclick="speakWord('stave off')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To keep someone or something from reaching you or affecting you for a period of time</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">mantener a raya / contener / evitar</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Regular maintenance helps stave off costly equipment failures on the production floor.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">emissions-intensive</strong>
+                                <button onclick="speakWord('emissions intensive')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Producing a large amount of greenhouse gas emissions relative to output</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">con altas emisiones / intensivo en emisiones</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Steel production is one of the most emissions-intensive industries in the world.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">biodiversity</strong>
+                                <button onclick="speakWord('biodiversity')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">The variety of plant and animal life in a particular habitat or on Earth as a whole</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">biodiversidad</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The company's new environmental policy aims to protect local biodiversity near the plant.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 4 -->
+                <div class="article-body">
+                    <p>
+                        Once started, sun-deflecting aerosols must be shot into the sky every couple of years. If stopped, the Earth could experience rapid warming, also known as "termination shock."
+                    </p>
+                    <p>
+                        "It's an enormous burden on the future," said Raymond Pierrehumbert, a former University of Chicago professor who now works at Oxford University. "How do you know these interventions are going to be doable for the next generation? What if there's a global war, another pandemic?"
+                    </p>
+                    <p>
+                        He is one of more than 500 scientists who have signed an open letter calling for an international nonuse agreement on solar geoengineering.
+                    </p>
+                    <p>
+                        The <span class="highlight" title="signatarios / firmantes">signatories</span> cite concern that there is no adequate governing body to determine fair and effective deployment of a technology that will require coordination between and touch every corner of the planet.
+                    </p>
+                    <p>
+                        Irvine, however, cautions that ignoring solar geoengineering may increase the risk of it being used irresponsibly.
+                    </p>
+                    <p>
+                        "The more it's <span class="highlight" title="suprimido / silenciado">suppressed</span>, the greater the risk of a single nation or small group of nations pushing ahead independently in desperation," he said.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX - Paragraph 4 -->
+                <div class="vocabulary-section">
+                    <h3 style="color: #2d6a2f; margin-top: 0;">📚 Vocabulary - Paragraph 4</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">termination shock</strong>
+                                <button onclick="speakWord('termination shock')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">A rapid and dangerous rise in temperature that would occur if solar geoengineering were suddenly stopped</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">choque de terminación</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Scientists warn that termination shock could be far more damaging than the original climate problem.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">signatory</strong>
+                                <button onclick="speakWord('signatory')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">One of the people, organizations or countries that signs an official agreement</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">signatario / firmante</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                All signatories to the quality agreement must comply with the new ISO standards by next quarter.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">suppress</strong>
+                                <button onclick="speakWord('suppress')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To prevent something from growing or developing, or from working effectively</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">suprimir / silenciar / contener</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                Management must not suppress employee feedback; every concern should be heard and addressed.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">adequate</strong>
+                                <button onclick="speakWord('adequate')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Enough in quantity or quality for a particular purpose</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">adecuado / suficiente</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                We need adequate ventilation in the assembly area to meet safety regulations.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">governing body</strong>
+                                <button onclick="speakWord('governing body')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">An organization that has authority to make rules and decisions for a group or activity</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">organismo rector / ente regulador</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The governing body for workplace safety issued new guidelines on chemical handling last month.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">caution</strong>
+                                <button onclick="speakWord('caution')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">To warn someone about a possible danger or problem (used as a verb here)</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">advertir / hacer una advertencia</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The safety officer cautioned workers that the new solvent requires extra protective gear.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 5 -->
+                <div class="article-body">
+                    <div class="section-subheading">Opening up the discussion</div>
+                    <p>
+                        So far, most research has been limited to computer modeling. While valuable, <span class="highlight" title="imprevistas / imprevisibles">unforeseen</span> variables are likely to make real-world scenarios more complex. Field research that would begin exploring these complexities has been difficult to get approved. Two high-profile experiments—one in California and another in Sweden—were canceled in [2024] due to local opposition.
+                    </p>
+                    <p>
+                        Residents, including a <span class="highlight" title="nórdico / del norte de Europa (aquí: indígena nórdico)">Nordic</span> indigenous tribe, expressed passionate concerns about potential impacts on weather patterns.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX - Paragraph 5 -->
+                <div class="vocabulary-section">
+                    <h3 style="color: #2d6a2f; margin-top: 0;">📚 Vocabulary - Paragraph 5</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">unforeseen</strong>
+                                <button onclick="speakWord('unforeseen')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">An unforeseen situation is one that you did not expect to happen</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">imprevisto / inesperado</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The project was delayed due to unforeseen supply chain disruptions.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">Nordic</strong>
+                                <button onclick="speakWord('Nordic')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Relating to the northern European countries (Norway, Sweden, Finland, Denmark, Iceland)</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">nórdico (de los países escandinavos / Islandia)</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The Nordic countries are often ranked among the best for environmental sustainability policies.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">high-profile</strong>
+                                <button onclick="speakWord('high-profile')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Attracting a lot of attention and interest from the public and media</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">de alto perfil / muy conocido</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The audit was a high-profile event that required management from all departments to attend.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">opposition</strong>
+                                <button onclick="speakWord('opposition')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Strong disagreement with or resistance to a plan, policy, or action</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">oposición / rechazo</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The new shift schedule faced strong opposition from workers who valued their current hours.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 6 -->
+                <div class="article-body">
+                    <p>
+                        [Physicist David] Keith, who was involved in the Sweden project, has spent his career guided by the conviction that the unknowns are all the more reason to study geoengineering. For decades, he has argued that politicians and the public can only decide whether interventions are worth deploying when armed with rigorous research.
+                    </p>
+                    <p>
+                        "It's definitely not an elite club of scientists' job to decide what the public gets to know or not," Keith said. "I think that's deeply unethical."
+                    </p>
+                    <p>
+                        "In the end, this needs to be global, we need to build a field," [he] said.
+                    </p>
+                </div>
+
+                <!-- VOCAB BOX - Paragraph 6 -->
+                <div class="vocabulary-section">
+                    <h3 style="color: #2d6a2f; margin-top: 0;">📚 Vocabulary - Paragraph 6</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">conviction</strong>
+                                <button onclick="speakWord('conviction')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">A strong belief or opinion that you are sure is right</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">convicción / certeza</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                The plant manager expressed her conviction that proper training reduces accidents significantly.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">rigorous</strong>
+                                <button onclick="speakWord('rigorous')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Very thorough and careful; done with great attention to every detail</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">riguroso / exhaustivo</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                A rigorous quality inspection is required before any shipment leaves the facility.
+                            </div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #2d6a2f; font-size: 1.3rem; margin-right: 8px;">unethical</strong>
+                                <button onclick="speakWord('unethical')" style="border: none; background: none; cursor: pointer; font-size: 1.1rem; padding: 0; vertical-align: middle;" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color: #333; margin: 8px 0; line-height: 1.5;">Not following accepted moral standards of right and wrong behavior</p>
+                            <p style="color: #666; font-style: italic; margin: 8px 0; font-size: 0.95rem;">poco ético / contrario a la ética</p>
+                            <div style="border-left: 3px solid #4A90E2; padding-left: 12px; margin-top: 12px; color: #555; font-size: 0.95rem; line-height: 1.6;">
+                                It is unethical to hide safety data from workers who could be affected by chemical exposure.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+
+            </div><!-- end article-section -->
+
+            <!-- ===== SECTION 4: DISCUSSION QUESTIONS ===== -->
+            <div class="discussion-section">
+                <div class="section-title">🗣️ Discussion Questions</div>
+                <ul>
+                    <li>Do you think it is acceptable for scientists to experiment with Earth's atmosphere to fight climate change? What are the biggest risks you see?</li>
+                    <li>In your industry, have you ever seen a situation where a temporary solution created a bigger long-term dependency? How was it handled?</li>
+                    <li>The article mentions that some experiments were canceled due to local opposition. How should companies or governments balance scientific progress with community concerns?</li>
+                </ul>
+            </div>
+
+            <!-- ===== SECTION 5: SELF-PRACTICE ===== -->
+            <div class="practice-section">
+                <div class="section-title">✏️ Self-Practice</div>
+                <ol>
+                    <li>
+                        Fill in the blank: Scientists worry that if solar geoengineering is suddenly stopped, the Earth could experience rapid warming known as "_______________ _______________."
+                    </li>
+                    <li>
+                        True or False: The article says that more than 500 scientists have signed a letter <em>supporting</em> an international agreement to use solar geoengineering as soon as possible.
+                    </li>
+                    <li>
+                        Match the word with its meaning:<br>
+                        <strong>a.</strong> stave off &nbsp; <strong>b.</strong> signatory &nbsp; <strong>c.</strong> suppress &nbsp; <strong>d.</strong> rigorous<br><br>
+                        ___  To prevent something from developing or working effectively<br>
+                        ___  Someone who signs an official agreement<br>
+                        ___  Very thorough and careful<br>
+                        ___  To keep something bad from happening for a period of time
+                    </li>
+                    <li>
+                        Short answer: According to the article, why have scientists historically kept geoengineering "at arm's length"? Give at least two reasons.
+                    </li>
+                </ol>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>termination shock</strong></li>
+                        <li><strong>False.</strong> The scientists signed a letter calling for a <em>nonuse</em> agreement—meaning they want an agreement NOT to use solar geoengineering, not to support it.</li>
+                        <li>
+                            c – suppress<br>
+                            b – signatory<br>
+                            d – rigorous<br>
+                            a – stave off
+                        </li>
+                        <li>Scientists kept geoengineering at arm's length because: (1) they were concerned that rich nations and fossil fuel companies would use promises of this technology as an excuse to avoid cutting emissions; and (2) they considered it too dangerous to study due to the risk of unintended consequences such as intensified droughts, increased acid rain, and disruption of food production and biodiversity.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
