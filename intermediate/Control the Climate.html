@@ -1,0 +1,641 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlling the Climate - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #fdf6ec;
+            color: #2c2c2c;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        /* HIGHLIGHT - TV OPTIMIZED */
+        .highlight {
+            background: #ffe082;
+            font-weight: 700;
+            border-bottom: 2px solid #f57c00;
+            cursor: help;
+            padding: 1px 5px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 999;
+        }
+
+        /* CARD WRAPPER */
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+            border-top: 5px solid #f57c00;
+        }
+
+        .card.blue-top   { border-top-color: #1976d2; }
+        .card.green-top  { border-top-color: #388e3c; }
+        .card.orange-top { border-top-color: #f57c00; }
+        .card.teal-top   { border-top-color: #00796b; }
+        .card.red-top    { border-top-color: #c62828; }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #1a1a1a;
+        }
+
+        /* ARTICLE */
+        .article-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .article-subtitle {
+            font-size: 1.05rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px dashed #f0d0a0;
+        }
+
+        .article-body p {
+            font-size: 1.08rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .subheading {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #f57c00;
+            margin: 28px 0 10px 0;
+            border-left: 5px solid #f57c00;
+            padding-left: 12px;
+        }
+
+        /* EXPRESSIONS */
+        .expression-card {
+            background: #fff8ee;
+            border: 1px solid #ffe0b2;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+        }
+
+        .expression-english {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #e65100;
+        }
+
+        .expression-spanish {
+            font-size: 0.95rem;
+            color: #888;
+            font-style: italic;
+            margin: 3px 0 8px 0;
+        }
+
+        .expression-example {
+            font-size: 0.97rem;
+            color: #444;
+            border-left: 3px solid #1976d2;
+            padding-left: 10px;
+        }
+
+        /* VOCAB GRID */
+        .vocab-section {
+            background: #f3f9ff;
+            border-left: 5px solid #1976d2;
+            border-radius: 8px;
+            padding: 22px;
+            margin: 26px 0;
+        }
+
+        .vocab-section h3 {
+            color: #1565c0;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1100px) {
+            .vocab-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1400px) {
+            .vocab-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .vocab-item {
+            background: #fff;
+            border: 1px solid #d0e4f7;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .vocab-word {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1565c0;
+        }
+
+        .vocab-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+
+        .vocab-definition {
+            font-size: 0.95rem;
+            color: #333;
+            margin: 6px 0 4px 0;
+        }
+
+        .vocab-spanish {
+            font-size: 0.88rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .vocab-example {
+            font-size: 0.92rem;
+            color: #555;
+            border-left: 3px solid #f57c00;
+            padding-left: 10px;
+            line-height: 1.5;
+        }
+
+        /* DISCUSSION */
+        .discussion-list {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .discussion-list li {
+            background: #f0fff4;
+            border-left: 4px solid #388e3c;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #1a1a1a;
+        }
+
+        /* SELF-PRACTICE */
+        .practice-list {
+            padding-left: 20px;
+        }
+
+        .practice-list li {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        details {
+            background: #fff8ee;
+            border: 1px solid #ffe0b2;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-top: 22px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e65100;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        details ol li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #aaa;
+            font-style: italic;
+            margin-top: 12px;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+    <!-- FIXED HEADER - NEVER CHANGE -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="data:image/jpeg;base64,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" alt="🌍 Can We Control the Climate?" class="article-image">
+    </div>
+
+
+    <div class="container">
+
+        <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+        <div class="card orange-top">
+            <div class="section-title">💬 Useful Expressions</div>
+
+            <div class="expression-card">
+                <div class="expression-english">be addicted to</div>
+                <div class="expression-spanish">depender demasiado de algo / ser adicto a</div>
+                <div class="expression-example">Many countries are still addicted to fossil fuels and find it hard to stop using them.</div>
+            </div>
+
+            <div class="expression-card">
+                <div class="expression-english">keep at arm's length</div>
+                <div class="expression-spanish">mantener a distancia / no involucrarse</div>
+                <div class="expression-example">Scientists kept this idea at arm's length because they thought it was too risky.</div>
+            </div>
+
+            <div class="expression-card">
+                <div class="expression-english">depend on</div>
+                <div class="expression-spanish">depender de</div>
+                <div class="expression-example">We cannot depend on future technology to solve today's pollution problems.</div>
+            </div>
+
+            <div class="expression-card">
+                <div class="expression-english">be possible / be doable</div>
+                <div class="expression-spanish">ser posible / ser factible</div>
+                <div class="expression-example">The engineer said the new safety upgrade is doable within our budget.</div>
+            </div>
+
+            <div class="expression-card">
+                <div class="expression-english">with good information</div>
+                <div class="expression-spanish">contando con buena información</div>
+                <div class="expression-example">With good information, companies can make better decisions about the environment.</div>
+            </div>
+        </div>
+
+        <!-- ===== SECTION 2 & 3: ARTICLE + VOCABULARY ===== -->
+        <div class="card blue-top">
+            <h1 class="article-title">🌍 Can We Control the Climate?</h1>
+            <div class="article-subtitle">Scientists are studying ways to cool the Earth — but is it a good idea?</div>
+
+            <!-- PARAGRAPH 1 -->
+            <div class="article-body">
+                <p>
+                    Our planet is getting warmer. Scientists know that burning fossil fuels like oil and gas produces CO₂, and this gas <span class="highlight" title="atrapar / retener">traps</span> heat in the atmosphere. Most experts agree that the world needs to stop using fossil fuels. But some scientists are asking a different question: Can we use technology to cool the Earth while we make that change?
+                </p>
+            </div>
+
+            <!-- VOCAB 1 -->
+            <div class="vocab-section">
+                <h3>📚 Vocabulary — Paragraph 1</h3>
+                <div class="vocab-grid">
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">trap</span><button class="vocab-btn" onclick="speakWord('trap')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To keep something inside a space so it cannot escape</p>
+                        <p class="vocab-spanish">atrapar / retener</p>
+                        <div class="vocab-example">The broken seal traps heat inside the machine and causes damage.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">atmosphere</span><button class="vocab-btn" onclick="speakWord('atmosphere')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">The layer of air and gases that surrounds the Earth</p>
+                        <p class="vocab-spanish">atmósfera</p>
+                        <div class="vocab-example">Carbon dioxide in the atmosphere causes the Earth to get warmer.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">fossil fuels</span><button class="vocab-btn" onclick="speakWord('fossil fuels')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">Natural energy sources like coal, oil, and gas that produce CO₂ when burned</p>
+                        <p class="vocab-spanish">combustibles fósiles</p>
+                        <div class="vocab-example">The factory is trying to reduce its use of fossil fuels by switching to solar power.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 2 -->
+            <div class="article-body">
+                <p>
+                    One idea is called <span class="highlight" title="geoingeniería — grandes cambios en la naturaleza usando tecnología">geoengineering</span>. This means using science to change the Earth's environment. For example, scientists have discussed <span class="highlight" title="inyectar / disparar hacia arriba">injecting</span> tiny particles called <span class="highlight" title="aerosoles — partículas muy pequeñas en el aire">aerosols</span> into the sky. These particles would <span class="highlight" title="bloquear / reflejar">block</span> some of the sun's rays and make the Earth cooler. This is similar to what happens after a big volcanic <span class="highlight" title="erupción">eruption</span> — the ash in the sky makes the Earth temporarily cooler.
+                </p>
+            </div>
+
+            <!-- VOCAB 2 -->
+            <div class="vocab-section">
+                <h3>📚 Vocabulary — Paragraph 2</h3>
+                <div class="vocab-grid">
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">geoengineering</span><button class="vocab-btn" onclick="speakWord('geoengineering')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">Using large-scale technology to change the Earth's environment on purpose</p>
+                        <p class="vocab-spanish">geoingeniería</p>
+                        <div class="vocab-example">Geoengineering ideas are still very new and not tested in the real world.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">inject</span><button class="vocab-btn" onclick="speakWord('inject')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To put a substance into something using pressure or a special tool</p>
+                        <p class="vocab-spanish">inyectar</p>
+                        <div class="vocab-example">Technicians injected the chemical into the system to clean the pipes.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">aerosol</span><button class="vocab-btn" onclick="speakWord('aerosol')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">Very small solid or liquid particles floating in the air</p>
+                        <p class="vocab-spanish">aerosol</p>
+                        <div class="vocab-example">Volcanic eruptions release natural aerosols that can cool the planet for a short time.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">eruption</span><button class="vocab-btn" onclick="speakWord('eruption')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">When a volcano suddenly explodes and sends out fire, rocks, and ash</p>
+                        <p class="vocab-spanish">erupción</p>
+                        <div class="vocab-example">After the eruption, the sky turned dark and temperatures dropped worldwide.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 3 -->
+            <div class="article-body">
+                <div class="subheading">The Main Problem: We Cannot Stop</div>
+                <p>
+                    However, there is a serious problem with this idea. If we start adding particles to the sky, we cannot easily stop. If we stop suddenly, the Earth could <span class="highlight" title="calentarse muy rápido">warm up very quickly</span> — much faster than normal. Scientists call this "termination shock." It is like stopping medicine too early — the problem can come back worse than before.
+                </p>
+                <p>
+                    Another concern is that this technology could <span class="highlight" title="cambiar / afectar">affect</span> weather around the world in ways we don't expect. It could cause droughts in some areas or change rainfall patterns. These changes could hurt farmers and people who depend on rain for clean water.
+                </p>
+            </div>
+
+            <!-- VOCAB 3 -->
+            <div class="vocab-section">
+                <h3>📚 Vocabulary — Paragraph 3</h3>
+                <div class="vocab-grid">
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">termination shock</span><button class="vocab-btn" onclick="speakWord('termination shock')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">A sudden and dangerous rise in temperature if this technology is stopped too quickly</p>
+                        <p class="vocab-spanish">choque de terminación</p>
+                        <div class="vocab-example">Scientists worry that termination shock could cause more damage than the original warming.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">drought</span><button class="vocab-btn" onclick="speakWord('drought')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">A long period of time with very little or no rain</p>
+                        <p class="vocab-spanish">sequía</p>
+                        <div class="vocab-example">The drought destroyed the crops and caused a food shortage in the region.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">rainfall</span><button class="vocab-btn" onclick="speakWord('rainfall')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">The amount of rain that falls in an area during a period of time</p>
+                        <p class="vocab-spanish">lluvia / precipitación</p>
+                        <div class="vocab-example">Low rainfall this season has affected crop production across several states.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 4 -->
+            <div class="article-body">
+                <div class="subheading">Who Decides?</div>
+                <p>
+                    More than 500 scientists have signed a letter saying they do <strong>not</strong> want governments to use this technology yet. They are worried because there is no international organization to manage it fairly. If one powerful country uses it without asking others, it could hurt people in other countries who had no say in the decision.
+                </p>
+                <p>
+                    Other scientists, like Professor Keith from the University of Chicago, believe we should <span class="highlight" title="estudiar / investigar">study</span> this technology more. He says: "People can only make good decisions when they have good information. It is not the job of a small group of scientists to decide what the public knows."
+                </p>
+            </div>
+
+            <!-- VOCAB 4 -->
+            <div class="vocab-section">
+                <h3>📚 Vocabulary — Paragraph 4</h3>
+                <div class="vocab-grid">
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">sign a letter</span><button class="vocab-btn" onclick="speakWord('sign a letter')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To put your name on a document to show you agree with its message</p>
+                        <p class="vocab-spanish">firmar una carta</p>
+                        <div class="vocab-example">Over 200 workers signed a letter asking for better safety equipment.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">manage</span><button class="vocab-btn" onclick="speakWord('manage')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To be in control of something and make decisions about it</p>
+                        <p class="vocab-spanish">gestionar / manejar</p>
+                        <div class="vocab-example">Our team manages the quality inspection process at the end of each production line.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">have a say</span><button class="vocab-btn" onclick="speakWord('have a say')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To have the right to give your opinion before a decision is made</p>
+                        <p class="vocab-spanish">tener voz / participar en la decisión</p>
+                        <div class="vocab-example">All department heads should have a say in the new warehouse layout.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">fair</span><button class="vocab-btn" onclick="speakWord('fair')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">Treating everyone equally and in a reasonable way</p>
+                        <p class="vocab-spanish">justo / equitativo</p>
+                        <div class="vocab-example">The new bonus system is designed to be fair to workers in all departments.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH 5 -->
+            <div class="article-body">
+                <div class="subheading">What's Happening Now?</div>
+                <p>
+                    So far, most research has been done using computer models. Real experiments are hard to approve. In 2024, two planned experiments — one in California and one in Sweden — were <span class="highlight" title="cancelados">canceled</span> because local people <span class="highlight" title="protestaron / se opusieron">opposed</span> them. People were worried about changes to their weather.
+                </p>
+                <p>
+                    The debate continues. Should we study geoengineering to prepare for the future? Or is it too risky to even research? There are no easy answers — but the conversation is important.
+                </p>
+            </div>
+
+            <!-- VOCAB 5 -->
+            <div class="vocab-section">
+                <h3>📚 Vocabulary — Paragraph 5</h3>
+                <div class="vocab-grid">
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">approve</span><button class="vocab-btn" onclick="speakWord('approve')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To officially agree to allow something to happen</p>
+                        <p class="vocab-spanish">aprobar / autorizar</p>
+                        <div class="vocab-example">Management needs to approve any changes to the production process before they start.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">oppose</span><button class="vocab-btn" onclick="speakWord('oppose')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">To disagree strongly with a plan or idea and try to stop it</p>
+                        <p class="vocab-spanish">oponerse / estar en contra</p>
+                        <div class="vocab-example">Some workers opposed the new schedule because it changed their weekend days off.</div>
+                    </div>
+
+                    <div class="vocab-item">
+                        <div><span class="vocab-word">debate</span><button class="vocab-btn" onclick="speakWord('debate')" title="Pronunciation">🔊</button></div>
+                        <p class="vocab-definition">A formal or serious discussion about a topic where people have different opinions</p>
+                        <p class="vocab-spanish">debate / discusión</p>
+                        <div class="vocab-example">There is an ongoing debate in our company about whether to outsource packaging.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="mobile-note">* On mobile: tap and hold highlighted words to see the Spanish translation.</p>
+        </div>
+
+        <!-- ===== SECTION 4: DISCUSSION QUESTIONS ===== -->
+        <div class="card green-top">
+            <div class="section-title">🗣️ Discussion Questions</div>
+            <ul class="discussion-list">
+                <li>Do you think it is a good idea to use technology to cool the Earth? What are the biggest risks you see?</li>
+                <li>In your job, have you ever had to make a decision without enough information? What did you do?</li>
+                <li>The experiments were canceled because local people said no. Do you think communities should have the power to stop scientific experiments? Why or why not?</li>
+            </ul>
+        </div>
+
+        <!-- ===== SECTION 5: SELF-PRACTICE ===== -->
+        <div class="card teal-top">
+            <div class="section-title">✏️ Self-Practice</div>
+            <ol class="practice-list">
+                <li>
+                    Fill in the blank: If scientists suddenly stop adding particles to the sky, the Earth could warm up very fast. Scientists call this _______________.
+                </li>
+                <li>
+                    True or False: More than 500 scientists signed a letter saying they want governments to start using geoengineering right now.
+                </li>
+                <li>
+                    Match the word with the correct meaning:<br><br>
+                    <strong>a.</strong> drought &nbsp;&nbsp; <strong>b.</strong> oppose &nbsp;&nbsp; <strong>c.</strong> approve &nbsp;&nbsp; <strong>d.</strong> debate<br><br>
+                    ___ To officially say yes to a plan<br>
+                    ___ A serious discussion where people have different opinions<br>
+                    ___ A long period without rain<br>
+                    ___ To disagree and try to stop something
+                </li>
+                <li>
+                    Short answer: Give two reasons why some scientists think geoengineering is dangerous.
+                </li>
+            </ol>
+
+            <details>
+                <summary>▶ Show Reference Answers</summary>
+                <ol>
+                    <li><strong>termination shock</strong></li>
+                    <li><strong>False.</strong> The scientists signed a letter saying they do <em>not</em> want governments to use this technology.</li>
+                    <li>
+                        c — approve<br>
+                        d — debate<br>
+                        a — drought<br>
+                        b — oppose
+                    </li>
+                    <li>Two possible answers: (1) If we stop the technology suddenly, the Earth could warm up very fast ("termination shock"). (2) It could change weather patterns and cause droughts or less rain, which hurts farmers and communities.</li>
+                </ol>
+            </details>
+        </div>
+
+    </div><!-- end container -->
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
