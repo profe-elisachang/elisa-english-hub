@@ -1,0 +1,863 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe in Your Palm – English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== PAGE THEME: Copper & Slate — inspired by euro coin metals ===== */
+        :root {
+            --copper:      #b5651d;
+            --copper-dark: #8b4513;
+            --gold:        #c9920a;
+            --gold-light:  #f5c842;
+            --slate:       #2e3a47;
+            --slate-mid:   #3d4f5e;
+            --slate-light: #546677;
+            --cream:       #fdf6ec;
+            --off-white:   #f9f3e8;
+            --silver:      #e8ecef;
+            --text-dark:   #1c2530;
+            --text-mid:    #3d4f5e;
+            --accent-red:  #c0392b;
+            --accent-teal: #1a7a6e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.75;
+            font-size: 1.1rem;
+        }
+
+        /* ===== FIXED HEADER (exact template) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 60%, var(--copper-dark) 100%);
+            padding: 1.2rem 2rem;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            flex: 1;
+            letter-spacing: 0.02em;
+        }
+        .level-badge {
+            background: var(--gold);
+            color: #fff;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .search-box { margin-left: auto; }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            color: var(--slate);
+            border-left: 6px solid var(--copper);
+            padding-left: 0.8rem;
+            margin-bottom: 1.4rem;
+            margin-top: 2.8rem;
+        }
+
+        /* ===== 1. USEFUL EXPRESSIONS ===== */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+        .expr-card {
+            background: var(--slate);
+            border-radius: 12px;
+            padding: 1.3rem 1.5rem;
+            border-left: 5px solid var(--gold);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        }
+        .expr-en {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 0.25rem;
+        }
+        .expr-es {
+            font-size: 0.9rem;
+            color: #a8bac8;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .expr-ex {
+            font-size: 0.95rem;
+            color: #d8e4ed;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 0.5rem;
+        }
+        .expr-ex strong { color: #fff; }
+
+        /* ===== 2. ARTICLE ===== */
+        .article-box {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            border: 2px solid #d4b896;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+            margin-bottom: 0;
+        }
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.6rem);
+            color: var(--copper-dark);
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+        .article-subtitle {
+            font-size: 1rem;
+            color: var(--slate-light);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.6rem;
+            border-bottom: 2px solid var(--copper);
+            padding-bottom: 0.7rem;
+        }
+        .article-body p {
+            margin-bottom: 1.4rem;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        /* Highlighted vocabulary */
+        span.highlight {
+            background: #fff3b0;
+            font-weight: 700;
+            border-bottom: 2px solid #e6a817;
+            border-radius: 3px;
+            padding: 0 3px;
+            cursor: help;
+            color: #5a3e00;
+        }
+        span.highlight:hover { background: #ffe066; }
+
+        /* Phrasal verb highlight */
+        span.phrasal {
+            background: #ffe0cc;
+            font-weight: 700;
+            border-bottom: 2px solid var(--copper);
+            border-radius: 3px;
+            padding: 0 3px;
+            cursor: help;
+            color: #6b2a00;
+        }
+        span.phrasal:hover { background: #ffc9a0; }
+
+        /* ===== 3. VOCABULARY BOXES ===== */
+        .vocab-section {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.2rem 0 2rem;
+            border: 2px solid var(--silver);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        .vocab-section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--copper);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .vocab-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--silver);
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.9rem;
+        }
+        @media (max-width: 900px) { .vocab-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .vocab-grid { grid-template-columns: 1fr; } }
+
+        /* Each card gets a color from palette below */
+        .vcard {
+            border-radius: 10px;
+            padding: 1rem 1.1rem;
+            border-top: 4px solid;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .vcard-word {
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .vcard-word button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+        .vcard-word button:hover { opacity: 1; transform: scale(1.2); }
+        .vcard-type {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            opacity: 0.65;
+            margin-bottom: 0.35rem;
+        }
+        .vcard-def {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 0.3rem;
+        }
+        .vcard-es {
+            font-style: italic;
+            font-size: 0.82rem;
+            opacity: 0.75;
+            margin-bottom: 0.35rem;
+        }
+        .vcard-ex {
+            font-size: 0.82rem;
+            line-height: 1.45;
+            border-top: 1px dashed rgba(0,0,0,0.15);
+            padding-top: 0.3rem;
+            opacity: 0.85;
+        }
+
+        /* Color sets for vocab cards */
+        .vc-copper  { background: #fff4ec; border-color: #b5651d; color: #4a2200; }
+        .vc-teal    { background: #e8f8f5; border-color: #1a7a6e; color: #0a3330; }
+        .vc-gold    { background: #fffbe6; border-color: #c9920a; color: #4a3300; }
+        .vc-slate   { background: #eef1f4; border-color: #2e3a47; color: #1c2530; }
+        .vc-red     { background: #fdecea; border-color: #c0392b; color: #4a0f0a; }
+        .vc-olive   { background: #f2f7e8; border-color: #6b8e23; color: #2a3810; }
+
+        /* ===== 4. DISCUSSION QUESTIONS ===== */
+        .discussion-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .discussion-list li {
+            background: var(--slate);
+            color: #e8f0f7;
+            border-radius: 10px;
+            padding: 1.1rem 1.5rem;
+            border-left: 5px solid var(--gold-light);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .discussion-list li::before {
+            content: '💬 ';
+        }
+
+        /* ===== 5. SELF-PRACTICE QUESTIONS ===== */
+        .practice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+        .practice-item {
+            border: 2px solid #d4b896;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .practice-q {
+            background: var(--copper);
+            color: #fff;
+            padding: 1rem 1.4rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .practice-q:hover { background: var(--copper-dark); }
+        .practice-q .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .practice-q.open .toggle-icon { transform: rotate(180deg); }
+        .practice-a {
+            background: #fffaf4;
+            padding: 0 1.4rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s;
+            font-size: 0.98rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        .practice-a.open {
+            max-height: 300px;
+            padding: 1rem 1.4rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .article-box { padding: 1.3rem 1.2rem; }
+            .vocab-section { padding: 1.1rem 1rem; }
+            .main-wrap { padding: 1.5rem 1rem 3rem; }
+        }
+    </style>
+
+
+
+<!-- ===== FIXED HEADER (exact template) ===== -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-wrap">
+
+    <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+    <h2 class="section-title">🗣️ Useful Expressions</h2>
+    <div class="expressions-grid">
+
+        <div class="expr-card">
+            <div class="expr-en">end up with</div>
+            <div class="expr-es">terminar con / resultar teniendo</div>
+            <div class="expr-ex">
+                "If you travel across Europe, you might <strong>end up with</strong> coins from five different countries."
+            </div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">point out that</div>
+            <div class="expr-es">señalar que / indicar que</div>
+            <div class="expr-ex">
+                "Economists <strong>point out that</strong> producing 1-cent coins costs more than their actual value."
+            </div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">as of [year/date]</div>
+            <div class="expr-es">a partir de / desde [año/fecha]</div>
+            <div class="expr-ex">
+                "<strong>As of</strong> 2026, eight EU countries have stopped using the smallest coins."
+            </div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">phase out</div>
+            <div class="expr-es">eliminar gradualmente</div>
+            <div class="expr-ex">
+                "Several countries decided to <strong>phase out</strong> the 1- and 2-cent coins to simplify payments."
+            </div>
+        </div>
+
+        <div class="expr-card">
+            <div class="expr-en">make up</div>
+            <div class="expr-es">formar / componer / constituir</div>
+            <div class="expr-ex">
+                "Small, independent nations also <strong>make up</strong> part of the European community."
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== SECTION 2 + 3: ARTICLE + VOCAB BOXES (interleaved) ===== -->
+    <h2 class="section-title">📖 Article</h2>
+
+    <div class="article-box">
+        <div class="article-title"><img src="https://media.istockphoto.com/id/94989303/vector/complete-euro-coins.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=vN2hybDJYYsc2dS1Du0i5eovdx0_JO7BAn4e2OUw6uo=" alt="" class="resizable-image" contenteditable="false" draggable="false" data-layout="full-width" style="height: auto; border-radius: 8px; cursor: pointer; border: 2px solid transparent; padding: 4px; box-shadow: none; display: block; width: 100%; max-width: 100%; margin: 1rem 0px;" data-resizable="true"><p><br></p>🪙 Europe in Your Palm</div>
+        <div class="article-subtitle">National Pride or Pocket Burden?</div>
+
+        <div class="article-body">
+
+            <!-- PARAGRAPH 1 -->
+            <p>
+                Take a trip to Europe, and you're almost certain to handle some euro
+                <span class="highlight" title="moneda">coins</span>.
+                No matter which country you are in, coins of the same
+                <span class="highlight" title="denominación (valor)">denomination</span>
+                share <span class="highlight" title="consistente / uniforme">consistent</span>
+                size and weight. However, every member state has its own
+                <span class="highlight" title="serie">series</span>
+                of coins featuring unique designs. Someone in Spain may
+                <span class="phrasal" title="terminar con / resultar teniendo">end up with</span>
+                a coin representing Greece, a country at the
+                <span class="highlight" title="lado opuesto">opposite</span>
+                end of the <span class="highlight" title="continente">continent</span>.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 1 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 1</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-copper">
+                <div class="vcard-word">denomination <button onclick="speakWord('denomination')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">The face value assigned to a coin or bill</div>
+                <div class="vcard-es">denominación</div>
+                <div class="vcard-ex">"A 50-cent coin has a higher denomination than a 10-cent coin."</div>
+            </div>
+            <div class="vcard vc-teal">
+                <div class="vcard-word">consistent <button onclick="speakWord('consistent')" title="Listen">🔊</button></div>
+                <div class="vcard-type">adjective</div>
+                <div class="vcard-def">Always the same; not changing</div>
+                <div class="vcard-es">consistente / uniforme</div>
+                <div class="vcard-ex">"The weight is consistent across all Eurozone countries."</div>
+            </div>
+            <div class="vcard vc-gold">
+                <div class="vcard-word">series <button onclick="speakWord('series')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">A group of related items or designs released together</div>
+                <div class="vcard-es">serie</div>
+                <div class="vcard-ex">"Germany released a new series of coins this year."</div>
+            </div>
+            <div class="vcard vc-slate">
+                <div class="vcard-word">continent <button onclick="speakWord('continent')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">One of the large landmasses of Earth</div>
+                <div class="vcard-es">continente</div>
+                <div class="vcard-ex">"Europe is a continent with over 40 countries."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-box">
+        <div class="article-body">
+            <!-- PARAGRAPH 2 -->
+            <p>
+                On one side of every coin, the geographic
+                <span class="highlight" title="contorno / silueta">outline</span>
+                of Europe is shown. On the other, a ring of 12 stars surrounds a design representing one country in the European Union (EU). In this way, every euro coin has two separate identities: one
+                <span class="highlight" title="simbolizando">symbolizing</span>
+                the continent, and the other reflecting a national culture.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 2 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 2</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-olive">
+                <div class="vcard-word">outline <button onclick="speakWord('outline')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">The shape or border of something seen from the outside</div>
+                <div class="vcard-es">contorno / silueta</div>
+                <div class="vcard-ex">"You can see the outline of Europe on every euro coin."</div>
+            </div>
+            <div class="vcard vc-copper">
+                <div class="vcard-word">symbolizing <button onclick="speakWord('symbolizing')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb (gerund)</div>
+                <div class="vcard-def">Representing something through a symbol or image</div>
+                <div class="vcard-es">simbolizando</div>
+                <div class="vcard-ex">"The eagle is symbolizing strength on German coins."</div>
+            </div>
+            <div class="vcard vc-teal">
+                <div class="vcard-word">identity <button onclick="speakWord('identity')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">Who or what someone or something is; their character</div>
+                <div class="vcard-es">identidad</div>
+                <div class="vcard-ex">"Each coin carries both a European and a national identity."</div>
+            </div>
+            <div class="vcard vc-gold">
+                <div class="vcard-word">reflecting <button onclick="speakWord('reflecting')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb (gerund)</div>
+                <div class="vcard-def">Showing or expressing something clearly</div>
+                <div class="vcard-es">reflejando</div>
+                <div class="vcard-ex">"The harp is reflecting Irish culture and history."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-box">
+        <div class="article-body">
+            <!-- PARAGRAPH 3 -->
+            <p>
+                In addition to the €1 and €2 coins, there are coins worth 1, 2, 5, 10, 20, and 50 cents. When a new member state joins the union, they can design a series of coins that represents their culture. Many coins feature
+                <span class="highlight" title="monarcas / reyes">monarchs</span>,
+                such as those of Belgium, the Netherlands, and Spain. Some countries choose traditional symbols that represent their nation. For example, the German coins feature an eagle, while the Irish coins feature a Celtic harp.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 3 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 3</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-red">
+                <div class="vcard-word">monarchs <button onclick="speakWord('monarchs')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun (plural)</div>
+                <div class="vcard-def">Kings or queens who rule a country</div>
+                <div class="vcard-es">monarcas</div>
+                <div class="vcard-ex">"Several monarchs appear on European coins as national symbols."</div>
+            </div>
+            <div class="vcard vc-slate">
+                <div class="vcard-word">feature <button onclick="speakWord('feature')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb</div>
+                <div class="vcard-def">To include or show something as an important part</div>
+                <div class="vcard-es">presentar / incluir</div>
+                <div class="vcard-ex">"The new coin features a map of the country."</div>
+            </div>
+            <div class="vcard vc-copper">
+                <div class="vcard-word">traditional <button onclick="speakWord('traditional')" title="Listen">🔊</button></div>
+                <div class="vcard-type">adjective</div>
+                <div class="vcard-def">Following customs that have existed for a long time</div>
+                <div class="vcard-es">tradicional</div>
+                <div class="vcard-ex">"The harp is a traditional symbol of Ireland."</div>
+            </div>
+            <div class="vcard vc-teal">
+                <div class="vcard-word">Celtic <button onclick="speakWord('Celtic')" title="Listen">🔊</button></div>
+                <div class="vcard-type">adjective</div>
+                <div class="vcard-def">Related to the ancient peoples of Britain, Ireland, and parts of Europe</div>
+                <div class="vcard-es">celta</div>
+                <div class="vcard-ex">"Celtic art uses complex, interwoven patterns."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-box">
+        <div class="article-body">
+            <!-- PARAGRAPH 4 -->
+            <p>
+                For citizens of the EU, the euro coins are more than just
+                <span class="highlight" title="moneda (sistema)">currency</span>.
+                They are small but meaningful symbols of each nation that
+                <span class="phrasal" title="forman / constituyen">makes up</span>
+                the union. They are freely carried across national borders,
+                <span class="phrasal" title="reconocidos por">recognized for</span>
+                their value, and accepted as payment in Eurozone countries, and even in some non-EU states like Andorra and Vatican City. These coins represent the hope that the
+                <span class="highlight" title="comunidad">community</span>
+                of European nations will remain united for many generations to come.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 4 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 4</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-gold">
+                <div class="vcard-word">currency <button onclick="speakWord('currency')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">The system of money used in a country</div>
+                <div class="vcard-es">moneda (sistema monetario)</div>
+                <div class="vcard-ex">"The euro is the official currency of 20 EU member states."</div>
+            </div>
+            <div class="vcard vc-olive">
+                <div class="vcard-word">borders <button onclick="speakWord('borders')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun (plural)</div>
+                <div class="vcard-def">The lines that separate one country from another</div>
+                <div class="vcard-es">fronteras</div>
+                <div class="vcard-ex">"EU citizens can cross borders freely without a visa."</div>
+            </div>
+            <div class="vcard vc-red">
+                <div class="vcard-word">community <button onclick="speakWord('community')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">A group of people or nations that share common values or goals</div>
+                <div class="vcard-es">comunidad</div>
+                <div class="vcard-ex">"The EU is a community of countries that cooperate economically."</div>
+            </div>
+            <div class="vcard vc-slate">
+                <div class="vcard-word">generations <button onclick="speakWord('generations')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun (plural)</div>
+                <div class="vcard-def">All the people born and living at about the same time</div>
+                <div class="vcard-es">generaciones</div>
+                <div class="vcard-ex">"This tradition has been passed down for many generations."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-box">
+        <div class="article-body">
+            <!-- PARAGRAPH 5 -->
+            <p>
+                The weight and thickness of each euro coin
+                <span class="highlight" title="varían">vary</span>
+                according to its value. In general, heavier and thicker coins tend to have higher values, though there are
+                <span class="highlight" title="excepciones">exceptions</span>.
+                This system helps users
+                <span class="highlight" title="distinguir / diferenciar">distinguish</span>
+                between lower- and higher-value coins more easily. However, with eight different values of coins from 1 cent to €2, some people think the EU may have introduced too many coin types.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 5 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 5</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-teal">
+                <div class="vcard-word">vary <button onclick="speakWord('vary')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb</div>
+                <div class="vcard-def">To be different or to change depending on conditions</div>
+                <div class="vcard-es">variar</div>
+                <div class="vcard-ex">"Prices vary from country to country within the EU."</div>
+            </div>
+            <div class="vcard vc-copper">
+                <div class="vcard-word">exceptions <button onclick="speakWord('exceptions')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun (plural)</div>
+                <div class="vcard-def">Cases that do not follow the general rule</div>
+                <div class="vcard-es">excepciones</div>
+                <div class="vcard-ex">"Most coins follow the size rule, but there are a few exceptions."</div>
+            </div>
+            <div class="vcard vc-gold">
+                <div class="vcard-word">distinguish <button onclick="speakWord('distinguish')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb</div>
+                <div class="vcard-def">To recognize the difference between two things</div>
+                <div class="vcard-es">distinguir / diferenciar</div>
+                <div class="vcard-ex">"It's easy to distinguish a €2 coin from a €1 coin by its size."</div>
+            </div>
+            <div class="vcard vc-red">
+                <div class="vcard-word">thickness <button onclick="speakWord('thickness')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">How thick or deep something is from one side to the other</div>
+                <div class="vcard-es">grosor / espesor</div>
+                <div class="vcard-ex">"The thickness of the coin helps visually impaired people identify its value."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-box">
+        <div class="article-body">
+            <!-- PARAGRAPH 6 -->
+            <p>
+                In recent years, with the rise of
+                <span class="highlight" title="sin efectivo / digital">cashless</span>
+                payment methods, many people have begun to question the need for so many coins. Some European countries have
+                <span class="highlight" title="efectivamente / de hecho">effectively</span>
+                stopped using the smaller denomination coins in daily
+                <span class="highlight" title="transacciones">transactions</span>.
+                Supporters of
+                <span class="phrasal" title="eliminar gradualmente">phasing out</span>
+                the coins
+                <span class="phrasal" title="señalan que">point out that</span>
+                <span class="highlight" title="acuñar">minting</span>
+                the small coins often costs more than their actual face value. Others argue that carrying so many tiny coins is an
+                <span class="highlight" title="inconveniencia / molestia">inconvenience</span>.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 6 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 6</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-slate">
+                <div class="vcard-word">cashless <button onclick="speakWord('cashless')" title="Listen">🔊</button></div>
+                <div class="vcard-type">adjective</div>
+                <div class="vcard-def">Using electronic payments instead of physical money</div>
+                <div class="vcard-es">sin efectivo</div>
+                <div class="vcard-ex">"Many stores in Sweden are now completely cashless."</div>
+            </div>
+            <div class="vcard vc-teal">
+                <div class="vcard-word">transactions <button onclick="speakWord('transactions')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun (plural)</div>
+                <div class="vcard-def">Instances of buying or selling something</div>
+                <div class="vcard-es">transacciones</div>
+                <div class="vcard-ex">"Most daily transactions are now done by card or phone."</div>
+            </div>
+            <div class="vcard vc-copper">
+                <div class="vcard-word">minting <button onclick="speakWord('minting')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb (gerund)</div>
+                <div class="vcard-def">Manufacturing or producing coins officially</div>
+                <div class="vcard-es">acuñar</div>
+                <div class="vcard-ex">"Minting a 1-cent coin costs about 1.65 cents."</div>
+            </div>
+            <div class="vcard vc-red">
+                <div class="vcard-word">inconvenience <button onclick="speakWord('inconvenience')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">Something that causes difficulty or annoyance</div>
+                <div class="vcard-es">inconveniencia / molestia</div>
+                <div class="vcard-ex">"Carrying heavy coins every day is a real inconvenience."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-box">
+        <div class="article-body">
+            <!-- PARAGRAPH 7 -->
+            <p>
+                As of 2026, eight countries have officially
+                <span class="highlight" title="implementado">implemented</span>
+                or widely
+                <span class="highlight" title="adoptado">adopted</span>
+                cash-rounding policies for the smallest euro coins. These nations ask businesses to
+                <span class="phrasal" title="redondear hacia arriba o hacia abajo">round</span>
+                the total price up or down to the nearest 5 cents for all cash
+                <span class="highlight" title="compras">purchases</span>.
+                This way, people can
+                <span class="highlight" title="en gran medida">largely</span>
+                avoid using the 1- and 2-cent coins. Currently, Belgium, Finland, Ireland, Italy, Slovakia, Estonia, Lithuania, and the Netherlands have effectively removed them from everyday
+                <span class="highlight" title="circulación">circulation</span>.
+                However, other countries continue to mint these coins, which have not been abolished and remain legal tender throughout the Eurozone.
+            </p>
+        </div>
+    </div>
+
+    <!-- VOCAB BOX 7 -->
+    <div class="vocab-section">
+        <div class="vocab-section-label">📦 Vocabulary — Paragraph 7</div>
+        <div class="vocab-grid">
+            <div class="vcard vc-gold">
+                <div class="vcard-word">implemented <button onclick="speakWord('implemented')" title="Listen">🔊</button></div>
+                <div class="vcard-type">verb (past)</div>
+                <div class="vcard-def">Put a plan or policy into action officially</div>
+                <div class="vcard-es">implementado</div>
+                <div class="vcard-ex">"The company implemented a new payment system last month."</div>
+            </div>
+            <div class="vcard vc-olive">
+                <div class="vcard-word">purchases <button onclick="speakWord('purchases')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun (plural)</div>
+                <div class="vcard-def">Things bought; acts of buying</div>
+                <div class="vcard-es">compras</div>
+                <div class="vcard-ex">"All cash purchases will be rounded to the nearest 5 cents."</div>
+            </div>
+            <div class="vcard vc-teal">
+                <div class="vcard-word">largely <button onclick="speakWord('largely')" title="Listen">🔊</button></div>
+                <div class="vcard-type">adverb</div>
+                <div class="vcard-def">Mostly; to a great extent</div>
+                <div class="vcard-es">en gran medida / principalmente</div>
+                <div class="vcard-ex">"The policy has been largely successful in reducing coin clutter."</div>
+            </div>
+            <div class="vcard vc-copper">
+                <div class="vcard-word">circulation <button onclick="speakWord('circulation')" title="Listen">🔊</button></div>
+                <div class="vcard-type">noun</div>
+                <div class="vcard-def">The movement of money through an economy or community</div>
+                <div class="vcard-es">circulación</div>
+                <div class="vcard-ex">"Old banknotes are taken out of circulation and replaced with new ones."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 4: DISCUSSION QUESTIONS ===== -->
+    <h2 class="section-title">💬 Discussion Questions</h2>
+    <ul class="discussion-list">
+        <li>Do you think it is a good idea to phase out the 1- and 2-cent euro coins? Why or why not?</li>
+        <li>In your opinion, is it more important for a coin to show national identity or to be practical and easy to use? What do you think?</li>
+        <li>As cashless payments become more popular, do you think coins will disappear completely in the future? How does this compare to how we pay in Taiwan?</li>
+    </ul>
+
+    <!-- ===== SECTION 5: SELF-PRACTICE QUESTIONS ===== -->
+    <h2 class="section-title">✍️ Self-Practice Questions</h2>
+    <div class="practice-list">
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                1. What do the two sides of a euro coin represent?
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="practice-a">
+                One side of every euro coin shows the geographic outline of Europe surrounded by 12 stars, representing the European Union as a whole. The other side features a design chosen by each individual country, reflecting its own national culture and identity — for example, a monarch, an animal, or a traditional symbol.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                2. Why do some people think the EU introduced too many coin types?
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="practice-a">
+                The EU uses eight different coin values ranging from 1 cent to €2. Critics argue that this creates unnecessary complexity, making it harder to manage change quickly. In addition, producing the smallest coins — the 1- and 2-cent pieces — often costs more to mint than they are actually worth, which many people see as a waste of resources.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                3. What does "cash rounding" mean, and how does it work?
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="practice-a">
+                Cash rounding is a policy where the total price of a cash purchase is rounded up or down to the nearest 5 cents. This means customers and businesses avoid using 1- and 2-cent coins entirely. For example, a total of €2.83 would be rounded down to €2.80, while €2.87 would be rounded up to €2.90. Eight EU countries had adopted this system as of 2026.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <div class="practice-q" onclick="toggleAnswer(this)">
+                4. How does the weight and thickness of euro coins help people?
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="practice-a">
+                In general, higher-value euro coins are heavier and thicker, which allows users to distinguish between them by feel alone, without looking. This is especially helpful for visually impaired people or when reaching into a pocket or bag. Although there are some exceptions to this rule, the physical design is intentionally different for each denomination to make everyday transactions easier.
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- /main-wrap -->
+
+<script>
+    // Pronunciation
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+
+    // Foldable answers
+    function toggleAnswer(btn) {
+        btn.classList.toggle('open');
+        const answer = btn.nextElementSibling;
+        answer.classList.toggle('open');
+    }
+</script>
+
