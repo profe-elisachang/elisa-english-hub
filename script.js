@@ -127,6 +127,7 @@ async function scanLessons() {
         { filename: 'Takeaways from the drone story.html', date: '2026-05-20', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
 
         { filename: 'Control the Climate.html', date: '2026-05-22', title: '🌍 Can We Control the Climate?' },
+        { filename: 'Europe in Your Palm.html', date: '2026-05-25', title: '🪙 Europe in Your Palm' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
