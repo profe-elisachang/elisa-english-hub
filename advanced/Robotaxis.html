@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotaxis May Increase Traffic and Emissions - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f0;
+            color: #2a2a2a;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #2d5a3d;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: #4a8c5c;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ARTICLE TITLE CARD */
+        .article-title-card {
+            background: #2d5a3d;
+            color: white;
+            padding: 36px 40px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .article-title-card h1 {
+            margin: 0 0 12px 0;
+            font-size: 2rem;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .article-title-card .subtitle {
+            opacity: 0.85;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #2d5a3d;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #c8e6c9;
+        }
+
+        /* EXPRESSIONS */
+        .expression-item {
+            border-left: 4px solid #4a8c5c;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            background: #f7faf7;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .expression-en {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a3d28;
+            margin-bottom: 4px;
+        }
+
+        .expression-es {
+            color: #5a7a62;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .expression-example {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ARTICLE TEXT */
+        .article-paragraph {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #2a2a2a;
+            margin-bottom: 12px;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        .mobile-note {
+            color: #888;
+            font-size: 0.88rem;
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        /* VOCABULARY BOXES */
+        .vocabulary-section {
+            background: #f7faf7;
+            border-left: 4px solid #4a8c5c;
+            padding: 24px;
+            margin: 28px 0;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #2d5a3d;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #d4e8d4;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+
+        .vocab-word-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .vocab-word {
+            color: #2d5a3d;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.97rem;
+        }
+
+        .vocab-translation {
+            color: #666;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.93rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4a8c5c;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION & PRACTICE */
+        .discussion-list li,
+        .practice-list li {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .practice-section ol {
+            padding-left: 20px;
+        }
+
+        .practice-section li {
+            margin-bottom: 16px;
+        }
+
+        details {
+            margin-top: 20px;
+            background: #f7faf7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            border: 1px solid #c8e6c9;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #2d5a3d;
+            font-size: 1rem;
+        }
+
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        details li {
+            margin-bottom: 8px;
+            font-size: 0.97rem;
+            color: #333;
+        }
+
+        /* PARAGRAPH DIVIDER */
+        .paragraph-divider {
+            border: none;
+            border-top: 2px dashed #c8e6c9;
+            margin: 28px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255,255,255,0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ARTICLE TITLE -->
+            <div class="article-title-card">
+                <h1>🚕 Robotaxis May Increase Traffic and Emissions, Analysts Warn</h1>
+                <p class="subtitle">Advanced Reading · Urban Mobility & Environmental Policy</p>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2 class="section-title">💬 Useful Expressions</h2>
+
+                <div class="expression-item">
+                    <div class="expression-en">overly optimistic</div>
+                    <div class="expression-es">demasiado optimista</div>
+                    <div class="expression-example">The government's projections about electric vehicle adoption seem overly optimistic given current infrastructure.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-en">raise alarms</div>
+                    <div class="expression-es">generar / levantar alertas</div>
+                    <div class="expression-example">The latest emissions report has raised alarms among environmental regulators.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-en">at the expense of</div>
+                    <div class="expression-es">a expensas de / a costa de</div>
+                    <div class="expression-example">We cannot pursue rapid deployment of new technology at the expense of urban sustainability.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-en">play a role in</div>
+                    <div class="expression-es">desempeñar un papel en</div>
+                    <div class="expression-example">Robotaxis may play a role in last-mile connectivity without replacing core transit systems.</div>
+                </div>
+
+                <div class="expression-item">
+                    <div class="expression-en">in the absence of</div>
+                    <div class="expression-es">en ausencia de / sin</div>
+                    <div class="expression-example">In the absence of strong policy frameworks, autonomous fleets could deepen car dependency.</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+            <div class="section-card">
+                <h2 class="section-title">📰 Article</h2>
+
+                <!-- PARAGRAPH 1 -->
+                <p class="article-paragraph">
+                    Municipalities across the globe are <span class="highlight" title="pilotando / probando">piloting</span> robotaxi programs with the expectation that <span class="highlight" title="vehículos autónomos">autonomous vehicles</span> will <span class="highlight" title="aliviar">alleviate</span> traffic <span class="highlight" title="congestión">congestion</span> and curb greenhouse gas emissions. However, <span class="highlight" title="análisis recientes">mounting analyses</span> suggest these expectations may be <span class="highlight" title="fundamentalmente equivocadas">fundamentally misguided</span>. A leading <span class="highlight" title="firma consultora">consultancy</span> has found that, <span class="highlight" title="al contrario de / contrario a">contrary to</span> conventional assumptions, robotaxis could <span class="highlight" title="intensificar / agravar">exacerbate</span> rather than <span class="highlight" title="reducir">mitigate</span> urban gridlock. Because autonomous rides are <span class="highlight" title="proyectados para ser / se espera que sean">projected to be</span> significantly cheaper and more <span class="highlight" title="accesibles / convenientes">accessible</span> than traditional taxi services, a growing <span class="highlight" title="segmento de la población">demographic</span> may <span class="highlight" title="optar por / preferir">opt for</span> them over active transport modes or public transit—ultimately <span class="highlight" title="añadiendo presión a">placing additional strain on</span> already <span class="highlight" title="saturadas">saturated</span> road networks.
+                </p>
+
+                <!-- VOCABULARY BOX 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">piloting</span>
+                                <button class="speak-btn" onclick="speakWord('piloting')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Testing something on a small scale before launching it fully</p>
+                            <p class="vocab-translation">pilotando / probando</p>
+                            <div class="vocab-example">The city is piloting a new bike-sharing program in three districts before expanding it citywide.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">autonomous vehicles</span>
+                                <button class="speak-btn" onclick="speakWord('autonomous vehicles')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Cars or transport that can drive themselves without a human driver</p>
+                            <p class="vocab-translation">vehículos autónomos</p>
+                            <div class="vocab-example">Autonomous vehicles rely on sensors and AI to navigate traffic without human input.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">alleviate</span>
+                                <button class="speak-btn" onclick="speakWord('alleviate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To reduce the severity of a problem or make a bad situation less serious</p>
+                            <p class="vocab-translation">aliviar</p>
+                            <div class="vocab-example">Expanding subway lines could alleviate pressure on surface roads during peak hours.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">mounting analyses</span>
+                                <button class="speak-btn" onclick="speakWord('mounting analyses')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A growing number of studies or research findings that are accumulating over time</p>
+                            <p class="vocab-translation">análisis en aumento / cada vez más evidencia</p>
+                            <div class="vocab-example">Mounting analyses confirm that remote work has permanently changed commuting patterns in major cities.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">exacerbate</span>
+                                <button class="speak-btn" onclick="speakWord('exacerbate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To make an existing problem worse or more severe</p>
+                            <p class="vocab-translation">agravar / empeorar</p>
+                            <div class="vocab-example">Poor road maintenance can exacerbate vehicle wear and increase accident risks.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">mitigate</span>
+                                <button class="speak-btn" onclick="speakWord('mitigate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To lessen the impact or seriousness of something negative</p>
+                            <p class="vocab-translation">mitigar / reducir</p>
+                            <div class="vocab-example">Companies are investing in carbon capture technology to mitigate their environmental footprint.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">opt for</span>
+                                <button class="speak-btn" onclick="speakWord('opt for')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To choose one option over others after considering alternatives</p>
+                            <p class="vocab-translation">optar por</p>
+                            <div class="vocab-example">Many commuters opt for ride-hailing services when public transit is unreliable.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">saturated</span>
+                                <button class="speak-btn" onclick="speakWord('saturated')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Completely full or overloaded, unable to take more without problems</p>
+                            <p class="vocab-translation">saturado / colapsado</p>
+                            <div class="vocab-example">The highway is so saturated with vehicles that even minor incidents cause hour-long delays.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="paragraph-divider">
+
+                <!-- PARAGRAPH 2 -->
+                <p class="article-paragraph">
+                    A particularly pressing <span class="highlight" title="preocupación / problema">concern</span> is the <span class="highlight" title="fenómeno conocido como">phenomenon</span> of <strong>"deadheading"</strong>—the practice of robotaxis traveling <span class="highlight" title="sin pasajeros">unoccupied</span> as they <span class="highlight" title="reposicionarse / desplazarse">reposition</span> between fares. Given that autonomous fleets must <span class="highlight" title="redistribuirse dinámicamente">dynamically redistribute</span> themselves across a metropolitan area to <span class="highlight" title="satisfacer la demanda">meet fluctuating demand</span>, these <span class="highlight" title="viajes vacíos">empty runs</span> could substantially <span class="highlight" title="aumentar">inflate</span> total vehicle miles traveled. Urban <span class="highlight" title="modelado / simulación">modeling</span> indicates that even a modest increase in vehicle density can <span class="highlight" title="desencadenar / provocar">trigger</span> <span class="highlight" title="efectos en cascada">cascading effects</span> on traffic flow, causing speeds to <span class="highlight" title="caer en picado">plummet</span> and <span class="highlight" title="embotellamientos severos">severe gridlock</span> to <span class="highlight" title="extenderse">proliferate</span> across interconnected road networks.
+                </p>
+
+                <!-- VOCABULARY BOX 2 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">deadheading</span>
+                                <button class="speak-btn" onclick="speakWord('deadheading')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">When a vehicle travels without any paying passengers or cargo, moving empty to reach the next pickup</p>
+                            <p class="vocab-translation">viaje en vacío / reposicionamiento sin pasajeros</p>
+                            <div class="vocab-example">Deadheading is a major inefficiency in logistics because the vehicle consumes fuel without generating revenue.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">unoccupied</span>
+                                <button class="speak-btn" onclick="speakWord('unoccupied')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Empty; not being used or occupied by anyone at that moment</p>
+                            <p class="vocab-translation">vacío / desocupado</p>
+                            <div class="vocab-example">Unoccupied vehicles circling downtown areas to find parking spots contribute significantly to congestion.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">reposition</span>
+                                <button class="speak-btn" onclick="speakWord('reposition')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To move something to a different location to be better prepared for the next task</p>
+                            <p class="vocab-translation">reposicionarse / desplazarse</p>
+                            <div class="vocab-example">Delivery fleets must constantly reposition their trucks to match demand across the city.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">fluctuating demand</span>
+                                <button class="speak-btn" onclick="speakWord('fluctuating demand')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Demand that constantly rises and falls, changing unpredictably over time</p>
+                            <p class="vocab-translation">demanda fluctuante / variable</p>
+                            <div class="vocab-example">Airlines adjust ticket prices continuously in response to fluctuating demand.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">inflate</span>
+                                <button class="speak-btn" onclick="speakWord('inflate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To cause a number or figure to increase beyond its real or expected level</p>
+                            <p class="vocab-translation">inflar / aumentar artificialmente</p>
+                            <div class="vocab-example">Including unproductive trips in the statistics would inflate the actual mileage figures.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">cascading effects</span>
+                                <button class="speak-btn" onclick="speakWord('cascading effects')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A series of consequences where each one causes the next, like a chain reaction</p>
+                            <p class="vocab-translation">efectos en cascada / reacción en cadena</p>
+                            <div class="vocab-example">A disruption at one port can have cascading effects on supply chains across multiple continents.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">plummet</span>
+                                <button class="speak-btn" onclick="speakWord('plummet')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To fall or drop suddenly and very quickly to a much lower level</p>
+                            <p class="vocab-translation">caer en picado / desplomarse</p>
+                            <div class="vocab-example">Average traffic speeds plummet during rush hour, making the commute up to three times longer.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">proliferate</span>
+                                <button class="speak-btn" onclick="speakWord('proliferate')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To increase rapidly in number or spread widely across an area</p>
+                            <p class="vocab-translation">proliferar / extenderse rápidamente</p>
+                            <div class="vocab-example">If left unregulated, electric scooters tend to proliferate on sidewalks, creating safety hazards.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="paragraph-divider">
+
+                <!-- PARAGRAPH 3 -->
+                <p class="article-paragraph">
+                    The environmental <span class="highlight" title="implicaciones / consecuencias">implications</span> are equally <span class="highlight" title="preocupantes / alarmantes">troubling</span>. Autonomous vehicles depend on an extensive <span class="highlight" title="infraestructura computacional">computational infrastructure</span>—including LiDAR sensors, onboard processors, and real-time cloud <span class="highlight" title="procesamiento de datos">data processing</span>—that <span class="highlight" title="consume">consumes</span> substantial quantities of energy. This <span class="highlight" title="demanda">demand</span> threatens to <span class="highlight" title="anular / neutralizar">offset</span> the emissions reductions <span class="highlight" title="prometidas por / asociadas a">promised by</span> vehicle <span class="highlight" title="electrificación">electrification</span>. Furthermore, if municipalities <span class="highlight" title="orientan sus inversiones hacia">channel investment toward</span> autonomous mobility at the <span class="highlight" title="descuido de / sacrificio de">neglect of</span> <span class="highlight" title="mejoras en">enhancements to</span> mass transit, pedestrian infrastructure, and mixed-use urban development, the result may be a reinforcement of <span class="highlight" title="patrones de dependencia del automóvil">car-dependent patterns</span> that <span class="highlight" title="socavan">undermine</span> long-term <span class="highlight" title="sostenibilidad">sustainability</span> goals.
+                </p>
+
+                <!-- VOCABULARY BOX 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">implications</span>
+                                <button class="speak-btn" onclick="speakWord('implications')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The possible consequences or effects of something, often not immediately obvious</p>
+                            <p class="vocab-translation">implicaciones / consecuencias</p>
+                            <div class="vocab-example">The engineers discussed the safety implications of removing the manual override system.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">offset</span>
+                                <button class="speak-btn" onclick="speakWord('offset')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To counteract or cancel out the effect of something else; to balance one thing against another</p>
+                            <p class="vocab-translation">compensar / neutralizar</p>
+                            <div class="vocab-example">The factory planted trees to offset its carbon emissions, though critics questioned the impact.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">channel investment toward</span>
+                                <button class="speak-btn" onclick="speakWord('channel investment toward')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To direct money or resources specifically into a particular area or project</p>
+                            <p class="vocab-translation">dirigir / canalizar inversión hacia</p>
+                            <div class="vocab-example">The regional government decided to channel investment toward renewable energy rather than fossil fuel subsidies.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">enhancements</span>
+                                <button class="speak-btn" onclick="speakWord('enhancements')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Improvements that make something better in quality, value, or effectiveness</p>
+                            <p class="vocab-translation">mejoras / mejoramiento</p>
+                            <div class="vocab-example">The infrastructure enhancements included wider bike lanes and more frequent bus services.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">undermine</span>
+                                <button class="speak-btn" onclick="speakWord('undermine')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To gradually weaken or damage something, especially a system, goal, or plan</p>
+                            <p class="vocab-translation">socavar / debilitar</p>
+                            <div class="vocab-example">Inconsistent data collection can undermine the reliability of an entire environmental study.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="paragraph-divider">
+
+                <!-- PARAGRAPH 4 -->
+                <p class="article-paragraph">
+                    Leading urban mobility researchers <span class="highlight" title="sostienen / argumentan">contend</span> that the <span class="highlight" title="integración exitosa">successful integration</span> of robotaxis requires them to <span class="highlight" title="complementar / apoyar">complement</span>—rather than <span class="highlight" title="desplazar / reemplazar">displace</span>—existing public transit <span class="highlight" title="ecosistemas">ecosystems</span>. Without <span class="highlight" title="marcos regulatorios sólidos">robust regulatory frameworks</span>, clear <span class="highlight" title="incentivos de uso compartido">ridesharing incentives</span>, and coordinated <span class="highlight" title="planificación urbana">urban planning</span>, autonomous fleets risk <span class="highlight" title="consolidar / afianzar">entrenching</span> car dependency and reshaping cities in <span class="highlight" title="maneras incompatibles con">ways incompatible with</span> <span class="highlight" title="objetivos climáticos">climate targets</span>. The core <span class="highlight" title="dilema">dilemma</span> facing policymakers is how to <span class="highlight" title="aprovechar / capitalizar">harness</span> the <span class="highlight" title="potencial disruptivo">disruptive potential</span> of autonomous mobility while <span class="highlight" title="salvaguardando">safeguarding</span> environmental <span class="highlight" title="integridad">integrity</span>. Robotaxis may yet <span class="highlight" title="demostrar ser valiosos">prove valuable</span> as a <span class="highlight" title="componente de un sistema de movilidad más amplio">component of a broader mobility ecosystem</span>, but they are unlikely to <span class="highlight" title="resolver por sí solos">independently resolve</span> the <span class="highlight" title="desafíos estructurales de congestión">structural congestion challenges</span> that <span class="highlight" title="afligen a las ciudades modernas">afflict modern cities</span>.
+                </p>
+
+                <!-- VOCABULARY BOX 4 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 4</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">contend</span>
+                                <button class="speak-btn" onclick="speakWord('contend')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To argue or claim strongly that something is true, especially in a debate or discussion</p>
+                            <p class="vocab-translation">sostener / argumentar / afirmar</p>
+                            <div class="vocab-example">Several researchers contend that the current safety standards for autonomous vehicles are insufficient.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">displace</span>
+                                <button class="speak-btn" onclick="speakWord('displace')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To force something out of its usual position or role; to take the place of something else</p>
+                            <p class="vocab-translation">desplazar / reemplazar</p>
+                            <div class="vocab-example">Automation could displace thousands of warehouse workers over the next decade if left unregulated.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">entrench</span>
+                                <button class="speak-btn" onclick="speakWord('entrench')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To establish something so firmly that it becomes very difficult to change or remove</p>
+                            <p class="vocab-translation">afianzar / consolidar / arraigar</p>
+                            <div class="vocab-example">Decades of subsidized fuel have entrenched car culture in many suburban communities.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">harness</span>
+                                <button class="speak-btn" onclick="speakWord('harness')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To control and use something effectively to gain an advantage or achieve a goal</p>
+                            <p class="vocab-translation">aprovechar / capitalizar</p>
+                            <div class="vocab-example">Cities that harness data from connected vehicles can optimize traffic signal timing in real time.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">safeguarding</span>
+                                <button class="speak-btn" onclick="speakWord('safeguarding')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Protecting something important from harm, damage, or negative change</p>
+                            <p class="vocab-translation">salvaguardar / proteger</p>
+                            <div class="vocab-example">Strict regulations are essential for safeguarding data privacy in connected vehicle networks.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-line">
+                                <span class="vocab-word">afflict</span>
+                                <button class="speak-btn" onclick="speakWord('afflict')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To cause ongoing suffering, problems, or difficulties to someone or something</p>
+                            <p class="vocab-translation">afligir / aquajar / afectar gravemente</p>
+                            <div class="vocab-example">Air pollution continues to afflict major metropolitan areas despite years of environmental legislation.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2 class="section-title">🗣️ Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>In your view, should city governments prioritize expanding public transit systems or investing in autonomous vehicle infrastructure? What factors would influence your decision?</li>
+                    <li>The article argues that robotaxis may reinforce car dependency. Do you think this risk outweighs the potential benefits of autonomous mobility? Why or why not?</li>
+                    <li>How should policymakers balance the pressure to adopt innovative technologies with the responsibility to meet long-term environmental commitments?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card practice-section">
+                <h2 class="section-title">✏️ Self-Practice</h2>
+
+                <ol>
+                    <li>
+                        <strong>Fill in the blank:</strong> Choose the correct word: <em>exacerbate / mitigate / offset</em>.<br>
+                        "Installing green rooftops can help _______ the urban heat island effect in densely built cities."
+                    </li>
+                    <li>
+                        <strong>True or False:</strong> According to the article, deadheading refers to robotaxis carrying a full load of passengers across long distances.
+                    </li>
+                    <li>
+                        <strong>Sentence transformation:</strong> Rewrite using <em>"in the absence of"</em>:<br>
+                        Original: "Without proper regulation, autonomous fleets could worsen urban congestion."
+                    </li>
+                    <li>
+                        <strong>Short answer:</strong> According to the article, what is the main reason why robotaxis might increase overall vehicle miles traveled, even if they are fully electric?
+                    </li>
+                </ol>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>mitigate</strong> — "Installing green rooftops can help mitigate the urban heat island effect in densely built cities."</li>
+                        <li><strong>False</strong> — Deadheading refers to robotaxis traveling <em>without passengers</em> as they reposition between rides.</li>
+                        <li>"<strong>In the absence of</strong> proper regulation, autonomous fleets could worsen urban congestion."</li>
+                        <li>Even if robotaxis are electric, they must travel empty to reposition themselves (deadheading), which greatly increases total vehicle miles traveled and the energy consumed by onboard computing systems—potentially negating the emissions savings of electrification.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
