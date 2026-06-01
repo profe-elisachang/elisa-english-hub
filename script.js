@@ -116,19 +116,18 @@ async function scanLessons() {
         { filename: 'Modern Workweek-Practice.html', date: '2026-05-11', title: '🏭  Modern Workweek-Practice' },
         { filename: 'The Return of Retro Aesthetics.html', date: '2026-05-13', title: '🕶️ The Return of Retro Aesthetics' },
        { filename: 'Era Explorer-Retro Aesthetics.html', date: '2026-05-13', title: 'Era Explorer-Retro Aesthetics' },
-       { filename: 'Retro aesthetics-Discussion.html', date: '2026-05-13', title: 'Retro aesthetics through the lens of culture, generation, and identity ' },
-        
+       { filename: 'Retro aesthetics-Discussion.html', date: '2026-05-13', title: 'Retro aesthetics through the lens of culture, generation, and identity ' },        
         { filename: 'Drones Are Changing the World.html', date: '2026-05-15', title: '' },
         { filename: 'Takeaways from the drone story.html', date: '2026-05-15', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
         { filename: 'Drones Are Changing the World.html', date: '2026-05-18', title: '' },
         { filename: 'Takeaways from the drone story.html', date: '2026-05-18', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
-
         { filename: 'Drones Are Changing the World.html', date: '2026-05-20', title: '' },
         { filename: 'Takeaways from the drone story.html', date: '2026-05-20', title: '💡 Economic Takeaways-Five big ideas from the drone story ' },
-
         { filename: 'Control the Climate.html', date: '2026-05-22', title: '🌍 Can We Control the Climate?' },
         { filename: 'Europe in Your Palm.html', date: '2026-05-25', title: '🪙 Europe in Your Palm' },
         { filename: 'Control the Climate.html', date: '2026-05-27', title: '🌍 Can We Control the Climate?' },
+        { date: '2026-05-26', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+    
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
