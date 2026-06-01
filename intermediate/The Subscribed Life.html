@@ -1,0 +1,925 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Subscribed Life – English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== PAGE THEME: Warm Amber + Deep Teal + Coral ===== */
+        :root {
+            --bg:          #FFF8EE;
+            --surface:     #FFFFFF;
+            --teal:        #1A7A6E;
+            --teal-light:  #E8F5F3;
+            --amber:       #E67E22;
+            --amber-light: #FEF3E2;
+            --coral:       #E8493C;
+            --coral-light: #FDECEA;
+            --navy:        #1C2C3A;
+            --text:        #1C2C3A;
+            --muted:       #5A6A7A;
+            --highlight-bg:    #FFF176;
+            --highlight-border:#F59E0B;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* ===== HEADER (EXACT TEMPLATE) ===== */
+        .header {
+            background: var(--teal);
+            padding: 1.2rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            color: #fff;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 900;
+            flex: 1;
+            letter-spacing: -0.5px;
+        }
+        .level-badge {
+            background: var(--amber);
+            color: #fff;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        .search-box { display: flex; align-items: center; }
+
+        /* ===== PAGE WRAPPER ===== */
+        .page-wrap {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ===== LESSON TITLE BANNER ===== */
+        .lesson-banner {
+            background: var(--navy);
+            color: #fff;
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-left: 8px solid var(--amber);
+        }
+        .lesson-banner .emoji { font-size: 3rem; }
+        .lesson-banner h2 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        .lesson-banner p {
+            color: #CBD5E1;
+            font-size: 1rem;
+            margin-top: 0.4rem;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--teal);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--teal);
+        }
+        .section-title .sec-icon {
+            background: var(--teal);
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.15rem 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* ===== USEFUL EXPRESSIONS ===== */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .expr-card {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 2px solid var(--amber);
+            padding: 1.2rem 1.4rem;
+            box-shadow: 3px 3px 0 var(--amber-light);
+        }
+        .expr-en {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.2rem;
+        }
+        .expr-es {
+            font-size: 0.95rem;
+            color: var(--amber);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .expr-example {
+            font-size: 0.97rem;
+            color: var(--muted);
+            font-style: italic;
+            border-left: 3px solid var(--amber-light);
+            padding-left: 0.7rem;
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-section {
+            margin-bottom: 2.5rem;
+        }
+        .article-block {
+            background: var(--surface);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 0.5rem;
+            border: 2px solid #E2EAF0;
+            line-height: 1.85;
+            font-size: 1.08rem;
+        }
+        .sub-heading {
+            background: var(--teal);
+            color: #fff;
+            border-radius: 10px;
+            padding: 0.5rem 1.4rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .article-block p { margin-bottom: 0; }
+
+        /* ===== HIGHLIGHTED VOCAB IN TEXT ===== */
+        .highlight {
+            background: var(--highlight-bg);
+            font-weight: 700;
+            border-bottom: 2.5px solid var(--highlight-border);
+            padding: 0 3px;
+            border-radius: 3px;
+            cursor: help;
+            position: relative;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            z-index: 10;
+            font-weight: 600;
+        }
+
+        /* ===== STUDENT VOICES ===== */
+        .voices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .voice-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            border: 2px solid #E2EAF0;
+            border-left: 5px solid var(--teal);
+        }
+        .voice-name {
+            font-weight: 800;
+            color: var(--teal);
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* ===== VOCABULARY BOXES ===== */
+        .vocab-box {
+            background: var(--teal-light);
+            border: 2px solid var(--teal);
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2rem;
+        }
+        .vocab-box-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+        .vocab-card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 0.9rem 1rem;
+            border: 1.5px solid var(--teal);
+            box-shadow: 2px 2px 0 rgba(26,122,110,0.1);
+        }
+        .vocab-word {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .vocab-word strong {
+            font-size: 1.05rem;
+            color: var(--navy);
+            font-weight: 800;
+        }
+        .speak-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            line-height: 1;
+            transition: transform 0.15s;
+        }
+        .speak-btn:hover { transform: scale(1.2); }
+        .vocab-def {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+        .vocab-es {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--amber);
+            margin-bottom: 0.3rem;
+        }
+        .vocab-ex {
+            font-size: 0.87rem;
+            color: #4A5A6A;
+            font-style: italic;
+            border-left: 2px solid var(--amber);
+            padding-left: 0.5rem;
+            line-height: 1.4;
+        }
+
+        /* Coral vocab variant for voices section */
+        .vocab-box.coral-variant {
+            background: var(--coral-light);
+            border-color: var(--coral);
+        }
+        .vocab-box.coral-variant .vocab-box-title { color: var(--coral); }
+        .vocab-box.coral-variant .vocab-card { border-color: var(--coral); }
+        .vocab-box.coral-variant .vocab-es { color: var(--coral); }
+        .vocab-box.coral-variant .vocab-ex { border-left-color: var(--coral); }
+
+        /* ===== DISCUSSION QUESTIONS ===== */
+        .discussion-section {
+            margin-bottom: 2.5rem;
+        }
+        .discussion-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .discussion-list li {
+            background: var(--amber-light);
+            border: 2px solid var(--amber);
+            border-radius: 12px;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .discussion-list li .q-num {
+            background: var(--amber);
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .discussion-list li p { font-weight: 600; color: var(--navy); }
+
+        /* ===== SELF-PRACTICE ===== */
+        .practice-section { margin-bottom: 2rem; }
+        .practice-list { display: flex; flex-direction: column; gap: 1rem; }
+        .practice-item {
+            background: var(--surface);
+            border: 2px solid var(--teal);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .practice-q {
+            padding: 1rem 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            user-select: none;
+            background: var(--teal-light);
+        }
+        .practice-q .pq-icon {
+            background: var(--teal);
+            color: #fff;
+            border-radius: 6px;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .practice-q .toggle-icon {
+            margin-left: auto;
+            font-size: 1.2rem;
+            transition: transform 0.25s;
+        }
+        .practice-a {
+            display: none;
+            padding: 1rem 1.4rem 1.2rem;
+            color: var(--muted);
+            border-top: 1.5px dashed #B2D8D3;
+            font-style: italic;
+            font-size: 0.98rem;
+        }
+        .practice-a.open { display: block; }
+        .practice-q.active .toggle-icon { transform: rotate(180deg); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+            .lesson-banner h2 { font-size: 1.6rem; }
+            .voices-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .page-wrap { padding: 1rem 1rem 3rem; }
+            .vocab-grid { grid-template-columns: 1fr; }
+            .expressions-grid { grid-template-columns: 1fr; }
+            .lesson-banner { flex-direction: column; gap: 0.8rem; padding: 1.4rem; }
+            .lesson-banner h2 { font-size: 1.4rem; }
+            .article-block { padding: 1.2rem; }
+            .header h1 { font-size: 1.2rem; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ===== FIXED HEADER ===== -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://appstle.com/wp-content/uploads/2023/11/Top-6-Industries-to-Benefit-From-the-Ecommerce-Subscription-Model-in-2024-With-Examples.png" alt="💳The Subscribed Life" class="article-image">
+    </div>
+
+
+<!-- ===== PAGE CONTENT ===== -->
+<div class="page-wrap">
+
+    <!-- LESSON BANNER -->
+    <div class="lesson-banner">
+        <div class="emoji">💳</div>
+        <div>
+            <h2>The Subscribed Life</h2>
+            <p>Reading &amp; Vocabulary — Subscription Economy | Business English</p>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         SECTION 1 · USEFUL EXPRESSIONS
+    ══════════════════════════════════════ -->
+    <section class="article-section">
+        <div class="section-title">
+            <span class="sec-icon">💬</span> Useful Expressions
+        </div>
+        <div class="expressions-grid">
+
+            <div class="expr-card">
+                <div class="expr-en">runs out of</div>
+                <div class="expr-es">se acaba / se agota</div>
+                <div class="expr-example">"The office runs out of coffee every Monday."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">having a say</div>
+                <div class="expr-es">tener voz / tener opinión</div>
+                <div class="expr-example">"Customers want to have a say in product decisions."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">behind the scenes</div>
+                <div class="expr-es">detrás de escenas / en secreto</div>
+                <div class="expr-example">"A lot of work happens behind the scenes before launch."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">pile up</div>
+                <div class="expr-es">acumularse / amontonarse</div>
+                <div class="expr-example">"Unread emails pile up fast during vacation."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">try out</div>
+                <div class="expr-es">probar / experimentar</div>
+                <div class="expr-example">"Let's try out the new supplier before placing a big order."</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECTION 2 · ARTICLE — MAIN TEXT
+    ══════════════════════════════════════ -->
+    <section class="article-section">
+        <div class="section-title">
+            <span class="sec-icon">📊</span> The Subscribed Life
+        </div>
+
+        <!-- ── INTRO PARAGRAPH ── -->
+        <div class="article-block">
+            <p>From Spotify to Netflix, the <span class="highlight" title="suscripción">subscription</span> economy is everywhere. Its <span class="highlight" title="alcance">scope</span> <span class="highlight" title="se extiende">extends</span> far beyond what many of us think, though. Various subscription models are quietly reshaping the way we spend and manage our money.</p>
+        </div>
+    </section>
+
+    <!-- VOCAB BOX 1 – Intro -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📖 Vocabulary — Introduction</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>subscription</strong><button class="speak-btn" onclick="speakWord('subscription')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">A regular payment for ongoing access to a service or product</div>
+                <div class="vocab-es">suscripción</div>
+                <div class="vocab-ex">"Our company has a software subscription that renews every year."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>scope</strong><button class="speak-btn" onclick="speakWord('scope')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">The range or extent of something</div>
+                <div class="vocab-es">alcance / ámbito</div>
+                <div class="vocab-ex">"The scope of this project is wider than we expected."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>extends</strong><button class="speak-btn" onclick="speakWord('extends')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Reaches further; goes beyond a limit</div>
+                <div class="vocab-es">se extiende / abarca</div>
+                <div class="vocab-ex">"Our warranty extends to three years on all products."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>reshaping</strong><button class="speak-btn" onclick="speakWord('reshaping')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Changing the form or structure of something</div>
+                <div class="vocab-es">transformando / reformando</div>
+                <div class="vocab-ex">"Technology is reshaping the logistics industry."</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ── ACCESS MODEL ── -->
+    <section class="article-section">
+        <div class="article-block">
+            <p><span class="sub-heading">• Access subscription model</span></p>
+            <p>Under this model, customers pay for the right to use a service or enjoy a range of benefits. While most people <span class="highlight" title="asocian">associate</span> it with <span class="highlight" title="transmisión en línea">streaming</span> platforms, it covers more than just <span class="highlight" title="digital">digital</span> entertainment. For example, the UK's Pret A Manger provides members with daily discounts on several drinks through a monthly subscription plan. While it offers users more for less, there is a <span class="highlight" title="truco / trampa">catch</span> for the businesses involved. They must provide consistent value and smart pricing to prevent members from leaving once the <span class="highlight" title="inicial">initial</span> excitement fades.</p>
+        </div>
+    </section>
+
+    <!-- VOCAB BOX 2 – Access -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📖 Vocabulary — Access Model</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>associate</strong><button class="speak-btn" onclick="speakWord('associate')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">To connect one idea with another in your mind</div>
+                <div class="vocab-es">asociar / relacionar</div>
+                <div class="vocab-ex">"Many buyers associate fast delivery with good service."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>streaming</strong><button class="speak-btn" onclick="speakWord('streaming')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Watching or listening to media online in real time</div>
+                <div class="vocab-es">transmisión en línea</div>
+                <div class="vocab-ex">"Streaming services have replaced physical DVDs for most people."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>catch</strong><button class="speak-btn" onclick="speakWord('catch')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">A hidden problem or disadvantage</div>
+                <div class="vocab-es">trampa / pero</div>
+                <div class="vocab-ex">"The offer sounds great, but there's a catch — you must buy in bulk."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>initial</strong><button class="speak-btn" onclick="speakWord('initial')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Happening at the beginning; first</div>
+                <div class="vocab-es">inicial / primero</div>
+                <div class="vocab-ex">"The initial shipment was delayed by customs."</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ── REPLENISHMENT MODEL ── -->
+    <section class="article-section">
+        <div class="article-block">
+            <p><span class="sub-heading">• Replenishment subscription model</span></p>
+            <p>Replenishment subscriptions focus on <span class="highlight" title="conveniencia">convenience</span> by delivering products that are used regularly on a fixed schedule. Whether it's pet food or soap, the system <span class="highlight" title="automatiza">automates</span> shopping so users never have to worry about restocking. This creates a win-win situation where people get <span class="highlight" title="lo esencial">essentials</span> <span class="highlight" title="sin esfuerzo">effortlessly</span>, and businesses gain steady support. However, companies must carefully manage delivery <span class="highlight" title="frecuencia">frequency</span>. If items begin to <span class="highlight" title="acumularse">pile up</span> at home, users often feel <span class="highlight" title="abrumados">overwhelmed</span> and cancel the service.</p>
+        </div>
+    </section>
+
+    <!-- VOCAB BOX 3 – Replenishment -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📖 Vocabulary — Replenishment Model</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>convenience</strong><button class="speak-btn" onclick="speakWord('convenience')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">The quality of being easy and practical to use</div>
+                <div class="vocab-es">conveniencia / comodidad</div>
+                <div class="vocab-ex">"Online purchasing adds convenience to the procurement process."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>automates</strong><button class="speak-btn" onclick="speakWord('automates')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Makes a process work automatically without manual effort</div>
+                <div class="vocab-es">automatiza</div>
+                <div class="vocab-ex">"Our new system automates reorder requests for key components."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>essentials</strong><button class="speak-btn" onclick="speakWord('essentials')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Basic, necessary things that people need regularly</div>
+                <div class="vocab-es">artículos esenciales / lo básico</div>
+                <div class="vocab-ex">"We keep essentials like gloves and tape in every workstation."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>overwhelmed</strong><button class="speak-btn" onclick="speakWord('overwhelmed')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Feeling like there is too much to handle</div>
+                <div class="vocab-es">abrumado / agobiado</div>
+                <div class="vocab-ex">"The team felt overwhelmed after receiving 500 orders in one day."</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ── CURATION MODEL ── -->
+    <section class="article-section">
+        <div class="article-block">
+            <p><span class="sub-heading">• Curation subscription model</span></p>
+            <p>This model <span class="highlight" title="atrae a">appeals to</span> those who enjoy the excitement of themed collections delivered straight to their doorstep. It allows <span class="highlight" title="suscriptores">subscribers</span> to explore new brands without the need for <span class="highlight" title="extenso">extensive</span> research. However, a lot of hard work goes on <span class="highlight" title="detrás de escenas">behind the scenes</span>. Companies must manage complex shipping schedules and ensure that every package feels new and exciting. Without constant <span class="highlight" title="creatividad">creativity</span>, the magic of the surprise can quickly disappear, making it difficult to maintain long-term interest.</p>
+        </div>
+    </section>
+
+    <!-- VOCAB BOX 4 – Curation -->
+    <div class="vocab-box">
+        <div class="vocab-box-title">📖 Vocabulary — Curation Model</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>appeals to</strong><button class="speak-btn" onclick="speakWord('appeals to')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Attracts or interests a particular group</div>
+                <div class="vocab-es">atrae a / le gusta a</div>
+                <div class="vocab-ex">"This packaging design appeals to younger buyers."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>subscribers</strong><button class="speak-btn" onclick="speakWord('subscribers')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">People who pay regularly to receive a service or product</div>
+                <div class="vocab-es">suscriptores / abonados</div>
+                <div class="vocab-ex">"We sent the update directly to all premium subscribers."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>extensive</strong><button class="speak-btn" onclick="speakWord('extensive')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Covering a large area or many things; thorough</div>
+                <div class="vocab-es">extenso / amplio</div>
+                <div class="vocab-ex">"We did extensive research before choosing our new supplier."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>maintain</strong><button class="speak-btn" onclick="speakWord('maintain')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">To keep something going at the same level or condition</div>
+                <div class="vocab-es">mantener / conservar</div>
+                <div class="vocab-ex">"It's hard to maintain quality when production increases too fast."</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         STUDENT VOICES SECTION
+    ══════════════════════════════════════ -->
+    <section class="article-section">
+        <div class="section-title">
+            <span class="sec-icon">🎤</span> Student Voices: Subscription Experiences
+        </div>
+
+        <div class="voices-grid">
+
+            <div class="voice-card">
+                <div class="voice-name">A. Eric</div>
+                <p>I might quit using the shipping service. The deliveries come too fast, and I'm <span class="highlight" title="quedándome sin">running out of</span> space to store all these extra supplies.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">B. Jason</div>
+                <p>I'm not a fan. When <span class="highlight" title="contenido">content</span> is removed or features change, users are forced to accept it without <span class="highlight" title="tener voz">having a say</span>.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">C. Nina</div>
+                <p>The <span class="highlight" title="molesto">annoying</span> part is forgetting to cancel a subscription and getting charged for an <span class="highlight" title="automática">automatic</span> renewal I didn't even want.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">D. Mia</div>
+                <p>I'm thinking about canceling my service because the brands I receive are often low in quality and don't match my <span class="highlight" title="preferencias">preferences</span>.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">E. Kevin</div>
+                <p>It feels like a money trap. Since many apps <span class="highlight" title="cambiaron">switched</span> to monthly payments, I've realized I'm spending far more than I used to.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">F. Ryan</div>
+                <p>My gaming subscription is great. It encourages me to <span class="highlight" title="probar">try out</span> unique, <span class="highlight" title="poco conocidos">lesser-known</span> games instead of <span class="highlight" title="limitarme a">sticking</span> only to the big hits.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">G. Sophie</div>
+                <p>It's so convenient! Since I started using a subscription for toilet paper, I've saved a lot of time by not having to visit the supermarket so often.</p>
+            </div>
+
+            <div class="voice-card">
+                <div class="voice-name">H. Claire</div>
+                <p>I love the sense of discovery. My subscription box introduces me to <span class="highlight" title="especialidad / productos especiales">specialty</span> snacks from around the world. It's like having a personal shopper who <span class="highlight" title="amplía">broadens</span> my taste.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VOCAB BOX 5 – Student Voices -->
+    <div class="vocab-box coral-variant">
+        <div class="vocab-box-title">📖 Vocabulary — Student Voices</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>running out of</strong><button class="speak-btn" onclick="speakWord('running out of')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Having less and less of something until it is almost gone</div>
+                <div class="vocab-es">quedarse sin</div>
+                <div class="vocab-ex">"We're running out of packing materials — please reorder today."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>having a say</strong><button class="speak-btn" onclick="speakWord('having a say')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Having the right or opportunity to give your opinion</div>
+                <div class="vocab-es">tener voz / opinar</div>
+                <div class="vocab-ex">"All team members should have a say in the new process."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>automatic renewal</strong><button class="speak-btn" onclick="speakWord('automatic renewal')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">When a subscription continues and charges you without you doing anything</div>
+                <div class="vocab-es">renovación automática</div>
+                <div class="vocab-ex">"Check if your contract has automatic renewal before signing."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>broadens</strong><button class="speak-btn" onclick="speakWord('broadens')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Makes wider; expands to include more things</div>
+                <div class="vocab-es">amplía / expande</div>
+                <div class="vocab-ex">"Attending trade fairs broadens your network significantly."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>preferences</strong><button class="speak-btn" onclick="speakWord('preferences')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Things you like or want more than others</div>
+                <div class="vocab-es">preferencias</div>
+                <div class="vocab-ex">"We always ask about customer preferences before placing orders."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>lesser-known</strong><button class="speak-btn" onclick="speakWord('lesser known')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Not very famous or popular; not widely recognized</div>
+                <div class="vocab-es">poco conocido</div>
+                <div class="vocab-ex">"We decided to work with lesser-known suppliers to reduce costs."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>specialty</strong><button class="speak-btn" onclick="speakWord('specialty')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">A product or service that is special, unique, or hard to find</div>
+                <div class="vocab-es">especialidad / artículo especial</div>
+                <div class="vocab-ex">"Our factory produces specialty parts for the medical sector."</div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-word"><strong>sticking to</strong><button class="speak-btn" onclick="speakWord('sticking to')" title="Pronounce">🔊</button></div>
+                <div class="vocab-def">Staying with one option; not changing or trying new things</div>
+                <div class="vocab-es">limitarse a / quedarse con</div>
+                <div class="vocab-ex">"We've been sticking to the same supplier for five years now."</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         SECTION 4 · DISCUSSION QUESTIONS
+    ══════════════════════════════════════ -->
+    <section class="discussion-section">
+        <div class="section-title">
+            <span class="sec-icon">💡</span> Discussion Questions
+        </div>
+        <ul class="discussion-list">
+            <li>
+                <span class="q-num">1</span>
+                <p>Which subscription model — access, replenishment, or curation — do you think is most useful in a business context like purchasing or logistics? Why?</p>
+            </li>
+            <li>
+                <span class="q-num">2</span>
+                <p>Have you ever felt "overwhelmed" by a subscription service at home or at work? What happened, and what did you do about it?</p>
+            </li>
+            <li>
+                <span class="q-num">3</span>
+                <p>Some students say subscriptions feel like a "money trap." Do you agree? What can companies do to make their subscription feel worth the cost?</p>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECTION 5 · SELF-PRACTICE
+    ══════════════════════════════════════ -->
+    <section class="practice-section">
+        <div class="section-title">
+            <span class="sec-icon">✏️</span> Self-Practice Questions
+        </div>
+        <div class="practice-list">
+
+            <div class="practice-item">
+                <div class="practice-q" onclick="toggleAnswer(this)">
+                    <span class="pq-icon">Q1</span>
+                    What is the main difference between the access model and the replenishment model?
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practice-a">
+                    The access model gives customers the <em>right to use</em> a service (like Netflix or Spotify), while the replenishment model <em>automatically delivers physical products</em> that people need on a regular basis, like soap or pet food. The access model is more about enjoyment or digital benefits; the replenishment model is about saving time and never running out of essentials.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-q" onclick="toggleAnswer(this)">
+                    <span class="pq-icon">Q2</span>
+                    According to the article, what is the "catch" for businesses that use the access subscription model?
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practice-a">
+                    The "catch" is that businesses must <em>consistently provide real value</em> and maintain smart pricing. If the service stops feeling worth the money — especially after the initial excitement fades — subscribers will cancel. This means companies can never stop working to improve the experience.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-q" onclick="toggleAnswer(this)">
+                    <span class="pq-icon">Q3</span>
+                    Why might a customer cancel a replenishment subscription, even if it was useful at first?
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practice-a">
+                    A customer might cancel if deliveries come <em>too often</em> and products start to pile up at home. When people feel overwhelmed by having too much stock, or if the delivery frequency doesn't match how fast they actually use the product, they may decide to cancel the service to avoid waste and clutter.
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <div class="practice-q" onclick="toggleAnswer(this)">
+                    <span class="pq-icon">Q4</span>
+                    In your own words, explain why creativity is so important for companies that use the curation model.
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="practice-a">
+                    The whole appeal of the curation model is the <em>excitement of surprise</em>. Customers pay to discover new products and brands. If the boxes start to feel repetitive or boring, the "magic" disappears and customers lose interest. Companies must constantly find fresh, interesting items to keep subscribers curious and engaged month after month.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div><!-- end page-wrap -->
+
+
+<script>
+    /* ── Pronunciation ── */
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+
+    /* ── Self-practice toggle ── */
+    function toggleAnswer(btn) {
+        const answer = btn.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        answer.classList.toggle('open', !isOpen);
+        btn.classList.toggle('active', !isOpen);
+    }
+</script>
+
+
