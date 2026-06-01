@@ -127,7 +127,7 @@ async function scanLessons() {
         { filename: 'Europe in Your Palm.html', date: '2026-05-25', title: '🪙 Europe in Your Palm' },
         { filename: 'Control the Climate.html', date: '2026-05-27', title: '🌍 Can We Control the Climate?' },
         { date: '2026-05-26', title: '🏖️ Teacher Off - No Class', isHoliday: true },
-    
+        { filename: 'The Subscribed Life.html', date: '2026-06-01', title: '💳The Subscribed Life' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
