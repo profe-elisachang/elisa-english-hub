@@ -1,0 +1,798 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riding the Trade Winds Again - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f8;
+            color: #1a2a3a;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: #1a4a6b;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .level-badge {
+            background: #e07b2a;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .back-to-calendar-btn:hover {
+            background: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        /* ARTICLE HERO BANNER */
+        .article-banner {
+            background: #1a4a6b;
+            color: white;
+            padding: 36px 30px 28px 30px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-banner::before {
+            content: '⛵';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 7rem;
+            opacity: 0.12;
+        }
+
+        .article-banner h1 {
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+            color: #f0f8ff;
+        }
+
+        .article-banner .subtitle {
+            font-size: 1.05rem;
+            color: #a8cde0;
+            margin: 0;
+        }
+
+        .article-meta {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #7ab5d0;
+        }
+
+        /* SECTION CARDS */
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(26, 74, 107, 0.08);
+            border-top: 4px solid #e07b2a;
+        }
+
+        .section-card h2 {
+            color: #1a4a6b;
+            font-size: 1.3rem;
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e8eef3;
+        }
+
+        /* USEFUL EXPRESSIONS */
+        .expression-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .expression-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .expression-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .expression-item {
+            background: #f5f9fc;
+            border-left: 4px solid #e07b2a;
+            border-radius: 0 8px 8px 0;
+            padding: 16px;
+        }
+
+        .expression-en {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1a4a6b;
+        }
+
+        .expression-es {
+            color: #5a7a90;
+            font-style: italic;
+            margin: 4px 0;
+            font-size: 0.95rem;
+        }
+
+        .expression-example {
+            font-size: 0.95rem;
+            color: #333;
+            margin-top: 8px;
+            border-top: 1px dashed #ccdde8;
+            padding-top: 8px;
+        }
+
+        /* HIGHLIGHT */
+        .highlight {
+            background-color: #fff3cd;
+            font-weight: 700;
+            border-bottom: 2px solid #e07b2a;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a2a3a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 6px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        }
+
+        /* ARTICLE PARAGRAPHS */
+        .article-paragraph {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 10px;
+            color: #1a2a3a;
+        }
+
+        .paragraph-label {
+            display: inline-block;
+            background: #1a4a6b;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #7a95a8;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        /* VOCABULARY SECTION */
+        .vocabulary-section {
+            background: #f8fbfd;
+            border-left: 4px solid #1a4a6b;
+            padding: 22px 24px;
+            margin: 24px 0 32px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .vocabulary-section h3 {
+            color: #1a4a6b;
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #d8e8f0;
+            box-shadow: 0 1px 4px rgba(26, 74, 107, 0.07);
+        }
+
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .vocab-word {
+            color: #e07b2a;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .vocab-pos {
+            font-size: 0.8rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 6px 0;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        .vocab-spanish {
+            color: #6a8a9a;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.92rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #1a4a6b;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #444;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION QUESTIONS */
+        .discussion-list {
+            padding-left: 0;
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .discussion-list li {
+            background: #f0f7fa;
+            border-left: 4px solid #e07b2a;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.02rem;
+            color: #1a2a3a;
+        }
+
+        .discussion-list li::before {
+            content: '💬 ';
+        }
+
+        /* SELF-PRACTICE */
+        .practice-list {
+            padding-left: 0;
+            list-style: none;
+            counter-reset: practice-counter;
+            display: grid;
+            gap: 14px;
+        }
+
+        .practice-list li {
+            counter-increment: practice-counter;
+            background: #f5f9fc;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 1px solid #d0e5f0;
+            font-size: 1rem;
+            color: #1a2a3a;
+            position: relative;
+            padding-left: 52px;
+        }
+
+        .practice-list li::before {
+            content: counter(practice-counter);
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1a4a6b;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        details {
+            margin-top: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            background: #1a4a6b;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            user-select: none;
+        }
+
+        summary:hover {
+            background: #15395a;
+        }
+
+        details ol {
+            background: #f5f9fc;
+            padding: 16px 16px 16px 36px;
+            border: 1px solid #d0e5f0;
+            border-radius: 0 0 8px 8px;
+            margin: 0;
+        }
+
+        details ol li {
+            padding: 6px 0;
+            color: #1a2a3a;
+            font-size: 0.97rem;
+        }
+
+        /* SECTION DIVIDER */
+        .section-divider {
+            border: none;
+            border-top: 2px dashed #c8dde8;
+            margin: 32px 0;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://assets.workybooks.com/INTERACTIVE/media/1754305924697-908181324-trade-winds-3.webp" alt="⛵ Riding the Trade Winds Again" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- ARTICLE BANNER -->
+            <div class="article-banner">
+                <h1>⛵ Riding the Trade Winds Again</h1>
+                <p class="subtitle">This cargo ship cuts emissions and delivers the goods faster</p>
+                <p class="article-meta">by Adele Peters · Fast Company · Advanced Level</p>
+            </div>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-card">
+                <h2>💬 Section 1: Useful Expressions</h2>
+                <div class="expression-grid">
+
+                    <div class="expression-item">
+                        <div class="expression-en">To be of the utmost importance</div>
+                        <div class="expression-es">Ser de suma importancia</div>
+                        <div class="expression-example">Speed is of the utmost importance when delivering time-sensitive cargo.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">To find a way to…</div>
+                        <div class="expression-es">Encontrar la manera de…</div>
+                        <div class="expression-example">Companies are trying to find a way to reduce their carbon footprint.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">To the extent that…</div>
+                        <div class="expression-es">Hasta el punto de que…</div>
+                        <div class="expression-example">Container shipping has evolved to the extent that ships can only access a few ports.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">Depending on…</div>
+                        <div class="expression-es">Dependiendo de…</div>
+                        <div class="expression-example">Depending on the time of year, crossing the Atlantic can take 10 to 13 days.</div>
+                    </div>
+
+                    <div class="expression-item">
+                        <div class="expression-en">As much as…</div>
+                        <div class="expression-es">Hasta… / Tanto como…</div>
+                        <div class="expression-example">Freight can run as much as $1 million in commercial value for a single pallet.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+            <div class="section-card">
+                <h2>📖 Section 2 &amp; 3: Article with Vocabulary</h2>
+
+                <!-- PARAGRAPH 1 -->
+                <div class="paragraph-label">Paragraph 1</div>
+                <p class="article-paragraph">
+                    It looks more like a racing yacht than a cargo ship. But this new 100% wind-powered vessel will be bringing goods from Europe to the U.S.—and could make deliveries faster than <span class="highlight" title="barcos de carga convencionales">conventional cargo ships</span>.
+                    Vela, a French startup, <span class="highlight" title="obtuvo / tomó prestado">pulled</span> technology from the racing world to make the vessel run as fast as possible. It's a trimaran, meaning it has three <span class="highlight" title="cascos">hulls</span>, which helps it cut through water efficiently. The wide, stable shape allows it to carry large sails. As in racing yachts, the <span class="highlight" title="mástil">mast</span> is made from carbon fiber, and the sails are made of high-performance fabric designed for strength. The ship also uses navigation tech developed for racing to help route toward ideal wind conditions as it crosses the Atlantic.
+                </p>
+                <p class="article-paragraph">
+                    "We're using the exact same tools to navigate our vessel," says Vela cofounder Michael Fernandez-Ferri. "All of this isn't just a fancy <span class="highlight" title="truco / artificio llamativo">gimmick</span>. It's really about bringing speed in operations because speed is of the utmost importance."
+                </p>
+
+                <!-- VOCAB BOX 1 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 1</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">conventional</span>
+                                <span class="vocab-pos">adj.</span>
+                                <button class="speak-btn" onclick="speakWord('conventional')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Following the usual, traditional, or expected way of doing something</p>
+                            <p class="vocab-spanish">convencional / tradicional</p>
+                            <div class="vocab-example">The company replaced conventional diesel trucks with electric vehicles.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">pull (technology)</span>
+                                <span class="vocab-pos">v.</span>
+                                <button class="speak-btn" onclick="speakWord('pull technology')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To take or borrow something useful from a different field or source</p>
+                            <p class="vocab-spanish">tomar prestado / adoptar</p>
+                            <div class="vocab-example">The engineering team pulled ideas from aerospace to improve the design.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">hull</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('hull')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The main body or frame of a ship or boat</p>
+                            <p class="vocab-spanish">casco (de un barco)</p>
+                            <div class="vocab-example">The inspector checked each hull for cracks before the voyage.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">mast</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('mast')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A tall vertical pole on a ship that holds the sails</p>
+                            <p class="vocab-spanish">mástil</p>
+                            <div class="vocab-example">The mast was made from carbon fiber to reduce weight without losing strength.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">gimmick</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('gimmick')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A trick or unusual feature used to attract attention, often seen as not very serious</p>
+                            <p class="vocab-spanish">truco / artificio llamativo</p>
+                            <div class="vocab-example">Some customers thought the new packaging was just a marketing gimmick.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- PARAGRAPH 2 -->
+                <div class="paragraph-label">Paragraph 2</div>
+                <p class="article-paragraph">
+                    Vela designed the ship to <span class="highlight" title="abordar / atacar">tackle</span> one part of the global supply chain: companies making high-end goods, such as luxury cosmetics or <span class="highlight" title="productos farmacéuticos">pharmaceuticals</span>, that are trying to find a way to <span class="highlight" title="descarbonizar / reducir emisiones de CO₂">decarbonize</span> transportation.
+                    For these companies, air freight can be one of the largest parts of their carbon footprint. Shifting to sea transportation—even a regular, diesel-powered cargo ship—would help, but that hasn't been an option because most cargo ships are unreliable.
+                </p>
+                <p class="article-paragraph">
+                    Typical cargo ships have long delays at ports. "Traditional container shipping has been evolving for bigger and bigger ships, to the extent that these ships are so big that they can only go to a few main harbors," Fernandez-Ferri says. "This is the <span class="highlight" title="cuello de botella / obstáculo principal">bottleneck</span> now of the shipping industry."
+                </p>
+
+                <!-- VOCAB BOX 2 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 2</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">tackle</span>
+                                <span class="vocab-pos">v.</span>
+                                <button class="speak-btn" onclick="speakWord('tackle')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To deal with a difficult problem or challenge directly</p>
+                            <p class="vocab-spanish">abordar / enfrentarse a</p>
+                            <div class="vocab-example">The management team met to tackle the delays in the production line.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">pharmaceuticals</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('pharmaceuticals')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Drugs and medicines made by pharmaceutical companies</p>
+                            <p class="vocab-spanish">productos farmacéuticos / medicamentos</p>
+                            <div class="vocab-example">Temperature-controlled shipping is essential for transporting pharmaceuticals safely.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">decarbonize</span>
+                                <span class="vocab-pos">v.</span>
+                                <button class="speak-btn" onclick="speakWord('decarbonize')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">To reduce or eliminate carbon dioxide emissions from a process or industry</p>
+                            <p class="vocab-spanish">descarbonizar / reducir emisiones de CO₂</p>
+                            <div class="vocab-example">The factory is investing in solar energy to decarbonize its operations.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">bottleneck</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('bottleneck')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A point in a process where things slow down or get stuck, limiting the overall speed</p>
+                            <p class="vocab-spanish">cuello de botella / obstáculo</p>
+                            <div class="vocab-example">The inspection station became a bottleneck, causing delays across the whole line.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- PARAGRAPH 3 -->
+                <div class="paragraph-label">Paragraph 3</div>
+                <p class="article-paragraph">
+                    The new sailing cargo vessel is much smaller than a container ship—around 220 feet long, versus as much as 1,300 feet for an ultra-large container ship. It carries only 600 European <span class="highlight" title="palés / paletas">pallets</span>, compared to hundreds of thousands on a large ship. But the small size means it can access less-crowded terminals at ports, avoiding long lines. It's also much faster to load and unload than a container ship, which can take as long as a week to unload, depending on its size.
+                </p>
+                <p class="article-paragraph">
+                    The racing-inspired design helps Vela's vessel cross the ocean at speeds similar to a standard ship. Depending on the time of year, crossing from Europe to the U.S. could take 10 to 13 days, according to modeling based on wind patterns from the past decade. A regular cargo ship might take 9 or 10 days.
+                </p>
+                <p class="article-paragraph">
+                    Because it saves time at ports and the total delivery time is shorter, it's more reliable for customers. For freight—which can run as much as $1 million in commercial value for a single pallet—it's also safer, since cargo stays inside the ship until it's transferred to secure storage.
+                </p>
+
+                <!-- VOCAB BOX 3 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 3</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">pallet</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('pallet')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">A flat wooden or plastic frame used for storing or moving goods in a warehouse or ship</p>
+                            <p class="vocab-spanish">palé / paleta</p>
+                            <div class="vocab-example">Each pallet was wrapped in plastic before being loaded onto the truck.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">freight</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('freight')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Goods transported in bulk by truck, train, ship, or aircraft; also the cost of this transport</p>
+                            <p class="vocab-spanish">carga / flete</p>
+                            <div class="vocab-example">Air freight is much faster than sea freight, but also more expensive.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- PARAGRAPH 4 -->
+                <div class="paragraph-label">Paragraph 4</div>
+                <p class="article-paragraph">
+                    On board, the ship is <span class="highlight" title="cubierto / tapizado">plastered</span> in more than 2,500 square feet of solar panels that feed a battery. Two hydro generators also create electricity as the ship moves through the water. This helps power refrigeration for cargo like pharmaceuticals, along with other electricity used on the ship. The ship's <span class="highlight" title="sistema de propulsión / motor de empuje">propulsion</span> runs almost entirely on wind, except for navigation inside ports. The system cuts emissions by 99% compared to air freight and 90% compared to container ships.
+                </p>
+                <p class="article-paragraph">
+                    It's also better for marine life because it doesn't create noise as it sails. The noise from cargo ships makes it hard for whales and other animals to communicate and can even cause permanent hearing damage. It doesn't pollute water with <span class="highlight" title="agua de lastre">ballast</span> water or fuel, either. The body of the ship is made from aluminum—lighter than a typical steel cargo ship, and easier to recycle at the end of a ship's life.
+                </p>
+
+                <!-- VOCAB BOX 4 -->
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary – Paragraph 4</h3>
+                    <div class="vocab-container">
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">plastered</span>
+                                <span class="vocab-pos">v.</span>
+                                <button class="speak-btn" onclick="speakWord('plastered')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Completely covered with something over a large surface area</p>
+                            <p class="vocab-spanish">cubierto / tapizado por completo</p>
+                            <div class="vocab-example">The warehouse walls were plastered with safety instructions and warning signs.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">propulsion</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('propulsion')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">The force or system that drives a vehicle or ship forward</p>
+                            <p class="vocab-spanish">propulsión / sistema de empuje</p>
+                            <div class="vocab-example">Engineers tested the new electric propulsion system in a controlled environment.</div>
+                        </div>
+
+                        <div class="vocab-item">
+                            <div class="vocab-word-row">
+                                <span class="vocab-word">ballast</span>
+                                <span class="vocab-pos">n.</span>
+                                <button class="speak-btn" onclick="speakWord('ballast')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p class="vocab-definition">Heavy material (often water) carried in a ship's bottom to keep it stable</p>
+                            <p class="vocab-spanish">lastre / agua de lastre</p>
+                            <div class="vocab-example">Releasing ballast water in foreign ports can spread invasive marine species.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-card">
+                <h2>🗣️ Section 4: Discussion Questions</h2>
+                <ul class="discussion-list">
+                    <li>What do you think are the biggest challenges for companies trying to decarbonize their supply chain?</li>
+                    <li>In your industry, is speed or reliability more important when shipping goods? Why?</li>
+                    <li>How might wind-powered cargo ships affect the future of logistics and global trade?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-card">
+                <h2>✏️ Section 5: Self-Practice</h2>
+
+                <ol class="practice-list">
+                    <li>Fill in the blank: The Vela ship has three __________, which help it cut through water efficiently. <em>(hull / hulls / mast)</em></li>
+                    <li>True or False: The wind-powered cargo ship is larger than a standard container ship.</li>
+                    <li>Fill in the blank: A __________ is a point in a process where things slow down or get stuck. <em>(bottleneck / gimmick / pallet)</em></li>
+                    <li>Short answer: Name TWO environmental benefits of the Vela ship mentioned in the article.</li>
+                </ol>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li><strong>hulls</strong> — The ship is a trimaran, meaning it has three hulls.</li>
+                        <li><strong>False</strong> — The Vela ship is much smaller (around 220 feet long) versus up to 1,300 feet for a large container ship.</li>
+                        <li><strong>bottleneck</strong> — A bottleneck is a point in a process that slows everything down.</li>
+                        <li>Any two of: (a) cuts emissions by 99% vs. air freight / 90% vs. container ships; (b) doesn't create noise that harms marine animals; (c) doesn't pollute water with ballast water or fuel; (d) made of aluminum, easier to recycle.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
