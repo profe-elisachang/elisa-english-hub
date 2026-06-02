@@ -103,6 +103,7 @@ async function scanLessons() {
         { filename: 'Robotaxis.html', date: '2026-05-28', title: '🚕 Robotaxis May Increase Traffic and Emissions, Analysts Warn' },
 
         
+        { filename: 'Riding the Trade Winds Again.html', date: '2026-06-02', title: '⛵ Riding the Trade Winds Again' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
