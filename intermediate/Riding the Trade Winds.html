@@ -1,0 +1,818 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riding the Trade Winds Again – English with Elisa</title>
+  <link rel="stylesheet" href="../style-intermediate.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans', 'Open Sans', sans-serif;
+      background-color: #f0f4f0;
+      color: #1a2e1a;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* ── HEADER (exact template) ── */
+    .header {
+      background: #1b6b35;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .header-content {
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .header h1 {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 900;
+      flex: 1;
+    }
+    .level-badge {
+      background: #f9a825;
+      color: #1a2e1a;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .search-box { margin-left: auto; }
+
+    /* ── PAGE WRAPPER ── */
+    .page-wrapper {
+      max-width: 1400px;
+      margin: auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── LESSON TITLE BANNER ── */
+    .lesson-banner {
+      background: #1b6b35;
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.2rem 2.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      box-shadow: 0 6px 20px rgba(27,107,53,0.35);
+    }
+    .lesson-banner .icon-ship {
+      font-size: 5rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .lesson-banner h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+    .lesson-banner .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      font-weight: 400;
+    }
+    .lesson-meta {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .lesson-meta span {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 0.25rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ── SECTION CARD ── */
+    .section-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.09);
+      border-left: 6px solid #1b6b35;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #1b6b35;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── USEFUL EXPRESSIONS ── */
+    .expr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.2rem;
+    }
+    .expr-card {
+      background: #e8f5e9;
+      border: 2px solid #66bb6a;
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
+    }
+    .expr-en {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1b5e20;
+      margin-bottom: 0.15rem;
+    }
+    .expr-es {
+      font-size: 0.92rem;
+      color: #388e3c;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .expr-example {
+      font-size: 0.95rem;
+      color: #2e4a2e;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.5rem 0.8rem;
+      border-left: 3px solid #66bb6a;
+    }
+    .expr-example em { color: #1b6b35; font-style: normal; font-weight: 700; }
+
+    /* ── ARTICLE ── */
+    .article-body p {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      margin-bottom: 1.4rem;
+      color: #1a2e1a;
+    }
+    .article-body h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1b5e20;
+      margin: 1.8rem 0 0.7rem;
+      border-bottom: 2px solid #a5d6a7;
+      padding-bottom: 0.3rem;
+    }
+    .highlight {
+      background: #fff176;
+      font-weight: 700;
+      border-bottom: 2.5px solid #f57f17;
+      padding: 0 3px;
+      border-radius: 3px;
+      cursor: help;
+    }
+
+    /* ── VOCAB BOX ── */
+    .vocab-box {
+      background: #f1f8e9;
+      border: 2.5px solid #8bc34a;
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      margin: 0.6rem 0 2rem;
+    }
+    .vocab-box-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #558b2f;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1100px) { .vocab-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 760px)  { .vocab-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px)  { .vocab-grid { grid-template-columns: 1fr; } }
+
+    .vocab-card {
+      background: #fff;
+      border: 2px solid #aed581;
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .vocab-word-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .vocab-word {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #2e7d32;
+    }
+    .speak-btn {
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .speak-btn:hover { background: #1b5e20; }
+    .vocab-type {
+      font-size: 0.78rem;
+      color: #689f38;
+      font-style: italic;
+    }
+    .vocab-def {
+      font-size: 0.9rem;
+      color: #33691e;
+      font-weight: 600;
+    }
+    .vocab-es {
+      font-size: 0.85rem;
+      color: #558b2f;
+      font-style: italic;
+    }
+    .vocab-example {
+      font-size: 0.83rem;
+      color: #4e6a4e;
+      background: #f9fbe7;
+      border-radius: 6px;
+      padding: 0.3rem 0.5rem;
+      border-left: 3px solid #aed581;
+      margin-top: 0.2rem;
+    }
+
+    /* ── DISCUSSION ── */
+    .discussion-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .discussion-list li {
+      background: #e8f5e9;
+      border: 2px solid #66bb6a;
+      border-radius: 10px;
+      padding: 1rem 1.3rem;
+      font-size: 1.1rem;
+      color: #1a3a1a;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+    .discussion-list li .q-num {
+      background: #1b6b35;
+      color: #fff;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    /* ── SELF-PRACTICE ── */
+    .practice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .practice-item {
+      border: 2.5px solid #81c784;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .practice-q {
+      background: #c8e6c9;
+      padding: 1rem 1.3rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1b3a1b;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    .practice-q .q-icon { font-size: 1.3rem; }
+    .practice-toggle {
+      margin-left: auto;
+      background: #1b6b35;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .practice-toggle:hover { background: #145228; }
+    .practice-answer {
+      background: #f9fff9;
+      padding: 1rem 1.3rem;
+      font-size: 1rem;
+      color: #2e4a2e;
+      border-top: 2px dashed #a5d6a7;
+      display: none;
+    }
+    .practice-answer.open { display: block; }
+
+    @media (max-width: 700px) {
+      .lesson-banner { padding: 1.4rem 1.2rem; gap: 1rem; }
+      .lesson-banner h2 { font-size: 1.5rem; }
+      .section-card { padding: 1.3rem 1rem; }
+      .expr-grid { grid-template-columns: 1fr; }
+    }
+  
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ══════════════ FIXED HEADER ══════════════ -->
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Intermediate Level</span>
+    <div class="search-box">
+      <a href="../index.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255,255,255,0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://substackcdn.com/image/fetch/$s_!d1fl!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff4f35ff-b76a-4886-bc35-e3e1b8f8c042_1425x625.png" alt="⛵ Riding the Trade Winds Again" class="article-image">
+    </div>
+
+
+<!-- ══════════════ PAGE CONTENT ══════════════ -->
+<div class="page-wrapper">
+
+  <!-- LESSON BANNER -->
+  <div class="lesson-banner">
+    <div class="icon-ship">⛵</div>
+    <div>
+      <h2>Riding the Trade Winds Again</h2>
+      <p class="subtitle">A cargo ship powered only by wind — and it delivers goods faster than ever</p>
+      <div class="lesson-meta">
+        <span>🌍 Logistics &amp; Supply Chain</span>
+        <span>📗 A2–B1 Level</span>
+        <span>🏭 Industry: Shipping / Sustainability</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 1: USEFUL EXPRESSIONS ══ -->
+  <div class="section-card">
+    <div class="section-title">💬 Useful Expressions</div>
+    <div class="expr-grid">
+
+      <div class="expr-card">
+        <div class="expr-en">cut emissions</div>
+        <div class="expr-es">reducir emisiones</div>
+        <div class="expr-example">This new ship can <em>cut emissions</em> by 99% compared to air freight.</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">carbon footprint</div>
+        <div class="expr-es">huella de carbono</div>
+        <div class="expr-example">Air freight is one of the biggest parts of a company's <em>carbon footprint</em>.</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">reliable for customers</div>
+        <div class="expr-es">confiable para los clientes</div>
+        <div class="expr-example">Because delivery time is shorter, the service is more <em>reliable for customers</em>.</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">a growing number of</div>
+        <div class="expr-es">un número creciente de</div>
+        <div class="expr-example">There is <em>a growing number of</em> companies trying to use wind-powered ships.</div>
+      </div>
+
+      <div class="expr-card">
+        <div class="expr-en">bottleneck</div>
+        <div class="expr-es">cuello de botella</div>
+        <div class="expr-example">Long delays at ports are the main <em>bottleneck</em> in the shipping industry.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECTION 2 & 3: ARTICLE + VOCAB BOXES ══ -->
+  <div class="section-card">
+    <div class="section-title">🌊 Article: A New Wind-Powered Cargo Ship</div>
+    <div class="article-body">
+
+      <!-- ── PARAGRAPH 1 ── -->
+      <p>
+        A French company called <strong>Vela</strong> has designed a special cargo ship. It looks like a racing yacht, but it carries goods across the ocean. The ship runs on <span class="highlight" title="viento / energía del viento">wind power</span> — 100% of the time. It uses technology from the world of racing to move as fast as possible. The ship has three <span class="highlight" title="cascos (partes del barco que van en el agua)">hulls</span>, which help it cut through the water efficiently. The <span class="highlight" title="mástil (el palo vertical que sostiene las velas)">mast</span> is made from carbon fiber, and the sails are made from special high-performance fabric.
+      </p>
+
+      <!-- VOCAB BOX 1 -->
+      <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 1</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">hull</span>
+              <button class="speak-btn" onclick="speakWord('hull')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">The body of a ship that sits in water</div>
+            <div class="vocab-es">casco del barco</div>
+            <div class="vocab-example">"The ship has three hulls to move faster."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">mast</span>
+              <button class="speak-btn" onclick="speakWord('mast')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">The tall vertical pole on a ship that holds the sails</div>
+            <div class="vocab-es">mástil</div>
+            <div class="vocab-example">"The mast is made from carbon fiber."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">wind power</span>
+              <button class="speak-btn" onclick="speakWord('wind power')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun phrase</div>
+            <div class="vocab-def">Energy that comes from the wind</div>
+            <div class="vocab-es">energía eólica / del viento</div>
+            <div class="vocab-example">"The ship uses wind power, not diesel."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">carbon fiber</span>
+              <button class="speak-btn" onclick="speakWord('carbon fiber')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">A very strong and light material used in racing equipment</div>
+            <div class="vocab-es">fibra de carbono</div>
+            <div class="vocab-example">"Carbon fiber is strong but very light."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PARAGRAPH 2 ── -->
+      <p>
+        Vela designed this ship to help companies <span class="highlight" title="descarbonizar: reducir o eliminar el uso de combustibles fósiles en el transporte">decarbonize</span> their transportation. Many companies ship <span class="highlight" title="productos farmacéuticos: medicamentos y productos médicos">pharmaceuticals</span>, luxury cosmetics, and other high-end products by air. Air freight is fast, but it creates a lot of CO₂. It is often the biggest part of a company's <span class="highlight" title="huella de carbono: la cantidad de CO₂ que produce una empresa o persona">carbon footprint</span>. A regular diesel cargo ship is cheaper, but most of those ships are <span class="highlight" title="poco confiables: que no siempre funcionan bien o a tiempo">unreliable</span> — they have long delays at ports.
+      </p>
+
+      <!-- VOCAB BOX 2 -->
+      <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 2</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">decarbonize</span>
+              <button class="speak-btn" onclick="speakWord('decarbonize')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">verb</div>
+            <div class="vocab-def">To reduce or stop using fuels that produce CO₂</div>
+            <div class="vocab-es">descarbonizar</div>
+            <div class="vocab-example">"Companies want to decarbonize their supply chains."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">pharmaceuticals</span>
+              <button class="speak-btn" onclick="speakWord('pharmaceuticals')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun (plural)</div>
+            <div class="vocab-def">Medicines and medical products</div>
+            <div class="vocab-es">productos farmacéuticos</div>
+            <div class="vocab-example">"Pharmaceuticals need to be delivered quickly."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">carbon footprint</span>
+              <button class="speak-btn" onclick="speakWord('carbon footprint')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun phrase</div>
+            <div class="vocab-def">The total amount of CO₂ a company or person produces</div>
+            <div class="vocab-es">huella de carbono</div>
+            <div class="vocab-example">"We need to reduce our carbon footprint."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">unreliable</span>
+              <button class="speak-btn" onclick="speakWord('unreliable')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">adjective</div>
+            <div class="vocab-def">Not dependable; often late or broken</div>
+            <div class="vocab-es">poco confiable</div>
+            <div class="vocab-example">"The old supplier was unreliable — always late."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PARAGRAPH 3 ── -->
+      <h3>🚢 Solving the Port Problem</h3>
+      <p>
+        Traditional container ships have become bigger and bigger. They are so large that they can only <span class="highlight" title="atracar en: llegar y detenerse en un puerto">dock at</span> a few main ports. This creates a <span class="highlight" title="cuello de botella: un punto donde el proceso se vuelve muy lento">bottleneck</span>. Vela's ship is much smaller — only about 220 feet long, compared to 1,300 feet for a large container ship. Because it is smaller, it can use less-crowded ports and avoid long lines. It also <span class="highlight" title="cargar y descargar: poner y quitar la mercancía del barco">loads and unloads</span> much faster than a big container ship.
+      </p>
+
+      <!-- VOCAB BOX 3 -->
+      <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 3</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">bottleneck</span>
+              <button class="speak-btn" onclick="speakWord('bottleneck')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">A point in a process that slows everything down</div>
+            <div class="vocab-es">cuello de botella</div>
+            <div class="vocab-example">"The customs process is a bottleneck in our logistics."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">dock at</span>
+              <button class="speak-btn" onclick="speakWord('dock at')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">phrasal verb</div>
+            <div class="vocab-def">To arrive and stop at a port</div>
+            <div class="vocab-es">atracar en</div>
+            <div class="vocab-example">"The ship will dock at the port tomorrow morning."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">load / unload</span>
+              <button class="speak-btn" onclick="speakWord('load and unload')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">verb</div>
+            <div class="vocab-def">To put goods on / take goods off a ship or truck</div>
+            <div class="vocab-es">cargar / descargar</div>
+            <div class="vocab-example">"It takes one week to unload a large container ship."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">crowded</span>
+              <button class="speak-btn" onclick="speakWord('crowded')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">adjective</div>
+            <div class="vocab-def">Full of people or ships; very busy</div>
+            <div class="vocab-es">congestionado, lleno</div>
+            <div class="vocab-example">"The main port is too crowded; ships wait for days."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PARAGRAPH 4 ── -->
+      <h3>🌿 Clean, Quiet, and Fast</h3>
+      <p>
+        Vela's ship runs almost entirely on wind. It <span class="highlight" title="corta emisiones: reduce los gases de efecto invernadero">cuts emissions</span> by 99% compared to air freight and by 90% compared to regular cargo ships. It also doesn't make noise as it sails — which is better for <span class="highlight" title="vida marina: animales y plantas que viven en el océano">marine life</span> like whales, which use sound to communicate. It doesn't use <span class="highlight" title="lastre: agua que los barcos usan para mantenerse estables">ballast</span> water, so it doesn't pollute the ocean. The ship's body is made from aluminum — lighter than steel and easier to <span class="highlight" title="reciclar: procesar materiales usados para usarlos de nuevo">recycle</span>.
+      </p>
+
+      <!-- VOCAB BOX 4 -->
+      <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 4</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">emissions</span>
+              <button class="speak-btn" onclick="speakWord('emissions')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun (plural)</div>
+            <div class="vocab-def">Gases like CO₂ released into the air, often from engines</div>
+            <div class="vocab-es">emisiones (de gases)</div>
+            <div class="vocab-example">"Our factory reduced its emissions by 40% last year."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">marine life</span>
+              <button class="speak-btn" onclick="speakWord('marine life')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun phrase</div>
+            <div class="vocab-def">Animals and plants that live in the ocean</div>
+            <div class="vocab-es">vida marina</div>
+            <div class="vocab-example">"Noise from ships harms marine life like whales."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">ballast</span>
+              <button class="speak-btn" onclick="speakWord('ballast')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">Heavy material (often water) used to keep a ship stable</div>
+            <div class="vocab-es">lastre</div>
+            <div class="vocab-example">"Ballast water can carry foreign species to new oceans."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">recycle</span>
+              <button class="speak-btn" onclick="speakWord('recycle')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">verb</div>
+            <div class="vocab-def">To process used materials so they can be used again</div>
+            <div class="vocab-es">reciclar</div>
+            <div class="vocab-example">"Aluminum is easier to recycle than steel."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PARAGRAPH 5 ── -->
+      <h3>💰 Good for Business Too</h3>
+      <p>
+        Because Vela's ship arrives faster and with fewer delays, it is more <span class="highlight" title="confiable: que siempre hace lo que promete, a tiempo">reliable</span> for customers. For high-value cargo like pharmaceuticals, a single <span class="highlight" title="tarima, paleta: plataforma de madera que se usa para mover y almacenar mercancía">pallet</span> can be worth up to $1 million. When cargo stays inside the ship until it reaches its destination, it is safer and better protected. Companies that care about <span class="highlight" title="sostenibilidad: hacer negocios sin dañar el medio ambiente a largo plazo">sustainability</span> can use this ship to <span class="highlight" title="reducir: hacer más pequeño o menor">reduce</span> their carbon footprint without losing speed.
+      </p>
+
+      <!-- VOCAB BOX 5 -->
+      <div class="vocab-box">
+        <div class="vocab-box-title">📦 Vocabulary — Paragraph 5</div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">reliable</span>
+              <button class="speak-btn" onclick="speakWord('reliable')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">adjective</div>
+            <div class="vocab-def">Always doing what is expected; dependable</div>
+            <div class="vocab-es">confiable, cumplido</div>
+            <div class="vocab-example">"We need a reliable supplier for our production line."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">pallet</span>
+              <button class="speak-btn" onclick="speakWord('pallet')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">A wooden platform used to store and move goods</div>
+            <div class="vocab-es">tarima / paleta</div>
+            <div class="vocab-example">"We ordered 50 pallets of components from the supplier."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">sustainability</span>
+              <button class="speak-btn" onclick="speakWord('sustainability')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun</div>
+            <div class="vocab-def">Doing business in a way that does not harm the environment long-term</div>
+            <div class="vocab-es">sostenibilidad</div>
+            <div class="vocab-example">"Our client requires a sustainability report every year."</div>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row">
+              <span class="vocab-word">high-value cargo</span>
+              <button class="speak-btn" onclick="speakWord('high-value cargo')" title="Listen">🔊</button>
+            </div>
+            <div class="vocab-type">noun phrase</div>
+            <div class="vocab-def">Goods that are very expensive and need careful handling</div>
+            <div class="vocab-es">carga de alto valor</div>
+            <div class="vocab-example">"Pharmaceuticals are high-value cargo — we track them carefully."</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /article-body -->
+  </div><!-- /section-card -->
+
+  <!-- ══ SECTION 4: DISCUSSION QUESTIONS ══ -->
+  <div class="section-card">
+    <div class="section-title">🗣️ Discussion Questions</div>
+    <ul class="discussion-list">
+      <li>
+        <span class="q-num">1</span>
+        <span>In your job, do you work with shipping or logistics? What is the biggest <strong>bottleneck</strong> in your supply chain?</span>
+      </li>
+      <li>
+        <span class="q-num">2</span>
+        <span>Does your company care about its <strong>carbon footprint</strong>? What actions does it take to reduce emissions?</span>
+      </li>
+      <li>
+        <span class="q-num">3</span>
+        <span>Would you trust a <strong>wind-powered</strong> ship to deliver important products like pharmaceuticals? Why or why not?</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ══ SECTION 5: SELF-PRACTICE ══ -->
+  <div class="section-card">
+    <div class="section-title">✏️ Self-Practice Questions</div>
+    <div class="practice-list">
+
+      <div class="practice-item">
+        <div class="practice-q">
+          <span class="q-icon">❓</span>
+          <span>How many hulls does Vela's ship have, and why is that important?</span>
+          <button class="practice-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+        </div>
+        <div class="practice-answer">
+          It has <strong>three hulls</strong>. This design (called a trimaran) helps the ship cut through water more efficiently and carry large sails — making it faster than a normal cargo ship.
+        </div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-q">
+          <span class="q-icon">❓</span>
+          <span>Why can Vela's ship use smaller ports? Give two reasons.</span>
+          <button class="practice-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+        </div>
+        <div class="practice-answer">
+          First, the ship is <strong>much smaller</strong> (220 feet vs. 1,300 feet for a large container ship). Second, because it is smaller, it can <strong>access less-crowded terminals</strong> and load/unload faster.
+        </div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-q">
+          <span class="q-icon">❓</span>
+          <span>In what two ways is the ship better for the environment compared to traditional ships?</span>
+          <button class="practice-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+        </div>
+        <div class="practice-answer">
+          <strong>1)</strong> It cuts emissions by 99% compared to air freight and 90% compared to regular cargo ships. <strong>2)</strong> It doesn't create noise (protecting marine life) and doesn't use ballast water (no ocean pollution).
+        </div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-q">
+          <span class="q-icon">❓</span>
+          <span>Why is this ship especially useful for companies that ship pharmaceuticals?</span>
+          <button class="practice-toggle" onclick="toggleAnswer(this)">Show Answer</button>
+        </div>
+        <div class="practice-answer">
+          Pharmaceutical cargo is <strong>high-value</strong> (a single pallet can be worth $1 million). The ship is more reliable (fewer delays), keeps cargo safe inside until delivery, and helps companies reduce their carbon footprint — which many clients require.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<script>
+  function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+  }
+
+  function toggleAnswer(btn) {
+    const answer = btn.closest('.practice-item').querySelector('.practice-answer');
+    const isOpen = answer.classList.contains('open');
+    answer.classList.toggle('open', !isOpen);
+    btn.textContent = isOpen ? 'Show Answer' : 'Hide Answer';
+  }
+</script>
+
