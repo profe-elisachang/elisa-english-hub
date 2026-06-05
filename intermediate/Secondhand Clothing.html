@@ -1,0 +1,779 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unseen Impact of Secondhand Clothing – English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ── Page reset & base ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            background-color: #f5ede0;
+            color: #2c1a0e;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* ── FIXED HEADER ── */
+        .header {
+            background: linear-gradient(135deg, #5a3e2b 0%, #8b5e3c 100%);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #fff;
+            flex: 1;
+        }
+        .level-badge {
+            background: #e07b39;
+            color: #fff;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .search-box { display: flex; align-items: center; }
+
+        /* ── Main container ── */
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ── Lesson title ── */
+        .lesson-title {
+            background: #5a3e2b;
+            color: #fff9f2;
+            border-radius: 14px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(90,62,43,0.35);
+        }
+        .lesson-title h2 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+        .lesson-title .byline {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #f0c89a;
+            font-style: italic;
+        }
+
+        /* ── Section headers ── */
+        .section-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #fff;
+            background: #8b5e3c;
+            display: inline-block;
+            padding: 0.45rem 1.3rem;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* ══════════════════════════════════
+           1. USEFUL EXPRESSIONS
+        ══════════════════════════════════ */
+        .expressions-section {
+            background: #fff8f0;
+            border: 2px solid #c9894f;
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 4px 4px 0 #c9894f;
+        }
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .expr-card {
+            background: #5a3e2b;
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            color: #fff9f2;
+        }
+        .expr-en {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #f9c97a;
+            margin-bottom: 0.25rem;
+        }
+        .expr-es {
+            font-size: 0.88rem;
+            color: #f0c89a;
+            font-style: italic;
+            margin-bottom: 0.4rem;
+        }
+        .expr-example {
+            font-size: 0.92rem;
+            color: #ffe8cc;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 0.4rem;
+        }
+
+        /* ══════════════════════════════════
+           2. ARTICLE
+        ══════════════════════════════════ */
+        .article-section {
+            background: #fff8f0;
+            border: 2px solid #c9894f;
+            border-radius: 14px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 4px 4px 0 #c9894f;
+        }
+        .article-section h3 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #5a3e2b;
+            background: #fde8c8;
+            display: inline-block;
+            padding: 0.3rem 0.9rem;
+            border-radius: 6px;
+            margin: 1.8rem 0 0.8rem;
+            border-left: 5px solid #e07b39;
+        }
+        .article-section p {
+            margin-bottom: 1rem;
+            font-size: 1.08rem;
+            color: #2c1a0e;
+        }
+
+        /* ── Highlighted vocab ── */
+        .highlight {
+            background: #fff176;
+            font-weight: 700;
+            border-bottom: 2.5px solid #e65100;
+            border-radius: 2px;
+            padding: 0 2px;
+            cursor: help;
+            position: relative;
+        }
+
+        /* ══════════════════════════════════
+           3. VOCABULARY BOXES
+        ══════════════════════════════════ */
+        .vocab-box {
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2rem;
+        }
+        /* Each box gets a unique color scheme via inline style */
+        .vocab-box-title {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.9rem;
+        }
+        .vocab-card {
+            border-radius: 9px;
+            padding: 0.85rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .vocab-word-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .vocab-word {
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+        .speak-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            line-height: 1;
+            padding: 0;
+            transition: transform 0.2s;
+        }
+        .speak-btn:hover { transform: scale(1.25); }
+        .vocab-def {
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+        .vocab-es {
+            font-size: 0.82rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+        .vocab-ex {
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 0.35rem;
+            margin-top: 0.1rem;
+            line-height: 1.4;
+        }
+
+        /* ══════════════════════════════════
+           4. DISCUSSION QUESTIONS
+        ══════════════════════════════════ */
+        .discussion-section {
+            background: #3b2512;
+            border-radius: 14px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            color: #fff9f2;
+            box-shadow: 4px 4px 0 #c9894f;
+        }
+        .discussion-section .section-title {
+            background: #e07b39;
+        }
+        .discussion-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .discussion-list li {
+            background: rgba(255,255,255,0.08);
+            border-left: 5px solid #e07b39;
+            border-radius: 8px;
+            padding: 1rem 1.3rem;
+            font-size: 1.08rem;
+        }
+        .discussion-list li::before {
+            content: "💬 ";
+        }
+
+        /* ══════════════════════════════════
+           5. SELF-PRACTICE
+        ══════════════════════════════════ */
+        .practice-section {
+            background: #fff8f0;
+            border: 2px solid #c9894f;
+            border-radius: 14px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 4px 4px 0 #c9894f;
+        }
+        .practice-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+        .practice-item { }
+        .practice-q {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #2c1a0e;
+            margin-bottom: 0.4rem;
+        }
+        .practice-q::before { content: "✏️ "; }
+        details {
+            background: #fde8c8;
+            border-radius: 8px;
+            border: 1px solid #c9894f;
+            overflow: hidden;
+        }
+        summary {
+            cursor: pointer;
+            padding: 0.6rem 1rem;
+            font-weight: 700;
+            color: #5a3e2b;
+            font-size: 0.92rem;
+            user-select: none;
+            list-style: none;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: "▶ "; font-size: 0.75rem; }
+        details[open] summary::before { content: "▼ "; }
+        .answer-body {
+            padding: 0.7rem 1rem 0.9rem;
+            font-size: 0.95rem;
+            color: #3b2512;
+            border-top: 1px solid #c9894f;
+            line-height: 1.6;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+            .expressions-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 560px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+            .lesson-title h2 { font-size: 1.4rem; }
+            .article-section, .practice-section, .discussion-section { padding: 1.3rem; }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- ── FIXED HEADER ── -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://earth.org/wp-content/uploads/2023/11/Untitled-683-x-1024-px-69.jpg.webp" alt="👗 The Unseen Impact of Secondhand Clothing" class="article-image">
+    </div>
+
+
+<div class="container">
+
+    <!-- ── Lesson title ── -->
+    <div class="lesson-title">
+        <h2>👗 The Unseen Impact of Secondhand Clothing</h2>
+        <p class="byline">Based on an article by Mark Darvill &nbsp;|&nbsp; Topics: Supply Chain · Sustainability · Global Trade</p>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SECTION 1 – USEFUL EXPRESSIONS
+    ════════════════════════════════════ -->
+    <div class="expressions-section">
+        <div class="section-title">💬 Useful Expressions</div>
+        <div class="expressions-grid">
+
+            <div class="expr-card">
+                <div class="expr-en">a win-win (for both sides)</div>
+                <div class="expr-es">una situación beneficiosa para todos</div>
+                <div class="expr-example">"Buying local products can be a win-win for the community and the environment."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">the reality is more complex</div>
+                <div class="expr-es">la realidad es más compleja</div>
+                <div class="expr-example">"We thought recycling solved everything, but the reality is more complex."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">leave a trail of (pollution)</div>
+                <div class="expr-es">dejar una estela de (contaminación)</div>
+                <div class="expr-example">"Long-distance shipping can leave a trail of carbon emissions."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">keep … to a minimum</div>
+                <div class="expr-es">reducir … al mínimo</div>
+                <div class="expr-example">"Our purchasing team works to keep excess inventory to a minimum."</div>
+            </div>
+
+            <div class="expr-card">
+                <div class="expr-en">work towards a sustainable future</div>
+                <div class="expr-es">trabajar hacia un futuro sostenible</div>
+                <div class="expr-example">"Our company is working towards a sustainable future by reducing plastic packaging."</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SECTION 2 & 3 – ARTICLE + VOCAB BOXES
+    ════════════════════════════════════ -->
+    <div class="article-section">
+        <div class="section-title">📖 Article</div>
+
+        <!-- ── Paragraph 1 ── -->
+        <h3>♻️ The Secondhand Conundrum: A Win-Win Gone Wrong?</h3>
+        <p>
+            <span class="highlight" title="donar">Donating</span> secondhand clothes to charity shops for resale can sound like a win-win for both <span class="highlight" title="consumidores">consumers</span> and the environment. However, the reality is more complex. While it offers a sustainable <span class="highlight" title="alternativa">alternative</span> to fast fashion, only 10 to 20% of donated <span class="highlight" title="prendas de ropa">garments</span> meet the quality standards for resale. This leaves a serious problem. What happens to the remaining 80 to 90%?
+        </p>
+    </div>
+
+    <!-- Vocab Box 1 -->
+    <div class="vocab-box" style="background: #e8f5e9; border: 2px solid #4caf50; box-shadow: 4px 4px 0 #4caf50;">
+        <div class="vocab-box-title" style="color: #1b5e20;">📦 Paragraph 1 Vocabulary</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #4caf50;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #1b5e20;">donating</span>
+                    <button class="speak-btn" onclick="speakWord('donating')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">giving something (like clothes) to an organization, without receiving money</div>
+                <div class="vocab-es">donar / hacer una donación</div>
+                <div class="vocab-ex">"We are <strong>donating</strong> surplus uniforms to a local NGO."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #4caf50;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #1b5e20;">consumers</span>
+                    <button class="speak-btn" onclick="speakWord('consumers')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">people who buy and use products or services</div>
+                <div class="vocab-es">consumidores</div>
+                <div class="vocab-ex">"Our QA team makes sure <strong>consumers</strong> receive products that meet standards."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #4caf50;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #1b5e20;">alternative</span>
+                    <button class="speak-btn" onclick="speakWord('alternative')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">a different option or choice instead of another</div>
+                <div class="vocab-es">alternativa</div>
+                <div class="vocab-ex">"We need an <strong>alternative</strong> supplier in case of delays."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #4caf50;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #1b5e20;">garments</span>
+                    <button class="speak-btn" onclick="speakWord('garments')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">pieces of clothing (formal/professional word)</div>
+                <div class="vocab-es">prendas de ropa</div>
+                <div class="vocab-ex">"The <strong>garments</strong> failed the stitching quality inspection."</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Paragraph 2 ── -->
+    <div class="article-section">
+        <h3>🌍 The Dark Side of Secondhand Exports</h3>
+        <p>
+            Unfortunately, these secondhand clothes often <span class="highlight" title="terminan en / van a parar a">end up</span> in developing countries in the Global South, creating a new set of environmental burdens. When these unwanted <span class="highlight" title="textiles / telas">textiles</span> are transported to developing countries, they <span class="highlight" title="dejan / producen">leave</span> a trail of pollution <span class="highlight" title="a su paso">in their wake</span>, since the journey involves long-haul travel and, thus, high levels of carbon <span class="highlight" title="emisiones">emissions</span>. Moreover, these countries often lack the <span class="highlight" title="infraestructura">infrastructure</span> to <span class="highlight" title="deshacerse de / desechar">dispose of</span> them appropriately. Mountains of unusable clothes often result in open burning in streets, which releases harmful <span class="highlight" title="toxinas">toxins</span> into the air. Meanwhile, as these clothing items, often made from cheap synthetic materials, <span class="highlight" title="se descomponen / se degradan">break down</span>, they pollute waterways with microplastics.
+        </p>
+    </div>
+
+    <!-- Vocab Box 2 -->
+    <div class="vocab-box" style="background: #fce4ec; border: 2px solid #e91e63; box-shadow: 4px 4px 0 #e91e63;">
+        <div class="vocab-box-title" style="color: #880e4f;">⚠️ Paragraph 2 Vocabulary</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">end up</span>
+                    <button class="speak-btn" onclick="speakWord('end up')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def"><em>phrasal verb</em> — to finally reach a place or situation, often unintentionally</div>
+                <div class="vocab-es">terminar / ir a parar</div>
+                <div class="vocab-ex">"The shipment <strong>ended up</strong> at the wrong warehouse."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">textiles</span>
+                    <button class="speak-btn" onclick="speakWord('textiles')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">woven or knitted fabrics and materials used to make clothes</div>
+                <div class="vocab-es">textiles / telas</div>
+                <div class="vocab-ex">"We source <strong>textiles</strong> from three certified suppliers."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">emissions</span>
+                    <button class="speak-btn" onclick="speakWord('emissions')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">gases or substances released into the air, especially from vehicles or factories</div>
+                <div class="vocab-es">emisiones</div>
+                <div class="vocab-ex">"We are measuring carbon <strong>emissions</strong> across our supply chain."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">infrastructure</span>
+                    <button class="speak-btn" onclick="speakWord('infrastructure')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">the basic systems and structures needed for a country or organization to work (roads, facilities, networks)</div>
+                <div class="vocab-es">infraestructura</div>
+                <div class="vocab-ex">"The region lacks the <strong>infrastructure</strong> to handle large freight volumes."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">dispose of</span>
+                    <button class="speak-btn" onclick="speakWord('dispose of')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def"><em>phrasal verb</em> — to get rid of something, especially in a safe or correct way</div>
+                <div class="vocab-es">deshacerse de / desechar</div>
+                <div class="vocab-ex">"How do we <strong>dispose of</strong> defective units according to regulations?"</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">toxins</span>
+                    <button class="speak-btn" onclick="speakWord('toxins')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">poisonous substances that cause harm to living things</div>
+                <div class="vocab-es">toxinas / sustancias tóxicas</div>
+                <div class="vocab-ex">"The factory was fined for releasing <strong>toxins</strong> near a water source."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">break down</span>
+                    <button class="speak-btn" onclick="speakWord('break down')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def"><em>phrasal verb</em> — to decompose or fall apart into smaller pieces over time</div>
+                <div class="vocab-es">descomponerse / degradarse</div>
+                <div class="vocab-ex">"Synthetic packaging can take decades to <strong>break down</strong> in landfills."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #e91e63;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #880e4f;">in their wake</span>
+                    <button class="speak-btn" onclick="speakWord('in their wake')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">following behind something; as a result of something passing through</div>
+                <div class="vocab-es">a su paso / como consecuencia</div>
+                <div class="vocab-ex">"The new policy left confusion <strong>in its wake</strong>."</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Paragraph 3 ── -->
+    <div class="article-section">
+        <h3>🏭 The Hidden Costs of Recycling</h3>
+        <p>
+            Even when <span class="highlight" title="descartada / desechada">discarded</span> clothes can be recycled, the process is rarely eco-friendly. Workers in recycling <span class="highlight" title="instalaciones / plantas">facilities</span> in developing nations face health risks from <span class="highlight" title="exposición">exposure</span> to hazardous chemicals and machinery used to <span class="highlight" title="triturar / desmenuzar">shred</span> old clothes into reusable yarn.
+        </p>
+    </div>
+
+    <!-- Vocab Box 3 -->
+    <div class="vocab-box" style="background: #e3f2fd; border: 2px solid #1976d2; box-shadow: 4px 4px 0 #1976d2;">
+        <div class="vocab-box-title" style="color: #0d47a1;">🔧 Paragraph 3 Vocabulary</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #1976d2;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #0d47a1;">discarded</span>
+                    <button class="speak-btn" onclick="speakWord('discarded')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">thrown away because it is no longer wanted or useful</div>
+                <div class="vocab-es">descartado / desechado</div>
+                <div class="vocab-ex">"<strong>Discarded</strong> packaging must be sorted before disposal."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #1976d2;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #0d47a1;">facilities</span>
+                    <button class="speak-btn" onclick="speakWord('facilities')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">buildings or places where a specific activity takes place (warehouse, factory, lab)</div>
+                <div class="vocab-es">instalaciones / plantas / centros</div>
+                <div class="vocab-ex">"Our storage <strong>facilities</strong> are inspected every quarter."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #1976d2;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #0d47a1;">exposure</span>
+                    <button class="speak-btn" onclick="speakWord('exposure')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">being in contact with something harmful (chemicals, heat, noise)</div>
+                <div class="vocab-es">exposición</div>
+                <div class="vocab-ex">"Workers must wear masks to limit <strong>exposure</strong> to chemicals."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #1976d2;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #0d47a1;">shred</span>
+                    <button class="speak-btn" onclick="speakWord('shred')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">to cut or tear material into very small pieces using a machine</div>
+                <div class="vocab-es">triturar / desmenuzar</div>
+                <div class="vocab-ex">"We <strong>shred</strong> confidential documents before disposal."</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Paragraph 4 ── -->
+    <div class="article-section">
+        <h3>🌱 Shifting towards Sustainable Fashion</h3>
+        <p>
+            Thankfully, there are a few useful strategies to eliminate these problems. First, investing a few extra dollars in higher-quality clothes that last longer can <span class="highlight" title="mantener / limitar">keep</span> personal clothing waste <span class="highlight" title="al mínimo">to a minimum</span>. Second, when you no longer need an item of clothing, consider <span class="highlight" title="pasárselo / transferirlo">passing</span> it <span class="highlight" title="pasárselo a alguien">on</span> to a friend or family member for continued use. By adopting more responsible <span class="highlight" title="consumo">consumption</span> habits, we can work towards a more sustainable future for the fashion industry, one that <span class="highlight" title="prioriza / da prioridad a">prioritizes</span> both environmental responsibility and worker safety.
+        </p>
+    </div>
+
+    <!-- Vocab Box 4 -->
+    <div class="vocab-box" style="background: #fff8e1; border: 2px solid #f9a825; box-shadow: 4px 4px 0 #f9a825;">
+        <div class="vocab-box-title" style="color: #e65100;">💡 Paragraph 4 Vocabulary</div>
+        <div class="vocab-grid">
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #f9a825;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #e65100;">keep … to a minimum</span>
+                    <button class="speak-btn" onclick="speakWord('keep to a minimum')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">to make something as small or as little as possible</div>
+                <div class="vocab-es">reducir algo al mínimo</div>
+                <div class="vocab-ex">"We try to keep returns <strong>to a minimum</strong> through better QC."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #f9a825;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #e65100;">pass on</span>
+                    <button class="speak-btn" onclick="speakWord('pass on')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def"><em>phrasal verb</em> — to give something to someone else for them to use or keep</div>
+                <div class="vocab-es">pasar / transferir / ceder</div>
+                <div class="vocab-ex">"Please <strong>pass on</strong> the report to the logistics team."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #f9a825;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #e65100;">consumption</span>
+                    <button class="speak-btn" onclick="speakWord('consumption')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">the amount of something used, bought, or produced</div>
+                <div class="vocab-es">consumo</div>
+                <div class="vocab-ex">"Energy <strong>consumption</strong> in our factory increased last quarter."</div>
+            </div>
+
+            <div class="vocab-card" style="background: #fff; border: 1.5px solid #f9a825;">
+                <div class="vocab-word-row">
+                    <span class="vocab-word" style="color: #e65100;">prioritizes</span>
+                    <button class="speak-btn" onclick="speakWord('prioritizes')" title="Listen">🔊</button>
+                </div>
+                <div class="vocab-def">puts something first; considers it the most important thing to deal with</div>
+                <div class="vocab-es">da prioridad a / prioriza</div>
+                <div class="vocab-ex">"Our purchasing policy <strong>prioritizes</strong> certified ethical suppliers."</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SECTION 4 – DISCUSSION QUESTIONS
+    ════════════════════════════════════ -->
+    <div class="discussion-section">
+        <div class="section-title">🗣️ Discussion Questions</div>
+        <ul class="discussion-list">
+            <li>The article says only 10–20% of donated clothes meet quality standards for resale. Does this change how you think about donating old clothes? What do you think should happen to the rest?</li>
+            <li>In your work — logistics, purchasing, QA, or sales — do you think companies in your industry are responsible for what happens to their products after the customer no longer wants them? Why or why not?</li>
+            <li>The article suggests buying fewer, higher-quality items as a solution. Do you think consumers in your country are willing to change their habits? What would motivate them?</li>
+        </ul>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SECTION 5 – SELF-PRACTICE
+    ════════════════════════════════════ -->
+    <div class="practice-section">
+        <div class="section-title">✏️ Self-Practice</div>
+        <ul class="practice-list">
+
+            <li class="practice-item">
+                <div class="practice-q">What percentage of donated clothes are actually sold in charity shops? What happens to the rest?</div>
+                <details>
+                    <summary>Show Answer</summary>
+                    <div class="answer-body">Only 10 to 20% of donated clothes meet the quality standards to be resold. The remaining 80 to 90% often end up being exported to developing countries, where they can cause environmental pollution.</div>
+                </details>
+            </li>
+
+            <li class="practice-item">
+                <div class="practice-q">Why does transporting secondhand clothes to developing countries cause pollution?</div>
+                <details>
+                    <summary>Show Answer</summary>
+                    <div class="answer-body">The journey involves long-haul transportation, which produces high levels of carbon emissions. In addition, the destination countries often lack the infrastructure to dispose of the clothes properly, leading to open burning and microplastic pollution in waterways.</div>
+                </details>
+            </li>
+
+            <li class="practice-item">
+                <div class="practice-q">What health risks do recycling workers face? Use the words <em>exposure</em> and <em>facilities</em> in your answer.</div>
+                <details>
+                    <summary>Show Answer</summary>
+                    <div class="answer-body">Workers in recycling <strong>facilities</strong> in developing countries face health risks because of their <strong>exposure</strong> to hazardous chemicals and dangerous machinery used to shred old clothing into yarn.</div>
+                </details>
+            </li>
+
+            <li class="practice-item">
+                <div class="practice-q">What two practical actions does the article recommend to consumers? Use your own words.</div>
+                <details>
+                    <summary>Show Answer</summary>
+                    <div class="answer-body">First, the article recommends buying higher-quality clothes that last longer, so you produce less waste. Second, instead of throwing away clothes you no longer need, you should pass them on to a friend or family member who can continue using them.</div>
+                </details>
+            </li>
+
+        </ul>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+</script>
+
