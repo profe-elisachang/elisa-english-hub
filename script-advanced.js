@@ -101,10 +101,9 @@ async function scanLessons() {
         { filename: 'The Low-Altitude Economy.html', date: '2026-05-19', title: '🚁 The Low-Altitude Economy' },        
         { filename: 'Engineering the Environment.html', date: '2026-05-26', title: '🌍 Engineering the Environment' },
         { filename: 'Robotaxis.html', date: '2026-05-28', title: '🚕 Robotaxis May Increase Traffic and Emissions, Analysts Warn' },
-
-        
         { filename: 'Riding the Trade Winds Again.html', date: '2026-06-02', title: '⛵ Riding the Trade Winds Again' },
         { filename: 'Four-Day Workweek.html', date: '2026-06-04', title: '⏰ Is a Four-Day Workweek in Your Future?' },
+        { filename: 'Four-Day Workweek.html', date: '2026-06-09', title: '⏰ Is a Four-Day Workweek in Your Future?' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
