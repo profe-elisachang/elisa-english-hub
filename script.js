@@ -133,6 +133,8 @@ async function scanLessons() {
         { filename: 'The Subscribed Life.html', date: '2026-06-08', title: '💳The Subscribed Life' },
         { filename: 'Riding the Trade Winds.html', date: '2026-06-10', title: '⛵ Riding the Trade Winds Again' },
         { filename: 'Secondhand Clothing.html', date: '2026-06-12', title: '👗 The Unseen Impact of Secondhand Clothing' },
+        { date: '2026-06-24', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-06-26', title: '🏖️ Teacher Off - No Class', isHoliday: true },
 // 👆 在此上方添加新文章，記得加逗號！
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
