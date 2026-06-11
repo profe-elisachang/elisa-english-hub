@@ -1,0 +1,537 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>From Despair to HOPE in Haiti - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        /* ===== GLOBAL RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            background: #F9F6EF;  /* warm natural cream – no purple */
+            color: #2A2A28;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #2C5F4A;   /* deep forest green */
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-content h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            margin: 0;
+        }
+
+        .level-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(0.98);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: #1E3D32;
+            border-left: 5px solid #E67E22;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #4A5B4E;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #DCD5CA;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ===== VOCAB HIGHLIGHT – TOOLTIP ABOVE ===== */
+        .highlight {
+            background-color: #FFF3C9;
+            font-weight: 700;
+            border-bottom: 2px solid #E67E22;
+            cursor: help;
+            padding: 0 0.2rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* tooltip positioned ABOVE the highlighted word */
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;          /* place above the word */
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2C3E2F;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: 0.8rem;
+            font-weight: normal;
+            z-index: 1000;
+            margin-bottom: 8px;    /* gap from the word */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        /* article & paragraph spacing */
+        .article-block {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #EBE3D7;
+        }
+
+        .vocabulary-section {
+            background: #FEFAF5;
+            border-left: 5px solid #E67E22;
+            padding: 1.2rem 1.5rem;
+            margin: 0.5rem 0 1.8rem 0;
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 700px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-card {
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 18px;
+            border: 1px solid #EAE0D4;
+            transition: all 0.1s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .vocab-word {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .vocab-word strong {
+            font-size: 1.35rem;
+            color: #C55A1A;
+            letter-spacing: -0.2px;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0;
+            vertical-align: middle;
+            transition: transform 0.1s;
+        }
+
+        .speak-btn:hover {
+            transform: scale(1.08);
+        }
+
+        .eng-explanation {
+            color: #2E3B2C;
+            margin: 8px 0;
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .spanish-trans {
+            color: #6F6F64;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 6px 0;
+        }
+
+        .example-sentence {
+            border-left: 3px solid #E67E22;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #4A4A44;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .discussion-box, .practice-box {
+            background: #FFFFFFE6;
+            border-radius: 28px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border: 1px solid #DFD5C8;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: #2C5F4A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            padding-left: 1.6rem;
+            margin: 1rem 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            line-height: 1.5;
+        }
+
+        details {
+            margin-top: 1.5rem;
+            background: #F8F4ED;
+            padding: 1rem;
+            border-radius: 20px;
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #C55A1A;
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                padding: 1rem;
+            }
+            .main-title {
+                font-size: 1.7rem;
+            }
+            .article-block {
+                padding: 1rem;
+            }
+            .vocabulary-section {
+                padding: 1rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin: 3rem 0 1rem;
+            font-size: 0.8rem;
+            color: #8F8F83;
+            border-top: 1px solid #E0D6CA;
+            padding-top: 1.5rem;
+        }
+        hr {
+            margin: 1.2rem 0;
+            border: none;
+            height: 1px;
+            background: #E5DDD1;
+        }
+        .mini-note {
+            background: #F1E9DE;
+            padding: 0.8rem 1rem;
+            border-radius: 14px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Advanced Level (B2–C1)</span>
+        <div class="search-box">
+            <a href="../index-advanced.html" class="back-to-calendar-btn">🏠 Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://www.icdf.org.tw/wSite/public/Data/f1754040763713.jpg" alt="🌱 From Despair to HOPE in Haiti" class="article-image">
+    </div>
+
+
+<div class="container">
+    <main>
+        <div style="margin-bottom: 1rem;">
+            <p style="color:#AF7748; font-weight:500;">Inspiration &nbsp;|&nbsp; 2024 MAY 1, 2</p>
+            <h1 class="main-title">🌱 From Despair to HOPE in Haiti</h1>
+            <p class="subhead">Making once-<em>arid</em> lands fertile and poor farmers into money-makers</p>
+            <p style="font-size:0.85rem; color:#6A5C4C;">by Jacqueline Charles / © 2023, The Miami Herald. Distributed by Tribune Content Agency, LLC. PAGE DESIGN BY OLIVE CHU</p>
+        </div>
+
+        <!-- ==================== SECTION 1: PARAGRAPH 1 (Cabbages, plowed, daunting, agronomists) ================= -->
+        <div class="article-block">
+            <p>Cabbages and pumpkins rise out of the ground; papayas hang from trees; and workers plant rows of hot peppers in the freshly <span class="highlight" title="arar, surcar la tierra con arado">plowed</span> dirt.</p>
+            <p>A year ago, such a lush landscape was unimaginable for Fransik Monchèr, a farmer and father of seven who couldn’t even grow fiery habanero peppers because they quickly died.</p>
+            <p>All that changed the day a group of entrepreneurs decided to take a gamble to launch a socioeconomic experiment with the goal of answering a simple but <span class="highlight" title="intimidante, que causa temor o preocupación">daunting</span> question: What if a Haitian farmer, like Monchèr, had everything he needed to be a successful grower?</p>
+            <p>The <span class="highlight" title="búsqueda, misión o exploración difícil">quest</span> for the answers has birthed an unusual partnership among four Port-au-Prince-based friends and entrepreneurs, and local farmers and <span class="highlight" title="ingeniero agrónomo, especialista en agricultura">agronomists</span> in northern Haiti. Together, they are pushing locally grown peppers and sweet potatoes while also aiding farmers like Monchèr in transforming their land, restoring hope in the only livelihood they’ve known: agriculture.</p>
+        </div>
+        <div class="vocabulary-section">
+            <h3 style="color:#C55A1A; margin:0 0 0.5rem 0;">📚 Vocabulary - Opening (plowed, daunting, quest, agronomists)</h3>
+            <div class="vocab-container">
+                <div class="vocab-card"><div class="vocab-word"><strong>plowed</strong> <button class="speak-btn" onclick="speakWord('plowed')">🔊</button></div><div class="eng-explanation">to dig land with a plough (farming tool)</div><div class="spanish-trans">arado, surcado</div><div class="example-sentence">The field was freshly plowed before planting season.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>daunting</strong> <button class="speak-btn" onclick="speakWord('daunting')">🔊</button></div><div class="eng-explanation">making you feel worried or afraid about your ability</div><div class="spanish-trans">intimidante, desalentador</div><div class="example-sentence">Implementing a new ERP system can seem daunting at first.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>quest</strong> <button class="speak-btn" onclick="speakWord('quest')">🔊</button></div><div class="eng-explanation">a long or difficult search for something</div><div class="spanish-trans">búsqueda, misión</div><div class="example-sentence">The quest for zero defects drives continuous improvement.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>agronomists</strong> <button class="speak-btn" onclick="speakWord('agronomists')">🔊</button></div><div class="eng-explanation">scientists who study farming and crop production</div><div class="spanish-trans">agrónomos</div><div class="example-sentence">Our EHS team worked with agronomists to assess soil safety.</div></div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: 'The Haiti of Tomorrow' + acute, logistics -->
+        <div class="article-block">
+            <h2 style="color:#2C5F4A;">Creating ‘The Haiti of Tomorrow’</h2>
+            <p>Though 75% of Haiti’s population lives in rural areas, the country can’t feed itself. Nearly half of the population, 4.9 million people, are experiencing <span class="highlight" title="grave, severo (causa grandes problemas)">acute</span> hunger, according to the United Nations.</p>
+            <p>Crops fail due to increasingly frequent and severe <span class="highlight" title="sequías, períodos largos sin lluvia">droughts</span> and tropical storms and higher-than-average temperatures.</p>
+            <p>“Everybody is locked into the idea that it can’t be done,” said Geoffrey Handal, the accounting and <span class="highlight" title="logística, coordinación de procesos y recursos">logistics</span> expert in the friends’ group. “We have all of the qualifications; we have all of the techniques needed; we have all of the land; we have all of the water; we have everything.”</p>
+            <p>Handal and [his friends] launched their experiment with Monchèr. They’ve <span class="highlight" title="apodado, llamado, denominado">dubbed</span> their socioeconomic lab “Ayiti Demen”—The Haiti of Tomorrow.</p>
+        </div>
+        <div class="vocabulary-section">
+            <h3 style="color:#C55A1A;">📚 Vocabulary - “The Haiti of Tomorrow”</h3>
+            <div class="vocab-container">
+                <div class="vocab-card"><div class="vocab-word"><strong>acute</strong> <button class="speak-btn" onclick="speakWord('acute')">🔊</button></div><div class="eng-explanation">very serious, causing severe problems</div><div class="spanish-trans">agudo, severo</div><div class="example-sentence">Acute water shortages affected production lines.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>droughts</strong> <button class="speak-btn" onclick="speakWord('droughts')">🔊</button></div><div class="eng-explanation">long periods with no rain; water shortage</div><div class="spanish-trans">sequías</div><div class="example-sentence">Droughts impact both agriculture and industrial cooling systems.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>logistics</strong> <button class="speak-btn" onclick="speakWord('logistics')">🔊</button></div><div class="eng-explanation">coordination of complex operations / supply chain</div><div class="spanish-trans">logística</div><div class="example-sentence">IT and logistics must align for just-in-time inventory.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>dubbed</strong> <button class="speak-btn" onclick="speakWord('dubbed')">🔊</button></div><div class="eng-explanation">gave a name or nickname to something</div><div class="spanish-trans">apodado, denominado</div><div class="example-sentence">The safety program was dubbed “Zero Harm”.</div></div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Solving water + irrigation, sprang into action, crunched the numbers, backed me up -->
+        <div class="article-block">
+            <h2 style="color:#2C5F4A;">Solving the problem of water</h2>
+            <p>In Haiti, crops failed not just because of too little or too much rainfall, but also due to a lack of access to <span class="highlight" title="riego, sistema de suministro de agua a cultivos">irrigation</span>.</p>
+            <p>Just across the border, 45 minutes away, in the Dominican Republic, farmers are successful, [entrepreneur Maxwell] Marcelin said, so the issue is not the availability of water.</p>
+            <p>“The only thing is, there is no investment on our side of the border to bring the water to the producers,” he said.</p>
+            <p>Armed with a study showing that there was indeed water under Monchèr’s arid land, the group <span class="highlight" title="comenzaron a actuar rápidamente y con energía">sprang into action</span>. Handal provided the seeds. Marcelin <span class="highlight" title="hacer cálculos numéricos, analizar costos o rentabilidad">crunched the numbers</span>; he wanted to show Monchèr that he could have a successful harvest and rely on it for income to feed his family.</p>
+            <p>Since [then], Monchèr has grown more than 2,000 pounds of habanero peppers, in addition to other fruits and vegetables.</p>
+            <p>“<span class="highlight" title="me apoyaron, me respaldaron">They backed me up</span>,” he said. “I could not have accomplished this on my own.”</p>
+            <p>Whereas before he saw despair, he now sees hope. “My children are starting to eat, and I am beginning to make some money,” Monchèr said.</p>
+            <p>The group’s initial investment is expected to bring Monchèr about $7,000 in sales, which he will make from selling his habanero peppers.</p>
+            <p>“This is someone we’ve taken out of poverty when we gave him this opportunity,” Marcelin said.</p>
+        </div>
+        <div class="vocabulary-section">
+            <h3 style="color:#C55A1A;">📚 Vocabulary - Water &amp; support (irrigation, sprang into action, crunched, backed me up)</h3>
+            <div class="vocab-container">
+                <div class="vocab-card"><div class="vocab-word"><strong>irrigation</strong> <button class="speak-btn" onclick="speakWord('irrigation')">🔊</button></div><div class="eng-explanation">supplying water to crops through man-made systems</div><div class="spanish-trans">riego</div><div class="example-sentence">Drip irrigation reduces water waste.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>sprang into action</strong> <button class="speak-btn" onclick="speakWord('sprang into action')">🔊</button></div><div class="eng-explanation">started doing something quickly and energetically</div><div class="spanish-trans">actuar de inmediato</div><div class="example-sentence">EHS team sprang into action after the alarm.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>crunched the numbers</strong> <button class="speak-btn" onclick="speakWord('crunched the numbers')">🔊</button></div><div class="eng-explanation">performed calculations to determine costs/profits</div><div class="spanish-trans">hacer números</div><div class="example-sentence">We crunched the numbers before approving the new line.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>backed me up</strong> <button class="speak-btn" onclick="speakWord('backed me up')">🔊</button></div><div class="eng-explanation">supported me; helped me when I needed it</div><div class="spanish-trans">me apoyaron / respaldaron</div><div class="example-sentence">My supervisor backed me up during the audit.</div></div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: Having a stake, GDP, fertilizer, 50-50 profits -->
+        <div class="article-block">
+            <h2 style="color:#2C5F4A;">Having a stake in the country</h2>
+            <p>“If we do this right, if we invest properly in Haiti, in 20 years, we can have 10% <span class="highlight" title="Producto Interno Bruto, valor total de bienes y servicios">GDP</span> growth every year. ... This is how you create a real economy,” [Handal said.]</p>
+            <p>To make the agricultural project work, the duo invested in a <strong>drip irrigation</strong> system and <span class="highlight" title="fertilizante, sustancia que mejora el crecimiento de plantas">fertilizer</span>. They also brought onboard interns from the nearby University of Limonade to assist and to learn.</p>
+            <p>“At the end of the day, when you look at the investment, <span class="highlight" title="en cuanto a las ganancias, el resultado es 50-50 / alcanza el 50% cada parte">it comes up to 50-50 in terms of profits</span>,” Marcelin said. “We created jobs but the profit sharing is for the whole organization. ... Everyone who is in the ecosystem is making money.”</p>
+            <div class="mini-note">
+                💡 <strong>in terms of</strong> = regarding / from the perspective of → <em>en cuanto a / desde el punto de vista de</em><br>
+                <strong>comes up to</strong> = reaches a total of → <em>asciende a / alcanza</em>
+            </div>
+            <p>Handal also sees another important result: “For me as long as the community is involved, that’s all you need,” he said.</p>
+            <p>The effort is “a bet that this country will not die, which is a bit of a leap of faith these days. But if it’s not going to die, it’s going to grow at some point,” Handal said. “And that’s why we invest.”</p>
+            <p><strong><span class="highlight" title="tener interés personal o participación en algo">Having a stake in the country</span></strong> means you care about its future because you are personally invested.</p>
+        </div>
+        <div class="vocabulary-section">
+            <h3 style="color:#C55A1A;">📚 Vocabulary - Stake, GDP, Fertilizer, 50-50 profit expression</h3>
+            <div class="vocab-container">
+                <div class="vocab-card"><div class="vocab-word"><strong>GDP</strong> <button class="speak-btn" onclick="speakWord('GDP')">🔊</button></div><div class="eng-explanation">Gross Domestic Product: total value of goods &amp; services</div><div class="spanish-trans">PIB</div><div class="example-sentence">Manufacturing contributes significantly to Mexico's GDP.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>fertilizer</strong> <button class="speak-btn" onclick="speakWord('fertilizer')">🔊</button></div><div class="eng-explanation">substance to help plants grow</div><div class="spanish-trans">fertilizante</div><div class="example-sentence">Process engineers sometimes reuse waste as fertilizer.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>have a stake in</strong> <button class="speak-btn" onclick="speakWord('have a stake in')">🔊</button></div><div class="eng-explanation">personal interest or involvement in something</div><div class="spanish-trans">tener interés personal / participación</div><div class="example-sentence">When employees have a stake in the company, safety improves.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>it comes up to 50-50 in terms of profits</strong> <button class="speak-btn" onclick="speakWord('it comes up to 50 50 in terms of profits')">🔊</button></div><div class="eng-explanation">profits are split equally (50% each)</div><div class="spanish-trans">las ganancias se dividen 50-50</div><div class="example-sentence">The partners agreed it comes up to 50-50 in terms of profits.</div></div>
+            </div>
+        </div>
+      <!-- SECTION 5: Bringing back the Scotch bonnet (independent paragraph) -->
+        <div style="background:#EAF5EE; border-radius: 24px; padding: 1rem 1.8rem; margin: 1.5rem 0;">
+            <div class="article-block">
+       <h2 style="color:#2C5F4A;">Bringing back the Scotch bonnet</h2>
+           <p>The entrepreneurs also want to bring back production of the Caribbean Scotch bonnet, a variety of chili pepper. According to local lore, the Scotch bonnet, popular in Jamaica, was bountiful before the Haitian revolution but soon disappeared after Haiti won its independence from France in 1804.</p>
+           
+                <div class="vocabulary-section">
+            <h3 style="color:#C55A1A;">📚 Vocabulary - Scotch bonnet context</h3>
+            <div class="vocab-container">
+                <div class="vocab-card"><div class="vocab-word"><strong>local lore</strong> <button class="speak-btn" onclick="speakWord('local lore')">🔊</button></div><div class="eng-explanation">traditional stories or beliefs from a community</div><div class="spanish-trans">sabiduría popular, leyendas locales</div><div class="example-sentence">According to local lore, the pepper was once abundant.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>bountiful</strong> <button class="speak-btn" onclick="speakWord('bountiful')">🔊</button></div><div class="eng-explanation">abundant, existing in large quantities</div><div class="spanish-trans">abundante, generoso</div><div class="example-sentence">A bountiful harvest improved the farmers' income.</div></div>
+            </div>
+        </div>
+    </div>
+  
+   
+        </div>
+
+        <!-- SECTION 6: Ingenuity (independent paragraph) -->
+          <div style="background:#EAF5EE; border-radius: 24px; padding: 1rem 1.8rem; margin: 1.5rem 0;">
+          <div class="article-block">
+            <h2 style="color:#2C5F4A;">Ingenuity</h2>
+            <p>The [friends] also focus on finding creative ways to get around problems. After some of the habaneros and Piman Bouk ripened before they could be shipped out, Marcelin and Handal decided to go into the pepper sauce business.</p>
+    
+        <div class="vocabulary-section">
+            <h3 style="color:#C55A1A;">📚 Vocabulary - Ingenuity</h3>
+            <div class="vocab-container">
+                <div class="vocab-card"><div class="vocab-word"><strong>ingenuity</strong> <button class="speak-btn" onclick="speakWord('ingenuity')">🔊</button></div><div class="eng-explanation">cleverness and creativity to solve problems</div><div class="spanish-trans">ingenio, creatividad</div><div class="example-sentence">IT engineers solved the bandwidth issue with ingenuity.</div></div>
+                <div class="vocab-card"><div class="vocab-word"><strong>get around problems</strong> <button class="speak-btn" onclick="speakWord('get around problems')">🔊</button></div><div class="eng-explanation">find a way to overcome or bypass obstacles</div><div class="spanish-trans">sortear problemas, encontrar soluciones alternativas</div><div class="example-sentence">We need to get around the supply chain delay.</div></div>
+            </div>
+        </div>
+  </div>
+  </div>
+  
+        <!-- Additional notes from original material -->
+        <div class="article-block" style="background:#FEFAF2;">
+            <p style="font-size:0.9rem;"><strong>📍 Caribbean Context:</strong> <em>From the USA — FROM DESPAIR TO HOPE IN HAITI — THE BAHAMAS — CARIBBEAN SEA — HAITI — JAMAICA — DOMINICAN REPUBLIC</em></p>
+            <p><strong>Specialized Terms recap:</strong> agronomist • irrigation • drip irrigation .</p>
+            <p><strong>More Information:</strong> logistics, spring into action, crunch the numbers.</p>
+            <p><strong>Vocabulary Focus Recap:</strong> arid, plow, daunting, acute, have a stake in, GDP, fertilizer.</p>
+            <p>📌 <em>(On mobile: tap and hold highlighted words to see translation + tooltip above)</em></p>
+        </div>
+
+        <!-- DISCUSSION QUESTIONS -->
+        <div class="discussion-box">
+            <h2 class="section-title">💬 Discussion Questions</h2>
+            <ul>
+                <li>In your experience (EHS, IT, or Process Engineering), what kind of “investment” (resources, training, infrastructure) could turn a struggling team into a successful one?</li>
+                <li>Haitian entrepreneurs used a <strong>50-50 profit-sharing model</strong>. Would a similar model work in your department? Why or why not?</li>
+                <li>Water access was the key bottleneck. In our operations, what is a “hidden bottleneck” people assume cannot be fixed, but you believe could be solved with the right approach?</li>
+            </ul>
+        </div>
+
+        <!-- SELF-PRACTICE -->
+        <div class="practice-box">
+            <h2 class="section-title">✍️ Self-Practice Questions</h2>
+            <ol style="margin-bottom: 1rem;">
+                <li>Fill in the blank: “After the safety audit, the EHS team _____________ and started corrective actions.” (spring into action / crunch the numbers)</li>
+                <li>True or False? A “daunting” task feels easy and comfortable.</li>
+                <li>Rewrite using “have a stake in”: <em>Engineers who are personally invested in the project’s success suggest better ideas.</em></li>
+                <li>Match each word: (1) quest &nbsp;(2) drought &nbsp;(3) backed me up → a) me apoyaron &nbsp; b) sequía &nbsp; c) búsqueda/misión</li>
+            </ol>
+            <details>
+                <summary><strong>🔎 Reference Answers</strong></summary>
+                <ol style="margin-top: 0.8rem;">
+                    <li>sprang into action</li>
+                    <li>False – daunting makes you feel worried or afraid.</li>
+                    <li>Engineers who have a stake in the project’s success suggest better ideas.</li>
+                    <li>1-c, 2-b, 3-a</li>
+                </ol>
+                <p style="margin-top: 1rem;">💡 Share your answers with Elisa or a colleague for speaking practice.</p>
+            </details>
+        </div>
+
+        
+    </main>
+    <footer>
+        <p>Lesson based on “From Despair to HOPE in Haiti” — English Conversation for Professionals (B2-C1) | © Advanced Conversation with Elisa</p>
+        <p>🔊 Click any speaker icon to hear pronunciation (US English). Tooltips appear above highlighted words.</p>
+    </footer>
+</div>
+
+<script>
+    function speakWord(word) {
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
