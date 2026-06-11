@@ -104,7 +104,7 @@ async function scanLessons() {
         { filename: 'Riding the Trade Winds Again.html', date: '2026-06-02', title: '⛵ Riding the Trade Winds Again' },
         { filename: 'Four-Day Workweek.html', date: '2026-06-04', title: '⏰ Is a Four-Day Workweek in Your Future?' },
         { filename: 'Four-Day Workweek.html', date: '2026-06-09', title: '⏰ Is a Four-Day Workweek in Your Future?' },
-        { date: '2026-06-24', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { date: '2026-06-25', title: '🏖️ Teacher Off - No Class', isHoliday: true },
         { filename: 'From Despair to HOPE in Haiti.html', date: '2026-06-11', title: '🌱 From Despair to HOPE in Haiti' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
