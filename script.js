@@ -135,8 +135,8 @@ async function scanLessons() {
         { filename: 'Secondhand Clothing.html', date: '2026-06-12', title: '👗 The Unseen Impact of Secondhand Clothing' },
         { date: '2026-06-24', title: '🏖️ Teacher Off - No Class', isHoliday: true },
         { date: '2026-06-26', title: '🏖️ Teacher Off - No Class', isHoliday: true },
+        { filename: 'The Importance of Personal Boundaries.html', date: '2026-06-15', title: '🛡️ The Importance of Personal Boundaries' },
         { filename: 'Secondhand Clothing.html', date: '2026-06-17', title: '👗 The Unseen Impact of Secondhand Clothing' },
-// 👆 在此上方添加新文章，記得加逗號！
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }

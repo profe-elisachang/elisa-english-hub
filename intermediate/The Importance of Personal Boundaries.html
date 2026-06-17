@@ -1,0 +1,760 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Importance of Personal Boundaries – English with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&amp;family=Lora:wght@600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            background-color: #f0f7f4;
+            color: #1e3a2f;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #2a7a5e 0%, #1e5c44 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .header h1 {
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .level-badge {
+            background: #f0a500;
+            color: #1e3a2f;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .page-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ===== LESSON TITLE HERO ===== */
+        .lesson-hero {
+            background: #ffffff;
+            border-left: 8px solid #2a7a5e;
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(42,122,94,0.10);
+        }
+        .lesson-hero .topic-tag {
+            display: inline-block;
+            background: #e6f4ef;
+            color: #2a7a5e;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+        .lesson-hero h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #1e3a2f;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+        }
+        .lesson-hero .subtitle {
+            font-size: 1rem;
+            color: #5a7a6e;
+            font-style: italic;
+        }
+
+        /* ===== SECTION HEADINGS ===== */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1e3a2f;
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2a7a5e;
+        }
+        .section-heading .icon {
+            font-size: 1.4rem;
+        }
+
+        /* ===== USEFUL EXPRESSIONS ===== */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .expression-card {
+            background: #ffffff;
+            border: 2px solid #b2dac9;
+            border-radius: 12px;
+            padding: 1.1rem 1.3rem;
+            box-shadow: 0 2px 8px rgba(42,122,94,0.07);
+        }
+        .expression-card .phrase {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #1e5c44;
+            margin-bottom: 0.2rem;
+        }
+        .expression-card .translation {
+            font-size: 0.88rem;
+            color: #7a9e91;
+            font-style: italic;
+            margin-bottom: 0.45rem;
+        }
+        .expression-card .example {
+            font-size: 0.95rem;
+            color: #2e4a40;
+            border-top: 1px solid #dff0e8;
+            padding-top: 0.45rem;
+            margin-top: 0.45rem;
+        }
+        .expression-card .example em {
+            color: #c0640a;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 4px 20px rgba(42,122,94,0.08);
+            margin-bottom: 0.5rem;
+        }
+        .article-box p {
+            margin-bottom: 1.3rem;
+            font-size: 1.08rem;
+            color: #1e3a2f;
+        }
+        .article-box p:last-child { margin-bottom: 0; }
+
+        /* Inserted sentence callout */
+        .inserted-sentence {
+            display: inline;
+            background: #fff3e0;
+            border-left: 3px solid #f0a500;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0 4px 4px 0;
+            font-style: italic;
+            color: #7a4400;
+        }
+
+        /* Highlighted vocabulary */
+        .hl {
+            background: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2.5px solid #f0a500;
+            border-radius: 3px;
+            padding: 0 2px;
+            cursor: help;
+        }
+        .hl-phrasal {
+            background: #fce4ec;
+            font-weight: 700;
+            border-bottom: 2.5px solid #e91e63;
+            border-radius: 3px;
+            padding: 0 2px;
+            cursor: help;
+            color: #880e4f;
+        }
+
+        /* ===== VOCABULARY GRID ===== */
+        .vocab-section {
+            margin: 0.75rem 0 2rem;
+        }
+        .vocab-section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #2a7a5e;
+            margin-bottom: 0.6rem;
+            padding-left: 0.25rem;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+        @media (max-width: 1100px) { .vocab-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 750px)  { .vocab-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px)  { .vocab-grid { grid-template-columns: 1fr; } }
+
+        .vocab-card {
+            background: #ffffff;
+            border: 2px solid #b2dac9;
+            border-radius: 12px;
+            padding: 1rem 1rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            box-shadow: 0 2px 6px rgba(42,122,94,0.07);
+        }
+        /* Accent colors per paragraph */
+        .vocab-card.teal  { border-color: #4db6ac; }
+        .vocab-card.coral { border-color: #ff8a65; }
+        .vocab-card.amber { border-color: #ffb300; }
+        .vocab-card.rose  { border-color: #f06292; }
+        .vocab-card.sage  { border-color: #81c784; }
+
+        .vocab-word {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1e3a2f;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .speak-btn {
+            background: none;
+            border: 1.5px solid #2a7a5e;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #2a7a5e;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .speak-btn:hover { background: #2a7a5e; color: white; }
+
+        .vocab-pos {
+            font-size: 0.75rem;
+            color: #7a9e91;
+            font-style: italic;
+            margin-top: -0.2rem;
+        }
+        .vocab-def {
+            font-size: 0.88rem;
+            color: #2e4a40;
+            line-height: 1.45;
+        }
+        .vocab-es {
+            font-size: 0.82rem;
+            color: #7a4400;
+            font-weight: 600;
+        }
+        .vocab-example {
+            font-size: 0.83rem;
+            color: #4a6a5e;
+            font-style: italic;
+            border-top: 1px solid #e6f4ef;
+            padding-top: 0.3rem;
+            margin-top: 0.2rem;
+            line-height: 1.4;
+        }
+
+        /* ===== PHRASAL VERB NOTE ===== */
+        .phrasal-note {
+            background: #fff0f4;
+            border: 2px solid #f06292;
+            border-radius: 12px;
+            padding: 1rem 1.3rem;
+            margin: 0.75rem 0 2rem;
+        }
+        .phrasal-note strong { color: #880e4f; }
+
+        /* ===== DISCUSSION ===== */
+        .discussion-box {
+            background: #1e5c44;
+            color: white;
+            border-radius: 16px;
+            padding: 1.75rem 2.2rem;
+            margin-bottom: 2rem;
+        }
+        .discussion-box h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+            color: #a8dfc9;
+        }
+        .discussion-box ol {
+            padding-left: 1.4rem;
+        }
+        .discussion-box li {
+            margin-bottom: 0.85rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #d4f0e4;
+        }
+        .discussion-box li::marker { color: #f0a500; font-weight: 700; }
+
+        /* ===== SELF-PRACTICE ===== */
+        .practice-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .practice-item {
+            background: #ffffff;
+            border: 2px solid #b2dac9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(42,122,94,0.06);
+        }
+        .practice-item summary {
+            padding: 1rem 1.3rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #1e3a2f;
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .practice-item summary::-webkit-details-marker { display: none; }
+        .practice-item summary::before {
+            content: "▶";
+            font-size: 0.7rem;
+            color: #2a7a5e;
+            margin-top: 0.3rem;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .practice-item[open] summary::before { transform: rotate(90deg); }
+        .practice-answer {
+            background: #e6f4ef;
+            border-top: 2px dashed #b2dac9;
+            padding: 1rem 1.3rem;
+            font-size: 0.95rem;
+            color: #1e5c44;
+            line-height: 1.65;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .lesson-hero h2 { font-size: 1.5rem; }
+            .article-box { padding: 1.25rem 1.1rem; }
+            .expressions-grid { grid-template-columns: 1fr; }
+            .discussion-box { padding: 1.25rem 1.1rem; }
+        }
+
+        /* ===== FOOTER SPACER ===== */
+        .footer-note {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #7a9e91;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #c9e4d8;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- FIXED HEADER -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://info.totalwellnesshealth.com/hs-fs/hubfs/boundary.png?width=4562&name=boundary.png" alt="🛡️ The Importance of Personal Boundaries" class="article-image">
+    </div>
+
+
+<div class="page-wrapper">
+
+    <!-- LESSON HERO -->
+    <div class="lesson-hero">
+        <div class="topic-tag">🧍 Personal Development</div>
+        <h2>🛡️ The Importance of Personal Boundaries</h2>
+        <p class="subtitle">Setting limits that protect your well-being and respect others</p>
+    </div>
+
+    <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+    <div class="section-heading"><span class="icon">💬</span> Useful Expressions</div>
+    <div class="expressions-grid">
+        <div class="expression-card">
+            <div class="phrase">to set a boundary</div>
+            <div class="translation">establecer un límite</div>
+            <div class="example">My supervisor <em>set a boundary</em> about answering emails after 7 p.m.</div>
+        </div>
+        <div class="expression-card">
+            <div class="phrase">to feel uncomfortable with something</div>
+            <div class="translation">sentirse incómodo/a con algo</div>
+            <div class="example">I <em>feel uncomfortable with</em> last-minute requests that change my whole plan.</div>
+        </div>
+        <div class="expression-card">
+            <div class="phrase">to put pressure on someone</div>
+            <div class="translation">presionar a alguien</div>
+            <div class="example">The client kept <em>putting pressure on</em> the team to deliver early.</div>
+        </div>
+        <div class="expression-card">
+            <div class="phrase">to wear down trust</div>
+            <div class="translation">desgastar la confianza</div>
+            <div class="example">Ignoring agreements slowly <em>wears down trust</em> between colleagues.</div>
+        </div>
+        <div class="expression-card">
+            <div class="phrase">a two-way street</div>
+            <div class="translation">una calle de doble sentido / algo recíproco</div>
+            <div class="example">Good communication is <em>a two-way street</em> — both sides must listen.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 2: ARTICLE ===== -->
+    <div class="section-heading"><span class="icon">📖</span> Article</div>
+    <div class="article-box">
+
+        <!-- PARAGRAPH 1 -->
+        <p>
+            There are all sorts of <span class="hl" title="límites / barreras">boundaries</span> in the world around us, from walls and fences to rivers and mountains.
+            These <span class="hl" title="barreras">barriers</span> help us keep things we want in and things we don't want out.
+            However, not all boundaries are <span class="hl" title="físico/a">physical</span>.
+           Personal boundaries are rules or limits we set for ourselves in daily life.
+            They range from <span class="hl" title="profesional">professional</span> <span class="hl" title="restricciones">restrictions</span> to emotional <span class="hl" title="protecciones / barandillas">guardrails</span> and are <span class="hl" title="esencial / muy importante">essential</span> because they help us decide what is or isn't good for us.
+        </p>
+
+        <!-- VOCAB: PARAGRAPH 1 -->
+        <div class="vocab-section">
+            <div class="vocab-section-label">📘 Paragraph 1 — Key Words</div>
+            <div class="vocab-grid">
+                <div class="vocab-card teal">
+                    <div class="vocab-word">boundary <button class="speak-btn" onclick="speakWord('boundary')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A line or limit that separates two things</div>
+                    <div class="vocab-es">🇲🇽 límite, frontera</div>
+                    <div class="vocab-example">"There is a clear boundary between work time and personal time."</div>
+                </div>
+                <div class="vocab-card teal">
+                    <div class="vocab-word">barrier <button class="speak-btn" onclick="speakWord('barrier')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">Something that blocks or separates</div>
+                    <div class="vocab-es">🇲🇽 barrera, obstáculo</div>
+                    <div class="vocab-example">"A language barrier can make meetings more difficult."</div>
+                </div>
+                <div class="vocab-card teal">
+                    <div class="vocab-word">restriction <button class="speak-btn" onclick="speakWord('restriction')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A rule that limits what you can do</div>
+                    <div class="vocab-es">🇲🇽 restricción</div>
+                    <div class="vocab-example">"There are weight restrictions for packages in shipping."</div>
+                </div>
+                <div class="vocab-card teal">
+                    <div class="vocab-word">guardrail <button class="speak-btn" onclick="speakWord('guardrail')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A protection that prevents you from going too far in the wrong direction</div>
+                    <div class="vocab-es">🇲🇽 protección, guarda</div>
+                    <div class="vocab-example">"Good company policies act as guardrails for employees."</div>
+                </div>
+                <div class="vocab-card teal">
+                    <div class="vocab-word">essential <button class="speak-btn" onclick="speakWord('essential')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Absolutely necessary; very important</div>
+                    <div class="vocab-es">🇲🇽 esencial, fundamental</div>
+                    <div class="vocab-example">"Clear deadlines are essential in logistics."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 2 -->
+        <p>
+            Peer <span class="hl" title="presión">pressure</span> affects almost everyone, especially young people.
+            If everyone around you is doing something, chances are you'll find it hard not to join them.
+            This is why personal boundaries with friends are so important.
+            If you feel <span class="hl" title="incómodo/a">uncomfortable</span> in certain situations, be honest with your friends so they'll understand not to <span class="hl" title="presionar, empujar">push</span> you into activities you don't enjoy.
+          Just as we set our own boundaries, we must respect others' boundaries too.
+            Pay attention to <span class="hl" title="verbal / hablado/a">verbal</span> and nonverbal <span class="hl" title="señales, pistas">cues</span>.
+            If someone says "no" or seems uncomfortable, don't pressure them.
+            <span class="hl" title="violar, romper">Violating</span> boundaries — whether by constantly texting late at night, sharing private information, or pushing unwanted activities — <span class="hl-phrasal" title="desgastar (phrasal verb)">wears down</span> trust and damages relationships.
+            Respecting boundaries is a two-way street that creates healthier connections.
+        </p>
+
+        <!-- VOCAB: PARAGRAPH 2 -->
+        <div class="vocab-section">
+            <div class="vocab-section-label">📘 Paragraph 2 — Key Words</div>
+            <div class="vocab-grid">
+                <div class="vocab-card coral">
+                    <div class="vocab-word">peer pressure <button class="speak-btn" onclick="speakWord('peer pressure')">🔊</button></div>
+                    <div class="vocab-pos">noun phrase</div>
+                    <div class="vocab-def">The influence from people your own age or group to do something</div>
+                    <div class="vocab-es">🇲🇽 presión de grupo</div>
+                    <div class="vocab-example">"Peer pressure made him agree to work overtime every weekend."</div>
+                </div>
+                <div class="vocab-card coral">
+                    <div class="vocab-word">cue <button class="speak-btn" onclick="speakWord('cue')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A sign or signal that tells you something</div>
+                    <div class="vocab-es">🇲🇽 señal, indicio</div>
+                    <div class="vocab-example">"When the customer goes quiet, that's a cue they're unhappy."</div>
+                </div>
+                <div class="vocab-card coral">
+                    <div class="vocab-word">nonverbal <button class="speak-btn" onclick="speakWord('nonverbal')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Communication without words — body language, facial expressions</div>
+                    <div class="vocab-es">🇲🇽 no verbal</div>
+                    <div class="vocab-example">"Crossing your arms is a nonverbal sign that you are not comfortable."</div>
+                </div>
+                <div class="vocab-card coral">
+                    <div class="vocab-word">violate <button class="speak-btn" onclick="speakWord('violate')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">To break a rule or go against someone's limits</div>
+                    <div class="vocab-es">🇲🇽 violar, infringir</div>
+                    <div class="vocab-example">"Sharing a colleague's personal data violates their privacy."</div>
+                </div>
+            </div>
+
+            <!-- Phrasal verb note -->
+            <div class="phrasal-note">
+                <strong>🔗 Phrasal Verb: wear down</strong><br>
+                <strong>wear down</strong> = to slowly reduce or destroy something, especially trust or energy
+                &nbsp;|&nbsp; <em>desgastar poco a poco</em><br>
+                <button class="speak-btn" onclick="speakWord('wear down')" style="display:inline-flex;margin-top:0.4rem;">🔊</button>
+                <span style="font-size:0.9rem;color:#2e4a40;margin-left:0.4rem;font-style:italic;">"Constant interruptions wear down a team's motivation."</span>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 3 -->
+        <p>
+            Personal boundaries are also essential for managing technology in our lives.
+            With modern <span class="hl" title="dispositivos, aparatos">devices</span>, work can easily follow you home, but you can protect your personal time by turning off your work phone or <span class="hl-phrasal" title="posponer, aplazar (phrasal verb)">putting off</span> emails after a certain time.
+            Social media poses additional <span class="hl" title="desafíos, retos">challenges</span>.
+            Apps like Instagram and Facebook let us connect globally, yet they're so <span class="hl" title="adictivo/a">addictive</span> they can <span class="hl" title="consumir, absorber">consume</span> too much of our time.
+            To address this, set <span class="hl" title="estricto/a, riguroso/a">strict</span> time limits for social media use, leaving time to enjoy the real world.
+            <span class="hl" title="contenido">Content</span> restrictions can also <span class="hl-phrasal" title="eliminar, filtrar (phrasal verb)">filter out</span> harmful material online.
+        </p>
+
+        <!-- VOCAB: PARAGRAPH 3 -->
+        <div class="vocab-section">
+            <div class="vocab-section-label">📘 Paragraph 3 — Key Words</div>
+            <div class="vocab-grid">
+                <div class="vocab-card amber">
+                    <div class="vocab-word">device <button class="speak-btn" onclick="speakWord('device')">🔊</button></div>
+                    <div class="vocab-pos">noun</div>
+                    <div class="vocab-def">A machine or tool, especially an electronic one</div>
+                    <div class="vocab-es">🇲🇽 dispositivo, aparato</div>
+                    <div class="vocab-example">"Our QA team uses devices to scan barcodes on the line."</div>
+                </div>
+                <div class="vocab-card amber">
+                    <div class="vocab-word">addictive <button class="speak-btn" onclick="speakWord('addictive')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Something that makes you want more and is hard to stop</div>
+                    <div class="vocab-es">🇲🇽 adictivo/a</div>
+                    <div class="vocab-example">"Checking notifications every five minutes is very addictive."</div>
+                </div>
+                <div class="vocab-card amber">
+                    <div class="vocab-word">consume <button class="speak-btn" onclick="speakWord('consume')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">To use up a large amount of something (time, energy, resources)</div>
+                    <div class="vocab-es">🇲🇽 consumir, absorber</div>
+                    <div class="vocab-example">"Manual data entry consumes hours that could go to real analysis."</div>
+                </div>
+                <div class="vocab-card amber">
+                    <div class="vocab-word">strict <button class="speak-btn" onclick="speakWord('strict')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Firm and exact; not flexible</div>
+                    <div class="vocab-es">🇲🇽 estricto/a, riguroso/a</div>
+                    <div class="vocab-example">"We have strict rules about safety equipment on the factory floor."</div>
+                </div>
+            </div>
+
+            <!-- Phrasal verb note 2 -->
+            <div class="phrasal-note">
+                <strong>🔗 Phrasal Verbs in this paragraph:</strong><br><br>
+                <strong>put off</strong> = to delay or postpone &nbsp;|&nbsp; <em>posponer, aplazar</em><br>
+                <button class="speak-btn" onclick="speakWord('put off')" style="display:inline-flex;margin-top:0.3rem;">🔊</button>
+                <span style="font-size:0.9rem;color:#2e4a40;margin-left:0.4rem;font-style:italic;">"She put off answering the email until the next morning."</span><br><br>
+                <strong>filter out</strong> = to remove something unwanted &nbsp;|&nbsp; <em>filtrar, eliminar</em><br>
+                <button class="speak-btn" onclick="speakWord('filter out')" style="display:inline-flex;margin-top:0.3rem;">🔊</button>
+                <span style="font-size:0.9rem;color:#2e4a40;margin-left:0.4rem;font-style:italic;">"The system filters out suppliers who don't meet our standards."</span>
+            </div>
+        </div>
+
+        <!-- PARAGRAPH 4 -->
+        <p>
+           Setting boundaries doesn't mean distancing yourself from others.
+            Rather, boundaries provide a healthy way to <span class="hl" title="navegar, moverse en">navigate</span> the world.
+            They allow us to <span class="hl" title="interactuar">interact</span> with others without <span class="hl" title="descuidar, ignorar">neglecting</span> our own needs.
+            They're <span class="hl" title="beneficioso/a">beneficial</span> for both you and those around you.
+        </p>
+
+        <!-- VOCAB: PARAGRAPH 4 -->
+        <div class="vocab-section">
+            <div class="vocab-section-label">📘 Paragraph 4 — Key Words</div>
+            <div class="vocab-grid">
+                <div class="vocab-card sage">
+                    <div class="vocab-word">navigate <button class="speak-btn" onclick="speakWord('navigate')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">To find your way through a difficult situation</div>
+                    <div class="vocab-es">🇲🇽 navegar, manejarse en</div>
+                    <div class="vocab-example">"It takes skill to navigate a difficult conversation with a client."</div>
+                </div>
+                <div class="vocab-card sage">
+                    <div class="vocab-word">interact <button class="speak-btn" onclick="speakWord('interact')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">To communicate and work with other people</div>
+                    <div class="vocab-es">🇲🇽 interactuar</div>
+                    <div class="vocab-example">"In my job, I interact with the purchasing team every day."</div>
+                </div>
+                <div class="vocab-card sage">
+                    <div class="vocab-word">neglect <button class="speak-btn" onclick="speakWord('neglect')">🔊</button></div>
+                    <div class="vocab-pos">verb</div>
+                    <div class="vocab-def">To fail to give proper attention to something or someone</div>
+                    <div class="vocab-es">🇲🇽 descuidar, ignorar</div>
+                    <div class="vocab-example">"When I work too many hours, I neglect my family."</div>
+                </div>
+                <div class="vocab-card sage">
+                    <div class="vocab-word">beneficial <button class="speak-btn" onclick="speakWord('beneficial')">🔊</button></div>
+                    <div class="vocab-pos">adjective</div>
+                    <div class="vocab-def">Having a good or positive effect</div>
+                    <div class="vocab-es">🇲🇽 beneficioso/a, provechoso/a</div>
+                    <div class="vocab-example">"Regular breaks are beneficial for concentration and quality."</div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- end article-box -->
+
+
+    <!-- ===== SECTION 3: DISCUSSION ===== -->
+    <div class="section-heading"><span class="icon">🗣️</span> Discussion Questions</div>
+    <div class="discussion-box">
+        <h3>Talk about it with your classmates:</h3>
+        <ol>
+            <li>Do you think it is easy or difficult to say "no" at work in Mexico? What makes it hard? Have you ever felt peer pressure from a manager or coworker?</li>
+            <li>Technology makes it hard to "disconnect" from work. Do you check work messages after hours? What boundaries, if any, do you try to set?</li>
+            <li>The article says respecting boundaries is "a two-way street." Can you think of a situation at work where one person's boundary affected the whole team?</li>
+        </ol>
+    </div>
+
+    <!-- ===== SECTION 4: SELF-PRACTICE ===== -->
+    <div class="section-heading"><span class="icon">✏️</span> Self-Practice</div>
+    <div class="practice-list">
+
+        <details class="practice-item">
+            <summary>1. What does "peer pressure" mean? Give an example from your workplace.</summary>
+            <div class="practice-answer">
+                <strong>Peer pressure</strong> means the influence from people around you (colleagues, friends) that pushes you to do something — even if you don't really want to.<br><br>
+                <em>Example:</em> "Everyone on the team was staying late, so I felt peer pressure to stay too, even though I had already finished my work."
+            </div>
+        </details>
+
+        <details class="practice-item">
+            <summary>2. Choose the correct word: "Ignoring someone's 'no' slowly _______ trust." (wears down / filters out / puts off)</summary>
+            <div class="practice-answer">
+                ✅ <strong>wears down</strong><br><br>
+                "Ignoring someone's 'no' slowly <strong>wears down</strong> trust."<br><br>
+                <em>Remember:</em> <strong>wear down</strong> = to slowly destroy or reduce. <strong>Filter out</strong> = to remove unwanted things. <strong>Put off</strong> = to delay.
+            </div>
+        </details>
+
+        <details class="practice-item">
+            <summary>3. Make your own sentence: "I feel uncomfortable when _______ at work."</summary>
+            <div class="practice-answer">
+                There is no single right answer! Here are some ideas:<br><br>
+                "I feel uncomfortable when <em>my supervisor calls me after 9 p.m.</em>"<br>
+                "I feel uncomfortable when <em>someone shares my mistakes in front of the whole team.</em>"<br>
+                "I feel uncomfortable when <em>I am asked to skip my lunch break.</em>"
+            </div>
+        </details>
+
+        <details class="practice-item">
+            <summary>4. True or False: "Setting boundaries means you don't want to talk to anyone."</summary>
+            <div class="practice-answer">
+                ❌ <strong>False.</strong><br><br>
+                The article clearly says: <em>"Setting boundaries doesn't mean distancing yourself from others."</em> Boundaries help you interact with people in a healthier way — you still connect, but on terms that work for you.
+            </div>
+        </details>
+
+    </div>
+
+    <div class="footer-note">English Conversation with Elisa &nbsp;·&nbsp; Intermediate Level &nbsp;·&nbsp; Personal Boundaries</div>
+
+</div><!-- end page-wrapper -->
+
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+</script>
+
+
