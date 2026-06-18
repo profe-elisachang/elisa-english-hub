@@ -1,0 +1,710 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Benefits of Boundaries - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        /* CUSTOM CSS - Inspired by Original Image (Warm, Earthy, Soft) */
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f7f2eb; /* soft warm cream */
+            color: #2c2a26;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER - warm taupe/beige from image */
+        .header {
+            background: #c4b4a0; /* warm greige */
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .level-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+        .back-to-calendar-btn:hover {
+            background: rgba(255,255,255,0.35);
+        }
+
+        /* VOCAB HIGHLIGHT - warm yellow/orange like image */
+        .highlight {
+            background-color: #fce9d6; /* soft peach-yellow */
+            font-weight: 700;
+            border-bottom: 2px solid #dba87a; /* warm terracotta */
+            position: relative;
+            cursor: help;
+            padding: 2px 5px;
+            border-radius: 2px;
+            transition: 0.1s;
+        }
+        .highlight:hover {
+            background-color: #fadcc2;
+        }
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c2a26;
+            color: #f7f2eb;
+            padding: 6px 14px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 0.8rem;
+            font-weight: 400;
+            z-index: 1000;
+            transition-delay: 0.15s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            letter-spacing: 0.3px;
+        }
+
+        /* VOCABULARY SECTION - inspired by image's clean card style */
+        .vocabulary-section {
+            background: #fcf9f5;
+            border-left: 4px solid #dba87a; /* terracotta accent */
+            padding: 20px 20px 10px 20px;
+            margin: 30px 0 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .vocabulary-section h3 {
+            color: #8b6f56;
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: 1px solid #e6d9cc;
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .vocab-item {
+            background: white;
+            padding: 16px 16px 14px 16px;
+            border-radius: 8px;
+            border: 1px solid #e6d9cc;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            transition: 0.1s;
+        }
+        .vocab-item:hover {
+            border-color: #c9b09b;
+        }
+        .vocab-word {
+            margin-bottom: 6px;
+        }
+        .vocab-word strong {
+            color: #8b6f56;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.0rem;
+            padding: 0;
+            vertical-align: middle;
+            color: #a68870;
+            transition: 0.2s;
+        }
+        .speak-btn:hover {
+            color: #dba87a;
+            transform: scale(1.1);
+        }
+        .vocab-def {
+            color: #2c2a26;
+            margin: 4px 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        .vocab-es {
+            color: #7d6b58;
+            font-style: italic;
+            margin: 2px 0 8px 0;
+            font-size: 0.92rem;
+        }
+        .vocab-example {
+            border-left: 3px solid #dba87a;
+            padding-left: 14px;
+            margin-top: 10px;
+            color: #3d3730;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            background: #faf6f0;
+            padding: 8px 14px;
+            border-radius: 4px;
+        }
+
+        /* DISCUSSION & PRACTICE - soft earthy */
+        .discussion-box, .practice-box {
+            background: #fcf9f5;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin: 35px 0;
+            border: 1px solid #e6d9cc;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .discussion-box h2, .practice-box h2 {
+            color: #7a624b;
+            border-bottom: 2px solid #e6d9cc;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-weight: 600;
+        }
+        .discussion-box ul, .practice-box ul {
+            padding-left: 22px;
+        }
+        .discussion-box li, .practice-box li {
+            margin-bottom: 12px;
+            font-size: 1.02rem;
+        }
+        details {
+            margin-top: 15px;
+            background: #f3ede6;
+            padding: 12px 18px;
+            border-radius: 8px;
+        }
+        details summary {
+            font-weight: 600;
+            color: #7a624b;
+            cursor: pointer;
+        }
+        details ol {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        details li {
+            margin-bottom: 8px;
+        }
+
+        /* MOBILE NOTE */
+        .mobile-note {
+            background: #f3ede6;
+            padding: 8px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #7a624b;
+            margin: 8px 0 20px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<!-- FIXED HEADER - DO NOT MODIFY -->
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Advanced Level</span>  
+        <div class="search-box">
+            <a href="../index-advanced.html" class="back-to-calendar-btn">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://corporatecommunicationexperts.com.au/wp-content/uploads/2024/01/The-Benefits-of-Setting-Boundaries-by-Violet-Dhu.png" alt="⚖️ The Benefits of Boundaries" class="article-image">
+    </div>
+
+
+<div class="container">
+    <main class="main-content">
+
+        <!-- ========== SECTION 1: USEFUL EXPRESSIONS ========== -->
+        <section style="margin-bottom: 30px;">
+            <h2 style="color: #7a624b; border-bottom: 3px solid #dccfc0; padding-bottom: 10px;">💬 Useful Expressions</h2>
+            <div style="background: #fcf9f5; padding: 15px 20px; border-radius: 8px; border-left: 4px solid #dba87a;">
+                <p><strong>Could you clarify…?</strong> — ¿Podrías aclarar…?<br>
+                <em>Example:</em> Could you clarify the expectations for this project?</p>
+                <p><strong>I need to set a boundary around…</strong> — Necesito establecer un límite en cuanto a…<br>
+                <em>Example:</em> I need to set a boundary around after-hours communication.</p>
+                <p><strong>Let’s revisit this later.</strong> — Revisemos esto más tarde.<br>
+                <em>Example:</em> Let's revisit this later when we have more clarity.</p>
+                <p><strong>I’m feeling overextended.</strong> — Me siento sobrecargado.<br>
+                <em>Example:</em> I’m feeling overextended with all these urgent meetings.</p>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 2: ARTICLE WITH HIGHLIGHTED VOCAB ========== -->
+        <h1 style="color: #5d4a38; font-size: 2.1rem;">⚖️ The Benefits of Boundaries</h1>
+        <p style="color: #7a6a5a; font-style: italic; margin-top: -10px;">Sometimes too much freedom makes a workplace worse</p>
+        <p style="color: #7a6a5a; font-size: 0.9rem;">by Tony Martignetti © 2025, Fast Company. Mansueto Ventures, LLC.</p>
+
+        <div class="mobile-note">📱 On mobile: Tap and hold highlighted words to see translation</div>
+
+        <!-- ===== PARAGRAPH 1 ===== -->
+        <p>
+            We've been told that the future of work is all about freedom. Companies offer flexible hours and 
+            <span class="highlight" title="no sincrónico / que no ocurre al mismo tiempo">asynchronous</span> 
+            communication channels that we can access anytime. The promise is that fewer 
+            <span class="highlight" title="restricciones">constraints</span> 
+            will make us more empowered, more creative and more connected.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 1</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>asynchronous</strong> <button class="speak-btn" onclick="speakWord('asynchronous')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Not happening at the same time or rate.</div>
+                    <div class="vocab-es">no sincrónico</div>
+                    <div class="vocab-example">We use asynchronous communication to accommodate different time zones.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>constraints</strong> <button class="speak-btn" onclick="speakWord('constraints')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Limits that restrict your freedom to do what you want.</div>
+                    <div class="vocab-es">restricciones</div>
+                    <div class="vocab-example">Time and budget constraints forced us to prioritize.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>access</strong> <button class="speak-btn" onclick="speakWord('access')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To be able to use or obtain something.</div>
+                    <div class="vocab-es">acceder a / tener acceso</div>
+                    <div class="vocab-example">All employees can access the company's learning platform.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 2 ===== -->
+        <p>
+            Sounds great in theory, but in practice, that kind of freedom without structure often leads to chaos. Without clear boundaries, work becomes a blur. Expectations go unspoken; resentment builds; ultimately, trust 
+            <span class="highlight" title="se erosiona / se debilita">erodes</span>. The flexibility meant to 
+            <span class="highlight" title="liberar">liberate</span> us begins to wear us down.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 2</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>erodes</strong> <button class="speak-btn" onclick="speakWord('erodes')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Gradually weakens or destroys.</div>
+                    <div class="vocab-es">se erosiona / se debilita</div>
+                    <div class="vocab-example">Constant criticism erodes team morale over time.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>liberate</strong> <button class="speak-btn" onclick="speakWord('liberate')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To free someone from conditions that make life difficult.</div>
+                    <div class="vocab-es">liberar</div>
+                    <div class="vocab-example">Flexible hours can liberate employees from rigid schedules.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>wear down</strong> <button class="speak-btn" onclick="speakWord('wear down')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To make someone feel tired or less enthusiastic over time.</div>
+                    <div class="vocab-es">agotar / desgastar</div>
+                    <div class="vocab-example">Constant pressure can wear down even the most resilient teams.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 3 ===== -->
+        <p>
+            <strong>Boundaries protect a workplace</strong><br>
+            In today's workplace, hybrid schedules, digital fatigue and high emotional load are the norm. Employees feel burned out at work, and one of the top drivers is unclear or constantly shifting expectations. Meanwhile, remote workers report difficulty disconnecting from work. A workplace without boundaries doesn't create engagement; it creates exhaustion.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 3</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>burned out</strong> <button class="speak-btn" onclick="speakWord('burned out')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Extremely tired or ill from working too hard.</div>
+                    <div class="vocab-es">agotado / quemado</div>
+                    <div class="vocab-example">Many employees feel burned out after months of overtime.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>engagement</strong> <button class="speak-btn" onclick="speakWord('engagement')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Commitment and involvement in work.</div>
+                    <div class="vocab-es">compromiso / implicación</div>
+                    <div class="vocab-example">High engagement leads to better retention and productivity.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>exhaustion</strong> <button class="speak-btn" onclick="speakWord('exhaustion')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Extreme tiredness, usually from overwork.</div>
+                    <div class="vocab-es">agotamiento</div>
+                    <div class="vocab-example">Mental exhaustion affects decision-making and creativity.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 4 ===== -->
+        <p>
+            <strong>Boundaries help the team</strong><br>
+            Many people resist the idea of boundaries because they sound rigid or limiting. But boundaries don't 
+            <span class="highlight" title="restringir / limitar">constrain</span> our power; they clarify it. Boundaries 
+            <span class="highlight" title="refuerzan">reinforce</span> trust by setting expectations, expressing what we truly value, and defining where we end and others begin.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 4</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>constrain</strong> <button class="speak-btn" onclick="speakWord('constrain')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To limit or restrict.</div>
+                    <div class="vocab-es">restringir / limitar</div>
+                    <div class="vocab-example">Too many rules can constrain creativity.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>reinforce</strong> <button class="speak-btn" onclick="speakWord('reinforce')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To strengthen or support.</div>
+                    <div class="vocab-es">refuerzan</div>
+                    <div class="vocab-example">Regular check-ins reinforce team alignment.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>resist</strong> <button class="speak-btn" onclick="speakWord('resist')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To oppose or fight against something.</div>
+                    <div class="vocab-es">resistir / oponerse</div>
+                    <div class="vocab-example">Some employees resist change because they fear the unknown.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 5 ===== -->
+        <p>
+            As workplace author Greg McKeown puts it: "Constraints don't block progress; they shape it. A deadline forces a start. A boundary protects your attention."
+        </p>
+        <!-- no new vocab -->
+
+        <!-- ===== PARAGRAPH 6 ===== -->
+        <p>
+            <strong>Setting boundaries can bring change</strong><br>
+            I once worked with the leaders of an innovative climate tech company that was scaling fast. Responsiveness was a badge of honor; Slack was always on; meetings were often urgent; and everything was an immediate "yes." But beneath the surface, there was extreme fatigue, frustration and blurred priorities. The culture looked high-performing on paper but felt hollow in practice.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 6</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>scaling</strong> <button class="speak-btn" onclick="speakWord('scaling')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Growing or expanding rapidly.</div>
+                    <div class="vocab-es">escalando / creciendo</div>
+                    <div class="vocab-example">The startup is scaling quickly and hiring many new people.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>badge of honor</strong> <button class="speak-btn" onclick="speakWord('badge of honor')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Something considered a mark of pride, even if negative.</div>
+                    <div class="vocab-es">distinción / símbolo de orgullo</div>
+                    <div class="vocab-example">Working late was seen as a badge of honor in that company.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>hollow</strong> <button class="speak-btn" onclick="speakWord('hollow')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Empty or without real meaning or value.</div>
+                    <div class="vocab-es">vacío / hueco</div>
+                    <div class="vocab-example">The team's success felt hollow because everyone was exhausted.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 7 ===== -->
+        <p>
+            In a facilitated session, one team member admitted, "I never know when I'm allowed to shut off. And I'm afraid that setting limits will make me look like I don't care." That moment shifted everything. The team introduced core hours for collaboration, quiet blocks for focused work, and "Focus Fridays" without meetings or Slack messages. Within weeks, their energy felt 
+            <span class="highlight" title="revitalizado / con nueva energía">reinvigorated</span>. Morale improved, and creativity 
+            <span class="highlight" title="reapareció / surgió de nuevo">reemerged</span>.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 7</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>facilitated</strong> <button class="speak-btn" onclick="speakWord('facilitated')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Guided or made easier (a session or process).</div>
+                    <div class="vocab-es">facilitado / guiado</div>
+                    <div class="vocab-example">The meeting was facilitated by an external consultant.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>shut off</strong> <button class="speak-btn" onclick="speakWord('shut off')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To stop working or disconnect mentally.</div>
+                    <div class="vocab-es">desconectarse / apagar</div>
+                    <div class="vocab-example">It's hard to shut off after a long day of meetings.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>reinvigorated</strong> <button class="speak-btn" onclick="speakWord('reinvigorated')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Given new energy or strength.</div>
+                    <div class="vocab-es">revitalizado</div>
+                    <div class="vocab-example">The team felt reinvigorated after the retreat.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>reemerged</strong> <button class="speak-btn" onclick="speakWord('reemerged')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Appeared again after a period of absence.</div>
+                    <div class="vocab-es">reapareció</div>
+                    <div class="vocab-example">Creativity reemerged when the pressure was reduced.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 8 ===== -->
+        <p>
+            <strong>How to build healthy boundaries</strong><br>
+            Before you can communicate boundaries to others, you need to define them for yourself. What lines can't be crossed—whether that's after-hours communication, personal ethics or feedback norms? Clarity starts within, then becomes a shared agreement. Articulate your boundaries early. Don't assume others know. Share them out loud, and 
+            <span class="highlight" title="revisar / volver a considerar">revisit</span> them when your context shifts. Setting boundaries isn't a one-time conversation; it's a leadership habit that evolves alongside your role and relationships.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 8</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>articulate</strong> <button class="speak-btn" onclick="speakWord('articulate')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To express clearly in words.</div>
+                    <div class="vocab-es">articular / expresar claramente</div>
+                    <div class="vocab-example">She articulated her concerns about the new policy.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>revisit</strong> <button class="speak-btn" onclick="speakWord('revisit')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To consider or discuss something again.</div>
+                    <div class="vocab-es">revisar / volver a considerar</div>
+                    <div class="vocab-example">We should revisit the policy every quarter.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>evolves</strong> <button class="speak-btn" onclick="speakWord('evolves')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Develops gradually over time.</div>
+                    <div class="vocab-es">evoluciona</div>
+                    <div class="vocab-example">Leadership styles evolve as teams grow and change.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 9 ===== -->
+        <p>
+            Leave room for a buffer. Not every line is absolute. Build a "pause zone" for conversation and recalibration. This could mean committing to a 30-minute delay before responding to non-urgent messages or setting up clear blocks in the week for focused work versus collaborative time. A boundary that protects your time but violates your purpose won't hold. Make sure your boundaries serve your bigger "why." The most sustainable boundaries are those that feel not only practical but deeply principled.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 9</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>buffer</strong> <button class="speak-btn" onclick="speakWord('buffer')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">A protective space or margin.</div>
+                    <div class="vocab-es">amortiguador / margen</div>
+                    <div class="vocab-example">We should build a buffer into our schedule for unexpected tasks.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>recalibration</strong> <button class="speak-btn" onclick="speakWord('recalibration')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">The act of adjusting or correcting something.</div>
+                    <div class="vocab-es">recalibración / reajuste</div>
+                    <div class="vocab-example">The team needs a recalibration of its goals after the merger.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>violates</strong> <button class="speak-btn" onclick="speakWord('violates')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Breaks or disrespects (a rule, agreement, or value).</div>
+                    <div class="vocab-es">viola / quebranta</div>
+                    <div class="vocab-example">A policy that violates employee well-being is not sustainable.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>sustainable</strong> <button class="speak-btn" onclick="speakWord('sustainable')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Able to be maintained over time.</div>
+                    <div class="vocab-es">sostenible / duradero</div>
+                    <div class="vocab-example">We need sustainable solutions that don't burn people out.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 10 ===== -->
+        <p>
+            <strong>Sometimes boundaries need fixing</strong><br>
+            Resentment, anxiety and exhaustion are often signs that a boundary has been 
+            <span class="highlight" title="violado / quebrantado">breached</span> or needs reinforcement. Your emotional patterns are data—listen to them before they become burnout. Evaluate and evolve. What worked last year may not work now. Boundaries should shift with your life, your leadership and your team. 
+            <span class="highlight" title="revisar / considerar de nuevo">Revisit</span> them regularly and treat them as a living part of how you work, not a fixed set of rules.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 10</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>breached</strong> <button class="speak-btn" onclick="speakWord('breached')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Broken (a law, rule, or agreement).</div>
+                    <div class="vocab-es">violado / quebrantado</div>
+                    <div class="vocab-example">The contract was breached when deadlines were missed.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>reinforcement</strong> <button class="speak-btn" onclick="speakWord('reinforcement')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">The act of strengthening or supporting.</div>
+                    <div class="vocab-es">refuerzo</div>
+                    <div class="vocab-example">Positive reinforcement encourages good behavior.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>evaluate</strong> <button class="speak-btn" onclick="speakWord('evaluate')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To judge or assess the value or quality of something.</div>
+                    <div class="vocab-es">evaluar</div>
+                    <div class="vocab-example">We need to evaluate our processes regularly.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PARAGRAPH 11 ===== -->
+        <p>
+            <strong>Boundaries and connection</strong><br>
+            Boundaries don't diminish connection. They deepen it because they make it safe to be fully present. Start by asking yourself and your team these questions: Where in our work are we 
+            <span class="highlight" title="sobrecargados / extendidos más allá de lo razonable">overextended</span>, unclear or always on? What's one boundary you need to set or revisit? Where is so-called "freedom" creating confusion? In work cultures without boundaries, people don't thrive. They scatter and self-protect, and eventually they burn out. But when leaders and teams get clear on their edges—on what's okay and what's not—they build something far more powerful: trust, clarity, creative energy and a deeper sense of shared purpose.
+        </p>
+
+        <div class="vocabulary-section">
+            <h3>📚 Vocabulary - Paragraph 11</h3>
+            <div class="vocab-container">
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>overextended</strong> <button class="speak-btn" onclick="speakWord('overextended')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">Trying to do too much, causing problems or stress.</div>
+                    <div class="vocab-es">sobrecargados / extendidos</div>
+                    <div class="vocab-example">We are overextended with too many simultaneous projects.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>thrive</strong> <button class="speak-btn" onclick="speakWord('thrive')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To grow, develop, or be successful.</div>
+                    <div class="vocab-es">prosperar / desarrollarse</div>
+                    <div class="vocab-example">People thrive in environments where they feel safe and valued.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>scatter</strong> <button class="speak-btn" onclick="speakWord('scatter')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">To spread out in different directions.</div>
+                    <div class="vocab-es">dispersarse</div>
+                    <div class="vocab-example">When trust is broken, team members scatter and self-protect.</div>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-word"><strong>shared purpose</strong> <button class="speak-btn" onclick="speakWord('shared purpose')" title="Click to hear pronunciation">🔊</button></div>
+                    <div class="vocab-def">A common goal or reason for working together.</div>
+                    <div class="vocab-es">propósito compartido</div>
+                    <div class="vocab-example">A shared purpose unites the team and drives collaboration.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== SECTION 4: DISCUSSION QUESTIONS ========== -->
+        <div class="discussion-box">
+            <h2>💡 Discussion Questions</h2>
+            <ul>
+                <li>How does your team currently handle the balance between flexibility and structure?</li>
+                <li>What are some signs that a boundary has been breached in your workplace?</li>
+                <li>In your experience, what makes a boundary feel "principled" rather than just restrictive?</li>
+            </ul>
+        </div>
+
+        <!-- ========== SECTION 5: SELF-PRACTICE ========== -->
+        <div class="practice-box">
+            <h2>✍️ Self-Practice</h2>
+            <ul>
+                <li><strong>Fill in the blank:</strong> Without clear boundaries, work becomes a __________. (blur / clarity)</li>
+                <li><strong>True or False:</strong> Boundaries always diminish connection and trust.</li>
+                <li><strong>Complete the sentence:</strong> If I feel overextended, I should __________.</li>
+                <li><strong>Matching:</strong> Match the vocabulary to its meaning:
+                    <ul style="margin-top: 6px; list-style-type: lower-alpha; padding-left: 20px;">
+                        <li>1. constrain → (  ) liberar</li>
+                        <li>2. liberate → (  ) restringir</li>
+                        <li>3. breach → (  ) violar</li>
+                    </ul>
+                </li>
+            </ul>
+            <details>
+                <summary><strong>Reference Answers</strong></summary>
+                <ol>
+                    <li>blur</li>
+                    <li>False — Boundaries deepen connection when set clearly.</li>
+                    <li>(open answer) set a boundary, delegate, or pause and reassess.</li>
+                    <li>1-b, 2-a, 3-c</li>
+                </ol>
+            </details>
+        </div>
+
+    </main>
+</div>
+
+<!-- PRONUNCIATION SCRIPT -->
+<script>
+    function speakWord(word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.8;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
+
