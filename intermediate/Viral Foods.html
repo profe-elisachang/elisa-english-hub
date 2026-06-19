@@ -1,0 +1,881 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Screens to Stores: The Power of Viral Foods | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-intermediate.css">
+<style>
+  :root{
+    --ink:#2B2420;
+    --cream:#FFF8EE;
+    --paper:#FFFDF8;
+    --chili:#E8543A;
+    --chili-dark:#C03E28;
+    --basil:#1F6F5C;
+    --basil-dark:#15503F;
+    --yolk:#FFD23F;
+    --yolk-dark:#E0A800;
+    --butter:#FFF3D6;
+    --line:#D8CDBC;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    font-family:'Open Sans','Noto Sans',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 2rem 4rem;
+  }
+
+  /* ===== HEADER (required, unmodified) ===== */
+  .header{
+    background:var(--chili-dark);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 3px 12px rgba(0,0,0,0.25);
+  }
+  .header-content{
+    max-width:1400px;
+    margin:0 auto;
+    padding:1rem 2rem;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .header h1{
+    margin:0;
+    font-size:1.5rem;
+    font-weight:800;
+  }
+  .level-badge{
+    background:var(--yolk);
+    color:var(--ink);
+    padding:0.3rem 0.8rem;
+    border-radius:20px;
+    font-weight:700;
+    font-size:0.85rem;
+  }
+  .search-box{ margin-left:auto; }
+  .back-to-calendar-btn:hover{
+    background:rgba(255,255,255,0.4) !important;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:var(--chili);
+    color:#fff;
+    padding:3.5rem 2rem 3rem;
+    margin-bottom:3rem;
+    border-bottom:8px solid var(--ink);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2rem;
+    flex-wrap:wrap;
+  }
+  .hero-eyebrow{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--yolk);
+    padding:0.4rem 1rem;
+    border-radius:999px;
+    font-weight:800;
+    font-size:0.95rem;
+    letter-spacing:0.04em;
+    margin-bottom:1.2rem;
+  }
+  .hero h2{
+    font-size:clamp(2.1rem, 4vw, 3.4rem);
+    margin:0 0 0.6rem;
+    font-weight:800;
+    line-height:1.15;
+    max-width:700px;
+  }
+  .hero p.sub{
+    font-size:1.2rem;
+    max-width:600px;
+    margin:0;
+    opacity:0.95;
+    font-weight:600;
+  }
+  .hero-meter{
+    display:flex;
+    align-items:flex-end;
+    gap:0.4rem;
+    flex-shrink:0;
+  }
+  .hero-meter .spark{
+    background:var(--yolk);
+    border:3px solid var(--ink);
+    border-radius:10px 10px 4px 4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+  }
+  .hero-meter .spark:nth-child(1){ width:38px; height:38px; }
+  .hero-meter .spark:nth-child(2){ width:52px; height:52px; }
+  .hero-meter .spark:nth-child(3){ width:68px; height:68px; font-size:1.7rem;}
+
+  /* ===== SECTION DIVIDER (signature element) ===== */
+  .section-divider{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin:3.5rem 0 1.8rem;
+  }
+  .section-divider .flame{
+    font-size:1.6rem;
+  }
+  .section-divider h2{
+    font-size:1.7rem;
+    font-weight:800;
+    margin:0;
+    color:var(--chili-dark);
+    white-space:nowrap;
+  }
+  .section-divider .rule{
+    flex:1;
+    height:4px;
+    background:repeating-linear-gradient(90deg, var(--ink) 0 10px, transparent 10px 16px);
+    border-radius:2px;
+  }
+
+  /* ===== USEFUL EXPRESSIONS ===== */
+  .expressions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:1.2rem;
+  }
+  .expr-card{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:14px;
+    padding:1.3rem 1.4rem;
+    box-shadow:6px 6px 0 var(--basil);
+  }
+  .expr-card .en{
+    font-weight:800;
+    font-size:1.15rem;
+    color:var(--chili-dark);
+  }
+  .expr-card .es{
+    font-weight:700;
+    color:var(--basil-dark);
+    margin:0.25rem 0 0.6rem;
+    font-size:1.02rem;
+  }
+  .expr-card .ex{
+    font-style:italic;
+    font-size:0.97rem;
+    color:#4a4038;
+    border-top:1px dashed var(--line);
+    padding-top:0.6rem;
+  }
+
+  /* ===== ARTICLE ===== */
+  .article-meta{
+    font-size:1rem;
+    color:#6b5d4f;
+    font-weight:700;
+    margin-bottom:0.3rem;
+  }
+  .article-byline{
+    font-style:italic;
+    color:#6b5d4f;
+    margin-bottom:1.6rem;
+  }
+  .article-block{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:16px;
+    padding:2rem 2.2rem;
+    margin-bottom:1.4rem;
+    box-shadow:8px 8px 0 var(--yolk);
+  }
+  .article-block p{
+    font-size:1.18rem;
+    margin:0;
+  }
+
+  .highlight{
+    background:#fff9c4;
+    font-weight:700;
+    border-bottom:3px solid var(--yolk-dark);
+    padding:0.05rem 0.25rem;
+    border-radius:4px;
+    cursor:help;
+  }
+  .highlight-phrasal{
+    background:#d7f0e8;
+    font-weight:700;
+    border-bottom:3px solid var(--basil);
+    padding:0.05rem 0.25rem;
+    border-radius:4px;
+    cursor:help;
+  }
+  .highlight-idiom{
+    background:#ffe1d6;
+    font-weight:700;
+    border-bottom:3px solid var(--chili);
+    padding:0.05rem 0.25rem;
+    border-radius:4px;
+    cursor:help;
+  }
+
+  .legend{
+    display:flex;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    margin:1rem 0 2rem;
+    font-size:0.95rem;
+    font-weight:700;
+  }
+  .legend span{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+  }
+  .legend .dot{
+    width:16px;height:16px;border-radius:4px;display:inline-block;
+  }
+  .dot.word{background:#fff9c4;border:2px solid var(--yolk-dark);}
+  .dot.phr{background:#d7f0e8;border:2px solid var(--basil);}
+  .dot.idm{background:#ffe1d6;border:2px solid var(--chili);}
+
+  /* ===== VOCAB BOX ===== */
+  .vocab-box{
+    margin:0 0 2.2rem;
+    background:var(--butter);
+    border:3px dashed var(--basil);
+    border-radius:14px;
+    padding:1.3rem 1.4rem 1rem;
+  }
+  .vocab-box-label{
+    font-weight:800;
+    color:var(--basil-dark);
+    font-size:0.9rem;
+    letter-spacing:0.05em;
+    margin-bottom:0.8rem;
+    text-transform:uppercase;
+  }
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:1rem;
+  }
+  .vocab-card{
+    background:#fff;
+    border:2px solid var(--ink);
+    border-radius:10px;
+    padding:0.9rem 1rem;
+  }
+  .vocab-card .vc-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:0.3rem;
+  }
+  .vocab-card .vc-word{
+    font-weight:800;
+    font-size:1.08rem;
+    color:var(--chili-dark);
+  }
+  .vocab-card .speak-btn{
+    background:var(--basil);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    font-size:0.95rem;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .vocab-card .speak-btn:hover{ background:var(--basil-dark); }
+  .vocab-card .vc-es{
+    font-weight:700;
+    color:var(--basil-dark);
+    font-size:0.95rem;
+    margin-bottom:0.3rem;
+  }
+  .vocab-card .vc-def{
+    font-size:0.92rem;
+    color:#4a4038;
+    margin-bottom:0.4rem;
+  }
+  .vocab-card .vc-ex{
+    font-size:0.88rem;
+    font-style:italic;
+    color:#6b5d4f;
+    border-top:1px solid var(--line);
+    padding-top:0.4rem;
+  }
+
+  /* ===== DISCUSSION ===== */
+  .discussion-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .discussion-list li{
+    background:var(--basil);
+    color:#fff;
+    border-radius:14px;
+    padding:1.3rem 1.6rem;
+    font-size:1.15rem;
+    font-weight:600;
+    display:flex;
+    gap:1rem;
+    align-items:flex-start;
+    box-shadow:6px 6px 0 var(--ink);
+  }
+  .discussion-list .qnum{
+    background:var(--yolk);
+    color:var(--ink);
+    font-weight:800;
+    border-radius:50%;
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  /* ===== SELF PRACTICE ===== */
+  .practice-list{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  details.practice-item{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:12px;
+    padding:1rem 1.4rem;
+  }
+  details.practice-item summary{
+    font-weight:700;
+    font-size:1.1rem;
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:0.7rem;
+  }
+  details.practice-item summary::-webkit-details-marker{ display:none; }
+  details.practice-item summary::before{
+    content:"▶";
+    color:var(--chili);
+    font-size:0.9rem;
+    transition:transform 0.2s ease;
+  }
+  details.practice-item[open] summary::before{
+    transform:rotate(90deg);
+  }
+  .practice-answer{
+    margin-top:0.8rem;
+    padding-top:0.8rem;
+    border-top:2px dashed var(--line);
+    color:var(--basil-dark);
+    font-weight:700;
+    font-size:1.02rem;
+  }
+
+  footer.lesson-footer{
+    text-align:center;
+    color:#8a7c6c;
+    font-size:0.9rem;
+    margin-top:3rem;
+  }
+
+  @media (max-width: 640px){
+    .container{ padding:0 1rem 3rem; }
+    .header-content{ padding:0.8rem 1rem; }
+    .header h1{ font-size:1.15rem; }
+    .hero{ padding:2.2rem 1.2rem; }
+    .article-block{ padding:1.4rem 1.3rem; }
+    .article-block p{ font-size:1.05rem; }
+    .section-divider h2{ font-size:1.3rem; }
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://images.squarespace-cdn.com/content/v1/56a2785c69a91af45e06a188/1524592229346-NDHN8RY62KPLKF10O4L4/Viral+Food+Header.jpg?format=1500w" alt="🔥From Screens to Stores: The Power of Viral Foods" class="article-image">
+    </div>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-eyebrow">SOCIAL MEDIA</span>
+      <h2>From Screens to Stores: The Power of Viral Foods</h2>
+      <p class="sub">Why does the whole world suddenly want the same slice of cake?</p>
+    </div>
+    <div class="hero-meter" aria-hidden="true">
+      <div class="spark">🔥</div>
+      <div class="spark">🔥</div>
+      <div class="spark">🔥</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- ===== 1. USEFUL EXPRESSIONS ===== -->
+  <div class="section-divider">
+    <span class="flame">🗣️</span>
+    <h2>Useful Expressions</h2>
+    <span class="rule"></span>
+  </div>
+
+  <div class="expressions">
+    <div class="expr-card">
+      <div class="en">to go viral</div>
+      <div class="es">hacerse viral</div>
+      <div class="ex">"That video of the cheese factory went viral overnight."</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">to keep up with (something)</div>
+      <div class="es">mantenerse al día con / dar abasto con</div>
+      <div class="ex">"Our team couldn't keep up with the sudden surge in orders."</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">to be far from (simple/easy)</div>
+      <div class="es">estar lejos de (ser sencillo/fácil)</div>
+      <div class="ex">"Fixing the supply shortage was far from simple."</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">to contribute to (something)</div>
+      <div class="es">contribuir a (algo, a menudo negativo)</div>
+      <div class="ex">"Long shifts can contribute to stress on the line."</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">in moderation</div>
+      <div class="es">con moderación</div>
+      <div class="ex">"Overtime is fine in moderation, but not every week."</div>
+    </div>
+  </div>
+
+  <!-- ===== 2. ARTICLE ===== -->
+  <div class="section-divider">
+    <span class="flame">🍫</span>
+    <h2>Article</h2>
+    <span class="rule"></span>
+  </div>
+
+  <div class="article-meta">From Screens to Stores: The Power of Viral Foods</div>
+  <div class="article-byline">— Harry Jenkins</div>
+
+  <div class="legend">
+    <span><span class="dot word"></span> Key word</span>
+    <span><span class="dot phr"></span> Phrasal verb</span>
+    <span><span class="dot idm"></span> Idiom / expression</span>
+  </div>
+
+  <!-- Paragraph 1 -->
+  <div class="article-block">
+    <p>If you're on social media, you've probably <span class="highlight" title="encontrado, topado con">encountered</span> countless viral food trends. Platforms like TikTok and Instagram can <span class="highlight" title="impulsar, propulsar">propel</span> previously unknown foods <span class="highlight-idiom" title="alcanzar fama mundial">to global fame</span>. Everything from <span class="highlight" title="decadente, lleno de lujo (¡no significa 'en declive'!)">decadent</span> Dubai chocolate to <span class="highlight" title="humilde, sencillo">humble</span> cottage cheese has enjoyed a moment <span class="highlight-idiom" title="ser el centro de atención">in the spotlight</span>, and entire businesses and careers now <span class="highlight" title="prosperar, florecer">thrive</span> on pure "Instagramability." Yet creating or discovering the next big food trend <span class="highlight-idiom" title="estar lejos de ser sencillo">is far from</span> simple, and these trends often carry real-world <span class="highlight" title="consecuencias">consequences</span>.</p>
+  </div>
+  <div class="vocab-box">
+    <div class="vocab-box-label">Vocabulary — Paragraph 1</div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">encounter (v.)</span><button class="speak-btn" onclick="speakWord('encounter')">🔊</button></div>
+        <div class="vc-es">encontrarse con, toparse con</div>
+        <div class="vc-def">to experience or find something, often unexpectedly</div>
+        <div class="vc-ex">"I encountered a problem with the shipment yesterday."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">propel (v.)</span><button class="speak-btn" onclick="speakWord('propel')">🔊</button></div>
+        <div class="vc-es">impulsar, propulsar</div>
+        <div class="vc-def">to push or drive something forward, often quickly</div>
+        <div class="vc-ex">"One viral video propelled the small bakery to fame."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">decadent (adj.)</span><button class="speak-btn" onclick="speakWord('decadent')">🔊</button></div>
+        <div class="vc-es">decadente, lleno de lujo</div>
+        <div class="vc-def">extremely rich, luxurious, or indulgent — careful, it does NOT mean "in decline"</div>
+        <div class="vc-ex">"The chocolate cake looked rich and decadent."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">humble (adj.)</span><button class="speak-btn" onclick="speakWord('humble')">🔊</button></div>
+        <div class="vc-es">humilde, sencillo</div>
+        <div class="vc-def">simple, modest, not fancy or special</div>
+        <div class="vc-ex">"It started as a humble family workshop."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">in the spotlight</span><button class="speak-btn" onclick="speakWord('in the spotlight')">🔊</button></div>
+        <div class="vc-es">ser el centro de atención</div>
+        <div class="vc-def">receiving a lot of public attention</div>
+        <div class="vc-ex">"Our factory was in the spotlight after the award."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">thrive (v.)</span><button class="speak-btn" onclick="speakWord('thrive')">🔊</button></div>
+        <div class="vc-es">prosperar, florecer</div>
+        <div class="vc-def">to grow or do very well</div>
+        <div class="vc-ex">"The export business thrived after the new contract."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">is far from (simple)</span><button class="speak-btn" onclick="speakWord('is far from simple')">🔊</button></div>
+        <div class="vc-es">está lejos de ser sencillo</div>
+        <div class="vc-def">used to say something is actually difficult, the opposite of what you'd expect</div>
+        <div class="vc-ex">"Passing the quality audit is far from easy."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">consequence (n.)</span><button class="speak-btn" onclick="speakWord('consequence')">🔊</button></div>
+        <div class="vc-es">consecuencia</div>
+        <div class="vc-def">a result or effect of an action</div>
+        <div class="vc-ex">"Late delivery had serious consequences for the client."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paragraph 2 -->
+  <div class="article-block">
+    <p>According to Oxford psychologist Charles Spence, foods such as Dubai chocolate go viral because they <span class="highlight-phrasal" title="atraer a, gustar a">appeal to</span> multiple senses. Their <span class="highlight" title="contrastantes">contrasting</span> colors make them <span class="highlight" title="visualmente">visually</span> satisfying, while their high-calorie content <span class="highlight" title="desencadena, activa">triggers</span> our desire to eat them. Reaction videos, in which creators show <span class="highlight" title="exagerado">exaggerated</span> <span class="highlight" title="entusiasmo">enthusiasm</span> while tasting food, also shape how we think we should feel. In addition, many viral foods <span class="highlight" title="se originan">originate</span> in <span class="highlight" title="lejano">faraway</span> countries, giving them an <span class="highlight" title="exótico">exotic</span> appeal that <span class="highlight" title="captura, atrapa">captures</span> viewers' curiosity.</p>
+  </div>
+  <div class="vocab-box">
+    <div class="vocab-box-label">Vocabulary — Paragraph 2</div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">appeal to (phr. v.)</span><button class="speak-btn" onclick="speakWord('appeal to')">🔊</button></div>
+        <div class="vc-es">atraer a, gustar a</div>
+        <div class="vc-def">to be attractive or interesting to someone</div>
+        <div class="vc-ex">"This design appeals to younger customers."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">contrasting (adj.)</span><button class="speak-btn" onclick="speakWord('contrasting')">🔊</button></div>
+        <div class="vc-es">contrastante</div>
+        <div class="vc-def">very different from each other, especially in a noticeable way</div>
+        <div class="vc-ex">"The packaging uses contrasting colors to stand out."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">trigger (v.)</span><button class="speak-btn" onclick="speakWord('trigger')">🔊</button></div>
+        <div class="vc-es">desencadenar, activar</div>
+        <div class="vc-def">to cause something to start happening</div>
+        <div class="vc-ex">"A small error triggered a full inspection."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">exaggerated (adj.)</span><button class="speak-btn" onclick="speakWord('exaggerated')">🔊</button></div>
+        <div class="vc-es">exagerado</div>
+        <div class="vc-def">made to seem larger, better, or more extreme than it really is</div>
+        <div class="vc-ex">"His reaction was exaggerated for the camera."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">enthusiasm (n.)</span><button class="speak-btn" onclick="speakWord('enthusiasm')">🔊</button></div>
+        <div class="vc-es">entusiasmo</div>
+        <div class="vc-def">strong excitement or interest</div>
+        <div class="vc-ex">"She showed real enthusiasm during the training.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">originate (v.)</span><button class="speak-btn" onclick="speakWord('originate')">🔊</button></div>
+        <div class="vc-es">originarse, tener su origen</div>
+        <div class="vc-def">to begin or come from a particular place</div>
+        <div class="vc-ex">"This part originates from a supplier in Taiwan."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">faraway (adj.)</span><button class="speak-btn" onclick="speakWord('faraway')">🔊</button></div>
+        <div class="vc-es">lejano</div>
+        <div class="vc-def">distant, far away</div>
+        <div class="vc-ex">"The materials come from a faraway port."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">capture (v.)</span><button class="speak-btn" onclick="speakWord('capture')">🔊</button></div>
+        <div class="vc-es">capturar, atrapar (la atención)</div>
+        <div class="vc-def">to attract and hold someone's attention or interest</div>
+        <div class="vc-ex">"The new logo captures customers' attention."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paragraph 3 -->
+  <div class="article-block">
+    <p>Content creators further <span class="highlight" title="impulsan, potencian">boost</span> engagement by using <span class="highlight" title="títulos llamativos">attention-grabbing</span> titles. Phrases like "The World's TASTIEST Cake" or "The BEST EVER Pasta" make videos look <span class="highlight-idiom" title="demasiado bueno para pasarlo por alto">too good to skip</span>. Once a video receives enough views or comments, social media algorithms <span class="highlight-phrasal" title="empujar, impulsar hacia">push</span> it <span class="highlight-phrasal" title="empujar, impulsar hacia">to</span> more users' feeds, increasing its visibility and helping it go viral.</p>
+  </div>
+  <div class="vocab-box">
+    <div class="vocab-box-label">Vocabulary — Paragraph 3</div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">boost (v.)</span><button class="speak-btn" onclick="speakWord('boost')">🔊</button></div>
+        <div class="vc-es">impulsar, potenciar</div>
+        <div class="vc-def">to increase or improve something</div>
+        <div class="vc-ex">"New packaging boosted weekend sales."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">attention-grabbing (adj.)</span><button class="speak-btn" onclick="speakWord('attention-grabbing')">🔊</button></div>
+        <div class="vc-es">llamativo, que llama la atención</div>
+        <div class="vc-def">designed to immediately attract people's attention</div>
+        <div class="vc-ex">"They used an attention-grabbing headline."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">too good to skip</span><button class="speak-btn" onclick="speakWord('too good to skip')">🔊</button></div>
+        <div class="vc-es">demasiado bueno para pasarlo por alto</div>
+        <div class="vc-def">so appealing that you don't want to miss it</div>
+        <div class="vc-ex">"That discount was too good to skip."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">push (something) to (phr. v.)</span><button class="speak-btn" onclick="speakWord('push to')">🔊</button></div>
+        <div class="vc-es">empujar, impulsar hacia</div>
+        <div class="vc-def">to send or move something toward a target, audience, or place</div>
+        <div class="vc-ex">"The system pushes alerts to every supervisor."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paragraph 4 -->
+  <div class="article-block">
+    <p>Although social media <span class="highlight" title="alimenta, impulsa">fuels</span> these viral food trends, their effects often <span class="highlight-phrasal" title="se extienden hacia, afectan a">spill into</span> the offline world. Some products experience supply <span class="highlight" title="escasez">shortages</span> when interest suddenly <span class="highlight" title="se dispara">skyrockets</span>. For example, in 2021, Saxelby Cheesemongers, a cheese shop in New York, reported that it couldn't buy feta after a recipe for oven-baked feta pasta went viral. <span class="highlight" title="de igual manera, asimismo">Likewise</span>, restaurants and stores that unexpectedly gain popularity online often <span class="highlight" title="luchan, les cuesta">struggle to</span> <span class="highlight-phrasal" title="mantenerse al día con, dar abasto con">keep up with</span> the <span class="highlight" title="aumentos repentinos">surges</span> in customers that result.</p>
+  </div>
+  <div class="vocab-box">
+    <div class="vocab-box-label">Vocabulary — Paragraph 4</div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">fuel (v.)</span><button class="speak-btn" onclick="speakWord('fuel')">🔊</button></div>
+        <div class="vc-es">alimentar, impulsar</div>
+        <div class="vc-def">to make something stronger or help it grow</div>
+        <div class="vc-ex">"Low stock fueled panic buying."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">spill into (phr. v.)</span><button class="speak-btn" onclick="speakWord('spill into')">🔊</button></div>
+        <div class="vc-es">extenderse hacia, afectar a</div>
+        <div class="vc-def">to spread from one area and start affecting another</div>
+        <div class="vc-ex">"The delay spilled into next week's schedule."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">shortage (n.)</span><button class="speak-btn" onclick="speakWord('shortage')">🔊</button></div>
+        <div class="vc-es">escasez</div>
+        <div class="vc-def">a situation where there isn't enough of something</div>
+        <div class="vc-ex">"We're facing a shortage of raw material."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">skyrocket (v.)</span><button class="speak-btn" onclick="speakWord('skyrocket')">🔊</button></div>
+        <div class="vc-es">dispararse, aumentar rápidamente</div>
+        <div class="vc-def">to increase very quickly and suddenly</div>
+        <div class="vc-ex">"Demand skyrocketed after the launch."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">likewise (adv.)</span><button class="speak-btn" onclick="speakWord('likewise')">🔊</button></div>
+        <div class="vc-es">de igual manera, asimismo</div>
+        <div class="vc-def">in the same way; also</div>
+        <div class="vc-ex">"Sales rose in June; likewise, July looks strong."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">struggle to (v.)</span><button class="speak-btn" onclick="speakWord('struggle to')">🔊</button></div>
+        <div class="vc-es">luchar para, costarle a alguien</div>
+        <div class="vc-def">to have a lot of difficulty doing something</div>
+        <div class="vc-ex">"We struggled to meet the deadline."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">keep up with (phr. v.)</span><button class="speak-btn" onclick="speakWord('keep up with')">🔊</button></div>
+        <div class="vc-es">mantenerse al día con, dar abasto con</div>
+        <div class="vc-def">to move or progress at the same speed as something else</div>
+        <div class="vc-ex">"It's hard to keep up with such high demand."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">surge (n.)</span><button class="speak-btn" onclick="speakWord('surge')">🔊</button></div>
+        <div class="vc-es">aumento repentino, oleada</div>
+        <div class="vc-def">a sudden, large increase</div>
+        <div class="vc-ex">"There was a surge in orders before the holiday."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paragraph 5 -->
+  <div class="article-block">
+    <p>There are also potential health risks associated with online food trends. Many viral foods are high in fat or sugar, so eating too many could lead to health problems. <span class="highlight" title="por el contrario">Conversely</span>, dieting-focused trends may encourage unhealthy eating habits or even <span class="highlight-phrasal" title="contribuir a">contribute to</span> eating <span class="highlight" title="trastornos">disorders</span>. Social comparison <span class="highlight-idiom" title="añade otro nivel de">adds another layer of</span> risk: When other people's lives <span class="highlight" title="parecen">appear</span> exciting while your own seems <span class="highlight" title="aburrida, sin vida">dull</span>, it can lead to low <span class="highlight" title="autoestima">self-esteem</span> and unrealistic expectations.</p>
+  </div>
+  <div class="vocab-box">
+    <div class="vocab-box-label">Vocabulary — Paragraph 5</div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">conversely (adv.)</span><button class="speak-btn" onclick="speakWord('conversely')">🔊</button></div>
+        <div class="vc-es">por el contrario</div>
+        <div class="vc-def">used to introduce an opposite idea or fact</div>
+        <div class="vc-ex">"Conversely, smaller orders are easier to track."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">contribute to (phr. v.)</span><button class="speak-btn" onclick="speakWord('contribute to')">🔊</button></div>
+        <div class="vc-es">contribuir a</div>
+        <div class="vc-def">to be one of the causes of something, often a problem</div>
+        <div class="vc-ex">"Poor lighting can contribute to mistakes on the line."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">disorder (n.)</span><button class="speak-btn" onclick="speakWord('disorder')">🔊</button></div>
+        <div class="vc-es">trastorno</div>
+        <div class="vc-def">a medical or psychological condition that disrupts normal function</div>
+        <div class="vc-ex">"The clinic specializes in eating disorders."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">adds another layer of</span><button class="speak-btn" onclick="speakWord('adds another layer of')">🔊</button></div>
+        <div class="vc-es">añade otro nivel de</div>
+        <div class="vc-def">makes a situation even more complex or serious</div>
+        <div class="vc-ex">"The new regulation adds another layer of paperwork."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">appear (v.)</span><button class="speak-btn" onclick="speakWord('appear')">🔊</button></div>
+        <div class="vc-es">parecer</div>
+        <div class="vc-def">to seem to be a certain way</div>
+        <div class="vc-ex">"The numbers appear correct at first glance."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">dull (adj.)</span><button class="speak-btn" onclick="speakWord('dull')">🔊</button></div>
+        <div class="vc-es">aburrido, sin vida</div>
+        <div class="vc-def">not interesting or exciting</div>
+        <div class="vc-ex">"Compared to the photos, the real event felt dull."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">self-esteem (n.)</span><button class="speak-btn" onclick="speakWord('self-esteem')">🔊</button></div>
+        <div class="vc-es">autoestima</div>
+        <div class="vc-def">confidence in your own value or abilities</div>
+        <div class="vc-ex">"Constant comparison can lower self-esteem."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paragraph 6 -->
+  <div class="article-block">
+    <p>Online food trends can certainly be entertaining. They allow us to explore new flavors, discover creative recipes, and appreciate the wide variety of foods around the world. However, like all online phenomena, they should be enjoyed <span class="highlight-idiom" title="con moderación">in moderation</span>. <span class="highlight-idiom" title="vale la pena recordar">It's worth remembering</span> that the most meaningful parts of life happen away from our screens.</p>
+  </div>
+  <div class="vocab-box">
+    <div class="vocab-box-label">Vocabulary — Paragraph 6</div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">in moderation</span><button class="speak-btn" onclick="speakWord('in moderation')">🔊</button></div>
+        <div class="vc-es">con moderación</div>
+        <div class="vc-def">in a reasonable amount, not too much</div>
+        <div class="vc-ex">"Overtime is okay in moderation."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vc-head"><span class="vc-word">it's worth remembering</span><button class="speak-btn" onclick="speakWord('it is worth remembering')">🔊</button></div>
+        <div class="vc-es">vale la pena recordar</div>
+        <div class="vc-def">used to introduce an important point the listener shouldn't forget</div>
+        <div class="vc-ex">"It's worth remembering that quality comes first."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 4. DISCUSSION ===== -->
+  <div class="section-divider">
+    <span class="flame">💬</span>
+    <h2>Discussion Questions</h2>
+    <span class="rule"></span>
+  </div>
+
+  <ul class="discussion-list">
+    <li><span class="qnum">1</span> Have you ever bought or tried a food because you saw it go viral online? What happened — did it meet your expectations?</li>
+    <li><span class="qnum">2</span> The article describes a cheese shop that ran out of feta after a recipe went viral. Have you ever seen a "surge" in demand at your job? How did your team keep up with it?</li>
+    <li><span class="qnum">3</span> The article says online life can create unrealistic expectations and lower self-esteem through social comparison. Do you think social media companies have a responsibility to reduce this risk? Why or why not?</li>
+  </ul>
+
+  <!-- ===== 5. SELF-PRACTICE ===== -->
+  <div class="section-divider">
+    <span class="flame">✍️</span>
+    <h2>Self-Practice Questions</h2>
+    <span class="rule"></span>
+  </div>
+
+  <div class="practice-list">
+    <details class="practice-item">
+      <summary>1. According to Charles Spence, why do foods like Dubai chocolate go viral?</summary>
+      <div class="practice-answer">Because they appeal to multiple senses — contrasting colors make them visually satisfying, and their high-calorie content triggers our desire to eat them.</div>
+    </details>
+    <details class="practice-item">
+      <summary>2. What happened to Saxelby Cheesemongers in 2021?</summary>
+      <div class="practice-answer">After a recipe for oven-baked feta pasta went viral, the cheese shop couldn't buy feta — it experienced a supply shortage.</div>
+    </details>
+    <details class="practice-item">
+      <summary>3. What is one possible negative effect of "dieting-focused trends" mentioned in the article?</summary>
+      <div class="practice-answer">They may encourage unhealthy eating habits or even contribute to eating disorders.</div>
+    </details>
+    <details class="practice-item">
+      <summary>4. According to the article, what should we remember about online food trends?</summary>
+      <div class="practice-answer">That they should be enjoyed in moderation, and the most meaningful parts of life happen away from our screens.</div>
+    </details>
+  </div>
+
+  <footer class="lesson-footer">English Conversation with Elisa · Source: "From Screens to Stores: The Power of Viral Foods" by Harry Jenkins</footer>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
