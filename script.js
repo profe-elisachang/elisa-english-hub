@@ -137,8 +137,7 @@ async function scanLessons() {
         { date: '2026-06-26', title: '🏖️ Teacher Off - No Class', isHoliday: true },
         { filename: 'The Importance of Personal Boundaries.html', date: '2026-06-15', title: '🛡️ The Importance of Personal Boundaries' },
         { filename: 'Secondhand Clothing.html', date: '2026-06-17', title: '👗 The Unseen Impact of Secondhand Clothing' },
-        { filename: 'Viral Foods.html', date: '2026-06-19', title: '🔥From Screens to Stores: The Power of Viral Foods' },
-        { filename: 'Ten Ways to Improve Your Life.html', date: '2026-06-29', title: '🌱 Ten Ways to Improve Your Life' },
+        { filename: 'Viral Foods.html', date: '2026-06-19', title: '🔥From Screens to Stores: The Power of Viral Foods' },        { filename: 'Ten Ways to Improve Your Life.html', date: '2026-06-29', title: '🌱 Ten Ways to Improve Your Life' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
