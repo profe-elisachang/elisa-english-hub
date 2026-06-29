@@ -133,9 +133,8 @@ async function scanLessons() {
         { filename: 'The Subscribed Life.html', date: '2026-06-08', title: '💳The Subscribed Life' },
         { filename: 'Riding the Trade Winds.html', date: '2026-06-10', title: '⛵ Riding the Trade Winds Again' },
         { filename: 'Secondhand Clothing.html', date: '2026-06-12', title: '👗 The Unseen Impact of Secondhand Clothing' },
-        { date: '2026-06-24', title: '🏖️ Teacher Off - No Class', isHoliday: true },
-        { date: '2026-06-26', title: '🏖️ Teacher Off - No Class', isHoliday: true },
-        { filename: 'The Importance of Personal Boundaries.html', date: '2026-06-15', title: '🛡️ The Importance of Personal Boundaries' },
+        { date: '2026-06-24', title: '🏖️ Teacher Off - No Class', isHoliday: true },        { date: '2026-06-22', title: 'No Class – IATF Audit', isHoliday: true },
+{ filename: 'The Importance of Personal Boundaries.html', date: '2026-06-15', title: '🛡️ The Importance of Personal Boundaries' },
         { filename: 'Secondhand Clothing.html', date: '2026-06-17', title: '👗 The Unseen Impact of Secondhand Clothing' },
         { filename: 'Viral Foods.html', date: '2026-06-19', title: '🔥From Screens to Stores: The Power of Viral Foods' },        { filename: 'Ten Ways to Improve Your Life.html', date: '2026-06-29', title: '🌱 Ten Ways to Improve Your Life' },
 // 👆 在此上方添加新文章，記得加逗號！
