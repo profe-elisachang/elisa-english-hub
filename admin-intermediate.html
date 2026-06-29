@@ -116,6 +116,65 @@
             opacity: 1;
         }
         
+        .day-lesson.holiday.editable::after {
+            content: '🏖️';
+        }
+        
+        /* 假日通知面板 */
+        .holidays-panel {
+            max-width: 1400px;
+            margin: 0 auto 1.5rem;
+            background: #fff8e6;
+            border: 1px solid #ffc93c;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .holidays-panel-header {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #856404;
+        }
+        
+        .holidays-list {
+            padding: 0 1rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .holidays-list.empty {
+            padding: 0 1rem 1rem;
+            color: #856404;
+            font-size: 0.9rem;
+        }
+        
+        .holiday-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.75rem;
+            background: white;
+            border: 1px solid #ffc93c;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .holiday-chip:hover {
+            background: #fff3cd;
+        }
+        
+        .holiday-chip-date {
+            color: #856404;
+            font-size: 0.85rem;
+        }
+        
         /* 分屏編輯器樣式 */
         #splitEditorContainer {
             display: none;
@@ -558,6 +617,9 @@
                 <button class="admin-btn admin-btn-primary" onclick="openNewArticleEditor()" id="newArticleBtn">
                     ➕ 新增文章
                 </button>
+                <button class="admin-btn admin-btn-secondary" onclick="openNewHolidayEditor()" id="newHolidayBtn">
+                    🏖️ 新增假日
+                </button>
                 <button class="admin-btn admin-btn-secondary" onclick="window.location.href='index.html'">
                     🏠 學生頁面
                 </button>
@@ -584,6 +646,15 @@
                     placeholder="🔍 搜尋文章標題或內容..."
                     aria-label="搜尋文章"
                 >
+            </div>
+            
+            <!-- 假日通知面板 -->
+            <div id="holidaysPanel" class="holidays-panel">
+                <div class="holidays-panel-header" onclick="toggleHolidaysPanel()">
+                    <span>🏖️ 假日通知（點擊項目可編輯）</span>
+                    <span id="holidaysPanelToggle">▼</span>
+                </div>
+                <div id="holidaysList" class="holidays-list"></div>
             </div>
             
             <!-- 月曆視圖 -->
@@ -719,6 +790,38 @@
         💾 草稿已自動儲存
     </div>
     
+    <!-- 假日通知 Modal -->
+    <div id="holidayModal" class="modal">
+        <div class="modal-content" style="max-width: 480px;">
+            <div class="modal-header">
+                <h2 id="holidayModalTitle">🏖️ 新增假日通知</h2>
+                <button class="close-modal" onclick="closeHolidayModal()">&times;</button>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+                <label class="form-label">假日標題</label>
+                <input type="text" class="form-input" id="holidayTitle"
+                       placeholder="如：🏖️ Teacher Off - No Class">
+                <small style="color: #5a6c7d; margin-top: 0.25rem; display: block;">
+                    可加上 emoji，建議結尾加上「- No Class」
+                </small>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label class="form-label">日期</label>
+                <input type="date" class="form-input" id="holidayDate">
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+                <button type="button" class="admin-btn admin-btn-primary" onclick="saveHoliday()" style="flex: 1;">
+                    ✅ 儲存假日
+                </button>
+                <button type="button" class="admin-btn admin-btn-secondary" id="deleteHolidayBtn"
+                        onclick="deleteHoliday()" style="display: none; background: #dc3545; color: white; border-color: #dc3545;">
+                    🗑️ 刪除
+                </button>
+            </div>
+            <div id="holidayAlertContainer" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+    
     <!-- GitHub 設定 Modal -->
     <div id="githubModal" class="modal">
         <div class="modal-content">
@@ -795,8 +898,12 @@
         // 全域變數
         let allLessons = [];
         let filteredLessons = [];
+        let allHolidays = [];
+        let filteredHolidays = [];
         let currentMode = 'new'; // 'new' or 'edit'
         let currentEditingArticle = null;
+        let currentHolidayMode = 'new'; // 'new' or 'edit'
+        let currentEditingHoliday = null;
         let isVisualMode = false;
         let draftPromptShown = false; // 防止重複彈窗
         
@@ -820,9 +927,13 @@
                     return;
                 }
                 
-                allLessons = parsePotentialFiles(match[1]);
+                const parseResult = parsePotentialFiles(match[1]);
+                allLessons = parseResult.lessons;
+                allHolidays = parseResult.holidays;
                 filteredLessons = [...allLessons];
+                filteredHolidays = [...allHolidays];
                 generateCalendar();
+                renderHolidaysList();
                 
             } catch (error) {
                 console.error('載入錯誤:', error);
@@ -833,6 +944,7 @@
         // ==================== 解析 potentialFiles ====================
         function parsePotentialFiles(content) {
             const lessons = [];
+            const holidays = [];
             const lines = content.split('\n').filter(line => {
                 const trimmed = line.trim();
                 return trimmed && !trimmed.startsWith('//') && !trimmed.startsWith('*');
@@ -877,36 +989,94 @@
                 if (objEnd <= objStart) break;
                 
                 const objStr = fullContent.substring(objStart, objEnd);
-                const lesson = parseLesson(objStr);
+                const entry = parseEntry(objStr);
                 
-                if (lesson && !lesson.isHoliday) {
-                    lessons.push(lesson);
+                if (entry) {
+                    if (entry.isHoliday) {
+                        holidays.push(entry);
+                    } else {
+                        lessons.push(entry);
+                    }
                 }
                 
                 pos = objEnd;
             }
             
-            return lessons.sort((a, b) => new Date(b.date) - new Date(a.date));
+            return {
+                lessons: lessons.sort((a, b) => new Date(b.date) - new Date(a.date)),
+                holidays: holidays.sort((a, b) => new Date(b.date) - new Date(a.date))
+            };
         }
         
-        // ==================== 解析單個文章物件 ====================
-        function parseLesson(objStr) {
-            const filenameMatch = objStr.match(/filename:\s*['"]([^'"]+)['"]/);
-            const titleMatch = objStr.match(/title:\s*['"]([^'"]+)['"]/);
-            const dateMatch = objStr.match(/date:\s*['"]([^'"]+)['"]/);
-            const isHolidayMatch = objStr.match(/isHoliday\s*:\s*true/);
+        // ==================== 從物件字串解析 title ====================
+        function parseTitleFromObject(objStr) {
+            const titleStart = objStr.indexOf('title:');
+            if (titleStart === -1) return '';
             
-            if (!filenameMatch || !dateMatch) return null;
-            if (isHolidayMatch) return { isHoliday: true };
+            let quoteStart = -1;
+            let quoteChar = null;
+            for (let i = titleStart; i < objStr.length; i++) {
+                if (objStr[i] === "'" || objStr[i] === '"') {
+                    quoteStart = i + 1;
+                    quoteChar = objStr[i];
+                    break;
+                }
+            }
+            
+            if (quoteStart === -1 || !quoteChar) return '';
+            
+            let titleValue = '';
+            let i = quoteStart;
+            while (i < objStr.length) {
+                if (objStr[i] === '\\' && i + 1 < objStr.length && objStr[i + 1] === quoteChar) {
+                    titleValue += quoteChar;
+                    i += 2;
+                } else if (objStr[i] === quoteChar) {
+                    break;
+                } else if (objStr[i] === '\\' && i + 1 < objStr.length) {
+                    titleValue += objStr[i] + objStr[i + 1];
+                    i += 2;
+                } else {
+                    titleValue += objStr[i];
+                    i++;
+                }
+            }
+            
+            return titleValue.replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+        }
+        
+        // ==================== 解析單個項目（文章或假日） ====================
+        function parseEntry(objStr) {
+            const isHolidayMatch = objStr.match(/isHoliday\s*:\s*true/);
+            const dateMatch = objStr.match(/date:\s*['"]([^'"]+)['"]/);
+            const dateString = dateMatch ? dateMatch[1] : null;
+            
+            if (isHolidayMatch && dateString) {
+                const title = parseTitleFromObject(objStr);
+                const [year, month, day] = dateString.split('-').map(Number);
+                const date = new Date(year, month - 1, day);
+                const emojiMatch = title.match(/[\p{Emoji}]/u);
+                const emoji = emojiMatch ? emojiMatch[0] : '';
+                const cleanTitle = title.replace(/[\p{Emoji}]/gu, '').trim();
+                
+                return {
+                    isHoliday: true,
+                    title: cleanTitle,
+                    emoji,
+                    displayTitle: title,
+                    date,
+                    dateString,
+                    id: `holiday-${dateString}`
+                };
+            }
+            
+            const filenameMatch = objStr.match(/filename:\s*['"]([^'"]+)['"]/);
+            if (!filenameMatch || !dateString) return null;
             
             const filename = filenameMatch[1].replace(/\\'/g, "'").replace(/\\"/g, '"');
-            const title = titleMatch ? titleMatch[1].replace(/\\'/g, "'").replace(/\\"/g, '"') : filename.replace('.html', '');
-            const dateString = dateMatch[1];
-            
-            // 修正時區問題：手動解析日期避免 UTC 轉換
+            const title = parseTitleFromObject(objStr) || filename.replace('.html', '');
             const [year, month, day] = dateString.split('-').map(Number);
             const date = new Date(year, month - 1, day);
-            
             const emojiMatch = title.match(/[\p{Emoji}]/u);
             const emoji = emojiMatch ? emojiMatch[0] : '';
             const cleanTitle = title.replace(/[\p{Emoji}]/gu, '').trim();
@@ -916,9 +1086,10 @@
                 title: cleanTitle,
                 emoji,
                 displayTitle: title,
-                date: date,
-                dateString: dateString,
-                id: filename.replace('.html', '')
+                date,
+                dateString,
+                id: filename.replace('.html', ''),
+                isHoliday: false
             };
         }
         
@@ -927,29 +1098,36 @@
             const container = document.getElementById('calendarView');
             if (!container) return;
             
-            if (filteredLessons.length === 0) {
+            const calendarItems = [...filteredLessons, ...filteredHolidays];
+            
+            if (calendarItems.length === 0) {
                 container.innerHTML = '<div class="no-results"><p>😔 找不到文章</p></div>';
                 return;
             }
             
             const lessonsByMonth = {};
-            filteredLessons.forEach(lesson => {
-                const date = new Date(lesson.date);
+            calendarItems.forEach(item => {
+                const date = new Date(item.date);
                 const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
                 const monthName = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
                 
                 if (!lessonsByMonth[monthKey]) {
                     lessonsByMonth[monthKey] = { name: monthName, lessons: [] };
                 }
-                lessonsByMonth[monthKey].lessons.push(lesson);
+                lessonsByMonth[monthKey].lessons.push(item);
             });
             
             const sortedMonths = Object.keys(lessonsByMonth).sort().reverse();
             container.innerHTML = sortedMonths.map(monthKey => {
-                return generateMonthCalendar(monthKey, lessonsByMonth[monthKey].lessons, lessonsByMonth[monthKey].name);
+                const items = lessonsByMonth[monthKey].lessons;
+                const articleCount = items.filter(i => !i.isHoliday).length;
+                const holidayCount = items.filter(i => i.isHoliday).length;
+                let countLabel = `${articleCount} 篇文章`;
+                if (holidayCount > 0) countLabel += `、${holidayCount} 個假日`;
+                return generateMonthCalendar(monthKey, items, lessonsByMonth[monthKey].name, countLabel);
             }).join('');
             
-            // 添加事件委派：點擊文章標題時打開編輯器（只添加一次）
+            // 添加事件委派：點擊文章或假日標題時打開編輯器（只添加一次）
             if (!container.dataset.listenerAdded) {
                 container.addEventListener('click', function(e) {
                     const lessonLink = e.target.closest('.day-lesson.editable');
@@ -957,10 +1135,14 @@
                         e.preventDefault();
                         try {
                             const lesson = JSON.parse(decodeURIComponent(lessonLink.dataset.lesson));
-                            openEditArticleEditor(lesson);
+                            if (lesson.isHoliday) {
+                                openEditHolidayEditor(lesson);
+                            } else {
+                                openEditArticleEditor(lesson);
+                            }
                         } catch (error) {
-                            console.error('解析文章資料失敗:', error);
-                            showAlert('error', '無法載入文章資料');
+                            console.error('解析資料失敗:', error);
+                            showAlert('error', '無法載入資料');
                         }
                     }
                 });
@@ -969,7 +1151,7 @@
         }
         
         // ==================== 生成單月月曆 ====================
-        function generateMonthCalendar(monthKey, lessons, monthName) {
+        function generateMonthCalendar(monthKey, lessons, monthName, countLabel) {
             const [year, month] = monthKey.split('-').map(Number);
             const monthIndex = month - 1;
             
@@ -996,7 +1178,7 @@
                             <span class="month-header-arrow">▼</span>
                             <span>${monthName}</span>
                         </div>
-                        <span class="month-header-count">(${lessons.length} 篇文章)</span>
+                        <span class="month-header-count">(${countLabel || lessons.length + ' 篇文章'})</span>
                     </div>
                     <table class="calendar-grid">
                         <thead>
@@ -1044,12 +1226,12 @@
                     html += `<div class="day-number">${dayNumber}</div>`;
                     
                     if (dayLessons.length > 0 && !cellClass.includes('other-month')) {
-                        dayLessons.forEach((lesson, index) => {
-                            if (dayOfWeek < 5) {
-                                const fullTitle = lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title;
-                                // 使用 data 屬性存儲 lesson 資料，使用事件委派處理點擊
+                        dayLessons.forEach((lesson) => {
+                            if (lesson.isHoliday || dayOfWeek < 5) {
+                                const fullTitle = lesson.displayTitle || (lesson.emoji ? `${lesson.emoji} ${lesson.title}` : lesson.title);
                                 const lessonData = encodeURIComponent(JSON.stringify(lesson));
-                                html += `<a href="javascript:void(0)" class="day-lesson editable" data-lesson="${lessonData}" title="${fullTitle}">${fullTitle}</a>`;
+                                const lessonClass = lesson.isHoliday ? 'day-lesson holiday editable' : 'day-lesson editable';
+                                html += `<a href="javascript:void(0)" class="${lessonClass}" data-lesson="${lessonData}" title="${fullTitle}">${fullTitle}</a>`;
                             }
                         });
                     }
@@ -1099,15 +1281,22 @@
                 
                 if (searchTerm === '') {
                     filteredLessons = [...allLessons];
+                    filteredHolidays = [...allHolidays];
                 } else {
                     filteredLessons = allLessons.filter(lesson => {
                         return lesson.title.toLowerCase().includes(searchTerm) ||
                                lesson.displayTitle.toLowerCase().includes(searchTerm) ||
                                lesson.filename.toLowerCase().includes(searchTerm);
                     });
+                    filteredHolidays = allHolidays.filter(holiday => {
+                        return holiday.title.toLowerCase().includes(searchTerm) ||
+                               holiday.displayTitle.toLowerCase().includes(searchTerm) ||
+                               holiday.dateString.includes(searchTerm);
+                    });
                 }
                 
                 generateCalendar();
+                renderHolidaysList();
             });
         }
         
@@ -1181,6 +1370,7 @@
             document.getElementById('calendarViewContainer').style.display = 'none';
             document.getElementById('splitEditorContainer').classList.add('active');
             document.getElementById('newArticleBtn').style.display = 'none';
+            document.getElementById('newHolidayBtn').style.display = 'none';
         }
         
         // ==================== 關閉編輯器 ====================
@@ -1189,6 +1379,7 @@
                 document.getElementById('calendarViewContainer').style.display = 'block';
                 document.getElementById('splitEditorContainer').classList.remove('active');
                 document.getElementById('newArticleBtn').style.display = 'inline-block';
+                document.getElementById('newHolidayBtn').style.display = 'inline-block';
                 document.getElementById('alertContainer').innerHTML = '';
                 
                 // 重置編輯器狀態
@@ -2263,6 +2454,237 @@
             }
         }
         
+        // ==================== 假日通知管理 ====================
+        function renderHolidaysList() {
+            const container = document.getElementById('holidaysList');
+            if (!container) return;
+            
+            if (filteredHolidays.length === 0) {
+                container.className = 'holidays-list empty';
+                container.innerHTML = '目前沒有假日通知，點擊上方「🏖️ 新增假日」按鈕新增。';
+                return;
+            }
+            
+            container.className = 'holidays-list';
+            container.innerHTML = filteredHolidays.map(holiday => {
+                const data = encodeURIComponent(JSON.stringify(holiday));
+                return `<button type="button" class="holiday-chip" data-holiday="${data}" onclick="openEditHolidayEditorFromChip(this)">
+                    <span class="holiday-chip-date">${holiday.dateString}</span>
+                    <span>${holiday.displayTitle}</span>
+                </button>`;
+            }).join('');
+        }
+        
+        function toggleHolidaysPanel() {
+            const list = document.getElementById('holidaysList');
+            const toggle = document.getElementById('holidaysPanelToggle');
+            if (!list || !toggle) return;
+            
+            if (list.style.display === 'none') {
+                list.style.display = '';
+                toggle.textContent = '▼';
+            } else {
+                list.style.display = 'none';
+                toggle.textContent = '▶';
+            }
+        }
+        
+        function openEditHolidayEditorFromChip(button) {
+            try {
+                const holiday = JSON.parse(decodeURIComponent(button.dataset.holiday));
+                if (holiday.date && typeof holiday.date === 'string') {
+                    holiday.date = new Date(holiday.date);
+                }
+                openEditHolidayEditor(holiday);
+            } catch (error) {
+                showAlert('error', '無法載入假日資料');
+            }
+        }
+        
+        function openNewHolidayEditor() {
+            currentHolidayMode = 'new';
+            currentEditingHoliday = null;
+            
+            document.getElementById('holidayModalTitle').textContent = '🏖️ 新增假日通知';
+            document.getElementById('holidayTitle').value = '';
+            document.getElementById('holidayDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('deleteHolidayBtn').style.display = 'none';
+            document.getElementById('holidayAlertContainer').innerHTML = '';
+            document.getElementById('holidayModal').style.display = 'block';
+        }
+        
+        function openEditHolidayEditor(holiday) {
+            if (typeof holiday === 'string') {
+                try {
+                    holiday = JSON.parse(holiday.replace(/&quot;/g, '"').replace(/&#39;/g, "'"));
+                } catch (e) {
+                    showAlert('error', '無法解析假日資料');
+                    return;
+                }
+            }
+            
+            if (holiday.date && !(holiday.date instanceof Date)) {
+                const [year, month, day] = (holiday.dateString || holiday.date).toString().split('-').map(Number);
+                holiday.date = new Date(year, month - 1, day);
+            }
+            
+            currentHolidayMode = 'edit';
+            currentEditingHoliday = holiday;
+            
+            document.getElementById('holidayModalTitle').textContent = '🏖️ 編輯假日通知';
+            document.getElementById('holidayTitle').value = holiday.displayTitle || holiday.title;
+            document.getElementById('holidayDate').value = holiday.dateString;
+            document.getElementById('deleteHolidayBtn').style.display = 'inline-block';
+            document.getElementById('holidayAlertContainer').innerHTML = '';
+            document.getElementById('holidayModal').style.display = 'block';
+        }
+        
+        function closeHolidayModal() {
+            document.getElementById('holidayModal').style.display = 'none';
+            currentHolidayMode = 'new';
+            currentEditingHoliday = null;
+        }
+        
+        function showHolidayAlert(type, message) {
+            const container = document.getElementById('holidayAlertContainer');
+            const className = type === 'error' ? 'alert-error' : 'alert-success';
+            container.innerHTML = `<div class="alert ${className}" style="padding: 0.75rem; border-radius: 6px; background: ${type === 'error' ? '#f8d7da' : '#d4edda'}; color: ${type === 'error' ? '#721c24' : '#155724'};">${message}</div>`;
+        }
+        
+        async function saveHoliday() {
+            const title = document.getElementById('holidayTitle').value.trim();
+            const date = document.getElementById('holidayDate').value;
+            
+            if (!title || !date) {
+                showHolidayAlert('error', '請填寫假日標題和日期');
+                return;
+            }
+            
+            if (!githubConfig.token || !githubConfig.username || !githubConfig.repo) {
+                showHolidayAlert('error', '請先設定 GitHub Token（點擊右上角 ⚙️ GitHub 設定）');
+                return;
+            }
+            
+            let oldDate = null;
+            if (currentHolidayMode === 'edit' && currentEditingHoliday) {
+                oldDate = currentEditingHoliday.dateString;
+            }
+            
+            try {
+                const wasEdit = currentHolidayMode === 'edit';
+                await updateHolidayInScriptFile(date, title, oldDate);
+                closeHolidayModal();
+                await loadLessons();
+                showPageNotice(`✅ 假日通知${wasEdit ? '更新' : '新增'}成功！`);
+            } catch (error) {
+                showHolidayAlert('error', '儲存失敗：' + error.message);
+            }
+        }
+        
+        async function deleteHoliday() {
+            if (!currentEditingHoliday) return;
+            
+            if (!confirm(`確定要刪除 ${currentEditingHoliday.dateString} 的假日通知嗎？`)) {
+                return;
+            }
+            
+            if (!githubConfig.token || !githubConfig.username || !githubConfig.repo) {
+                showHolidayAlert('error', '請先設定 GitHub Token');
+                return;
+            }
+            
+            try {
+                await removeHolidayFromScriptFile(currentEditingHoliday.dateString);
+                closeHolidayModal();
+                await loadLessons();
+                showPageNotice('✅ 假日通知已刪除');
+            } catch (error) {
+                showHolidayAlert('error', '刪除失敗：' + error.message);
+            }
+        }
+        
+        async function updateHolidayInScriptFile(date, title, oldDate = null) {
+            const scriptFileName = CONFIG.scriptFile;
+            const escapedTitle = title.replace(/'/g, "\\'");
+            const scriptLine = `        { date: '${date}', title: '${escapedTitle}', isHoliday: true },\n`;
+            
+            try {
+                let scriptContent = await getFileContent(scriptFileName);
+                if (!scriptContent) {
+                    throw new Error(`找不到 ${scriptFileName} 檔案`);
+                }
+                
+                const matchDate = oldDate || date;
+                const escapedMatchDate = matchDate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const existingPattern = new RegExp(
+                    `\\s*\\{[^}]*date:\\s*['"]${escapedMatchDate}['"][^}]*isHoliday:\\s*true[^}]*\\},?\\s*`,
+                    'g'
+                );
+                const match = scriptContent.match(existingPattern);
+                
+                if (match) {
+                    scriptContent = scriptContent.replace(existingPattern, scriptLine);
+                } else {
+                    const marker = '// 👆 在此上方添加新文章';
+                    const markerIndex = scriptContent.indexOf(marker);
+                    
+                    if (markerIndex === -1) {
+                        const arrayEndMatch = scriptContent.match(/const potentialFiles = \[([\s\S]*?)\];/);
+                        if (arrayEndMatch) {
+                            const arrayEndIndex = scriptContent.indexOf('];', arrayEndMatch.index);
+                            scriptContent = scriptContent.slice(0, arrayEndIndex) +
+                                          scriptLine +
+                                          '        // 👆 在此上方添加新文章，記得加逗號！\n' +
+                                          scriptContent.slice(arrayEndIndex);
+                        } else {
+                            throw new Error('無法找到 potentialFiles 陣列');
+                        }
+                    } else {
+                        let insertIndex = markerIndex;
+                        if (markerIndex > 0 && scriptContent[markerIndex - 1] !== '\n') {
+                            const lastNewline = scriptContent.lastIndexOf('\n', markerIndex - 1);
+                            if (lastNewline !== -1) {
+                                insertIndex = lastNewline + 1;
+                            }
+                        }
+                        scriptContent = scriptContent.slice(0, insertIndex) +
+                                      scriptLine +
+                                      scriptContent.slice(insertIndex);
+                    }
+                }
+                
+                const message = `Update holiday in ${scriptFileName}: ${title}`;
+                await uploadFileToGitHub(scriptFileName, scriptContent, message);
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        async function removeHolidayFromScriptFile(date) {
+            const scriptFileName = CONFIG.scriptFile;
+            const escapedDate = date.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            
+            try {
+                let scriptContent = await getFileContent(scriptFileName);
+                if (!scriptContent) {
+                    throw new Error(`找不到 ${scriptFileName} 檔案`);
+                }
+                
+                const pattern = new RegExp(
+                    `\\s*\\{[^}]*date:\\s*['"]${escapedDate}['"][^}]*isHoliday:\\s*true[^}]*\\},?\\n?`,
+                    'g'
+                );
+                scriptContent = scriptContent.replace(pattern, '');
+                
+                const message = `Remove holiday from ${scriptFileName}: ${date}`;
+                await uploadFileToGitHub(scriptFileName, scriptContent, message);
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
         // ==================== 更新文章 ====================
         async function updateArticle(filename, date, title, htmlContent) {
             if (!githubConfig.token || !githubConfig.username || !githubConfig.repo) {
@@ -2426,10 +2848,20 @@
         
         function showDraftIndicator() {
             const indicator = document.getElementById('draftIndicator');
+            indicator.textContent = '💾 草稿已自動儲存';
             indicator.classList.add('active');
             setTimeout(() => {
                 indicator.classList.remove('active');
             }, 2000);
+        }
+        
+        function showPageNotice(message) {
+            const indicator = document.getElementById('draftIndicator');
+            indicator.textContent = message;
+            indicator.classList.add('active');
+            setTimeout(() => {
+                indicator.classList.remove('active');
+            }, 3000);
         }
         
         // ==================== 分隔線拖拉功能 ====================
