@@ -109,6 +109,7 @@ async function scanLessons() {
         { filename: 'LA School Cellphone.html', date: '2026-06-16', title: '📱 LA School Cellphone Ban: Year One' },
         { filename: 'The Benefits of Boundaries.html', date: '2026-06-18', title: '⚖️ The Benefits of Boundaries' },
         { date: '2026-06-23', title: 'No Class – IATF Audit', isHoliday: true },
+        { filename: 'Work With Your Biology.html', date: '2026-06-30', title: '⚖️ Work With Your Biology, Not Against It' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
