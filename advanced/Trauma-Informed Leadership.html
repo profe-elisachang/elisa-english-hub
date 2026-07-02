@@ -1,0 +1,682 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trauma-Informed Leadership - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #f4f1e9;
+            color: #2b2b2b;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #2d6a6a;
+        }
+
+        .level-badge {
+            background: #e08d3c;
+        }
+
+        h1, h2, h3 {
+            color: #1f4949;
+        }
+
+        .article-title {
+            font-size: 2.2rem;
+            border-bottom: 4px solid #e08d3c;
+            padding-bottom: 12px;
+            margin-bottom: 6px;
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .byline {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .section-block {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .section-heading {
+            color: #ffffff;
+            background: #2d6a6a;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .article-subhead {
+            color: #e08d3c;
+            border-left: 5px solid #e08d3c;
+            padding-left: 12px;
+            margin-top: 35px;
+            font-size: 1.25rem;
+        }
+
+        .practice-step {
+            color: #1f4949;
+            background: #fdf1e0;
+            border: 2px solid #e08d3c;
+            border-radius: 8px;
+            padding: 10px 16px;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.15rem;
+        }
+
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #e08d3c;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        .mobile-note {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin: 10px 0 30px 0;
+        }
+
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #e08d3c;
+            padding: 20px;
+            margin: 20px 0 40px 0;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #e08d3c;
+            margin-top: 0;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word {
+            color: #2d6a6a;
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        .vocab-speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-definition {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-spanish {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #4A90E2;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .expression-card {
+            background: #fdf1e0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #2d6a6a;
+        }
+
+        .expression-en {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #1f4949;
+        }
+
+        .expression-es {
+            color: #666;
+            font-style: italic;
+            margin: 4px 0;
+        }
+
+        .expression-example {
+            color: #444;
+            margin-top: 6px;
+        }
+
+        ul.discussion-list li, ol.practice-list li {
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        details {
+            background: #fdf1e0;
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #1f4949;
+        }
+
+        .practice-question {
+            margin-bottom: 22px;
+        }
+
+        .fill-blank-input, .short-answer-box {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 10px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://static.wixstatic.com/media/fdf813_80e050bf3491481e994a4369d84a3d01~mv2.jpg/v1/fill/w_1000,h_758,al_c,q_85,usm_0.66_1.00_0.01/fdf813_80e050bf3491481e994a4369d84a3d01~mv2.jpg" alt="🌱 Trauma-Informed Leadership" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <h1 class="article-title">🌱 Trauma-Informed Leadership</h1>
+            <p class="article-subtitle">Why emotional safety is a measurable business advantage</p>
+            <p class="byline">by Mathangi Swaminathan / © 2025, Fast Company. Mansueto Ventures, LLC. Distributed by Tribune Content Agency, LLC.</p>
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <div class="section-block">
+                <span class="section-heading">💬 Useful Expressions</span>
+
+                <div class="expression-card">
+                    <div class="expression-en">How are you, truly?</div>
+                    <div class="expression-es">¿Cómo estás, de verdad?</div>
+                    <div class="expression-example">Instead of a routine greeting, the shift leader asked, "How are you, truly?" before reviewing today's production numbers.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-en">I hear you.</div>
+                    <div class="expression-es">Te escucho.</div>
+                    <div class="expression-example">When an operator raised a safety concern, the supervisor simply said, "I hear you," before addressing it.</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-en">Is there anything you need from me today?</div>
+                    <div class="expression-es">¿Hay algo que necesites de mí hoy?</div>
+                    <div class="expression-example">At the start of the shift, the team lead asked each operator, "Is there anything you need from me today?"</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-en">Would it help to adjust your workload this week?</div>
+                    <div class="expression-es">¿Ayudaría ajustar tu carga de trabajo esta semana?</div>
+                    <div class="expression-example">After hearing about the technician's family emergency, the manager asked, "Would it help to adjust your workload this week?"</div>
+                </div>
+
+                <div class="expression-card">
+                    <div class="expression-en">That makes a lot of sense.</div>
+                    <div class="expression-es">Eso tiene mucho sentido.</div>
+                    <div class="expression-example">When the line worker explained why the deadline felt unrealistic, the supervisor replied, "That makes a lot of sense."</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCABULARY -->
+            <div class="section-block">
+                <span class="section-heading">📖 Article &amp; Vocabulary</span>
+
+                <!-- Paragraph 1 -->
+                <p>
+                    A decade ago, I joined a tech company in my first business development role in Singapore. Within the first quarter, I had closed two quarters' worth of sales targets. But the environment was <span class="highlight" title="abusivo/a">abusive</span>. The CEO yelled regularly. Personal and sexist remarks were common, on body, appearance, even what women ate or wore.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">abusive</strong><button class="vocab-speak-btn" onclick="speakWord('abusive')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">using cruel words or physical violence</p>
+                            <p class="vocab-spanish">abusivo/a</p>
+                            <div class="vocab-example">The supervisor's abusive comments during the shift review created a hostile atmosphere on the production floor.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 2 -->
+                <p>
+                    It was <span class="highlight" title="detonante, que provoca una reacción">triggering</span>. Having lived through a previous abusive situation, I found myself in constant flight-or-freeze mode. Every time I saw an email from my manager, my heart raced. I struggled to breathe in meetings. Despite my outward success, internally I was <span class="highlight" title="desmoronándose">unraveling</span>. Finally, I quit.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">triggering</strong><button class="vocab-speak-btn" onclick="speakWord('triggering')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">causing someone to have a strong, difficult emotional reaction linked to a past experience</p>
+                            <p class="vocab-spanish">detonante, que provoca una reacción</p>
+                            <div class="vocab-example">For some workers, sudden equipment alarms can be triggering after a past accident on the line.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">unraveling</strong><button class="vocab-speak-btn" onclick="speakWord('unraveling')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">gradually falling apart or losing control, especially emotionally</p>
+                            <p class="vocab-spanish">desmoronándose</p>
+                            <div class="vocab-example">After weeks of double shifts, he felt himself unraveling under the pressure of the production deadline.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 3 -->
+                <p>
+                    That experience changed the course of my career. For the next 10 years, I <span class="highlight" title="profundizar, investigar a fondo">delved</span> into how trauma shows up in people and organizations and eventually founded a global <span class="highlight" title="empresa social">social enterprise</span> focused on resilience-centered leadership.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">delve</strong><button class="vocab-speak-btn" onclick="speakWord('delve')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to try to find more information about something</p>
+                            <p class="vocab-spanish">profundizar, investigar a fondo</p>
+                            <div class="vocab-example">The quality team delved into the root cause of the defective batch before reporting to the client.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">social enterprise</strong><button class="vocab-speak-btn" onclick="speakWord('social enterprise')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">an organization that aims to make money in order to serve a useful social purpose</p>
+                            <p class="vocab-spanish">empresa social</p>
+                            <div class="vocab-example">The plant partnered with a social enterprise that trains local workers in workplace safety.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="article-subhead">More Than Performance Management</h2>
+
+                <!-- Paragraph 4 -->
+                <p>
+                    While HR manuals continue to discuss things like "performance management," what's often missed is the fact that people will escape environments where emotional strain is ignored or misunderstood. At the center of this gap is something we rarely train for: trauma <span class="highlight" title="conocimiento y dominio de un tema">literacy</span>.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 4</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">literacy</strong><button class="vocab-speak-btn" onclick="speakWord('literacy')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">knowledge and understanding of a particular subject</p>
+                            <p class="vocab-spanish">conocimiento y dominio de un tema</p>
+                            <div class="vocab-example">Improving safety literacy among new hires reduces accidents on the shop floor.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 5 -->
+                <p>
+                    Trauma literacy is the ability (1) to recognize that unhealed past experiences show up in daily behavior and (2) to respond in ways that <span class="highlight" title="fomentar">foster</span> safety and resilience. You don't need to know someone's history to be mindful of trauma's effects. You just need to assume that trauma exists, and that it may be shaping how people show up at work.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 5</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">foster</strong><button class="vocab-speak-btn" onclick="speakWord('foster')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to encourage the development or growth of something</p>
+                            <p class="vocab-spanish">fomentar</p>
+                            <div class="vocab-example">Clear communication channels foster trust between operators and management.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 6 -->
+                <p>
+                    Managers often misinterpret the signs. Silence gets labeled as disinterest; anxiety looks like incompetence; <span class="highlight" title="sobreesforzarse, hacer más de lo necesario">over-functioning</span> is praised until collapse. In reality, these are often trauma responses: fight, flight, freeze or <span class="highlight" title="adular, halagar de forma poco sincera">fawn</span>.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 6</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">over-functioning</strong><button class="vocab-speak-btn" onclick="speakWord('over-functioning')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">doing more than is healthy or necessary, often to compensate for others</p>
+                            <p class="vocab-spanish">sobreesforzarse, hacer más de lo necesario</p>
+                            <div class="vocab-example">When a teammate is absent, over-functioning to cover their tasks can lead to burnout.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">fawn</strong><button class="vocab-speak-btn" onclick="speakWord('fawn')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to praise someone insincerely, because you want them to like you or give you something</p>
+                            <p class="vocab-spanish">adular, halagar de forma poco sincera</p>
+                            <div class="vocab-example">Some employees fawn over supervisors during audits instead of raising real concerns.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="article-subhead">The Business Cost of Trauma</h2>
+
+                <!-- Paragraph 7 -->
+                <p>
+                    Most workers are taught to push harder instead of pausing to <span class="highlight" title="dar espacio, apoyar emocionalmente">hold space</span> for emotions. Emotions are messy, and it often feels safer to stick with technical tasks and leave feelings unaddressed.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 7</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">hold space</strong><button class="vocab-speak-btn" onclick="speakWord('hold space')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to give someone emotional support and attention without judging them</p>
+                            <p class="vocab-spanish">dar espacio, apoyar emocionalmente</p>
+                            <div class="vocab-example">A good line leader knows how to hold space for a technician who made a costly mistake.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 8 -->
+                <p>
+                    But a Harvard Business Review study found that employees who feel psychologically safe show a 76% increase in engagement, a 50% increase in <span class="highlight" title="retención de personal">retention</span>, and a 67% increase in referrals. Trauma literacy is not "extra" — it's essential.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 8</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">retention</strong><button class="vocab-speak-btn" onclick="speakWord('retention')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">a company's ability to keep its employees from leaving to work elsewhere</p>
+                            <p class="vocab-spanish">retención de personal</p>
+                            <div class="vocab-example">Offering flexible schedules has improved retention among assembly line workers.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p><em>Here are trauma-informed practices any manager can implement.</em></p>
+
+                <h3 class="practice-step">① Acknowledge feelings</h3>
+
+                <!-- Paragraph 9 -->
+                <p>
+                    Start meetings with an honest <span class="highlight" title="reunión breve de seguimiento">check-in</span>: not a general "How's everyone doing?" but "How are you, truly?" Emotions offer real-time information about morale.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 9</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">check-in</strong><button class="vocab-speak-btn" onclick="speakWord('check-in')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">a brief conversation to see how someone is doing</p>
+                            <p class="vocab-spanish">reunión breve de seguimiento</p>
+                            <div class="vocab-example">The shift supervisor does a quick check-in with each operator before the line starts.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 10 -->
+                <p>
+                    Of course, people won't <span class="highlight" title="abrirse, sincerarse">open up</span> just because you ask a deeper question. You need to create the conditions where it feels safe to answer honestly. That starts with you. As a manager, model <span class="highlight" title="transparencia emocional">emotional transparency</span> in small, low-risk ways. Say things like, "I'm feeling a bit <span class="highlight" title="disperso/a, desconcentrado/a">scattered</span> today, but I'm here," or "I had a tough morning, so I might be quieter than usual." This signals that real emotions, not just polished updates, are welcome.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 10</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">open up</strong><button class="vocab-speak-btn" onclick="speakWord('open up')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to start sharing personal feelings honestly</p>
+                            <p class="vocab-spanish">abrirse, sincerarse</p>
+                            <div class="vocab-example">It took months before the new hire felt comfortable enough to open up about the pressure of meeting quotas.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">emotional transparency</strong><button class="vocab-speak-btn" onclick="speakWord('emotional transparency')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">being open and honest about your own feelings, keeping an open and sincere state</p>
+                            <p class="vocab-spanish">transparencia emocional</p>
+                            <div class="vocab-example">The plant manager's emotional transparency during the layoffs helped the team trust the process.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">scattered</strong><button class="vocab-speak-btn" onclick="speakWord('scattered')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">not clearly thinking or focused</p>
+                            <p class="vocab-spanish">disperso/a, desconcentrado/a</p>
+                            <div class="vocab-example">After the power outage, the whole maintenance team felt scattered and behind schedule.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="practice-step">② Don't try to fix them</h3>
+
+                <!-- Paragraph 11 -->
+                <p>
+                    Once someone shares something vulnerable, don't rush to fix it or dismiss it. Just <span class="highlight" title="reflejar lo que se dijo, para mostrar comprensión">reflect it back</span>: "Thanks for sharing that, I hear you," or "That makes a lot of sense." From there, you might ask, "Is there anything you need from me today?" or "Would it help to adjust your workload this week?" You don't need to solve every emotional need. Trauma literacy isn't about absorbing everyone's pain. In fact, it's the opposite: Effective leadership requires responding to emotions without becoming <span class="highlight" title="consumido/a por algo">consumed by</span> them.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 11</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">reflect it back</strong><button class="vocab-speak-btn" onclick="speakWord('reflect it back')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to repeat back what someone said or felt, to show that you understand them</p>
+                            <p class="vocab-spanish">reflejar lo que se dijo</p>
+                            <div class="vocab-example">Instead of offering advice right away, she reflected back what the technician had said about feeling overwhelmed.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">consumed by</strong><button class="vocab-speak-btn" onclick="speakWord('consumed by')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">overwhelmed or completely occupied by something</p>
+                            <p class="vocab-spanish">consumido/a por algo</p>
+                            <div class="vocab-example">A supervisor shouldn't become consumed by every complaint from the production floor.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="practice-step">③ Ask simple, effective questions</h3>
+
+                <!-- Paragraph 12 -->
+                <p>
+                    The 5W1H method is another great way to explore challenging moments. It stands for six simple but powerful questions to ask: what, why, when, where, who and how. For example, "What part of this task felt unclear?" or "When did you start feeling stuck?" These open-ended prompts help team members reflect and problem solve without feeling <span class="highlight" title="interrogado/a">interrogated</span> or blamed.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 12</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">interrogated</strong><button class="vocab-speak-btn" onclick="speakWord('interrogated')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">questioned intensely, sometimes using threats, in order to get information</p>
+                            <p class="vocab-spanish">interrogado/a</p>
+                            <div class="vocab-example">New operators shouldn't feel interrogated when reporting a machine malfunction.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="practice-step">④ Check how people are feeling</h3>
+
+                <!-- Paragraph 13 -->
+                <p>
+                    Trauma literacy isn't a one-off conversation; it's a culture. Build in rituals for reflection; adjust workloads proactively; and <span class="highlight" title="asignar">allocate</span> time and resources toward psychological safety. That might mean adding five-minute "emotion check-outs" at the end of meetings, especially after intense <span class="highlight" title="períodos intensos y enfocados de trabajo">sprints</span>, high-stakes conversations, or moments of team transition, where each person shares how they're leaving (energized, drained, hopeful, unsure, etc.). If multiple people are feeling anxious or exhausted, that's a signal to adjust pace, revisit priorities, or check in one-on-one.
+                </p>
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 13</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">allocate</strong><button class="vocab-speak-btn" onclick="speakWord('allocate')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">to use something, or give it to someone, for a particular purpose</p>
+                            <p class="vocab-spanish">asignar</p>
+                            <div class="vocab-example">The plant manager allocated extra time for training after the safety incident.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">sprints</strong><button class="vocab-speak-btn" onclick="speakWord('sprints')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-definition">short, intense periods of focused work</p>
+                            <p class="vocab-spanish">períodos intensos y enfocados de trabajo</p>
+                            <div class="vocab-example">The team just finished a production sprint to meet the client's shipping deadline.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </div>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <div class="section-block">
+                <span class="section-heading">🗣️ Discussion Questions</span>
+                <ul class="discussion-list">
+                    <li>Have you ever worked under a manager whose behavior felt abusive or overly harsh? How did it affect your performance on the job?</li>
+                    <li>What signals do you think your team gives off when they are feeling "scattered" or overwhelmed, and how could a supervisor respond?</li>
+                    <li>How could practices like the 5W1H method or "emotion check-outs" be realistically applied during a fast-paced production shift?</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <div class="section-block">
+                <span class="section-heading">✏️ Self-Practice</span>
+
+                <div class="practice-question">
+                    <strong>1. Fill in the blank:</strong> The manager tried to _______ (v.) time and resources toward psychological safety on the team.
+                    <br><input type="text" class="fill-blank-input" placeholder="your answer">
+                </div>
+
+                <div class="practice-question">
+                    <strong>2. True or False:</strong> According to the article, trauma literacy means you must know every detail of someone's personal history.
+                </div>
+
+                <div class="practice-question">
+                    <strong>3. Short answer:</strong> According to the Harvard Business Review study mentioned in the article, what three benefits come from employees feeling psychologically safe?
+                    <br><input type="text" class="short-answer-box" placeholder="your answer">
+                </div>
+
+                <div class="practice-question">
+                    <strong>4. Workplace connection:</strong> Think about a recent high-stakes period at your workplace (a rush order, an audit, a production sprint). How could a five-minute "emotion check-out" have changed how your team handled it?
+                    <br><input type="text" class="short-answer-box" placeholder="your answer">
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol class="practice-list">
+                        <li><strong>allocate</strong></li>
+                        <li><strong>False</strong> — you don't need to know someone's history; you just need to assume trauma exists and may be shaping behavior.</li>
+                        <li>A 76% increase in engagement, a 50% increase in retention, and a 67% increase in referrals.</li>
+                        <li>Open-ended — answers will vary based on personal workplace experience.</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
