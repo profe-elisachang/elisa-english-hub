@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Your Biology, Not Against It — English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-intermediate.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans', 'Open Sans', sans-serif;
+    line-height: 1.7;
+    background: #EEF2E9;
+    color: #22302A;
+    margin: 0;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: #1F4B3F;
+    color: #F5F7F1;
+    padding: 3rem 1.5rem 4rem;
+  }
+  .hero-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .hero-badges { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+  .badge {
+    display:inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .badge-topic { background:#D98E3A; color:#22302A; }
+  .badge-level { background: rgba(255,255,255,0.18); color:#F5F7F1; border:1px solid rgba(255,255,255,0.4); }
+  .hero h2 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin: 0 0 0.7rem;
+    font-weight: 800;
+  }
+  .hero p.subtitle {
+    font-size: 1.15rem;
+    color: #CFE0D2;
+    margin: 0 0 0.5rem;
+    font-weight: 500;
+  }
+  .hero p.source {
+    font-size: 0.9rem;
+    color: #9FBBA4;
+    margin-top: 1.2rem;
+  }
+
+  /* gauge visual: muscle mass over age */
+  .gauge-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+  .gauge-box h3 {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #CFE0D2;
+    font-weight: 700;
+  }
+  .gauge-caption {
+    font-size: 0.85rem;
+    color: #9FBBA4;
+    margin-top: 0.8rem;
+  }
+
+  /* ===== CONTAINER ===== */
+  .lesson-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  section { margin-bottom: 3rem; }
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1F4B3F;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .section-title .num {
+    background: #1F4B3F;
+    color: #fff;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* ===== USEFUL EXPRESSIONS ===== */
+  .expr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .expr-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    border-left: 6px solid #D98E3A;
+    box-shadow: 0 2px 10px rgba(31,75,63,0.08);
+  }
+  .expr-en {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1F4B3F;
+  }
+  .expr-es {
+    font-size: 1rem;
+    color: #8B4A1F;
+    font-weight: 700;
+    margin: 0.2rem 0 0.6rem;
+  }
+  .expr-example {
+    font-size: 0.95rem;
+    color: #445048;
+    font-style: italic;
+    border-top: 1px dashed #E0E0D5;
+    padding-top: 0.6rem;
+  }
+
+  /* ===== LEGEND ===== */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 2px 10px rgba(31,75,63,0.08);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .legend-item { display:flex; align-items:center; gap:0.5rem; }
+  .swatch { width: 1.1rem; height: 1.1rem; border-radius: 4px; display:inline-block; }
+
+  /* highlight categories */
+  .hl-vocab {
+    background: #FFE174;
+    font-weight: 700;
+    border-bottom: 3px solid #C97B3D;
+    padding: 0 0.15em;
+    border-radius: 3px;
+    cursor: help;
+  }
+  .hl-phrasal {
+    background: #E8A059;
+    color: #3A2100;
+    font-weight: 700;
+    border-bottom: 3px solid #8B4A1F;
+    padding: 0 0.15em;
+    border-radius: 3px;
+    cursor: help;
+  }
+  .hl-idiom {
+    background: #FFC49B;
+    color: #5C2A0A;
+    font-weight: 700;
+    border-bottom: 3px solid #D9713C;
+    padding: 0 0.15em;
+    border-radius: 3px;
+    cursor: help;
+  }
+
+  /* ===== ARTICLE ===== */
+  .article-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1F4B3F;
+    margin-bottom: 0.3rem;
+  }
+  .article-sub {
+    color: #5C6E63;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+  .paragraph-block {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.15rem;
+    box-shadow: 0 2px 10px rgba(31,75,63,0.06);
+  }
+
+  /* ===== VOCAB CARDS ===== */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 0 0 2rem;
+  }
+  .vocab-card {
+    background: #F5F8F2;
+    border-left: 5px solid #1F4B3F;
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+  .vocab-card.cat-phrasal { border-left-color: #8B4A1F; }
+  .vocab-card.cat-idiom { border-left-color: #D9713C; }
+  .vocab-word-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .vocab-word {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #1F4B3F;
+  }
+  .speak-btn {
+    background: #1F4B3F;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 1.9rem;
+    height: 1.9rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .speak-btn:hover { background: #163B31; }
+  .vocab-def { font-size: 0.92rem; color: #33403A; margin-bottom: 0.4rem; }
+  .vocab-es { font-size: 0.9rem; font-weight: 700; color: #8B4A1F; margin-bottom: 0.5rem; }
+  .vocab-ex { font-size: 0.88rem; font-style: italic; color: #5C6E63; border-top: 1px dashed #DDE3D6; padding-top: 0.5rem; }
+
+  /* ===== DISCUSSION ===== */
+  .discuss-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .discuss-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    border-left: 6px solid #D98E3A;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 10px rgba(31,75,63,0.06);
+    display: flex;
+    gap: 0.8rem;
+  }
+  .discuss-item .qnum {
+    font-weight: 800;
+    color: #D98E3A;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  /* ===== SELF PRACTICE ===== */
+  .practice-list { display:flex; flex-direction:column; gap: 1rem; }
+  .practice-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 2px 10px rgba(31,75,63,0.06);
+  }
+  .practice-q { font-weight: 700; font-size: 1.05rem; color: #22302A; margin-bottom: 0.5rem; }
+  details.answer-box {
+    margin-left: 1.6rem;
+    margin-top: 0.3rem;
+  }
+  details.answer-box summary {
+    cursor: pointer;
+    color: #1F4B3F;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.4rem 0.8rem;
+    background: #EAF1E7;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  details.answer-box[open] summary { margin-bottom: 0.6rem; }
+  .answer-text {
+    background: #F5F8F2;
+    border-left: 4px solid #1F4B3F;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    color: #33403A;
+  }
+
+  @media (max-width: 800px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero h2 { font-size: 1.6rem; }
+    .article-title { font-size: 1.4rem; }
+    .paragraph-block { font-size: 1.05rem; padding: 1.2rem 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badges">
+        <span class="badge badge-topic">Health &amp; Lifestyle</span>
+        <span class="badge badge-level">A2–B1</span>
+      </div>
+      <h2>⚖️ Work With Your Biology, Not Against It</h2>
+      <p class="subtitle">Why does weight gain start earlier than most people think — and what can you do about it?</p>
+      <p class="source">Adapted for English learners from an interview with Dr. Daniela Hurtado Andrade, an endocrinologist and obesity specialist at Mayo Clinic.</p>
+    </div>
+    <div class="gauge-box">
+      <h3>Muscle mass over time</h3>
+      <svg viewBox="0 0 360 150" width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="110" x2="340" y2="110" stroke="#4C6E5F" stroke-width="2"/>
+        <polyline points="20,60 100,68 180,85 260,100 340,112" fill="none" stroke="#D98E3A" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="100" cy="68" r="6" fill="#FFE174" stroke="#1F4B3F" stroke-width="2"/>
+        <text x="100" y="50" fill="#F5F7F1" font-size="12" font-weight="700" text-anchor="middle">age 30</text>
+        <text x="100" y="130" fill="#9FBBA4" font-size="11" text-anchor="middle">decline starts</text>
+        <circle cx="260" cy="100" r="6" fill="#FFC49B" stroke="#1F4B3F" stroke-width="2"/>
+        <text x="260" y="130" fill="#9FBBA4" font-size="11" text-anchor="middle">menopause</text>
+        <text x="260" y="50" fill="#F5F7F1" font-size="12" font-weight="700" text-anchor="middle">gets faster</text>
+        <text x="20" y="128" fill="#9FBBA4" font-size="10">20</text>
+        <text x="340" y="128" fill="#9FBBA4" font-size="10">55</text>
+      </svg>
+      <p class="gauge-caption">Muscle mass slowly decreases starting around age 30 — long before perimenopause begins.</p>
+    </div>
+  </div>
+</section>
+
+<div class="lesson-container">
+
+  <!-- USEFUL EXPRESSIONS -->
+  <section>
+    <h2 class="section-title"><span class="num">1</span>Useful Expressions</h2>
+    <div class="expr-grid">
+      <div class="expr-card">
+        <div class="expr-en">lead to</div>
+        <div class="expr-es">conducir a / resultar en</div>
+        <div class="expr-example">"Skipping the calibration step can lead to inconsistent product quality."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">well ahead of</div>
+        <div class="expr-es">mucho antes de</div>
+        <div class="expr-example">"The plant manager ordered replacement parts well ahead of the scheduled maintenance."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">hit a plateau</div>
+        <div class="expr-es">llegar a un estancamiento</div>
+        <div class="expr-example">"Productivity hit a plateau after the initial improvements from the new software."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">benefit from</div>
+        <div class="expr-es">beneficiarse de</div>
+        <div class="expr-example">"New hires benefit from a structured onboarding program during their first month."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">get someone so far</div>
+        <div class="expr-es">tiene un límite / no es suficiente por sí solo</div>
+        <div class="expr-example">"Good intentions will only get you so far; the line also needs proper training and tools."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section>
+    <h2 class="section-title"><span class="num">2</span>Article</h2>
+    <div class="article-title">⚖️ Work With Your Biology, Not Against It</div>
+    <div class="article-sub">A simplified article for English learners</div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="swatch" style="background:#FFE174;border:2px solid #C97B3D;"></span> Key vocabulary</div>
+      <div class="legend-item"><span class="swatch" style="background:#E8A059;border:2px solid #8B4A1F;"></span> Phrasal verbs</div>
+      <div class="legend-item"><span class="swatch" style="background:#FFC49B;border:2px solid #D9713C;"></span> Idioms &amp; expressions</div>
+    </div>
+
+    <!-- Paragraph 1 -->
+    <div class="paragraph-block">
+      Weight gain is common for women during <span class="hl-vocab" title="perimenopausia">perimenopause</span> and after menopause. But the changes in the body actually start much earlier in life. Dr. Hurtado Andrade is a doctor who studies obesity. She says it is important to start <span class="hl-vocab" title="contrarrestar">counteracting</span> these changes long before perimenopause begins.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">perimenopause</span><button class="speak-btn" onclick="speakWord('perimenopause')">🔊</button></div>
+        <div class="vocab-def">The time period leading up to menopause, when hormone levels start to change</div>
+        <div class="vocab-es">perimenopausia</div>
+        <div class="vocab-ex">HR included perimenopause awareness in this year's employee wellness workshops.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">counteract</span><button class="speak-btn" onclick="speakWord('counteract')">🔊</button></div>
+        <div class="vocab-def">To take action to reduce or stop a negative effect</div>
+        <div class="vocab-es">contrarrestar</div>
+        <div class="vocab-ex">The maintenance team is counteracting equipment wear by scheduling preventive checks.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 2 -->
+    <div class="paragraph-block">
+      Data shows that muscle mass slowly decreases starting around age 30. This is a normal part of aging. Later, during menopause, this problem is <span class="hl-vocab" title="agravado / empeorado">exacerbated</span> — it gets worse. Less muscle mass can <span class="hl-phrasal" title="conducir a / resultar en">lead to</span> a slower <span class="hl-vocab" title="metabolismo">metabolism</span>, which is a risk factor for weight gain.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">exacerbated</span><button class="speak-btn" onclick="speakWord('exacerbated')">🔊</button></div>
+        <div class="vocab-def">Made a problem worse</div>
+        <div class="vocab-es">agravado / empeorado</div>
+        <div class="vocab-ex">The parts shortage was exacerbated by a delay at the supplier's warehouse.</div>
+      </div>
+      <div class="vocab-card cat-phrasal">
+        <div class="vocab-word-row"><span class="vocab-word">lead to</span><button class="speak-btn" onclick="speakWord('lead to')">🔊</button></div>
+        <div class="vocab-def">To result in or cause something</div>
+        <div class="vocab-es">conducir a / resultar en</div>
+        <div class="vocab-ex">Skipping the calibration step can lead to inconsistent product quality.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">metabolism</span><button class="speak-btn" onclick="speakWord('metabolism')">🔊</button></div>
+        <div class="vocab-def">The chemical process by which the body converts food into energy</div>
+        <div class="vocab-es">metabolismo</div>
+        <div class="vocab-ex">The wellness coach explained how a slower metabolism after age 30 can affect energy at work.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 3 -->
+    <div class="paragraph-block">
+      Modern life makes a healthy weight more difficult. There is a lot of processed food full of sugar and fat. We also use escalators, elevators, and cars instead of walking. Many jobs keep people <span class="hl-vocab" title="sedentario">sedentary</span> for long hours, and it is hard to <span class="hl-vocab" title="desconectarse">unplug</span> from phones and computers after work.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">unplug</span><button class="speak-btn" onclick="speakWord('unplug')">🔊</button></div>
+        <div class="vocab-def">To disconnect from work devices or technology in order to rest</div>
+        <div class="vocab-es">desconectarse</div>
+        <div class="vocab-ex">Supervisors encourage unplugging from work email after the night shift ends.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">sedentary</span><button class="speak-btn" onclick="speakWord('sedentary')">🔊</button></div>
+        <div class="vocab-def">Involving little physical movement, mostly sitting</div>
+        <div class="vocab-es">sedentario</div>
+        <div class="vocab-ex">Office staff are encouraged to take walking breaks to avoid a sedentary workday.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 4 -->
+    <div class="paragraph-block">
+      Dr. Hurtado Andrade says people should be <span class="hl-vocab" title="consciente / atento">mindful</span> of their habits <span class="hl-idiom" title="mucho antes de">well ahead of</span> menopause. Good habits include a healthy diet and at least 150 minutes of exercise per week. It also helps to <span class="hl-vocab" title="llevar seguimiento de / rastrear">track</span> what and how much you eat, so you understand how much food you really need.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">mindful</span><button class="speak-btn" onclick="speakWord('mindful')">🔊</button></div>
+        <div class="vocab-def">Paying careful attention to something; aware</div>
+        <div class="vocab-es">consciente / atento</div>
+        <div class="vocab-ex">Operators are trained to be mindful of the safety zones around the machinery.</div>
+      </div>
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">well ahead of</span><button class="speak-btn" onclick="speakWord('well ahead of')">🔊</button></div>
+        <div class="vocab-def">Much earlier than; with plenty of time before</div>
+        <div class="vocab-es">mucho antes de</div>
+        <div class="vocab-ex">The plant manager ordered replacement parts well ahead of the scheduled maintenance.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">track</span><button class="speak-btn" onclick="speakWord('track')">🔊</button></div>
+        <div class="vocab-def">To record and monitor something over time</div>
+        <div class="vocab-es">llevar seguimiento de / rastrear</div>
+        <div class="vocab-ex">Supervisors track downtime on each production line every shift.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 5 -->
+    <div class="paragraph-block">
+      Exercise should also include <span class="hl-vocab" title="entrenamiento de resistencia/fuerza">resistance training</span> and maybe <span class="hl-vocab" title="entrenamiento en intervalos de alta intensidad">high-intensity interval training (HIIT)</span>. These types of exercise help protect muscle mass as we get older.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">resistance training</span><button class="speak-btn" onclick="speakWord('resistance training')">🔊</button></div>
+        <div class="vocab-def">Exercise that builds muscle strength using weight or resistance</div>
+        <div class="vocab-es">entrenamiento de resistencia/fuerza</div>
+        <div class="vocab-ex">The company gym added resistance training equipment for employees to use on their breaks.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">HIIT</span><button class="speak-btn" onclick="speakWord('high intensity interval training')">🔊</button></div>
+        <div class="vocab-def">Short bursts of intense exercise alternated with rest</div>
+        <div class="vocab-es">entrenamiento en intervalos de alta intensidad</div>
+        <div class="vocab-ex">The wellness program offers a 20-minute HIIT class before the morning shift.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 6 -->
+    <div class="paragraph-block">
+      But a healthy lifestyle will only <span class="hl-idiom" title="tiene un límite / no es suficiente por sí solo">get you so far</span>. When people lose weight, they often lose muscle mass too, which slows the metabolism even more. This is one reason many people <span class="hl-idiom" title="llegar a un estancamiento">hit a plateau</span> — their weight loss stops — even when they keep working hard <span class="hl-idiom" title="en busca de / en la búsqueda de">in pursuit of</span> better <span class="hl-vocab" title="resultados">outcomes</span>.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">get someone so far</span><button class="speak-btn" onclick="speakWord('that will only get you so far')">🔊</button></div>
+        <div class="vocab-def">Idiom: something helps, but has limits and isn't enough alone</div>
+        <div class="vocab-es">tiene un límite / no es suficiente por sí solo</div>
+        <div class="vocab-ex">Good intentions will only get you so far; the line also needs proper training and tools.</div>
+      </div>
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">hit a plateau</span><button class="speak-btn" onclick="speakWord('hit a plateau')">🔊</button></div>
+        <div class="vocab-def">To reach a point where progress stops</div>
+        <div class="vocab-es">llegar a un estancamiento</div>
+        <div class="vocab-ex">Productivity hit a plateau after the initial improvements from the new software.</div>
+      </div>
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">in pursuit of</span><button class="speak-btn" onclick="speakWord('in pursuit of')">🔊</button></div>
+        <div class="vocab-def">While trying to achieve something</div>
+        <div class="vocab-es">en busca de / en la búsqueda de</div>
+        <div class="vocab-ex">In pursuit of zero defects, the team redesigned the entire inspection process.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">outcomes</span><button class="speak-btn" onclick="speakWord('outcomes')">🔊</button></div>
+        <div class="vocab-def">The results of an action or process</div>
+        <div class="vocab-es">resultados</div>
+        <div class="vocab-ex">The safety committee reviews quarterly outcomes from every audit.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 7 -->
+    <div class="paragraph-block">
+      Our bodies are programmed to survive. When we lose weight, the brain often <span class="hl-idiom" title="percibido como">perceives it as</span> a danger and can <span class="hl-vocab" title="anula / tiene prioridad sobre">override</span> our decisions, making us feel very hungry. This is why it is hard to <span class="hl-vocab" title="sostener / mantener">sustain</span> a low-calorie diet for a long time — the body's <span class="hl-vocab" title="regulación del equilibrio energético">regulation of energy balance</span> is very complex.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">perceived as</span><button class="speak-btn" onclick="speakWord('perceived as')">🔊</button></div>
+        <div class="vocab-def">Understood or seen in a particular way</div>
+        <div class="vocab-es">percibido como</div>
+        <div class="vocab-ex">Overtime is often perceived as a sign of poor planning rather than dedication.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">sustain</span><button class="speak-btn" onclick="speakWord('sustain')">🔊</button></div>
+        <div class="vocab-def">To keep something going over a long period</div>
+        <div class="vocab-es">sostener / mantener</div>
+        <div class="vocab-ex">It's hard to sustain peak output on the line without proper breaks and rotation.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">override</span><button class="speak-btn" onclick="speakWord('override')">🔊</button></div>
+        <div class="vocab-def">To take control over and cancel another decision or instinct</div>
+        <div class="vocab-es">anula / tiene prioridad sobre</div>
+        <div class="vocab-ex">Safety protocol always overrides the production schedule.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">energy balance</span><button class="speak-btn" onclick="speakWord('regulation of energy balance')">🔊</button></div>
+        <div class="vocab-def">The body's control system for managing energy intake and use</div>
+        <div class="vocab-es">regulación del equilibrio energético</div>
+        <div class="vocab-ex">Just like the body's energy balance, the plant needs careful regulation of power use during peak hours.</div>
+      </div>
+    </div>
+
+    <!-- Paragraph 8 -->
+    <div class="paragraph-block">
+      For most people, diet and exercise alone are not enough, so many <span class="hl-phrasal" title="beneficiarse de">benefit from</span> extra tools — medication, an <span class="hl-vocab" title="procedimiento bariátrico endoscópico">endoscopic bariatric procedure</span>, or surgery — plus support from nutrition and therapy professionals. Dr. Hurtado Andrade wants patients to understand something important: obesity is a disease, not a <span class="hl-idiom" title="defecto de carácter">character flaw</span>. This message can be very <span class="hl-vocab" title="impactante / de gran impacto">impactful</span>. Since obesity is so <span class="hl-vocab" title="prevalente / común">prevalent</span> today, doctors want to prevent it, not just treat it. Lifestyle changes remain <span class="hl-idiom" title="el núcleo de / la base de">the core of</span> every weight-management plan — there is no magic pill, but there are tools that <span class="hl-vocab" title="facilitar">facilitate</span> healthy change.
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card cat-phrasal">
+        <div class="vocab-word-row"><span class="vocab-word">benefit from</span><button class="speak-btn" onclick="speakWord('benefit from')">🔊</button></div>
+        <div class="vocab-def">To receive an advantage or improvement from something</div>
+        <div class="vocab-es">beneficiarse de</div>
+        <div class="vocab-ex">New hires benefit from a structured onboarding program during their first month.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">bariatric procedure</span><button class="speak-btn" onclick="speakWord('endoscopic bariatric procedure')">🔊</button></div>
+        <div class="vocab-def">A minimally invasive medical procedure that helps with weight loss</div>
+        <div class="vocab-es">procedimiento bariátrico endoscópico</div>
+        <div class="vocab-ex">The company's health insurance now covers consultations for an endoscopic bariatric procedure.</div>
+      </div>
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">character flaw</span><button class="speak-btn" onclick="speakWord('character flaw')">🔊</button></div>
+        <div class="vocab-def">A personal weakness or fault, often blamed on someone's personality</div>
+        <div class="vocab-es">defecto de carácter</div>
+        <div class="vocab-ex">Missing a deadline because of a supply issue shouldn't be treated as a character flaw.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">impactful</span><button class="speak-btn" onclick="speakWord('impactful')">🔊</button></div>
+        <div class="vocab-def">Having a strong effect or influence</div>
+        <div class="vocab-es">impactante / de gran impacto</div>
+        <div class="vocab-ex">The new safety training was one of the most impactful changes this year.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">prevalent</span><button class="speak-btn" onclick="speakWord('prevalent')">🔊</button></div>
+        <div class="vocab-def">Common or widespread at a particular time</div>
+        <div class="vocab-es">prevalente / común</div>
+        <div class="vocab-ex">Repetitive strain injuries are prevalent among workers on the packaging line.</div>
+      </div>
+      <div class="vocab-card cat-idiom">
+        <div class="vocab-word-row"><span class="vocab-word">the core of</span><button class="speak-btn" onclick="speakWord('the core of')">🔊</button></div>
+        <div class="vocab-def">The most essential or central part of something</div>
+        <div class="vocab-es">el núcleo de / la base de</div>
+        <div class="vocab-ex">Clear communication is the core of every successful shift handover.</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">facilitate</span><button class="speak-btn" onclick="speakWord('facilitate')">🔊</button></div>
+        <div class="vocab-def">To make a process easier</div>
+        <div class="vocab-es">facilitar</div>
+        <div class="vocab-ex">The new software facilitates tracking inventory across all three warehouses.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- DISCUSSION QUESTIONS -->
+  <section>
+    <h2 class="section-title"><span class="num">3</span>Discussion Questions</h2>
+    <ul class="discuss-list">
+      <li class="discuss-item"><span class="qnum">1</span><span>In your job, do you spend most of your day sedentary or active? How could you add more movement to your work day?</span></li>
+      <li class="discuss-item"><span class="qnum">2</span><span>Think about a project at your company that hit a plateau. What did the team do to move forward again?</span></li>
+      <li class="discuss-item"><span class="qnum">3</span><span>Dr. Hurtado Andrade says obesity is a disease, not a character flaw. Can you think of a work mistake that people often treat as a "character flaw" instead of looking for the real, underlying cause?</span></li>
+    </ul>
+  </section>
+
+  <!-- SELF PRACTICE -->
+  <section>
+    <h2 class="section-title"><span class="num">4</span>Self-Practice</h2>
+    <div class="practice-list">
+      <div class="practice-item">
+        <div class="practice-q">1. According to the article, at what age does muscle mass usually start to decrease?</div>
+        <details class="answer-box">
+          <summary>Show answer</summary>
+          <div class="answer-text">Around age 30 — long before perimenopause begins.</div>
+        </details>
+      </div>
+      <div class="practice-item">
+        <div class="practice-q">2. Name two things about modern life that make a healthy weight more difficult.</div>
+        <details class="answer-box">
+          <summary>Show answer</summary>
+          <div class="answer-text">Possible answers: too much processed food high in sugar and fat; using escalators, elevators, and cars instead of walking; sedentary desk jobs; difficulty unplugging from devices.</div>
+        </details>
+      </div>
+      <div class="practice-item">
+        <div class="practice-q">3. Complete the sentence: "The new safety training was one of the most _______ changes this year."</div>
+        <details class="answer-box">
+          <summary>Show answer</summary>
+          <div class="answer-text">impactful</div>
+        </details>
+      </div>
+      <div class="practice-item">
+        <div class="practice-q">4. Production: Write one sentence using "well ahead of" about your own job or daily life.</div>
+        <details class="answer-box">
+          <summary>Show answer</summary>
+          <div class="answer-text">Sample answer: "I always prepare my reports well ahead of the deadline so I have time to review them."</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+}
+</script>
+
+</body>
+</html>
