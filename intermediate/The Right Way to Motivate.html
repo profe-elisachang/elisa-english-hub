@@ -1,0 +1,558 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Right Way to Motivate | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-intermediate.css">
+<style>
+  :root{
+    --ink:#2B2420;
+    --paper:#F7EFE1;
+    --clay:#C1502E;
+    --clay-dark:#9C3D22;
+    --gold:#D9A441;
+    --stone:#8B8478;
+    --stone-light:#DCD3C2;
+    --moss:#586B4F;
+    --card:#FFFFFF;
+    --yellow-bg:#FFE49C;
+    --yellow-bd:#C68A1E;
+    --copper-bg:#F4B183;
+    --copper-bd:#B65A22;
+    --peach-bg:#F6D3C9;
+    --peach-bd:#C4685A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    margin:0;
+  }
+  .container{max-width:1400px;margin:0 auto;padding:0 1.5rem 4rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:3.5rem 1.5rem 3rem;
+    position:relative;
+    overflow:hidden;
+    border-bottom:6px solid var(--clay);
+  }
+  .hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:2;}
+  .hero-eyebrow{
+    display:inline-block;
+    font-size:0.95rem;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    border-radius:999px;
+    padding:0.3rem 1rem;
+    margin-bottom:1.2rem;
+  }
+  .hero h2{
+    font-size:2.6rem;
+    font-weight:900;
+    margin:0 0 0.8rem;
+    max-width:820px;
+  }
+  .hero p.sub{
+    font-size:1.2rem;
+    color:var(--stone-light);
+    max-width:700px;
+    margin:0;
+  }
+  .seismo{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    width:100%; height:110px;
+    z-index:1;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  .section{margin-top:3.5rem;}
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    font-size:1.9rem;
+    font-weight:900;
+    color:var(--ink);
+    margin-bottom:1.6rem;
+    border-bottom:4px solid var(--gold);
+    padding-bottom:0.6rem;
+  }
+
+  /* ---------- USEFUL EXPRESSIONS ---------- */
+  .expr-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:1.2rem;
+  }
+  .expr-card{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-left:10px solid var(--clay);
+    border-radius:10px;
+    padding:1.3rem 1.4rem;
+    box-shadow:4px 4px 0 var(--stone-light);
+  }
+  .expr-en{font-size:1.25rem;font-weight:800;color:var(--clay-dark);}
+  .expr-es{font-size:1.05rem;font-weight:600;color:var(--moss);margin:0.3rem 0 0.7rem;}
+  .expr-ex{font-size:1rem;font-style:italic;color:var(--ink);}
+
+  /* ---------- ARTICLE ---------- */
+  .article-card{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-radius:12px;
+    padding:2rem 2.2rem;
+    box-shadow:6px 6px 0 var(--stone-light);
+  }
+  .article-card h3.subhead{
+    font-size:1.4rem;
+    font-weight:800;
+    color:var(--clay-dark);
+    margin:2.2rem 0 0.8rem;
+    padding-left:0.9rem;
+    border-left:5px solid var(--gold);
+  }
+  .article-card h3.subhead:first-child{margin-top:0;}
+  .article-card p{font-size:1.15rem;margin:0 0 1rem;}
+
+  .highlight{
+    background:var(--yellow-bg);
+    border-bottom:3px solid var(--yellow-bd);
+    font-weight:700;
+    padding:0.05rem 0.3rem;
+    border-radius:3px;
+  }
+  .phrasal{
+    background:var(--copper-bg);
+    border-bottom:3px solid var(--copper-bd);
+    font-weight:700;
+    padding:0.05rem 0.3rem;
+    border-radius:3px;
+  }
+  .idiom{
+    background:var(--peach-bg);
+    border-bottom:3px solid var(--peach-bd);
+    font-weight:700;
+    padding:0.05rem 0.3rem;
+    border-radius:3px;
+  }
+
+  /* ---------- VOCAB BOXES ---------- */
+  .vocab-wrap{margin:1.4rem 0 2.2rem;}
+  .vocab-label{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--gold);
+    font-weight:800;
+    font-size:0.95rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:0.4rem 1rem;
+    border-radius:6px 6px 0 0;
+  }
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:1rem;
+    background:var(--stone-light);
+    border-radius:0 10px 10px 10px;
+    padding:1.2rem;
+  }
+  .vocab-card{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-radius:8px;
+    padding:1rem 1.1rem;
+  }
+  .vocab-word-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:0.5rem;
+  }
+  .vocab-word{font-size:1.15rem;font-weight:800;color:var(--clay-dark);}
+  .speak-btn{
+    background:var(--gold);
+    border:2px solid var(--ink);
+    border-radius:50%;
+    width:34px;height:34px;
+    font-size:1rem;
+    cursor:pointer;
+    flex:none;
+  }
+  .speak-btn:hover{background:var(--clay);}
+  .vocab-def{font-size:0.98rem;margin:0.4rem 0 0.3rem;}
+  .vocab-es{font-size:0.95rem;color:var(--moss);font-weight:700;margin:0 0 0.4rem;}
+  .vocab-ex{font-size:0.92rem;font-style:italic;color:var(--ink);border-top:1px dashed var(--stone);padding-top:0.4rem;}
+
+  /* ---------- DISCUSSION ---------- */
+  .discuss-list{list-style:none;margin:0;padding:0;counter-reset:dq;}
+  .discuss-list li{
+    counter-increment:dq;
+    background:var(--moss);
+    color:var(--paper);
+    border-radius:10px;
+    padding:1.1rem 1.4rem 1.1rem 3.2rem;
+    margin-bottom:1rem;
+    position:relative;
+    font-size:1.1rem;
+  }
+  .discuss-list li::before{
+    content:counter(dq);
+    position:absolute;
+    left:1rem; top:50%; transform:translateY(-50%);
+    background:var(--gold);
+    color:var(--ink);
+    font-weight:900;
+    width:2rem;height:2rem;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- SELF PRACTICE ---------- */
+  .practice-card{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-left:10px solid var(--gold);
+    border-radius:10px;
+    padding:1.2rem 1.4rem;
+    margin-bottom:1rem;
+  }
+  .practice-card p.q{font-size:1.1rem;font-weight:700;margin:0 0 0.6rem;}
+  details summary{
+    cursor:pointer;
+    font-weight:800;
+    color:var(--clay-dark);
+    display:inline-block;
+    padding:0.35rem 0.9rem;
+    background:var(--yellow-bg);
+    border:2px solid var(--yellow-bd);
+    border-radius:6px;
+  }
+  details[open] summary{margin-bottom:0.7rem;}
+  .answer{font-size:1rem;background:var(--stone-light);border-radius:6px;padding:0.8rem 1rem;}
+
+  @media (max-width:600px){
+    .hero h2{font-size:1.9rem;}
+    .article-card{padding:1.4rem 1.2rem;}
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://www.hiringpeople.co.uk/wp-content/uploads/2017/09/motivationconceptwithbusinesselementsandrelatedkeywords.jpg" alt="🤝 The Right Way to Motivate" class="article-image">
+    </div>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Leadership &amp; Trust</span>
+    <h2>🤝 The Right Way to Motivate</h2>
+    <p class="sub">Good managers inspire trust by showing that they understand — even when the ground beneath the team keeps shifting.</p>
+  </div>
+  <svg class="seismo" viewBox="0 0 1400 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,55 80,55 100,20 120,90 140,55 220,55 240,10 260,95 280,55 400,55 420,30 440,80 460,55 620,55 640,15 660,90 680,55 900,55 920,25 940,85 960,55 1150,55 1170,12 1190,95 1210,55 1400,55" fill="none" stroke="#D9A441" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"></polyline>
+  </svg>
+</section>
+
+<div class="container">
+
+  <!-- USEFUL EXPRESSIONS -->
+  <div class="section">
+    <div class="section-title">💼 Useful Expressions</div>
+    <div class="expr-grid">
+      <div class="expr-card">
+        <div class="expr-en">Meet someone where they are</div>
+        <div class="expr-es">Encontrar a alguien donde está / comprender su situación actual</div>
+        <div class="expr-ex">Before proposing solutions, we need to meet our team where they are and understand their concerns about the reorganization.</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">Be out of touch</div>
+        <div class="expr-es">Estar desconectado / no estar al tanto</div>
+        <div class="expr-ex">If management ignores employee feedback, they'll seem out of touch with the reality of daily operations.</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">Set something aside</div>
+        <div class="expr-es">Dejar algo de lado / apartar algo</div>
+        <div class="expr-ex">Once we address their concerns about the process, the team can set aside their frustrations and focus on moving forward.</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">Stand a chance</div>
+        <div class="expr-es">Tener una oportunidad / tener posibilidades</div>
+        <div class="expr-ex">Our proposal stands a chance of approval only if we can demonstrate clear cost benefits to upper management.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <div class="section">
+    <div class="section-title">📄 Article: Leaders often take the wrong steps</div>
+    <div class="article-card">
+
+      <p>Leaders often take the wrong steps in highly uncertain times — and end up <span class="highlight" title="desmotivando">demotivating</span> the team. What doesn't work is optimism, great arguments, or big-picture vision. There's a time for those approaches, but <span class="phrasal" title="apoyarse en / depender de">leaning on</span> them at the wrong time makes the leader seem <span class="idiom" title="desconectado / fuera de contacto">out of touch</span>.</p>
+
+      <p>Imagine a house sitting on a <span class="highlight" title="falla / fractura geológica">fault</span> line. Then comes an earthquake. After the shaking stops, the house is still standing — but the foundation has visible cracks, and the ground beneath has clearly <span class="highlight" title="se ha desplazado / ha cambiado">shifted</span>. Would you trust someone who charged in optimistically and with a cheery tone told you the house will be just fine and to head back in? Or would you trust someone who <span class="highlight" title="reconoce">acknowledges</span> that there could be <span class="highlight" title="réplicas (de terremoto)">aftershocks</span> and who agrees that it makes sense to test the structure of the house before going back? Most people would trust the second person more. They've acknowledged your reality. They <span class="idiom" title="tener una oportunidad">stand a chance</span> of finding out if the house is safe, and if not, what steps are needed to make it so.</p>
+
+      <p>In highly uncertain times at work, there are psychological earthquakes and aftershocks coming regularly. Each time, no matter how much trust you had built up in the past, because reality has shifted, you need to show you understand the new reality to gain trust again.</p>
+
+      <div class="vocab-wrap">
+        <span class="vocab-label">📚 Vocabulary — Section 1</span>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">demotivating</span><button class="speak-btn" onclick="speakWord('demotivating')">🔊</button></div>
+            <p class="vocab-def">Making someone feel less enthusiastic or confident.</p>
+            <p class="vocab-es">desmotivando</p>
+            <p class="vocab-ex">Constant criticism can be demotivating for the engineering team.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">lean on</span><button class="speak-btn" onclick="speakWord('lean on')">🔊</button></div>
+            <p class="vocab-def">To rely heavily on something or depend on it.</p>
+            <p class="vocab-es">apoyarse en / depender de</p>
+            <p class="vocab-ex">The manager is leaning on data analysis to make the final procurement decision.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">out of touch</span><button class="speak-btn" onclick="speakWord('out of touch')">🔊</button></div>
+            <p class="vocab-def">Not understanding or aware of current situations or feelings.</p>
+            <p class="vocab-es">desconectado / fuera de contacto</p>
+            <p class="vocab-ex">Leadership seems out of touch with the safety concerns raised by the EHS team.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">fault</span><button class="speak-btn" onclick="speakWord('fault')">🔊</button></div>
+            <p class="vocab-def">A crack or break in the Earth's surface (geological term).</p>
+            <p class="vocab-es">falla / fractura geológica</p>
+            <p class="vocab-ex">The facility was built near a major fault line, so earthquake safety is critical.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">shifted</span><button class="speak-btn" onclick="speakWord('shifted')">🔊</button></div>
+            <p class="vocab-def">Moved or changed position, often gradually.</p>
+            <p class="vocab-es">se ha desplazado / ha cambiado</p>
+            <p class="vocab-ex">Market priorities have shifted, so we need to adjust our production strategy.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">acknowledges</span><button class="speak-btn" onclick="speakWord('acknowledges')">🔊</button></div>
+            <p class="vocab-def">Recognizes or accepts that something exists or is true.</p>
+            <p class="vocab-es">reconoce</p>
+            <p class="vocab-ex">The project manager acknowledges that the deadline is challenging but achievable.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">aftershocks</span><button class="speak-btn" onclick="speakWord('aftershocks')">🔊</button></div>
+            <p class="vocab-def">Smaller earthquakes that happen after a major earthquake.</p>
+            <p class="vocab-es">réplicas (de terremoto)</p>
+            <p class="vocab-ex">After the organizational change, there were several aftershocks as teams adjusted to new roles.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Meet people where they are</h3>
+      <p>I've seen leaders get people to perform in tough times. They start by <span class="idiom" title="encontrar a alguien donde está">meeting</span> the people on the team where they are mentally and emotionally before trying to coach them. They'll acknowledge that it's stressful — and perhaps even <span class="highlight" title="desgarrador">heartbreaking</span> — to give so much to your work and then learn it could end up in the trash. It's <span class="highlight" title="distraído / que distrae">distracting</span> to believe that your job, or at least your current project or function, might become <span class="highlight" title="obsoleto">obsolete</span>. It's natural to wonder whether you'll still be valued in the same way. Those leaders ask questions to ensure they really hear the concerns, perspectives, beliefs and feelings of people on the team.</p>
+
+      <div class="vocab-wrap">
+        <span class="vocab-label">📚 Vocabulary — Section 2</span>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">heartbreaking</span><button class="speak-btn" onclick="speakWord('heartbreaking')">🔊</button></div>
+            <p class="vocab-def">Extremely sad or emotionally painful.</p>
+            <p class="vocab-es">desgarrador</p>
+            <p class="vocab-ex">It was heartbreaking for the IT team when their innovative project was canceled after months of work.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">distracting</span><button class="speak-btn" onclick="speakWord('distracting')">🔊</button></div>
+            <p class="vocab-def">Taking attention away from what you should be focusing on.</p>
+            <p class="vocab-es">distraído / que distrae</p>
+            <p class="vocab-ex">Constant email notifications during meetings are distracting and reduce productivity.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">obsolete</span><button class="speak-btn" onclick="speakWord('obsolete')">🔊</button></div>
+            <p class="vocab-def">No longer useful or needed because something newer exists.</p>
+            <p class="vocab-es">obsoleto</p>
+            <p class="vocab-ex">The old inventory system became obsolete after we implemented the new ERP software.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Make people feel heard and seen</h3>
+      <p>When people can't control a situation, they care deeply about whether they can trust the process by which their future will be determined. Whether it be a performance review or budget <span class="highlight" title="trastorno / cambio radical">upheaval</span>, if people felt the process was fair, they're more able to set the past aside and <span class="phrasal" title="concentrarse en">focus on</span> what needs to be done.</p>
+
+      <p>A major part of believing they can trust the process is whether they feel the leaders or authorities have heard and seen them. They want to know if the leaders understand their reality.</p>
+
+      <div class="vocab-wrap">
+        <span class="vocab-label">📚 Vocabulary — Section 3</span>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">upheaval</span><button class="speak-btn" onclick="speakWord('upheaval')">🔊</button></div>
+            <p class="vocab-def">A big, sudden change that causes disruption.</p>
+            <p class="vocab-es">trastorno / cambio radical</p>
+            <p class="vocab-ex">The company merger caused major upheaval in the purchasing department's workflow.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">focus on</span><button class="speak-btn" onclick="speakWord('focus on')">🔊</button></div>
+            <p class="vocab-def">To direct attention and effort toward something specific.</p>
+            <p class="vocab-es">concentrarse en</p>
+            <p class="vocab-ex">Let's focus on solving the quality control issues before we address production speed.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">The process is important</h3>
+      <p>People's perception of fairness changes when they focus on a process versus an outcome — say, how leadership took a listening tour before making project cuts, rather than the outcome of the cuts themselves. When we focus on an outcome seeming fair, we primarily use the areas of the brain that <span class="phrasal" title="corresponden a">correspond to</span> emotions. But when we focus on the process, we use the regions of the brain that <span class="phrasal" title="se relacionan con">relate to</span> social <span class="highlight" title="cognición / conocimiento">cognition</span>. That means people are thinking about other people involved — and good leaders meet them there.</p>
+
+      <div class="vocab-wrap">
+        <span class="vocab-label">📚 Vocabulary — Section 4</span>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">correspond to</span><button class="speak-btn" onclick="speakWord('correspond to')">🔊</button></div>
+            <p class="vocab-def">To match or be connected with something.</p>
+            <p class="vocab-es">corresponden a</p>
+            <p class="vocab-ex">These safety violations correspond to the issues identified in last month's audit.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">relate to</span><button class="speak-btn" onclick="speakWord('relate to')">🔊</button></div>
+            <p class="vocab-def">To be connected with or relevant to something.</p>
+            <p class="vocab-es">se relacionan con</p>
+            <p class="vocab-ex">The technical specifications relate to the client's requirements outlined in the contract.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">cognition</span><button class="speak-btn" onclick="speakWord('cognition')">🔊</button></div>
+            <p class="vocab-def">The mental process of understanding and knowing.</p>
+            <p class="vocab-es">cognición / conocimiento</p>
+            <p class="vocab-ex">Training programs should consider how cognition works to design more effective learning experiences.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Earning and keeping trust</h3>
+      <p>Feeling heard and seen leads people to be ready to accept <span class="highlight" title="dificultades / privaciones">hardships</span> and move forward. After you meet your employees where they are emotionally by letting them know you hear and see them, your team can begin to trust you and your process more. At that point, it can be very helpful to show your optimism, or give your great arguments, or remind them of the big-picture vision.</p>
+
+      <p>What leaders need to remember is that in times of great uncertainty, we need to <span class="idiom" title="ganarse el derecho a">earn the right</span> to lead, coach and influence every time the ground shifts. Some months that means we need to do it in every conversation or meeting we have with our team members. Let them know you <span class="idiom" title="entenderlo / captarlo">get it</span>. Then they will be more likely to let you lead them in whatever ways you need to.</p>
+
+      <div class="vocab-wrap">
+        <span class="vocab-label">📚 Vocabulary — Section 5</span>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">hardships</span><button class="speak-btn" onclick="speakWord('hardships')">🔊</button></div>
+            <p class="vocab-def">Difficult or challenging circumstances that cause suffering.</p>
+            <p class="vocab-es">dificultades / privaciones</p>
+            <p class="vocab-ex">The supply chain team faced serious hardships during last quarter's parts shortage.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">earn the right to</span><button class="speak-btn" onclick="speakWord('earn the right to')">🔊</button></div>
+            <p class="vocab-def">To become deserving of something through effort or behavior.</p>
+            <p class="vocab-es">ganarse el derecho a</p>
+            <p class="vocab-ex">Supervisors must earn the right to lead by listening to line workers first.</p>
+          </div>
+          <div class="vocab-card">
+            <div class="vocab-word-row"><span class="vocab-word">get it</span><button class="speak-btn" onclick="speakWord('get it')">🔊</button></div>
+            <p class="vocab-def">(idiom) To understand a situation or feeling.</p>
+            <p class="vocab-es">entenderlo / captarlo</p>
+            <p class="vocab-ex">Once the QA manager explained the new inspection process, the team said, "We get it."</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="section">
+    <div class="section-title">🗣️ Discussion Questions</div>
+    <ul class="discuss-list">
+      <li>Think of a time your supervisor announced a big change — a new system, a reorganization, a shift schedule. Did they acknowledge the reality of the situation first, or move straight to reassurance? How did that affect your trust in them?</li>
+      <li>The article says people care more about a fair <em>process</em> than a fair <em>outcome</em>. Do you agree? Describe a workplace situation where the process mattered more to you than the final result.</li>
+      <li>In manufacturing companies with foreign management — Taiwanese, Korean, American — cultural expectations around acknowledging problems openly can differ a lot. How might "meeting people where they are" look different across cultures in your workplace?</li>
+    </ul>
+  </div>
+
+  <!-- SELF PRACTICE -->
+  <div class="section">
+    <div class="section-title">✏️ Self-Practice</div>
+
+    <div class="practice-card">
+      <p class="q">1. Fill in the blank with the correct phrasal verb: "Before we blame the machine, let's ______ finding the real cause of the defect."</p>
+      <details><summary>Show answer</summary><div class="answer">focus on</div></details>
+    </div>
+
+    <div class="practice-card">
+      <p class="q">2. Rewrite this sentence using "out of touch": "Management doesn't understand what's happening on the production floor."</p>
+      <details><summary>Show answer</summary><div class="answer">Management is out of touch with what's happening on the production floor.</div></details>
+    </div>
+
+    <div class="practice-card">
+      <p class="q">3. Choose the correct word: The company built a new warehouse near a seismic ______, so engineers added extra structural reinforcement. (fault / faulty / default)</p>
+      <details><summary>Show answer</summary><div class="answer">fault</div></details>
+    </div>
+
+    <div class="practice-card">
+      <p class="q">4. Complete the sentence with "stand a chance": Our cost-reduction proposal ______ ______ of approval if we present clear data to the plant manager.</p>
+      <details><summary>Show answer</summary><div class="answer">stands a chance</div></details>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
