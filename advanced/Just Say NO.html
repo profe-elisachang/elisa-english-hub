@@ -1,0 +1,785 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Say NO! - English Conversation with Elisa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* BODY 重新設定：為了65吋電視閱讀 */
+        body {
+            font-family: 'Inter', 'Noto Sans', system-ui, sans-serif;
+            font-size: 18px; /* 電視預設字體 */
+            line-height: 1.9; /* 行距拉大，投影不擠 */
+            margin: 0;
+            padding: 0;
+            background: #FFFFFF;
+            color: #1E293B;
+        }
+
+
+        .container {
+            max-width: 1300px; /* 電視不要太寬，60-80字元最易讀 */
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+
+        /* HEADER - 無紫色無漸變 */
+        .header {
+            background: #0F766E !important; /* 純墨綠 */
+            border-bottom: 4px solid #EA580C !important;
+            padding: 16px 0;
+        }
+
+
+        .header h1 {
+            font-size: 1.5rem;
+            color: #FFFFFF !important;
+            font-weight: 700;
+        }
+
+
+        .level-badge {
+            background: #FBBF24 !important;
+            color: #1E293B !important;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+
+        .back-to-calendar-btn {
+            background: rgba(255, 255, 255, 0.15) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            color: white !important;
+            font-weight: 600;
+        }
+
+
+        /* 文章標題 */
+        h1.article-title {
+            color: #0F766E;
+            font-size: 2.2rem;
+            font-weight: 700;
+            border-left: 6px solid #EA580C;
+            padding-left: 16px;
+            margin: 32px 0 20px;
+            line-height: 1.3;
+        }
+
+
+        /* 正文段落 - 主角 */
+        .article-body p {
+            margin-bottom: 1.6rem;
+            font-size: 1.15rem; /* 65吋看正文用這個大小 */
+        }
+
+
+        /* HIGHLIGHT 單字 */
+        .highlight {
+            background-color: #FEF3C7;
+            font-weight: 600;
+            border-bottom: 2px dotted #EA580C;
+            padding: 1px 3px;
+            border-radius: 2px;
+            cursor: help;
+        }
+
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1E293B;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 1000;
+        }
+
+
+        /* VOCABULARY SECTION - 照你要求改，但縮小 */
+        .vocabulary-section {
+            background: #FFFEF8;
+            border-left: 4px solid #EA580C;
+            padding: 14px 16px; /* 原本20px，縮小 */
+            margin: 24px 0; /* 原本30px，縮小 */
+            border-radius: 8px;
+        }
+
+
+        .vocabulary-section h3 {
+            color: #EA580C;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.1rem; /* 縮小，不搶戲 */
+            font-weight: 700;
+        }
+
+
+        /* GRID - 照你要求，電視1200px以上3欄 */
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px; /* 原本15px，縮小 */
+        }
+
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+
+        /* VOCAB CARD - 變小變淡，不搶戲 */
+        .vocab-item {
+            background: white;
+            padding: 12px 14px; /* 原本15px，縮小 */
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+            box-shadow: none; /* 取消陰影，更像註解 */
+        }
+
+
+        .vocab-item:hover {
+            background: #F8FAFC;
+        }
+
+
+        /* 單字 + 喇叭 */
+        .vocab-item div:first-child {
+            margin-bottom: 8px;
+        }
+
+
+        .vocab-item strong {
+            color: #EA580C;
+            font-size: 1.15rem; /* 原本1.3rem，縮小 */
+            margin-right: 6px;
+            font-weight: 700;
+        }
+
+
+        .vocab-item button {
+            border: 1px solid #E2E8F0;
+            background: white;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+
+        .vocab-item button:hover {
+            background: #F1F5F9;
+        }
+
+
+        /* 英英解釋 - 放大！你說太小 */
+        .vocab-item p:first-of-type {
+            color: #1E293B; /* 原本#333，加深 */
+            margin: 6px 0;
+            line-height: 1.6;
+            font-size: 1.05rem; /* 原本沒設定，約0.95rem，放大 */
+            font-weight: 500;
+        }
+
+
+        /* 西班牙文翻譯 */
+        .vocab-item p:nth-of-type(2) {
+            color: #64748B;
+            font-style: italic;
+            margin: 6px 0;
+            font-size: 0.95rem;
+        }
+
+
+        /* 例句 - 藍色左框照你要求 */
+        .vocab-item div:last-child {
+            border-left: 3px solid #3B82F6;
+            padding-left: 10px;
+            margin-top: 10px;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+
+        /* 手機提示 */
+        .mobile-note {
+            background: #F1F5F9;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #64748B;
+            display: inline-block;
+            margin: 0 0 24px;
+            border: 1px solid #E2E8F0;
+        }
+
+
+        /* USEFUL EXPRESSIONS */
+        .useful-expr {
+            background: #F8FAFC;
+            padding: 18px 20px;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+        }
+
+
+        .useful-expr strong {
+            color: #EA580C;
+        }
+
+
+        /* DISCUSSION BOX */
+        .discussion-box, .practice-box {
+            background: #F8FAFC;
+            padding: 20px 22px;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+            margin: 32px 0;
+        }
+
+
+        .discussion-box h2, .practice-box h2 {
+            color: #0F766E;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+
+        /* 移除所有動畫，投影不卡 */
+        * {
+            transition: none !important;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+    
+
+
+    
+    
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>  
+            <div class="search-box">
+                <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqgETVEM8hhEYNMDbkctUHX2dpjOqAstYwV3geZ7M62A&s=10" alt="🚫 Just Say NO! " class="article-image">
+    </div>
+
+    
+    <div class="container">
+        <main class="main-content">
+            
+            <!-- ===== SECTION 1: USEFUL EXPRESSIONS ===== -->
+            <section style="margin-bottom: 30px;">
+                <h2 style="color: #5f7d6b; border-bottom: 3px solid #d9b382; padding-bottom: 6px;">💬 Useful Expressions</h2>
+                <div class="useful-expr">
+                    <p><strong>1. Tighten the reins</strong> <br>
+                    <span style="color:#4a5e4f;">🔹 Spanish:</span> <em>aumentar el control, ser más estricto</em><br>
+                    <span style="color:#4a5e4f;">🔹 Example:</span> “When my teen started staying out late, I had to <strong>tighten the reins</strong> on their curfew.”</p>
+                    <p><strong>2. Play to someone's strengths</strong> <br>
+                    <span style="color:#4a5e4f;">🔹 Spanish:</span> <em>aprovechar las fortalezas de alguien</em><br>
+                    <span style="color:#4a5e4f;">🔹 Example:</span> “Good teachers <strong>play to their students' strengths</strong> instead of focusing on weaknesses.”</p>
+                    <p><strong>3. Tap into (something)</strong> <br>
+                    <span style="color:#4a5e4f;">🔹 Spanish:</span> <em>aprovechar, acceder a (un recurso, cualidad)</em><br>
+                    <span style="color:#4a5e4f;">🔹 Example:</span> “Good managers know how to <strong>tap into</strong> their team's potential.”</p>
+                    <p><strong>4. Backfire</strong> <br>
+                    <span style="color:#4a5e4f;">🔹 Spanish:</span> <em>tener el efecto contrario, salir mal</em><br>
+                    <span style="color:#4a5e4f;">🔹 Example:</span> “Scare tactics can <strong>backfire</strong> and make teens more rebellious.”</p>
+                </div>
+            </section>
+
+            <!-- ===== SECTION 2: ARTICLE ===== -->
+            <h1 class="article-title">🚫 Just Say NO! – A pediatrician's advice on talking to your teen about drugs and alcohol</h1>
+            <div class="mobile-note">📱 On mobile: Tap and hold highlighted words to see translation</div>
+            
+            <div class="article-body">
+                <!-- PARAGRAPH 1 -->
+                <p>
+                    After years of talking with teens and their parents about substance use, here's the single most important thing I've learned: <span class="highlight" title="conexión, vínculo">Connection</span> matters more than control. I hear it from parents all the time: “I'm scared my teen might be using drugs, but I don't know how to bring it up.” These fears are valid.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 1</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">Connection</span>
+                                <button class="speak-btn" onclick="speakWord('connection')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> the relationship or bond between people
+                            </p>
+                            <span class="vocab-translation">/ la conexión, el vínculo /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Building a strong connection with your teen is more effective than strict rules.<br>
+                                <span class="trans">→ Construir una conexión fuerte con tu hijo es más efectivo que las reglas estrictas.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 2 (FULL original) -->
+                <p>
+                    Although most teens don't use drugs or alcohol, some do. <span class="highlight" title="adolescencia">Adolescence</span> is a time of exploration and risk-taking; and today's substances—from <span class="highlight" title="de alta potencia, muy concentrado">high-potency</span> cannabis to <span class="highlight" title="falsificado, imitación">counterfeit</span> pills and weed <span class="highlight" title="mezclado con (una droga)">laced</span> with fentanyl—are far more dangerous than in previous decades. And here's the good news: You have more influence than you think. Here, I'll share what I often tell parents in my clinic. This is practical advice drawn from research and my experience having real-life conversations to help you keep your teen safe, supported and informed.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 2</h3>
+                    <div class="vocab-container">
+                        <!-- adolescence -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">Adolescence</span>
+                                <button class="speak-btn" onclick="speakWord('adolescence')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> the period of life between childhood and adulthood (roughly 12–18)
+                            </p>
+                            <span class="vocab-translation">/ la adolescencia /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> During adolescence, teens often seek independence and new experiences.<br>
+                                <span class="trans">→ Durante la adolescencia, los jóvenes suelen buscar independencia y nuevas experiencias.</span>
+                            </div>
+                        </div>
+
+                        <!-- high-potency -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">high-potency</span>
+                                <button class="speak-btn" onclick="speakWord('high-potency')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> very strong or powerful, especially in effect on the body
+                            </p>
+                            <span class="vocab-translation">/ de alta potencia, muy concentrado /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> High-potency cannabis can have stronger mental effects than milder forms.<br>
+                                <span class="trans">→ El cannabis de alta potencia puede tener efectos mentales más fuertes que las formas más suaves.</span>
+                            </div>
+                        </div>
+
+                        <!-- counterfeit -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">counterfeit</span>
+                                <button class="speak-btn" onclick="speakWord('counterfeit')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> made to look like the real thing, in order to deceive
+                            </p>
+                            <span class="vocab-translation">/ falsificado, imitación /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Counterfeit pills can contain dangerous substances like fentanyl.<br>
+                                <span class="trans">→ Las pastillas falsificadas pueden contener sustancias peligrosas como el fentanilo.</span>
+                            </div>
+                            <div class="vocab-note-box info">
+                                <strong>📌 Compara:</strong> <em>counterfeit</em> = hecho para engañar (ilegal). 
+                                <em>Fake</em> = no real (más amplio, no siempre ilegal).
+                            </div>
+                        </div>
+
+                        <!-- laced -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">laced</span>
+                                <button class="speak-btn" onclick="speakWord('laced')" title="Click to hear pronunciation">🔊</button>
+                                <span class="vocab-tag">⚠️ error común</span>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> mixed with a substance (often a drug)
+                            </p>
+                            <span class="vocab-translation">/ mezclado con (frecuentemente una droga) /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> The marijuana was <strong>laced with</strong> fentanyl.<br>
+                                <span class="trans">→ La marihuana fue <strong>mezclada con</strong> fentanilo.</span>
+                            </div>
+                            <div class="vocab-note-box warning">
+                                <strong>⚠️ Nota:</strong> Siempre se usa con <em>"with"</em> — <strong>laced with</strong> [algo]. 
+                                No se usa "laced" solo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 3 -->
+                <p>
+                    When parents worry about substance use, the first instinct is often to <span class="highlight" title="aumentar el control, ser más estricto">tighten the reins</span>: take away a teen's phone, search their room and threaten punishment. But research and experience show that what teens need most is connection, not control. Instead of jumping right to discipline, start a conversation. It's best to have these talks early and often, long before you're worried that your teen has come home after using drugs or alcohol.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 3</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">tighten the reins</span>
+                                <button class="speak-btn" onclick="speakWord('tighten the reins')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> to increase control or restrict someone's freedom
+                            </p>
+                            <span class="vocab-translation">/ aumentar el control, ser más estricto /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> After the incident, the manager decided to tighten the reins on overtime.<br>
+                                <span class="trans">→ Después del incidente, el gerente decidió aumentar el control sobre las horas extras.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 4 -->
+                <p>
+                    Ask open-ended questions like, “What have you heard about <span class="highlight" title="vapear, uso de cigarrillos electrónicos">vaping</span> at school?” or “How do your friends feel about drinking?” When teens feel judged, they shut down. But when they feel heard, they often open up. Trust is protective. <span class="highlight" title="tácticas de miedo">Scare tactics</span>, on the other hand, can <span class="highlight" title="tener el efecto contrario, salir mal">backfire</span>. They can damage communication and make teens less likely to come to you when they're in trouble.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 4</h3>
+                    <div class="vocab-container">
+                        <!-- vaping -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">vaping</span>
+                                <button class="speak-btn" onclick="speakWord('vaping')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> inhaling vapor from electronic cigarettes or similar devices
+                            </p>
+                            <span class="vocab-translation">/ vapeo, uso de cigarrillos electrónicos /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Vaping has become increasingly popular among teenagers in recent years.<br>
+                                <span class="trans">→ El vapeo se ha vuelto cada vez más popular entre los adolescentes en los últimos años.</span>
+                            </div>
+                        </div>
+
+                        <!-- scare tactics -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">scare tactics</span>
+                                <button class="speak-btn" onclick="speakWord('scare tactics')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> methods that use fear to persuade someone to do or not do something
+                            </p>
+                            <span class="vocab-translation">/ tácticas de miedo /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Scare tactics often fail because teens see through them.<br>
+                                <span class="trans">→ Las tácticas de miedo a menudo fallan porque los adolescentes las ven claramente.</span>
+                            </div>
+                        </div>
+
+                        <!-- backfire -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">backfire</span>
+                                <button class="speak-btn" onclick="speakWord('backfire')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> to have the opposite result from what was intended
+                            </p>
+                            <span class="vocab-translation">/ tener el efecto contrario, salir mal /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> His attempt to embarrass her backfired and made him look foolish.<br>
+                                <span class="trans">→ Su intento de avergonzarla tuvo el efecto contrario y lo hizo parecer tonto.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 5 -->
+                <p>
+                    Substance use looks different now than it did a generation ago. While alcohol is still the most commonly used substance among teens, cannabis use—especially in the form of vapes or <span class="highlight" title="alimentos o dulces con cannabis">edibles</span>—is increasingly common. <span class="highlight" title="nicotina">Nicotine</span> vaping has also surged in recent years. Staying informed about what teens are actually using can help you have more meaningful conversations.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 5</h3>
+                    <div class="vocab-container">
+                        <!-- edibles -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">edibles</span>
+                                <button class="speak-btn" onclick="speakWord('edibles')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> food items that contain cannabis or other drugs
+                            </p>
+                            <span class="vocab-translation">/ comestibles (con cannabis) /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Edibles can be misleading because the effects take longer to appear.<br>
+                                <span class="trans">→ Los comestibles pueden ser engañosos porque los efectos tardan más en aparecer.</span>
+                            </div>
+                            <div class="vocab-note-box info">
+                                <strong>📌 Nota:</strong> En EE.UU., <em>edibles</em> a menudo significa comida con cannabis. 
+                                En otros contextos, puede significar simplemente "comida".
+                            </div>
+                        </div>
+
+                        <!-- nicotine -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">Nicotine</span>
+                                <button class="speak-btn" onclick="speakWord('nicotine')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> a highly addictive chemical substance found in tobacco
+                            </p>
+                            <span class="vocab-translation">/ la nicotina /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Nicotine addiction is hard to break, even for young people.<br>
+                                <span class="trans">→ La adicción a la nicotina es difícil de romper, incluso para los jóvenes.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 6 -->
+                <p>
+                    Sometimes, it's hard to tell whether a teen is experimenting or truly struggling. If you notice changes in mood, sleep, appetite, school performance or friendships, bring it up with your <span class="highlight" title="médico especialista en niños">pediatrician</span>. Pediatricians are trained to screen for substance use and mental health concerns. In addition, teens often feel more comfortable talking to a doctor than to a parent.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 6</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">pediatrician</span>
+                                <button class="speak-btn" onclick="speakWord('pediatrician')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> a doctor who specializes in treating children and adolescents
+                            </p>
+                            <span class="vocab-translation">/ el pediatra /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Our pediatrician gave us helpful advice on talking to our teen.<br>
+                                <span class="trans">→ Nuestro pediatra nos dio consejos útiles sobre cómo hablar con nuestro adolescente.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 7 -->
+                <p>
+                    One of the most important goals in adolescence is delaying substance use for as long as possible. The earlier a teen starts using substances, the more likely they are to develop a substance use <span class="highlight" title="trastorno, enfermedad">disorder</span> later in life. That said, the goal shouldn't be perfection—it's protection. Even if your teen has experimented, you can still make a difference.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 7</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">disorder</span>
+                                <button class="speak-btn" onclick="speakWord('disorder')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> a medical condition or illness that disrupts normal function
+                            </p>
+                            <span class="vocab-translation">/ el trastorno, la enfermedad /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Substance use disorder is a treatable medical condition.<br>
+                                <span class="trans">→ El trastorno por uso de sustancias es una condición médica tratable.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 8 -->
+                <p>
+                    Be curious, and ask questions like, “How might you respond if someone at a party offers you a drink?” <span class="highlight" title="aprovechar las fortalezas de alguien">Play to a teen's strengths</span>. For example, if your teen has an independent <span class="highlight" title="rasgo de personalidad, tendencia">streak</span>, <span class="highlight" title="aprovechar, acceder a">tap into</span> that. You might say, “You've never been someone who follows the crowd—how do you think that could help you make decisions if friends start using drugs or alcohol?”
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 8</h3>
+                    <div class="vocab-container">
+                        <!-- Play to a teen's strengths -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">play to a teen's strengths</span>
+                                <button class="speak-btn" onclick="speakWord('play to strengths')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> to emphasize or use a person's positive qualities
+                            </p>
+                            <span class="vocab-translation">/ aprovechar las fortalezas de alguien /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> Good leaders play to their team's strengths instead of focusing on weaknesses.<br>
+                                <span class="trans">→ Los buenos líderes aprovechan las fortalezas de su equipo en lugar de centrarse en las debilidades.</span>
+                            </div>
+                            <div class="vocab-note-box warning">
+                                <strong>⚠️ No confundir con:</strong> <em>play up to someone</em> (= adular, halagar para ganar favor). 
+                                Son opuestos en significado.
+                            </div>
+                        </div>
+
+                        <!-- streak -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">streak</span>
+                                <button class="speak-btn" onclick="speakWord('streak')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> a distinct quality or tendency in someone's character
+                            </p>
+                            <span class="vocab-translation">/ el rasgo, la tendencia (de personalidad) /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> She has a competitive streak that drives her to succeed.<br>
+                                <span class="trans">→ Tiene un rasgo competitivo que la impulsa a tener éxito.</span>
+                            </div>
+                            <div class="vocab-note-box info">
+                                <strong>📌 Nota:</strong> <em>Streak</em> también puede significar una serie (ej. <em>a 3-day streak</em>). 
+                                Aquí significa una tendencia de personalidad — un sinónimo más formal es <em>tendency</em>.
+                            </div>
+                        </div>
+
+                        <!-- tap into -->
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">tap into</span>
+                                <button class="speak-btn" onclick="speakWord('tap into')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> to get something useful out of something that is already there but hasn't been used yet
+                            </p>
+                            <span class="vocab-translation">/ aprovechar, acceder a (un recurso, cualidad) /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> The coach knew how to tap into the team's energy and motivation.<br>
+                                <span class="trans">→ El entrenador sabía cómo aprovechar la energía y motivación del equipo.</span>
+                            </div>
+                            <div class="vocab-note-box info">
+                                <strong>💡 Imagina:</strong> perforar un árbol para obtener savia. 
+                                = obtener algo útil de algo que ya está ahí.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARAGRAPH 9 (no new vocabulary) -->
+                <p>
+                    The most powerful prevention tool you have is your ongoing relationship with your teen. Don't worry about giving one perfect lecture. What matters most is having lots of small conversations over time. Talk during a car ride, while doing dishes, over Sunday family breakfast or at bedtime. Be curious. Be calm. Let them know you're always there to talk—about anything. Even if your teen has already experimented, it's never too late to help guide them.
+                </p>
+                <div class="no-vocab-note">
+                    ✨ No hay palabras nuevas en este párrafo. Idea clave: la comunicación constante y tranquila genera confianza.
+                </div>
+
+                <!-- PARAGRAPH 10 -->
+                <p>
+                    There is a lot of positive messaging about alcohol and drugs on TV and in social media; sometimes you might be the only voice sharing that you think it's important not to use substances. Make a clear recommendation that you don't want your teen to use. You might say, “I care about your health and safety. I don't want you using alcohol or other drugs while your brain is still developing.” Teens may <span class="highlight" title="poner los ojos en blanco">roll their eyes</span>—but research shows they still hear you.
+                </p>
+                <div class="vocabulary-section">
+                    <h3 style="color: #b86b4c; margin-top: 0;">📚 Vocabulary – Paragraph 10</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div class="vocab-row">
+                                <span class="vocab-word">roll their eyes</span>
+                                <button class="speak-btn" onclick="speakWord('roll their eyes')" title="Click to hear pronunciation">🔊</button>
+                            </div>
+                            <p style="color:#2c3e2f; margin:4px 0; font-size:0.95rem;">
+                                <strong>🔹</strong> to show annoyance or disbelief by turning the eyes upward
+                            </p>
+                            <span class="vocab-translation">/ poner los ojos en blanco /</span>
+                            <div class="vocab-example">
+                                <strong>Example:</strong> My teen always rolls their eyes when I give advice, but they do listen.<br>
+                                <span class="trans">→ Mi adolescente siempre pone los ojos en blanco cuando le doy consejos, pero sí escucha.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end article-body -->
+
+            <!-- ===== SECTION 4: DISCUSSION QUESTIONS ===== -->
+            <div class="discussion-box">
+                <h2>💭 Discussion Questions</h2>
+                <ul>
+                    <li>In your opinion, why is connection more effective than control when dealing with teenagers?</li>
+                    <li>What are some possible consequences of using scare tactics with young people?</li>
+                    <li>How can parents or educators “play to a teen's strengths” when discussing sensitive topics like substance use?</li>
+                </ul>
+            </div>
+
+            <!-- ===== SECTION 5: SELF-PRACTICE QUESTIONS ===== -->
+            <div class="practice-box">
+                <h2>✍️ Self-Practice Questions</h2>
+                <ol style="line-height:1.8;">
+                    <li><strong>Fill in the blank:</strong> “The doctor explained that ________ is a time of rapid brain development and risk-taking.” <em>(use a word from the article)</em></li>
+                    <li><strong>True or False:</strong> Scare tactics are always effective in changing teen behavior. ________</li>
+                    <li><strong>Short answer:</strong> What does it mean to “tighten the reins” in a parenting context?</li>
+                    <li><strong>Match:</strong> “edibles” – a) nicotine products / b) cannabis-infused food / c) counterfeit pills</li>
+                </ol>
+                <details>
+                    <summary><strong>📌 Reference Answers</strong></summary>
+                    <ol>
+                        <li>Adolescence</li>
+                        <li>False</li>
+                        <li>To increase control or become stricter with rules and monitoring.</li>
+                        <li>b) cannabis-infused food</li>
+                    </ol>
+                </details>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
