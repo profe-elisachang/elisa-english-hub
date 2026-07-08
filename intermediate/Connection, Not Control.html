@@ -1,0 +1,591 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connection, Not Control — English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-intermediate.css">
+<style>
+  :root{
+    --ink:#1E3D3A;
+    --ink-light:#2C5450;
+    --marigold:#E8A33D;
+    --coral:#E8927C;
+    --sage:#8FAE8B;
+    --cream:#FBF8F3;
+    --paper:#FFFFFF;
+    --line:#D9CFC0;
+    --text:#26312E;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    line-height:1.7;
+    background:var(--cream);
+    color:var(--text);
+    margin:0;
+  }
+  .container{max-width:1400px;margin:0 auto;padding:0 1.5rem 4rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:#fff;
+    padding:3rem 1.5rem 2.5rem;
+    border-bottom:6px solid var(--marigold);
+  }
+  .hero-inner{
+    max-width:1400px;margin:0 auto;
+    display:flex;flex-wrap:wrap;align-items:center;gap:2.5rem;
+  }
+  .hero-text{flex:1 1 380px;}
+  .hero-eyebrow{
+    display:inline-block;
+    background:var(--marigold);
+    color:var(--ink);
+    font-weight:800;
+    padding:.35rem .9rem;
+    border-radius:999px;
+    font-size:.95rem;
+    letter-spacing:.03em;
+    margin-bottom:1rem;
+  }
+  .hero-text h2{
+    font-size:2.5rem;
+    margin:.2rem 0 .8rem;
+    font-weight:800;
+    line-height:1.25;
+  }
+  .hero-text p{
+    font-size:1.15rem;
+    color:#EAF2EF;
+    max-width:560px;
+  }
+  .badge-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem;}
+  .badge{
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    padding:.4rem .9rem;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:700;
+  }
+  .hero-visual{flex:1 1 320px;min-width:280px;text-align:center;}
+  .hero-visual svg{width:100%;max-width:420px;height:auto;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  h2.section-title{
+    font-size:1.9rem;
+    font-weight:800;
+    color:var(--ink);
+    margin:3rem 0 1.2rem;
+    padding-bottom:.6rem;
+    border-bottom:4px solid var(--sage);
+  }
+  h3.sub-title{
+    font-size:1.4rem;
+    font-weight:800;
+    color:var(--ink-light);
+    margin:2.4rem 0 1rem;
+    display:flex;align-items:center;gap:.6rem;
+  }
+
+  /* ---------- USEFUL EXPRESSIONS ---------- */
+  .expressions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.1rem;
+    margin-top:1.2rem;
+  }
+  .expr-card{
+    background:var(--paper);
+    border:2px solid var(--line);
+    border-left:8px solid var(--marigold);
+    border-radius:14px;
+    padding:1.2rem 1.3rem;
+    box-shadow:0 3px 0 rgba(30,61,58,.08);
+  }
+  .expr-en{font-size:1.15rem;font-weight:800;color:var(--ink);}
+  .expr-es{color:var(--ink-light);font-style:italic;margin:.3rem 0 .6rem;}
+  .expr-ex{font-size:.95rem;color:#4A4A44;background:#F4EEE2;border-radius:8px;padding:.6rem .7rem;}
+  .speak-btn{
+    background:var(--sage);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:32px;height:32px;
+    font-size:1rem;
+    cursor:pointer;
+    margin-left:.4rem;
+    vertical-align:middle;
+  }
+  .speak-btn:hover{background:var(--ink-light);}
+
+  /* ---------- ARTICLE ---------- */
+  .article p{
+    font-size:1.15rem;
+    margin:0 0 1.4rem;
+  }
+  .highlight{
+    font-weight:700;
+    border-radius:5px;
+    padding:.05rem .3rem;
+    cursor:help;
+  }
+  .h-key{background:#FFF3B0;border-bottom:3px solid #E8A33D;}
+  .h-phrasal{background:#FFD8B0;border-bottom:3px solid #C9631A;}
+  .h-idiom{background:#FBD3D6;border-bottom:3px solid #C9536A;}
+
+  .legend{
+    display:flex;flex-wrap:wrap;gap:1rem;
+    margin:1rem 0 2rem;
+    font-size:.95rem;
+    font-weight:700;
+  }
+  .legend span{display:flex;align-items:center;gap:.4rem;}
+  .swatch{width:18px;height:18px;border-radius:4px;display:inline-block;}
+
+  /* ---------- VOCAB BOXES ---------- */
+  .vocab-box{
+    background:var(--paper);
+    border:2px solid var(--line);
+    border-radius:16px;
+    padding:1.5rem;
+    margin:0 0 2.4rem;
+  }
+  .vocab-box h4{
+    margin:0 0 1rem;
+    color:var(--ink);
+    font-size:1.15rem;
+    font-weight:800;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1rem;
+  }
+  .vocab-card{
+    background:var(--cream);
+    border:2px solid var(--line);
+    border-radius:12px;
+    padding:1rem 1.1rem;
+  }
+  .vocab-word{
+    font-size:1.05rem;
+    font-weight:800;
+    color:var(--ink);
+    display:flex;align-items:center;gap:.3rem;
+    margin-bottom:.3rem;
+  }
+  .vocab-def{font-size:.95rem;margin:.2rem 0;}
+  .vocab-es{font-size:.9rem;color:var(--ink-light);font-style:italic;margin:.2rem 0 .5rem;}
+  .vocab-ex{
+    font-size:.9rem;
+    background:#F4EEE2;
+    border-radius:8px;
+    padding:.5rem .6rem;
+  }
+  .vocab-note{
+    font-size:.85rem;
+    background:#FFF3B0;
+    border-radius:8px;
+    padding:.5rem .6rem;
+    margin-top:.5rem;
+  }
+
+  /* ---------- DISCUSSION ---------- */
+  .discussion{
+    background:var(--ink);
+    color:#fff;
+    border-radius:18px;
+    padding:2rem;
+    margin-top:1.5rem;
+  }
+  .discussion h3{margin-top:0;font-size:1.5rem;}
+  .discussion ol{padding-left:1.3rem;}
+  .discussion li{font-size:1.15rem;margin-bottom:1rem;}
+
+  /* ---------- SELF PRACTICE ---------- */
+  .practice-item{
+    background:var(--paper);
+    border:2px solid var(--line);
+    border-radius:14px;
+    padding:1.2rem 1.4rem;
+    margin-bottom:1rem;
+  }
+  .practice-q{font-size:1.1rem;font-weight:700;margin-bottom:.6rem;}
+  details summary{
+    cursor:pointer;
+    font-weight:800;
+    color:#fff;
+    background:var(--coral);
+    display:inline-block;
+    padding:.4rem 1rem;
+    border-radius:999px;
+    list-style:none;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details[open] summary{background:var(--sage);}
+  .answer-box{
+    margin-top:.8rem;
+    background:#F4EEE2;
+    border-radius:10px;
+    padding:.8rem 1rem;
+  }
+
+  .note-box{
+    background:#FDEDEA;
+    border:2px dashed var(--coral);
+    border-radius:12px;
+    padding:1rem 1.3rem;
+    font-size:.95rem;
+    margin:1.5rem 0 2.5rem;
+  }
+
+  @media (max-width:640px){
+    .hero-text h2{font-size:1.8rem;}
+    h2.section-title{font-size:1.5rem;}
+    .article p{font-size:1.05rem;}
+  }
+</style>
+
+
+
+<header class="header">
+    <div class="header-content">
+        <h1>📚 English Conversation with Elisa</h1>
+        <span class="level-badge">Intermediate Level</span>
+        <div class="search-box">
+            <a href="../index.html" class="back-to-calendar-btn" style="
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            ">Home</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">🩺 Family &amp; Health English</span>
+      <h2>Connection, Not Control</h2>
+      <p>A pediatrician's advice on talking to teens about drugs and alcohol — and why trust works better than strict rules, at home and at work.</p>
+      <div class="badge-row">
+        <span class="badge">Level: A2–B1</span>
+        <span class="badge">Topic: Family &amp; Communication</span>
+        <span class="badge">Skill: Listening for advice language</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- winding road -->
+        <path d="M40 300 C 120 260, 60 200, 140 170 S 260 100, 200 60 S 320 30, 360 20" fill="none" stroke="#E8A33D" stroke-width="10" stroke-linecap="round"></path>
+        <path d="M40 300 C 120 260, 60 200, 140 170 S 260 100, 200 60 S 320 30, 360 20" fill="none" stroke="#FBF8F3" stroke-width="2" stroke-dasharray="10 10" opacity="0.6"></path>
+        <!-- speech bubble markers along the road -->
+        <g>
+          <ellipse cx="70" cy="280" rx="26" ry="20" fill="#8FAE8B"></ellipse>
+          <polygon points="55,296 65,296 55,312" fill="#8FAE8B"></polygon>
+          <text x="70" y="286" font-size="20" text-anchor="middle">🚗</text>
+        </g>
+        <g>
+          <ellipse cx="150" cy="150" rx="26" ry="20" fill="#E8927C"></ellipse>
+          <polygon points="138,166 148,166 140,182" fill="#E8927C"></polygon>
+          <text x="150" y="156" font-size="20" text-anchor="middle">💬</text>
+        </g>
+        <g>
+          <ellipse cx="215" cy="55" rx="26" ry="20" fill="#E8A33D"></ellipse>
+          <polygon points="200,71 210,71 202,87" fill="#E8A33D"></polygon>
+          <text x="215" y="61" font-size="20" text-anchor="middle">🍽️</text>
+        </g>
+        <g>
+          <ellipse cx="335" cy="20" rx="30" ry="22" fill="#FBF8F3" stroke="#1E3D3A" stroke-width="3"></ellipse>
+          <text x="335" y="27" font-size="20" text-anchor="middle">❤️</text>
+        </g>
+        <circle cx="40" cy="300" r="8" fill="#1E3D3A"></circle>
+        <text x="24" y="316" font-size="13" fill="#1E3D3A" font-weight="700">home</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- USEFUL EXPRESSIONS -->
+  <h2 class="section-title">🗝️ Useful Expressions</h2>
+  <div class="expressions">
+    <div class="expr-card">
+      <div class="expr-en">tighten the reins <button class="speak-btn" onclick="speakWord('tighten the reins')">🔊</button></div>
+      <div class="expr-es">aumentar el control, ser más estricto</div>
+      <div class="expr-ex">"After two shipments failed inspection, the QA manager decided to tighten the reins on the packing line."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">tap into <button class="speak-btn" onclick="speakWord('tap into')">🔊</button></div>
+      <div class="expr-es">aprovechar, acceder a un recurso</div>
+      <div class="expr-ex">"Our supervisor knows how to tap into each operator's experience when a machine breaks down."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">backfire <button class="speak-btn" onclick="speakWord('backfire')">🔊</button></div>
+      <div class="expr-es">tener el efecto contrario, salir mal</div>
+      <div class="expr-ex">"The new overtime policy backfired — instead of increasing output, it lowered morale."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">play to someone's strengths <button class="speak-btn" onclick="speakWord('play to someone\'s strengths')">🔊</button></div>
+      <div class="expr-es">aprovechar las fortalezas de alguien</div>
+      <div class="expr-ex">"A good line leader plays to each worker's strengths instead of assigning tasks randomly."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">scare tactics <button class="speak-btn" onclick="speakWord('scare tactics')">🔊</button></div>
+      <div class="expr-es">tácticas de miedo</div>
+      <div class="expr-ex">"The sales team stopped using scare tactics with clients because it damaged long-term trust."</div>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <h2 class="section-title">🩺 Article: A Pediatrician's Advice on Talking to Teens</h2>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#FFF3B0;"></span> key vocabulary</span>
+    <span><span class="swatch" style="background:#FFD8B0;"></span> phrasal verb</span>
+    <span><span class="swatch" style="background:#FBD3D6;"></span> idiom</span>
+  </div>
+
+  <div class="article">
+
+    <h3 class="sub-title">1️⃣ Connection Matters More Than Control</h3>
+    <p>I have talked with many teens and parents about drugs and alcohol. I learned one important thing: <span class="highlight h-key" title="la conexión, el vínculo">Connection</span> matters more than control. Parents often say to me, "I'm scared my teen might be using drugs. But I don't know how to start the conversation." These fears are normal.</p>
+    <p>Most teens do not use drugs or alcohol. But some do. <span class="highlight h-key" title="la adolescencia">Adolescence</span> is a time to explore and take risks. Today's drugs are more dangerous than before. For example, there is <span class="highlight h-key" title="de alta potencia, muy concentrado">high-potency</span> cannabis. There are also <span class="highlight h-key" title="falsificado, imitación">counterfeit</span> pills. Some weed is <span class="highlight h-key" title="mezclado con (frecuentemente una droga)">laced</span> with fentanyl. But here is good news: you have more influence than you think.</p>
+    <p>When parents worry, they often want to <span class="highlight h-idiom" title="aumentar el control, ser más estricto">tighten the reins</span>. They take away the teen's phone. They search the teen's room. They threaten punishment. But research shows something different: teens need connection, not control. Instead of punishment, start a conversation.</p>
+
+    <div class="vocab-box">
+      <h4>📚 Vocabulary — Section 1</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">Connection <button class="speak-btn" onclick="speakWord('Connection')">🔊</button></div>
+          <div class="vocab-def">the relationship or bond between people</div>
+          <div class="vocab-es">la conexión, el vínculo</div>
+          <div class="vocab-ex">Building a strong connection with your team works better than strict supervision.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Adolescence <button class="speak-btn" onclick="speakWord('Adolescence')">🔊</button></div>
+          <div class="vocab-def">the period of life between childhood and adulthood (roughly 12–18)</div>
+          <div class="vocab-es">la adolescencia</div>
+          <div class="vocab-ex">During adolescence, teens often seek independence and new experiences.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">High-potency <button class="speak-btn" onclick="speakWord('high potency')">🔊</button></div>
+          <div class="vocab-def">very strong or powerful, especially in effect on the body</div>
+          <div class="vocab-es">de alta potencia, muy concentrado</div>
+          <div class="vocab-ex">The new cleaning solvent is high-potency, so operators must use gloves.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Counterfeit <button class="speak-btn" onclick="speakWord('counterfeit')">🔊</button></div>
+          <div class="vocab-def">made to look like the real thing, in order to deceive</div>
+          <div class="vocab-es">falsificado, imitación</div>
+          <div class="vocab-ex">The purchasing team rejected the shipment after finding counterfeit parts.</div>
+          <div class="vocab-note">📌 Compare: <em>counterfeit</em> = made to deceive (illegal). <em>Fake</em> = not real (broader, not always illegal).</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Laced <button class="speak-btn" onclick="speakWord('laced')">🔊</button></div>
+          <div class="vocab-def">mixed with a substance (often something dangerous)</div>
+          <div class="vocab-es">mezclado con (frecuentemente algo peligroso)</div>
+          <div class="vocab-ex">The report was laced with errors, so it went back to QA for review.</div>
+          <div class="vocab-note">⚠️ Always used with "with" — laced <strong>with</strong> [something]. Never used alone.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Tighten the reins <button class="speak-btn" onclick="speakWord('tighten the reins')">🔊</button></div>
+          <div class="vocab-def">to increase control or restrict someone's freedom</div>
+          <div class="vocab-es">aumentar el control, ser más estricto</div>
+          <div class="vocab-ex">After the incident, the plant manager decided to tighten the reins on overtime approvals.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">2️⃣ Start the Conversation Early</h3>
+    <p>Ask open questions. For example: "What have you heard about <span class="highlight h-key" title="vapeo, uso de cigarrillos electrónicos">vaping</span> at school?" or "How do your friends feel about drinking?" When teens feel judged, they stop talking. When teens feel heard, they open up. Trust protects them. But <span class="highlight h-idiom" title="tácticas de miedo">scare tactics</span> can <span class="highlight h-phrasal" title="tener el efecto contrario, salir mal">backfire</span>. They can hurt communication. Then teens do not come to you when they have a problem.</p>
+
+    <div class="vocab-box">
+      <h4>📚 Vocabulary — Section 2</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">Vaping <button class="speak-btn" onclick="speakWord('vaping')">🔊</button></div>
+          <div class="vocab-def">inhaling vapor from electronic cigarettes or similar devices</div>
+          <div class="vocab-es">vapeo, uso de cigarrillos electrónicos</div>
+          <div class="vocab-ex">Vaping has become a health and safety topic in many break rooms.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Scare tactics <button class="speak-btn" onclick="speakWord('scare tactics')">🔊</button></div>
+          <div class="vocab-def">methods that use fear to persuade someone to do or not do something</div>
+          <div class="vocab-es">tácticas de miedo</div>
+          <div class="vocab-ex">Scare tactics with suppliers often fail because they see through them.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Backfire <button class="speak-btn" onclick="speakWord('backfire')">🔊</button></div>
+          <div class="vocab-def">to have the opposite result from what was intended</div>
+          <div class="vocab-es">tener el efecto contrario, salir mal</div>
+          <div class="vocab-ex">His attempt to speed up the line backfired and created more defects.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">3️⃣ What's Changed Since Last Generation</h3>
+    <p>Substance use looks different now. Alcohol is still the most common substance for teens. But cannabis use is also common now, especially vapes and <span class="highlight h-key" title="comestibles (con cannabis)">edibles</span>. <span class="highlight h-key" title="la nicotina">Nicotine</span> vaping has grown a lot in recent years. Learn about what teens really use. This helps you have better conversations.</p>
+
+    <div class="vocab-box">
+      <h4>📚 Vocabulary — Section 3</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">Edibles <button class="speak-btn" onclick="speakWord('edibles')">🔊</button></div>
+          <div class="vocab-def">food items that contain cannabis or other drugs</div>
+          <div class="vocab-es">comestibles (con cannabis)</div>
+          <div class="vocab-ex">Edibles can be misleading because the effects take longer to appear.</div>
+          <div class="vocab-note">📌 Note: in the US, "edibles" usually means food with cannabis. In other contexts it can simply mean "food."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Nicotine <button class="speak-btn" onclick="speakWord('nicotine')">🔊</button></div>
+          <div class="vocab-def">a highly addictive chemical substance found in tobacco</div>
+          <div class="vocab-es">la nicotina</div>
+          <div class="vocab-ex">Nicotine addiction is hard to break, even for experienced smokers.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">4️⃣ When to Get Professional Help</h3>
+    <p>Sometimes it is hard to know if a teen is experimenting or really struggling. Watch for changes in mood, sleep, appetite, school grades, or friendships. If you see these changes, talk to your <span class="highlight h-key" title="el pediatra">pediatrician</span>. Pediatricians know how to check for substance use and mental health problems. Also, teens often feel more comfortable talking to a doctor than to a parent.</p>
+    <p>One important goal is to delay substance use for as long as possible. If a teen starts using substances early, they have a higher risk of a substance use <span class="highlight h-key" title="el trastorno, la enfermedad">disorder</span> later. The goal is not perfection. The goal is protection. Even if your teen has already tried something, you can still help.</p>
+
+    <div class="vocab-box">
+      <h4>📚 Vocabulary — Section 4</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">Pediatrician <button class="speak-btn" onclick="speakWord('pediatrician')">🔊</button></div>
+          <div class="vocab-def">a doctor who specializes in treating children and adolescents</div>
+          <div class="vocab-es">el pediatra</div>
+          <div class="vocab-ex">Our pediatrician gave us helpful advice on talking to our teen.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Disorder <button class="speak-btn" onclick="speakWord('disorder')">🔊</button></div>
+          <div class="vocab-def">a medical condition or illness that disrupts normal function</div>
+          <div class="vocab-es">el trastorno, la enfermedad</div>
+          <div class="vocab-ex">Substance use disorder is a treatable medical condition, not a personal failure.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">5️⃣ Practical Strategies for Talking</h3>
+    <p>Be curious. Ask questions like, "What would you do if someone offered you a drink at a party?" <span class="highlight h-idiom" title="aprovechar las fortalezas de alguien">Play to your teen's strengths</span>. For example, maybe your teen has an independent <span class="highlight h-key" title="el rasgo, la tendencia (de personalidad)">streak</span>. <span class="highlight h-phrasal" title="aprovechar, acceder a un recurso">Tap into</span> that. You might say, "You never follow the crowd. How can that help you make good choices if friends use drugs or alcohol?"</p>
+    <p>Your relationship with your teen is the most powerful tool you have. Don't worry about one perfect speech. Small conversations over time matter more. Talk during a car ride. Talk while washing dishes. Talk at Sunday breakfast or at bedtime. Be curious. Be calm. Let your teen know you are always there to talk.</p>
+
+    <div class="vocab-box">
+      <h4>📚 Vocabulary — Section 5</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">Play to someone's strengths <button class="speak-btn" onclick="speakWord('play to someone\'s strengths')">🔊</button></div>
+          <div class="vocab-def">to emphasize or use a person's positive qualities</div>
+          <div class="vocab-es">aprovechar las fortalezas de alguien</div>
+          <div class="vocab-ex">Good supervisors play to their team's strengths instead of focusing on weaknesses.</div>
+          <div class="vocab-note">⚠️ Don't confuse with "play up to someone" (= to flatter someone for favor). They are opposite in meaning.</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Streak <button class="speak-btn" onclick="speakWord('streak')">🔊</button></div>
+          <div class="vocab-def">a distinct quality or tendency in someone's character</div>
+          <div class="vocab-es">el rasgo, la tendencia (de personalidad)</div>
+          <div class="vocab-ex">She has a competitive streak that pushes her to meet every deadline.</div>
+          <div class="vocab-note">📌 "Streak" can also mean a series (a 3-day streak). Here it means a personality tendency — a more formal synonym is "tendency."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">Tap into <button class="speak-btn" onclick="speakWord('tap into')">🔊</button></div>
+          <div class="vocab-def">to get something useful out of something that already exists but hasn't been used yet</div>
+          <div class="vocab-es">aprovechar, acceder a un recurso</div>
+          <div class="vocab-ex">The coach knew how to tap into the team's energy and motivation.</div>
+          <div class="vocab-note">💡 Picture tapping a tree for sap — getting something useful out of something already there.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">6️⃣ Playing the Long Game</h3>
+    <p>TV and social media often show alcohol and drugs in a positive way. Sometimes you are the only person who says these things are not good. Tell your teen clearly: you don't want them to use drugs or alcohol. You might say, "I care about your health. I don't want you using alcohol or drugs while your brain is still growing." Your teen may <span class="highlight h-idiom" title="mostrar fastidio o incredulidad girando los ojos">roll their eyes</span>. But research shows they still hear you.</p>
+
+    <div class="vocab-box">
+      <h4>📚 Vocabulary — Section 6</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">Roll their eyes <button class="speak-btn" onclick="speakWord('roll their eyes')">🔊</button></div>
+          <div class="vocab-def">to show annoyance or disbelief by turning the eyes upward</div>
+          <div class="vocab-es">poner los ojos en blanco (mostrar fastidio)</div>
+          <div class="vocab-ex">The new intern rolled his eyes when told to redo the safety checklist — but he did it anyway.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box"><br></div>
+
+  <!-- DISCUSSION -->
+  <h2 class="section-title">💬 Discussion Questions</h2>
+  <div class="discussion">
+    <h3>Talk about it</h3>
+    <ol>
+      <li>Do you think it's easier for teens to talk to a doctor than to a parent? Why might that be true — or not true — in your own family?</li>
+      <li>In your workplace, do you think "connection" (trust, open conversation) works better than "control" (strict rules) for managing a team? Give a real example.</li>
+      <li><strong>🌎 Cross-cultural:</strong> In Mexican families, how do parents usually talk about difficult topics like drugs or alcohol with teenagers? Is this similar to or different from what the article describes?</li>
+    </ol>
+  </div>
+
+  <!-- SELF PRACTICE -->
+  <h2 class="section-title">✏️ Self-Practice</h2>
+
+  <div class="practice-item">
+    <div class="practice-q">1. After the safety incident, management decided to ______ ______ on machine access.</div>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer-box">tighten the reins</div>
+    </details>
+  </div>
+
+  <div class="practice-item">
+    <div class="practice-q">2. The new bonus plan ______ — employees became less motivated instead of more.</div>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer-box">backfired</div>
+    </details>
+  </div>
+
+  <div class="practice-item">
+    <div class="practice-q">3. A good manager knows how to ______ ______ each employee's natural abilities.</div>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer-box">tap into</div>
+    </details>
+  </div>
+
+  <div class="practice-item">
+    <div class="practice-q">4. Instead of ______ ______, the trainer explained the real risks of skipping safety procedures — and it worked better.</div>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer-box">scare tactics</div>
+    </details>
+  </div>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
