@@ -141,6 +141,7 @@ async function scanLessons() {
         { filename: 'workwithyourbio.html', date: '2026-07-01', title: '⚖️ Work With Your Biology, Not Against It' },
         { filename: 'Leading with Empathy.html', date: '2026-07-03', title: '' },
         { filename: 'The Right Way to Motivate.html', date: '2026-07-06', title: '🤝 The Right Way to Motivate' },
+        { filename: 'Connection, Not Control.html', date: '2026-07-08', title: 'Connection, Not Control🚫' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
