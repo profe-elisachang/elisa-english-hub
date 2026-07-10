@@ -1,0 +1,548 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Hotel Made of Modules - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-intermediate.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #F7F2E7;
+            color: #33393E;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #5C7A89;
+        }
+
+        .level-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 12px;
+        }
+
+        h1, h2, h3 {
+            color: #4A6472;
+        }
+
+        .subtitle-line {
+            font-style: italic;
+            color: #7A6A4E;
+            font-size: 1.1rem;
+            margin-top: -10px;
+            margin-bottom: 25px;
+        }
+
+        .byline {
+            font-size: 0.85rem;
+            color: #8A8073;
+            margin-bottom: 30px;
+        }
+
+        section.block {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border-top: 4px solid #D9A441;
+        }
+
+        /* USEFUL EXPRESSIONS TABLE */
+        table.expressions {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table.expressions th {
+            background: #5C7A89;
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        table.expressions td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #EFE6D2;
+            vertical-align: top;
+        }
+
+        table.expressions tr:nth-child(even) {
+            background: #FBF7EE;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #D9A441;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        .article-heading {
+            color: #4A6472;
+            border-bottom: 2px solid #D9A441;
+            padding-bottom: 6px;
+            margin-top: 35px;
+        }
+
+        .article-p {
+            font-size: 1.08rem;
+            margin: 18px 0;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #8A8073;
+            text-align: center;
+            margin: 15px 0 30px;
+        }
+
+        /* VOCAB BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #5C7A89;
+            padding: 20px;
+            margin: 20px 0 35px;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #5C7A89;
+            margin-top: 0;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word {
+            color: #5C7A89;
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-def {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-es {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #D9A441;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        ul.discussion li {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+        }
+
+        /* SELF PRACTICE */
+        .practice-item {
+            margin-bottom: 22px;
+        }
+
+        .practice-item p.q {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        details {
+            background: #F0EAD8;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #4A6472;
+            font-weight: 700;
+        }
+
+        input.blank {
+            border: none;
+            border-bottom: 2px solid #5C7A89;
+            background: transparent;
+            width: 160px;
+            font-size: 1rem;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1 style="color:white; margin:0;">📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Intermediate Level</span>
+            <div class="search-box">
+                <a href="../index.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://cdn.prod.website-files.com/6781afb7d12070e41376c45d/6998eaebd90b55fe629e6663_DSCF6811.avif" alt="🏜️ A Hotel Made of Modules" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <section class="block">
+                <h2>🤝 Useful Expressions</h2>
+                <table class="expressions">
+                    <tbody><tr>
+                        <th>English Expression</th>
+                        <th>Spanish Translation</th>
+                        <th>Example Sentence</th>
+                    </tr>
+                    <tr>
+                        <td><strong>build from scratch</strong></td>
+                        <td>construir desde cero</td>
+                        <td>The team decided to build the new workstation from scratch.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>afford something</strong></td>
+                        <td>poder pagar algo</td>
+                        <td>Many workers cannot afford to rent a house near the factory.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>worth it</strong></td>
+                        <td>que vale la pena</td>
+                        <td>Buying the new machine was expensive, but it was worth it.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>faster but not cheaper</strong></td>
+                        <td>más rápido pero no más barato</td>
+                        <td>The new process is faster but not cheaper than the old one.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>only what you need</strong></td>
+                        <td>solo lo que necesitas</td>
+                        <td>The new office design uses only what you need — nothing extra.</td>
+                    </tr>
+                </tbody></table>
+            </section>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCAB -->
+            <section class="block">
+                <h1>🏜️ A Hotel Made of Modules</h1>
+                <p class="subtitle-line">A new desert hotel feels like camping on Mars</p>
+                <p class="byline">Based on an article by Deborah Netburn, Los Angeles Times (simplified version)</p>
+
+                <!-- Paragraph 1-2 -->
+                <p class="article-p">In the desert near Joshua Tree National Park, there is a new hotel called Reset. It is very different from a normal hotel.</p>
+                <p class="article-p">The hotel has 65 small rooms. Each room looks like a box. The boxes have silver, <span class="highlight" title="ondulado">wavy</span> sides. Many people think the rooms look like something from a space movie.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1-2</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">wavy</strong><button class="speak-btn" onclick="speakWord('wavy')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Having curves, like small waves</p>
+                            <p class="vocab-es">ondulado</p>
+                            <div class="vocab-example">The metal roof of the workshop has a wavy pattern for extra strength.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 3 -->
+                <p class="article-p">The rooms are not really shipping containers. But the designers wanted the hotel to feel like a small <span class="highlight" title="comunidad">community</span> on Mars. They only put in things that guests really need: a bed, a coffee maker, a lantern, and a <span class="highlight" title="cojín">cushion</span> for watching the stars.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">community</strong><button class="speak-btn" onclick="speakWord('community')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">A group of people living or working together in one place</p>
+                            <p class="vocab-es">comunidad</p>
+                            <div class="vocab-example">The factory workers formed a small community around the plant.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">cushion</strong><button class="speak-btn" onclick="speakWord('cushion')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">A soft object used for sitting or resting comfortably</p>
+                            <p class="vocab-es">cojín</p>
+                            <div class="vocab-example">There is a cushion on the chair in the break room.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 4-5 -->
+                <p class="article-p">An architect named Ben Uyeda designed the hotel. He built the room <span class="highlight" title="módulos">modules</span> in a factory in Canada. Workers built the walls and furniture there. Then they moved the modules to the desert. At the same time, other workers built the <span class="highlight" title="cimientos">foundation</span> in California.</p>
+                <p class="article-p">Building modules in a factory is not cheaper than building a normal hotel. But it is faster. This is very useful in a place far from the city, like the desert.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 4-5</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">module</strong><button class="speak-btn" onclick="speakWord('module')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">A separate part that can be joined with other parts to build something bigger</p>
+                            <p class="vocab-es">módulo</p>
+                            <div class="vocab-example">Each module is built in the factory before it is sent to the customer.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">foundation</strong><button class="speak-btn" onclick="speakWord('foundation')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">The base under a building that holds it up</p>
+                            <p class="vocab-es">cimientos</p>
+                            <div class="vocab-example">Workers finished the foundation before the new warehouse walls arrived.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 6 -->
+                <p class="article-p">Uyeda had another reason to build this way. In the last few years, house prices near Joshua Tree went up a lot. Many local people cannot <span class="highlight" title="pagar, costear">afford</span> to rent a house because owners <span class="highlight" title="alquilar, arrendar">rent out</span> their houses to tourists on Airbnb instead.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 6</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">afford</strong><button class="speak-btn" onclick="speakWord('afford')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">To have enough money to pay for something</p>
+                            <p class="vocab-es">poder pagar, costear</p>
+                            <div class="vocab-example">The company could not afford new machines this year, so they repaired the old ones.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">rent out</strong><button class="speak-btn" onclick="speakWord('rent out')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">To let someone use your property in exchange for money</p>
+                            <p class="vocab-es">alquilar, arrendar</p>
+                            <div class="vocab-example">The company rents out its extra warehouse space to smaller businesses.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 7 -->
+                <p class="article-p">Uyeda thought that modular hotels could help. If companies build hotels on land that is already <span class="highlight" title="zonificado para">zoned for</span> business, they do not need to use houses that local families need.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 7</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">zoned for</strong><button class="speak-btn" onclick="speakWord('zoned for')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Officially marked for a specific type of use, like business or housing</p>
+                            <p class="vocab-es">zonificado para</p>
+                            <div class="vocab-example">This land is zoned for factories, not for houses.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 8 -->
+                <p class="article-p">Even so, staying at Reset is expensive. A room can cost around $200 a night. Some tourists think it is <span class="highlight" title="que vale la pena">worth it</span>. Others think the money could help build more <span class="highlight" title="asequible, accesible">affordable</span> housing instead.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 8</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">worth it</strong><button class="speak-btn" onclick="speakWord('worth it')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Good enough to justify the money, time, or effort spent</p>
+                            <p class="vocab-es">que vale la pena</p>
+                            <div class="vocab-example">The training was expensive, but it was worth it for the team.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">affordable</strong><button class="speak-btn" onclick="speakWord('affordable')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Priced at a level that people can reasonably pay</p>
+                            <p class="vocab-es">asequible, accesible</p>
+                            <div class="vocab-example">The company looked for a more affordable supplier for the new parts.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 9 -->
+                <p class="article-p">A journalist who visited the hotel said the rooms felt very <span class="highlight" title="sencillo, sin decoración">plain</span> at first. But after a few days, the simple design started to feel special to her. She liked looking up at the sky from her private patio every night.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 9</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">plain</strong><button class="speak-btn" onclick="speakWord('plain')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Simple, with no decoration or extra details</p>
+                            <p class="vocab-es">sencillo, sin decoración</p>
+                            <div class="vocab-example">The new packaging design is plain, with no bright colors or logos.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </section>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <section class="block">
+                <h2>💬 Discussion Questions</h2>
+                <ul class="discussion">
+                    <li><strong>Tourism vs. Housing Crisis:</strong> Airbnb lets owners rent houses to tourists instead of local families. Do you think this is fair? What should cities do about it?</li>
+                    <li><strong>Modular Construction in Mexico:</strong> Building rooms in a factory and moving them to the site is common in some countries. Do you think this could work well in Mexico? Why or why not?</li>
+                    <li><strong>Would You Stay Here?:</strong> Would you pay $200 a night to stay in a small, simple room like this? What would make it worth the price for you?</li>
+                    <li><strong>Only What You Need:</strong> The hotel only has things guests really need — nothing extra. Could your workplace use this same idea? What could be removed?</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <section class="block">
+                <h2>✍️ Self-Practice</h2>
+
+                <div class="practice-item">
+                    <p class="q">1. Fill in the blank with the correct word: module, foundation, afford, affordable</p>
+                    <p>a) Each room is a <input class="blank" type="text"> built in a factory.</p>
+                    <p>b) Workers built the <input class="blank" type="text"> for the hotel in California.</p>
+                    <p>c) Many local people cannot <input class="blank" type="text"> to rent a house near the hotel.</p>
+                    <p>d) Uyeda wanted to build more <input class="blank" type="text"> housing for local families.</p>
+                </div>
+
+                <div class="practice-item">
+                    <p class="q">2. True or False</p>
+                    <p>a) The Reset hotel's rooms are built in a factory and moved to the desert. ____</p>
+                    <p>b) A room at Reset costs about $20 a night. ____</p>
+                    <p>c) Some local people cannot find a home because owners rent to tourists instead. ____</p>
+                    <p>d) The hotel rooms have a lot of decoration and extra furniture. ____</p>
+                </div>
+
+                <div class="practice-item">
+                    <p class="q">3. Short Answer</p>
+                    <p>a) Why is it faster to build a hotel with modules?</p>
+                    <p>b) Why do some local people have trouble finding a house to rent?</p>
+                </div>
+
+                <div class="practice-item">
+                    <p class="q">4. Workplace Reflection</p>
+                    <p>Think about your workplace. Is there a process that could be "modular" — built in separate parts and put together later? Explain your idea.</p>
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li>a) module &nbsp; b) foundation &nbsp; c) afford &nbsp; d) affordable</li>
+                        <li>a) True &nbsp; b) False (it costs about $200 a night) &nbsp; c) True &nbsp; d) False (the rooms are plain and simple)</li>
+                        <li>a) Because the modules are built in a factory at the same time the foundation is built at the hotel site, which saves time. &nbsp; b) Because owners rent their houses to tourists on Airbnb instead of to local families.</li>
+                        <li>Open-ended — answers will vary based on personal workplace experience.</li>
+                    </ol>
+                </details>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
