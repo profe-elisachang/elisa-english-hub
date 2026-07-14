@@ -112,6 +112,7 @@ async function scanLessons() {
         { filename: 'Work With Your Biology.html', date: '2026-06-30', title: '⚖️ Work With Your Biology, Not Against It' },        { filename: 'Trauma-Informed Leadership.html', date: '2026-07-02', title: '🌱 Trauma-Informed Leadership' },
         { filename: 'Just Say NO.html', date: '2026-07-07', title: '🚫 Just Say NO! ' },
         { filename: 'Hotel in the High Desert.html', date: '2026-07-09', title: '🏜️ Hotel in the High Desert' },
+        { filename: 'From Refugees to Community Builders.html', date: '2026-07-14', title: '🤝 From Refugees to Community Builders' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
