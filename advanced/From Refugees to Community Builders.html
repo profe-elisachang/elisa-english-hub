@@ -114,7 +114,59 @@
     border-radius: 3px;
     cursor: help;
     position: relative;
+    display: inline-block;
   }
+  /* Custom tooltip: anchored ABOVE the word itself (not the cursor),
+     so the mouse pointer never covers the tooltip text. */
+  .highlight::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%) translateY(6px);
+    background: #2b2018;
+    color: #fff9c4;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 50;
+  }
+  .highlight::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%) translateY(6px);
+    border: 7px solid transparent;
+    border-top-color: #2b2018;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 50;
+  }
+  .highlight:hover::after,
+  .highlight:focus::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .highlight:hover::before,
+  .highlight:focus::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  /* Keep tooltips from being clipped at the very top of the article box */
+  .article-box { overflow: visible; }
+  .article-box p { position: relative; }
 
   /* ===== Vocabulary Boxes ===== */
   .vocab-grid {
@@ -228,6 +280,11 @@
   @media (max-width: 600px) {
     .article-box, .expr-wrap, .qa-box { padding: 1.3rem 1.2rem; }
     .article-title { font-size: 1.6rem; }
+    .highlight::after {
+      white-space: normal;
+      max-width: 55vw;
+      text-align: center;
+    }
   }
 
 .article-image-container {
@@ -262,7 +319,7 @@
 <header class="header">
   <div class="header-content">
     <h1>📚 English Conversation with Elisa</h1>
-    <span class="level-badge">Advanced Level</span>
+    <span class="level-badge"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans TC&quot;, sans-serif;">Advanced</span><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans TC&quot;, sans-serif;"> </span>Level</span>
     <div class="search-box">
       <a href="../index-advanced.html" class="back-to-calendar-btn" style="
         display: inline-block;
@@ -323,7 +380,7 @@
     <div class="article-sub">One family paved the way for Hmong to move to Minnesota</div>
     <div class="article-byline">by Laura Yuen · The Minnesota Star Tribune</div>
 
-    <p>Bill Hawj, the 49-year-old Uber driver from Roseville, might tell you that he was the first Hmong baby born in Minnesota. Bill's parents, Dang and Shoua Hawj, were the first Hmong refugees to come to the state, an <span class="highlight" title="ilustre / prestigioso">illustrious</span> distinction confirmed by community members and historians. On Dec. 5, 1975, the couple and their 2-year-old son—Bill's older brother, Touvi—arrived in Minnesota, clearing a path for the tens of thousands who followed.</p>
+    <p>Bill Hawj, the 49-year-old Uber driver from Roseville, might tell you that he was the first Hmong baby born in Minnesota. Bill's parents, Dang and Shoua Hawj, were the first Hmong refugees to come to the state, an <span class="highlight" data-tooltip="ilustre / prestigioso">illustrious</span> distinction confirmed by community members and historians. On Dec. 5, 1975, the couple and their 2-year-old son—Bill's older brother, Touvi—arrived in Minnesota, clearing a path for the tens of thousands who followed.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
@@ -346,7 +403,7 @@
       </div>
     </div>
 
-    <p>The Hawj family is proud of all that their community has produced, from an Olympic gymnast in Suni Lee to the newest mayor of St. Paul, Kaohly Her. Hmong American writers like Kao Kalia Yang have enriched Minnesota's literary <span class="highlight" title="canon (conjunto de obras clásicas)">canon</span>. Chefs Diane Moua and Yia Vang have <span class="highlight" title="revigorizado / renovado">invigorated</span> our culinary landscape. "It's not just what they do, politically or economically, but they've <span class="highlight" title="estimulado">stimulated</span> the imagination of American society," said Mai Na Lee, a history professor at the University of Minnesota. But somebody had to be first. It took one family to chart a course that helped change our state's <span class="highlight" title="trayectoria">trajectory</span>. "I'm very proud of what my folks were able to accomplish—to bring us here, survive here and then raise us," said Touvi Her, now 52.</p>
+    <p>The Hawj family is proud of all that their community has produced, from an Olympic gymnast in Suni Lee to the newest mayor of St. Paul, Kaohly Her. Hmong American writers like Kao Kalia Yang have enriched Minnesota's literary <span class="highlight" data-tooltip="canon (conjunto de obras clásicas)">canon</span>. Chefs Diane Moua and Yia Vang have <span class="highlight" data-tooltip="revigorizado / renovado">invigorated</span> our culinary landscape. "It's not just what they do, politically or economically, but they've <span class="highlight" data-tooltip="estimulado">stimulated</span> the imagination of American society," said Mai Na Lee, a history professor at the University of Minnesota. But somebody had to be first. It took one family to chart a course that helped change our state's <span class="highlight" data-tooltip="trayectoria">trajectory</span>. "I'm very proud of what my folks were able to accomplish—to bring us here, survive here and then raise us," said Touvi Her, now 52.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
@@ -376,7 +433,7 @@
     </div>
 
     <div class="article-h2">🧭 How they got here</div>
-    <p>Touvi was too young to retain any memories of fleeing Laos at the end of the Vietnam War. The Hmong had been crucial allies of the U.S. government, fighting alongside the CIA and rescuing downed American pilots in what has become known as the Secret War in Laos. But the Hmong's alliance with the U.S. would cost them. After Laos fell to the Communists in 1975, members of this ethnic minority were targeted for <span class="highlight" title="represalias">reprisals</span>. While the U.S. government accepted Vietnamese and Cambodians, it initially refused to open its doors to the Hmong, <span class="highlight" title="considerándolos">deeming</span> them "too primitive" to survive here.</p>
+    <p>Touvi was too young to retain any memories of fleeing Laos at the end of the Vietnam War. The Hmong had been crucial allies of the U.S. government, fighting alongside the CIA and rescuing downed American pilots in what has become known as the Secret War in Laos. But the Hmong's alliance with the U.S. would cost them. After Laos fell to the Communists in 1975, members of this ethnic minority were targeted for <span class="highlight" data-tooltip="represalias">reprisals</span>. While the U.S. government accepted Vietnamese and Cambodians, it initially refused to open its doors to the Hmong, <span class="highlight" data-tooltip="considerándolos">deeming</span> them "too primitive" to survive here.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
@@ -411,7 +468,7 @@
       </div>
     </div>
 
-    <p>The Americans, however, had vastly <span class="highlight" title="subestimado">underestimated</span> the Hmong's ability to adapt. This was a people who had fled persecution in China thousands of years ago and migrated throughout southeast Asia, <span class="highlight" title="doblegándose / adaptándose">bending</span> to survive in each place they called home.</p>
+    <p>The Americans, however, had vastly <span class="highlight" data-tooltip="subestimado">underestimated</span> the Hmong's ability to adapt. This was a people who had fled persecution in China thousands of years ago and migrated throughout southeast Asia, <span class="highlight" data-tooltip="doblegándose / adaptándose">bending</span> to survive in each place they called home.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
@@ -435,7 +492,7 @@
     </div>
 
     <div class="article-h2">🏠 Homesick</div>
-    <p>The earliest refugees were key to easing the way for later waves of immigrants. When the Hawj family arrived in Minnesota in December 1975, they faced both an unforgiving winter and the emotional challenges of being the first Hmong family here. Dang's wife, Shoua, now 72, remembers those early days living with a sponsor family in Anoka. While Dang was at school all day studying English, Shoua stayed inside her bedroom, looking out the window and <span class="highlight" title="sollozando">sobbing</span>.</p>
+    <p>The earliest refugees were key to easing the way for later waves of immigrants. When the Hawj family arrived in Minnesota in December 1975, they faced both an unforgiving winter and the emotional challenges of being the first Hmong family here. Dang's wife, Shoua, now 72, remembers those early days living with a sponsor family in Anoka. While Dang was at school all day studying English, Shoua stayed inside her bedroom, looking out the window and <span class="highlight" data-tooltip="sollozando">sobbing</span>.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
@@ -458,7 +515,7 @@
       </div>
     </div>
 
-    <p>After baby Bill was born the following February, Shoua was reminded how far she was from home. Shoua paced, anxious and homesick. She also could not make herself the traditional chicken herb soup that has nourished Hmong moms for centuries. The herbs were nowhere to be found in Minnesota. A nod to his family's initial <span class="highlight" title="punzadas / arrebatos">pangs</span> of homesickness, Dang established two Hmong grocery stores in St. Paul.</p>
+    <p>After baby Bill was born the following February, Shoua was reminded how far she was from home. Shoua paced, anxious and homesick. She also could not make herself the traditional chicken herb soup that has nourished Hmong moms for centuries. The herbs were nowhere to be found in Minnesota. A nod to his family's initial <span class="highlight" data-tooltip="punzadas / arrebatos">pangs</span> of homesickness, Dang established two Hmong grocery stores in St. Paul.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
@@ -512,7 +569,7 @@
     </div>
 
     <div class="article-h2">🙏 Giving thanks</div>
-    <p>While many community members are thriving, <span class="highlight" title="desigualdades">disparities</span> persist. About a fifth of Hmong Minnesotans over 25 lack a high school diploma or its equivalent. It was only when Dang's daughter Risa became an adult that she realized how much her parents helped shape the community. "My dad, he was a big <span class="highlight" title="visionario">visionary</span> person," she said. "We were so young to understand that at the time." We give thanks for the Hmong who bravely started over in Minnesota. They paid a painful price but showed us just what they could do when given room to try.</p>
+    <p>While many community members are thriving, <span class="highlight" data-tooltip="desigualdades">disparities</span> persist. About a fifth of Hmong Minnesotans over 25 lack a high school diploma or its equivalent. It was only when Dang's daughter Risa became an adult that she realized how much her parents helped shape the community. "My dad, he was a big <span class="highlight" data-tooltip="visionario">visionary</span> person," she said. "We were so young to understand that at the time." We give thanks for the Hmong who bravely started over in Minnesota. They paid a painful price but showed us just what they could do when given room to try.</p>
 
     <div class="vocab-grid">
       <div class="vocab-card">
