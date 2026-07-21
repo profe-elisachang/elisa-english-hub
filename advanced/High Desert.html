@@ -1,0 +1,713 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel in the High Desert - English Conversation with Elisa</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #FAF3E8;
+            color: #3B2E28;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #C1694F;
+        }
+
+        .level-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 12px;
+        }
+
+        h1, h2, h3 {
+            color: #A8522F;
+        }
+
+        .subtitle-line {
+            font-style: italic;
+            color: #7A5C4D;
+            font-size: 1.15rem;
+            margin-top: -10px;
+            margin-bottom: 25px;
+        }
+
+        .byline {
+            font-size: 0.85rem;
+            color: #8A7364;
+            margin-bottom: 30px;
+        }
+
+        section.block {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border-top: 4px solid #C1694F;
+        }
+
+        /* USEFUL EXPRESSIONS TABLE */
+        table.expressions {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table.expressions th {
+            background: #C1694F;
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        table.expressions td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #EFE2D4;
+            vertical-align: top;
+        }
+
+        table.expressions tr:nth-child(even) {
+            background: #FCF6EE;
+        }
+
+        /* VOCABULARY HIGHLIGHTING */
+        .highlight {
+            background-color: #fff9c4;
+            font-weight: 700;
+            border-bottom: 2px solid #ff9800;
+            position: relative;
+            cursor: help;
+            padding: 2px 4px;
+        }
+
+        .highlight:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: normal;
+            z-index: 1000;
+            transition-delay: 0.2s;
+        }
+
+        .article-heading {
+            color: #A8522F;
+            border-bottom: 2px solid #E8B08C;
+            padding-bottom: 6px;
+            margin-top: 35px;
+        }
+
+        .article-p {
+            font-size: 1.05rem;
+            margin: 18px 0;
+        }
+
+        .mobile-note {
+            font-size: 0.85rem;
+            color: #8A7364;
+            text-align: center;
+            margin: 15px 0 30px;
+        }
+
+        /* VOCAB BOX */
+        .vocabulary-section {
+            background: #fffef8;
+            border-left: 4px solid #C1694F;
+            padding: 20px;
+            margin: 20px 0 35px;
+            border-radius: 8px;
+        }
+
+        .vocabulary-section h3 {
+            color: #C1694F;
+            margin-top: 0;
+        }
+
+        .vocab-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .vocab-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .vocab-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .vocab-word {
+            color: #C1694F;
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        .speak-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .vocab-def {
+            color: #333;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-es {
+            color: #666;
+            font-style: italic;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .vocab-example {
+            border-left: 3px solid #6B8E5A;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* DISCUSSION */
+        ul.discussion li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        /* SELF PRACTICE */
+        .practice-item {
+            margin-bottom: 22px;
+        }
+
+        .practice-item p.q {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        details {
+            background: #F5EDE1;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-top: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #A8522F;
+            font-weight: 700;
+        }
+
+        input.blank {
+            border: none;
+            border-bottom: 2px solid #C1694F;
+            background: transparent;
+            width: 160px;
+            font-size: 1rem;
+        }
+    
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+    <!-- FIXED HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1 style="color:white; margin:0;">📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level</span>
+            <div class="search-box">
+                <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s ease;
+                ">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="article-image-container">
+        <img src="https://cdn.prod.website-files.com/6781afb7d12070e41376c45d/6998eaebd90b55fe629e6663_DSCF6811.avif" alt="🏜️ Hotel in the High Desert" class="article-image">
+    </div>
+
+
+    <div class="container">
+        <main class="main-content">
+
+            <!-- SECTION 1: USEFUL EXPRESSIONS -->
+            <section class="block">
+                <h2>🤝 Useful Expressions</h2>
+                <table class="expressions">
+                    <tbody><tr>
+                        <th>English Expression</th>
+                        <th>Spanish Translation</th>
+                        <th>Example Sentence</th>
+                    </tr>
+                    <tr>
+                        <td><strong>get involved with</strong></td>
+                        <td>implicarse en / involucrarse en</td>
+                        <td>Our supervisor asked the new engineer to get involved with the modular assembly project.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>from the ground up</strong></td>
+                        <td>desde cero</td>
+                        <td>The plant manager decided to rebuild the workflow from the ground up after the audit.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>zoned for</strong></td>
+                        <td>zonificado para</td>
+                        <td>This section of the facility is zoned for hazardous material storage.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>grow on someone</strong></td>
+                        <td>irle gustando a alguien poco a poco</td>
+                        <td>The new inventory system was confusing at first, but it grew on the whole team.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>taken aback by</strong></td>
+                        <td>sorprendido/a por</td>
+                        <td>The quality team was taken aback by the sudden increase in defect rates.</td>
+                    </tr>
+                </tbody></table>
+            </section>
+
+            <!-- SECTION 2 & 3: ARTICLE + VOCAB -->
+            <section class="block">
+                <h1>🏜️ Hotel in the High Desert</h1>
+                <p class="subtitle-line">Where you feel like you are camping on Mars</p>
+                <p class="byline">by Deborah Netburn / © 2025, Los Angeles Times.<br>Distributed by Tribune Content Agency, LLC.</p>
+
+                <!-- Paragraph 1 -->
+                <p class="article-p">Architectural designer Ben Uyeda was <span class="highlight" title="tumbado, relajado">stretched out</span> poolside in a rare moment of <span class="highlight" title="descanso, reposo">repose</span> at Reset, his new hotel in 29 Palms, California.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 1</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">stretched out</strong><button class="speak-btn" onclick="speakWord('stretched out')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Lying down in a relaxed, extended position</p>
+                            <p class="vocab-es">tumbado, relajado</p>
+                            <div class="vocab-example">During his lunch break, the maintenance supervisor was stretched out on the break room bench.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">repose</strong><button class="speak-btn" onclick="speakWord('repose')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">A state of rest or calm</p>
+                            <p class="vocab-es">descanso, reposo</p>
+                            <div class="vocab-example">After the night shift, the workers finally had a moment of repose in the break room.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 2 -->
+                <p class="article-p">"This is the best time to watch the mountains," he said, looking south toward the direction of Joshua Tree National Park. "Right now, they look really <span class="highlight" title="dentado, irregular">jagged</span>, but they'll turn soft and orange as the sun sets."</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 2</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">jagged</strong><button class="speak-btn" onclick="speakWord('jagged')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Having a rough or pointed edge or surface</p>
+                            <p class="vocab-es">dentado, irregular</p>
+                            <div class="vocab-example">Operators must handle the sheet metal carefully because the freshly cut edges are jagged.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraphs 3-4 -->
+                <p class="article-p">Sitting next to him were his collaborators Emi Kitawaki and Jen Whitaker of the design firm Gry Space who created the look and tone of Reset's <span class="highlight" title="sencillo, austero">spare</span>, earthy interiors. Sharing a cold cucumber salad from the hotel's in-house restaurant, they <span class="highlight" title="miraron fijamente">gazed</span> across the spacious pool area with its wide platform loungers and <span class="highlight" title="estuco, revestimiento de yeso">stucco</span> walls that perfectly matched the color of the dusty landscape beyond.</p>
+                <p class="article-p">"The sky is the show," Kitawaki said, looking up.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 3-4</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">spare</strong><button class="speak-btn" onclick="speakWord('spare')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Plain or basic, using nothing unnecessary</p>
+                            <p class="vocab-es">sencillo, austero</p>
+                            <div class="vocab-example">The new production layout has a spare design, with only the essential equipment on the floor.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">gazed</strong><button class="speak-btn" onclick="speakWord('gazed')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Looked steadily and for a long time at something</p>
+                            <p class="vocab-es">miraron fijamente</p>
+                            <div class="vocab-example">The visiting client gazed at the assembly line, impressed by how organized it was.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">stucco</strong><button class="speak-btn" onclick="speakWord('stucco')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">A type of plaster used to coat walls</p>
+                            <p class="vocab-es">estuco, revestimiento de yeso</p>
+                            <div class="vocab-example">The exterior of the new warehouse office was finished with a smooth stucco coating.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="article-heading">Made for stargazing</h2>
+
+                <!-- Paragraphs 5-6 -->
+                <p class="article-p">Reset is a new kind of hotel for the high desert. Modern. Minimal. <span class="highlight" title="modular, compuesto de módulos">Modular</span>. While the pool area with its hot tub, sauna and thoughtful landscaping is pure desert luxury, the rest of the hotel consists of 65 rectangular-shaped, <span class="highlight" title="independientes, autónomos">free-standing</span> rooms laid out in neat rows. Each <span class="highlight" title="escasamente, con pocos muebles">sparsely</span> furnished room is <span class="highlight" title="equipado, dotado">outfitted</span> with carefully selected amenities that suggest a highly <span class="highlight" title="cuidadosamente seleccionado">curated</span> camping trip—a stylish solar lantern, in-room pour-over coffee, an outdoor fire pit and, most importantly, a sturdy cushion on the private outdoor patio for stargazing.</p>
+                <p class="article-p">"The best view here is always up," Uyeda said.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 5-6</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">modular</strong><button class="speak-btn" onclick="speakWord('modular')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Made of standard units or sections that can be combined</p>
+                            <p class="vocab-es">modular, compuesto de módulos</p>
+                            <div class="vocab-example">Switching to a modular assembly system allowed the plant to reconfigure the line in under a day.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">free-standing</strong><button class="speak-btn" onclick="speakWord('free-standing')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Not attached to or supported by anything else</p>
+                            <p class="vocab-es">independiente, autónomo</p>
+                            <div class="vocab-example">Each free-standing workstation can be moved without disconnecting the others.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">sparsely</strong><button class="speak-btn" onclick="speakWord('sparsely')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Existing only in small amounts; thinly</p>
+                            <p class="vocab-es">escasamente</p>
+                            <div class="vocab-example">The pilot line was sparsely staffed while the company tested the new process.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">outfitted</strong><button class="speak-btn" onclick="speakWord('outfitted')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Equipped or supplied with necessary items</p>
+                            <p class="vocab-es">equipado, dotado</p>
+                            <div class="vocab-example">Every operator's station was outfitted with the correct safety gear before the shift began.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">curated</strong><button class="speak-btn" onclick="speakWord('curated')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Carefully chosen, organized and presented</p>
+                            <p class="vocab-es">cuidadosamente seleccionado</p>
+                            <div class="vocab-example">The supplier sent a curated selection of samples that matched our quality specifications.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="article-heading">Science-fiction style</h2>
+
+                <!-- Paragraphs 7-8 -->
+                <p class="article-p">The rooms are not technically built from shipping containers, but with their <span class="highlight" title="rectangular, con forma de caja">boxy</span> shape, <span class="highlight" title="ondulado, corrugado">corrugated</span> silver sides and narrow dimensions, they sure look like it. Walking along the hotel's concrete paths, the overall effect is far more sci-fi than Old West.</p>
+                <p class="article-p">The hotel's designers say the <span class="highlight" title="evocación, sugerencia">evocation</span> of space travel was deliberate.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 7-8</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">boxy</strong><button class="speak-btn" onclick="speakWord('boxy')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Square or rectangular in shape, like a box</p>
+                            <p class="vocab-es">rectangular, con forma de caja</p>
+                            <div class="vocab-example">The old boxy machine was replaced with a more compact, streamlined model.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">corrugated</strong><button class="speak-btn" onclick="speakWord('corrugated')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Shaped into folds or waves to add strength</p>
+                            <p class="vocab-es">ondulado, corrugado</p>
+                            <div class="vocab-example">The warehouse roof is made of corrugated steel panels for extra durability.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">evocation</strong><button class="speak-btn" onclick="speakWord('evocation')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Something that produces a strong feeling or memory</p>
+                            <p class="vocab-es">evocación</p>
+                            <div class="vocab-example">The new showroom design is an evocation of the company's original 1980s workshop.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 9 -->
+                <p class="article-p">"When we <span class="highlight" title="se sumó al, se unió al">came onto</span> the project, the first thing Ben mentioned was what would humans do if we built a community on Mars," Kitawaki said. "Everything is designed from a more mission, <span class="highlight" title="utilitario, práctico">utilitarian</span> standpoint: What is actually needed?"</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 9</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">came onto (a project)</strong><button class="speak-btn" onclick="speakWord('came onto the project')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Joined or started working on something</p>
+                            <p class="vocab-es">se sumó al, se unió al</p>
+                            <div class="vocab-example">The new quality engineer came onto the project just as the certification audit began.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">utilitarian</strong><button class="speak-btn" onclick="speakWord('utilitarian')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Designed to be practical and useful rather than decorative</p>
+                            <p class="vocab-es">utilitario, práctico</p>
+                            <div class="vocab-example">The factory floor has a utilitarian layout, built purely for efficiency.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="article-heading">Hotels and affordable housing</h2>
+
+                <!-- Paragraph 10 -->
+                <p class="article-p"><span class="highlight" title="unos cuantos, algunos">A handful of</span> new hotels opened in the Joshua Tree area, as tourism has <span class="highlight" title="se disparó">soared</span> over the last several years. But Reset is the first hotel to be built <span class="highlight" title="desde cero">from the ground up</span> in the area in 15 years.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 10</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">a handful of</strong><button class="speak-btn" onclick="speakWord('a handful of')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">A small number of something</p>
+                            <p class="vocab-es">unos cuantos, un puñado de</p>
+                            <div class="vocab-example">Only a handful of suppliers can meet our new tolerance requirements.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">soared</strong><button class="speak-btn" onclick="speakWord('soared')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Rose quickly and to a high level</p>
+                            <p class="vocab-es">se disparó, aumentó rápidamente</p>
+                            <div class="vocab-example">Demand for the new product line soared after the trade show.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">from the ground up</strong><button class="speak-btn" onclick="speakWord('from the ground up')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Starting from the very beginning, with nothing already built</p>
+                            <p class="vocab-es">desde cero</p>
+                            <div class="vocab-example">The new facility was designed from the ground up to meet export compliance standards.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 11 -->
+                <p class="article-p">Uyeda, who has more than 1.6 million subscribers on his YouTube channel HomeMade Modern, <span class="highlight" title="se involucró en, participó en">got involved with</span> the project after building a shipping container house in Joshua Tree and releasing a docuseries detailing the process in 2020. A former professor of architecture at Northeastern and Cornell universities, he'd noticed that as home prices <span class="highlight" title="se dispararon">skyrocketed</span> there was a corresponding increase of interest in potentially more affordable construction like tiny homes, <span class="highlight" title="ecoconstrucción, casa autosuficiente">earthships</span> and container homes.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 11</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">got involved with</strong><button class="speak-btn" onclick="speakWord('got involved with')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Became a participant in something</p>
+                            <p class="vocab-es">se involucró en</p>
+                            <div class="vocab-example">The maintenance team got involved with the redesign after noticing repeated equipment failures.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">skyrocketed</strong><button class="speak-btn" onclick="speakWord('skyrocketed')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Increased very quickly and by a large amount</p>
+                            <p class="vocab-es">se dispararon</p>
+                            <div class="vocab-example">Raw material costs skyrocketed last quarter, forcing us to adjust our pricing.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">earthships</strong><button class="speak-btn" onclick="speakWord('earthships')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Self-sufficient homes built from recycled and natural materials</p>
+                            <p class="vocab-es">ecoconstrucciones, casas autosuficientes</p>
+                            <div class="vocab-example">Some clients now ask if our packaging materials could be repurposed the way earthships reuse waste materials.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 12 -->
+                <p class="article-p">Uyeda began having conversations with his now business partner Adam Wininger about how the rise of Airbnb was converting <span class="highlight" title="urgentemente necesaria">desperately needed</span> housing in the desert to vacation rentals. They wondered if building modular structures on land that was already <span class="highlight" title="zonificado para">zoned for</span> commercial use might be one solution to increasing lodging units without <span class="highlight" title="afectando">impacting</span> local housing supply. While the process of building modular is not cheaper than a regular build, it is faster, especially in a remote desert location.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 12</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">desperately needed</strong><button class="speak-btn" onclick="speakWord('desperately needed')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Urgently required</p>
+                            <p class="vocab-es">urgentemente necesario</p>
+                            <div class="vocab-example">The plant received desperately needed replacement parts just before the deadline.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">zoned for</strong><button class="speak-btn" onclick="speakWord('zoned for')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Officially designated for a specific type of use</p>
+                            <p class="vocab-es">zonificado para</p>
+                            <div class="vocab-example">The empty lot next to the warehouse is zoned for industrial expansion.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">impacting</strong><button class="speak-btn" onclick="speakWord('impacting')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Having a noticeable effect on something</p>
+                            <p class="vocab-es">afectando</p>
+                            <div class="vocab-example">The supplier delay ended up impacting three separate production lines.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="article-heading">Feeling connected</h2>
+
+                <!-- Paragraphs 13-14 -->
+                <p class="article-p">Construction began in 2023. Room modules were made in a factory outside of Ontario, Canada, at the same time <span class="highlight" title="trabajo de cimentación">foundation work</span> was occurring in 29 Palms. Uyeda promoted the hotel on his social media feeds by releasing DIY videos demonstrating how he and his small team <span class="highlight" title="fabricado a mano">hand-built</span> 500 pieces of furniture, including <span class="highlight" title="plegable">fold-out</span> desks, couches, daybeds and a vase made out of rock.</p>
+                <p class="article-p">"When you come here, it feels personal," Kitawaki said. "You're connected to the items you see in the hotel, because you saw how they were made."</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 13-14</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">foundation work</strong><button class="speak-btn" onclick="speakWord('foundation work')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Construction of the base structure that supports a building</p>
+                            <p class="vocab-es">trabajo de cimentación</p>
+                            <div class="vocab-example">Foundation work on the new warehouse extension will take about three weeks.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">hand-built</strong><button class="speak-btn" onclick="speakWord('hand-built')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Made by hand rather than by machine</p>
+                            <p class="vocab-es">fabricado a mano</p>
+                            <div class="vocab-example">The prototype was hand-built by the engineering team before mass production began.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">fold-out</strong><button class="speak-btn" onclick="speakWord('fold-out')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">Able to be unfolded or extended for use</p>
+                            <p class="vocab-es">plegable</p>
+                            <div class="vocab-example">Each inspection station has a fold-out table to save floor space.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 15 -->
+                <p class="article-p">When I first arrived at Reset, I <span class="highlight" title="me sorprendió, me tomó desprevenido">was taken aback</span> by the <span class="highlight" title="la austeridad, lo desnudo">starkness</span> of the space. But it didn't take long for the hotel's minimalism and clean lines to <span class="highlight" title="fue gustándome poco a poco">grow on me</span>. Whether I was in bed, at the pool or lying on my private patio, the thoughtfully designed spaces always encouraged me to look out and up.</p>
+
+                <div class="vocabulary-section">
+                    <h3>📚 Vocabulary - Paragraph 15</h3>
+                    <div class="vocab-container">
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">taken aback</strong><button class="speak-btn" onclick="speakWord('taken aback')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">To be very surprised about something</p>
+                            <p class="vocab-es">sorprendido/a</p>
+                            <div class="vocab-example">The floor supervisor was taken aback by how quickly the new team adapted to the machines.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">starkness</strong><button class="speak-btn" onclick="speakWord('starkness')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">The quality of being plain, bare or severe</p>
+                            <p class="vocab-es">austeridad, lo desnudo</p>
+                            <div class="vocab-example">Visitors are often surprised by the starkness of a fully automated production line.</div>
+                        </div>
+                        <div class="vocab-item">
+                            <div><strong class="vocab-word">grow on me</strong><button class="speak-btn" onclick="speakWord('grow on me')" title="Click to hear pronunciation">🔊</button></div>
+                            <p class="vocab-def">To gradually become more likable or appealing over time</p>
+                            <p class="vocab-es">irle gustando a alguien poco a poco</p>
+                            <div class="vocab-example">The new shift schedule was unpopular at first, but it grew on the workers after a month.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mobile-note">*(On mobile: Tap and hold highlighted words to see translation)*</p>
+            </section>
+
+            <!-- SECTION 4: DISCUSSION QUESTIONS -->
+            <section class="block">
+                <h2>💬 Discussion Questions</h2>
+                <ul class="discussion">
+                    <li>Would modular construction methods, like prefabricated room units built in a factory, work well in your industry? Why or why not?</li>
+                    <li>The hotel's designers focused on "what is actually needed" from a utilitarian standpoint. How do you apply this kind of thinking when designing a process or a product on your production line?</li>
+                    <li>Ben Uyeda used social media and DIY videos to build trust with future guests by showing how things were made. How could sharing your company's manufacturing process build trust with clients?</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 5: SELF-PRACTICE -->
+            <section class="block">
+                <h2>✍️ Self-Practice</h2>
+
+                <div class="practice-item">
+                    <p class="q">1. Fill in the blank with the correct word: jagged, modular, corrugated, skyrocketed</p>
+                    <p>a) The mountains looked <input class="blank" type="text"> in the afternoon light.</p>
+                    <p>b) The hotel rooms have a <input class="blank" type="text"> silver exterior that looks like a shipping container.</p>
+                    <p>c) Home prices <input class="blank" type="text"> in the area over the past several years.</p>
+                    <p>d) Building the hotel with a <input class="blank" type="text"> design allowed rooms to be built off-site.</p>
+                </div>
+
+                <div class="practice-item">
+                    <p class="q">2. True or False</p>
+                    <p>a) Reset was the first hotel built from the ground up in the Joshua Tree area in 15 years. ____</p>
+                    <p>b) The hotel's rooms are actually made from real shipping containers. ____</p>
+                    <p>c) Room modules were manufactured in a factory outside of Ontario, Canada. ____</p>
+                    <p>d) Ben Uyeda had no previous experience with modular or container construction before Reset. ____</p>
+                </div>
+
+                <div class="practice-item">
+                    <p class="q">3. Short Answer</p>
+                    <p>a) Why did Uyeda and his business partner consider building on land already zoned for commercial use?</p>
+                    <p>b) According to Kitawaki, why does the hotel feel "personal" to guests?</p>
+                </div>
+
+                <div class="practice-item">
+                    <p class="q">4. Workplace Connection</p>
+                    <p>Think about a process in your own workplace that was redesigned "from the ground up." What made the change necessary, and was the new approach faster, cheaper, or both?</p>
+                </div>
+
+                <details>
+                    <summary><strong>Reference Answers</strong></summary>
+                    <ol>
+                        <li>a) jagged &nbsp; b) corrugated &nbsp; c) skyrocketed &nbsp; d) modular</li>
+                        <li>a) True &nbsp; b) False (they only look like shipping containers) &nbsp; c) True &nbsp; d) False (he had previously built a shipping container house and made a docuseries about it)</li>
+                        <li>a) They wanted to increase lodging units without impacting local housing supply, since Airbnb rentals were converting desperately needed housing into vacation rentals. &nbsp; b) Because guests can see how the furniture and spaces were made, which creates a personal connection to the items around them.</li>
+                        <li>Open-ended — answers will vary based on personal workplace experience.</li>
+                    </ol>
+                </details>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- PRONUNCIATION SCRIPT -->
+    <script>
+        function speakWord(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
