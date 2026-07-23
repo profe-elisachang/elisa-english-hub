@@ -1,0 +1,923 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Vocab Practice — Wabi-Sabi</title>
+    <style>
+        /* ===== 全域 ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --cream: #F3ECDD;
+            --card-bg: #FBF6EC;
+            --ink: #2B2420;
+            --clay: #A85C3B;
+            --clay-dark: #7E4029;
+            --gold: #C08A28;
+            --gold-light: #EBD8A6;
+            --moss: #6E7B5C;
+            --moss-dark: #4E5A40;
+            --line: #D8CBAE;
+            --success: #4E7A5C;
+            --error: #B14A4A;
+            --radius: 16px;
+            --shadow: 0 8px 30px rgba(43, 36, 32, 0.12);
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, system-ui, sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            min-height: 100vh;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .app {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+            padding-bottom: 2.5rem;
+        }
+
+        /* ===== 標題列 ===== */
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0 0.25rem;
+        }
+
+        .app-header h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--clay-dark);
+            letter-spacing: -0.3px;
+        }
+
+        .app-header .badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: var(--moss);
+            color: white;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== 模式切換 ===== */
+        .mode-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--card-bg);
+            padding: 0.4rem;
+            border-radius: 14px;
+            border: 2px solid var(--ink);
+            box-shadow: var(--shadow);
+        }
+
+        .mode-tab {
+            flex: 1;
+            padding: 0.7rem 0.3rem;
+            border: none;
+            border-radius: 11px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            background: transparent;
+            color: var(--ink);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .mode-tab.active {
+            background: var(--clay);
+            color: white;
+            box-shadow: 0 2px 8px rgba(168, 92, 59, 0.25);
+        }
+
+        .mode-tab:active {
+            transform: scale(0.96);
+        }
+
+        /* ===== 面板容器 ===== */
+        .panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================
+                   閃卡模式
+                   ========================================== */
+        .flashcard-container {
+            background: var(--card-bg);
+            border: 3px solid var(--ink);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.2rem 1.8rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .flashcard-progress {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--moss-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .flashcard {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            max-height: 340px;
+            perspective: 800px;
+            cursor: pointer;
+            margin: 0.2rem 0 1.2rem;
+            touch-action: manipulation;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            border-radius: var(--radius);
+        }
+
+        .flashcard-inner.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front,
+        .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border: 3px solid var(--ink);
+            box-shadow: 0 4px 12px rgba(43, 36, 32, 0.08);
+        }
+
+        .flashcard-front {
+            background: var(--cream);
+            transform: rotateY(0deg);
+        }
+
+        .flashcard-front .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--clay-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            background: var(--gold-light);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .flashcard-front .word-es {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .flashcard-front .hint-tap {
+            font-size: 0.8rem;
+            color: #8a7d6c;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .flashcard-back {
+            background: var(--moss-dark);
+            color: white;
+            transform: rotateY(180deg);
+            border-color: var(--moss-dark);
+        }
+
+        .flashcard-back .word-en {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .flashcard-back .example {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 0.6rem;
+            font-weight: 400;
+            max-width: 90%;
+        }
+
+        /* 閃卡按鈕列 */
+        .flash-actions {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 0.2rem;
+        }
+
+        .flash-actions button {
+            padding: 0.7rem 1.8rem;
+            border: 2px solid var(--ink);
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            background: var(--cream);
+            color: var(--ink);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
+            min-height: 52px;
+            min-width: 100px;
+        }
+
+        .flash-actions button:active {
+            transform: scale(0.94);
+        }
+
+        .flash-actions .btn-primary {
+            background: var(--clay);
+            color: white;
+            border-color: var(--clay-dark);
+        }
+
+        .flash-actions .btn-primary:active {
+            background: var(--clay-dark);
+        }
+
+        .flash-actions .btn-secondary:active {
+            background: var(--line);
+        }
+
+        /* ==========================================
+                   克漏字模式
+                   ========================================== */
+        .cloze-container {
+            background: var(--card-bg);
+            border: 3px solid var(--ink);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.2rem 1.8rem;
+            box-shadow: var(--shadow);
+        }
+
+        .cloze-container .cloze-intro {
+            font-size: 0.9rem;
+            color: var(--moss-dark);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .cloze-item {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 1rem 1rem 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--gold);
+            transition: border-color 0.2s ease;
+        }
+
+        .cloze-item.correct {
+            border-left-color: var(--success);
+        }
+
+        .cloze-item.incorrect {
+            border-left-color: var(--error);
+        }
+
+        .cloze-item .sentence {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+            color: var(--ink);
+        }
+
+        .cloze-item .sentence .blank {
+            display: inline-block;
+            min-width: 100px;
+            border-bottom: 3px solid var(--clay);
+            padding: 0 0.2rem;
+            font-weight: 700;
+            color: var(--clay-dark);
+        }
+
+        .cloze-item .sentence .blank.filled-correct {
+            border-bottom-color: var(--success);
+            color: var(--success);
+        }
+
+        .cloze-item .sentence .blank.filled-wrong {
+            border-bottom-color: var(--error);
+            color: var(--error);
+        }
+
+        .cloze-item .input-row {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cloze-item .input-row input {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.65rem 0.9rem;
+            border: 2px solid var(--line);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: white;
+            color: var(--ink);
+            outline: none;
+            transition: border-color 0.2s ease;
+            font-weight: 500;
+        }
+
+        .cloze-item .input-row input:focus {
+            border-color: var(--clay);
+        }
+
+        .cloze-item .input-row input:disabled {
+            background: #f0ebe2;
+            opacity: 0.7;
+        }
+
+        .cloze-item .status-icon {
+            font-size: 1.5rem;
+            min-width: 32px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .cloze-item .reveal-answer {
+            font-size: 0.85rem;
+            color: var(--error);
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+
+        /* 克漏字按鈕 */
+        .cloze-actions {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .cloze-actions button {
+            padding: 0.7rem 2rem;
+            border: 2px solid var(--ink);
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            background: var(--cream);
+            color: var(--ink);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
+            min-height: 52px;
+            min-width: 120px;
+        }
+
+        .cloze-actions button:active {
+            transform: scale(0.94);
+        }
+
+        .cloze-actions .btn-check {
+            background: var(--moss);
+            color: white;
+            border-color: var(--moss-dark);
+        }
+
+        .cloze-actions .btn-check:active {
+            background: var(--moss-dark);
+        }
+
+        .cloze-actions .btn-reset {
+            background: var(--cream);
+            border-color: var(--line);
+        }
+
+        .cloze-actions .btn-reset:active {
+            background: var(--line);
+        }
+
+        .cloze-score {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            padding: 0.6rem;
+            border-radius: 10px;
+            background: var(--cream);
+            border: 2px solid var(--line);
+        }
+
+        /* ===== 底部 ===== */
+        .footer-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #a09384;
+            margin-top: 1.8rem;
+            padding-top: 0.8rem;
+            border-top: 2px solid var(--line);
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== 響應式微調 ===== */
+        @media (max-width: 420px) {
+            body {
+                padding: 0.7rem;
+            }
+            .app-header h1 {
+                font-size: 1.1rem;
+            }
+            .flashcard-front .word-es {
+                font-size: 1.9rem;
+            }
+            .flashcard-back .word-en {
+                font-size: 1.8rem;
+            }
+            .cloze-item .sentence {
+                font-size: 0.92rem;
+            }
+            .cloze-item .input-row input {
+                font-size: 0.9rem;
+                padding: 0.55rem 0.7rem;
+                min-width: 80px;
+            }
+            .flash-actions button,
+            .cloze-actions button {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+                min-height: 46px;
+                min-width: 80px;
+            }
+            .mode-tab {
+                font-size: 0.85rem;
+                padding: 0.6rem 0.2rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .flashcard-front .word-es {
+                font-size: 1.6rem;
+            }
+            .flashcard-back .word-en {
+                font-size: 1.5rem;
+            }
+            .flashcard {
+                max-height: 260px;
+            }
+            .cloze-item {
+                padding: 0.8rem 0.8rem 1rem;
+            }
+            .cloze-item .sentence {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* 安全區域支援 (iPhone) */
+        @supports (padding: max(0px)) {
+            .app {
+                padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+
+
+
+    <div class="app" role="main">
+
+        <!-- 標題 -->
+        <div class="app-header">
+            <h1>🏺 Vocab Practice</h1>
+            <span class="badge">Wabi-Sabi</span>
+        </div>
+
+        <!-- 模式切換 -->
+        <div class="mode-tabs" role="tablist">
+            <button class="mode-tab active" data-mode="flash" role="tab" aria-selected="true">
+                🃏 Flashcard
+            </button>
+            <button class="mode-tab" data-mode="cloze" role="tab" aria-selected="false">
+                ✍️ Cloze
+            </button>
+        </div>
+
+        <!-- ==========================================
+        面板：閃卡
+        ========================================== -->
+        <section class="panel active" id="panel-flash" role="tabpanel">
+            <div class="flashcard-container">
+                <div class="flashcard-progress" id="flash-progress">1 / 8</div>
+
+                <div class="flashcard" id="flashcard" role="button" aria-label="點擊翻轉閃卡">
+                    <div class="flashcard-inner" id="flashcard-inner">
+                        <!-- 正面：西班牙文 -->
+                        <div class="flashcard-front">
+                            <span class="label">🇪🇸 ¿Cómo se dice?</span>
+                            <span class="word-es" id="flash-word-es">estético</span>
+                            <span class="hint-tap">👆 toca para ver la respuesta</span>
+                        </div>
+                        <!-- 背面：英文 -->
+                        <div class="flashcard-back">
+                            <span class="word-en" id="flash-word-en">aesthetic</span>
+                            <span class="example" id="flash-example">The office was redesigned for both comfort and aesthetic appeal.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flash-actions">
+                    <button class="btn-secondary" id="flash-shuffle" aria-label="重新洗牌">🔀 Shuffle</button>
+                    <button class="btn-primary" id="flash-next">Siguiente →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+        面板：克漏字
+        ========================================== -->
+        <section class="panel" id="panel-cloze" role="tabpanel">
+            <div class="cloze-container">
+                <div class="cloze-intro">
+                    ✍️ Escribe la palabra correcta en cada espacio.
+                </div>
+
+                <div id="cloze-list">
+                    <!-- 由 JavaScript 動態產生 -->
+                </div>
+
+                <div class="cloze-actions">
+                    <button class="btn-check" id="cloze-check">✅ Verificar</button>
+                    <button class="btn-reset" id="cloze-reset">🔄 Reiniciar</button>
+                </div>
+
+                <div class="cloze-score" id="cloze-score">&nbsp;</div>
+            </div>
+        </section>
+
+        <div class="footer-note">English Conversation with Elisa · Wabi-Sabi</div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  資 料
+        // ============================================================
+
+        const FLASHCARDS = [{
+            es: 'estético',
+            en: 'aesthetic',
+            example: 'The office was redesigned for both comfort and aesthetic appeal.'
+        }, {
+            es: 'desgaste natural',
+            en: 'wear and tear',
+            example: 'Even the best equipment shows wear and tear eventually.'
+        }, {
+            es: 'preventivo',
+            en: 'preventative',
+            example: 'The company invested in preventative maintenance.'
+        }, {
+            es: 'torcido / chueco',
+            en: 'crooked',
+            example: 'The picture frame hung crooked on the wall.'
+        }, {
+            es: 'aguileña',
+            en: 'aquiline',
+            example: 'His aquiline profile made him instantly recognizable.'
+        }, {
+            es: 'omnipresencia',
+            en: 'pervasiveness',
+            example: 'The pervasiveness of smartphones has changed how families spend time together.'
+        }, {
+            es: 'correlación',
+            en: 'correlation',
+            example: 'Researchers found a correlation between sleep quality and productivity.'
+        }, {
+            es: 'reutilizado',
+            en: 'repurposed',
+            example: 'The old factory was repurposed as a co-working space.'
+        }];
+
+        const CLOZE_DATA = [{
+            sentence: 'The office was redesigned for both comfort and __________ appeal.',
+            answer: 'aesthetic'
+        }, {
+            sentence: 'Even the best equipment shows __________ eventually.',
+            answer: 'wear and tear'
+        }, {
+            sentence: 'The company invested in __________ maintenance to avoid costly breakdowns.',
+            answer: 'preventative'
+        }, {
+            sentence: 'The picture frame hung __________ on the wall.',
+            answer: 'crooked'
+        }, {
+            sentence: 'His __________ profile made him instantly recognizable.',
+            answer: 'aquiline'
+        }, {
+            sentence: 'The __________ of smartphones has changed how families spend time together.',
+            answer: 'pervasiveness'
+        }];
+
+        // ============================================================
+        //  閃 卡 模 式
+        // ============================================================
+
+        let flashCards = [...FLASHCARDS];
+        let currentIndex = 0;
+        let isFlipped = false;
+
+        const flashInner = document.getElementById('flashcard-inner');
+        const flashWordEs = document.getElementById('flash-word-es');
+        const flashWordEn = document.getElementById('flash-word-en');
+        const flashExample = document.getElementById('flash-example');
+        const flashProgress = document.getElementById('flash-progress');
+        const flashNextBtn = document.getElementById('flash-next');
+        const flashShuffleBtn = document.getElementById('flash-shuffle');
+        const flashCard = document.getElementById('flashcard');
+
+        function renderFlashcard(index) {
+            const card = flashCards[index];
+            if (!card) return;
+            flashWordEs.textContent = card.es;
+            flashWordEn.textContent = card.en;
+            flashExample.textContent = card.example;
+            flashProgress.textContent = `${index + 1} / ${flashCards.length}`;
+            // 翻回正面
+            flashInner.classList.remove('flipped');
+            isFlipped = false;
+        }
+
+        function nextFlashcard() {
+            if (flashCards.length === 0) return;
+            currentIndex = (currentIndex + 1) % flashCards.length;
+            renderFlashcard(currentIndex);
+        }
+
+        function shuffleFlashcards() {
+            for (let i = flashCards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [flashCards[i], flashCards[j]] = [flashCards[j], flashCards[i]];
+            }
+            currentIndex = 0;
+            renderFlashcard(currentIndex);
+        }
+
+        // 點擊卡片翻轉
+        flashCard.addEventListener('click', function(e) {
+            // 避免點到按鈕觸發
+            if (e.target.closest('button')) return;
+            flashInner.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+        });
+
+        flashNextBtn.addEventListener('click', nextFlashcard);
+        flashShuffleBtn.addEventListener('click', shuffleFlashcards);
+
+        // 手機觸控優化：避免點擊時誤觸翻轉
+        flashCard.addEventListener('touchstart', function(e) {
+            // 單純讓 touch 事件不干擾 click
+        }, { passive: true });
+
+        // 初始化閃卡
+        renderFlashcard(0);
+
+        // ============================================================
+        //  克 漏 字 模 式
+        // ============================================================
+
+        const clozeList = document.getElementById('cloze-list');
+        const clozeCheckBtn = document.getElementById('cloze-check');
+        const clozeResetBtn = document.getElementById('cloze-reset');
+        const clozeScore = document.getElementById('cloze-score');
+
+        let clozeInputs = [];
+        let clozeChecked = false;
+
+        function renderCloze() {
+            clozeList.innerHTML = '';
+            clozeInputs = [];
+            clozeChecked = false;
+
+            CLOZE_DATA.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'cloze-item';
+                div.dataset.index = idx;
+
+                // 把 sentence 中的 __________ 換成帶底線的 span
+                const parts = item.sentence.split('__________');
+                const sentenceHtml =
+                    `${parts[0]}<span class="blank" id="blank-${idx}">__________</span>${parts[1] || ''}`;
+
+                div.innerHTML = `
+                    <div class="sentence">${sentenceHtml}</div>
+                    <div class="input-row">
+                        <input type="text" id="input-${idx}" placeholder="escribe aquí..." autocomplete="off" />
+                        <span class="status-icon" id="status-${idx}"></span>
+                    </div>
+                `;
+                clozeList.appendChild(div);
+
+                const input = document.getElementById(`input-${idx}`);
+                clozeInputs.push(input);
+
+                // Enter 鍵跳到下一題
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const next = document.getElementById(`input-${idx + 1}`);
+                        if (next) next.focus();
+                    }
+                });
+            });
+
+            // 重置分數
+            clozeScore.innerHTML = ' ';
+            clozeScore.style.background = 'var(--cream)';
+            clozeScore.style.borderColor = 'var(--line)';
+        }
+
+        function checkCloze() {
+            let correct = 0;
+            let total = CLOZE_DATA.length;
+            clozeChecked = true;
+
+            CLOZE_DATA.forEach((item, idx) => {
+                const input = clozeInputs[idx];
+                const status = document.getElementById(`status-${idx}`);
+                const blank = document.getElementById(`blank-${idx}`);
+                const itemDiv = document.querySelector(`.cloze-item[data-index="${idx}"]`);
+
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = item.answer.toLowerCase();
+
+                // 移除舊的狀態 class
+                itemDiv.classList.remove('correct', 'incorrect');
+
+                if (userAnswer === correctAnswer) {
+                    correct++;
+                    status.textContent = '✅';
+                    blank.textContent = item.answer;
+                    blank.className = 'blank filled-correct';
+                    itemDiv.classList.add('correct');
+                    input.disabled = true;
+                } else {
+                    status.textContent = '❌';
+                    blank.textContent = item.answer;
+                    blank.className = 'blank filled-wrong';
+                    itemDiv.classList.add('incorrect');
+                    input.disabled = true;
+                }
+            });
+
+            // 顯示分數
+            const scoreText = `${correct} / ${total} correctas`;
+            clozeScore.textContent = correct === total ? `🎉 ¡Perfecto! ${scoreText}` : `📊 ${scoreText}`;
+            clozeScore.style.background = correct === total ? 'var(--gold-light)' : 'var(--cream)';
+            clozeScore.style.borderColor = correct === total ? 'var(--gold)' : 'var(--line)';
+
+            // 檢查按鈕文字變更
+            clozeCheckBtn.textContent = '✅ Corregidas';
+            clozeCheckBtn.disabled = true;
+            clozeCheckBtn.style.opacity = '0.6';
+        }
+
+        function resetCloze() {
+            clozeChecked = false;
+            clozeInputs.forEach((input, idx) => {
+                input.value = '';
+                input.disabled = false;
+                const status = document.getElementById(`status-${idx}`);
+                status.textContent = '';
+                const blank = document.getElementById(`blank-${idx}`);
+                blank.textContent = '__________';
+                blank.className = 'blank';
+                const itemDiv = document.querySelector(`.cloze-item[data-index="${idx}"]`);
+                if (itemDiv) {
+                    itemDiv.classList.remove('correct', 'incorrect');
+                }
+            });
+            clozeScore.innerHTML = ' ';
+            clozeScore.style.background = 'var(--cream)';
+            clozeScore.style.borderColor = 'var(--line)';
+            clozeCheckBtn.textContent = '✅ Verificar';
+            clozeCheckBtn.disabled = false;
+            clozeCheckBtn.style.opacity = '1';
+
+            // 聚焦到第一個輸入框
+            if (clozeInputs.length > 0) {
+                clozeInputs[0].focus();
+            }
+        }
+
+        clozeCheckBtn.addEventListener('click', checkCloze);
+        clozeResetBtn.addEventListener('click', resetCloze);
+
+        // 初始化克漏字
+        renderCloze();
+
+        // ============================================================
+        //  模 式 切 換
+        // ============================================================
+
+        const tabs = document.querySelectorAll('.mode-tab');
+        const panels = {
+            flash: document.getElementById('panel-flash'),
+            cloze: document.getElementById('panel-cloze')
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const mode = this.dataset.mode;
+
+                // 更新 tab 狀態
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+
+                // 更新 panel
+                Object.keys(panels).forEach(key => {
+                    panels[key].classList.toggle('active', key === mode);
+                });
+
+                // 切換到克漏字時，如果還沒檢查過，聚焦第一個輸入框
+                if (mode === 'cloze' && !clozeChecked) {
+                    setTimeout(() => {
+                        const firstInput = document.getElementById('input-0');
+                        if (firstInput) firstInput.focus();
+                    }, 350);
+                }
+            });
+        });
+
+        // ============================================================
+        //  鍵 盤 快 捷 鍵（桌機輔助）
+        // ============================================================
+
+        document.addEventListener('keydown', function(e) {
+            // 閃卡模式：空白鍵翻轉，方向鍵右 → 下一張
+            const flashPanel = document.getElementById('panel-flash');
+            if (flashPanel.classList.contains('active')) {
+                if (e.key === ' ' || e.key === 'Space') {
+                    e.preventDefault();
+                    flashCard.click();
+                }
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    nextFlashcard();
+                }
+            }
+            // 克漏字模式：Ctrl+Enter 檢查
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                const clozePanel = document.getElementById('panel-cloze');
+                if (clozePanel.classList.contains('active')) {
+                    e.preventDefault();
+                    if (!clozeCheckBtn.disabled) {
+                        checkCloze();
+                    }
+                }
+            }
+        });
+
+        console.log('📚 Vocab Practice — Wabi-Sabi loaded!');
+        console.log('🃏 Flashcard: click to flip, → next, Space to flip');
+        console.log('✍️ Cloze: Ctrl+Enter to check');
+    </script>
+
+
