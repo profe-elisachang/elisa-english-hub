@@ -1,0 +1,555 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Your 'Wabi-Sabi'? | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --cream:#F3ECDD;
+    --card:#FBF6EC;
+    --ink:#2B2420;
+    --clay:#A85C3B;
+    --clay-dark:#7E4029;
+    --gold:#C08A28;
+    --gold-light:#EBD8A6;
+    --moss:#6E7B5C;
+    --moss-dark:#4E5A40;
+    --line:#D8CBAE;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    line-height:1.7;
+    font-size:1.08rem;
+  }
+
+  .container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:2.5rem 2rem 5rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:3rem 2rem 3.5rem;
+    margin-bottom:3rem;
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:6px;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero .enso{
+    width:220px;height:220px;
+    margin:0 auto 1rem;
+    border:14px solid var(--clay);
+    border-radius:43% 57% 61% 39% / 47% 41% 59% 53%;
+    border-right-color:transparent;
+    transform:rotate(18deg);
+    opacity:0.9;
+  }
+  .hero .kintsugi-line{
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    pointer-events:none;
+  }
+  .hero h2{
+    font-size:2.6rem;
+    margin:0.5rem 0 0.3rem;
+    letter-spacing:0.5px;
+    color:var(--ink);
+  }
+  .hero .subtitle{
+    font-size:1.3rem;
+    font-style:italic;
+    color:var(--clay-dark);
+    font-weight:700;
+    margin-bottom:1rem;
+  }
+  .hero .source-note{
+    font-size:0.95rem;
+    color:#6b6055;
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--clay-dark);
+    margin:3rem 0 1.2rem;
+    border-bottom:4px solid var(--gold);
+    padding-bottom:0.5rem;
+  }
+
+  /* ---------- USEFUL EXPRESSIONS ---------- */
+  .expr-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:1.2rem;
+  }
+  .expr-card{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-left:8px solid var(--moss);
+    border-radius:6px;
+    padding:1.2rem 1.4rem;
+  }
+  .expr-card .en{
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--ink);
+  }
+  .expr-card .es{
+    color:var(--moss-dark);
+    font-weight:700;
+    margin:0.25rem 0 0.6rem;
+  }
+  .expr-card .ex{
+    font-size:0.98rem;
+    color:#4a4038;
+    border-top:1px dashed var(--line);
+    padding-top:0.6rem;
+  }
+
+  /* ---------- ARTICLE ---------- */
+  .article-block{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:6px;
+    padding:1.8rem 2rem;
+    margin-bottom:1.5rem;
+  }
+  .article-block p{margin:0 0 1rem;}
+  .article-block p:last-child{margin-bottom:0;}
+  .byline{
+    font-size:0.95rem;
+    color:#6b6055;
+    margin-bottom:1.5rem;
+  }
+
+  /* highlight + custom tooltip */
+  .highlight{
+    position:relative;
+    background:var(--gold-light);
+    font-weight:700;
+    border-bottom:3px solid var(--gold);
+    padding:0 0.15rem;
+    cursor:help;
+    display:inline-block;
+  }
+  .highlight::after{
+    content:attr(data-tooltip);
+    position:absolute;
+    bottom:calc(100% + 10px);
+    left:50%;
+    transform:translateX(-50%) translateY(6px) scale(0.92);
+    background:var(--ink);
+    color:#fff;
+    font-weight:600;
+    font-size:0.85rem;
+    white-space:nowrap;
+    padding:0.4rem 0.7rem;
+    border-radius:5px;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.18s ease, transform 0.18s ease;
+    pointer-events:none;
+    z-index:20;
+  }
+  .highlight::before{
+    content:"";
+    position:absolute;
+    bottom:calc(100% + 4px);
+    left:50%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:var(--ink);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.18s ease;
+    z-index:20;
+  }
+  .highlight:hover::after,
+  .highlight:hover::before{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0) scale(1);
+  }
+  @media (max-width:600px){
+    .highlight::after{
+      white-space:normal;
+      max-width:160px;
+      font-size:0.78rem;
+    }
+  }
+
+  /* ---------- VOCAB GRID ---------- */
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1rem;
+    margin-bottom:2.5rem;
+  }
+  @media (max-width:1100px){ .vocab-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .vocab-grid{grid-template-columns:1fr;} }
+
+  .vocab-card{
+    background:var(--card);
+    border:2px solid var(--clay-dark);
+    border-radius:8px;
+    padding:1rem 1.1rem;
+    position:relative;
+  }
+  .vocab-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;
+    width:100%;
+    height:5px;
+    background:var(--gold);
+    border-radius:8px 8px 0 0;
+  }
+  .vocab-word{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:700;
+    font-size:1.1rem;
+    color:var(--clay-dark);
+    margin-bottom:0.3rem;
+  }
+  .speak-btn{
+    background:var(--moss);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:34px;height:34px;
+    font-size:1rem;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .speak-btn:hover{background:var(--moss-dark);}
+  .vocab-pos{
+    font-size:0.85rem;
+    font-style:italic;
+    color:#8a7d6c;
+    margin-bottom:0.4rem;
+  }
+  .vocab-def{margin-bottom:0.4rem;}
+  .vocab-es{
+    color:var(--clay-dark);
+    font-weight:700;
+    margin-bottom:0.4rem;
+  }
+  .vocab-ex{
+    font-size:0.92rem;
+    color:#4a4038;
+    border-top:1px dashed var(--line);
+    padding-top:0.5rem;
+  }
+
+  /* ---------- DISCUSSION ---------- */
+  .discussion-box{
+    background:var(--moss-dark);
+    color:#fdf9ef;
+    border-radius:8px;
+    padding:1.8rem 2rem;
+    margin-bottom:2.5rem;
+  }
+  .discussion-box ol{padding-left:1.4rem; margin:0;}
+  .discussion-box li{margin-bottom:0.9rem; font-size:1.08rem;}
+  .discussion-box li:last-child{margin-bottom:0;}
+
+  /* ---------- SELF-PRACTICE ---------- */
+  .practice-item{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-left:8px solid var(--clay);
+    border-radius:6px;
+    padding:1rem 1.4rem;
+    margin-bottom:1rem;
+  }
+  .practice-item summary{
+    font-weight:700;
+    cursor:pointer;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .practice-item[open] summary{margin-bottom:0.6rem;}
+  .practice-answer{
+    background:var(--gold-light);
+    border-radius:5px;
+    padding:0.7rem 1rem;
+    margin-top:0.5rem;
+    font-weight:600;
+  }
+
+  @media (max-width:600px){
+    .container{padding:1.5rem 1rem 3rem;}
+    .hero h2{font-size:1.9rem;}
+    .article-block{padding:1.2rem 1.3rem;}
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://i0.wp.com/kintsugi-spirit.com/wp-content/uploads/2025/03/Kintsugi-step-by-step-kintsukuroi.jpg" alt="🏺 What Is Your 'Wabi-Sabi'?" class="article-image">
+    </div>
+
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="enso"></div>
+    <h2>🏺 What Is Your 'Wabi-Sabi'?</h2>
+    <div class="subtitle">The attraction of imperfection</div>
+    <div class="source-note">Based on reporting from Fast Company, August 2026</div>
+  </div>
+
+  <!-- USEFUL EXPRESSIONS -->
+  <div class="section-title">💬 Useful Expressions</div>
+  <div class="expr-grid">
+    <div class="expr-card">
+      <div class="en">wear and tear</div>
+      <div class="es">desgaste natural</div>
+      <div class="ex">The machinery shows normal wear and tear after ten years of operation.</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">a step in the right direction</div>
+      <div class="es">un paso en la dirección correcta</div>
+      <div class="ex">Switching to the new safety protocol was a step in the right direction.</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">feedback loop</div>
+      <div class="es">ciclo de retroalimentación</div>
+      <div class="ex">Without regular customer input, the design team was stuck in a feedback loop of guesswork.</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">pervasive</div>
+      <div class="es">generalizado / omnipresente</div>
+      <div class="ex">Remote work has become pervasive across the tech industry.</div>
+    </div>
+    <div class="expr-card">
+      <div class="en">to embrace (something)</div>
+      <div class="es">aceptar / adoptar plenamente</div>
+      <div class="ex">Good leaders embrace mistakes as opportunities to learn.</div>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <div class="section-title">🏺 The Beauty of Broken Things</div>
+  <div class="article-block">
+    <div class="byline">by Eve Upton-Clark · Fast Company</div>
+    <p>Picture a <span class="highlight" data-tooltip="dientes desalineados">snaggletooth</span>, a small scar, or a birthmark. According to a growing number of designers and wellness writers, these so-called flaws share something in common: they all carry a touch of wabi-sabi. Wabi-sabi is a centuries-old Japanese <span class="highlight" data-tooltip="estético">aesthetic</span> philosophy that finds beauty in imperfection and in the natural <span class="highlight" data-tooltip="desgaste natural">wear and tear</span> that comes with time.</p>
+    <p>A worn wooden step, a cracked teacup, or the fine lines around someone's eyes can all be examples of it. In an era of <span class="highlight" data-tooltip="preventivo">preventative</span> treatments designed to erase every sign of aging before it appears, some argue we could all use a little more wabi-sabi in our lives.</p>
+  </div>
+
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-word">snaggletooth <button class="speak-btn" onclick="speakWord('snaggletooth')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">a tooth that is broken, crooked, or out of place</div>
+      <div class="vocab-es">diente torcido o desalineado</div>
+      <div class="vocab-ex">He has a snaggletooth, but his smile is unforgettable.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">aesthetic <button class="speak-btn" onclick="speakWord('aesthetic')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">connected with beauty and the study of beauty</div>
+      <div class="vocab-es">estético</div>
+      <div class="vocab-ex">The office was redesigned for both comfort and aesthetic appeal.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">wear and tear <button class="speak-btn" onclick="speakWord('wear and tear')">🔊</button></div>
+      <div class="vocab-pos">expression</div>
+      <div class="vocab-def">the gradual damage that happens through normal use over time</div>
+      <div class="vocab-es">desgaste natural</div>
+      <div class="vocab-ex">Even the best equipment shows wear and tear eventually.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">preventative <button class="speak-btn" onclick="speakWord('preventative')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">done in advance to stop something from happening</div>
+      <div class="vocab-es">preventivo</div>
+      <div class="vocab-ex">The company invested in preventative maintenance to avoid costly breakdowns.</div>
+    </div>
+  </div>
+
+  <div class="section-title">📱 Going Viral</div>
+  <div class="article-block">
+    <p>The concept recently found an unexpected audience on TikTok. A short audio clip taken from the animated series <em>King of the Hill</em> has been used in close to half a million videos. In the original scene, a character picks up a rose and remarks that it "got wabi-sabi." Users have since <span class="highlight" data-tooltip="reutilizado">repurposed</span> the sound to celebrate everything from <span class="highlight" data-tooltip="torcido / chueco">crooked</span> teeth to <span class="highlight" data-tooltip="aguileña (nariz)">aquiline</span> noses, reframing traits that beauty standards usually discourage as something worth embracing.</p>
+    <p>Yet as the idea spreads online, some of the nuance of the original philosophy has been lost along the way. Still, in a culture shaped by <span class="highlight" data-tooltip="búsqueda extrema de la apariencia física ideal">looksmaxxing</span> and ever-changing beauty micro-trends, a trend that celebrates individuality might be a step in the right direction.</p>
+  </div>
+
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-word">crooked <button class="speak-btn" onclick="speakWord('crooked')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">bent, twisted, or not in a straight line</div>
+      <div class="vocab-es">torcido / chueco</div>
+      <div class="vocab-ex">The picture frame hung crooked on the wall.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">aquiline <button class="speak-btn" onclick="speakWord('aquiline')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">curved like an eagle's beak, usually describing a nose</div>
+      <div class="vocab-es">aguileña</div>
+      <div class="vocab-ex">His aquiline profile made him instantly recognizable.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">looksmaxxing <button class="speak-btn" onclick="speakWord('looksmaxxing')">🔊</button></div>
+      <div class="vocab-pos">noun, informal</div>
+      <div class="vocab-def">efforts to maximize or improve one's physical appearance, especially among young men</div>
+      <div class="vocab-es">búsqueda extrema de la apariencia física ideal</div>
+      <div class="vocab-ex">Some teens spend hours a day on looksmaxxing routines they saw online.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">repurposed <button class="speak-btn" onclick="speakWord('repurposed')">🔊</button></div>
+      <div class="vocab-pos">verb (past)</div>
+      <div class="vocab-def">used something for a new or different purpose than originally intended</div>
+      <div class="vocab-es">reutilizado</div>
+      <div class="vocab-ex">The old factory was repurposed as a co-working space.</div>
+    </div>
+  </div>
+
+  <div class="section-title">🔍 Chasing an Impossible Standard</div>
+  <div class="article-block">
+    <p>The pressure to look a certain way is not new, but writers argue it keeps intensifying. One 2019 piece famously described the rise of a single, surgically-smoothed look as "The Age of Instagram Face." Commentators now describe a newer, TikTok-driven version of the same pattern as "the age of TikTok Face." Some call this aesthetic inflation: the gradual normalization of more extreme cosmetic changes over time.</p>
+    <p>The <span class="highlight" data-tooltip="omnipresencia">pervasiveness</span> of this pressure creates a <span class="highlight" data-tooltip="ciclo de retroalimentación">feedback loop</span> that spills over into everyday life, and researchers have found a <span class="highlight" data-tooltip="correlación">correlation</span> between time spent online and the desire for cosmetic surgery. If the faces you scroll past every day seem to be slowly <span class="highlight" data-tooltip="transformándose / mutando">morphing</span> into one single look, you are not imagining it — and that may be exactly why a little more wabi-sabi is worth embracing.</p>
+  </div>
+
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-word">pervasiveness <button class="speak-btn" onclick="speakWord('pervasiveness')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">the quality of existing everywhere or spreading widely</div>
+      <div class="vocab-es">omnipresencia</div>
+      <div class="vocab-ex">The pervasiveness of smartphones has changed how families spend time together.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">feedback loop <button class="speak-btn" onclick="speakWord('feedback loop')">🔊</button></div>
+      <div class="vocab-pos">noun phrase</div>
+      <div class="vocab-def">a cycle in which the results of a process influence future instances of that same process</div>
+      <div class="vocab-es">ciclo de retroalimentación</div>
+      <div class="vocab-ex">Negative comments online can create a feedback loop of anxiety and overuse.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">correlation <button class="speak-btn" onclick="speakWord('correlation')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">a connection or relationship between two things</div>
+      <div class="vocab-es">correlación</div>
+      <div class="vocab-ex">Researchers found a correlation between sleep quality and productivity.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-word">morphing <button class="speak-btn" onclick="speakWord('morphing')">🔊</button></div>
+      <div class="vocab-pos">verb (-ing)</div>
+      <div class="vocab-def">gradually developing a new appearance or changing into something else</div>
+      <div class="vocab-es">transformándose / mutando</div>
+      <div class="vocab-ex">The small startup was slowly morphing into a large corporation.</div>
+    </div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="section-title">🗣️ Discussion Questions</div>
+  <div class="discussion-box">
+    <ol>
+      <li>Do you think workplace culture in Taiwan or Mexico values "perfection" or "imperfection" more? Why?</li>
+      <li>How does social media affect beauty standards in your country, and have you noticed this trend among coworkers or in your industry?</li>
+      <li>Could the idea of wabi-sabi be applied to professional life — for example, accepting mistakes or imperfect processes at work? How?</li>
+    </ol>
+  </div>
+
+  <!-- SELF-PRACTICE -->
+  <div class="section-title">✍️ Self-Practice</div>
+
+  <details class="practice-item">
+    <summary>1. In your own words, what is "wabi-sabi"? Give one example from the article.</summary>
+    <div class="practice-answer">Wabi-sabi is a Japanese aesthetic philosophy that finds beauty in imperfection and natural aging. Examples from the article include a snaggletooth, a cracked teacup, or a worn wooden step.</div>
+  </details>
+
+  <details class="practice-item">
+    <summary>2. Fill in the blank: "Remote work has become _______ across the tech industry." (pervasive / aquiline)</summary>
+    <div class="practice-answer">pervasive</div>
+  </details>
+
+  <details class="practice-item">
+    <summary>3. True or False: The viral TikTok trend uses an audio clip from a nature documentary.</summary>
+    <div class="practice-answer">False. The audio clip comes from the animated series King of the Hill.</div>
+  </details>
+
+  <details class="practice-item">
+    <summary>4. Which word means "to develop a new appearance or change into something else"?</summary>
+    <div class="practice-answer">morph / morphing</div>
+  </details>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
