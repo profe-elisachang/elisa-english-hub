@@ -116,6 +116,7 @@ async function scanLessons() {
         { filename: 'High Desert.html', date: '2026-07-21', title: '🏜️ Hotel in the High Desert' },
         { filename: 'Wabi-Sab.html', date: '2026-07-23', title: '🏺 What Is Your \'Wabi-Sabi\'?' },
         { filename: 'Wabi-Sabi- Vocab Practice.html', date: '2026-07-23', title: '🏺 What Is Your \'Wabi-Sabi\'? Vocab Practice' },
+        { filename: 'Wabi-Sabi- Vocab Practice.html', date: '2026-07-28', title: '🏺 What Is Your \'Wabi-Sabi\'? Vocab Practice' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
