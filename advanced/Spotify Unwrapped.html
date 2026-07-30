@@ -1,0 +1,720 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Unwrapped: The Music Streaming Giant's Success Story | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --cream:#FBF6EA;
+    --ink:#14151A;
+    --green-deep:#146C43;
+    --green-mid:#1B8A4F;
+    --green-bright:#1ED760;
+    --coral:#FF5F3C;
+    --gold:#F2B705;
+    --panel:#FFFFFF;
+    --line:#14151A;
+  }
+
+  .spotify-lesson{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    line-height:1.7;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 0 4rem 0;
+  }
+
+  /* ===== HERO ===== */
+  .sp-hero{
+    background:var(--ink);
+    color:var(--cream);
+    padding:3.5rem 2rem 3rem 2rem;
+    position:relative;
+    overflow:hidden;
+    border-bottom:6px solid var(--green-bright);
+  }
+  .sp-hero-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:2.5rem;
+    align-items:center;
+  }
+  .sp-eyebrow{
+    display:inline-block;
+    background:var(--green-bright);
+    color:var(--ink);
+    font-weight:800;
+    padding:0.35rem 0.9rem;
+    border-radius:20px;
+    font-size:0.95rem;
+    letter-spacing:0.05em;
+    margin-bottom:1.2rem;
+  }
+  .sp-hero h2{
+    font-size:3rem;
+    font-weight:800;
+    line-height:1.1;
+    margin:0 0 0.6rem 0;
+  }
+  .sp-hero .sp-sub{
+    font-size:1.3rem;
+    font-weight:600;
+    color:var(--gold);
+    margin:0 0 1.2rem 0;
+  }
+  .sp-hero p.sp-lede{
+    font-size:1.15rem;
+    color:#E9E4D8;
+    max-width:52ch;
+  }
+
+  .sp-cards{
+    display:flex;
+    flex-direction:column;
+    gap:0.9rem;
+  }
+  .sp-card{
+    border-radius:18px;
+    padding:1.1rem 1.3rem;
+    font-weight:700;
+    box-shadow:4px 4px 0 rgba(0,0,0,0.35);
+  }
+  .sp-card .sp-card-year{
+    font-size:1.6rem;
+    font-weight:800;
+    display:block;
+  }
+  .sp-card .sp-card-fact{
+    font-weight:600;
+    font-size:1rem;
+    margin-top:0.2rem;
+  }
+  .sp-card.c1{ background:var(--green-bright); color:var(--ink); }
+  .sp-card.c2{ background:var(--coral); color:var(--ink); }
+  .sp-card.c3{ background:var(--gold); color:var(--ink); }
+
+  @media (max-width:900px){
+    .sp-hero-inner{grid-template-columns:1fr;}
+    .sp-hero h2{font-size:2.2rem;}
+  }
+
+  /* ===== VIDEO ===== */
+  .sp-video-block{
+    max-width:1000px;
+    margin:2.5rem auto 0 auto;
+    padding:0 2rem;
+  }
+  .sp-video-block h3{
+    font-size:1.4rem;
+    font-weight:800;
+    margin-bottom:0.8rem;
+    border-left:8px solid var(--green-deep);
+    padding-left:0.7rem;
+  }
+  .sp-video-block video{
+    width:100%;
+    border-radius:12px;
+    border:3px solid var(--ink);
+    background:#000;
+    display:block;
+  }
+  .sp-video-caption{
+    font-size:0.95rem;
+    color:#555;
+    margin-top:0.5rem;
+    font-style:italic;
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .sp-section{
+    max-width:1000px;
+    margin:3rem auto 0 auto;
+    padding:0 2rem;
+  }
+  .sp-section h3.sp-title{
+    font-size:1.6rem;
+    font-weight:800;
+    margin-bottom:1.2rem;
+    border-left:8px solid var(--green-deep);
+    padding-left:0.7rem;
+  }
+
+  /* ===== USEFUL EXPRESSIONS ===== */
+  .sp-expr-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1rem;
+  }
+  .sp-expr-card{
+    background:var(--panel);
+    border:3px solid var(--ink);
+    border-radius:14px;
+    padding:1.1rem 1.2rem;
+    box-shadow:5px 5px 0 var(--green-deep);
+  }
+  .sp-expr-en{
+    font-weight:800;
+    font-size:1.1rem;
+    color:var(--green-deep);
+    margin-bottom:0.2rem;
+  }
+  .sp-expr-es{
+    font-weight:700;
+    color:var(--coral);
+    margin-bottom:0.5rem;
+  }
+  .sp-expr-ex{
+    font-size:0.95rem;
+    color:#333;
+  }
+
+  /* ===== ARTICLE ===== */
+  .sp-article-header{
+    max-width:1000px;
+    margin:3.5rem auto 0 auto;
+    padding:0 2rem;
+    text-align:left;
+  }
+  .sp-article-header h2{
+    font-size:2rem;
+    font-weight:800;
+  }
+  .sp-byline{
+    font-style:italic;
+    color:#555;
+    margin-top:0.3rem;
+  }
+
+  .sp-paragraph{
+    max-width:1000px;
+    margin:1.8rem auto 0 auto;
+    padding:0 2rem;
+    font-size:1.15rem;
+  }
+  .sp-para-label{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--cream);
+    font-weight:800;
+    font-size:0.85rem;
+    padding:0.25rem 0.7rem;
+    border-radius:6px;
+    margin-bottom:0.7rem;
+  }
+
+  .highlight{
+    background:#FFF3B0;
+    font-weight:700;
+    border-bottom:3px solid var(--coral);
+    padding:0 0.2rem;
+    border-radius:3px;
+    position:relative;
+    cursor:help;
+  }
+  .highlight[data-tooltip]::before{
+    content:attr(data-tooltip);
+    position:absolute;
+    bottom:130%;
+    left:50%;
+    transform:translateX(-50%) translateY(6px);
+    background:var(--ink);
+    color:#fff;
+    padding:0.5rem 0.8rem;
+    border-radius:8px;
+    font-size:0.95rem;
+    font-weight:600;
+    white-space:nowrap;
+    opacity:0;
+    visibility:hidden;
+    transition:all 0.2s ease;
+    z-index:10;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+  .highlight[data-tooltip]::after{
+    content:"";
+    position:absolute;
+    bottom:130%;
+    left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    border:7px solid transparent;
+    border-top-color:var(--ink);
+    margin-bottom:-8px;
+    opacity:0;
+    visibility:hidden;
+    transition:all 0.2s ease;
+    z-index:10;
+  }
+  .highlight[data-tooltip]:hover::before{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+  }
+  .highlight[data-tooltip]:hover::after{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+  }
+  @media (max-width:600px){
+    .highlight[data-tooltip]::before{
+      white-space:normal;
+      width:55vw;
+      text-align:center;
+    }
+  }
+
+  /* ===== VOCAB GRID ===== */
+  .sp-vocab-grid{
+    max-width:1000px;
+    margin:1.2rem auto 0 auto;
+    padding:0 2rem;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+  }
+  @media (max-width:1000px){ .sp-vocab-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .sp-vocab-grid{grid-template-columns:1fr;} }
+
+  .sp-vocab-card{
+    background:var(--panel);
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    padding:0.9rem 1rem;
+    box-shadow:4px 4px 0 var(--gold);
+  }
+  .sp-vocab-word{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    font-weight:800;
+    font-size:1.05rem;
+    color:var(--green-deep);
+  }
+  .sp-speak-btn{
+    background:var(--green-deep);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:26px;
+    height:26px;
+    font-size:0.85rem;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .sp-speak-btn:hover{ background:var(--coral); }
+  .sp-pos{
+    font-size:0.8rem;
+    font-style:italic;
+    color:#777;
+    margin:0.15rem 0 0.4rem 0;
+  }
+  .sp-def{
+    font-size:0.92rem;
+    margin-bottom:0.3rem;
+  }
+  .sp-es{
+    font-weight:700;
+    color:var(--coral);
+    font-size:0.92rem;
+    margin-bottom:0.4rem;
+  }
+  .sp-example{
+    font-size:0.88rem;
+    color:#444;
+    border-top:1px dashed #ccc;
+    padding-top:0.4rem;
+  }
+
+  /* ===== DISCUSSION ===== */
+  .sp-discuss-list{
+    list-style:none;
+    counter-reset:disc;
+    padding:0;
+  }
+  .sp-discuss-list li{
+    counter-increment:disc;
+    background:var(--panel);
+    border-left:8px solid var(--coral);
+    border-radius:0 10px 10px 0;
+    padding:1rem 1.2rem;
+    margin-bottom:1rem;
+    font-size:1.1rem;
+    position:relative;
+    box-shadow:3px 3px 0 rgba(0,0,0,0.08);
+  }
+  .sp-discuss-list li::before{
+    content:"Q"counter(disc);
+    font-weight:800;
+    color:var(--coral);
+    margin-right:0.5rem;
+  }
+
+  /* ===== SELF PRACTICE ===== */
+  .sp-practice details{
+    background:var(--panel);
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    padding:0.9rem 1.2rem;
+    margin-bottom:1rem;
+  }
+  .sp-practice summary{
+    font-weight:800;
+    cursor:pointer;
+    font-size:1.05rem;
+  }
+  .sp-practice .sp-answer{
+    margin-top:0.7rem;
+    padding-top:0.7rem;
+    border-top:2px dashed var(--gold);
+    color:#333;
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="Spotify Unwrapped" alt="" class="article-image">
+    </div>
+
+
+<div class="spotify-lesson">
+
+  <!-- ===== HERO ===== -->
+  <section class="sp-hero">
+    <div class="sp-hero-inner">
+      <div>
+        <span class="sp-eyebrow">🎧 CNN Business</span>
+        <h2>Spotify Unwrapped</h2>
+        <p class="sp-sub">How One Company Keeps Reinventing the Music Business</p>
+        <p class="sp-lede">Twenty years after its launch in Stockholm, Spotify has grown from a simple music app into a global platform for podcasts, audiobooks, and marketing genius. This lesson looks at a CNN interview with Spotify's SVP of Markets and Subscriptions, Gustav Gyllenhammar.</p>
+      </div>
+      <div class="sp-cards">
+        <div class="sp-card c1"><span class="sp-card-year">20</span><span class="sp-card-fact">Years since Spotify launched in Stockholm</span></div>
+        <div class="sp-card c2"><span class="sp-card-year">184</span><span class="sp-card-fact">Markets where Spotify now operates</span></div>
+        <div class="sp-card c3"><span class="sp-card-year">120+</span><span class="sp-card-fact">Startups founded by former Spotify employees</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIDEO ===== -->
+  <div class="sp-video-block">
+    <h3>🎥 Watch the Interview</h3>
+    <video controls="" preload="metadata">
+      <source src="https://storage.liveabc.com/qrcode/f5383faf-34ff-4598-9064-d47d6dcd994b/mpdnqcj7/%E9%9F%B3%E6%A8%82%E4%B8%B2%E6%B5%81%E5%B7%A8%E9%A0%ADSpotify%E7%9A%84%E6%88%90%E5%8A%9F%E4%B9%8B%E9%81%93/3.+Spotify.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="sp-video-caption">CNN Correspondent Clare Sebastian interviews Gustav Gyllenhammar, SVP of Markets and Subscriptions at Spotify.</p>
+  </div>
+
+  <!-- ===== USEFUL EXPRESSIONS ===== -->
+  <section class="sp-section">
+    <h3 class="sp-title">💬 Useful Expressions</h3>
+    <div class="sp-expr-grid">
+      <div class="sp-expr-card">
+        <div class="sp-expr-en">to pitch (an idea)</div>
+        <div class="sp-expr-es">presentar una propuesta</div>
+        <div class="sp-expr-ex">Our IT team will pitch the new safety-tracking app to management next week.</div>
+      </div>
+      <div class="sp-expr-card">
+        <div class="sp-expr-en">founder factory</div>
+        <div class="sp-expr-es">empresa que forma emprendedores</div>
+        <div class="sp-expr-ex">Employees who leave our company often start their own consulting firms — HR jokes that we're a founder factory.</div>
+      </div>
+      <div class="sp-expr-card">
+        <div class="sp-expr-en">growth strategy</div>
+        <div class="sp-expr-es">estrategia de crecimiento</div>
+        <div class="sp-expr-ex">The new growth strategy focuses on expanding our safety training program to every plant location.</div>
+      </div>
+      <div class="sp-expr-card">
+        <div class="sp-expr-en">to deepen engagement</div>
+        <div class="sp-expr-es">profundizar la participación</div>
+        <div class="sp-expr-ex">Monthly town halls have helped deepen engagement between employees and leadership.</div>
+      </div>
+      <div class="sp-expr-card">
+        <div class="sp-expr-en">retention tool</div>
+        <div class="sp-expr-es">herramienta de retención</div>
+        <div class="sp-expr-ex">Our IT department built an internal dashboard as a retention tool to keep top talent from leaving.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLE ===== -->
+  <div class="sp-article-header">
+    <h2>🎧 Spotify Unwrapped: The Music Streaming Giant's Success Story</h2>
+    <p class="sp-byline">Adapted from a CNN Business interview with Gustav Gyllenhammar, SVP of Markets and Subscriptions, Spotify</p>
+  </div>
+
+  <!-- Paragraph 1 -->
+  <div class="sp-paragraph">
+    <span class="sp-para-label">Paragraph 1</span>
+    <p>CNN correspondent Clare Sebastian describes a Spotify <span class="highlight" data-tooltip="día de demostración">demo day</span> where company founders <span class="highlight" data-tooltip="presentar una idea o proyecto">pitch</span> new ideas to investors — a friendlier version of a startup competition show. She then asks a bigger question: how does Sweden, a country of only ten million people, keep producing so many successful <span class="highlight" data-tooltip="ecosistema tecnológico">tech ecosystems</span>? At the center of that success story is one company: Spotify.</p>
+  </div>
+  <div class="sp-vocab-grid">
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">demo day <button class="sp-speak-btn" onclick="speakWord('demo day')">🔊</button></div>
+      <div class="sp-pos">noun phrase</div>
+      <div class="sp-def">An event where companies present new products or ideas to investors.</div>
+      <div class="sp-es">día de demostración</div>
+      <div class="sp-example">Every quarter, our EHS team holds a demo day to showcase new safety equipment.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">pitch <button class="sp-speak-btn" onclick="speakWord('pitch')">🔊</button></div>
+      <div class="sp-pos">verb</div>
+      <div class="sp-def">To present an idea persuasively in order to get approval or funding.</div>
+      <div class="sp-es">presentar una propuesta</div>
+      <div class="sp-example">She pitched a plan to reduce plant downtime by 15%.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">investor <button class="sp-speak-btn" onclick="speakWord('investor')">🔊</button></div>
+      <div class="sp-pos">noun</div>
+      <div class="sp-def">A person or company that puts money into a business hoping to profit.</div>
+      <div class="sp-es">inversionista</div>
+      <div class="sp-example">The factory expansion was funded by three private investors.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">tech ecosystem <button class="sp-speak-btn" onclick="speakWord('tech ecosystem')">🔊</button></div>
+      <div class="sp-pos">noun phrase</div>
+      <div class="sp-def">A network of companies, investors, and talent that supports technology growth in a region.</div>
+      <div class="sp-es">ecosistema tecnológico</div>
+      <div class="sp-example">Taiwan has built a strong tech ecosystem around semiconductor manufacturing.</div>
+    </div>
+  </div>
+
+  <!-- Paragraph 2 -->
+  <div class="sp-paragraph">
+    <span class="sp-para-label">Paragraph 2</span>
+    <p>This year marks two decades since Spotify was founded in Stockholm, changing the music industry and Sweden's tech scene forever. Since the company's 2018 stock market debut, it has <span class="highlight" data-tooltip="acumulado">amassed</span> more than 750 million monthly users and built a reputation as a <span class="highlight" data-tooltip="fábrica de fundadores">founder factory</span> — former employees, known as <span class="highlight" data-tooltip="antiguos empleados">alumni</span>, have gone on to launch over 120 startups. Gustav Gyllenhammar, who now leads the company's global growth strategy, explains that podcasts have become a huge <span class="highlight" data-tooltip="motor de crecimiento">driver</span> of that growth, alongside newer additions like audiobooks and personalized features.</p>
+  </div>
+  <div class="sp-vocab-grid">
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">to amass <button class="sp-speak-btn" onclick="speakWord('amass')">🔊</button></div>
+      <div class="sp-pos">verb</div>
+      <div class="sp-def">To gather or accumulate something in large quantities over time.</div>
+      <div class="sp-es">acumular</div>
+      <div class="sp-example">The company has amassed a huge amount of customer data over the past decade.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">founder factory <button class="sp-speak-btn" onclick="speakWord('founder factory')">🔊</button></div>
+      <div class="sp-pos">noun phrase</div>
+      <div class="sp-def">A company known for producing many employees who go on to start their own successful businesses.</div>
+      <div class="sp-es">fábrica de fundadores</div>
+      <div class="sp-example">People say our old tech department is a founder factory — three engineers have since opened their own firms.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">alumni <button class="sp-speak-btn" onclick="speakWord('alumni')">🔊</button></div>
+      <div class="sp-pos">noun (plural)</div>
+      <div class="sp-def">Former employees, students, or members of an organization.</div>
+      <div class="sp-es">ex empleados / ex alumnos</div>
+      <div class="sp-example">Our HR department stays in touch with alumni who've moved on to other companies.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">driver (of growth) <button class="sp-speak-btn" onclick="speakWord('driver')">🔊</button></div>
+      <div class="sp-pos">noun</div>
+      <div class="sp-def">A key factor that causes something to grow or improve.</div>
+      <div class="sp-es">motor / impulsor</div>
+      <div class="sp-example">Employee training has been the main driver of our safety improvements this year.</div>
+    </div>
+  </div>
+
+  <!-- Paragraph 3 -->
+  <div class="sp-paragraph">
+    <span class="sp-para-label">Paragraph 3</span>
+    <p>Gyllenhammar says Spotify is <span class="highlight" data-tooltip="afortunado">fortunate</span> to operate in 184 markets worldwide. In wealthier Western markets, the company focuses on launching new products for existing subscribers. But in emerging regions like Africa, South Asia, and Southeast Asia, Spotify is seeing <span class="highlight" data-tooltip="tremendo, enorme">tremendous</span> growth at the top of its <span class="highlight" data-tooltip="modelo gratuito con opción de pago">freemium</span> business <span class="highlight" data-tooltip="embudo de ventas">funnel</span> — meaning large numbers of free users who gradually become paying subscribers.</p>
+  </div>
+  <div class="sp-vocab-grid">
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">fortunate <button class="sp-speak-btn" onclick="speakWord('fortunate')">🔊</button></div>
+      <div class="sp-pos">adjective</div>
+      <div class="sp-def">Lucky; having good fortune or favorable circumstances.</div>
+      <div class="sp-es">afortunado</div>
+      <div class="sp-example">We're fortunate to have such a low accident rate this quarter.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">tremendous <button class="sp-speak-btn" onclick="speakWord('tremendous')">🔊</button></div>
+      <div class="sp-pos">adjective</div>
+      <div class="sp-def">Very great in amount, scale, or intensity.</div>
+      <div class="sp-es">tremendo, enorme</div>
+      <div class="sp-example">The new onboarding process made a tremendous difference in employee retention.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">freemium <button class="sp-speak-btn" onclick="speakWord('freemium')">🔊</button></div>
+      <div class="sp-pos">noun / adjective</div>
+      <div class="sp-def">A business model that offers a free basic service, with paid upgrades for extra features.</div>
+      <div class="sp-es">modelo gratuito con opción de pago</div>
+      <div class="sp-example">Many software companies use a freemium model to attract users before asking them to pay.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">funnel <button class="sp-speak-btn" onclick="speakWord('funnel')">🔊</button></div>
+      <div class="sp-pos">noun</div>
+      <div class="sp-def">The step-by-step process that turns a general audience into paying customers.</div>
+      <div class="sp-es">embudo de ventas</div>
+      <div class="sp-example">Our marketing funnel starts with a free webinar and ends with a paid subscription.</div>
+    </div>
+  </div>
+
+  <!-- Paragraph 4 -->
+  <div class="sp-paragraph">
+    <span class="sp-para-label">Paragraph 4</span>
+    <p>Ten years ago, Spotify launched what may be its smartest marketing move ever: Spotify Wrapped, a personalized, <span class="highlight" data-tooltip="basado en datos">data-driven</span> summary of each user's listening habits. Last year's Wrapped campaign helped bring in a record-breaking number of new users in just three months. During their conversation, Gyllenhammar and Sebastian even compare their own "listening ages" — a playful Wrapped feature. Gyllenhammar notes that every December, Wrapped <span class="highlight" data-tooltip="dominar, controlar">dominates</span> conversations both online and around office watercoolers, showing just how <span class="highlight" data-tooltip="apasionado">passionate</span> people are about understanding themselves through data.</p>
+  </div>
+  <div class="sp-vocab-grid">
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">data-driven <button class="sp-speak-btn" onclick="speakWord('data-driven')">🔊</button></div>
+      <div class="sp-pos">adjective</div>
+      <div class="sp-def">Based on the analysis of data rather than opinion or intuition.</div>
+      <div class="sp-es">basado en datos</div>
+      <div class="sp-example">We switched to a data-driven approach for scheduling maintenance checks.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">to dominate <button class="sp-speak-btn" onclick="speakWord('dominate')">🔊</button></div>
+      <div class="sp-pos">verb</div>
+      <div class="sp-def">To be the main topic or most powerful influence in a situation.</div>
+      <div class="sp-es">dominar</div>
+      <div class="sp-example">The new safety policy dominated conversation in the break room all week.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">passionate <button class="sp-speak-btn" onclick="speakWord('passionate')">🔊</button></div>
+      <div class="sp-pos">adjective</div>
+      <div class="sp-def">Having or showing strong feelings or enthusiasm about something.</div>
+      <div class="sp-es">apasionado</div>
+      <div class="sp-example">Our EHS coordinator is passionate about improving workplace safety culture.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">retention tool <button class="sp-speak-btn" onclick="speakWord('retention tool')">🔊</button></div>
+      <div class="sp-pos">noun phrase</div>
+      <div class="sp-def">A strategy or feature designed to keep customers or employees engaged over time.</div>
+      <div class="sp-es">herramienta de retención</div>
+      <div class="sp-example">The mentorship program works as a retention tool for new hires.</div>
+    </div>
+  </div>
+
+  <!-- Paragraph 5 -->
+  <div class="sp-paragraph">
+    <span class="sp-para-label">Paragraph 5</span>
+    <p>Looking ahead, Gyllenhammar says Spotify continues to grow its subscriber base month after month, even in <span class="highlight" data-tooltip="mercados maduros">mature markets</span> like Sweden and Norway. Growth is even faster in newly launched markets — he calls India a <span class="highlight" data-tooltip="fenomenalmente">phenomenally</span> large market with huge <span class="highlight" data-tooltip="potencial">potential</span>. He expects the company to keep growing for many years, not just in total users, but also in revenue generated per subscriber.</p>
+  </div>
+  <div class="sp-vocab-grid">
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">mature market <button class="sp-speak-btn" onclick="speakWord('mature market')">🔊</button></div>
+      <div class="sp-pos">noun phrase</div>
+      <div class="sp-def">A market where a product or service has been established for a long time and growth has slowed.</div>
+      <div class="sp-es">mercado maduro</div>
+      <div class="sp-example">Even in mature markets, our company keeps finding ways to grow.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">phenomenally <button class="sp-speak-btn" onclick="speakWord('phenomenally')">🔊</button></div>
+      <div class="sp-pos">adverb</div>
+      <div class="sp-def">Extremely; to a remarkable or extraordinary degree.</div>
+      <div class="sp-es">fenomenalmente</div>
+      <div class="sp-example">Sales in that region grew phenomenally after the new plant opened.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">potential <button class="sp-speak-btn" onclick="speakWord('potential')">🔊</button></div>
+      <div class="sp-pos">noun</div>
+      <div class="sp-def">The capacity to develop or succeed in the future.</div>
+      <div class="sp-es">potencial</div>
+      <div class="sp-example">Management sees strong potential in the new automation project.</div>
+    </div>
+    <div class="sp-vocab-card">
+      <div class="sp-vocab-word">revenue per subscriber <button class="sp-speak-btn" onclick="speakWord('revenue per subscriber')">🔊</button></div>
+      <div class="sp-pos">noun phrase</div>
+      <div class="sp-def">The average amount of money a company earns from each customer.</div>
+      <div class="sp-es">ingresos por suscriptor</div>
+      <div class="sp-example">The company raised prices slightly to increase revenue per subscriber.</div>
+    </div>
+  </div>
+
+  <!-- ===== DISCUSSION ===== -->
+  <section class="sp-section">
+    <h3 class="sp-title">🗣️ Discussion Questions</h3>
+    <ul class="sp-discuss-list">
+      <li>What factors do you think help a company or country become a "founder factory" like Spotify has for Sweden?</li>
+      <li>Spotify's freemium model gives away a free product to eventually gain paying subscribers. Would this strategy work in your industry? Why or why not?</li>
+      <li>Marketing campaigns like Spotify Wrapped turn personal data into a shareable experience. What other examples of "data as marketing" have you seen in your daily life?</li>
+    </ul>
+  </section>
+
+  <!-- ===== SELF PRACTICE ===== -->
+  <section class="sp-section sp-practice">
+    <h3 class="sp-title">✍️ Self-Practice</h3>
+    <details>
+      <summary>1. Use the word "pitch" in a sentence about your own work.</summary>
+      <div class="sp-answer">Sample answer: Next month, I need to pitch a new inventory system to the operations director.</div>
+    </details>
+    <details>
+      <summary>2. In your own words, explain what a "freemium" business model is.</summary>
+      <div class="sp-answer">Sample answer: A freemium model offers a basic version of a product for free, while charging users for premium features or an upgraded experience.</div>
+    </details>
+    <details>
+      <summary>3. Describe a company or team you'd call a "founder factory," and explain why.</summary>
+      <div class="sp-answer">Sample answer: My previous company could be called a founder factory — three former colleagues have since started their own consulting businesses using skills they learned there.</div>
+    </details>
+    <details>
+      <summary>4. What does "deepening engagement" mean in a workplace context — for example, with clients or employees?</summary>
+      <div class="sp-answer">Sample answer: It means building a stronger, more consistent connection over time, such as through regular check-ins, personalized communication, or opportunities for feedback.</div>
+    </details>
+  </section>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
