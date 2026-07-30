@@ -1,0 +1,513 @@
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>English Conversation with Elisa · Spotify Success</title>
+    <link rel="stylesheet" href="../style-advanced.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wdth@75&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* ----- global reset & base ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Noto Sans', sans-serif;
+            background: #eae5d9; /* warm stone – no purple */
+            color: #1e2a2f;
+            line-height: 1.7;
+            padding: 0 1rem 3rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #f6f1e7;
+            border-radius: 48px 48px 32px 32px;
+            padding: 2rem 2.5rem 3rem;
+            box-shadow: 0 20px 40px rgba(0, 20, 20, 0.08);
+        }
+
+        /* ----- fixed header (exact) ----- */
+        .header {
+            background: #1d3b3a;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 14px rgba(0, 30, 30, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem 1.2rem;
+            width: 100%;
+        }
+
+        .header h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #fbf3e0;
+            letter-spacing: -0.3px;
+            margin: 0;
+            background: rgba(255, 215, 150, 0.15);
+            padding: 0.2rem 1rem 0.2rem 0.5rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .level-badge {
+            background: #e8b88a;
+            color: #1d2f2e;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.25rem 1.2rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            border: 1px solid #f6dcc6;
+        }
+
+        .search-box {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-to-calendar-btn {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fef7ed;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.25s ease;
+            backdrop-filter: blur(2px);
+        }
+        .back-to-calendar-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            color: #fff;
+            border-color: #ffe1b3;
+            transform: scale(1.02);
+        }
+
+        /* ----- lesson sections ----- */
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 4px solid #c9b69a;
+            color: #1c3a38;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        /* ----- useful expressions ----- */
+        .expressions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 2rem;
+            background: #f8f2e7;
+            padding: 1.8rem 2rem;
+            border-radius: 32px;
+            border-left: 8px solid #c7a77b;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .expr-item {
+            background: #fffdf9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 3px 8px rgba(0, 20, 10, 0.04);
+        }
+        .expr-item strong {
+            color: #1e4b47;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .expr-item .sp {
+            color: #3b5f5a;
+            font-weight: 600;
+            margin: 0 0.3rem;
+        }
+        .expr-item .example {
+            display: block;
+            color: #3f4e4a;
+            background: #f0ece1;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+            border-left: 3px solid #b7a081;
+        }
+
+        /* ----- article ----- */
+        .article-card {
+            background: #fcf9f2;
+            padding: 2rem 2.2rem;
+            border-radius: 36px;
+            box-shadow: 0 10px 24px rgba(0, 20, 10, 0.04);
+            border: 1px solid #e2d7c4;
+        }
+        .article-card h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #14302d;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .article-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1.08rem;
+        }
+        .article-card .speaker {
+            font-weight: 700;
+            color: #1d4a45;
+        }
+        .highlight {
+            background: #fce9c9;
+            font-weight: 700;
+            padding: 0.1rem 0.4rem;
+            border-radius: 12px;
+            border-bottom: 3px solid #d48d5a;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            cursor: help;
+            transition: background 0.1s;
+        }
+        .highlight:hover {
+            background: #ffdca8;
+        }
+
+        /* ----- vocab boxes (directly after each paragraph) ----- */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            background: #eae3d6;
+            padding: 1.5rem 1.2rem;
+            border-radius: 32px;
+            margin: 1.5rem 0 2rem 0;
+            border: 1px solid #cfc0ab;
+        }
+        .vocab-item {
+            background: #fffcf5;
+            padding: 0.9rem 1rem 1rem 1rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 8px rgba(60, 50, 30, 0.06);
+            transition: all 0.1s;
+            border-left: 5px solid #b69673;
+        }
+        .vocab-item .word {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #14322e;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .vocab-item .word button {
+            background: #d6c8b2;
+            border: none;
+            border-radius: 40px;
+            padding: 0.1rem 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1d2f2b;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .vocab-item .word button:hover {
+            background: #b8a182;
+            color: white;
+        }
+        .vocab-item .explanation {
+            font-size: 0.95rem;
+            margin: 0.2rem 0 0.1rem 0;
+            color: #1a3531;
+        }
+        .vocab-item .spanish {
+            background: #efe7db;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #374e48;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        .vocab-item .example-v {
+            font-size: 0.9rem;
+            color: #465e58;
+            background: #f4eee2;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-top: 0.3rem;
+            border-left: 3px solid #bda889;
+        }
+
+        /* ----- discussion & self-practice ----- */
+        .discuss-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            background: #f6efe4;
+            padding: 2rem 2rem;
+            border-radius: 36px;
+            margin-top: 1rem;
+        }
+        .discuss-item {
+            background: #fffcf5;
+            padding: 1.2rem 1.5rem;
+            border-radius: 28px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+            font-weight: 500;
+        }
+
+        .self-practice {
+            background: #e2d9cb;
+            padding: 2rem 2rem;
+            border-radius: 36px;
+            margin-top: 2rem;
+        }
+        .self-item {
+            background: #fcf8f0;
+            padding: 1rem 1.6rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            border-left: 6px solid #b69673;
+        }
+        .self-item summary {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1d3d38;
+            cursor: pointer;
+            padding: 0.3rem 0;
+        }
+        .self-item .answer {
+            margin-top: 0.7rem;
+            padding: 0.5rem 0.8rem;
+            background: #f1ece0;
+            border-radius: 24px;
+            color: #1f3732;
+        }
+
+        /* ----- responsive ----- */
+        @media (max-width: 900px) {
+            .container { padding: 1.2rem; }
+            .header { padding: 0.7rem 1.2rem; }
+            .header h1 { font-size: 1.3rem; }
+            .expressions-grid { grid-template-columns: 1fr; }
+            .vocab-grid { grid-template-columns: 1fr 1fr; }
+            .discuss-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+            .article-card { padding: 1.2rem; }
+            .header-content { flex-direction: column; align-items: stretch; }
+            .search-box { margin-left: 0; }
+        }
+
+        /* ----- tooltip position (above) & extra contrast ----- */
+        .highlight[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            background: #2b4942;
+            color: #f6efe2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transform: translateY(-120%);
+            margin-left: -0.2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .highlight {
+            position: relative;
+        }
+
+        /* extra spacing */
+        .mt-2 { margin-top: 0.8rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+    </style>
+
+
+<div class="container">
+
+    <!-- ===== FIXED HEADER (exact) ===== -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📚 English Conversation with Elisa</h1>
+            <span class="level-badge">Advanced Level </span>
+            <div class="search-box">
+                <a href="../index-advanced.html" class="back-to-calendar-btn" style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.25); color: white; text-decoration: none; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;">Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== LESSON CONTENT ===== -->
+
+    <!-- 1. USEFUL EXPRESSIONS -->
+    <div class="section-title">💬 Useful Expressions</div>
+    <div class="expressions-grid">
+        <div class="expr-item"><strong>go public</strong> <span class="sp">· salir a bolsa</span> <span class="example">“Spotify went public in 2018 via direct listing.”</span></div>
+        <div class="expr-item"><strong>pitch to investors</strong> <span class="sp">· presentar a inversores</span> <span class="example">“Founders pitch their ideas to new investors.”</span></div>
+        <div class="expr-item"><strong>feed into</strong> <span class="sp">· alimentar / inyectar</span> <span class="example">“Alumni feed their experience into the tech ecosystem.”</span></div>
+        <div class="expr-item"><strong>freemium funnel</strong> <span class="sp">· embudo freemium</span> <span class="example">“Users enter the freemium funnel and later subscribe.”</span></div>
+        <div class="expr-item"><strong>retention tool</strong> <span class="sp">· herramienta de retención</span> <span class="example">“Spotify Wrapped works as a powerful retention tool.”</span></div>
+        <div class="expr-item"><strong>listening age</strong> <span class="sp">· edad de escucha</span> <span class="example">“My listening age on Spotify is 19.”</span></div>
+    </div>
+
+    <!-- 2. ARTICLE with HIGHLIGHTED VOCABULARY (FULL VERSION) -->
+    <div class="section-title">📊 Spotify's Success · Full Article</div>
+    <div class="article-card">
+        <h2>🎧 Spotify: From Stockholm to the World</h2>
+
+        <!-- Paragraph 1 -->
+        <p><span class="speaker">CLARE SEBASTIAN, CNN CORRESPONDENT</span><br>
+        So, this is a demo day bringing together founders and CEOs. Essentially, [it’s] an opportunity to <span class="highlight" title="presentar">pitch</span> to new <span class="highlight" title="inversores">investors</span> — sort of, like, a slightly kinder <em>Shark Tank</em> for the next Swedish success story. So, how is Sweden, a country of just 10 million people, consistently producing this <span class="highlight" title="canal / flujo continuo">pipeline</span> of global tech companies? At the heart of this tech ecosystem success is one company: Spotify.</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><div class="word">pitch <button onclick="speakWord('pitch')">🔊</button></div><div class="explanation">present an idea, esp. to investors</div><span class="spanish">presentar</span><div class="example-v">“He pitched his startup to the board.”</div></div>
+            <div class="vocab-item"><div class="word">investors <button onclick="speakWord('investors')">🔊</button></div><div class="explanation">people or institutions that put money into a business</div><span class="spanish">inversores</span><div class="example-v">“The investors asked tough questions.”</div></div>
+            <div class="vocab-item"><div class="word">pipeline <button onclick="speakWord('pipeline')">🔊</button></div><div class="explanation">a steady flow of talent or products</div><span class="spanish">canal / flujo</span><div class="example-v">“A strong pipeline of new startups.”</div></div>
+        </div>
+
+        <!-- Paragraph 2 -->
+        <p>This year marks 20 years since it was founded here in Stockholm — changing the landscape of the music industry and Sweden’s tech scene forever. Since <span class="highlight" title="salir a bolsa">going public</span> in 2018 — I was there to witness the groundbreaking direct listing — the streaming giant has amassed more than 750 million monthly active users, with a growing reputation as a <span class="highlight" title="fábrica de fundadores">founder factory</span>. Its alumni have <span class="highlight" title="inyectar / alimentar">fed</span> experience into the Swedish tech ecosystem and gone on to launch over 120 investment-backed startups.</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><div class="word">going public <button onclick="speakWord('going public')">🔊</button></div><div class="explanation">listing shares on a stock exchange</div><span class="spanish">salir a bolsa</span><div class="example-v">“Spotify went public via direct listing.”</div></div>
+            <div class="vocab-item"><div class="word">founder factory <button onclick="speakWord('founder factory')">🔊</button></div><div class="explanation">a company that produces many startup founders</div><span class="spanish">fábrica de fundadores</span><div class="example-v">“Spotify is known as a founder factory.”</div></div>
+            <div class="vocab-item"><div class="word">fed (feed into) <button onclick="speakWord('feed into')">🔊</button></div><div class="explanation">to contribute or supply (experience, resources)</div><span class="spanish">inyectar / alimentar</span><div class="example-v">“They feed their know-how into new ventures.”</div></div>
+        </div>
+
+        <!-- Paragraph 3 – Gustav's quote, full -->
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR, SVP, MARKETS AND SUBSCRIPTIONS, SPOTIFY</span><br>
+        “Here, we have the podcast studio where, sort of, we invite some of our podcast creators in.”</p>
+        <p><span class="speaker">CLARE SEBASTIAN, CNN CORRESPONDENT</span><br>
+        “The podcast has been a huge driver.”</p>
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR</span><br>
+        “It’s been a huge hit for Spotify. Spotify used to be only a music service, and in the last couple of years, we’ve added podcasts, we’ve added audiobooks [and] we’ve added a whole level of <span class="highlight" title="personalización">personalization</span> and <span class="highlight" title="interactividad">interactivity</span> into the product.”</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><div class="word">driver <button onclick="speakWord('driver')">🔊</button></div><div class="explanation">a key factor that pushes growth</div><span class="spanish">motor / impulsor</span><div class="example-v">“Podcasts are a huge driver for Spotify.”</div></div>
+            <div class="vocab-item"><div class="word">personalization <button onclick="speakWord('personalization')">🔊</button></div><div class="explanation">customizing experience for each user</div><span class="spanish">personalización</span><div class="example-v">“AI-driven personalization boosts engagement.”</div></div>
+            <div class="vocab-item"><div class="word">interactivity <button onclick="speakWord('interactivity')">🔊</button></div><div class="explanation">two-way engagement between user and product</div><span class="spanish">interactividad</span><div class="example-v">“New interactive features keep users hooked.”</div></div>
+        </div>
+
+        <!-- Paragraph 4 – growth areas -->
+        <p><span class="speaker">CLARE SEBASTIAN, CNN CORRESPONDENT</span><br>
+        “Where are the biggest areas of growth right now, as you see it?”</p>
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR</span><br>
+        “So, we are fortunate to be present in 184 markets around the world, and while every single market is growing from a revenue point of view, in the West, it’s [we’re] more focused on launching new products, new services to our subscribers. When you look at whether it’s Africa, South Asia or Southeast Asia, we see a tremendous growth at the top of our <span class="highlight" title="embudo freemium">freemium</span> business funnel — so, a lot of users coming in, deepening their <span class="highlight" title="compromiso / interacción">engagement</span> with Spotify and then going on to subscribe.”</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><div class="word">freemium <button onclick="speakWord('freemium')">🔊</button></div><div class="explanation">free + premium business model</div><span class="spanish">freemium (gratis + pago)</span><div class="example-v">“The freemium funnel converts free users to paid.”</div></div>
+            <div class="vocab-item"><div class="word">funnel <button onclick="speakWord('funnel')">🔊</button></div><div class="explanation">a staged process leading users to a goal</div><span class="spanish">embudo de conversión</span><div class="example-v">“Top of the funnel: many new sign-ups.”</div></div>
+            <div class="vocab-item"><div class="word">engagement <button onclick="speakWord('engagement')">🔊</button></div><div class="explanation">active interaction with the product</div><span class="spanish">compromiso / interacción</span><div class="example-v">“Higher engagement leads to more subscriptions.”</div></div>
+        </div>
+
+        <!-- Paragraph 5 – Spotify Wrapped (full dialogue) -->
+        <p><span class="speaker">CLARE SEBASTIAN, CNN CORRESPONDENT</span><br>
+        Ten years ago, the streamer made arguably its smartest-ever marketing move: launching Spotify Wrapped, a data-driven summary of users’ listening habits. In the final quarter of 2025, the promotion helped bring in a record-breaking 38 million users in just three months.</p>
+        <p>“So, tell me your listening age on Spotify Wrapped.”</p>
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR</span><br>
+        “So, my listening age on Spotify is 19 …”</p>
+        <p><span class="speaker">CLARE SEBASTIAN</span><br>
+        “19!”</p>
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR</span><br>
+        “… which I’m very proud of. It’s the youngest in my family — so, even my kids have [a] higher listening age than me.”</p>
+        <p><span class="speaker">CLARE SEBASTIAN</span><br>
+        “Wow. Well, mine is 58, so …”</p>
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR</span><br>
+        “I think that shows that you have good taste, probably.”</p>
+        <p>“That week when Spotify Wrapped comes out, in early December, it dominates the cultural conversation both online and offline — on TV sofas [and] around watercoolers in companies all around the world. And I think it just shows how passionate consumers are about … not just about music, but also about understanding themselves.”</p>
+        <p><span class="speaker">CLARE SEBASTIAN</span><br>
+        “Do you see it as a way of bringing in new users, or is it more of a powerful <span class="highlight" title="retención">retention</span> tool?”</p>
+        <p><span class="speaker">GUSTAV GYLLENHAMMAR</span><br>
+        “We see that when we develop good features or, in this case, a marketing and a product experience, it tends to achieve both goals. We continue to grow our subscribers month after month [and] year after year, even in our most mature markets like Sweden or Norway. And we obviously grow much more rapidly in other markets such as the newly launched markets — India [is] a phenomenally large market and a big <span class="highlight" title="potencial">potential</span> for us. So, we think we will be able to continue for many years still — to have not just growth in users [and] growth in subscribers but we’re also seeing the revenue we generate per subscriber continues to increase.”</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><div class="word">Wrapped <button onclick="speakWord('Wrapped')">🔊</button></div><div class="explanation">Spotify's year-end personalized summary</div><span class="spanish">resumen anual</span><div class="example-v">“My Wrapped showed my top artists.”</div></div>
+            <div class="vocab-item"><div class="word">retention <button onclick="speakWord('retention')">🔊</button></div><div class="explanation">keeping existing users or subscribers</div><span class="spanish">retención</span><div class="example-v">“Wrapped is a powerful retention tool.”</div></div>
+            <div class="vocab-item"><div class="word">potential <button onclick="speakWord('potential')">🔊</button></div><div class="explanation">possibility for future growth</div><span class="spanish">potencial</span><div class="example-v">“India offers phenomenal potential.”</div></div>
+        </div>
+
+        <!-- Paragraph 6 – final notes about Wrapped features (from the last image) -->
+        <p><span class="speaker">Language Notes &amp; Spotify Wrapped</span><br>
+        <strong>Spotify Wrapped</strong> is a global music and podcast ranking, plus a personalized data summary launched in 2015. It includes: <em>Minutes Listened</em>, <em>Top Artists</em>, <em>Top Songs</em>, <em>Top Genres</em>, <em>Top Albums</em> (new in 2025), and <em>Listening Age</em> (new in 2025). The feature has become a cultural phenomenon every December.</p>
+        <div class="vocab-grid">
+            <div class="vocab-item"><div class="word">arguably <button onclick="speakWord('arguably')">🔊</button></div><div class="explanation">possibly, it could be argued</div><span class="spanish">posiblemente</span><div class="example-v">“Arguably the smartest marketing move.”</div></div>
+            <div class="vocab-item"><div class="word">dominates <button onclick="speakWord('dominates')">🔊</button></div><div class="explanation">controls or is the main focus</div><span class="spanish">domina</span><div class="example-v">“Wrapped dominates cultural conversations.”</div></div>
+            <div class="vocab-item"><div class="word">passionate <button onclick="speakWord('passionate')">🔊</button></div><div class="explanation">having strong emotions or enthusiasm</div><span class="spanish">apasionado</span><div class="example-v">“Consumers are passionate about music.”</div></div>
+        </div>
+    </div>
+
+    <!-- 3. DISCUSSION QUESTIONS (3 open-ended) -->
+    <div class="section-title">💡 Discussion Questions</div>
+    <div class="discuss-grid">
+        <div class="discuss-item">🔹 Why do you think Spotify’s freemium model works so well in emerging markets like India or Southeast Asia? What cultural or economic factors might be at play?</div>
+        <div class="discuss-item">🔹 In your opinion, what makes Spotify Wrapped such a global cultural phenomenon? Is it more about music, self‑discovery, or social sharing?</div>
+        <div class="discuss-item">🔹 How does Spotify’s “founder factory” reputation benefit the Swedish tech ecosystem? Can you think of similar examples in other countries (e.g., Silicon Valley, Taiwan)?</div>
+    </div>
+
+    <!-- 4. SELF-PRACTICE (foldable answers) -->
+    <div class="section-title">✍️ Self-Practice</div>
+    <div class="self-practice">
+        <div class="self-item">
+            <details><summary>📌 What does “go public” mean, and how is a direct listing different from an IPO?</summary>
+            <div class="answer">“Go public” means a company lists its shares on a public exchange. A direct listing (like Spotify’s) doesn’t issue new shares or use underwriters; it simply lets existing shareholders sell shares directly, saving on bank fees. In an IPO, the company raises new capital by issuing new shares with the help of investment banks.</div></details>
+        </div>
+        <div class="self-item">
+            <details><summary>📌 Explain the phrase “feed into” using an example from the article.</summary>
+            <div class="answer">In the article, Spotify alumni “feed experience into” the Swedish tech ecosystem — meaning they contribute their knowledge and skills to help new startups grow. For example, former Spotify employees have launched over 120 investment-backed startups, feeding their expertise into the broader tech community.</div></details>
+        </div>
+        <div class="self-item">
+            <details><summary>📌 What is a “freemium funnel”? How does Spotify use it?</summary>
+            <div class="answer">A freemium funnel is a model where users start with a free version and some convert to paid subscriptions. Spotify uses it by offering free access with ads, then enticing users with premium features like offline listening, no ads, and higher audio quality. The “top of the funnel” refers to the large number of new users entering the free tier.</div></details>
+        </div>
+        <div class="self-item">
+            <details><summary>📌 Why is “listening age” a clever marketing feature for Spotify Wrapped?</summary>
+            <div class="answer">It adds a playful, personality‑driven element that makes the summary highly shareable, sparking conversations and reinforcing user identity — which boosts both acquisition (new users see it and sign up) and retention (existing users look forward to it every year). It also taps into people's curiosity about how their music taste compares to others.</div></details>
+        </div>
+        <div class="self-item">
+            <details><summary>📌 What does Gustav mean when he says Wrapped “dominates the cultural conversation”?</summary>
+            <div class="answer">He means that for about a week in December, everyone — online and offline — is talking about their Wrapped results. It becomes a shared social experience, discussed at work, on social media, and among friends, much like a major cultural event.</div></details>
+        </div>
+    </div>
+
+</div> <!-- container -->
+
+<script>
+    function speakWord(word) {
+        if (!window.speechSynthesis) return;
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        speechSynthesis.speak(utterance);
+    }
+</script>
+
+
