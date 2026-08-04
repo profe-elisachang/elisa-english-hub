@@ -120,7 +120,7 @@ async function scanLessons() {
         { filename: 'Spotify Unwrapped.html', date: '2026-07-30', title: '' },
         { filename: 'Spotify.html', date: '2026-07-30', title: '🎧 Spotify: From Stockholm to the World' },
         { filename: 'Lab-Grown Organs.html', date: '2026-08-04', title: '🫀🔬 Lab-Grown Organs: How Far Should Science Go?' },
-        { filename: 'Lab-Grown Organs.html', date: '2026-08-04', title: '🧬🫀🔬
+        { filename: 'Lab-Grown Organs.html', date: '2026-08-04', title: '🧬🫀🔬Heartening News},
 Heartening News' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
