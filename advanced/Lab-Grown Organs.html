@@ -1,0 +1,359 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab-Grown Organs | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --coral:#e63946;
+    --coral-dark:#b5202c;
+    --teal:#1d5c63;
+    --teal-dark:#123f44;
+    --cream:#fff8f0;
+    --sand:#ffe8d6;
+    --navy:#132a3a;
+    --mint:#8fd6bd;
+  }
+  body{ font-family:'Noto Sans','Open Sans',sans-serif; line-height:1.7; background:var(--cream); color:var(--navy); margin:0; }
+  .lesson-container{ max-width:1400px; margin:0 auto; padding:0 1.5rem 4rem; }
+
+  .hero{
+    background:var(--teal); color:#fff; border-radius:18px;
+    padding:3rem 2.5rem; margin:2.5rem 0; border:4px solid var(--teal-dark);
+    box-shadow:0 8px 0 var(--teal-dark); text-align:center;
+  }
+  .hero .emoji-row{ font-size:3rem; margin-bottom:.5rem; }
+  .hero h2{ font-size:2.6rem; margin:.3rem 0; font-weight:800; }
+  .hero p{ font-size:1.25rem; color:var(--sand); max-width:800px; margin:.8rem auto 0; font-weight:600; }
+  .hero .note{
+    display:inline-block; margin-top:1.2rem; background:var(--coral);
+    padding:.4rem 1.1rem; border-radius:20px; font-size:.95rem; font-weight:700;
+    border:2px solid var(--coral-dark);
+  }
+
+  .section-title{
+    font-size:1.9rem; font-weight:800; color:var(--teal-dark);
+    border-bottom:5px solid var(--coral); display:inline-block;
+    padding-bottom:.3rem; margin:3rem 0 1.5rem;
+  }
+  .section-sub{ font-size:1.05rem; color:var(--teal-dark); font-weight:600; margin:-1rem 0 1.5rem; opacity:.85; }
+
+  /* WARM-UP */
+  .warmup-box{
+    background:var(--sand); border:3px solid var(--coral); border-radius:14px;
+    padding:1.5rem 2rem; font-size:1.25rem; font-weight:700; color:var(--teal-dark);
+  }
+
+  /* VOCAB GRID */
+  .vocab-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem;
+  }
+  @media (max-width:1000px){ .vocab-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .vocab-grid{ grid-template-columns:1fr; } }
+  .vocab-card{ background:var(--sand); border:3px solid var(--coral); border-radius:12px; padding:1rem 1.1rem; }
+  .vocab-word-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:.3rem; }
+  .vocab-word{ font-size:1.12rem; font-weight:800; color:var(--teal-dark); }
+  .vocab-num{ font-size:.75rem; font-weight:700; color:var(--coral-dark); }
+  .speak-btn{
+    background:var(--teal); color:#fff; border:none; border-radius:50%;
+    width:34px; height:34px; font-size:1rem; cursor:pointer; flex-shrink:0;
+  }
+  .speak-btn:hover{ background:var(--coral); }
+  .vocab-pos{ font-size:.8rem; font-weight:700; color:var(--coral-dark); text-transform:uppercase; margin-bottom:.35rem; }
+  .vocab-def{ font-size:.93rem; margin-bottom:.35rem; }
+  .vocab-es{ font-size:.93rem; font-weight:700; color:var(--teal-dark); margin-bottom:.35rem; }
+  .vocab-ex{ font-size:.86rem; font-style:italic; border-top:2px dashed var(--coral); padding-top:.35rem; }
+
+  /* DISCUSSION */
+  .tier-label{
+    font-weight:800; color:#fff; background:var(--coral-dark); display:inline-block;
+    padding:.35rem 1rem; border-radius:20px; margin:1.5rem 0 1rem; font-size:1rem;
+  }
+  .tier-label.extend{ background:var(--teal-dark); }
+  .discussion-list{ list-style:none; padding:0; counter-reset:disc; }
+  .discussion-list li{
+    counter-increment:disc; background:#fff; border:3px solid var(--coral); border-radius:12px;
+    padding:1.1rem 1.3rem 1.1rem 3.2rem; margin-bottom:1rem; position:relative;
+    font-size:1.1rem; font-weight:600;
+  }
+  .discussion-list.extend li{ border-color:var(--teal); }
+  .discussion-list li::before{
+    content:counter(disc); position:absolute; left:1rem; top:50%; transform:translateY(-50%);
+    background:var(--coral); color:#fff; width:32px; height:32px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-weight:800;
+  }
+  .discussion-list.extend li::before{ background:var(--teal-dark); }
+
+  /* SCENARIO */
+  .scenario-box{ background:#fff; border:3px solid var(--teal); border-radius:16px; padding:2rem 2.3rem; }
+  .scenario-box h4{ color:var(--coral-dark); font-size:1.3rem; margin-top:0; }
+  .role-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.2rem; }
+  @media (max-width:700px){ .role-grid{ grid-template-columns:1fr; } }
+  .role-card{ background:var(--sand); border:3px solid var(--coral); border-radius:12px; padding:1.1rem 1.3rem; }
+  .role-card.b{ background:var(--mint); border-color:var(--teal-dark); }
+  .role-card .role-title{ font-weight:800; color:var(--teal-dark); margin-bottom:.4rem; font-size:1.05rem; }
+
+  /* COMPREHENSION CHECK */
+  details{ background:#fff; border:3px solid var(--teal); border-radius:12px; padding:1rem 1.3rem; margin-bottom:1rem; }
+  summary{ font-weight:800; color:var(--teal-dark); cursor:pointer; font-size:1.05rem; }
+  .answer-box{
+    margin-top:.8rem; background:var(--mint); border-left:6px solid var(--teal-dark);
+    padding:.8rem 1rem; border-radius:8px; font-weight:600;
+  }
+
+  footer.lesson-footer{ text-align:center; color:var(--teal-dark); font-size:.9rem; margin-top:3rem; font-weight:600; }
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.25);
+        color: white; text-decoration: none; border-radius: 20px; font-size: 0.9rem;
+        font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+
+<div class="lesson-container">
+
+  <div class="hero">
+    <div class="emoji-row">🫀🔬</div>
+    <h2>Lab-Grown Organs: How Far Should Science Go?</h2>
+    <p>Today's article: scientists have grown miniature human hearts and livers complete with their own blood vessels — a major step toward lab-made organs.</p>
+    <span class="note">📄 Read the article handout / screen — use the list below to look up any words you don't know</span>
+  </div>
+
+  <!-- WARM-UP -->
+  <h3 class="section-title">🔥 Warm-Up</h3>
+  <div class="warmup-box">
+    Before reading: Have you ever heard of "lab-grown" organs or tissue before? What was your first reaction when you saw the headline?
+  </div>
+
+  <!-- VOCABULARY REFERENCE -->
+  <h3 class="section-title">📖 Vocabulary Reference</h3>
+  <p class="section-sub">In the order the words appear in the article — look up any word you're unsure of as you read.</p>
+  <div class="vocab-grid">
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">breakthrough</span><button class="speak-btn" onclick="speakWord('breakthrough')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">a sudden, important discovery or advance</div>
+      <div class="vocab-es">avance, gran logro</div>
+      <div class="vocab-ex">"It was a breakthrough for the whole research team."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">organoid</span><button class="speak-btn" onclick="speakWord('organoid')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">a small, lab-grown structure that copies parts of a real organ</div>
+      <div class="vocab-es">organoide</div>
+      <div class="vocab-ex">"Researchers use organoids to test new medicines safely."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">mimic</span><button class="speak-btn" onclick="speakWord('mimic')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to copy or reproduce the behavior of something else</div>
+      <div class="vocab-es">imitar</div>
+      <div class="vocab-ex">"This model mimics how the real organ works."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">limitation</span><button class="speak-btn" onclick="speakWord('limitation')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">a factor that restricts or holds something back</div>
+      <div class="vocab-es">limitación</div>
+      <div class="vocab-ex">"Cost has been a major limitation for the project."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">vascularized</span><button class="speak-btn" onclick="speakWord('vascularized')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">having its own network of blood vessels</div>
+      <div class="vocab-es">vascularizado</div>
+      <div class="vocab-ex">"They finally created a fully vascularized organoid."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">tackle</span><button class="speak-btn" onclick="speakWord('tackle')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to make a determined effort to deal with a difficult problem</div>
+      <div class="vocab-es">abordar, enfrentar</div>
+      <div class="vocab-ex">"The lab is tackling one of biology's oldest problems."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">incorporate</span><button class="speak-btn" onclick="speakWord('incorporate')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to include something as part of a whole</div>
+      <div class="vocab-es">incorporar, integrar</div>
+      <div class="vocab-ex">"They incorporated blood vessels into the tissue."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">precise</span><button class="speak-btn" onclick="speakWord('precise')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">exact and accurate, with no room for error</div>
+      <div class="vocab-es">preciso, exacto</div>
+      <div class="vocab-ex">"The cells needed a precise mix of nutrients."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">nurturing</span><button class="speak-btn" onclick="speakWord('nurturing')">🔊</button></div>
+      <div class="vocab-pos">noun / adjective</div>
+      <div class="vocab-def">the process of caring for and helping something grow</div>
+      <div class="vocab-es">crianza, cuidado</div>
+      <div class="vocab-ex">"After weeks of nurturing, the cells had formed tissue."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">branching</span><button class="speak-btn" onclick="speakWord('branching')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">spreading out into smaller parts, like tree branches</div>
+      <div class="vocab-es">ramificado</div>
+      <div class="vocab-ex">"The vessels formed a branching network."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">hollow</span><button class="speak-btn" onclick="speakWord('hollow')">🔊</button></div>
+      <div class="vocab-pos">adjective</div>
+      <div class="vocab-def">having an empty space inside</div>
+      <div class="vocab-es">hueco, vacío</div>
+      <div class="vocab-ex">"The tubes were hollow, but no blood was flowing yet."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">counterpart</span><button class="speak-btn" onclick="speakWord('counterpart')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">a person or thing with the same role, often in a different place or at a different scale</div>
+      <div class="vocab-es">homólogo, contraparte</div>
+      <div class="vocab-ex">"The mini-heart resembled its full-sized counterpart."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">vasculature</span><button class="speak-btn" onclick="speakWord('vasculature')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">the arrangement of blood vessels in an organ or body</div>
+      <div class="vocab-es">sistema vascular</div>
+      <div class="vocab-ex">"The heart's vasculature is extremely complex."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">replicate</span><button class="speak-btn" onclick="speakWord('replicate')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to reproduce or copy something exactly</div>
+      <div class="vocab-es">replicar</div>
+      <div class="vocab-ex">"The next goal is to replicate larger blood vessels."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">acknowledge</span><button class="speak-btn" onclick="speakWord('acknowledge')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to admit or accept that something is true</div>
+      <div class="vocab-es">reconocer, admitir</div>
+      <div class="vocab-ex">"He acknowledged that more work still needs to be done."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">shed light on</span><button class="speak-btn" onclick="speakWord('shed light on')">🔊</button></div>
+      <div class="vocab-pos">phrase</div>
+      <div class="vocab-def">to help people understand something better</div>
+      <div class="vocab-es">arrojar luz sobre</div>
+      <div class="vocab-ex">"This research sheds light on how the disease develops."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">invade</span><button class="speak-btn" onclick="speakWord('invade')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to enter and spread through something, often harmfully</div>
+      <div class="vocab-es">invadir</div>
+      <div class="vocab-ex">"Scientists studied how the virus invades the gut."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">onset</span><button class="speak-btn" onclick="speakWord('onset')">🔊</button></div>
+      <div class="vocab-pos">noun</div>
+      <div class="vocab-def">the beginning of something, especially something unwelcome</div>
+      <div class="vocab-es">aparición, inicio</div>
+      <div class="vocab-ex">"They study the onset of the disease in young patients."</div>
+    </div>
+
+    <div class="vocab-card">
+      <div class="vocab-word-row"><span class="vocab-word">screen</span><button class="speak-btn" onclick="speakWord('screen')">🔊</button></div>
+      <div class="vocab-pos">verb</div>
+      <div class="vocab-def">to test or examine something systematically</div>
+      <div class="vocab-es">evaluar, examinar</div>
+      <div class="vocab-ex">"Cancer organoids are used to screen new drugs."</div>
+    </div>
+
+  </div>
+
+  <!-- DEBATE & DISCUSSION -->
+  <h3 class="section-title">🗣️ Debate &amp; Critical Discussion</h3>
+
+  <span class="tier-label">🔴 Core — always ask</span>
+  <ul class="discussion-list">
+    <li>Is it ethical to grow human organ tissue in a lab? Where do you think the line should be drawn?</li>
+    <li>Medical technology often moves faster than regulation and public understanding. Is that a risk worth taking?</li>
+    <li>If lab-grown organs eventually become common, how might that change the way people think about the human body?</li>
+  </ul>
+
+  <span class="tier-label extend">🟢 Extend — if time allows</span>
+  <ul class="discussion-list extend">
+    <li>Breakthroughs like this often take decades to actually reach patients. Do you think the public is too impatient with science?</li>
+    <li>Could advances like this widen inequality — for example, if only wealthy countries or patients benefit first?</li>
+    <li>Overall, does this discovery excite you or concern you more? Why?</li>
+  </ul>
+
+  <!-- SCENARIO -->
+  <h3 class="section-title">🎭 Scenario &amp; Cultural Connection</h3>
+  <div class="scenario-box">
+    <h4>Coffee Break Conversation</h4>
+    <p>Two colleagues run into each other during a coffee break. One of them just read the organoid article. Act out a natural conversation — agree, disagree, and try to bring in your own opinion.</p>
+    <div class="role-grid">
+      <div class="role-card">
+        <div class="role-title">🅰️ Role A — The Optimist</div>
+        You're genuinely excited about this news. You think this kind of research deserves more funding and could save lives soon. Try to convince your colleague.
+      </div>
+      <div class="role-card b">
+        <div class="role-title">🅱️ Role B — The Skeptic</div>
+        You're cautious. You worry about cost, ethics, and whether this money should go elsewhere first (e.g. basic healthcare access). Push back politely.
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTIONAL COMPREHENSION CHECK -->
+  <h3 class="section-title">✅ Quick Comprehension Check <span style="font-size:1rem; font-weight:600; color:var(--teal-dark);">(optional)</span></h3>
+
+  <details>
+    <summary>1. True or False: Scientists have already achieved organs with real blood actually circulating through them.</summary>
+    <div class="answer-box">False — the vessels formed, but blood is not yet circulating. That's still a future goal.</div>
+  </details>
+
+  <details>
+    <summary>2. Besides the heart, what other organ did the team also grow using the same method?</summary>
+    <div class="answer-box">The liver — they created vascularized mini-livers using the same approach.</div>
+  </details>
+
+</div>
+
+<footer class="lesson-footer">English Conversation with Elisa · Advanced Level</footer>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
