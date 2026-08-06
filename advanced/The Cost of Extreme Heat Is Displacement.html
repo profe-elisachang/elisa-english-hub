@@ -1,0 +1,575 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cost of Extreme Heat Is Displacement | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  body { font-family: 'Noto Sans', 'Open Sans', sans-serif; line-height: 1.7; margin: 0; background: #FFF8F0; color: #2B1B12; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Tooltip system */
+  .highlight {
+    position: relative;
+    cursor: help;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  .highlight::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: #2B1B12;
+    color: #FFF8F0;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: normal;
+    max-width: 55vw;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 20;
+  }
+  .highlight::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #2B1B12;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 20;
+  }
+  .highlight:hover::after, .highlight:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Hero */
+  .hero {
+    background: #C1440E;
+    color: #FFF8F0;
+    padding: 3rem 1.5rem;
+    border-bottom: 8px solid #7A2B08;
+  }
+  .hero-inner { max-width: 1400px; margin: 0 auto; }
+  .hero h2 { font-size: 2.3rem; margin: 0 0 0.8rem 0; font-weight: 800; }
+  .hero p { font-size: 1.15rem; max-width: 900px; margin: 0; color: #FFE3C7; }
+  .hero .tag {
+    display: inline-block;
+    background: #FFB74D;
+    color: #4A2600;
+    font-weight: 700;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  section.block { padding: 2.5rem 0; }
+
+  /* Useful Expressions */
+  .expr-title, .article-title, .discuss-title, .practice-title, .warmup-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    color: #7A2B08;
+    border-left: 8px solid #C1440E;
+    padding-left: 0.8rem;
+  }
+  .expr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .expr-card {
+    background: #FFFFFF;
+    border: 3px solid #E07B39;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 4px 4px 0 #E07B39;
+  }
+  .expr-en { font-size: 1.15rem; font-weight: 800; color: #7A2B08; }
+  .expr-es { font-size: 1rem; font-weight: 700; color: #C1440E; margin: 0.3rem 0; }
+  .expr-ex { font-size: 0.95rem; font-style: italic; color: #4A2600; margin-top: 0.5rem; }
+
+  /* Article sections */
+  .section-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFF8F0;
+    background: #8B3A1E;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px 10px 0 0;
+    margin: 2rem 0 0 0;
+  }
+  .section-body {
+    background: #FFFFFF;
+    border: 3px solid #8B3A1E;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.05rem;
+  }
+
+  /* Vocab grid */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.2rem 0 0.5rem 0;
+  }
+  @media (max-width: 1000px) {
+    .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .vocab-grid { grid-template-columns: 1fr; }
+  }
+  .vocab-card {
+    border-radius: 10px;
+    padding: 1rem;
+    border: 3px solid;
+  }
+  .vocab-word { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 0.4rem; }
+  .speak-btn {
+    background: none; border: none; cursor: pointer; font-size: 1.1rem;
+    padding: 2px 6px; border-radius: 6px;
+  }
+  .speak-btn:hover { background: rgba(0,0,0,0.1); }
+  .vocab-pos { font-style: italic; font-size: 0.85rem; margin: 0.2rem 0 0.4rem 0; }
+  .vocab-def { font-size: 0.92rem; margin-bottom: 0.4rem; }
+  .vocab-es { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.4rem; }
+  .vocab-ex { font-size: 0.88rem; font-style: italic; }
+
+  /* Warm-up */
+  .warmup-box {
+    background: #FFE3C7;
+    border: 4px dashed #C1440E;
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .warmup-box p { font-size: 1.2rem; font-weight: 700; color: #7A2B08; margin: 0.3rem 0 0 0; }
+  .warmup-label { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #C1440E; }
+
+  /* Discussion */
+  .discuss-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .discuss-list li {
+    background: #FFFFFF;
+    border-left: 8px solid #7A2B08;
+    padding: 1rem 1.3rem;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.08);
+  }
+
+  /* Self-practice */
+  details {
+    background: #FFFFFF;
+    border: 3px solid #8B3A1E;
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 1rem;
+  }
+  summary {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.05rem;
+    color: #7A2B08;
+  }
+  .answer-box {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 2px solid #FFE3C7;
+    font-size: 0.98rem;
+  }
+
+  footer.lesson-footer {
+    text-align: center;
+    padding: 2rem;
+    color: #7A2B08;
+    font-size: 0.9rem;
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://static.time.com/v3/assets/bltea6093859af6183b/blt3749bce1617904f8/6a70f941f0972a5ce4b996aa/extreme-heat.jpg?branch=production&width=1920&quality=75&auto=webp&crop=3:2" alt="🌍 The Cost of Extreme Heat Is Displacement" class="article-image">
+    </div>
+
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="tag">🌡️ Climate &amp; Workplace Risk</span>
+    <h2>🌍 The Cost of Extreme Heat Is Displacement</h2>
+    <p>Based on an opinion piece published in TIME (Aug 2026) by Kathy Baughman McLeod and Shana Tabak. Content rewritten and simplified for advanced English learners.</p>
+    <p style="margin-top:0.6rem;"><a href="https://time.com/article/2026/08/04/the-cost-of-extreme-heat-is-displacement/" target="_blank" rel="noopener" style="color:#FFE3C7; text-decoration: underline;">🔗 Read the original article on TIME.com</a></p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Useful Expressions -->
+  <section class="block">
+    <div class="expr-title">🗝️ Useful Expressions</div>
+    <div class="expr-grid">
+      <div class="expr-card">
+        <div class="expr-en">to bear the brunt of</div>
+        <div class="expr-es">cargar con el peso de</div>
+        <div class="expr-ex">"The night shift bears the brunt of the summer heat in our warehouse."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">to wipe out</div>
+        <div class="expr-es">arrasar con / eliminar por completo</div>
+        <div class="expr-ex">"A single supply chain shock can wipe out a quarter's profits."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">to cushion the blow</div>
+        <div class="expr-es">amortiguar el golpe</div>
+        <div class="expr-ex">"Extra paid breaks helped cushion the blow of the reduced summer hours."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">beyond reach</div>
+        <div class="expr-es">fuera de alcance</div>
+        <div class="expr-ex">"For some employees, relocating to a cooler city is simply beyond reach."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">compounding losses</div>
+        <div class="expr-es">pérdidas que se acumulan</div>
+        <div class="expr-ex">"Compounding losses forced the department to freeze its travel budget."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article -->
+  <section class="block">
+    <div class="article-title">📊 Article: The Cost of Extreme Heat Is Displacement</div>
+
+    <div class="section-heading">🌍 The Shrinking Space for Human Life</div>
+    <div class="section-body">
+      Every summer now brings headlines about record temperatures. But for millions of people, extreme heat isn't just an uncomfortable season — it's becoming a reason to leave home for good. Researchers describe something called the <span class="highlight" data-tooltip="nicho ecológico o de condiciones">human climate niche</span>: the narrow range of temperature and humidity in which human societies have always been able to <span class="highlight" data-tooltip="prosperar">thrive</span>. As the planet warms, that safe zone is shrinking fast. One major scientific study warns that by 2070, as much as a third of humanity could be living outside the conditions that once made survival comfortable. Part of the danger comes from "wet-bulb temperature," a measurement that combines heat and humidity. Once this reaches a certain <span class="highlight" data-tooltip="umbral">threshold</span> — around 35°C — the human body can no longer cool itself, no matter how much someone sweats. Some cities have already crossed this dangerous line, and scientists now suspect the real survival limit may be even lower. But long before a place becomes <span class="highlight" data-tooltip="inhabitable">uninhabitable</span>, it can become economically and socially impossible to live in.
+      <div class="vocab-grid">
+        <div class="vocab-card" style="background:#FFF3E0; border-color:#E07B39;">
+          <div class="vocab-word">niche <button class="speak-btn" onclick="speakWord('niche')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">a specific set of conditions in which something can exist or succeed</div>
+          <div class="vocab-es">nicho</div>
+          <div class="vocab-ex">"This software fills a real niche in the cybersecurity market."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFF3E0; border-color:#E07B39;">
+          <div class="vocab-word">threshold <button class="speak-btn" onclick="speakWord('threshold')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">the point at which something begins to happen or change</div>
+          <div class="vocab-es">umbral</div>
+          <div class="vocab-ex">"Once the machinery crosses this temperature threshold, it shuts down automatically."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFF3E0; border-color:#E07B39;">
+          <div class="vocab-word">uninhabitable <button class="speak-btn" onclick="speakWord('uninhabitable')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">not suitable for people to live or work in</div>
+          <div class="vocab-es">inhabitable / imposible de habitar</div>
+          <div class="vocab-ex">"Without ventilation, the factory floor becomes almost uninhabitable in summer."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFF3E0; border-color:#E07B39;">
+          <div class="vocab-word">thrive <button class="speak-btn" onclick="speakWord('thrive')">🔊</button></div>
+          <div class="vocab-pos">verb</div>
+          <div class="vocab-def">to grow or develop very successfully</div>
+          <div class="vocab-es">prosperar</div>
+          <div class="vocab-ex">"Our IT team thrives under tight deadlines."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">💸 When Staying Costs Too Much</div>
+    <div class="section-body">
+      Interestingly, people rarely leave home because of heat alone. They leave because heat quietly makes everyday life too expensive to sustain. Whether a family can stay in their community often comes down to whether they can <span class="highlight" data-tooltip="permitirse / costear">afford</span> to adapt — and that turns extreme heat into a <span class="highlight" data-tooltip="algo que amplifica un efecto existente">force multiplier</span> for existing inequality. Wealthier households can install air conditioning or temporarily relocate during a heat wave. Wealthier cities can invest in cooling infrastructure. But for billions of people, none of these options exist. Crops fail after repeated heat waves, and outdoor workers — in construction, farming, or street vending — lose income as dangerous temperatures shorten the hours they can safely work. Meanwhile, household budgets <span class="highlight" data-tooltip="reducirse">shrink</span> even as spending on water, electricity, and healthcare rises. Pregnant women, young children, and older adults face the greatest health risks, especially when nights no longer cool down enough for the body to recover.
+      <div class="vocab-grid">
+        <div class="vocab-card" style="background:#FDECEA; border-color:#C1440E;">
+          <div class="vocab-word">force multiplier <button class="speak-btn" onclick="speakWord('force multiplier')">🔊</button></div>
+          <div class="vocab-pos">noun phrase</div>
+          <div class="vocab-def">something that increases the impact of another factor</div>
+          <div class="vocab-es">multiplicador de fuerza</div>
+          <div class="vocab-ex">"Poor training is a force multiplier for workplace accidents."</div>
+        </div>
+        <div class="vocab-card" style="background:#FDECEA; border-color:#C1440E;">
+          <div class="vocab-word">absorb <button class="speak-btn" onclick="speakWord('absorb')">🔊</button></div>
+          <div class="vocab-pos">verb</div>
+          <div class="vocab-def">to take in the effect of something difficult without serious harm</div>
+          <div class="vocab-es">absorber</div>
+          <div class="vocab-ex">"The company had to absorb extra costs from the delayed shipment."</div>
+        </div>
+        <div class="vocab-card" style="background:#FDECEA; border-color:#C1440E;">
+          <div class="vocab-word">afford <button class="speak-btn" onclick="speakWord('afford')">🔊</button></div>
+          <div class="vocab-pos">verb</div>
+          <div class="vocab-def">to have enough money or resources for something</div>
+          <div class="vocab-es">permitirse / costear</div>
+          <div class="vocab-ex">"Not every plant can afford industrial-scale cooling systems."</div>
+        </div>
+        <div class="vocab-card" style="background:#FDECEA; border-color:#C1440E;">
+          <div class="vocab-word">shrink <button class="speak-btn" onclick="speakWord('shrink')">🔊</button></div>
+          <div class="vocab-pos">verb</div>
+          <div class="vocab-def">to become smaller in size or amount</div>
+          <div class="vocab-es">reducirse / encogerse</div>
+          <div class="vocab-ex">"Profit margins shrink when energy costs rise."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">🌾 One Family, Two Years of Shocks</div>
+    <div class="section-body">
+      Consider the story of Santuben Kantibhai, a farmer in Gujarat, India. Over just two years, her family absorbed one <span class="highlight" data-tooltip="choque / impacto repentino">shock</span> after another. A severe heat wave destroyed most of their crop, cutting their income sharply. Around the same time, her father — who also earned <span class="highlight" data-tooltip="salario / jornal">wages</span> through farm labor — began losing his eyesight to <span class="highlight" data-tooltip="cataratas">cataracts</span>, making it harder for him to work. When another heat wave struck the following year, the family's <span class="highlight" data-tooltip="cosecha">harvest</span> failed again, right as her father needed surgery. For Santuben, the question was never whether heat was becoming more dangerous — she already knew that. The real question was how many more failed harvests her family could absorb before leaving became the only option left.
+      <div class="vocab-grid">
+        <div class="vocab-card" style="background:#FBE9E7; border-color:#8B3A1E;">
+          <div class="vocab-word">shock <button class="speak-btn" onclick="speakWord('shock')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">a sudden, harmful event that disrupts normal conditions</div>
+          <div class="vocab-es">choque / impacto repentino</div>
+          <div class="vocab-ex">"The plant faced a financial shock after the unexpected shutdown."</div>
+        </div>
+        <div class="vocab-card" style="background:#FBE9E7; border-color:#8B3A1E;">
+          <div class="vocab-word">cataracts <button class="speak-btn" onclick="speakWord('cataracts')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">a medical condition causing cloudy vision, common with aging</div>
+          <div class="vocab-es">cataratas</div>
+          <div class="vocab-ex">"He needed surgery to treat his cataracts."</div>
+        </div>
+        <div class="vocab-card" style="background:#FBE9E7; border-color:#8B3A1E;">
+          <div class="vocab-word">harvest <button class="speak-btn" onclick="speakWord('harvest')">🔊</button></div>
+          <div class="vocab-pos">noun / verb</div>
+          <div class="vocab-def">the season's crop, or the act of gathering it</div>
+          <div class="vocab-es">cosecha</div>
+          <div class="vocab-ex">"A failed harvest can disrupt an entire supply chain."</div>
+        </div>
+        <div class="vocab-card" style="background:#FBE9E7; border-color:#8B3A1E;">
+          <div class="vocab-word">wages <button class="speak-btn" onclick="speakWord('wages')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">money paid regularly for work, especially manual labor</div>
+          <div class="vocab-es">salario / jornal</div>
+          <div class="vocab-ex">"Outdoor workers lose wages when shifts are cut for safety reasons."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">🛠️ Solutions We Already Have</div>
+    <div class="section-body">
+      The encouraging part of this story is that solutions already exist. Trees can lower neighborhood temperatures by several degrees. <span class="highlight" data-tooltip="reflectante">Reflective</span> "cool roofs," shaded streets, and naturally cool building designs can all reduce dangerous temperatures. Early warning systems save lives by giving people time to prepare. In Santuben's case, a financial safety net — a type of insurance tied to weather data — helped <span class="highlight" data-tooltip="amortiguar">cushion</span> her family's lost income and cover her father's medical costs, allowing him to return to work. That kind of support didn't just protect their finances; it protected their ability to choose whether to stay on their land at all. The real <span class="highlight" data-tooltip="obstáculo">obstacle</span> isn't a lack of solutions — it's a lack of resources. The communities most exposed to extreme heat are often the ones with the least money to <span class="highlight" data-tooltip="invertir">invest</span> in adapting to it.
+      <div class="vocab-grid">
+        <div class="vocab-card" style="background:#FFF8E1; border-color:#B8860B;">
+          <div class="vocab-word">cushion <button class="speak-btn" onclick="speakWord('cushion')">🔊</button></div>
+          <div class="vocab-pos">verb</div>
+          <div class="vocab-def">to soften the impact of something negative</div>
+          <div class="vocab-es">amortiguar</div>
+          <div class="vocab-ex">"HR policies can cushion employees against sudden schedule changes."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFF8E1; border-color:#B8860B;">
+          <div class="vocab-word">obstacle <button class="speak-btn" onclick="speakWord('obstacle')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">something that blocks or slows down progress</div>
+          <div class="vocab-es">obstáculo</div>
+          <div class="vocab-ex">"Budget, not knowledge, is the main obstacle to better safety equipment."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFF8E1; border-color:#B8860B;">
+          <div class="vocab-word">invest <button class="speak-btn" onclick="speakWord('invest')">🔊</button></div>
+          <div class="vocab-pos">verb</div>
+          <div class="vocab-def">to put money or effort into something for future benefit</div>
+          <div class="vocab-es">invertir</div>
+          <div class="vocab-ex">"The company decided to invest in better rooftop insulation."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFF8E1; border-color:#B8860B;">
+          <div class="vocab-word">reflective <button class="speak-btn" onclick="speakWord('reflective')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">able to send back light or heat rather than absorb it</div>
+          <div class="vocab-es">reflectante</div>
+          <div class="vocab-ex">"Reflective roof coating keeps the warehouse noticeably cooler."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">⚖️ Heat Doesn't Affect Everyone Equally</div>
+    <div class="section-body">
+      Solutions also need to account for the fact that heat does not affect everyone equally. Along with income, factors like gender, race, disability, and legal status shape how much risk a person faces — and how much support they can access. Women, for example, already make up an estimated 80% of people displaced by climate-related disasters, since many carry a <span class="highlight" data-tooltip="desproporcionado">disproportionate</span> share of <span class="highlight" data-tooltip="no remunerado">unpaid</span> caregiving, water collection, and cooking — responsibilities that don't pause during a heat wave. Leaving home, meanwhile, doesn't automatically mean safety. Migrants often face <span class="highlight" data-tooltip="letal">lethal</span> temperatures during the journey itself, and some arrive only to find themselves working in the hottest, most dangerous jobs available. In 2021, an <span class="highlight" data-tooltip="indocumentado">undocumented</span> farmworker from Guatemala died while working outdoors in Oregon during a record heat wave, when the pavement grew soft beneath his feet. For him, heat simply followed him across the border.
+      <div class="vocab-grid">
+        <div class="vocab-card" style="background:#EFEBE9; border-color:#6D4C41;">
+          <div class="vocab-word">disproportionate <button class="speak-btn" onclick="speakWord('disproportionate')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">too large or small compared to something else, unfairly so</div>
+          <div class="vocab-es">desproporcionado</div>
+          <div class="vocab-ex">"Frontline workers face a disproportionate share of heat-related risk."</div>
+        </div>
+        <div class="vocab-card" style="background:#EFEBE9; border-color:#6D4C41;">
+          <div class="vocab-word">unpaid <button class="speak-btn" onclick="speakWord('unpaid')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">not paid for; done without financial compensation</div>
+          <div class="vocab-es">no remunerado</div>
+          <div class="vocab-ex">"Much of the caregiving work in a household is unpaid."</div>
+        </div>
+        <div class="vocab-card" style="background:#EFEBE9; border-color:#6D4C41;">
+          <div class="vocab-word">undocumented <button class="speak-btn" onclick="speakWord('undocumented')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">without official legal papers or immigration status</div>
+          <div class="vocab-es">indocumentado</div>
+          <div class="vocab-ex">"Undocumented workers are often afraid to report unsafe conditions."</div>
+        </div>
+        <div class="vocab-card" style="background:#EFEBE9; border-color:#6D4C41;">
+          <div class="vocab-word">lethal <button class="speak-btn" onclick="speakWord('lethal')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">capable of causing death</div>
+          <div class="vocab-es">letal</div>
+          <div class="vocab-ex">"Working outdoors without breaks can become lethal in extreme heat."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">📈 The Numbers — and the Choice Ahead</div>
+    <div class="section-body">
+      The World Bank estimates that, in a high-emissions future, as many as 216 million people could be <span class="highlight" data-tooltip="desplazado">displaced</span> within their own countries over the next 25 years because of climate impacts. But the same research suggests that <span class="highlight" data-tooltip="ambicioso">ambitious</span> adaptation and cuts to <span class="highlight" data-tooltip="emisiones">emissions</span> could reduce that number by as much as 80%. When people are forced to leave because of climate impacts, migration isn't a solution — it's proof that support arrived too late. We already have the knowledge to build cooler cities, protect outdoor workers, and cut the emissions driving temperatures higher. What's missing isn't know-how. It's the <span class="highlight" data-tooltip="voluntad política">political will</span> to act before the choice is made for us.
+      <div class="vocab-grid">
+        <div class="vocab-card" style="background:#FFEBEE; border-color:#7A2B08;">
+          <div class="vocab-word">displaced <button class="speak-btn" onclick="speakWord('displaced')">🔊</button></div>
+          <div class="vocab-pos">adjective / verb</div>
+          <div class="vocab-def">forced to leave one's home, often due to danger or disaster</div>
+          <div class="vocab-es">desplazado</div>
+          <div class="vocab-ex">"Thousands of employees were displaced when the flood closed the plant."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFEBEE; border-color:#7A2B08;">
+          <div class="vocab-word">ambitious <button class="speak-btn" onclick="speakWord('ambitious')">🔊</button></div>
+          <div class="vocab-pos">adjective</div>
+          <div class="vocab-def">having a strong determination to achieve something significant</div>
+          <div class="vocab-es">ambicioso</div>
+          <div class="vocab-ex">"The company set an ambitious target to cut emissions by 2030."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFEBEE; border-color:#7A2B08;">
+          <div class="vocab-word">emissions <button class="speak-btn" onclick="speakWord('emissions')">🔊</button></div>
+          <div class="vocab-pos">noun</div>
+          <div class="vocab-def">substances, especially gases, released into the air</div>
+          <div class="vocab-es">emisiones</div>
+          <div class="vocab-ex">"The IT department tracks carbon emissions from the company's data centers."</div>
+        </div>
+        <div class="vocab-card" style="background:#FFEBEE; border-color:#7A2B08;">
+          <div class="vocab-word">political will <button class="speak-btn" onclick="speakWord('political will')">🔊</button></div>
+          <div class="vocab-pos">noun phrase</div>
+          <div class="vocab-def">the genuine determination of leaders or institutions to act on an issue</div>
+          <div class="vocab-es">voluntad política</div>
+          <div class="vocab-ex">"Real change requires political will, not just good intentions."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warm-up -->
+  <section class="block" style="padding-top:0;">
+    <div class="warmup-box">
+      <div class="warmup-label">🔥 Warm-Up — just one quick question</div>
+      <p>What do you personally do to cool down or stay comfortable during a heat wave?</p>
+    </div>
+  </section>
+
+  <!-- Discussion -->
+  <section class="block" style="padding-top:0;">
+    <div class="discuss-title">💬 Discussion Questions</div>
+    <ul class="discuss-list">
+      <li>In your field — EHS, HR, or IT — how might extreme heat create new risks or costs for a company?</li>
+      <li>The article calls heat "a force multiplier for inequality." Do you agree or disagree, and why?</li>
+      <li>If your company had employees working outdoors in extreme heat, what policies would you recommend to protect them?</li>
+    </ul>
+  </section>
+
+  <!-- Self-practice -->
+  <section class="block" style="padding-top:0;">
+    <div class="practice-title">✍️ Self-Practice</div>
+
+    <details>
+      <summary>1. Fill in the blank: The company had to ______ the sudden rise in cooling costs during the heat wave. (absorb / uninhabitable)</summary>
+      <div class="answer-box">Answer: <strong>absorb</strong> — "The company had to absorb the sudden rise in cooling costs during the heat wave."</div>
+    </details>
+
+    <details>
+      <summary>2. Translate into English: "Los trabajadores indocumentados temen reportar condiciones inseguras."</summary>
+      <div class="answer-box">Answer: <strong>Undocumented workers are afraid to report unsafe conditions.</strong></div>
+    </details>
+
+    <details>
+      <summary>3. True or False: According to the article, migration is the best way to adapt to climate change.</summary>
+      <div class="answer-box">Answer: <strong>False.</strong> The article argues that when people are forced to migrate, it's evidence that adaptation came too late — not a solution in itself.</div>
+    </details>
+
+    <details>
+      <summary>4. Write one original sentence using the expression "beyond reach."</summary>
+      <div class="answer-box">Sample answer: "For our smaller suppliers, upgrading every warehouse with industrial air conditioning is simply beyond reach."</div>
+    </details>
+  </section>
+
+</div>
+
+<footer class="lesson-footer">
+  📚 English Conversation with Elisa — Advanced Level
+</footer>
+
+<script>
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
