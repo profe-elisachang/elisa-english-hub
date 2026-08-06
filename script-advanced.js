@@ -119,7 +119,7 @@ async function scanLessons() {
         { filename: 'Wabi-Sabi- Vocab Practice.html', date: '2026-07-28', title: '🏺 What Is Your \'Wabi-Sabi\'? Vocab Practice' },
         { filename: 'Spotify Unwrapped.html', date: '2026-07-30', title: '' },
         { filename: 'Spotify.html', date: '2026-07-30', title: '🎧 Spotify: From Stockholm to the World' },
-        { filename: 'Lab-Grown Organs.html', date: '2026-08-04', title: '🧬🫀🔬Heartening News},
+        { filename: 'Lab-Grown Organs.html', date: '2026-08-04', title: '🧬🫀🔬 Heartening News' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
