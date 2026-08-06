@@ -117,7 +117,6 @@ async function scanLessons() {
         { filename: 'Wabi-Sab.html', date: '2026-07-23', title: '🏺 What Is Your \'Wabi-Sabi\'?' },
         { filename: 'Wabi-Sabi- Vocab Practice.html', date: '2026-07-23', title: '🏺 What Is Your \'Wabi-Sabi\'? Vocab Practice' },
         { filename: 'Wabi-Sabi- Vocab Practice.html', date: '2026-07-28', title: '🏺 What Is Your \'Wabi-Sabi\'? Vocab Practice' },
-        { filename: 'Spotify Unwrapped.html', date: '2026-07-30', title: '' },
         { filename: 'Spotify.html', date: '2026-07-30', title: '🎧 Spotify: From Stockholm to the World' },
         { filename: 'Lab-Grown Organs.html', date: '2026-08-04', title: '🧬🫀🔬 Heartening News' },
         { filename: 'The Cost of Extreme Heat Is Displacement.html', date: '2026-08-06', title: '🌍 The Cost of Extreme Heat Is Displacement' },
