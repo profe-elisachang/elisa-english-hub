@@ -12,6 +12,10 @@ const CONFIG = {
 let allLessons = [];
 let filteredLessons = [];
 
+// Avoid Unicode property escapes here: older browsers/WebViews can reject
+// /\p{Emoji}/ at parse time and stop the entire script from loading.
+const EMOJI_PATTERN = /[\u2600-\u27BF]|[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+
 // ====================
 // INITIALIZATION
 // ====================
@@ -141,7 +145,7 @@ async function scanLessons() {
             
             // 從標題中提取 emoji
             if (specifiedTitle) {
-                const emojiMatch = specifiedTitle.match(/[\p{Emoji}]/u);
+                const emojiMatch = specifiedTitle.match(EMOJI_PATTERN);
                 specifiedEmoji = emojiMatch ? emojiMatch[0] : '';
             }
         }
@@ -198,7 +202,7 @@ function createHolidayData(specifiedDate, title, emoji) {
     if (!dateParts) return null;
     
     const holidayDate = new Date(dateParts[1], dateParts[2] - 1, dateParts[3]);
-    const cleanTitle = title.replace(/[\p{Emoji}]/gu, '').trim();
+    const cleanTitle = title.replace(EMOJI_PATTERN, '').trim();
     
     return {
         id: `holiday-${specifiedDate}`,
@@ -229,7 +233,7 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
         // 使用 potentialFiles 中提供的標題
         titleText = specifiedTitle;
         emoji = specifiedEmoji || '';
-        cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+        cleanTitle = titleText.replace(EMOJI_PATTERN, '').trim();
     } else {
         // 從 HTML 提取標題（fallback）
         let h1 = doc.querySelector('.container h1, .main-content h1, main h1, [class*="container"] h1');
@@ -249,9 +253,9 @@ async function extractLessonData(filename, htmlContent, specifiedDate = null, sp
         if (!h1) return null;
 
         titleText = h1.textContent.trim();
-        const emojiMatch = titleText.match(/[\p{Emoji}]/u);
+        const emojiMatch = titleText.match(EMOJI_PATTERN);
         emoji = emojiMatch ? emojiMatch[0] : '';
-        cleanTitle = titleText.replace(/[\p{Emoji}]/gu, '').trim();
+        cleanTitle = titleText.replace(EMOJI_PATTERN, '').trim();
     }
 
     // 日期提取優先順序：
