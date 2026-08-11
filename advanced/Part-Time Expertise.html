@@ -1,0 +1,618 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part-Time Expertise | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  body {
+    font-family: 'Noto Sans', 'Open Sans', sans-serif;
+    line-height: 1.7;
+    background: #fbf7ee;
+    margin: 0;
+    color: #1e2a25;
+  }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ---- Section titles ---- */
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0c6e4f;
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 4px solid #f3a712;
+    display: inline-block;
+  }
+
+  /* ---- Useful Expressions ---- */
+  .expr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .expr-card {
+    background: #ffffff;
+    border-left: 8px solid #0c6e4f;
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+  .expr-en {
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: #0c6e4f;
+  }
+  .expr-es {
+    font-weight: 700;
+    color: #b4650a;
+    margin: 0.3rem 0 0.5rem;
+  }
+  .expr-ex {
+    font-style: italic;
+    color: #3c3c3c;
+  }
+
+  /* ---- Article ---- */
+  .article-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 2rem 2.2rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    border-top: 8px solid #0c6e4f;
+  }
+  .article-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #0c6e4f;
+    margin-top: 0;
+  }
+  .article-sub {
+    font-size: 1.05rem;
+    color: #6b6b6b;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .article-box h3 {
+    color: #b4650a;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    border-left: 6px solid #f3a712;
+    padding-left: 0.7rem;
+  }
+  .article-box p {
+    font-size: 1.15rem;
+    margin: 0 0 1rem;
+  }
+
+  /* ---- Highlighted vocabulary + tooltip ---- */
+  .highlight {
+    background: #fff3b0;
+    font-weight: 700;
+    border-bottom: 3px solid #0c6e4f;
+    padding: 0.05rem 0.25rem;
+    border-radius: 4px;
+    position: relative;
+    cursor: help;
+  }
+  .highlight[data-tooltip]:hover::after,
+  .highlight[data-tooltip]:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: 125%;
+    transform: translateX(-50%) translateY(6px);
+    background: #1e2a25;
+    color: #fff;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    opacity: 0;
+    animation: tooltipIn 0.18s ease forwards;
+    z-index: 20;
+    pointer-events: none;
+  }
+  @keyframes tooltipIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  @media (max-width: 600px) {
+    .highlight[data-tooltip]:hover::after {
+      white-space: normal;
+      width: 160px;
+      left: 0;
+      transform: translateX(0) translateY(6px);
+    }
+  }
+
+  /* ---- Vocabulary boxes ---- */
+  .vocab-box {
+    margin: 0.5rem 0 2rem;
+    background: #eaf6f0;
+    border: 2px solid #0c6e4f;
+    border-radius: 12px;
+    padding: 1.2rem 1.3rem 0.6rem;
+  }
+  .vocab-box-label {
+    font-weight: 800;
+    color: #0c6e4f;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.85rem;
+    margin-bottom: 0.7rem;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+  }
+  @media (max-width: 1100px) {
+    .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .vocab-grid { grid-template-columns: 1fr; }
+  }
+  .vocab-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-bottom: 5px solid #f3a712;
+  }
+  .vocab-word-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+  .vocab-word {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #0c6e4f;
+  }
+  .speak-btn {
+    background: #0c6e4f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .speak-btn:hover {
+    background: #b4650a;
+    transform: scale(1.1);
+  }
+  .vocab-def {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 0.4rem;
+  }
+  .vocab-es {
+    font-weight: 700;
+    color: #b4650a;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  .vocab-example {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    border-top: 1px dashed #ccc;
+    padding-top: 0.4rem;
+  }
+
+  /* ---- Discussion ---- */
+  .discuss-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: dq;
+  }
+  .discuss-list li {
+    counter-increment: dq;
+    background: #ffffff;
+    border-left: 8px solid #f3a712;
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+    padding-left: 3.2rem;
+  }
+  .discuss-list li::before {
+    content: counter(dq);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0c6e4f;
+    color: #fff;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
+
+  /* ---- Self practice ---- */
+  .practice-item {
+    background: #ffffff;
+    border: 2px solid #0c6e4f;
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .practice-item summary {
+    font-weight: 700;
+    font-size: 1.08rem;
+    cursor: pointer;
+    color: #1e2a25;
+    outline: none;
+  }
+  .practice-item summary::marker {
+    color: #b4650a;
+  }
+  .practice-answer {
+    margin-top: 0.7rem;
+    padding: 0.8rem 1rem;
+    background: #fff3b0;
+    border-radius: 8px;
+    font-size: 1rem;
+    border-left: 5px solid #0c6e4f;
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://cdn.prod.website-files.com/62d53f7d755658fd47f41353/6352c099c122e45f69bcb8d9_2.3%20(612x370).png" alt="Part-Time Expertise" class="article-image">
+    </div>
+
+
+<div class="container">
+
+  <!-- 1. USEFUL EXPRESSIONS -->
+  <h2 class="section-title">🗝️ Useful Expressions</h2>
+  <div class="expr-grid">
+    <div class="expr-card">
+      <div class="expr-en">cope with (something)</div>
+      <div class="expr-es">hacer frente a / lidiar con</div>
+      <div class="expr-ex">"Senior leaders have started looking for outside help to cope with constant change."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">deal with something head on</div>
+      <div class="expr-es">enfrentar algo directamente</div>
+      <div class="expr-ex">"The team decided to deal with the budget cuts head on instead of avoiding the topic."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">free up (someone/something)</div>
+      <div class="expr-es">liberar, dejar disponible</div>
+      <div class="expr-ex">"Recent layoffs have freed up many experienced HR specialists."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">gain traction</div>
+      <div class="expr-es">ganar terreno / aceptación</div>
+      <div class="expr-ex">"The idea of fractional work has gained traction since the pandemic."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">put something in the budget</div>
+      <div class="expr-es">asignar presupuesto a algo</div>
+      <div class="expr-ex">"It's hard to put a full-time CFO in the budget for the next five years."</div>
+    </div>
+  </div>
+
+  <!-- 2 & 3. ARTICLE + VOCAB BOXES -->
+  <h2 class="section-title">🧩 Article</h2>
+  <div class="article-box">
+    <div class="article-title">Part-Time Expertise</div>
+    <div class="article-sub">Paying a fraction of the cost for highly skilled workers</div>
+
+    <p>A new category of <span class="highlight" title="individuo emprendedor" data-tooltip="individuo/a emprendedor/a en solitario">solopreneur</span> is challenging perceptions of what it means to be self-employed. Since 2018, demand for <span class="highlight" data-tooltip="fraccional / a tiempo parcial">fractional</span> expertise — specialized talent that works for one or several companies on a limited, part-time basis — has tripled, according to a recent study by a <span class="highlight" data-tooltip="empresa de análisis de la fuerza laboral">workforce intelligence company</span>. The most popular fractional executive role is CFO, making up 18% of all fractional positions, followed by CMO at 14% and CEO at 10%.</p>
+    <p>The study's chief economist explains that recent <span class="highlight" data-tooltip="despidos">layoffs</span> have <span class="highlight" data-tooltip="dejado disponibles, liberado">freed up</span> many highly skilled workers, while <span class="highlight" data-tooltip="restricciones presupuestarias">budgetary constraints</span> have added to the <span class="highlight" data-tooltip="atractivo">appeal</span> of a lower-cost, flexible alternative to <span class="highlight" data-tooltip="contrataciones a tiempo completo">full-time hires</span>. "Employers see fractional work as a way to cut costs while still filling a role, and because the job market is weak, more people are willing to take these part-time positions," she says.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-label">📖 Vocabulary — Introduction</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">solopreneur</span><button class="speak-btn" onclick="speakWord('solopreneur')">🔊</button></div>
+          <div class="vocab-def">(n) someone who runs their own business alone, without employees</div>
+          <div class="vocab-es">individuo/a emprendedor/a en solitario</div>
+          <div class="vocab-example">"Many former executives are now thriving as solopreneurs."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">fractional</span><button class="speak-btn" onclick="speakWord('fractional')">🔊</button></div>
+          <div class="vocab-def">(adj) working part-time for a company instead of full-time</div>
+          <div class="vocab-es">fraccional, a tiempo parcial</div>
+          <div class="vocab-example">"She works as a fractional CFO for three different startups."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">freed up</span><button class="speak-btn" onclick="speakWord('freed up')">🔊</button></div>
+          <div class="vocab-def">(phrasal v) made available by removing from a previous commitment</div>
+          <div class="vocab-es">liberó, dejó disponible</div>
+          <div class="vocab-example">"Layoffs freed up a lot of experienced talent in the market."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">budgetary constraints</span><button class="speak-btn" onclick="speakWord('budgetary constraints')">🔊</button></div>
+          <div class="vocab-def">(n phrase) limits on spending set by a budget</div>
+          <div class="vocab-es">restricciones presupuestarias</div>
+          <div class="vocab-example">"Budgetary constraints forced the department to hire part-time instead."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">full-time hire</span><button class="speak-btn" onclick="speakWord('full time hire')">🔊</button></div>
+          <div class="vocab-def">(n phrase) an employee hired to work standard, complete hours</div>
+          <div class="vocab-es">contratación a tiempo completo</div>
+          <div class="vocab-example">"A full-time hire costs much more than a fractional expert."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">appeal</span><button class="speak-btn" onclick="speakWord('appeal')">🔊</button></div>
+          <div class="vocab-def">(n) the quality of being attractive or interesting</div>
+          <div class="vocab-es">atractivo</div>
+          <div class="vocab-example">"Lower costs add to the appeal of fractional work."</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Separating Activities</h3>
+    <p>"What I'm seeing is the <span class="highlight" data-tooltip="fragmentación, separación en partes">unbundling</span> of roles," explains one global CEO. "Roles we <span class="highlight" data-tooltip="históricamente">historically</span> thought of as full-time and permanent are being broken down into smaller tasks, and the fractional trend meets that <span class="highlight" data-tooltip="de frente, directamente">head on</span>." Before COVID, she says, most people didn't understand fractional work when she <span class="highlight" data-tooltip="presentaba, promocionaba (una idea)">pitched</span> it to them — but the pandemic showed everyone that business could operate differently, and it <span class="highlight" data-tooltip="normalizó">normalized</span> this model.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-label">📖 Vocabulary — Separating Activities</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">unbundle</span><button class="speak-btn" onclick="speakWord('unbundle')">🔊</button></div>
+          <div class="vocab-def">(v) to separate something into individual parts instead of a package</div>
+          <div class="vocab-es">desagrupar, fragmentar</div>
+          <div class="vocab-example">"The company unbundled the manager's role into three separate tasks."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">historically</span><button class="speak-btn" onclick="speakWord('historically')">🔊</button></div>
+          <div class="vocab-def">(adv) traditionally, in the past</div>
+          <div class="vocab-es">históricamente</div>
+          <div class="vocab-example">"Historically, this role was always full-time."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">head on</span><button class="speak-btn" onclick="speakWord('head on')">🔊</button></div>
+          <div class="vocab-def">(adv phrase) dealing with a problem directly, without avoiding it</div>
+          <div class="vocab-es">de frente, directamente</div>
+          <div class="vocab-example">"She addressed the client's complaint head on."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">pitch</span><button class="speak-btn" onclick="speakWord('pitch')">🔊</button></div>
+          <div class="vocab-def">(v) to present an idea persuasively, usually to sell it</div>
+          <div class="vocab-es">presentar, promocionar (una idea)</div>
+          <div class="vocab-example">"He pitched the fractional model to five different clients."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">normalize</span><button class="speak-btn" onclick="speakWord('normalize')">🔊</button></div>
+          <div class="vocab-def">(v) to make something seem normal or standard</div>
+          <div class="vocab-es">normalizar</div>
+          <div class="vocab-example">"Remote work has been normalized since the pandemic."</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Control and Flexibility</h3>
+    <p>The pandemic also inspired workers to <span class="highlight" data-tooltip="reevaluar">reevaluate</span> their relationship with work and look for more control over their schedules. It made many people consider whether a full-time, high-pressure leadership job was <span class="highlight" data-tooltip="perjudicial">detrimental</span> to their health, wellbeing, and family life. <span class="highlight" data-tooltip="antes de">Prior to</span> the pandemic, the main customers for fractional services were startups and small businesses that couldn't afford full-time help. That <span class="highlight" data-tooltip="segmento (de mercado)">segment</span> is still strong, but there has also been significant growth among larger organizations looking for temporary, flexible support.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-label">📖 Vocabulary — Control and Flexibility</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">reevaluate</span><button class="speak-btn" onclick="speakWord('reevaluate')">🔊</button></div>
+          <div class="vocab-def">(v) to think about something again to decide if it needs to change</div>
+          <div class="vocab-es">reevaluar</div>
+          <div class="vocab-example">"The pandemic made many people reevaluate their careers."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">detrimental</span><button class="speak-btn" onclick="speakWord('detrimental')">🔊</button></div>
+          <div class="vocab-def">(adj) causing harm or damage</div>
+          <div class="vocab-es">perjudicial</div>
+          <div class="vocab-example">"Long hours can be detrimental to your health."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">prior to</span><button class="speak-btn" onclick="speakWord('prior to')">🔊</button></div>
+          <div class="vocab-def">(prep phrase) before</div>
+          <div class="vocab-es">antes de</div>
+          <div class="vocab-example">"Prior to 2020, few companies offered fractional roles."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">segment</span><button class="speak-btn" onclick="speakWord('segment')">🔊</button></div>
+          <div class="vocab-def">(n) a distinct part of a market or population</div>
+          <div class="vocab-es">segmento (de mercado)</div>
+          <div class="vocab-example">"Startups are still a strong segment for fractional work."</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Direct Access to Experts</h3>
+    <p>"Since COVID, the pace of change — geopolitics, climate change, war, technology — has meant organizations have a lot to <span class="highlight" data-tooltip="hacer frente a, lidiar con">cope with</span>, and senior leaders have started looking outside for help," one expert says. "They might have a CFO or CMO employed full-time, but those people are <span class="highlight" data-tooltip="abrumado/a">overwhelmed</span> in a <span class="highlight" data-tooltip="turbulento, agitado">turbulent</span> world, and they need a more <span class="highlight" data-tooltip="ágil">agile</span> talent structure."</p>
+    <p>When large organizations needed outside assistance in the past, they traditionally <span class="highlight" data-tooltip="recurrieron a, acudieron a">turned to</span> major consulting firms. Many are now discovering they can access specialized talent at a lower cost by engaging a part-time expert — someone who may even have worked at one of those same consulting firms before.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-label">📖 Vocabulary — Direct Access to Experts</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">cope with</span><button class="speak-btn" onclick="speakWord('cope with')">🔊</button></div>
+          <div class="vocab-def">(phrasal v) to deal successfully with a difficult situation</div>
+          <div class="vocab-es">hacer frente a, lidiar con</div>
+          <div class="vocab-example">"Managers had to cope with constant change during the crisis."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">overwhelmed</span><button class="speak-btn" onclick="speakWord('overwhelmed')">🔊</button></div>
+          <div class="vocab-def">(adj) having too much to deal with</div>
+          <div class="vocab-es">abrumado/a</div>
+          <div class="vocab-example">"The CFO felt overwhelmed by the sudden growth in workload."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">turbulent</span><button class="speak-btn" onclick="speakWord('turbulent')">🔊</button></div>
+          <div class="vocab-def">(adj) full of sudden, unpredictable change</div>
+          <div class="vocab-es">turbulento, agitado</div>
+          <div class="vocab-example">"Companies need flexible talent in a turbulent economy."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">agile</span><button class="speak-btn" onclick="speakWord('agile')">🔊</button></div>
+          <div class="vocab-def">(adj) able to move or adapt quickly and easily</div>
+          <div class="vocab-es">ágil</div>
+          <div class="vocab-example">"An agile talent structure lets a company adapt fast."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">turn to</span><button class="speak-btn" onclick="speakWord('turn to')">🔊</button></div>
+          <div class="vocab-def">(phrasal v) to go to someone or something for help</div>
+          <div class="vocab-es">recurrir a, acudir a</div>
+          <div class="vocab-example">"Companies used to turn to big consulting firms for this kind of help."</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Shifting Perception</h3>
+    <p>Before the term "fractional" <span class="highlight" data-tooltip="ganó terreno, se popularizó">gained traction</span>, people who offered this kind of service were given labels that didn't really match their level of expertise — consultant, contractor, <span class="highlight" data-tooltip="trabajador/a independiente en EE. UU. (categoría fiscal)">1099</span>. "'Fractional' is a business term," one founder explains. "It says, 'I'm going to solve your problem, and I can do it in a fractional <span class="highlight" data-tooltip="capacidad">capacity</span>.'"</p>
+    <p>That new label has <span class="highlight" data-tooltip="cambió, transformó">shifted</span> the perception of this category of professionals from something many felt they had to hide on their résumés to something they now <span class="highlight" data-tooltip="anuncian, promocionan">advertise</span>. "They say out loud, 'I'm so good at what I do that I can help your business in 10 or 20 hours a week,'" says Ran Harpaz, founder of a fintech platform for solopreneurs. "It's not a <span class="highlight" data-tooltip="trabajo esporádico, sin estabilidad">gig</span> — it's a destination."</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-label">📖 Vocabulary — Shifting Perception</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">gain traction</span><button class="speak-btn" onclick="speakWord('gain traction')">🔊</button></div>
+          <div class="vocab-def">(v phrase) to start becoming popular or accepted</div>
+          <div class="vocab-es">ganar terreno, popularizarse</div>
+          <div class="vocab-example">"The idea of fractional executives has gained traction quickly."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">1099</span><button class="speak-btn" onclick="speakWord('ten ninety nine')">🔊</button></div>
+          <div class="vocab-def">(n) a U.S. tax form/status for independent contractors (not employees)</div>
+          <div class="vocab-es">trabajador/a independiente en EE. UU. (categoría fiscal)</div>
+          <div class="vocab-example">"She works as a 1099 contractor for two companies."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">capacity</span><button class="speak-btn" onclick="speakWord('capacity')">🔊</button></div>
+          <div class="vocab-def">(n) a specific role or function someone has</div>
+          <div class="vocab-es">capacidad, función</div>
+          <div class="vocab-example">"He advises the company in a fractional capacity."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">shift</span><button class="speak-btn" onclick="speakWord('shift')">🔊</button></div>
+          <div class="vocab-def">(v) to change, especially gradually</div>
+          <div class="vocab-es">cambiar, transformar</div>
+          <div class="vocab-example">"Public opinion has shifted toward accepting part-time experts."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">advertise</span><button class="speak-btn" onclick="speakWord('advertise')">🔊</button></div>
+          <div class="vocab-def">(v) to publicly promote something</div>
+          <div class="vocab-es">anunciar, promocionar</div>
+          <div class="vocab-example">"They now advertise their fractional work on LinkedIn."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word-row"><span class="vocab-word">gig</span><button class="speak-btn" onclick="speakWord('gig')">🔊</button></div>
+          <div class="vocab-def">(n) a job, especially one that doesn't last for a long time</div>
+          <div class="vocab-es">trabajo esporádico, sin estabilidad</div>
+          <div class="vocab-example">"He doesn't see fractional work as just a gig."</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 4. DISCUSSION QUESTIONS -->
+  <h2 class="section-title">💬 Discussion Questions</h2>
+  <ul class="discuss-list">
+    <li>Would you ever consider working as a "fractional" professional in your field (EHS, HR, or IT)? What would be the advantages and disadvantages for you personally?</li>
+    <li>How do you think hiring fractional experts changes the relationship between a company and its senior leadership team?</li>
+    <li>The article suggests that changing a label — from "freelancer" to "fractional executive" — changed how people view this type of work. Do you agree that a label can shift perception that much? Can you think of a similar example, in English or in Spanish?</li>
+  </ul>
+
+  <!-- 5. SELF-PRACTICE -->
+  <h2 class="section-title">✍️ Self-Practice</h2>
+
+  <details class="practice-item">
+    <summary>1. In your own words, what does "unbundling" mean in this article?</summary>
+    <div class="practice-answer">Breaking a full-time job into smaller, separate tasks or responsibilities, which can then be given to different specialists instead of one full-time employee.</div>
+  </details>
+
+  <details class="practice-item">
+    <summary>2. Complete the sentence: "The company decided to deal with the problem ______ instead of ignoring it."</summary>
+    <div class="practice-answer">head on</div>
+  </details>
+
+  <details class="practice-item">
+    <summary>3. True or False: According to the article, fractional experts are now used only by small businesses and startups.</summary>
+    <div class="practice-answer">False — large corporations are now hiring fractional experts too, not just startups and small businesses.</div>
+  </details>
+
+  <details class="practice-item">
+    <summary>4. What's the difference in meaning between "gig" and "destination" as used by Ran Harpaz at the end of the article?</summary>
+    <div class="practice-answer">A "gig" suggests short-term, unstable work, while "destination" suggests that fractional work is now a real, respected career choice — not just a temporary stopgap.</div>
+  </details>
+
+</div>
+
+<script>
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
