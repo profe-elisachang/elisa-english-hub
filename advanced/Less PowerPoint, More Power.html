@@ -1,0 +1,611 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Less PowerPoint, More Power | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --paper:#faf6ef;
+    --card:#ffffff;
+    --orange:#e8590c;
+    --orange-light:#ff9142;
+    --orange-pale:#ffe3cc;
+    --gold:#c98a1f;
+    --line:#2a2a2a;
+  }
+  body{
+    background:var(--paper);
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    line-height:1.7;
+    color:var(--ink);
+    margin:0;
+  }
+  .lesson-container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+  }
+  .lesson-title{
+    font-size:2.4rem;
+    font-weight:800;
+    color:var(--ink);
+    border-left:10px solid var(--orange);
+    padding-left:1rem;
+    margin:1rem 0 0.3rem;
+  }
+  .lesson-subtitle{
+    font-size:1.15rem;
+    color:var(--gold);
+    font-weight:700;
+    padding-left:1.2rem;
+    margin-bottom:0.3rem;
+  }
+  .lesson-byline{
+    padding-left:1.2rem;
+    font-size:0.95rem;
+    color:#555;
+    margin-bottom:2.5rem;
+  }
+  section.block{
+    margin-bottom:3rem;
+  }
+  .block-heading{
+    font-size:1.6rem;
+    font-weight:800;
+    color:#fff;
+    background:var(--ink);
+    display:inline-block;
+    padding:0.5rem 1.4rem;
+    border-radius:4px;
+    margin-bottom:1.2rem;
+    border-left:8px solid var(--orange);
+  }
+
+  /* ---- Useful Expressions ---- */
+  .expr-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:1.2rem;
+  }
+  .expr-card{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:10px;
+    padding:1.2rem 1.4rem;
+    box-shadow:6px 6px 0 var(--orange-light);
+  }
+  .expr-en{
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--orange);
+  }
+  .expr-es{
+    font-size:1rem;
+    font-weight:700;
+    color:var(--gold);
+    margin:0.2rem 0 0.5rem;
+  }
+  .expr-ex{
+    font-style:italic;
+    color:#333;
+  }
+
+  /* ---- Overview / paraphrased tip sections ---- */
+  .tip-block{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:10px;
+    margin-bottom:1.6rem;
+    overflow:hidden;
+    box-shadow:8px 8px 0 var(--orange-pale);
+  }
+  .tip-header{
+    background:var(--orange);
+    color:#fff;
+    font-weight:800;
+    font-size:1.2rem;
+    padding:0.7rem 1.3rem;
+  }
+  .tip-body{
+    padding:1.3rem 1.5rem;
+    font-size:1.08rem;
+  }
+
+  /* ---- Highlight / tooltip ---- */
+  .highlight{
+    background:#fff9c4;
+    font-weight:700;
+    border-bottom:3px solid var(--orange);
+    padding:0 3px;
+    border-radius:3px;
+    position:relative;
+    cursor:help;
+  }
+  .highlight[title]{
+    text-decoration:none;
+  }
+  .highlight::after{
+    content: attr(data-tooltip);
+    position:absolute;
+    bottom:130%;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--ink);
+    color:#fff;
+    padding:0.4rem 0.7rem;
+    border-radius:6px;
+    font-size:0.85rem;
+    font-weight:600;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.2s ease;
+    z-index:10;
+  }
+  .highlight::before{
+    content:"";
+    position:absolute;
+    bottom:118%;
+    left:50%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:var(--ink);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.2s ease;
+    z-index:10;
+  }
+  .highlight:hover::after,
+  .highlight:hover::before{
+    opacity:1;
+  }
+  @media (max-width:600px){
+    .highlight::after{
+      white-space:normal;
+      max-width:180px;
+      text-align:center;
+    }
+  }
+
+  /* ---- Vocabulary boxes ---- */
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1rem;
+    margin:0 1.5rem 1.5rem;
+  }
+  .vocab-card{
+    background:var(--orange-pale);
+    border:2px solid var(--orange);
+    border-radius:10px;
+    padding:1rem 1.1rem;
+  }
+  .vocab-word-row{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    margin-bottom:0.4rem;
+  }
+  .vocab-word{
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .speak-btn{
+    background:var(--ink);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    font-size:1rem;
+    flex-shrink:0;
+  }
+  .speak-btn:hover{ background:var(--orange); }
+  .vocab-def{
+    color:#333;
+    font-size:0.98rem;
+  }
+  .vocab-es{
+    font-weight:700;
+    color:var(--gold);
+    margin:0.3rem 0;
+  }
+  .vocab-example{
+    font-style:italic;
+    font-size:0.95rem;
+    color:#444;
+    border-top:1px dashed var(--orange);
+    padding-top:0.4rem;
+    margin-top:0.4rem;
+  }
+
+  /* ---- Discussion / Role-play ---- */
+  .discuss-list, .role-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    gap:1rem;
+  }
+  .discuss-list li, .role-card{
+    background:var(--card);
+    border-left:8px solid var(--orange);
+    border-radius:6px;
+    padding:1rem 1.3rem;
+    box-shadow:3px 3px 0 rgba(0,0,0,0.08);
+    font-size:1.08rem;
+  }
+  .role-card .role-tag{
+    display:inline-block;
+    background:var(--ink);
+    color:#fff;
+    font-size:0.8rem;
+    font-weight:700;
+    padding:0.2rem 0.6rem;
+    border-radius:12px;
+    margin-bottom:0.5rem;
+  }
+
+  /* ---- Self practice ---- */
+  details.practice-item{
+    background:var(--card);
+    border:2px solid var(--ink);
+    border-radius:8px;
+    padding:0.9rem 1.2rem;
+    margin-bottom:1rem;
+  }
+  details.practice-item summary{
+    font-weight:700;
+    font-size:1.08rem;
+    cursor:pointer;
+    color:var(--ink);
+  }
+  details.practice-item summary::marker{
+    color:var(--orange);
+  }
+  .practice-answer{
+    margin-top:0.7rem;
+    padding-top:0.7rem;
+    border-top:2px dashed var(--orange-light);
+    color:#333;
+  }
+  .practice-note{
+    font-size:0.9rem;
+    color:#777;
+    margin-top:-0.6rem;
+    margin-bottom:1.2rem;
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwBorcHC5cXXwChnjhutYTHSKklNjhEQobrlbp0_nX_A&s=10" alt="🎤 Less PowerPoint, More Power" class="article-image">
+    </div>
+
+
+<div class="lesson-container">
+
+  <h2 class="lesson-title">🎤 Less PowerPoint, More Power</h2>
+  <div class="lesson-subtitle">Lead the room; don't read to it</div>
+  <div class="lesson-byline">Based on an article by Judith Humphrey — Fast Company, 2025 &nbsp;|&nbsp; Read the full original article as handed out / projected in class</div>
+
+  <!-- 1. USEFUL EXPRESSIONS -->
+  <section class="block">
+    <div class="block-heading">🗝️ Useful Expressions</div>
+    <div class="expr-grid">
+      <div class="expr-card">
+        <div class="expr-en">lose touch with (someone)</div>
+        <div class="expr-es">perder el contacto / la conexión con</div>
+        <div class="expr-ex">"The speaker completely lost touch with his audience."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">drive home a point</div>
+        <div class="expr-es">recalcar o dejar muy claro un punto</div>
+        <div class="expr-ex">"A single strong chart can drive home a point better than ten slides."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">keep something front and center</div>
+        <div class="expr-es">mantener algo en primer plano / como prioridad</div>
+        <div class="expr-ex">"Keep your key message front and center throughout the talk."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">bring something to life</div>
+        <div class="expr-es">darle vida a algo</div>
+        <div class="expr-ex">"Strong body language brings a presentation to life."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">a call to action</div>
+        <div class="expr-es">un llamado a la acción</div>
+        <div class="expr-ex">"End every proposal with a clear call to action."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ARTICLE OVERVIEW (paraphrased, with vocabulary highlighted per section) -->
+  <section class="block">
+    <div class="block-heading">📊 Article Overview</div>
+
+    <div class="tip-block">
+      <div class="tip-header">The Story: A Presentation Gone Wrong</div>
+      <div class="tip-body">
+        The writer once sat through a painfully dull presentation. The speaker moved through
+        <span class="highlight" data-tooltip="uno tras otro / consecutivo">back-to-back</span>
+        slides with no real connection to the room — and by the end, the audience had quietly
+        <span class="highlight" data-tooltip="salir en fila / desfilar">filed</span>
+        out without him even noticing. The takeaway: slides can drain the power right out of a strong speaker.
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">back-to-back</span>
+          <button class="speak-btn" onclick="speakWord('back-to-back')">🔊</button>
+        </div>
+        <div class="vocab-def">(adj) happening one right after another, without a break</div>
+        <div class="vocab-es">uno tras otro / consecutivo</div>
+        <div class="vocab-example">"We had three back-to-back meetings this morning."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">file (out)</span>
+          <button class="speak-btn" onclick="speakWord('file')">🔊</button>
+        </div>
+        <div class="vocab-def">(v) to walk somewhere, one after another, in a line</div>
+        <div class="vocab-es">salir/entrar en fila</div>
+        <div class="vocab-example">"Employees filed out of the auditorium after the safety drill."</div>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <div class="tip-header">1. Avoid Slides Whenever Possible</div>
+      <div class="tip-body">
+        Before building a single slide, the author suggests asking whether you need one at all. A talk should
+        persuade and inspire — something a deck full of visual
+        <span class="highlight" data-tooltip="accesorios / apoyos visuales">props</span>
+        rarely does on its own. Sometimes the most powerful presentation is the one with no visuals at all.
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">prop</span>
+          <button class="speak-btn" onclick="speakWord('prop')">🔊</button>
+        </div>
+        <div class="vocab-def">(n) something used to create or support a particular effect</div>
+        <div class="vocab-es">accesorio / apoyo visual</div>
+        <div class="vocab-example">"He used the safety helmet as a prop during the training."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">deck</span>
+          <button class="speak-btn" onclick="speakWord('deck')">🔊</button>
+        </div>
+        <div class="vocab-def">(n) a set of slides presented as a slideshow</div>
+        <div class="vocab-es">conjunto de diapositivas</div>
+        <div class="vocab-example">"Can you send me the deck before the meeting?"</div>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <div class="tip-header">2. Realize That You're the Best Visual</div>
+      <div class="tip-body">
+        You are always more compelling than any
+        <span class="highlight" data-tooltip="inanimado">inanimate</span>
+        image on a screen. Lead with your own energy and conviction instead of hiding behind your
+        visuals — busy, cluttered slides are exactly what make audiences
+        <span class="highlight" data-tooltip="dejar de prestar atención / desconectarse">tune out</span>.
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">inanimate</span>
+          <button class="speak-btn" onclick="speakWord('inanimate')">🔊</button>
+        </div>
+        <div class="vocab-def">(adj) not living; without life</div>
+        <div class="vocab-es">inanimado</div>
+        <div class="vocab-example">"A slide is an inanimate object — it can't make eye contact with the audience."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">tune (someone) out</span>
+          <button class="speak-btn" onclick="speakWord('tune out')">🔊</button>
+        </div>
+        <div class="vocab-def">(phr v) to ignore or stop paying attention to someone/something</div>
+        <div class="vocab-es">dejar de prestar atención / desconectarse</div>
+        <div class="vocab-example">"When the slides are too crowded, people tune out."</div>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <div class="tip-header">3. Make Sure You Have One Clear, Compelling Message</div>
+      <div class="tip-body">
+        A strong presentation needs a single, memorable message, stated early and kept
+        <span class="highlight" data-tooltip="en primer plano / como prioridad">front and center</span>
+        the whole way through — the way Steve Jobs repeated one line when he first introduced the iPhone.
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">front and center</span>
+          <button class="speak-btn" onclick="speakWord('front and center')">🔊</button>
+        </div>
+        <div class="vocab-def">(adj/adv) in a very important, highly visible position</div>
+        <div class="vocab-es">en primer plano / al centro de la atención</div>
+        <div class="vocab-example">"Keep the client's needs front and center in every proposal."</div>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <div class="tip-header">4. Present with Great Conviction</div>
+      <div class="tip-body">
+        Using slides doesn't
+        <span class="highlight" data-tooltip="disminuir">lessen</span>
+        the need for real commitment — it actually doubles it. You have to
+        <span class="highlight" data-tooltip="apropiarse de / dominar con confianza">own</span>
+        every visual: narrate it with confidence, and let your voice and body language show the
+        audience that you mean what you're saying.
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">lessen</span>
+          <button class="speak-btn" onclick="speakWord('lessen')">🔊</button>
+        </div>
+        <div class="vocab-def">(v) to become smaller in size, importance, or value; to reduce</div>
+        <div class="vocab-es">disminuir</div>
+        <div class="vocab-example">"Good preparation lessens the risk of accidents on site."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">own</span>
+          <button class="speak-btn" onclick="speakWord('own')">🔊</button>
+        </div>
+        <div class="vocab-def">(v) to manage or present something in a way that shows confidence and pride</div>
+        <div class="vocab-es">apropiarse de / dominar con seguridad</div>
+        <div class="vocab-example">"She owned the stage the moment she started speaking."</div>
+      </div>
+    </div>
+
+    <div class="tip-block">
+      <div class="tip-header">5. A Call to Action</div>
+      <div class="tip-body">
+        Always close by echoing your opening message and telling the audience exactly what you want
+        from them — whether that's approval, agreement, or full
+        <span class="highlight" data-tooltip="aceptación / compromiso con un plan">buy-in</span>.
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">buy-in</span>
+          <button class="speak-btn" onclick="speakWord('buy-in')">🔊</button>
+        </div>
+        <div class="vocab-def">(n) agreement and willingness to participate in or support a plan</div>
+        <div class="vocab-es">aceptación / compromiso con un plan</div>
+        <div class="vocab-example">"We need buy-in from every department before we roll out the new system."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DISCUSSION QUESTIONS -->
+  <section class="block">
+    <div class="block-heading">💬 Discussion Questions</div>
+    <ul class="discuss-list">
+      <li>Think of the most boring presentation you've ever sat through. What exactly made it so hard to stay engaged?</li>
+      <li>Do you agree that "you are the best visual" in a presentation? Why or why not?</li>
+      <li>In your own job, when is it truly necessary to use slides, and when could you present just as well — or better — without them?</li>
+    </ul>
+  </section>
+
+  <!-- 4. ROLE-PLAY SCENARIOS -->
+  <section class="block">
+    <div class="block-heading">🎭 Role-Play Scenarios</div>
+    <div class="role-list">
+      <div class="role-card">
+        <span class="role-tag">EHS</span>
+        <div>You need to present a new safety protocol to plant managers who are tired of long slide decks. Practice opening with one clear, compelling message and keeping it front and center throughout.</div>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">HR</span>
+        <div>You're introducing a new benefits package to employees. Practice "owning" your message with conviction, and close with a call to action that gets real buy-in.</div>
+      </div>
+      <div class="role-card">
+        <span class="role-tag">IT</span>
+        <div>You're proposing a system migration to leadership. Try presenting the plan with almost no slides — just your voice, your conviction, and one strong prop if needed.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SELF-PRACTICE (foldable, for next class warm-up) -->
+  <section class="block">
+    <div class="block-heading">✍️ Self-Practice Questions</div>
+    <div class="practice-note">Tap a question to reveal a sample answer. (Great as a warm-up at the start of next class!)</div>
+
+    <details class="practice-item">
+      <summary>1. What's the difference between presenting to persuade and presenting to inform?</summary>
+      <div class="practice-answer">Sample answer: Persuading means you want the audience to feel or do something — to trust you, agree with you, or take action. Informing just means transferring facts. A great presentation usually leads with persuasion and uses information to support it, not the other way around.</div>
+    </details>
+
+    <details class="practice-item">
+      <summary>2. Describe a time you had to "own" a message in front of others.</summary>
+      <div class="practice-answer">Sample answer: In my last performance review, I had to own the results of a project that didn't go as planned. Instead of hiding behind data, I explained clearly what happened and what I would do differently — and my manager respected the honesty.</div>
+    </details>
+
+    <details class="practice-item">
+      <summary>3. What could you cut from your last presentation to make the message clearer?</summary>
+      <div class="practice-answer">Sample answer: I could cut at least half of my slides — most of them repeated information I was already saying out loud. A cleaner deck with one message per slide would have kept people's attention much longer.</div>
+    </details>
+
+    <details class="practice-item">
+      <summary>4. Write one strong call to action you could use at the end of your next work presentation.</summary>
+      <div class="practice-answer">Sample answer: "I'm asking each of you to review the new protocol by Friday and send me your sign-off — that's how we get this rolled out by next month."</div>
+    </details>
+  </section>
+
+</div>
+
+<script>
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
