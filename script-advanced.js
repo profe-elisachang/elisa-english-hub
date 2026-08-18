@@ -126,6 +126,7 @@ async function scanLessons() {
         { filename: 'The Cost of Extreme Heat Is Displacement.html', date: '2026-08-06', title: '🌍 The Cost of Extreme Heat Is Displacement' },
         { filename: 'Part-Time Expertise.html', date: '2026-08-11', title: 'Part-Time Expertise' },
         { filename: 'Less PowerPoint, More Power.html', date: '2026-08-13', title: '🎤 Less PowerPoint, More Power' },
+        { filename: '.html', date: '2026-08-18', title: '📊 The Path of Innovation: Gateway Products' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
