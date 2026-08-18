@@ -1,0 +1,455 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced · Gateway Products · Elisa</title>
+  <!-- 固定样式表 (Advanced) -->
+  <link rel="stylesheet" href="../style-advanced.css">
+  <style>
+    /* ----- 完全自由的配色方案: 暖沙色+深海蓝+橙红点缀 ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f2e9;  /* 暖白底色，无紫色/蓝紫/靛蓝 */
+      font-family: 'Noto Sans', 'Open Sans', sans-serif;
+      line-height: 1.7;
+      padding: 0 1.5rem 3rem;
+      color: #1e2b3c;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 2rem auto;
+      background: #fffcf8;
+      border-radius: 32px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem 2.8rem;
+      border: 1px solid #e6ddd2;
+    }
+
+    /* 固定 header 已由 style-advanced.css 定义，此处仅微调间距 */
+    .header {
+      background: #1e3b4f;  /* 深海蓝，与文章主题呼应 */
+      border-radius: 40px 40px 20px 20px;
+      margin-bottom: 2.2rem;
+    }
+    .header-content h1 {
+      color: #f4e9db;
+      letter-spacing: 1px;
+    }
+    .level-badge {
+      background: #d96c4a;  /* 暖橙红 */
+      color: white;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 700;
+    }
+    .back-to-calendar-btn {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border: 1px solid rgba(255, 215, 180, 0.5) !important;
+      color: #f4e9db !important;
+    }
+    .back-to-calendar-btn:hover {
+      background: rgba(255, 215, 180, 0.3) !important;
+    }
+
+    /* 文章标题 + 装饰 */
+    .article-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #1e3b4f;
+      border-left: 8px solid #d96c4a;
+      padding-left: 1.2rem;
+      margin: 1.8rem 0 0.8rem;
+      line-height: 1.2;
+    }
+    .article-subhead {
+      font-size: 1.1rem;
+      color: #5b6f7e;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+      font-style: italic;
+      border-bottom: 2px dashed #d6cbbc;
+      padding-bottom: 0.8rem;
+    }
+
+    /* 高亮词汇 (非cognate / 技术词) */
+    .highlight {
+      background: #fdebd0;  /* 暖杏色，高亮醒目 */
+      font-weight: 700;
+      border-bottom: 3px solid #d96c4a;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+      color: #1e2b3c;
+      transition: all 0.1s;
+      position: relative;
+      cursor: help;
+    }
+    .highlight:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: 150%; /* 显示在光标上方 */
+      left: 0;
+      background: #1e3b4f;
+      color: #f4e9db;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 100;
+      border: 1px solid #d96c4a;
+    }
+
+    /* 词汇区块 - 完全自由设计 */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      background: #f2ede5;
+      padding: 1.8rem 1.8rem;
+      border-radius: 28px;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid #d6cbbc;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .vocab-item {
+      background: white;
+      border-radius: 20px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      border-left: 6px solid #d96c4a;
+      transition: all 0.2s;
+    }
+    .vocab-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    }
+    .vocab-word {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1e3b4f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pronounce-btn {
+      background: #e8ddd0;
+      border: none;
+      border-radius: 40px;
+      padding: 0.1rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e3b4f;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid #cbb8a6;
+    }
+    .pronounce-btn:hover {
+      background: #d96c4a;
+      color: white;
+      border-color: #d96c4a;
+    }
+    .vocab-def {
+      font-size: 0.95rem;
+      margin: 0.3rem 0 0.2rem;
+      color: #2a3f52;
+    }
+    .vocab-example {
+      font-size: 0.9rem;
+      color: #5b6f7e;
+      background: #f7f2e9;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+    .vocab-es {
+      font-weight: 500;
+      color: #b15e3d;
+    }
+
+    /* 问题区域 */
+    .q-section {
+      margin-top: 2.8rem;
+      background: #f7f2e9;
+      padding: 1.8rem 2.2rem;
+      border-radius: 32px;
+      border: 1px solid #e6ddd2;
+    }
+    .q-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #1e3b4f;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .q-list {
+      list-style: none;
+      padding-left: 0.5rem;
+    }
+    .q-list li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    .q-list li::before {
+      content: "▹";
+      color: #d96c4a;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    .self-practice {
+      margin-top: 1.5rem;
+      background: white;
+      border-radius: 28px;
+      padding: 1.2rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .self-item {
+      border-bottom: 1px solid #e6ddd2;
+      padding: 0.8rem 0;
+    }
+    .self-item:last-child {
+      border-bottom: none;
+    }
+    .self-question {
+      font-weight: 600;
+      color: #1e3b4f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      flex-wrap: wrap;
+    }
+    .self-answer {
+      background: #f2ede5;
+      padding: 0.8rem 1.2rem;
+      margin-top: 0.5rem;
+      border-radius: 30px;
+      color: #1e3b4f;
+      display: none;
+      border-left: 4px solid #d96c4a;
+    }
+    .toggle-btn {
+      background: #d6cbbc;
+      border: none;
+      border-radius: 40px;
+      padding: 0.1rem 1rem;
+      font-weight: 600;
+      color: #1e3b4f;
+      transition: 0.2s;
+      font-size: 0.8rem;
+    }
+    .toggle-btn:hover {
+      background: #d96c4a;
+      color: white;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 860px) {
+      .container { padding: 1.5rem; }
+      .vocab-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .article-title { font-size: 1.8rem; }
+    }
+    @media (max-width: 540px) {
+      .container { padding: 1rem; }
+      .vocab-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        padding: 1rem;
+      }
+      .header-content {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .article-title { font-size: 1.5rem; }
+    }
+  </style>
+
+
+
+<div class="container">
+
+  <!-- 固定 header (完全按照模板) -->
+  <header class="header">
+    <div class="header-content">
+      <h1>📚 English Conversation with Elisa</h1>
+      <span class="level-badge">Advanced Level </span>
+      <div class="search-box">
+        <a href="../index-advanced.html" class="back-to-calendar-btn" style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.25); color: white; text-decoration: none; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Useful Expressions (3-5) -->
+  <section style="margin-top: 0.5rem;">
+    <div style="background: #e6ddd2; padding: 1.2rem 1.8rem; border-radius: 60px; margin-bottom: 1.5rem;">
+      <h3 style="font-weight: 700; color: #1e3b4f; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+        <span>💬 Useful Expressions</span>
+      </h3>
+      <ul style="list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; margin-top: 0.2rem;">
+        <li style="background: white; padding: 0.2rem 1.2rem; border-radius: 40px; border: 1px solid #d6cbbc;">“Gateway product” → “Producto de entrada / puerta de enlace” <br><span style="font-size: 0.9rem; color: #5b6f7e;">“The Flip camera was a classic gateway product.”</span></li>
+        <li style="background: white; padding: 0.2rem 1.2rem; border-radius: 40px; border: 1px solid #d6cbbc;">“Supplant” → “Desplazar / suplantar” <br><span style="font-size: 0.9rem; color: #5b6f7e;">“Smartphones supplanted dedicated cameras.”</span></li>
+        <li style="background: white; padding: 0.2rem 1.2rem; border-radius: 40px; border: 1px solid #d6cbbc;">“Caught flat-footed” → “Ser tomado por sorpresa” <br><span style="font-size: 0.9rem; color: #5b6f7e;">“Leaders don’t want to be caught flat-footed.”</span></li>
+        <li style="background: white; padding: 0.2rem 1.2rem; border-radius: 40px; border: 1px solid #d6cbbc;">“Loyalty evaporates” → “La lealtad se desvanece” <br><span style="font-size: 0.9rem; color: #5b6f7e;">“Mastery-based loyalty evaporates quickly.”</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Article with Highlighted Vocabulary -->
+  <h2 class="article-title">📊 The Path of Innovation: Gateway Products</h2>
+  <div class="article-subhead">Why today’s breakthrough may be tomorrow’s bridge · by Rita McGrath</div>
+
+  <div style="font-size: 1.05rem;">
+
+    <p><strong>R</strong>emember the Flip video recorder? In 2009, it was a sensation—a pocket-size recorder that let ordinary people capture moments without lugging around a <span class="highlight" title="videocámara">camcorder</span>. Cisco acquired Flip’s maker for $590 million in stock. Two years later, Cisco shut Flip down entirely.</p>
+
+    <p>The Flip wasn’t a failure. It solved a real problem elegantly. But it was what I call a “gateway product”—an innovation that reveals what customers want but gets <span class="highlight" title="suplantado / desplazado">supplanted</span> by something that delivers the same outcome more cheaply or conveniently. In this case, the rise of smartphones made a <span class="highlight" title="dispositivo dedicado / específico">dedicated device</span> obsolete.</p>
+
+    <p>The history of innovation suggests that most game changers proceed through a series of gateways. We had fax machines before email, PalmPilots before BlackBerry before iPhones, MapQuest before Google Maps. Each one made money. And each one was eventually swept aside.</p>
+
+    <!-- 词汇区块 1 (接在对应段落之后) -->
+    <div class="vocab-grid">
+      <div class="vocab-item"><span class="vocab-word">camcorder <button class="pronounce-btn" onclick="speakWord('camcorder')">🔊</button></span><div class="vocab-def">videocámara portátil</div><div class="vocab-es">Spanish: videocámara</div><div class="vocab-example">“She used a camcorder to film the ceremony.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">supplanted <button class="pronounce-btn" onclick="speakWord('supplanted')">🔊</button></span><div class="vocab-def">reemplazado / desplazado</div><div class="vocab-es">Spanish: suplantado</div><div class="vocab-example">“Email supplanted fax for most communication.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">dedicated device <button class="pronounce-btn" onclick="speakWord('dedicated device')">🔊</button></span><div class="vocab-def">dispositivo exclusivo para una función</div><div class="vocab-es">Spanish: dispositivo dedicado</div><div class="vocab-example">“A GPS is a dedicated device for navigation.”</div></div>
+    </div>
+
+    <p><strong>Problem solved?</strong> Gateway products genuinely solve customer problems. That’s what makes them successful—and dangerous. Their success validates the desire of customers to achieve given outcomes while obscuring the fact that the method may be temporary.</p>
+    <p>The fax machine eliminated the delay of postal mail. But it still required paper, a phone line and a compatible machine on the receiving end. Email didn’t just do the fax’s job faster—it eliminated the infrastructure entirely.</p>
+
+    <!-- 词汇区块 2 -->
+    <div class="vocab-grid">
+      <div class="vocab-item"><span class="vocab-word">scaffolding <button class="pronounce-btn" onclick="speakWord('scaffolding')">🔊</button></span><div class="vocab-def">andamiaje / estructura de soporte</div><div class="vocab-es">Spanish: andamiaje</div><div class="vocab-example">“The old system was scaffolding for the new.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">form factor <button class="pronounce-btn" onclick="speakWord('form factor')">🔊</button></span><div class="vocab-def">factor de forma / diseño físico</div><div class="vocab-es">Spanish: factor de forma</div><div class="vocab-example">“The form factor of a device affects its portability.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">yet <button class="pronounce-btn" onclick="speakWord('yet')">🔊</button></span><div class="vocab-def">todavía (en contexto de “aún no”)</div><div class="vocab-es">Spanish: todavía</div><div class="vocab-example">“Nothing else can do the job yet.”</div></div>
+    </div>
+
+    <p>This doesn’t mean dedicated devices always lose. Sometimes they win on performance or experience—professional cameras, high-end gaming consoles, studio monitors. But the burden is on the device to justify its separate existence. If a product’s primary advantage is that nothing else can do the job <span class="highlight" title="todavía / aún">yet</span>, leadership needs to plan for “yet” becoming “now.”</p>
+
+    <p>Gateway products often develop loyal following among people who’ve invested time in learning them. BlackBerry devotees became <span class="highlight" title="virtuosos / maestros">virtuosos</span> of the physical keyboard. Customers have sunk costs, and they’re reluctant to switch. But mastery-based loyalty evaporates the moment a competitor makes it unnecessary. Smartphones didn’t require users to learn a new input language; they just worked.</p>
+
+    <!-- 词汇区块 3 -->
+    <div class="vocab-grid">
+      <div class="vocab-item"><span class="vocab-word">virtuosos <button class="pronounce-btn" onclick="speakWord('virtuosos')">🔊</button></span><div class="vocab-def">personas con gran habilidad / maestros</div><div class="vocab-es">Spanish: virtuosos</div><div class="vocab-example">“He is a virtuoso of the physical keyboard.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">churn <button class="pronounce-btn" onclick="speakWord('churn')">🔊</button></span><div class="vocab-def">rotación de clientes / abandono</div><div class="vocab-es">Spanish: rotación</div><div class="vocab-example">“High churn indicates customer dissatisfaction.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">relentlessly <button class="pronounce-btn" onclick="speakWord('relentlessly')">🔊</button></span><div class="vocab-def">incesantemente / sin descanso</div><div class="vocab-es">Spanish: implacablemente</div><div class="vocab-example">“Monitor your gap relentlessly.”</div></div>
+    </div>
+
+    <p>If your customer retention depends on what people have learned rather than what they love, you’re more vulnerable than your <span class="highlight" title="rotación de clientes">churn</span> numbers suggest.</p>
+
+    <p><strong>New product? Questions to ask:</strong> 1. What complexities does our product require that customers would prefer to eliminate entirely? Every negative is an opening for a competitor who does away with it. 2. If someone started fresh today with current technology, would they build this same way? If the answer is no—if they’d build something that makes your product unnecessary—you have a gateway.</p>
+
+    <p>3. What temporary technological gap are we exploiting? Flip cameras existed because smartphone cameras weren’t good enough yet. GPS units existed because phones lacked sensors and software. Identify your gap, and monitor it <span class="highlight" title="incesantemente">relentlessly</span>. 4. What’s our plan for when the gap closes? This is the question most leaders avoid. Acknowledging that your hit product has an expiration date feels like disloyalty. But the alternative is being <span class="highlight" title="tomado por sorpresa / desprevenido">caught flat-footed</span>.</p>
+
+    <!-- 词汇区块 4 -->
+    <div class="vocab-grid">
+      <div class="vocab-item"><span class="vocab-word">caught flat-footed <button class="pronounce-btn" onclick="speakWord('caught flat-footed')">🔊</button></span><div class="vocab-def">ser tomado por sorpresa</div><div class="vocab-es">Spanish: desprevenido</div><div class="vocab-example">“They were caught flat-footed by the new technology.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">lured <button class="pronounce-btn" onclick="speakWord('lured')">🔊</button></span><div class="vocab-def">atraído / seducido</div><div class="vocab-es">Spanish: atraído</div><div class="vocab-example">“Leaders are lured into thinking it’s permanent.”</div></div>
+      <div class="vocab-item"><span class="vocab-word">tuition <button class="pronounce-btn" onclick="speakWord('tuition')">🔊</button></span><div class="vocab-def">lección / enseñanza (coste de aprendizaje)</div><div class="vocab-es">Spanish: enseñanza</div><div class="vocab-example">“Gateway products are like paying tuition.”</div></div>
+    </div>
+
+    <p><strong>Is a gateway valuable?</strong> None of this means gateway products are bad businesses.</p>
+    <p>The strategic error is being <span class="highlight" title="atraído">lured</span> into believing that it will be a permanent franchise. That can lead, in turn, to overinvesting in extending the product’s life, building organizations for a form factor that’s becoming obsolete and missing the chance to be the company that makes its own product unnecessary. Apple famously undermined its own hugely profitable iPod to launch the modern smartphone revolution, leading to enormous value creation.</p>
+    <p>Gateway products can be supremely valuable. They are like paying <span class="highlight" title="lección / enseñanza">tuition</span> to learn about the future.</p>
+  </div>
+
+  <!-- 3. Discussion Questions (3 open-ended) -->
+  <div class="q-section">
+    <div class="q-title">💭 Discussion Questions</div>
+    <ul class="q-list">
+      <li>Can you think of a product you used that was later replaced by something more convenient? How did you feel about the switch?</li>
+      <li>Why do you think leaders often ignore the “expiration date” of their successful products? What psychological factors are at play?</li>
+      <li>Apple killed the iPod to create the iPhone. Do you think most companies would dare to do the same? Why or why not?</li>
+    </ul>
+  </div>
+
+  <!-- 4. Self-Practice Questions with foldable answers -->
+  <div class="q-section" style="margin-top: 1.5rem;">
+    <div class="q-title">📝 Self-Practice <span style="font-size: 0.9rem; font-weight: 400; color: #5b6f7e;">(click to reveal answers)</span></div>
+    <div class="self-practice">
+
+      <div class="self-item">
+        <div class="self-question">
+          <span>1. What is a “gateway product” in your own words?</span>
+          <button class="toggle-btn" onclick="toggleAnswer(this)">Show</button>
+        </div>
+        <div class="self-answer">A product that solves a real problem but is eventually replaced by a better, cheaper, or more convenient solution. It opens the door to customer needs but is not the final form.</div>
+      </div>
+
+      <div class="self-item">
+        <div class="self-question">
+          <span>2. Why does the author say “mastery-based loyalty evaporates”?</span>
+          <button class="toggle-btn" onclick="toggleAnswer(this)">Show</button>
+        </div>
+        <div class="self-answer">Because if customers only stay because they’ve invested time learning a product, they will leave as soon as something easier or better appears—no emotional attachment.</div>
+      </div>
+
+      <div class="self-item">
+        <div class="self-question">
+          <span>3. What are the four questions leaders should ask about new products?</span>
+          <button class="toggle-btn" onclick="toggleAnswer(this)">Show</button>
+        </div>
+        <div class="self-answer">1. What complexities can we eliminate? 2. Would we build it the same way today? 3. What temporary gap are we exploiting? 4. What’s our plan when the gap closes?</div>
+      </div>
+
+      <div class="self-item">
+        <div class="self-question">
+          <span>4. How can a gateway product still be “supremely valuable”?</span>
+          <button class="toggle-btn" onclick="toggleAnswer(this)">Show</button>
+        </div>
+        <div class="self-answer">It generates revenue, teaches companies about future markets, and can fund the next innovation—like paying tuition to learn about what comes next.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // 发音功能 (Web Speech API)
+  function speakWord(word) {
+    if (!window.speechSynthesis) {
+      alert('Speech synthesis not supported in this browser.');
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+  }
+
+  // 折叠答案切换
+  function toggleAnswer(btn) {
+    const item = btn.closest('.self-item');
+    const answer = item.querySelector('.self-answer');
+    if (answer.style.display === 'block') {
+      answer.style.display = 'none';
+      btn.textContent = 'Show';
+    } else {
+      answer.style.display = 'block';
+      btn.textContent = 'Hide';
+    }
+  }
+</script>
+
+
