@@ -4,30 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Path of Innovation | English Conversation with Elisa</title>
-<link rel="stylesheet" href="../style-intermediate.css">
+
+<link rel="stylesheet" href="../style-advanced.css">
 
 <style>
 /* =========================================================
    THE PATH OF INNOVATION
-   Fresh palette: charcoal + coral + warm gold + teal
+   Theme: Industrial Teal + Rust + Warm Gold + Charcoal
    No gradients / no purple / TV optimized
    ========================================================= */
 
 :root {
     --ink: #263238;
-    --deep: #37474f;
-    --coral: #d95f4f;
-    --coral-dark: #a83e32;
-    --gold: #e7a93b;
-    --gold-light: #fff3cf;
-    --teal: #167d7f;
-    --teal-light: #dff3f1;
-    --cream: #fffdf7;
-    --paper: #ffffff;
-    --line: #c9d0d2;
-    --soft-gray: #eef1f2;
-    --green: #3d7652;
+    --charcoal: #37474f;
+    --teal: #087f8c;
+    --teal-dark: #075e68;
+    --teal-light: #e2f3f4;
+    --rust: #c94c3c;
+    --rust-dark: #96372d;
+    --gold: #e2a72d;
+    --gold-light: #fff3cc;
+    --cream: #faf8f2;
+    --white: #ffffff;
+    --gray: #e9edef;
+    --green: #3f7654;
     --green-light: #e5f1e8;
+    --border: #b8c3c6;
 }
 
 * {
@@ -43,7 +45,7 @@ body {
 }
 
 .header {
-    background: var(--deep);
+    background: var(--charcoal);
     color: white;
 }
 
@@ -63,7 +65,7 @@ body {
 }
 
 .level-badge {
-    background: var(--coral);
+    background: var(--rust);
     padding: 0.35rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -75,56 +77,69 @@ body {
     margin-left: auto;
 }
 
-/* Main container */
+/* =========================================================
+   MAIN
+   ========================================================= */
+
 .lesson-container {
     max-width: 1400px;
     margin: auto;
     padding: 2rem 1.5rem 4rem;
 }
 
-/* Hero */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .lesson-hero {
     background: var(--teal);
     color: white;
-    border: 4px solid var(--deep);
-    box-shadow: 8px 8px 0 var(--gold);
-    padding: 2rem;
-    margin-bottom: 2.5rem;
+    border: 4px solid var(--charcoal);
+    box-shadow: 9px 9px 0 var(--gold);
+    padding: 2.2rem;
+    margin-bottom: 2.8rem;
 }
 
 .lesson-hero h2 {
-    margin: 0 0 0.4rem;
-    font-size: clamp(2rem, 4vw, 3.6rem);
-    line-height: 1.15;
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 1.1;
+    font-weight: 900;
 }
 
 .lesson-hero p {
-    margin: 0.5rem 0;
-    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    margin: 0.7rem 0 0;
+    font-size: clamp(1.05rem, 1.8vw, 1.4rem);
 }
 
 .hero-tag {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     background: var(--gold);
     color: var(--ink);
-    padding: 0.35rem 0.8rem;
-    border: 2px solid var(--ink);
-    font-weight: 800;
-}
-
-/* Section headings */
-.section-title {
-    font-size: clamp(1.5rem, 2.5vw, 2.3rem);
-    margin: 3rem 0 1.2rem;
-    padding: 0.65rem 0.9rem;
-    border-left: 10px solid var(--coral);
-    background: var(--soft-gray);
-    color: var(--deep);
+    border: 2px solid var(--charcoal);
+    padding: 0.4rem 0.8rem;
     font-weight: 900;
 }
 
-/* Useful expressions */
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.section-title {
+    font-size: clamp(1.5rem, 2.6vw, 2.35rem);
+    margin: 3rem 0 1.25rem;
+    padding: 0.65rem 0.9rem;
+    border-left: 10px solid var(--rust);
+    background: var(--gray);
+    color: var(--charcoal);
+    font-weight: 900;
+}
+
+/* =========================================================
+   USEFUL EXPRESSIONS
+   ========================================================= */
+
 .expression-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -132,52 +147,60 @@ body {
 }
 
 .expression-card {
-    background: var(--paper);
+    background: var(--white);
     border: 3px solid var(--teal);
-    padding: 1.15rem;
+    padding: 1.2rem;
     box-shadow: 4px 4px 0 var(--teal-light);
 }
 
 .expression-card .english {
-    font-size: 1.2rem;
+    color: var(--teal-dark);
+    font-size: 1.15rem;
     font-weight: 900;
-    color: var(--teal);
 }
 
 .expression-card .spanish {
-    color: var(--coral-dark);
+    color: var(--rust-dark);
     font-weight: 700;
-    margin: 0.3rem 0;
+    margin: 0.3rem 0 0.6rem;
 }
 
 .expression-card .example {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--border);
     padding-top: 0.6rem;
-    margin-top: 0.6rem;
+    font-size: 0.95rem;
 }
 
-/* Article */
-.article-section {
-    margin-top: 1rem;
-}
+/* =========================================================
+   ARTICLE STRUCTURE
+   ========================================================= */
 
 .article-block {
-    background: var(--paper);
-    border: 3px solid var(--deep);
-    margin-bottom: 0;
+    background: var(--white);
+    border: 3px solid var(--charcoal);
     padding: 1.5rem;
+    margin-bottom: 0;
 }
 
 .article-block h3 {
-    color: var(--coral-dark);
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-    margin: 0 0 1rem;
+    color: var(--rust-dark);
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    margin: 0 0 0.9rem;
+    font-weight: 900;
 }
 
 .article-block p {
-    font-size: clamp(1rem, 1.45vw, 1.22rem);
+    font-size: clamp(1rem, 1.45vw, 1.2rem);
     margin: 0;
 }
+
+.article-block p + p {
+    margin-top: 1rem;
+}
+
+/* =========================================================
+   VOCABULARY HIGHLIGHTS
+   ========================================================= */
 
 .highlight {
     position: relative;
@@ -188,7 +211,6 @@ body {
     cursor: help;
 }
 
-/* Tooltip ABOVE cursor */
 .highlight:hover::after {
     content: attr(title);
     position: absolute;
@@ -217,46 +239,49 @@ body {
     z-index: 101;
 }
 
-/* Vocabulary boxes */
+/* =========================================================
+   VOCABULARY BOXES
+   ========================================================= */
+
 .vocab-box {
     background: var(--teal-light);
     border: 3px solid var(--teal);
     border-top: none;
     padding: 1rem 1.25rem 1.25rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.5rem;
 }
 
 .vocab-label {
     display: inline-block;
-    background: var(--teal);
+    background: var(--teal-dark);
     color: white;
-    padding: 0.25rem 0.65rem;
+    padding: 0.25rem 0.7rem;
     font-weight: 900;
     margin-bottom: 0.9rem;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
 .vocab-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
+    gap: 0.85rem;
 }
 
 .vocab-card {
     background: white;
-    border: 2px solid var(--line);
+    border: 2px solid var(--border);
     padding: 0.9rem;
-    min-height: 170px;
+    min-height: 180px;
 }
 
 .vocab-word {
-    color: var(--coral-dark);
-    font-size: 1.15rem;
+    color: var(--rust-dark);
+    font-size: 1.1rem;
     font-weight: 900;
 }
 
 .speak-btn {
-    border: 2px solid var(--deep);
+    border: 2px solid var(--charcoal);
     background: var(--gold);
     color: var(--ink);
     border-radius: 50%;
@@ -264,33 +289,84 @@ body {
     height: 32px;
     cursor: pointer;
     font-size: 0.9rem;
-    margin-left: 0.25rem;
+    margin-left: 0.2rem;
     font-weight: 900;
 }
 
 .speak-btn:hover {
-    background: var(--coral);
+    background: var(--rust);
     color: white;
 }
 
 .vocab-definition {
-    font-size: 0.95rem;
-    margin: 0.35rem 0;
+    font-size: 0.92rem;
+    margin: 0.4rem 0;
 }
 
 .vocab-spanish {
-    color: var(--coral-dark);
+    color: var(--rust-dark);
     font-weight: 800;
 }
 
 .vocab-example {
-    margin-top: 0.45rem;
-    padding-top: 0.45rem;
-    border-top: 1px solid var(--line);
-    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem;
 }
 
-/* Discussion */
+/* =========================================================
+   CASE STUDY / EXAMPLE STRIP
+   ========================================================= */
+
+.case-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    margin: 1rem 0 1.4rem;
+}
+
+.case-card {
+    background: var(--gold-light);
+    border: 2px solid var(--gold);
+    padding: 0.9rem;
+}
+
+.case-card strong {
+    color: var(--rust-dark);
+}
+
+/* =========================================================
+   KEY IDEA
+   ========================================================= */
+
+.key-concept {
+    margin: 2.2rem 0;
+    background: var(--gold-light);
+    border: 4px solid var(--gold);
+    padding: 1.5rem;
+}
+
+.key-concept h3 {
+    margin-top: 0;
+    color: var(--rust-dark);
+    font-size: 1.5rem;
+}
+
+.key-concept .formula {
+    display: block;
+    background: white;
+    border: 2px solid var(--charcoal);
+    padding: 0.9rem;
+    margin: 1rem 0;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* =========================================================
+   DISCUSSION
+   ========================================================= */
+
 .question-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -298,9 +374,9 @@ body {
 }
 
 .question-card {
-    background: var(--deep);
+    background: var(--charcoal);
     color: white;
-    border: 4px solid var(--coral);
+    border: 4px solid var(--rust);
     padding: 1.35rem;
     box-shadow: 5px 5px 0 var(--gold);
 }
@@ -314,7 +390,10 @@ body {
     margin-bottom: 0.6rem;
 }
 
-/* Self practice */
+/* =========================================================
+   SELF PRACTICE
+   ========================================================= */
+
 .practice-list {
     display: grid;
     gap: 1rem;
@@ -328,7 +407,7 @@ body {
 
 .practice-item summary {
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     font-weight: 900;
     color: var(--green);
 }
@@ -340,23 +419,17 @@ body {
     border-left: 5px solid var(--green);
 }
 
-/* Key concept */
-.key-concept {
-    margin: 2rem 0;
-    background: var(--gold-light);
-    border: 4px solid var(--gold);
-    padding: 1.4rem;
-}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
-.key-concept h3 {
-    margin-top: 0;
-    color: var(--coral-dark);
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
     .expression-grid,
     .vocab-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-strip {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -385,7 +458,8 @@ body {
     }
 
     .expression-grid,
-    .vocab-grid {
+    .vocab-grid,
+    .case-strip {
         grid-template-columns: 1fr;
     }
 
@@ -399,7 +473,7 @@ body {
 
     .highlight:hover::after {
         white-space: normal;
-        width: 180px;
+        width: 190px;
         text-align: center;
     }
 }
@@ -429,13 +503,21 @@ body {
   </div>
 </header>
 
+
 <main class="lesson-container">
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
 <section class="lesson-hero">
     <h2>🧭 The Path of Innovation</h2>
     <p>Why today's breakthrough may be tomorrow's bridge</p>
-    <span class="hero-tag">Business Innovation • Technology • Strategy</span>
+    <span class="hero-tag">
+        Business Innovation • Technology Strategy • Product Life Cycles
+    </span>
 </section>
+
 
 <!-- =========================================================
      1. USEFUL EXPRESSIONS
@@ -449,7 +531,8 @@ body {
         <div class="english">solve a real problem</div>
         <div class="spanish">resolver un problema real</div>
         <div class="example">
-            <strong>Example:</strong> A successful product should solve a real problem rather than create unnecessary complexity.
+            <strong>Example:</strong>
+            A successful product should solve a real problem rather than simply add another feature.
         </div>
     </div>
 
@@ -457,23 +540,26 @@ body {
         <div class="english">become obsolete</div>
         <div class="spanish">quedar obsoleto</div>
         <div class="example">
-            <strong>Example:</strong> New technology can quickly make an older product obsolete.
+            <strong>Example:</strong>
+            A product can become obsolete even while it is still profitable.
         </div>
     </div>
 
     <div class="expression-card">
         <div class="english">be caught flat-footed</div>
-        <div class="spanish">ser tomado por sorpresa / no estar preparado</div>
+        <div class="spanish">ser tomado por sorpresa / quedar desprevenido</div>
         <div class="example">
-            <strong>Example:</strong> Companies that ignore technological changes may be caught flat-footed.
+            <strong>Example:</strong>
+            Companies that ignore technological changes may be caught flat-footed.
         </div>
     </div>
 
     <div class="expression-card">
-        <div class="english">plan for the next stage</div>
-        <div class="spanish">planificar la siguiente etapa</div>
+        <div class="english">lure someone into believing</div>
+        <div class="spanish">hacer que alguien crea algo engañosamente</div>
         <div class="example">
-            <strong>Example:</strong> Managers need to plan for the next stage before their current product declines.
+            <strong>Example:</strong>
+            Strong short-term sales can lure managers into believing that demand will last forever.
         </div>
     </div>
 
@@ -484,398 +570,707 @@ body {
      2. ARTICLE
      ========================================================= -->
 
-<h2 class="section-title">🔍 2. Article: Gateway Products and the Innovation Trap</h2>
+<h2 class="section-title">🔍 2. Article: Gateway Products and the Path of Innovation</h2>
 
-<div class="article-section">
 
-    <!-- Paragraph 1 -->
-    <article class="article-block">
-        <h3>📊 When a Product Becomes a Gateway</h3>
-        <p>
-            Some products are successful not because they represent the final stage of technology,
-            but because they help customers move toward something new. A portable video recorder,
-            for example, gave people a convenient way to capture moments before smartphones made
-            this function almost universal. These products can be viewed as
-            <span class="highlight" title="products that introduce customers to a newer technology or market">gateway products</span>.
-            They solve a real problem while also preparing customers for the next technological shift.
-        </p>
-    </article>
+<!-- ---------------------------------------------------------
+     PARAGRAPH 1
+     --------------------------------------------------------- -->
 
-    <div class="vocab-box">
-        <div class="vocab-label">VOCABULARY • PARAGRAPH 1</div>
-        <div class="vocab-grid">
+<article class="article-block">
+    <h3>🚪 Gateway Products: The First Step Toward Something Else</h3>
 
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    gateway product
-                    <button class="speak-btn" onclick="speakWord('gateway product')">🔊</button>
-                </div>
-                <div class="vocab-definition">A product that helps customers move toward a newer technology.</div>
-                <div class="vocab-spanish">producto puente / producto de transición</div>
-                <div class="vocab-example">The first smartphone was a gateway product for many digital services.</div>
+    <p>
+        Many important innovations do not immediately replace an entire system.
+        Instead, they solve a problem within the limits of the technology available at the time.
+        A portable video recorder, for example, gave ordinary people a convenient way to record
+        moments without carrying professional equipment. Similar patterns appeared with early
+        personal digital assistants, online mapping services, and other technologies that later
+        gave way to more integrated solutions.
+    </p>
+
+    <p>
+        These products can be understood as
+        <span class="highlight" title="a product that acts as an entry point to a newer technology or market">
+              gateway products</span>.
+        They create value because they give customers something useful today while also
+        revealing what customers will eventually expect tomorrow.
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 1</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                gateway product
+                <button class="speak-btn" onclick="speakWord('gateway product')">🔊</button>
             </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    capture
-                    <button class="speak-btn" onclick="speakWord('capture')">🔊</button>
-                </div>
-                <div class="vocab-definition">To record or preserve an image, sound, or moment.</div>
-                <div class="vocab-spanish">capturar / grabar</div>
-                <div class="vocab-example">The camera lets users capture important moments.</div>
+            <div class="vocab-definition">
+                A product that acts as an entry point to a newer technology, service, or market.
             </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    shift
-                    <button class="speak-btn" onclick="speakWord('shift')">🔊</button>
-                </div>
-                <div class="vocab-definition">A change from one situation, method, or technology to another.</div>
-                <div class="vocab-spanish">cambio / transición</div>
-                <div class="vocab-example">The industry is experiencing a major technological shift.</div>
+            <div class="vocab-spanish">producto puente / producto de entrada</div>
+            <div class="vocab-example">
+                The early smartphone was a gateway product for mobile internet services.
             </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    transition
-                    <button class="speak-btn" onclick="speakWord('transition')">🔊</button>
-                </div>
-                <div class="vocab-definition">The process of changing from one state or system to another.</div>
-                <div class="vocab-spanish">transición</div>
-                <div class="vocab-example">The transition to digital systems took several years.</div>
-            </div>
-
         </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                give way to
+                <button class="speak-btn" onclick="speakWord('give way to')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To be replaced by something newer or more effective.
+            </div>
+            <div class="vocab-spanish">dar paso a / ser reemplazado por</div>
+            <div class="vocab-example">
+                Stand-alone GPS devices eventually gave way to smartphone navigation.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                integrated
+                <button class="speak-btn" onclick="speakWord('integrated')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Combined into one system rather than operating separately.
+            </div>
+            <div class="vocab-spanish">integrado</div>
+            <div class="vocab-example">
+                Customers increasingly prefer integrated systems instead of separate devices.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                reveal
+                <button class="speak-btn" onclick="speakWord('reveal')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To make something previously unknown or unclear become understood.
+            </div>
+            <div class="vocab-spanish">revelar / poner de manifiesto</div>
+            <div class="vocab-example">
+                Customer behavior can reveal what the next generation of products should offer.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------
+     PARAGRAPH 2
+     --------------------------------------------------------- -->
+
+<article class="article-block">
+    <h3>🧩 Problem Solved? That Does Not Mean the Product Will Last</h3>
+
+    <p>
+        A gateway product is not necessarily a failed product. In fact, many of them solve
+        genuine customer problems extremely well. The strategic issue is that the solution may
+        depend on a larger system that eventually becomes unnecessary.
+    </p>
+
+    <p>
+        Consider the fax machine. It dramatically reduced the time required to send information
+        compared with physical mail. But the experience still depended on paper, telephone lines,
+        fax numbers, and dedicated equipment. Email eventually removed much of that
+        <span class="highlight" title="a supporting system or structure required by an older technology">
+              scaffolding</span>.
+        The fax machine solved the problem of slow document delivery, but it did not eliminate
+        the infrastructure behind the problem.
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 2</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                genuine
+                <button class="speak-btn" onclick="speakWord('genuine')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Real, legitimate, and not merely perceived.
+            </div>
+            <div class="vocab-spanish">genuino / real</div>
+            <div class="vocab-example">
+                The product addresses a genuine customer need.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                scaffolding
+                <button class="speak-btn" onclick="speakWord('scaffolding')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                A supporting structure or system that allows something else to function.
+            </div>
+            <div class="vocab-spanish">estructura de apoyo / soporte</div>
+            <div class="vocab-example">
+                Legacy systems often require expensive technological scaffolding.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                dedicated device
+                <button class="speak-btn" onclick="speakWord('dedicated device')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                A device designed mainly for one specific purpose.
+            </div>
+            <div class="vocab-spanish">dispositivo dedicado / específico</div>
+            <div class="vocab-example">
+                A smartphone can replace several dedicated devices.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                infrastructure
+                <button class="speak-btn" onclick="speakWord('infrastructure')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                The basic systems and resources needed for an activity to operate.
+            </div>
+            <div class="vocab-spanish">infraestructura</div>
+            <div class="vocab-example">
+                The company invested heavily in digital infrastructure.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------
+     PARAGRAPH 3
+     --------------------------------------------------------- -->
+
+<article class="article-block">
+    <h3>🖥️ When “Not Yet Good Enough” Creates a Market</h3>
+
+    <p>
+        Sometimes a dedicated product becomes successful precisely because the larger technology
+        is not yet good enough. Before smartphones became capable cameras, portable digital cameras
+        offered better image quality and easier handling. Before phones provided reliable
+        navigation, stand-alone GPS units filled the gap.
+    </p>
+
+    <p>
+        The important question is not simply whether the product works. It is:
+        <strong>what temporary limitation in another technology is this product exploiting?</strong>
+        Once that limitation disappears, the product may lose its reason for existing.
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 3</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                fill a gap
+                <button class="speak-btn" onclick="speakWord('fill a gap')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To provide something that is currently missing.
+            </div>
+            <div class="vocab-spanish">cubrir una brecha / satisfacer una necesidad</div>
+            <div class="vocab-example">
+                The service fills a gap in the current market.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                exploit
+                <button class="speak-btn" onclick="speakWord('exploit')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To make strategic use of a situation or opportunity.
+            </div>
+            <div class="vocab-spanish">aprovechar</div>
+            <div class="vocab-example">
+                Startups often exploit gaps that larger companies overlook.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                limitation
+                <button class="speak-btn" onclick="speakWord('limitation')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Something that restricts what a system or product can do.
+            </div>
+            <div class="vocab-spanish">limitación</div>
+            <div class="vocab-example">
+                Battery life was a major limitation of early mobile devices.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                stand-alone
+                <button class="speak-btn" onclick="speakWord('stand-alone')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Able to operate independently rather than as part of another system.
+            </div>
+            <div class="vocab-spanish">independiente / autónomo</div>
+            <div class="vocab-example">
+                The company replaced several stand-alone systems with one platform.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------
+     CASE EXAMPLES
+     --------------------------------------------------------- -->
+
+<div class="case-strip">
+
+    <div class="case-card">
+        <strong>📠 Fax</strong><br>
+        Faster document delivery → eventually challenged by email.
     </div>
 
-
-    <!-- Paragraph 2 -->
-    <article class="article-block">
-        <h3>⚙️ Solving the Problem Is Not Always Enough</h3>
-        <p>
-            A gateway product can genuinely solve a customer problem and still disappear later.
-            Fax machines reduced the delay of physical mail, but they depended on paper, phone
-            lines, and dedicated equipment. Email eventually removed much of that
-            <span class="highlight" title="extra support or infrastructure required by an older system">scaffolding</span>.
-            The lesson is important: a product can be useful while the system around it is gradually
-            becoming unnecessary.
-        </p>
-    </article>
-
-    <div class="vocab-box">
-        <div class="vocab-label">VOCABULARY • PARAGRAPH 2</div>
-        <div class="vocab-grid">
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    scaffolding
-                    <button class="speak-btn" onclick="speakWord('scaffolding')">🔊</button>
-                </div>
-                <div class="vocab-definition">A supporting system that helps another system function.</div>
-                <div class="vocab-spanish">estructura de apoyo / soporte</div>
-                <div class="vocab-example">Old technology often requires more scaffolding than modern technology.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    dedicated
-                    <button class="speak-btn" onclick="speakWord('dedicated')">🔊</button>
-                </div>
-                <div class="vocab-definition">Designed or used for one specific purpose.</div>
-                <div class="vocab-spanish">dedicado / específico</div>
-                <div class="vocab-example">The company still uses a dedicated machine for that process.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    infrastructure
-                    <button class="speak-btn" onclick="speakWord('infrastructure')">🔊</button>
-                </div>
-                <div class="vocab-definition">The basic systems and equipment needed for something to operate.</div>
-                <div class="vocab-spanish">infraestructura</div>
-                <div class="vocab-example">The factory needs better digital infrastructure.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    unnecessary
-                    <button class="speak-btn" onclick="speakWord('unnecessary')">🔊</button>
-                </div>
-                <div class="vocab-definition">Not needed or required.</div>
-                <div class="vocab-spanish">innecesario</div>
-                <div class="vocab-example">Automation made several manual steps unnecessary.</div>
-            </div>
-
-        </div>
+    <div class="case-card">
+        <strong>📷 Digital camera</strong><br>
+        Better than early phone cameras → smartphones improved.
     </div>
 
-
-    <!-- Paragraph 3 -->
-    <article class="article-block">
-        <h3>🤝 The Power of Customer Habits</h3>
-        <p>
-            Innovation is also shaped by customer behavior. People who spend years learning a
-            particular device may become extremely skilled at using it. They may hesitate to switch
-            because they have invested time, money, and effort in mastering the old system.
-            This is a form of <span class="highlight" title="a cost that has already been paid and cannot be recovered">sunk cost</span>.
-            For companies, this creates an interesting challenge: customer loyalty may depend more
-            on what users have already learned than on what they actually prefer.
-        </p>
-    </article>
-
-    <div class="vocab-box">
-        <div class="vocab-label">VOCABULARY • PARAGRAPH 3</div>
-        <div class="vocab-grid">
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    sunk cost
-                    <button class="speak-btn" onclick="speakWord('sunk cost')">🔊</button>
-                </div>
-                <div class="vocab-definition">Money, time, or effort already spent that cannot be recovered.</div>
-                <div class="vocab-spanish">costo hundido</div>
-                <div class="vocab-example">Training employees is a sunk cost if the system is later abandoned.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    invest
-                    <button class="speak-btn" onclick="speakWord('invest')">🔊</button>
-                </div>
-                <div class="vocab-definition">To spend time, money, or effort because you expect a useful result.</div>
-                <div class="vocab-spanish">invertir</div>
-                <div class="vocab-example">The company invested heavily in employee training.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    master
-                    <button class="speak-btn" onclick="speakWord('master')">🔊</button>
-                </div>
-                <div class="vocab-definition">To become highly skilled at using or doing something.</div>
-                <div class="vocab-spanish">dominar</div>
-                <div class="vocab-example">It took her months to master the new software.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    hesitate
-                    <button class="speak-btn" onclick="speakWord('hesitate')">🔊</button>
-                </div>
-                <div class="vocab-definition">To pause because you are uncertain about what to do.</div>
-                <div class="vocab-spanish">dudar / vacilar</div>
-                <div class="vocab-example">Employees may hesitate to adopt unfamiliar technology.</div>
-            </div>
-
-        </div>
+    <div class="case-card">
+        <strong>🗺️ GPS unit</strong><br>
+        Reliable navigation → smartphones absorbed the function.
     </div>
 
-
-    <!-- Paragraph 4 -->
-    <article class="article-block">
-        <h3>📱 Technology Often Closes the Gap</h3>
-        <p>
-            Many successful products exist because there is a temporary
-            <span class="highlight" title="a period when current technology cannot fully meet a need">technological gap</span>.
-            Flip cameras became useful when smartphones were not good enough at video recording.
-            Stand-alone GPS devices became popular when phones lacked reliable navigation.
-            Once smartphones improved, however, the reason for owning these separate devices became
-            much weaker. The companies that succeeded understood the gap; the companies that failed
-            to monitor it were eventually left behind.
-        </p>
-    </article>
-
-    <div class="vocab-box">
-        <div class="vocab-label">VOCABULARY • PARAGRAPH 4</div>
-        <div class="vocab-grid">
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    technological gap
-                    <button class="speak-btn" onclick="speakWord('technological gap')">🔊</button>
-                </div>
-                <div class="vocab-definition">A period when available technology cannot fully satisfy a need.</div>
-                <div class="vocab-spanish">brecha tecnológica</div>
-                <div class="vocab-example">The company identified a technological gap in the market.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    stand-alone
-                    <button class="speak-btn" onclick="speakWord('stand-alone')">🔊</button>
-                </div>
-                <div class="vocab-definition">Able to operate independently rather than as part of another system.</div>
-                <div class="vocab-spanish">independiente / autónomo</div>
-                <div class="vocab-example">The factory previously used a stand-alone monitoring system.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    left behind
-                    <button class="speak-btn" onclick="speakWord('left behind')">🔊</button>
-                </div>
-                <div class="vocab-definition">Unable to keep up with competitors or changes.</div>
-                <div class="vocab-spanish">quedarse atrás</div>
-                <div class="vocab-example">Companies that stop innovating can be left behind.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    monitor
-                    <button class="speak-btn" onclick="speakWord('monitor')">🔊</button>
-                </div>
-                <div class="vocab-definition">To regularly observe or check a situation.</div>
-                <div class="vocab-spanish">monitorear / supervisar</div>
-                <div class="vocab-example">Managers should monitor changes in customer behavior.</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- Paragraph 5 -->
-    <article class="article-block">
-        <h3>🧠 The Strategic Question</h3>
-        <p>
-            This creates a difficult question for companies developing a new product:
-            what happens when the gap disappears? A product may be profitable today but unnecessary
-            tomorrow. Leaders therefore need to ask whether customers would still choose the product
-            if they could start again with today's technology. If the answer is no, the product may
-            be functioning as a gateway rather than as a long-term destination.
-        </p>
-    </article>
-
-    <div class="vocab-box">
-        <div class="vocab-label">VOCABULARY • PARAGRAPH 5</div>
-        <div class="vocab-grid">
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    profitable
-                    <button class="speak-btn" onclick="speakWord('profitable')">🔊</button>
-                </div>
-                <div class="vocab-definition">Making more money than the amount spent to operate.</div>
-                <div class="vocab-spanish">rentable</div>
-                <div class="vocab-example">The product is still profitable, but demand is falling.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    long-term
-                    <button class="speak-btn" onclick="speakWord('long-term')">🔊</button>
-                </div>
-                <div class="vocab-definition">Continuing or relevant over a long period of time.</div>
-                <div class="vocab-spanish">a largo plazo</div>
-                <div class="vocab-example">We need a long-term strategy, not just a quick solution.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    destination
-                    <button class="speak-btn" onclick="speakWord('destination')">🔊</button>
-                </div>
-                <div class="vocab-definition">The final goal or desired position.</div>
-                <div class="vocab-spanish">destino / objetivo final</div>
-                <div class="vocab-example">The technology may be a bridge rather than the final destination.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    start again
-                    <button class="speak-btn" onclick="speakWord('start again')">🔊</button>
-                </div>
-                <div class="vocab-definition">To reconsider something from the beginning without being limited by previous decisions.</div>
-                <div class="vocab-spanish">empezar de nuevo</div>
-                <div class="vocab-example">If we could start again, would we choose the same system?</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- Paragraph 6 -->
-    <article class="article-block">
-        <h3>🚨 Planning for the Moment the Gap Closes</h3>
-        <p>
-            A gateway product is not necessarily a bad business. The danger comes when a company
-            mistakes temporary usefulness for permanent value. Leaders can become
-            <span class="highlight" title="to be surprised and unprepared by an unexpected change">caught flat-footed</span>
-            if they continue investing in a product after the original problem has disappeared.
-            The strongest companies treat their existing products as sources of learning and prepare
-            the next solution before competitors force them to change.
-        </p>
-    </article>
-
-    <div class="vocab-box">
-        <div class="vocab-label">VOCABULARY • PARAGRAPH 6</div>
-        <div class="vocab-grid">
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    caught flat-footed
-                    <button class="speak-btn" onclick="speakWord('caught flat-footed')">🔊</button>
-                </div>
-                <div class="vocab-definition">Surprised by a change and not prepared to respond.</div>
-                <div class="vocab-spanish">tomado por sorpresa / desprevenido</div>
-                <div class="vocab-example">The company was caught flat-footed by a sudden change in demand.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    force
-                    <button class="speak-btn" onclick="speakWord('force')">🔊</button>
-                </div>
-                <div class="vocab-definition">To make someone do something because there is strong pressure.</div>
-                <div class="vocab-spanish">obligar / forzar</div>
-                <div class="vocab-example">Market pressure forced the company to redesign the product.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    existing
-                    <button class="speak-btn" onclick="speakWord('existing')">🔊</button>
-                </div>
-                <div class="vocab-definition">Already present or currently being used.</div>
-                <div class="vocab-spanish">existente / actual</div>
-                <div class="vocab-example">We need to improve our existing system before replacing it.</div>
-            </div>
-
-            <div class="vocab-card">
-                <div class="vocab-word">
-                    prepare for
-                    <button class="speak-btn" onclick="speakWord('prepare for')">🔊</button>
-                </div>
-                <div class="vocab-definition">To get ready for a future event or situation.</div>
-                <div class="vocab-spanish">prepararse para</div>
-                <div class="vocab-example">Companies must prepare for changes in customer expectations.</div>
-            </div>
-
-        </div>
+    <div class="case-card">
+        <strong>💻 Personal devices</strong><br>
+        Each solved one problem → integrated platforms combined them.
     </div>
 
 </div>
 
 
+<!-- ---------------------------------------------------------
+     PARAGRAPH 4
+     --------------------------------------------------------- -->
+
+<article class="article-block">
+    <h3>🧠 Customer Learning Can Become a Barrier</h3>
+
+    <p>
+        Technology alone does not determine whether customers switch. Human behavior matters too.
+        Customers who spend years learning a product may become highly skilled at using it.
+        They may know shortcuts, workarounds, and specialized functions that make them efficient.
+    </p>
+
+    <p>
+        This creates a powerful form of resistance. Customers have already invested time, money,
+        and effort in the old system. Economists call these previous investments
+        <span class="highlight" title="resources already spent that cannot be recovered">
+              sunk costs</span>.
+        As a result, people may continue using a product not because it is objectively the best
+        option, but because switching feels expensive.
+    </p>
+
+    <p>
+        For businesses, this creates an unusual form of customer retention:
+        loyalty may depend on what customers have learned rather than what they actually love.
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 4</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                sunk cost
+                <button class="speak-btn" onclick="speakWord('sunk cost')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Time, money, or effort already spent that cannot be recovered.
+            </div>
+            <div class="vocab-spanish">costo hundido</div>
+            <div class="vocab-example">
+                Employee training can become a sunk cost if the system is abandoned.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                workaround
+                <button class="speak-btn" onclick="speakWord('workaround')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                An alternative method used when the normal solution is difficult or unavailable.
+            </div>
+            <div class="vocab-spanish">solución alternativa / método provisional</div>
+            <div class="vocab-example">
+                Employees created a workaround instead of changing the entire system.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                switching cost
+                <button class="speak-btn" onclick="speakWord('switching cost')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                The financial, practical, or psychological cost of moving to another product.
+            </div>
+            <div class="vocab-spanish">costo de cambio</div>
+            <div class="vocab-example">
+                High switching costs can make customers reluctant to adopt new software.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                customer retention
+                <button class="speak-btn" onclick="speakWord('customer retention')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                A company's ability to keep customers over time.
+            </div>
+            <div class="vocab-spanish">retención de clientes</div>
+            <div class="vocab-example">
+                Customer retention is strong because users are deeply familiar with the system.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------
+     PARAGRAPH 5
+     --------------------------------------------------------- -->
+
+<article class="article-block">
+    <h3>📉 The Technology Gap Does Not Last Forever</h3>
+
+    <p>
+        This leads to one of the most important strategic questions:
+        <strong>What temporary technological gap is creating demand for your product?</strong>
+    </p>
+
+    <p>
+        A product may exist because another technology cannot yet perform a particular task well
+        enough. But technological progress gradually closes that gap. When that happens,
+        customers may no longer need a separate solution.
+    </p>
+
+    <p>
+        Companies therefore need to monitor the gap
+        <span class="highlight" title="continuously and without stopping">
+              relentlessly</span>.
+        The relevant question is not only how large the market is today, but also whether the
+        underlying reason for that market will still exist tomorrow.
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 5</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                technological gap
+                <button class="speak-btn" onclick="speakWord('technological gap')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                A temporary difference between what customers need and what existing technology can provide.
+            </div>
+            <div class="vocab-spanish">brecha tecnológica</div>
+            <div class="vocab-example">
+                The startup identified a technological gap in industrial monitoring.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                underlying
+                <button class="speak-btn" onclick="speakWord('underlying')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Existing beneath the surface; the fundamental cause of something.
+            </div>
+            <div class="vocab-spanish">subyacente / fundamental</div>
+            <div class="vocab-example">
+                We need to understand the underlying reason for customer demand.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                relentlessly
+                <button class="speak-btn" onclick="speakWord('relentlessly')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Continuously and with great determination, without stopping.
+            </div>
+            <div class="vocab-spanish">implacablemente / sin descanso</div>
+            <div class="vocab-example">
+                Successful companies relentlessly monitor changes in their markets.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                close the gap
+                <button class="speak-btn" onclick="speakWord('close the gap')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To reduce or eliminate a difference between two situations.
+            </div>
+            <div class="vocab-spanish">cerrar la brecha</div>
+            <div class="vocab-example">
+                Better smartphones eventually closed the gap with dedicated cameras.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------
+     PARAGRAPH 6
+     --------------------------------------------------------- -->
+
+<article class="article-block">
+    <h3>⚠️ What Happens When the Gap Closes?</h3>
+
+    <p>
+        This may be the question that business leaders most often avoid. If a company has built
+        a profitable business around a temporary technological limitation, what happens when
+        that limitation disappears?
+    </p>
+
+    <p>
+        Acknowledging that your product has an expiration date can feel like admitting failure.
+        Yet the alternative can be more dangerous. Managers may continue investing in an old
+        business because current revenue looks healthy.
+    </p>
+
+    <p>
+        Strong short-term performance can therefore
+        <span class="highlight" title="to attract or persuade someone into accepting a misleading conclusion">
+              lure managers into believing</span>
+        that the current business model is permanent.
+        They may overinvest in extending the product's life instead of preparing the next solution.
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 6</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                expiration date
+                <button class="speak-btn" onclick="speakWord('expiration date')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                A point in time after which something is no longer expected to remain useful.
+            </div>
+            <div class="vocab-spanish">fecha de caducidad</div>
+            <div class="vocab-example">
+                Every technology has an economic expiration date, even if the product still works.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                lure someone into
+                <button class="speak-btn" onclick="speakWord('lure someone into')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To attract or persuade someone into a situation, sometimes without them realizing the risk.
+            </div>
+            <div class="vocab-spanish">llevar / inducir a alguien a</div>
+            <div class="vocab-example">
+                Strong sales can lure managers into delaying necessary changes.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                overinvest
+                <button class="speak-btn" onclick="speakWord('overinvest')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To invest more resources than is strategically sensible.
+            </div>
+            <div class="vocab-spanish">sobreinvertir</div>
+            <div class="vocab-example">
+                The company overinvested in a declining product category.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                business model
+                <button class="speak-btn" onclick="speakWord('business model')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                The way a company creates, delivers, and captures value.
+            </div>
+            <div class="vocab-spanish">modelo de negocio</div>
+            <div class="vocab-example">
+                New technology forced the company to rethink its business model.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ---------------------------------------------------------
+     PARAGRAPH 7
+     --------------------------------------------------------- -->
+
+<article class="article-block">
+    <h3>🚪 Is a Gateway Product a Bad Business?</h3>
+
+    <p>
+        Not necessarily. A gateway product can be an excellent business if the company understands
+        what role the product plays. Its value may not come from lasting forever. Instead, the
+        product can help a company learn about customer behavior, build relationships, develop
+        capabilities, and understand an emerging market.
+    </p>
+
+    <p>
+        The danger appears when a company treats the gateway as a permanent destination.
+        A temporary bridge can still be extremely valuable. The strategic mistake is failing to
+        build the next bridge.
+    </p>
+
+    <p>
+        The most resilient companies therefore ask not only,
+        <strong>“How can we extend the life of this product?”</strong>
+        but also,
+        <strong>“What are customers learning from us, and what will they need next?”</strong>
+    </p>
+</article>
+
+<div class="vocab-box">
+    <div class="vocab-label">VOCABULARY • PARAGRAPH 7</div>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                resilient
+                <button class="speak-btn" onclick="speakWord('resilient')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                Able to adapt and recover effectively from change or difficulty.
+            </div>
+            <div class="vocab-spanish">resiliente</div>
+            <div class="vocab-example">
+                Resilient companies adapt before disruption becomes a crisis.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                capability
+                <button class="speak-btn" onclick="speakWord('capability')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                The ability or capacity to do something effectively.
+            </div>
+            <div class="vocab-spanish">capacidad / competencia</div>
+            <div class="vocab-example">
+                The project helped the company develop new technical capabilities.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                emerging market
+                <button class="speak-btn" onclick="speakWord('emerging market')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                A developing market with growing demand and opportunities.
+            </div>
+            <div class="vocab-spanish">mercado emergente</div>
+            <div class="vocab-example">
+                The company entered an emerging market before its competitors.
+            </div>
+        </div>
+
+        <div class="vocab-card">
+            <div class="vocab-word">
+                extend the life of
+                <button class="speak-btn" onclick="speakWord('extend the life of')">🔊</button>
+            </div>
+            <div class="vocab-definition">
+                To keep something useful or commercially viable for longer.
+            </div>
+            <div class="vocab-spanish">prolongar la vida de</div>
+            <div class="vocab-example">
+                The company introduced upgrades to extend the life of the product.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 <!-- =========================================================
-     KEY CONCEPT
+     CORE BUSINESS IDEA
      ========================================================= -->
 
 <div class="key-concept">
-    <h3>💡 Key Business Idea: A Bridge Is Not the Destination</h3>
+
+    <h3>💡 The Strategic Idea: A Gateway Is Valuable — But It Is Not the Destination</h3>
+
     <p>
-        A gateway product can be extremely valuable even if it eventually disappears.
-        The strategic mistake is not creating a temporary product. The mistake is assuming
-        that temporary demand will last forever.
+        The article does not argue that gateway products are bad businesses.
+        The deeper argument is about how companies interpret their success.
     </p>
+
+    <span class="formula">
+        Customer problem → Gateway product → Customer learning → Technology improves → Gap closes → Next solution
+    </span>
+
     <p>
-        <strong>Ask yourself:</strong> Is our product solving a permanent problem,
-        or is it helping customers survive a temporary technological gap?
+        A company becomes vulnerable when it focuses only on the product in the middle
+        and ignores what comes next.
     </p>
+
+    <p>
+        <strong>Strategic question:</strong>
+        Is your product solving a permanent customer problem,
+        or is it temporarily filling a gap that technology will eventually close?
+    </p>
+
 </div>
 
 
 <!-- =========================================================
-     4. DISCUSSION QUESTIONS
+     3. DISCUSSION QUESTIONS
      ========================================================= -->
 
 <h2 class="section-title">🗣️ 3. Discussion Questions</h2>
@@ -884,25 +1279,42 @@ body {
 
     <div class="question-card">
         <span class="question-number">01</span>
+
         <p>
-            Think about a product or service that became unnecessary because of newer technology.
-            What created the original demand, and what eventually replaced it?
+            Think about your industry. What product or system is currently successful because
+            another technology is “not yet good enough”?
+        </p>
+
+        <p>
+            What might happen if that technological gap closes?
         </p>
     </div>
+
 
     <div class="question-card">
         <span class="question-number">02</span>
+
         <p>
-            In your industry, what technological gap is currently creating business opportunities?
-            How long do you think that gap will remain?
+            Customer learning can create both loyalty and resistance to change.
+            In your workplace, when does employee expertise become a barrier to innovation?
+        </p>
+
+        <p>
+            Can you think of an example involving software, equipment, or a work process?
         </p>
     </div>
 
+
     <div class="question-card">
         <span class="question-number">03</span>
+
         <p>
-            If you were a manager, how would you decide whether to keep investing in an existing
-            product or start developing its replacement?
+            Imagine that you are managing a profitable product with a five-year expiration date.
+            Would you continue investing heavily in it, develop its replacement, or do both?
+        </p>
+
+        <p>
+            What evidence would you use to make the decision?
         </p>
     </div>
 
@@ -910,7 +1322,7 @@ body {
 
 
 <!-- =========================================================
-     5. SELF PRACTICE
+     4. SELF-PRACTICE
      ========================================================= -->
 
 <h2 class="section-title">🧩 4. Self-Practice Questions</h2>
@@ -919,40 +1331,64 @@ body {
 
     <div class="practice-item">
         <details>
-            <summary>1. What is a “gateway product”?</summary>
+            <summary>
+                1. Explain the difference between a “gateway product” and a “destination product.”
+            </summary>
+
             <div class="answer">
-                A gateway product is a product that solves a current customer problem while
-                helping customers move toward a newer technology or solution.
+                A <strong>gateway product</strong> helps customers move toward another technology,
+                service, or market. A <strong>destination product</strong> is intended to remain
+                the long-term solution rather than serving as a temporary bridge.
             </div>
         </details>
     </div>
 
+
     <div class="practice-item">
         <details>
-            <summary>2. Why might customers hesitate to switch to a new product?</summary>
+            <summary>
+                2. Why can sunk costs make customers reluctant to switch?
+            </summary>
+
             <div class="answer">
-                They may have invested significant time, money, and effort in learning the old
-                system. These investments can create switching resistance and sunk costs.
+                Customers may have invested significant time, money, training, and effort in the
+                existing system. Even if a new product is objectively better, the perceived cost
+                of abandoning the old system can discourage switching.
             </div>
         </details>
     </div>
 
+
     <div class="practice-item">
         <details>
-            <summary>3. Complete the sentence: “If a company does not monitor technological changes, it may ______.”</summary>
+            <summary>
+                3. Complete the sentence:
+                “A company should monitor its technological gap because ______.”
+            </summary>
+
             <div class="answer">
-                Possible answer: <strong>be caught flat-footed</strong> / <strong>be left behind</strong>.
+                Possible answers:
+                <br><br>
+                • the gap may eventually disappear;<br>
+                • competitors may develop a better solution;<br>
+                • customer expectations may change;<br>
+                • the existing product may become obsolete.
             </div>
         </details>
     </div>
 
+
     <div class="practice-item">
         <details>
-            <summary>4. What is the main strategic warning in this article?</summary>
+            <summary>
+                4. Explain this statement in your own words:
+                “A gateway can be valuable without being permanent.”
+            </summary>
+
             <div class="answer">
-                Companies should not confuse temporary usefulness with permanent value.
-                They need to monitor the technological gap and prepare for the moment when
-                customers no longer need the existing product.
+                A product can create significant business value even if customers will eventually
+                move to another technology. The important point is whether the company understands
+                the product's role and prepares for what customers will need next.
             </div>
         </details>
     </div>
@@ -960,6 +1396,7 @@ body {
 </div>
 
 </main>
+
 
 <script>
 function speakWord(word) {
