@@ -130,6 +130,7 @@ async function scanLessons() {
         { filename: 'Overqualified—and Overlooked.html', date: '2026-08-20', title: '🎯 Overqualified—and Overlooked' },
         { filename: 'Failure as a Tool.html', date: '2026-08-25', title: '🧗 Failure as a Tool' },
         { filename: 'AI for All.html', date: '2026-08-27', title: '📊 AI for All — Who Controls the Machines Behind AI?' },
+        { filename: 'AI for All.html', date: '2026-09-02', title: '📊 AI for All — Who Controls the Machines Behind AI?' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
