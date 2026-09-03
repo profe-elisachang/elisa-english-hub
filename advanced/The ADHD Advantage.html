@@ -1,0 +1,523 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The ADHD Advantage - English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --teal:#00897B;
+    --teal-dark:#00695C;
+    --orange:#FF6F3C;
+    --yellow:#FFC93C;
+    --pink:#FF5C8A;
+    --cream:#FFFBF2;
+    --ink:#1F2937;
+  }
+  body{
+    background:var(--cream);
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    color:var(--ink);
+    line-height:1.7;
+  }
+  .container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+  }
+  h2.section-title{
+    font-size:1.8rem;
+    font-weight:800;
+    color:var(--teal-dark);
+    border-left:8px solid var(--orange);
+    padding-left:0.8rem;
+    margin:3rem 0 1.5rem;
+  }
+
+  /* ===== Useful Expressions ===== */
+  .expressions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1rem;
+  }
+  .expr-card{
+    background:#fff;
+    border:3px solid var(--teal);
+    border-radius:14px;
+    padding:1rem 1.2rem;
+    box-shadow:4px 4px 0 var(--teal);
+  }
+  .expr-en{font-weight:800;font-size:1.15rem;color:var(--teal-dark);}
+  .expr-es{font-weight:700;color:var(--pink);margin:0.3rem 0;}
+  .expr-ex{font-style:italic;color:#444;font-size:0.95rem;}
+
+  /* ===== Article ===== */
+  .article-box{
+    background:#fff;
+    border:4px solid var(--ink);
+    border-radius:18px;
+    padding:2rem 2.2rem;
+    box-shadow:8px 8px 0 var(--yellow);
+  }
+  .article-title{
+    font-size:2rem;
+    font-weight:900;
+    color:var(--orange);
+    margin-bottom:0.3rem;
+  }
+  .article-byline{
+    font-size:0.95rem;
+    color:#666;
+    margin-bottom:1.5rem;
+  }
+  .article-box p{
+    font-size:1.15rem;
+    margin-bottom:1rem;
+  }
+
+  .highlight{
+    background:var(--yellow);
+    font-weight:700;
+    border-bottom:3px solid var(--orange);
+    padding:0 3px;
+    border-radius:4px;
+    position:relative;
+    cursor:help;
+  }
+  .highlight[data-tooltip]:hover::after,
+  .highlight[data-tooltip]:focus::after{
+    content:attr(data-tooltip);
+    position:absolute;
+    left:50%;
+    bottom:125%;
+    transform:translateX(-50%);
+    background:var(--ink);
+    color:#fff;
+    padding:0.4rem 0.7rem;
+    border-radius:8px;
+    font-size:0.9rem;
+    font-weight:600;
+    white-space:nowrap;
+    z-index:10;
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
+  }
+  .highlight[data-tooltip]:hover::before,
+  .highlight[data-tooltip]:focus::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:112%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:var(--ink);
+    z-index:10;
+  }
+  @media(max-width:600px){
+    .highlight[data-tooltip]:hover::after,
+    .highlight[data-tooltip]:focus::after{
+      white-space:normal;
+      width:150px;
+      text-align:center;
+    }
+  }
+
+  /* ===== Vocabulary boxes ===== */
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+    margin:1.2rem 0 2rem;
+  }
+  @media(max-width:1000px){ .vocab-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:600px){ .vocab-grid{grid-template-columns:1fr;} }
+
+  .vocab-card{
+    background:#E0F2F1;
+    border:2px solid var(--teal);
+    border-radius:12px;
+    padding:0.9rem 1rem;
+  }
+  .vocab-word-row{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    margin-bottom:0.4rem;
+  }
+  .vocab-word{
+    font-weight:800;
+    color:var(--teal-dark);
+    font-size:1.05rem;
+  }
+  .speak-btn{
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:28px;
+    height:28px;
+    font-size:0.85rem;
+    cursor:pointer;
+    line-height:1;
+  }
+  .speak-btn:hover{background:var(--pink);}
+  .vocab-def{font-size:0.92rem;color:#333;}
+  .vocab-es{font-weight:700;color:var(--pink);font-size:0.92rem;margin:0.3rem 0;}
+  .vocab-ex{font-size:0.88rem;font-style:italic;color:#555;}
+
+  /* ===== Discussion ===== */
+  .discussion-list{
+    list-style:none;
+    padding:0;
+    counter-reset:disc;
+  }
+  .discussion-list li{
+    counter-increment:disc;
+    background:#fff;
+    border-left:8px solid var(--pink);
+    border-radius:0 12px 12px 0;
+    padding:1rem 1.2rem;
+    margin-bottom:1rem;
+    font-size:1.15rem;
+    font-weight:600;
+    box-shadow:3px 3px 0 rgba(255,92,138,0.25);
+  }
+  .discussion-list li::before{
+    content:"Q" counter(disc) ". ";
+    color:var(--pink);
+    font-weight:900;
+  }
+
+  /* ===== Self practice ===== */
+  .practice-item{
+    background:#FFF3E0;
+    border:2px solid var(--orange);
+    border-radius:12px;
+    margin-bottom:1rem;
+    overflow:hidden;
+  }
+  .practice-q{
+    padding:1rem 1.2rem;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .practice-q:hover{background:#FFE0B2;}
+  .practice-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+    padding:0 1.2rem;
+    background:#fff;
+  }
+  .practice-item.open .practice-a{
+    max-height:200px;
+    padding:0.8rem 1.2rem 1.2rem;
+  }
+  .practice-item.open .arrow{transform:rotate(180deg);}
+  .arrow{transition:transform 0.3s ease;}
+
+  .closing{
+    text-align:center;
+    margin-top:3rem;
+    padding:1.5rem;
+    background:var(--teal);
+    color:#fff;
+    border-radius:16px;
+    font-size:1.3rem;
+    font-weight:800;
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1788462899/shizi-lessons/display-images/yzypfmanmln1idjvhnno.png" alt="🧠 The ADHD Advantage" class="article-image">
+    </div>
+
+
+<div class="container">
+
+  <h2 class="section-title">💬 Useful Expressions</h2>
+  <div class="expressions">
+    <div class="expr-card">
+      <div class="expr-en">come a long way</div>
+      <div class="expr-es">haber avanzado mucho</div>
+      <div class="expr-ex">"Workplace accommodations have come a long way in the last ten years."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">a mixed bag</div>
+      <div class="expr-es">una mezcla de cosas buenas y malas</div>
+      <div class="expr-ex">"The feedback from the client was a mixed bag."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">credit someone/something for</div>
+      <div class="expr-es">atribuir el mérito a</div>
+      <div class="expr-ex">"She credits her mentor for her promotion."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">channel (something) into</div>
+      <div class="expr-es">canalizar algo hacia</div>
+      <div class="expr-ex">"He channels his stress into running."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">out-of-the-box thinking</div>
+      <div class="expr-es">pensamiento fuera de lo convencional</div>
+      <div class="expr-ex">"The safety team used out-of-the-box thinking to solve the problem."</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">🧠 The ADHD Advantage</h2>
+  <div class="article-box">
+    <div class="article-title">The ADHD Advantage: Redefining Strengths and Struggles</div>
+    <div class="article-byline">Based on reporting by Jared Lindzon for Fast Company (2026) — read together in class from the original article.</div>
+
+    <p>In 2010, psychiatrist Dale Archer wrote a bestselling book celebrating the hidden strengths of ADHD. His later book, <em>The ADHD Advantage</em>, argued that the condition exists on a <span class="highlight" data-tooltip="continuo / espectro">continuum</span>. Archer's <span class="highlight" data-tooltip="hipótesis">hypothesis</span> is that people who score low may not even realize they have it, while those who score high often struggle daily and may need medication. Interestingly, many top performers — from Olympic swimmer Michael Phelps to comedian Howie Mandel and entrepreneur David Neeleman — openly <span class="highlight" data-tooltip="atribuir el mérito a">credit</span> ADHD for part of their success. Some describe how they <span class="highlight" data-tooltip="hiperconcentrarse en algo">hyperfocus</span> intensely on projects that genuinely interest them, achieving remarkable results.</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">hypothesis</span><button class="speak-btn" onclick="speakWord('hypothesis')">🔊</button></div>
+        <div class="vocab-def">an idea proposed as a possible explanation, not yet proven</div>
+        <div class="vocab-es">hipótesis</div>
+        <div class="vocab-ex">"Her hypothesis was that flexible hours improve safety compliance."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">continuum</span><button class="speak-btn" onclick="speakWord('continuum')">🔊</button></div>
+        <div class="vocab-def">a scale of things that change gradually, with no clear separate parts</div>
+        <div class="vocab-es">continuo / espectro</div>
+        <div class="vocab-ex">"Personality traits often exist on a continuum."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">credit ... for</span><button class="speak-btn" onclick="speakWord('credit someone for something')">🔊</button></div>
+        <div class="vocab-def">to say that someone/something is responsible for a good result</div>
+        <div class="vocab-es">atribuir el mérito a</div>
+        <div class="vocab-ex">"He credits his team for the project's success."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">hyperfocus</span><button class="speak-btn" onclick="speakWord('hyperfocus')">🔊</button></div>
+        <div class="vocab-def">to concentrate so intensely that you lose track of everything else</div>
+        <div class="vocab-es">hiperconcentrarse</div>
+        <div class="vocab-ex">"She hyperfocuses on projects she's passionate about."</div>
+      </div>
+    </div>
+
+    <p>Even so, ADHD remains full of contradictions. Some people feel almost paralyzed by <span class="highlight" data-tooltip="mundano / rutinario">mundane</span>, everyday tasks and struggle in traditional school or office settings — they may <span class="highlight" data-tooltip="verse envuelto en">get into</span> more accidents and face higher rates of anxiety or depression. Others are unusually creative, entrepreneurial, and intuitive; some of the world's highest achievers, including Simone Biles and Richard Branson, say ADHD fuels their success. While our understanding of the condition has <span class="highlight" data-tooltip="haber avanzado mucho">come a long way</span>, researchers admit there is still a lot we don't know.</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">mundane</span><button class="speak-btn" onclick="speakWord('mundane')">🔊</button></div>
+        <div class="vocab-def">ordinary and not interesting</div>
+        <div class="vocab-es">mundano / rutinario</div>
+        <div class="vocab-ex">"He gets bored with mundane office tasks."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">get into</span><button class="speak-btn" onclick="speakWord('get into')">🔊</button></div>
+        <div class="vocab-def">to become involved in something, often unintentionally</div>
+        <div class="vocab-es">verse envuelto en</div>
+        <div class="vocab-ex">"She got into an argument with a coworker."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">come a long way</span><button class="speak-btn" onclick="speakWord('come a long way')">🔊</button></div>
+        <div class="vocab-def">to have made a lot of progress</div>
+        <div class="vocab-es">haber avanzado mucho</div>
+        <div class="vocab-ex">"Workplace accommodations have come a long way."</div>
+      </div>
+    </div>
+
+    <p>Psychotherapist Sarah Greenberg describes ADHD brains as <span class="highlight" data-tooltip="una mezcla de cosas buenas y malas">a mixed bag</span>: the same person can <span class="highlight" data-tooltip="rendir por encima de lo esperado">overperform</span> in one area and <span class="highlight" data-tooltip="rendir por debajo de lo esperado">underperform</span> in another. She might interview a brilliant, well-liked manager who overperforms at building relationships but underperforms at simple tasks like replying to texts or remembering birthdays. That's why Greenberg encourages coworkers, friends, and family members not to take these inconsistencies personally.</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">a mixed bag</span><button class="speak-btn" onclick="speakWord('a mixed bag')">🔊</button></div>
+        <div class="vocab-def">a group of things that are very different; a combination of good and bad</div>
+        <div class="vocab-es">una mezcla de cosas buenas y malas</div>
+        <div class="vocab-ex">"The reviews were a mixed bag."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">overperform</span><button class="speak-btn" onclick="speakWord('overperform')">🔊</button></div>
+        <div class="vocab-def">to do better than expected</div>
+        <div class="vocab-es">rendir por encima de lo esperado</div>
+        <div class="vocab-ex">"The new hire overperformed in her first month."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">underperform</span><button class="speak-btn" onclick="speakWord('underperform')">🔊</button></div>
+        <div class="vocab-def">to do worse than expected</div>
+        <div class="vocab-es">rendir por debajo de lo esperado</div>
+        <div class="vocab-ex">"Sales underperformed this quarter."</div>
+      </div>
+    </div>
+
+    <p>There is growing agreement that more support is needed. "How disabled we are happens at the <span class="highlight" data-tooltip="intersección / cruce">intersection</span> between our <span class="highlight" data-tooltip="deficiencia / discapacidad">impairment</span> and our environment," explains psychologist Megan Anna Neff. Most schools and workplaces were not designed with ADHD brains in mind, which limits <span class="highlight" data-tooltip="acceso a">access to</span> the accommodations many people need to succeed.</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">intersection</span><button class="speak-btn" onclick="speakWord('intersection')">🔊</button></div>
+        <div class="vocab-def">the point where two things meet or overlap</div>
+        <div class="vocab-es">intersección / cruce</div>
+        <div class="vocab-ex">"The policy sits at the intersection of safety and cost."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">impairment</span><button class="speak-btn" onclick="speakWord('impairment')">🔊</button></div>
+        <div class="vocab-def">a condition in which part of the body or mind does not function typically</div>
+        <div class="vocab-es">deficiencia</div>
+        <div class="vocab-ex">"The accommodation addressed his visual impairment."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">access to</span><button class="speak-btn" onclick="speakWord('access to')">🔊</button></div>
+        <div class="vocab-def">the ability to use or obtain something</div>
+        <div class="vocab-es">acceso a</div>
+        <div class="vocab-ex">"All employees should have access to training."</div>
+      </div>
+    </div>
+
+    <p>Neff believes ADHD should officially <span class="highlight" data-tooltip="clasificar como">classify as</span> a disability, so that people who need extra resources and legal protections can continue to access them. At the same time, she recognizes that many people with ADHD don't consider themselves disabled and don't want to be <span class="highlight" data-tooltip="etiquetado">labelled</span> that way. When workplaces build environments that <span class="highlight" data-tooltip="aprovechar">leverage</span> a person's natural strengths — instead of only managing their weaknesses — "powerful things" can happen, she says.</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">classify ... as</span><button class="speak-btn" onclick="speakWord('classify as')">🔊</button></div>
+        <div class="vocab-def">to officially put something into a category</div>
+        <div class="vocab-es">clasificar como</div>
+        <div class="vocab-ex">"The company classifies remote work as a benefit."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">label</span><button class="speak-btn" onclick="speakWord('label')">🔊</button></div>
+        <div class="vocab-def">to describe someone with a word, sometimes unfairly</div>
+        <div class="vocab-es">etiquetar</div>
+        <div class="vocab-ex">"She doesn't like to be labelled as 'the difficult one.'"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">leverage</span><button class="speak-btn" onclick="speakWord('leverage')">🔊</button></div>
+        <div class="vocab-def">to use something to gain an advantage</div>
+        <div class="vocab-es">aprovechar</div>
+        <div class="vocab-ex">"The manager leveraged her network to close the deal."</div>
+      </div>
+    </div>
+
+    <p>Neff herself has learned to <span class="highlight" data-tooltip="canalizar hacia">channel</span> her divergent, <span class="highlight" data-tooltip="fuera de lo convencional">out-of-the-box</span> thinking into her career as a psychologist, and she says she <span class="highlight" data-tooltip="prosperar / destacar">thrives</span> with both ADHD and autism because she has control over her own work environment. Greenberg's story is similar: she struggled in traditional academic settings but built a successful career as a freelance journalist and author — not <span class="highlight" data-tooltip="a pesar de">despite</span> her ADHD, but because of it.</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">channel ... into</span><button class="speak-btn" onclick="speakWord('channel into')">🔊</button></div>
+        <div class="vocab-def">to direct energy or effort toward one particular purpose</div>
+        <div class="vocab-es">canalizar hacia</div>
+        <div class="vocab-ex">"He channels his frustration into exercise."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">out-of-the-box</span><button class="speak-btn" onclick="speakWord('out of the box')">🔊</button></div>
+        <div class="vocab-def">creative, not following traditional methods</div>
+        <div class="vocab-es">fuera de lo convencional</div>
+        <div class="vocab-ex">"The team came up with an out-of-the-box solution."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">thrive</span><button class="speak-btn" onclick="speakWord('thrive')">🔊</button></div>
+        <div class="vocab-def">to grow, develop, or succeed very well</div>
+        <div class="vocab-es">prosperar / destacar</div>
+        <div class="vocab-ex">"She thrives under pressure."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row"><span class="vocab-word">despite</span><button class="speak-btn" onclick="speakWord('despite')">🔊</button></div>
+        <div class="vocab-def">without being affected by; even though</div>
+        <div class="vocab-es">a pesar de</div>
+        <div class="vocab-ex">"Despite the rain, the event was a success."</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">🗣️ Discussion Questions</h2>
+  <ul class="discussion-list">
+    <li>In your workplace, do you think environments and processes are built for a variety of brains, or more of a "one-size-fits-all" model? Give an example.</li>
+    <li>Neff says "how disabled we are happens at the intersection between our impairment and our environment." Do you agree? What could a workplace change to reduce that gap?</li>
+    <li>Greenberg believes her ADHD traits are directly responsible for her success as a journalist, not despite her ADHD. Do you think professional strengths and weaknesses are often two sides of the same coin — in any person, not just those with ADHD?</li>
+  </ul>
+
+  <h2 class="section-title">✍️ Self-Practice Questions</h2>
+  <div class="practice-item">
+    <div class="practice-q" onclick="this.parentElement.classList.toggle('open')">
+      1. What is the "continuum" model of ADHD that Archer proposes? <span class="arrow">▼</span>
+    </div>
+    <div class="practice-a">Archer suggests ADHD exists on a 10-point scale: people who score low (around 4 or below) may not even realize they have it, while people who score high (9 or above) tend to struggle more in daily life and may need medication.</div>
+  </div>
+  <div class="practice-item">
+    <div class="practice-q" onclick="this.parentElement.classList.toggle('open')">
+      2. Why does Neff believe ADHD should be classified as a disability? <span class="arrow">▼</span>
+    </div>
+    <div class="practice-a">So that people who need extra resources, workplace accommodations, and legal protections can continue to have access to them — even though not everyone with ADHD sees themselves as disabled.</div>
+  </div>
+  <div class="practice-item">
+    <div class="practice-q" onclick="this.parentElement.classList.toggle('open')">
+      3. Name two challenges and two strengths associated with ADHD mentioned in the article. <span class="arrow">▼</span>
+    </div>
+    <div class="practice-a">Challenges: struggling with mundane tasks, higher rates of anxiety/accidents, inconsistent performance (overperforming/underperforming). Strengths: creativity, hyperfocus, out-of-the-box/divergent thinking, entrepreneurial drive.</div>
+  </div>
+  <div class="practice-item">
+    <div class="practice-q" onclick="this.parentElement.classList.toggle('open')">
+      4. What does "leverage" mean in the context of this article? <span class="arrow">▼</span>
+    </div>
+    <div class="practice-a">To use something — in this case, a person's natural strengths or traits — to gain an advantage, rather than only focusing on the weaknesses.</div>
+  </div>
+
+  <div class="closing">
+    🌟 What's one small change you could leverage this week to work better with your own brain?
+  </div>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
