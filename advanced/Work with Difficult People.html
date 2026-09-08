@@ -1,0 +1,693 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tactics to Help You Work with Difficult People | English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --forest:#1b4332;
+    --forest-deep:#122b20;
+    --terracotta:#c9622b;
+    --gold:#d9a441;
+    --cream:#faf3e6;
+    --ink:#22281f;
+  }
+
+  body{
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    line-height:1.7;
+    background:var(--cream);
+    color:var(--ink);
+    margin:0;
+  }
+
+  .lesson-container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+  }
+
+  /* ===== Useful Expressions ===== */
+  .expressions-section{
+    background:#ffffff;
+    border:3px solid var(--forest);
+    border-radius:14px;
+    padding:1.8rem 2rem;
+    margin:2.5rem 0;
+    box-shadow:0 4px 0 var(--forest);
+  }
+  .expressions-section h2{
+    color:var(--forest);
+    font-size:1.7rem;
+    margin-top:0;
+    border-bottom:3px solid var(--gold);
+    padding-bottom:0.5rem;
+  }
+  .expr-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.2rem;
+    margin-top:1.2rem;
+  }
+  .expr-card{
+    background:var(--cream);
+    border-left:6px solid var(--terracotta);
+    border-radius:8px;
+    padding:1rem 1.2rem;
+  }
+  .expr-en{
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--forest-deep);
+  }
+  .expr-es{
+    color:var(--terracotta);
+    font-weight:600;
+    margin:0.3rem 0;
+  }
+  .expr-ex{
+    font-style:italic;
+    font-size:0.95rem;
+    color:#444;
+  }
+
+  /* ===== Article ===== */
+  .article-title{
+    color:var(--forest-deep);
+    font-size:2.1rem;
+    text-align:center;
+    margin:2.5rem 0 0.5rem;
+  }
+  .article-sub{
+    text-align:center;
+    color:var(--terracotta);
+    font-weight:600;
+    margin-bottom:2rem;
+  }
+  .article-section{
+    background:#ffffff;
+    border-radius:14px;
+    padding:1.8rem 2.2rem;
+    margin:1.8rem 0 0.8rem;
+    border:2px solid #e0d5bd;
+    box-shadow:0 3px 0 #e0d5bd;
+  }
+  .article-section h3{
+    color:var(--forest);
+    font-size:1.4rem;
+    margin-top:0;
+  }
+  .article-section p{
+    font-size:1.15rem;
+  }
+  .tactic-list{
+    padding-left:1.4rem;
+  }
+  .tactic-list li{
+    margin-bottom:0.9rem;
+    font-size:1.15rem;
+  }
+  .tactic-list strong{
+    color:var(--terracotta);
+  }
+
+  /* Highlighted vocabulary in running text */
+  .highlight{
+    background:#ffe1b8;
+    font-weight:700;
+    border-bottom:3px solid var(--terracotta);
+    padding:0 3px;
+    border-radius:3px;
+    position:relative;
+    cursor:help;
+  }
+  .highlight[data-tooltip]:hover::after{
+    content:attr(data-tooltip);
+    position:absolute;
+    bottom:125%;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--forest-deep);
+    color:#fff;
+    padding:0.4rem 0.7rem;
+    border-radius:6px;
+    font-size:0.85rem;
+    font-weight:600;
+    white-space:nowrap;
+    z-index:10;
+    animation:slideIn 0.15s ease-out;
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
+  }
+  .highlight[data-tooltip]:hover::before{
+    content:"";
+    position:absolute;
+    bottom:112%;
+    left:50%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:var(--forest-deep);
+    z-index:10;
+  }
+  @keyframes slideIn{
+    from{opacity:0; transform:translate(-50%,4px);}
+    to{opacity:1; transform:translate(-50%,0);}
+  }
+
+  /* ===== Vocabulary boxes ===== */
+  .vocab-box{
+    background:var(--forest);
+    border-radius:14px;
+    padding:1.5rem 1.8rem;
+    margin:0 0 2.2rem;
+  }
+  .vocab-box h4{
+    color:var(--gold);
+    margin-top:0;
+    font-size:1.1rem;
+    letter-spacing:0.02em;
+  }
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+  }
+  @media (max-width:1000px){
+    .vocab-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:600px){
+    .vocab-grid{grid-template-columns:1fr;}
+    .expr-grid{grid-template-columns:1fr;}
+  }
+  .vocab-card{
+    background:var(--cream);
+    border-radius:10px;
+    padding:0.9rem 1rem;
+    border:2px solid var(--gold);
+  }
+  .vocab-word-row{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    margin-bottom:0.4rem;
+  }
+  .vocab-word{
+    font-weight:700;
+    color:var(--forest-deep);
+    font-size:1.05rem;
+  }
+  .speak-btn{
+    background:var(--terracotta);
+    border:none;
+    color:#fff;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:0.9rem;
+    flex-shrink:0;
+  }
+  .speak-btn:hover{background:var(--forest);}
+  .vocab-explain{
+    font-size:0.92rem;
+    color:#333;
+    margin:0.2rem 0;
+  }
+  .vocab-es{
+    font-size:0.92rem;
+    color:var(--terracotta);
+    font-weight:600;
+    margin:0.2rem 0;
+  }
+  .vocab-example{
+    font-size:0.88rem;
+    font-style:italic;
+    color:#555;
+    margin:0.3rem 0 0;
+  }
+
+  /* ===== Discussion ===== */
+  .discussion-section{
+    background:var(--terracotta);
+    border-radius:14px;
+    padding:2rem 2.2rem;
+    margin:3rem 0;
+    color:#fff;
+  }
+  .discussion-section h2{
+    margin-top:0;
+    font-size:1.7rem;
+    border-bottom:3px solid var(--gold);
+    padding-bottom:0.5rem;
+  }
+  .discussion-section ol{
+    padding-left:1.4rem;
+  }
+  .discussion-section li{
+    font-size:1.2rem;
+    margin-bottom:1rem;
+  }
+
+  /* ===== Self practice (foldable) ===== */
+  .practice-section{
+    margin:3rem 0;
+  }
+  .practice-section h2{
+    color:var(--forest-deep);
+    font-size:1.7rem;
+    border-bottom:3px solid var(--terracotta);
+    padding-bottom:0.5rem;
+  }
+  .practice-item{
+    background:#fff;
+    border:2px solid var(--forest);
+    border-radius:10px;
+    margin-bottom:1rem;
+    overflow:hidden;
+  }
+  .practice-question{
+    width:100%;
+    text-align:left;
+    background:var(--forest);
+    color:#fff;
+    border:none;
+    padding:1rem 1.4rem;
+    font-size:1.1rem;
+    font-weight:700;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .practice-question:hover{background:var(--forest-deep);}
+  .practice-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease, padding 0.3s ease;
+    padding:0 1.4rem;
+    background:#fdf6ea;
+    font-size:1.05rem;
+  }
+  .practice-answer.open{
+    max-height:300px;
+    padding:1rem 1.4rem;
+  }
+
+  /* ===== Closing ===== */
+  .closing{
+    background:var(--forest-deep);
+    color:var(--cream);
+    border-radius:14px;
+    padding:2rem 2.2rem;
+    text-align:center;
+    margin-top:3rem;
+  }
+  .closing h2{
+    color:var(--gold);
+    margin-top:0;
+  }
+  .closing p{
+    font-size:1.15rem;
+    max-width:800px;
+    margin:0.5rem auto 0;
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1788890769/shizi-lessons/euexpj7xbqwo2pk5nclw.png" alt="🤝 Tactics to Help You Work with Difficult People" class="article-image">
+    </div>
+
+
+<div class="lesson-container">
+
+  <!-- ===== USEFUL EXPRESSIONS ===== -->
+  <section class="expressions-section">
+    <h2>💬 Useful Expressions</h2>
+    <div class="expr-grid">
+      <div class="expr-card">
+        <div class="expr-en">to shy away from (something)</div>
+        <div class="expr-es">evitar algo / rehuir algo</div>
+        <div class="expr-ex">"Don't shy away from giving your manager honest feedback."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">to take something out of the equation</div>
+        <div class="expr-es">dejar algo de lado / no tomarlo en cuenta</div>
+        <div class="expr-ex">"Let's take budget out of the equation and just talk about safety first."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">to unlock someone's potential</div>
+        <div class="expr-es">sacar a relucir el potencial de alguien</div>
+        <div class="expr-ex">"A good mentor can unlock a new employee's potential in months."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">to gauge someone's reaction</div>
+        <div class="expr-es">medir / evaluar la reacción de alguien</div>
+        <div class="expr-ex">"I watched her face closely to gauge her reaction to the audit results."</div>
+      </div>
+      <div class="expr-card">
+        <div class="expr-en">to blunt the impact of (something)</div>
+        <div class="expr-es">amortiguar / suavizar el impacto de algo</div>
+        <div class="expr-ex">"Acknowledging the delay upfront blunted the impact of the bad news."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLE ===== -->
+  <h2 class="article-title">🤝 Tactics to Help You Work with Difficult People</h2>
+  <p class="article-sub">Based on an article about workplace psychology and conflict management</p>
+
+  <div class="article-section">
+    <h3>Two Kinds of "Difficult"</h3>
+    <p>
+      When we run into someone we find hard to work with, our first instinct is often to
+      <span class="highlight" data-tooltip="evitar / rehuir">shy away</span> instead of dealing
+      with the situation head-on. But difficult people exist everywhere, so learning to turn a
+      tense interaction into a productive one is a skill worth building. The author splits
+      difficult people into two very different groups. "Truly difficult" people are chronically
+      low-energy, <span class="highlight" data-tooltip="ensimismado, centrado en sí mismo">inward-looking</span>,
+      negative about everything, and unable to imagine what's possible — for this group, the
+      advice is blunt: life is too short to keep spending your energy there. The second group,
+      insecure people, act difficult because they are anxious and
+      <span class="highlight" data-tooltip="reacio al riesgo">risk-averse</span>; they see danger
+      in almost every situation, and a few can even be
+      <span class="highlight" data-tooltip="francamente / decididamente">downright</span> nasty or
+      abusive. But unlike the first group, insecurity is an opportunity — helping someone feel
+      less insecure can <span class="highlight" data-tooltip="sacar a relucir el potencial">unlock
+      their potential</span> and improve their overall wellbeing.
+    </p>
+  </div>
+
+  <div class="vocab-box">
+    <h4>🔑 Vocabulary — Section 1</h4>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">shy away (from)</span>
+          <button class="speak-btn" onclick="speakWord('shy away')">🔊</button>
+        </div>
+        <p class="vocab-explain">to avoid a person or situation because it feels uncomfortable</p>
+        <p class="vocab-es">evitar / rehuir</p>
+        <p class="vocab-example">"New hires often shy away from asking their EHS lead too many questions."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">inward-looking</span>
+          <button class="speak-btn" onclick="speakWord('inward looking')">🔊</button>
+        </div>
+        <p class="vocab-explain">focused only on yourself, not open to others or new ideas</p>
+        <p class="vocab-es">ensimismado</p>
+        <p class="vocab-example">"He's become very inward-looking since the reorganization."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">downright</span>
+          <button class="speak-btn" onclick="speakWord('downright')">🔊</button>
+        </div>
+        <p class="vocab-explain">completely, used to emphasize something negative</p>
+        <p class="vocab-es">francamente / decididamente</p>
+        <p class="vocab-example">"Some of the comments in that meeting were downright rude."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">unlock (potential)</span>
+          <button class="speak-btn" onclick="speakWord('unlock potential')">🔊</button>
+        </div>
+        <p class="vocab-explain">to help something hidden or unused finally develop</p>
+        <p class="vocab-es">sacar a relucir / liberar potencial</p>
+        <p class="vocab-example">"A supportive coach can unlock potential that a stricter boss never would."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <h3>Reframing How You See Them</h3>
+    <p>
+      The first step in facing a difficult person is switching into "detective mode" —
+      <span class="highlight" data-tooltip="dejar algo de lado">taking your own feelings and
+      needs out of the equation</span> and treating the person like an unfamiliar piece of gym
+      equipment: intimidating at first, but genuinely useful once you learn how to use it.
+      Another mental trick: remind yourself that this person is somebody's child, then ask
+      whether you'd want someone else thinking about your own child the way you're currently
+      thinking about them. That question tends to switch your empathy back on. From there, the
+      advice is to be <span class="highlight" data-tooltip="deliberado / intencional">deliberate</span>
+      — plan your interactions with difficult people instead of reacting on autopilot, and treat
+      each encounter as a chance to learn something.
+    </p>
+  </div>
+
+  <div class="vocab-box">
+    <h4>🔑 Vocabulary — Section 2</h4>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">take (sth) out of the equation</span>
+          <button class="speak-btn" onclick="speakWord('take out of the equation')">🔊</button>
+        </div>
+        <p class="vocab-explain">to stop letting a factor influence your decision or reaction</p>
+        <p class="vocab-es">dejar algo de lado</p>
+        <p class="vocab-example">"Let's take personal history out of the equation and just look at the data."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">deliberate (adj.)</span>
+          <button class="speak-btn" onclick="speakWord('deliberate')">🔊</button>
+        </div>
+        <p class="vocab-explain">done on purpose, carefully planned rather than automatic</p>
+        <p class="vocab-es">deliberado / intencional</p>
+        <p class="vocab-example">"She was deliberate about how she raised the safety violation with him."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">switch on / switch off (empathy, autopilot)</span>
+          <button class="speak-btn" onclick="speakWord('switch on')">🔊</button>
+        </div>
+        <p class="vocab-explain">to activate or deactivate a mode, feeling, or habit</p>
+        <p class="vocab-es">activar / desactivar</p>
+        <p class="vocab-example">"After the third complaint, I switched off autopilot and actually listened."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">react on autopilot</span>
+          <button class="speak-btn" onclick="speakWord('react on autopilot')">🔊</button>
+        </div>
+        <p class="vocab-explain">to respond automatically, without thinking it through</p>
+        <p class="vocab-es">reaccionar en piloto automático</p>
+        <p class="vocab-example">"In HR, it's easy to react on autopilot instead of considering the context."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <h3>Four Practical Tactics</h3>
+    <ul class="tactic-list">
+      <li>
+        <strong>Take the meeting outside, walking side by side.</strong> Face-to-face
+        conversations force your brain to do two things at once — process what's being said
+        <em>and</em> <span class="highlight" data-tooltip="medir / evaluar">gauge</span> the
+        other person's facial expressions — which slows down your thinking. Walking
+        <span class="highlight" data-tooltip="uno junto al otro">side by side</span> removes
+        that second task, so both people can think more clearly during a tense conversation.
+      </li>
+      <li>
+        <strong>Schedule it after sundown.</strong> The
+        <span class="highlight" data-tooltip="lógica subyacente">underlying logic</span> is
+        that humans have poor night vision, and when we can't see well we feel more
+        <span class="highlight" data-tooltip="vulnerable">vulnerable</span>. To reduce that
+        feeling, people instinctively become more cooperative and less
+        <span class="highlight" data-tooltip="opositor / conflictivo">oppositional</span>,
+        since staying close to others feels safer than staying in conflict.
+      </li>
+      <li>
+        <strong>Offer something hot to drink.</strong> Physical temperature seems to shape
+        social temperature: in one classic study, people who held a hot cup of coffee before
+        reading a description of a stranger judged that person more warmly than people who had
+        held an iced coffee.
+      </li>
+      <li>
+        <strong>Open with small talk about bad weather.</strong> Naming a negative feeling —
+        even something as small as complaining about the rain — makes people consciously aware
+        of that feeling, which seems to
+        <span class="highlight" data-tooltip="amortiguar / suavizar">blunt</span> its power to
+        color their mood for the rest of the conversation.
+      </li>
+    </ul>
+  </div>
+
+  <div class="vocab-box">
+    <h4>🔑 Vocabulary — Section 3</h4>
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">gauge (v.)</span>
+          <button class="speak-btn" onclick="speakWord('gauge')">🔊</button>
+        </div>
+        <p class="vocab-explain">to estimate or judge a feeling or reaction</p>
+        <p class="vocab-es">medir / evaluar</p>
+        <p class="vocab-example">"It's hard to gauge how the client felt about the proposal over email."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">side by side</span>
+          <button class="speak-btn" onclick="speakWord('side by side')">🔊</button>
+        </div>
+        <p class="vocab-explain">next to each other, facing the same direction</p>
+        <p class="vocab-es">uno junto al otro</p>
+        <p class="vocab-example">"We solved most of the conflict just working side by side on the floor."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">underlying logic</span>
+          <button class="speak-btn" onclick="speakWord('underlying logic')">🔊</button>
+        </div>
+        <p class="vocab-explain">the basic reasoning behind something, often not stated directly</p>
+        <p class="vocab-es">lógica subyacente</p>
+        <p class="vocab-example">"The underlying logic of the new policy is to reduce overtime, not punish anyone."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">vulnerable</span>
+          <button class="speak-btn" onclick="speakWord('vulnerable')">🔊</button>
+        </div>
+        <p class="vocab-explain">exposed to being hurt, easily affected</p>
+        <p class="vocab-es">vulnerable</p>
+        <p class="vocab-example">"New IT interns often feel vulnerable during their first code review."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">oppositional</span>
+          <button class="speak-btn" onclick="speakWord('oppositional')">🔊</button>
+        </div>
+        <p class="vocab-explain">tending to disagree with or resist others</p>
+        <p class="vocab-es">opositor / conflictivo</p>
+        <p class="vocab-example">"He gets oppositional whenever someone questions his numbers."</p>
+      </div>
+      <div class="vocab-card">
+        <div class="vocab-word-row">
+          <span class="vocab-word">blunt (v.)</span>
+          <button class="speak-btn" onclick="speakWord('blunt the impact')">🔊</button>
+        </div>
+        <p class="vocab-explain">to reduce the force or effect of something</p>
+        <p class="vocab-es">amortiguar / suavizar</p>
+        <p class="vocab-example">"A quick apology can blunt the impact of bad news."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DISCUSSION ===== -->
+  <section class="discussion-section">
+    <h2>🗣️ Discussion Questions</h2>
+    <ol>
+      <li>The article says "life is too short" to deal with truly difficult people, but says insecure people are worth investing in. Do you agree with drawing that line? Where would you draw it in your own workplace?</li>
+      <li>Which of the four tactics (walking meetings, meeting after dark, hot drinks, weather small talk) seems most realistic to actually use at your company? Which seems the least practical, and why?</li>
+      <li>Think of a genuinely difficult colleague or client you've dealt with. Looking back, do you think they were "truly difficult" or "insecure" by the article's definitions? What made you decide that?</li>
+    </ol>
+  </section>
+
+  <!-- ===== SELF PRACTICE ===== -->
+  <section class="practice-section">
+    <h2>✍️ Self-Practice Questions</h2>
+
+    <div class="practice-item">
+      <button class="practice-question" onclick="toggleAnswer(this)">1. What's the difference between the two types of "difficult" people the article describes?</button>
+      <div class="practice-answer">
+        <p>Truly difficult people are chronically negative, low-energy, and unable to change — the article says they're not worth the effort. Insecure people act difficult because of anxiety and risk-aversion, but they can improve if you help reduce their insecurity.</p>
+      </div>
+    </div>
+
+    <div class="practice-item">
+      <button class="practice-question" onclick="toggleAnswer(this)">2. Why does walking side by side supposedly make a hard conversation easier?</button>
+      <div class="practice-answer">
+        <p>Because you're not forced to read the other person's face while also trying to think, so your brain isn't multitasking — you can process the conversation more clearly.</p>
+      </div>
+    </div>
+
+    <div class="practice-item">
+      <button class="practice-question" onclick="toggleAnswer(this)">3. According to the coffee study mentioned in the article, what effect did holding a hot drink have?</button>
+      <div class="practice-answer">
+        <p>People who held a hot cup of coffee before reading about a stranger judged that person more warmly than people who held an iced coffee — physical warmth seemed to shape social judgment.</p>
+      </div>
+    </div>
+
+    <div class="practice-item">
+      <button class="practice-question" onclick="toggleAnswer(this)">4. Why does complaining about bad weather at the start of a meeting supposedly help?</button>
+      <div class="practice-answer">
+        <p>Naming the negative feeling out loud makes people consciously aware of it, which seems to reduce its power to unconsciously affect their mood and attitude later in the conversation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLOSING ===== -->
+  <div class="closing">
+    <h2>💡 Closing Reflection</h2>
+    <p>
+      Most of these tactics aren't really about the other person at all — they're about
+      managing the environment so both people can think and react more calmly. Before your next
+      difficult conversation, ask yourself: what's the setting, and could a small change to it
+      change the outcome?
+    </p>
+  </div>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+
+function toggleAnswer(btn){
+  const answer = btn.nextElementSibling;
+  answer.classList.toggle('open');
+}
+</script>
+
+
