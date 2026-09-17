@@ -132,7 +132,8 @@ async function scanLessons() {
         { filename: 'AI for All.html', date: '2026-08-27', title: '📊 AI for All — Who Controls the Machines Behind AI?' },        { filename: 'AI for All.html', date: '2026-09-01', title: '📊 AI for All — Who Controls the Machines Behind AI?' },
 { filename: 'The ADHD Advantage.html', date: '2026-09-03', title: '🧠 The ADHD Advantage' },
         { filename: 'Work with Difficult People.html', date: '2026-09-08', title: '🤝 Tactics to Help You Work with Difficult People' },        { filename: 'Minimalist Packaging.html', date: '2026-09-17', title: '📦 Design & Consumer Psychology: Minimalist Packaging' },
-{ filename: 'Self-Confident.html', date: '2026-09-15', title: '😎 Are You Self-Confident Enough?' },        { filename: 'Minimalist Packaging.html', date: '2026-09-17', title: '📦 Design & Consumer Psychology: Minimalist Packaging' },
+{ filename: 'Self-Confident.html', date: '2026-09-15', title: '😎 Are You Self-Confident Enough?' },
+        { filename: 'Minimalist Packaging.html', date: '2026-09-10', title: '📦 Design & Consumer Psychology: Minimalist Packaging' },
 { filename: 'Why You Like Minimalist Packaging.html', date: '2026-09-17', title: '🎨 Why You Like Minimalist Packaging' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
