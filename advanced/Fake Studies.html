@@ -1,0 +1,468 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Studies — English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root{
+    --paper:#f4ecd8;
+    --paper-dark:#ece1c8;
+    --ink:#2c2723;
+    --crimson:#8b1a1a;
+    --crimson-dark:#6b1313;
+    --amber:#ffdd7a;
+    --amber-border:#c9861a;
+    --stamp:#b02e2e;
+  }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans','Open Sans',sans-serif;
+    line-height:1.7;
+  }
+  .container{max-width:1400px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+
+  .section-title{
+    font-size:1.6rem;
+    font-weight:800;
+    color:var(--crimson);
+    border-bottom:4px solid var(--crimson);
+    padding-bottom:0.4rem;
+    margin:3rem 0 1.2rem;
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+
+  /* Useful Expressions */
+  .expr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;}
+  .expr-card{
+    background:#fff;
+    border:2px solid var(--ink);
+    border-left:8px solid var(--crimson);
+    border-radius:8px;
+    padding:1rem 1.2rem;
+    box-shadow:4px 4px 0 rgba(0,0,0,0.12);
+  }
+  .expr-en{font-weight:800;font-size:1.15rem;color:var(--crimson-dark);}
+  .expr-es{font-style:italic;color:#5a4f42;margin:0.2rem 0 0.5rem;}
+  .expr-ex{font-size:0.95rem;color:var(--ink);}
+
+  /* Article */
+  .article-box{
+    background:var(--paper-dark);
+    border:2px solid var(--ink);
+    border-radius:10px;
+    padding:1.8rem 2rem;
+    box-shadow:6px 6px 0 rgba(0,0,0,0.1);
+  }
+  .article-box p{margin-bottom:1.2rem;font-size:1.08rem;}
+  .stamp{
+    display:inline-block;
+    color:var(--stamp);
+    border:3px solid var(--stamp);
+    border-radius:6px;
+    padding:0.1rem 0.6rem;
+    transform:rotate(-4deg);
+    font-weight:900;
+    letter-spacing:2px;
+  }
+
+  /* Highlight + tooltip */
+  .highlight{
+    background:var(--amber);
+    font-weight:700;
+    border-bottom:3px solid var(--amber-border);
+    padding:0.05rem 0.25rem;
+    border-radius:3px;
+    position:relative;
+    cursor:help;
+  }
+  .highlight[data-tooltip]::after{
+    content:attr(data-tooltip);
+    position:absolute;
+    bottom:130%;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--ink);
+    color:#fff;
+    padding:0.4rem 0.7rem;
+    border-radius:6px;
+    font-size:0.9rem;
+    font-weight:600;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.2s;
+    z-index:10;
+  }
+  .highlight[data-tooltip]::before{
+    content:"";
+    position:absolute;
+    bottom:118%;
+    left:50%;
+    transform:translateX(-50%);
+    border:6px solid transparent;
+    border-top-color:var(--ink);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.2s;
+  }
+  .highlight[data-tooltip]:hover::after,
+  .highlight[data-tooltip]:hover::before{opacity:1;}
+  @media (max-width:600px){
+    .highlight[data-tooltip]::after{white-space:normal;width:150px;bottom:140%;}
+  }
+
+  /* Vocabulary boxes */
+  .vocab-box{
+    margin:0.8rem 0 2rem;
+    background:#fff8e8;
+    border:2px dashed var(--amber-border);
+    border-radius:10px;
+    padding:1.2rem;
+  }
+  .vocab-box-title{
+    font-weight:800;
+    color:var(--crimson-dark);
+    margin-bottom:0.7rem;
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  .vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1rem;
+  }
+  @media (max-width:1000px){.vocab-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.vocab-grid{grid-template-columns:1fr;}}
+  .vocab-card{
+    background:#fff;
+    border:2px solid var(--ink);
+    border-radius:8px;
+    padding:0.8rem;
+  }
+  .vocab-word{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    font-weight:800;
+    color:var(--crimson-dark);
+    font-size:1.05rem;
+    margin-bottom:0.3rem;
+  }
+  .speak-btn{
+    background:var(--crimson);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:26px;height:26px;
+    cursor:pointer;
+    font-size:0.85rem;
+    line-height:1;
+  }
+  .speak-btn:hover{background:var(--crimson-dark);}
+  .vocab-def{font-size:0.92rem;margin-bottom:0.3rem;}
+  .vocab-es{font-size:0.92rem;font-style:italic;color:#7a5c00;margin-bottom:0.4rem;}
+  .vocab-ex{font-size:0.88rem;color:#444;border-top:1px solid #ddd;padding-top:0.4rem;}
+
+  /* Discussion */
+  .discussion-list{list-style:none;padding:0;counter-reset:disc;}
+  .discussion-list li{
+    counter-increment:disc;
+    background:#fff;
+    border-left:8px solid var(--crimson);
+    border:2px solid var(--ink);
+    border-left-width:8px;
+    border-radius:8px;
+    padding:1rem 1.2rem;
+    margin-bottom:1rem;
+    font-size:1.05rem;
+    position:relative;
+    padding-left:3rem;
+  }
+  .discussion-list li::before{
+    content:counter(disc);
+    position:absolute;
+    left:0.8rem;top:0.9rem;
+    background:var(--crimson);
+    color:#fff;
+    font-weight:800;
+    width:1.6rem;height:1.6rem;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.95rem;
+  }
+
+  /* Self practice foldables */
+  .fold{
+    background:#fff;
+    border:2px solid var(--ink);
+    border-radius:8px;
+    margin-bottom:1rem;
+    overflow:hidden;
+  }
+  .fold summary{
+    cursor:pointer;
+    padding:1rem 1.2rem;
+    font-weight:700;
+    background:var(--amber);
+    list-style:none;
+  }
+  .fold summary::-webkit-details-marker{display:none;}
+  .fold summary::before{content:"▶ ";color:var(--crimson-dark);}
+  .fold[open] summary::before{content:"▼ ";}
+  .fold-answer{padding:1rem 1.2rem;font-size:0.98rem;background:#fffdf5;}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1790227069/shizi-lessons/yvwumncb310olo15ftic.png" alt="🔬 Fake Studies" class="article-image">
+    </div>
+
+
+<div class="container">
+
+  <h2 class="section-title">💬 Useful Expressions</h2>
+  <div class="expr-grid">
+    <div class="expr-card">
+      <div class="expr-en">to cut corners</div>
+      <div class="expr-es">tomar atajos / hacer las cosas mal para ahorrar tiempo</div>
+      <div class="expr-ex">"Some labs cut corners on testing just to publish faster."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">to call something into question</div>
+      <div class="expr-es">poner algo en duda</div>
+      <div class="expr-ex">"The scandal called the entire review process into question."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">to hold up to scrutiny</div>
+      <div class="expr-es">resistir un examen minucioso</div>
+      <div class="expr-ex">"His numbers didn't hold up to scrutiny once the audit began."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">a red flag</div>
+      <div class="expr-es">una señal de alerta</div>
+      <div class="expr-ex">"Three identical charts across different reports is a red flag."</div>
+    </div>
+    <div class="expr-card">
+      <div class="expr-en">quality over quantity</div>
+      <div class="expr-es">calidad antes que cantidad</div>
+      <div class="expr-ex">"Our team was told to focus on quality over quantity this year."</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">🔬 Fake Studies: A Problem Science Can't Ignore</h2>
+  <div class="article-box">
+
+    <p>Around the world, thousands of fake scientific papers are being <span class="highlight" data-tooltip="producidos en masa">churned out</span> every year — and many of them make it into respected journals. Behind much of this is a shadow industry known as a <span class="highlight" data-tooltip="fábrica de papers falsos">paper mill</span>: a business that writes fake studies and sells authorship to real scientists who need publications for their résumés. These companies are <span class="highlight" data-tooltip="parasitario, que vive de otros">parasitic</span> — they don't add anything to science, they just feed off it. Desperate researchers, under pressure to publish, are an easy target to <span class="highlight" data-tooltip="atrapar, conseguir rápidamente">snag</span>.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-title">Vocabulary — Paragraph 1</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">churn out <button class="speak-btn" onclick="speakWord('churn out')">🔊</button></div>
+          <div class="vocab-def">(phr. v.) to produce large amounts quickly, usually of low quality</div>
+          <div class="vocab-es">producir en masa</div>
+          <div class="vocab-ex">"The department churns out safety reports nobody reads."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">paper mill <button class="speak-btn" onclick="speakWord('paper mill')">🔊</button></div>
+          <div class="vocab-def">(n.) a company that produces fake academic papers for sale</div>
+          <div class="vocab-es">fábrica de papers</div>
+          <div class="vocab-ex">"The journal was investigated for publishing paper mill content."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">parasitic <button class="speak-btn" onclick="speakWord('parasitic')">🔊</button></div>
+          <div class="vocab-def">(adj.) living off others without giving anything back</div>
+          <div class="vocab-es">parasitario</div>
+          <div class="vocab-ex">"That vendor has a parasitic relationship with the IT budget."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">snag <button class="speak-btn" onclick="speakWord('snag')">🔊</button></div>
+          <div class="vocab-def">(v.) to get or catch something quickly</div>
+          <div class="vocab-es">atrapar, conseguir</div>
+          <div class="vocab-ex">"HR managed to snag two great candidates before the deadline."</div>
+        </div>
+      </div>
+    </div>
+
+    <p>How are these papers made? Some are invented from <span class="highlight" data-tooltip="pura invención, sin base real">whole cloth</span> — meaning there is no real research behind them at all. Others are <span class="highlight" data-tooltip="plagiar, copiar el trabajo de otro">plagiarized</span>: graphs, images and text lifted from real studies. With AI tools now available, paper mills can generate text that sounds far more <span class="highlight" data-tooltip="creíble, que parece verdad">plausible</span> than before, making fake papers harder to spot at a glance.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-title">Vocabulary — Paragraph 2</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">whole cloth <button class="speak-btn" onclick="speakWord('whole cloth')">🔊</button></div>
+          <div class="vocab-def">(n., idiom) complete invention, with no basis in fact</div>
+          <div class="vocab-es">pura invención</div>
+          <div class="vocab-ex">"The incident report was made up from whole cloth."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">plagiarize <button class="speak-btn" onclick="speakWord('plagiarize')">🔊</button></div>
+          <div class="vocab-def">(v.) to use someone else's work and present it as your own</div>
+          <div class="vocab-es">plagiar</div>
+          <div class="vocab-ex">"He was fired for plagiarizing a colleague's training slides."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">plausible <button class="speak-btn" onclick="speakWord('plausible')">🔊</button></div>
+          <div class="vocab-def">(adj.) seeming likely to be true or believable</div>
+          <div class="vocab-es">creíble, plausible</div>
+          <div class="vocab-ex">"Give me a plausible explanation for the missing inventory."</div>
+        </div>
+      </div>
+    </div>
+
+    <p>The damage doesn't stay contained. Entire fields can be <span class="highlight" data-tooltip="acosado, plagado de problemas">beset</span> by fake papers, some of which get cited again and again in later research — even after they are proven false. Standards of medical care can become <span class="highlight" data-tooltip="deformado, corrompido">warped</span> when treatments are based on studies that were never real. Journals that are <span class="highlight" data-tooltip="cargado, lleno de">laden</span> with fabricated findings put readers — and sometimes patients — at real risk.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-title">Vocabulary — Paragraph 3</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">beset <button class="speak-btn" onclick="speakWord('beset')">🔊</button></div>
+          <div class="vocab-def">(adj.) troubled by, full of problems</div>
+          <div class="vocab-es">acosado, plagado de</div>
+          <div class="vocab-ex">"The project was beset by delays from day one."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">warped <button class="speak-btn" onclick="speakWord('warped')">🔊</button></div>
+          <div class="vocab-def">(adj.) twisted away from what is normal or correct</div>
+          <div class="vocab-es">deformado, distorsionado</div>
+          <div class="vocab-ex">"Constant overtime gave him a warped sense of what's normal."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">laden <button class="speak-btn" onclick="speakWord('laden')">🔊</button></div>
+          <div class="vocab-def">(adj.) carrying or full of something</div>
+          <div class="vocab-es">cargado de</div>
+          <div class="vocab-ex">"The audit report was laden with errors."</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Why does this keep happening? Experts point to a <span class="highlight" data-tooltip="perverso, contrario a lo esperado">perverse</span> incentive system: scientists are rewarded for the number of papers they publish, not the quality of the work. Hiring and grant committees often don't have <span class="highlight" data-tooltip="los recursos o medios necesarios">the wherewithal</span> — the time, expertise, or resources — to properly evaluate what they're reading, so they lean on raw publication counts instead.</p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-title">Vocabulary — Paragraph 4</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">perverse <button class="speak-btn" onclick="speakWord('perverse')">🔊</button></div>
+          <div class="vocab-def">(adj.) strange, contrary to what is reasonable or expected</div>
+          <div class="vocab-es">perverso, contrario a la lógica</div>
+          <div class="vocab-ex">"It's a perverse system that pays for output, not results."</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-word">the wherewithal <button class="speak-btn" onclick="speakWord('the wherewithal')">🔊</button></div>
+          <div class="vocab-def">(n.) the resources or means necessary for something</div>
+          <div class="vocab-es">los medios necesarios</div>
+          <div class="vocab-ex">"Our team doesn't have the wherewithal to audit every vendor."</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Some fixes are already underway: publishers are <span class="highlight" data-tooltip="retirar oficialmente una publicación">retracting</span> compromised papers and dropping journals overrun by fake content. But most researchers agree the real fix has to happen further upstream — in how science funds and rewards its people. <span class="stamp">FAKE</span></p>
+
+    <div class="vocab-box">
+      <div class="vocab-box-title">Vocabulary — Paragraph 5</div>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-word">retract <button class="speak-btn" onclick="speakWord('retract')">🔊</button></div>
+          <div class="vocab-def">(v.) to officially withdraw a statement or publication</div>
+          <div class="vocab-es">retractarse, retirar una publicación</div>
+          <div class="vocab-ex">"The journal retracted the article after the fraud was confirmed."</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">🗣️ Discussion Questions</h2>
+  <ul class="discussion-list">
+    <li>In your own field (EHS, HR, or IT), have you ever seen an incentive system reward quantity over quality? What was the effect?</li>
+    <li>Should companies or governments be responsible for detecting fraud, or should the burden fall on the people doing the reviewing? Why?</li>
+    <li>How much should a professional trust a report, study, or audit that "sounds plausible" but that they can't fully verify themselves?</li>
+  </ul>
+
+  <h2 class="section-title">📝 Self-Practice Questions</h2>
+
+  <details class="fold">
+    <summary>1. What's the difference between a paper being "plagiarized" and one being made up "from whole cloth"?</summary>
+    <div class="fold-answer">Plagiarism means stealing existing real work and passing it off as original. "Whole cloth" invention means there was no real work at all — the data, results, and sometimes even the experiment never existed.</div>
+  </details>
+
+  <details class="fold">
+    <summary>2. Use "beset" and "laden" in two different sentences about your own workplace.</summary>
+    <div class="fold-answer">Example: "Our onboarding process is beset by outdated paperwork." / "The compliance folder was laden with unsigned forms." (Answers will vary — check that the grammar and meaning fit.)</div>
+  </details>
+
+  <details class="fold">
+    <summary>3. Why might a hiring committee lack "the wherewithal" to properly judge a candidate's work?</summary>
+    <div class="fold-answer">They may lack time, technical expertise, or resources to check every detail closely, so they rely on shortcuts like counting publications, certifications, or years of experience instead.</div>
+  </details>
+
+  <details class="fold">
+    <summary>4. Rewrite this sentence using "warped": "The company's values changed in a bad way because of years of dishonest reporting."</summary>
+    <div class="fold-answer">Example: "Years of dishonest reporting had warped the company's values." (Answers will vary, as long as "warped" is used correctly as a verb or adjective.)</div>
+  </details>
+
+</div>
+
+<script>
+function speakWord(word){
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+
