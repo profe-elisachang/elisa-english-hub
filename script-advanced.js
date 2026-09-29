@@ -137,6 +137,7 @@ async function scanLessons() {
 { filename: 'Why You Like Minimalist Packaging.html', date: '2026-09-17', title: '🎨 Why You Like Minimalist Packaging' },
         { filename: 'Be Practical, Not Perfect.html', date: '2026-09-22', title: '🗣️ Be Practical, Not Perfect' },
         { filename: 'Fake Studies.html', date: '2026-09-24', title: '🔬 Fake Studies' },
+        { filename: 'Hire Smart.html', date: '2026-09-29', title: '🧠 Hire Smart: Leading Beyond Ego' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
