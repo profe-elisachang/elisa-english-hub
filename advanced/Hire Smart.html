@@ -1,0 +1,175 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hire Smart — Inglés Laboral Avanzado con Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+:root{--ink:#24313a;--navy:#17324d;--teal:#087f8c;--teal-light:#dff4f3;--coral:#d85b4a;--gold:#c58a18;--paper:#fffdf8;--line:#2d4b59;--mint:#e7f3ed}
+*{box-sizing:border-box}body{margin:0;background:#f2efe7;color:var(--ink);font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7}
+.header{background:var(--navy);color:white}.header-content{max-width:1400px;margin:auto;padding:18px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}.header h1{margin:0;font-size:clamp(1.5rem,2.5vw,2.1rem)}.level-badge{background:#e74c3c;color:white;padding:5px 13px;border-radius:20px;font-weight:800;font-size:.9rem}.search-box{margin-left:auto}
+.container{max-width:1400px;margin:auto;padding:34px 24px 60px}.hero{background:var(--paper);border:4px solid var(--navy);padding:28px 30px;margin-bottom:28px;box-shadow:0 5px 0 rgba(36,49,58,.14)}.hero h2{margin:0 0 8px;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy)}.hero p{font-size:1.15rem;max-width:1000px;margin:8px 0}
+.section-title{color:white;background:var(--teal);border:3px solid var(--navy);padding:10px 16px;margin:34px 0 18px;font-size:1.55rem;box-shadow:0 5px 0 rgba(36,49,58,.14)}
+.lead-in{background:#fff5d8;border-left:8px solid var(--gold);padding:16px 22px;margin-bottom:18px}
+.expression-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.expression{background:white;border:3px solid var(--teal);padding:18px 20px;box-shadow:0 5px 0 rgba(36,49,58,.14)}.expression strong{display:block;color:var(--navy);font-size:1.2rem}.expression em{color:#8a3c30;font-style:normal;font-weight:600;display:block;margin-bottom:8px}.expression p{margin:0 0 8px;font-size:.98rem}.expression .eg{color:#4a5568;border-left:4px solid var(--gold);padding-left:10px;font-size:.93rem;margin:0}
+.article-intro{background:#fff5d8;border-left:8px solid var(--gold);padding:18px 22px;margin-bottom:20px}.article-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.article-card{background:var(--paper);border:3px solid var(--line);padding:24px;box-shadow:0 5px 0 rgba(36,49,58,.14)}.article-card h3{margin-top:0;color:var(--coral);font-size:1.5rem;border-bottom:3px solid var(--coral);padding-bottom:7px}.article-card p{margin:0 0 15px;font-size:1.02rem}
+.highlight{background:#fff09a;font-weight:800;border-bottom:3px solid var(--coral);padding:0 3px;cursor:help}
+.vocab{margin-top:14px;background:var(--teal-light);border:3px solid var(--teal);padding:17px}.vocab h4{margin:0 0 10px;color:var(--navy)}.vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.vword{background:white;border:2px solid #74aeb3;padding:12px}.vword b{color:var(--navy)}.speak{border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:18px;padding:2px 9px;cursor:pointer;font-weight:700}
+.discussion{background:var(--mint);border:3px solid #3b725c;padding:24px}.discussion li{margin:12px 0;font-size:1.08rem;line-height:1.6}
+.featured-section-title{color:white;background:var(--coral);border:3px solid var(--navy);padding:12px 18px;margin:42px 0 20px;font-size:1.7rem;box-shadow:0 6px 0 rgba(36,49,58,.18)}
+.takeaways-container{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:30px}
+.takeaway-card{background:white;border:4px solid var(--navy);padding:22px;box-shadow:0 6px 0 rgba(36,49,58,.14);position:relative}
+.takeaway-card .num{position:absolute;top:-15px;right:15px;background:var(--gold);color:white;font-weight:900;font-size:1.2rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--navy)}
+.takeaway-card h4{margin:0 0 10px;color:var(--navy);font-size:1.25rem;border-bottom:2px solid var(--teal);padding-bottom:5px}
+.takeaway-card p{margin:0;font-size:.98rem;color:#2d3748}
+.practice{display:grid;grid-template-columns:1fr 1fr;gap:20px}.qbox{background:white;border:3px solid var(--coral);padding:20px;box-shadow:0 5px 0 rgba(36,49,58,.14)}.qbox summary{font-weight:800;color:var(--navy);cursor:pointer;font-size:1.05rem}.qbox p{margin-top:12px;padding-top:10px;border-top:1px dashed #cbd5e0;color:#2d3748}
+.footer{max-width:1400px;margin:auto;padding:0 24px 40px;color:#53636c}
+@media(max-width:900px){.expression-grid,.article-grid,.practice,.takeaways-container{grid-template-columns:1fr}.vocab-grid{grid-template-columns:1fr 1fr}.search-box{margin-left:0}}
+@media(max-width:560px){.container{padding:20px 12px 45px}.header-content{padding:14px 16px}.article-card,.hero{padding:18px}.vocab-grid{grid-template-columns:1fr}}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+<div class="header-content">
+<h1>📚 English Conversation with Elisa</h1>
+<span class="level-badge">Avanzado B2–C1</span>
+<div class="search-box">
+<a href="../index-advanced.html" class="back-to-calendar-btn" style="display:inline-block;padding:0.5rem 1rem;background:rgba(255,255,255,0.25);color:white;text-decoration:none;border-radius:20px;font-size:0.9rem;font-weight:600;border:1px solid rgba(255,255,255,0.3);">Inicio</a>
+</div></div></header>
+    <div class="article-image-container">
+        <img src="https://res.cloudinary.com/dxc8rcjuh/image/upload/v1790709994/Hire_Smart_p6scbx.png" alt="🧠 Hire Smart: Leading Beyond Ego" class="article-image">
+    </div>
+
+
+<main class="container">
+<section class="hero">
+<h2>🧠 Hire Smart: Leading Beyond Ego</h2>
+<p><strong>How to manage expertise that surpasses your own</strong></p>
+<p>Great leaders are not the ones with the most answers; they are the ones who dare to hire people who have better ones. This lesson follows a single question through four steps: why do managers avoid smarter hires, what do those hires actually offer, what must a leader build to unlock it, and how does a leader keep the balance once it works?</p>
+</section>
+
+<h2 class="section-title">💬C1 Workplace Vocabulary</h2>
+
+<div class="expression-grid">
+<div class="expression"><strong>imposter syndrome</strong><em>Síndrome del impostor</em><p>The persistent fear of being exposed as less capable than others believe you are, even when your record says otherwise.</p><p class="eg">A manager with imposter syndrome may quietly reject a candidate who seems sharper than she is.</p></div>
+<div class="expression"><strong>subliminal narcissism</strong><em>Narcisismo subliminal</em><p>Preferring people who resemble you, without realising that self-admiration is driving the choice.</p><p class="eg">Calling a look-alike "a great cultural fit" can be subliminal narcissism in disguise.</p></div>
+<div class="expression"><strong>psychological safety</strong><em>Seguridad psicológica</em><p>The shared belief that you can disagree, question or admit a mistake without being punished or embarrassed.</p><p class="eg">Where psychological safety exists, the newest analyst can challenge the director's forecast.</p></div>
+<div class="expression"><strong>sense of entitlement</strong><em>Actitud de privilegio</em><p>The conviction that your talent earns you special treatment, so that rules and feedback feel like they apply only to others.</p><p class="eg">A star engineer with a sense of entitlement may skip reviews that everyone else attends.</p></div>
+</div>
+
+<h2 class="section-title">📊 Article: The Dynamics of Hiring Smarter Talent</h2>
+<div class="article-intro"><strong>Analysis Focus:</strong> Authentic C1 workplace reading examining corporate hiring biases, psychological barriers, and managerial trade-offs.</div>
+<div class="article-grid">
+
+<article class="article-card">
+<h3>1. The Paradox of Selection</h3>
+<p>Management theory routinely tells leaders to hire people smarter than themselves, yet organizations rarely promote managers for that skill. Managers are typically appointed for their technical <span class="highlight" title="Historial profesional / Trayectoria">pedigree</span>, while interpersonal ability is treated as a consideration <span class="highlight" title="En el mejor de los casos / A lo sumo">at best</span>.</p>
+<p>This is costly, because intelligence remains one of the most reliable predictors of how quickly people learn and adapt. A team of quick learners speeds up every cycle of <span class="highlight" title="Iteración / Proceso de ajuste rápido">iteration</span>, but only if the manager is secure enough to use their insights. So why do so many managers pass on exactly these people?</p>
+<div class="vocab"><h4>Vocabulario Clave</h4><div class="vocab-grid">
+<div class="vword"><b>pedigree</b> <button class="speak" onclick="speakWord('pedigree')">🔊</button><br>a proven background of training and achievement<br><em>Trayectoria</em><br><small>Her technical pedigree got her the job; her people skills would decide whether she kept it.</small></div>
+<div class="vword"><b>at best</b> <button class="speak" onclick="speakWord('at best')">🔊</button><br>used to say that the most positive reading is still modest<br><em>En el mejor de los casos</em><br><small>Soft skills are considered an afterthought, at best.</small></div>
+<div class="vword"><b>iteration</b> <button class="speak" onclick="speakWord('iteration')">🔊</button><br>one round of testing and improving something<br><em>Iteración</em><br><small>Sharper teams complete each iteration faster.</small></div>
+</div></div>
+</article>
+
+<article class="article-card">
+<h3>2. Why Managers Look Away</h3>
+<p>The answer is often psychological rather than strategic. When leaders doubt themselves, <span class="highlight" title="Síndrome del impostor">imposter syndrome</span> quietly steers decisions away from candidates who might expose their gaps. This bias is <span class="highlight" title="Generalizado / Arraigado">pervasive</span>, and it rarely announces itself.</p>
+<p>Instead, it borrows respectable language. Managers gravitate toward candidates who mirror their own style and label them "high-potential", a habit that amounts to <span class="highlight" title="Narcisismo subliminal">subliminal narcissism</span> <span class="highlight" title="Camuflarse como / Disfrazarse de">masquerading</span> as succession planning. But if leaders overcome this bias, what do they gain?</p>
+<div class="vocab"><h4>Vocabulario Clave</h4><div class="vocab-grid">
+<div class="vword"><b>pervasive</b> <button class="speak" onclick="speakWord('pervasive')">🔊</button><br>spreading through every part of something<br><em>Generalizado</em><br><small>Hire-alike bias is pervasive in corporate life.</small></div>
+<div class="vword"><b>subliminal</b> <button class="speak" onclick="speakWord('subliminal')">🔊</button><br>operating below conscious awareness<br><em>Subconsciente</em><br><small>A subliminal urge to protect one's status shapes many hiring decisions.</small></div>
+<div class="vword"><b>masquerade as</b> <button class="speak" onclick="speakWord('masquerade')">🔊</button><br>to hide one thing behind the appearance of another<br><em>Disfrazarse de</em><br><small>Self-protection often masquerades as team alignment.</small></div>
+</div></div>
+</article>
+
+<article class="article-card">
+<h3>3. What Smart Talent Offers</h3>
+<p>The reward is larger than many expect. Contrary to the myth that brilliant employees are difficult colleagues, research links higher cognitive ability with <span class="highlight" title="Ciudadanía organizacional">organizational citizenship</span>: the voluntary habit of helping peers and improving the team beyond one's formal duties.</p>
+<p>That potential, however, stays locked without <span class="highlight" title="Seguridad psicológica">psychological safety</span>. If people fear retaliation, they keep their <span class="highlight" title="Poco convencional / Disidente">unorthodox</span> ideas to themselves; if they feel safe, individual talent turns into <span class="highlight" title="Sinergia / Efecto multiplicador">synergy</span>. Yet a team that finally feels valued brings a new risk.</p>
+<div class="vocab"><h4>Vocabulario Clave</h4><div class="vocab-grid">
+<div class="vword"><b>citizenship</b> <button class="speak" onclick="speakWord('citizenship')">🔊</button><br>voluntary effort that helps colleagues and the organization<br><em>Ciudadanía organizacional</em><br><small>Her citizenship showed in the hours she spent mentoring juniors.</small></div>
+<div class="vword"><b>unorthodox</b> <button class="speak" onclick="speakWord('unorthodox')">🔊</button><br>different from what is usual or accepted<br><em>Poco convencional</em><br><small>An unorthodox proposal may be the breakthrough the team needs.</small></div>
+<div class="vword"><b>synergy</b> <button class="speak" onclick="speakWord('synergy')">🔊</button><br>a joint result greater than the sum of its parts<br><em>Sinergia</em><br><small>Synergy grows where trust and autonomy meet.</small></div>
+</div></div>
+</article>
+
+<article class="article-card">
+<h3>4. Balancing Ego and Entitlement</h3>
+<p>Leading high-caliber people therefore demands constant <span class="highlight" title="Calibración / Ajuste fino">calibration</span>. Experts need to feel genuinely valued, yet too much praise can harden into a <span class="highlight" title="Actitud de privilegio">sense of entitlement</span> that damages the trust the team has built.</p>
+<p>That is where the lesson comes full circle. The insecure manager tried to avoid being outshone; the mature leader accepts it, and designs an environment where the whole team can <span class="highlight" title="Opacar / Eclipsar">outshine</span> any single person, including the leader.</p>
+<div class="vocab"><h4>Vocabulario Clave</h4><div class="vocab-grid">
+<div class="vword"><b>calibration</b> <button class="speak" onclick="speakWord('calibration')">🔊</button><br>small, careful adjustments to reach the right balance<br><em>Calibración</em><br><small>Managing experts takes constant calibration of praise and challenge.</small></div>
+<div class="vword"><b>entitlement</b> <button class="speak" onclick="speakWord('entitlement')">🔊</button><br>the belief that you deserve special privileges<br><em>Derecho adquirido</em><br><small>Clear standards prevent entitlement from eroding morale.</small></div>
+<div class="vword"><b>outshine</b> <button class="speak" onclick="speakWord('outshine')">🔊</button><br>to perform so well that others look less impressive<br><em>Opacar / Eclipsar</em><br><small>A confident leader is not threatened when others outshine her.</small></div>
+</div></div>
+</article>
+</div>
+
+<h2 class="featured-section-title">🎯 Core Strategic Takeaways</h2>
+<div class="takeaways-container">
+<div class="takeaway-card">
+<div class="num">1</div>
+<h4>See the Bias</h4>
+<p>Hiring look-alikes under the label of "cultural fit" is often <strong>subliminal narcissism</strong>, fed by <strong>imposter syndrome</strong>. Leadership begins by admitting that expertise which threatens your comfort is still worth hiring.</p>
+</div>
+<div class="takeaway-card">
+<div class="num">2</div>
+<h4>Build the Safety</h4>
+<p>Smart people deliver <strong>organizational citizenship</strong> and <strong>synergy</strong> only where <strong>psychological safety</strong> lets unorthodox ideas be spoken without retaliation.</p>
+</div>
+<div class="takeaway-card">
+<div class="num">3</div>
+<h4>Keep the Balance</h4>
+<p>Once talent thrives, <strong>calibration</strong> matters: recognize real expertise without letting it grow into a <strong>sense of entitlement</strong>.</p>
+</div>
+</div>
+
+<h2 class="section-title">🤝 High-Level Discussion &amp; Critical Analysis</h2>
+<div class="discussion"><ol>
+<li><strong>Deconstructing Author Assumptions:</strong> The author links higher intelligence to <em>organizational citizenship</em>. From your own workplace experience, does technical brilliance usually come with interpersonal awareness, or is this an unrealistic generalization?</li>
+<li><strong>Structural vs. Psychological Resistance:</strong> Is a manager's reluctance to hire overqualified people really <em>imposter syndrome</em> or <em>subliminal narcissism</em>, or is it a rational response to incentives that punish risk and reward control?</li>
+<li><strong>Navigating the Entitlement Trap:</strong> Which boundaries or habits can keep a star player from developing a <em>sense of entitlement</em> without dampening their drive?</li>
+<li><strong>The "People Skills" Reality Check:</strong> If managers are chosen for technical skill and, <em>at best</em>, for people skills, can technical excellence carry a career far without interpersonal diplomacy?</li>
+</ol></div>
+
+<h2 class="section-title">📝 Casos Ejecutivos y Práctica del Lenguaje</h2>
+<div class="practice">
+<details class="qbox"><summary>1. How does "subliminal narcissism" show up in corporate recruitment?</summary><p><strong>Respuesta Estratégica:</strong> Managers prefer candidates who mirror their own background and thinking, and describe that comfort as "high potential" or "good team fit".</p></details>
+<details class="qbox"><summary>2. Where is the line between "feeling valued" and "developing entitlement"?</summary><p><strong>Respuesta Estratégica:</strong> Feeling valued motivates people to add to team synergy; entitlement appears when they expect special privileges or immunity from feedback at the team's expense.</p></details>
+<details class="qbox"><summary>3. Why is "psychological safety" a prerequisite for "organizational citizenship"?</summary><p><strong>Respuesta Estratégica:</strong> Capable people will not take discretionary risks or offer unorthodox solutions unless they trust that disagreeing with management will not harm their status or career.</p></details>
+<details class="qbox"><summary>4. Vocabulary challenge: build a sentence with "at best" and "calibration".</summary><p><strong>Respuesta de Ejemplo:</strong> Without careful calibration of team dynamics, hiring top talent will, at best, produce strong individuals rather than real synergy.</p></details>
+</div>
+</main>
+<div class="footer">English Conversation with Elisa · Serie de Liderazgo Laboral Avanzado B2–C1</div>
+<script>
+function speakWord(word){const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u);}
+</script>
+
