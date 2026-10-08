@@ -140,6 +140,7 @@ async function scanLessons() {
         { filename: 'Hire Smart.html', date: '2026-09-29', title: '🧠 Hire Smart: Leading Beyond Ego' },
         { filename: 'Dress to De-Stress.html', date: '2026-10-01', title: '👗 Dress to De-Stress' },
         { filename: 'Ghosts or Science.html', date: '2026-10-06', title: '👻🔬 Ghosts or Science?' },
+        { filename: 'The Echo Chamber Effect.html', date: '2026-10-08', title: '🔍 The Echo Chamber Effect' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
