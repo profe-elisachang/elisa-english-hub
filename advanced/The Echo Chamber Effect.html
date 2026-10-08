@@ -1,0 +1,212 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Echo Chamber Effect</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+:root{--ink:#1b1b1b;--teal:#0f3d44;--red:#c8372d;--sand:#f3ede0;--paper:#fffdf7}
+body{background:var(--sand);color:var(--ink);font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7}
+.lesson{max-width:1400px;margin:auto;padding:1.5rem 1rem 3rem}
+.lesson h2{font-size:2rem;font-weight:800;color:var(--teal);margin:2.5rem 0 1rem;padding-bottom:.4rem;border-bottom:5px solid var(--red)}
+.card{background:var(--paper);border:3px solid var(--teal);border-radius:12px;box-shadow:6px 6px 0 var(--teal);padding:1.5rem 2rem}
+.title-block h1{font-size:2.6rem;font-weight:800;color:var(--teal);margin:.5rem 0 .2rem}
+.title-block p{font-size:1.4rem;font-weight:600;color:var(--red);margin:0}
+/* Expressions */
+.expr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:1.2rem}
+.expr{background:var(--paper);border:3px solid var(--teal);border-left:12px solid var(--red);border-radius:10px;padding:1rem 1.4rem}
+.expr .en{font-size:1.5rem;font-weight:800;color:var(--teal)}
+.expr .es{font-size:1.25rem;font-weight:600;color:var(--red)}
+.expr .ex{font-size:1.2rem;font-style:italic;margin-top:.4rem}
+/* Article */
+.article p{font-size:1.45rem;margin:0 0 1rem}
+.hl{background:#ffe066;font-weight:700;border-bottom:3px solid #e07a00;padding:0 3px;position:relative;cursor:help}
+[data-tooltip]::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:1.05rem;font-weight:600;font-style:normal;line-height:1.4;padding:.45rem .8rem;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;z-index:20;transition:opacity .15s}
+[data-tooltip]::before{content:"";position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);border:8px solid transparent;border-top-color:var(--teal);border-bottom-width:0;opacity:0;pointer-events:none;z-index:20;transition:opacity .15s}
+[data-tooltip]:hover::after,[data-tooltip]:hover::before,[data-tooltip]:focus::after,[data-tooltip]:focus::before{opacity:1}
+/* Vocab */
+.vbox{margin:0 0 2rem;background:#fff;border:3px solid var(--c);border-radius:12px;padding:1rem 1.2rem 1.2rem}
+.vbox h3{margin:0 0 .8rem;font-size:1.2rem;font-weight:800;color:#fff;background:var(--c);display:inline-block;padding:.2rem .9rem;border-radius:20px}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.vw{border:2px solid var(--c);border-top:8px solid var(--c);border-radius:8px;padding:.8rem 1rem;background:var(--paper);font-size:1.1rem}
+.vw .w{font-size:1.5rem;font-weight:800;color:var(--c)}
+.vw .pos{font-size:.95rem;font-weight:700;color:#555;margin-left:.4rem}
+.vw .es{font-weight:700;color:var(--red)}
+.vw .exs{font-style:italic;margin-top:.3rem}
+.spk{background:var(--c);color:#fff;border:0;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.1rem;cursor:pointer;vertical-align:middle;margin-left:.3rem}
+.spk:hover{opacity:.8}
+.v1{--c:#c8372d}.v2{--c:#0f6b5c}.v3{--c:#a85d00}.v4{--c:#1d5c8a}.v5{--c:#7a3b1e}.v6{--c:#4a6b00}
+.know{background:#fff3c4;border:3px dashed #a85d00;border-radius:12px;padding:1rem 1.6rem;margin-top:1.5rem;font-size:1.25rem}
+.know h3{margin:0 0 .4rem;color:#a85d00;font-size:1.4rem}
+.know ul{margin:0;padding-left:1.4rem}
+/* Questions */
+.dq li{font-size:1.4rem;font-weight:600;margin-bottom:1rem}
+details{background:var(--paper);border:3px solid var(--teal);border-radius:10px;margin-bottom:1rem;padding:.8rem 1.4rem}
+summary{font-size:1.3rem;font-weight:700;cursor:pointer;color:var(--teal)}
+details p{font-size:1.2rem;margin:.6rem 0 0;padding:.6rem 1rem;background:#e4f1ec;border-left:8px solid #0f6b5c}
+@media(max-width:1000px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+.vgrid{grid-template-columns:1fr}.expr-grid{grid-template-columns:1fr}
+.title-block h1{font-size:1.8rem}.article p{font-size:1.2rem}.lesson h2{font-size:1.5rem}
+.card{padding:1rem}[data-tooltip]::after{white-space:normal;width:200px}
+}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+<div class="header-content">
+<h1>📚 English Conversation with Elisa</h1>
+<span class="level-badge">Advanced Level </span>
+<div class="search-box">
+<a href="../index-advanced.html" class="back-to-calendar-btn" style="
+display: inline-block;
+padding: 0.5rem 1rem;
+background: rgba(255, 255, 255, 0.25);
+color: white;
+text-decoration: none;
+border-radius: 20px;
+font-size: 0.9rem;
+font-weight: 600;
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+">Home</a>
+</div>
+</div>
+</header>
+    <div class="article-image-container">
+        <img src="https://thumbs.dreamstime.com/z/illustration-person-echo-chamber-where-one-idea-amplified-over-all-others-conceptual-chambers-filter-bubbles-404643865.jpg" alt="🔍 The Echo Chamber Effect" class="article-image">
+    </div>
+
+
+<main class="lesson">
+
+<div class="title-block">
+<h1>🔍 The Echo Chamber Effect</h1>
+<p>How social media algorithms quietly narrow what we see</p>
+</div>
+
+<h2>1. Useful Expressions</h2>
+<div class="expr-grid">
+<div class="expr"><div class="en">That's a fair point, but…</div><div class="es">Es un buen punto, pero…</div><div class="ex">"That's a fair point, but our feed shows a different trend."</div></div>
+<div class="expr"><div class="en">It's worth noting that…</div><div class="es">Vale la pena mencionar que…</div><div class="ex">"It's worth noting that most of our reports come from one plant."</div></div>
+<div class="expr"><div class="en">I'd push back on that.</div><div class="es">Lo cuestionaría. / No estoy del todo de acuerdo.</div><div class="ex">"I'd push back on that: one survey doesn't prove it."</div></div>
+<div class="expr"><div class="en">From where I stand…</div><div class="es">Desde mi punto de vista…</div><div class="ex">"From where I stand, the new filter is hiding useful alerts."</div></div>
+<div class="expr"><div class="en">What I take away from this is…</div><div class="es">Lo que rescato de esto es…</div><div class="ex">"What I take away from this is that we need more varied sources."</div></div>
+</div>
+
+<h2>2. Article &amp; Vocabulary</h2>
+<p style="font-size:1.1rem;margin-top:-.5rem">💡 Hover over (or tap) a highlighted word to see the Spanish. Click 🔊 to hear it.</p>
+
+<div class="card article">
+<p>The term "echo chamber" is used to describe a situation in which people are repeatedly exposed to the same ideas, opinions or <span class="hl" tabindex="0" data-tooltip="puntos de vista">viewpoints</span>. On social media, these environments can gradually develop as algorithms learn what users prefer to see. Then, instead of offering a wide range of perspectives, platforms may consistently display content based on the user's past behavior. What feels like a neutral <span class="hl" tabindex="0" data-tooltip="lista de contenido (feed)">feed</span> is often a carefully filtered stream <span class="hl" tabindex="0" data-tooltip="determinado por">shaped by</span> one's previous clicks, views and <span class="hl" tabindex="0" data-tooltip="pausas">pauses</span>.</p>
+</div>
+<div class="vbox v1"><h3>Paragraph 1 Vocabulary</h3><div class="vgrid" data-set="p1"></div></div>
+
+<div class="card article">
+<p>Algorithms have several motives for doing this. Every minute, millions of posts, videos and comments are uploaded across different platforms. This enormous amount of information must be <span class="hl" tabindex="0" data-tooltip="seleccionada y organizada">curated</span> to decide which items appear first and which remain <span class="hl" tabindex="0" data-tooltip="ocultos">hidden</span>. Perhaps more importantly, these systems are built to <span class="hl" tabindex="0" data-tooltip="mantener a los usuarios enganchados">keep users engaged</span> for as long as possible. By showing users things that make them react, algorithms make social media accounts far more interesting than they might otherwise be.</p>
+</div>
+<div class="vbox v2"><h3>Paragraph 2 Vocabulary</h3><div class="vgrid" data-set="p2"></div></div>
+
+<div class="card article">
+<p><span class="hl" tabindex="0" data-tooltip="rara vez">Seldom</span> do users notice how gradually this <span class="hl" tabindex="0" data-tooltip="estrechamiento / reducción">narrowing</span> occurs. However, when similar opinions appear again and again, they may begin to feel more <span class="hl" tabindex="0" data-tooltip="comunes, ordinarias">commonplace</span> or more convincing than they truly are. Psychologists sometimes call this the "<span class="hl" tabindex="0" data-tooltip="ilusión de mayoría (término técnico)">majority illusion</span>." This continuous repetition creates a false sense of widespread agreement.</p>
+</div>
+<div class="vbox v3"><h3>Paragraph 3 Vocabulary</h3><div class="vgrid" data-set="p3"></div></div>
+
+<div class="card article">
+<p>The false sense of reality found in echo chambers can have a wide range of effects. One of the most significant is a <span class="hl" tabindex="0" data-tooltip="distorsionado">distorted</span> understanding of public opinion. When people repeatedly encounter the same viewpoints, those ideas can begin to seem as if they <span class="hl" tabindex="0" data-tooltip="predominan, son los más comunes">prevail</span> more than they actually do. This can lead to conflict when users assume that most people share their beliefs, <span class="hl" tabindex="0" data-tooltip="solo para descubrir que…">only to discover</span> that society as a whole is far more diverse.</p>
+</div>
+<div class="vbox v4"><h3>Paragraph 4 Vocabulary</h3><div class="vgrid" data-set="p4"></div></div>
+
+<div class="card article">
+<p>Echo chambers can also influence how people judge information itself. Messages that appear frequently within a community often seem more <span class="hl" tabindex="0" data-tooltip="confiables">reliable</span> simply because they are familiar. When a <span class="hl" tabindex="0" data-tooltip="afirmación">claim</span> is stated many times, it can feel more legitimate, even if the <span class="hl" tabindex="0" data-tooltip="pruebas (no 'evidencia' legal)">evidence</span> behind it is weak or incomplete. This can lead to poorly informed decisions of all kinds.</p>
+</div>
+<div class="vbox v5"><h3>Paragraph 5 Vocabulary</h3><div class="vgrid" data-set="p5"></div></div>
+
+<div class="card article">
+<p><span class="hl" tabindex="0" data-tooltip="de ninguna manera">By no means</span> does understanding the echo chamber effect imply you should avoid social media entirely. Instead, it encourages more <span class="hl" tabindex="0" data-tooltip="intencionales, conscientes">deliberate</span> habits. Following a variety of sources along with seeking out different opinions and questioning similar messages can all <span class="hl" tabindex="0" data-tooltip="ampliar">broaden</span> a user's experience. Actively interacting with unfamiliar topics can gradually <span class="hl" tabindex="0" data-tooltip="volver a entrenar">retrain</span> recommendation systems over time. With awareness and intention, users can enjoy social media while reducing the risk of being <span class="hl" tabindex="0" data-tooltip="atrapados">trapped</span> inside a narrow stream of ideas.</p>
+</div>
+<div class="vbox v6"><h3>Paragraph 6 Vocabulary</h3><div class="vgrid" data-set="p6"></div></div>
+
+<div class="know">
+<h3>💡 Extra Knowledge: How algorithms curate social media</h3>
+<ul>
+<li>Every minute, millions of posts, videos and comments are uploaded.</li>
+<li>Algorithms must curate this enormous amount of information.</li>
+<li>They decide which items appear first; other content remains hidden.</li>
+<li>Systems often show posts based on past behavior.</li>
+<li>This process keeps users engaged for as long as possible.</li>
+</ul>
+</div>
+
+<h2>3. Discussion Questions</h2>
+<div class="card dq"><ol>
+<li>Think about your own feed. Do you believe it shows you a wide range of viewpoints, or mostly ideas you already agree with? What makes you say that?</li>
+<li>The article says repeated messages can feel more "reliable" simply because they are familiar. Have you seen this happen at work, for example with safety rumors, HR policies or IT warnings? How did you handle it?</li>
+<li>What is one deliberate habit you could adopt to broaden what you see online, and how realistic is it in your daily routine?</li>
+</ol></div>
+
+<h2>4. Self-Practice Questions</h2>
+<details><summary>1. What does "majority illusion" mean, and why does it happen?</summary><p>It is the false impression that most people share an opinion. It happens because repeated exposure to similar views makes them seem more common and convincing than they really are.</p></details>
+<details><summary>2. Why do algorithms curate content? Give two reasons from the article.</summary><p>(1) There are millions of posts uploaded every minute, so the information must be sorted. (2) Platforms are built to keep users engaged for as long as possible.</p></details>
+<details><summary>3. Your team keeps hearing the same claim in a group chat, but nobody has checked the evidence. Using the article, what would you say?</summary><p>Sample answer: "It's worth noting that we've heard this many times, but repetition isn't proof. Let's look for reliable sources and different viewpoints before we decide."</p></details>
+<details><summary>4. Does the article say we should quit social media? Explain in your own words.</summary><p>No. It says that understanding echo chambers does not mean avoiding social media. Instead, users should follow varied sources, seek different opinions, question similar messages and interact with unfamiliar topics.</p></details>
+
+</main>
+
+<script>
+const V={
+p1:[["viewpoints","noun","a particular way of thinking about a topic","puntos de vista","Before approving the new PPE rule, HR collected viewpoints from every shift."],
+["shaped by","phrasal verb","influenced or formed by something","determinado / moldeado por","Our ticket priorities are shaped by what users report most often."],
+["feed","noun","the stream of posts and updates a platform shows you","lista de contenido (feed)","My feed is full of safety news since I joined the EHS group."]],
+p2:[["curated","adjective / verb","carefully selected and organized","seleccionado y organizado","IT curated a short list of approved tools for the plant."],
+["hidden","adjective","not visible or not easy to find","oculto","The risk was hidden in an old inspection report."],
+["keep (someone) engaged","phrase","hold someone's attention and interest","mantener a alguien enganchado / interesado","Short videos keep employees engaged during safety training."]],
+p3:[["seldom","adverb","rarely; not often","rara vez","Seldom do we get complaints about the new badge system."],
+["narrowing","noun","the process of becoming smaller or more limited","estrechamiento / reducción","The narrowing of our vendor list worried the IT team."],
+["commonplace","adjective","ordinary; happening everywhere","común / habitual","Remote meetings are now commonplace in our company."]],
+p4:[["distorted","adjective","changed so that it is no longer accurate","distorsionado","The survey gave a distorted picture because only one department answered."],
+["prevail","verb","to be the most common or strongest","predominar / prevalecer","In some teams, the idea that 'safety slows production' still prevails."],
+["only to discover","phrase","and then find out (a surprising result)","solo para descubrir que…","She changed the policy, only to discover it was already in the handbook."]],
+p5:[["reliable","adjective","can be trusted to be accurate or consistent","confiable / fiable","Is this data from a reliable source?"],
+["claim","noun","a statement that something is true, often without proof","afirmación","The vendor's claim about 99% uptime needs to be verified."],
+["evidence","noun","facts or signs that show something is true","pruebas / datos que respaldan","We need more evidence before changing the shift schedule."]],
+p6:[["by no means","phrase","absolutely not; not at all","de ninguna manera","By no means should we ignore the audit findings."],
+["broaden","verb","to make wider or include more","ampliar","Job rotation can broaden new employees' experience."],
+["trapped","adjective","unable to escape a situation or place","atrapado","Some teams feel trapped in outdated processes."]]
+};
+function speakWord(word){const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u);}
+document.querySelectorAll('.vgrid').forEach(g=>{
+(V[g.dataset.set]||[]).forEach(r=>{
+const d=document.createElement('div');d.className='vw';
+d.innerHTML='<div><span class="w">'+r[0]+'</span><button class="spk" aria-label="Pronounce '+r[0]+'">🔊</button><span class="pos">'+r[1]+'</span></div><div>'+r[2]+'</div><div class="es">🇲🇽 '+r[3]+'</div><div class="exs">“'+r[4]+'”</div>';
+d.querySelector('.spk').onclick=()=>speakWord(r[0]);
+g.appendChild(d);});});
+</script>
+
