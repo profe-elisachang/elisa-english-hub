@@ -1,0 +1,732 @@
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课文一 我想去北京 - 65寸大屏投屏版</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&amp;display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      user-select: none;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    /* Fullscreen Widescreen Layout */
+    .presentation-wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+    }
+
+    /* Slide Frame */
+    .slide {
+      display: none;
+      width: 100vw;
+      height: calc(100vh - 72px);
+      padding: 20px 32px 12px 32px;
+      flex-direction: column;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    /* Widescreen Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 10px;
+      flex-shrink: 0;
+    }
+
+    .slide-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .slide-badge {
+      font-size: 20px;
+      color: #FF8C42;
+      background: rgba(255, 140, 66, 0.12);
+      border: 1.5px solid rgba(255, 140, 66, 0.4);
+      padding: 4px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* Split Content Grid: Left Text, Right Vocab, Bottom Translation */
+    .content-grid {
+      display: flex;
+      gap: 24px;
+      flex: 1;
+      min-height: 0;
+      align-items: stretch;
+      margin-bottom: 12px;
+    }
+
+    /* Left Side: Lesson Main Text with Ruby Pinyin */
+    .text-column {
+      flex: 1.2;
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 18px;
+      padding: 28px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
+
+    .section-label {
+      font-size: 22px;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .lesson-text {
+      font-size: 36px;
+      line-height: 2.2;
+      color: #f8fafc;
+      text-align: justify;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    /* Ruby & Pinyin Styling */
+    ruby {
+      ruby-position: over;
+      background: rgba(255, 140, 66, 0.15);
+      color: #ffffff;
+      padding: 2px 8px 4px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 140, 66, 0.5);
+      margin: 0 3px;
+      display: inline-block;
+      line-height: 1.5;
+    }
+
+    rt {
+      font-size: 20px;
+      color: #FF8C42;
+      font-weight: 700;
+      letter-spacing: 0;
+      padding-bottom: 2px;
+    }
+
+    /* Right Side: Vocab Cards Container */
+    .vocab-column {
+      flex: 0.8;
+      background: rgba(15, 23, 42, 0.7);
+      border: 2px solid #FF8C42;
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .vocab-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+
+    /* Individual Vocab Card */
+    .vocab-card {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 16px 20px;
+      border: 1.5px solid #334155;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .vocab-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .vocab-hanzi {
+      font-size: 34px;
+      font-weight: 900;
+      color: #38bdf8;
+    }
+
+    .vocab-pinyin {
+      font-size: 24px;
+      font-weight: 700;
+      color: #FF8C42;
+    }
+
+    .vocab-pos {
+      font-size: 18px;
+      font-style: italic;
+      color: #cbd5e1;
+      background: #334155;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .vocab-trans {
+      font-size: 22px;
+      color: #f1f5f9;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .vocab-example {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed #475569;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .vocab-example-pinyin {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .vocab-example-en {
+      color: #94a3b8;
+    }
+
+    /* Bottom Translation Panel */
+    .translation-panel {
+      background: rgba(30, 41, 59, 0.9);
+      border: 2px solid #3b82f6;
+      border-radius: 14px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .trans-label {
+      font-size: 18px;
+      font-weight: 800;
+      color: #38bdf8;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.15);
+      padding: 4px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .trans-text {
+      font-size: 26px;
+      color: #e2e8f0;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    /* Navigation Footer Bar */
+    .controls-footer {
+      height: 72px;
+      background: #0f172a;
+      border-top: 2px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 32px;
+      flex-shrink: 0;
+    }
+
+    .nav-btn {
+      background: #FF8C42;
+      color: #0f172a;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
+    }
+
+    .nav-btn:hover {
+      background: #ffa061;
+      transform: translateY(-2px);
+    }
+
+    .nav-btn:disabled {
+      background: #334155;
+      color: #64748b;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .slide-dots {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .dot.active {
+      background: #FF8C42;
+      width: 38px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(255, 140, 66, 0.6);
+    }
+
+    /* Slide 1: Cover Page */
+    .cover-slide {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1c1917 100%);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: calc(100vh - 72px);
+    }
+
+    .cover-tag {
+      font-size: 26px;
+      color: #FF8C42;
+      letter-spacing: 4px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      background: rgba(255, 140, 66, 0.15);
+      padding: 8px 24px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255, 140, 66, 0.4);
+    }
+
+    .cover-title {
+      font-size: 84px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+    .cover-subtitle {
+      font-size: 32px;
+      color: #38bdf8;
+      margin-bottom: 48px;
+      font-weight: 600;
+    }
+
+    .cover-line {
+      width: 140px;
+      height: 6px;
+      background: #FF8C42;
+      border-radius: 4px;
+      box-shadow: 0 0 18px rgba(255, 140, 66, 0.8);
+    }
+  </style>
+
+
+
+  <div class="presentation-wrapper">
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide cover-slide active" id="slide-1">
+      <div class="cover-tag">
+        HSK 3 汉语课件
+      </div>
+      <h1 class="cover-title">课文 我想去北京</h1>
+      <p class="cover-subtitle">正文生词注音 · 英文对照翻译</p>
+      <div class="cover-line"></div>
+    </div>
+
+    <!-- SLIDE 2: SECTION 1 -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-title">
+          <i class="fa-solid fa-book-open"></i> 课文一 我想去北京（一）
+        </div>
+        <span class="slide-badge">1 / 4</span>
+      </div>
+      <div class="content-grid">
+        <div class="text-column">
+          <div class="section-label">
+            <i class="fa-solid fa-align-left" style="color:#FF8C42;"></i> 课文正文
+          </div>
+          <div class="lesson-text">
+            我是在 1997 年喜欢上汉语、开始学习汉语的。那年，我刚考上<ruby>大学<rt>dà xué</rt></ruby>，学校里新开了中文<ruby>系<rt>xì</rt></ruby>，每个学生都可以学习汉语。虽然我知道汉字对我们外国人来说很<ruby>难<rt>nán</rt></ruby>，而且写汉字就像<ruby>画画<rt>huà huà</rt></ruby>一样，但我觉得非常很有<ruby>意思<rt>yì si</rt></ruby>，<ruby>决定<rt>jué dìng</rt></ruby>先学几个月<ruby>试一试<rt>shì yi shì</rt></ruby>。
+          </div>
+        </div>
+        <div class="vocab-column">
+          <div class="section-label" style="color: #FF8C42;">
+            <i class="fa-solid fa-spell-check"></i> Vocabulary
+          </div>
+          <div class="vocab-list">
+            
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">画画</span>
+                <span class="vocab-pinyin">huà huà</span>
+                <span class="vocab-pos">v.</span>
+              </div>
+              <div class="vocab-trans">To draw; to paint</div>
+              <div class="vocab-example">
+                <div class="vocab-example-pinyin">Wǒ xǐhuān zài xīngqītiān huà huà.</div>
+                <div class="vocab-example-en">I like to paint on Sundays.</div>
+              </div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">决定</span>
+                <span class="vocab-pinyin">jué dìng</span>
+                <span class="vocab-pos">v.</span>
+              </div>
+              <div class="vocab-trans">To decide</div>
+              <div class="vocab-example">
+                <div class="vocab-example-pinyin">Wǒ juédìng xīngqīyī qù Běijīng.</div>
+                <div class="vocab-example-en">I decided to go to Beijing on Monday.</div>
+              </div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">试一试</span>
+                <span class="vocab-pinyin">shì yi shì</span>
+                <span class="vocab-pos">v.</span>
+              </div>
+              <div class="vocab-trans">To give it a try; to test</div>
+              <div class="vocab-example">
+                <div class="vocab-example-pinyin">Zhè kǒu hěn hǎochī, nǐ shì yi shì.</div>
+                <div class="vocab-example-en">This tastes great, give it a try!</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Bottom English Translation -->
+      <div class="translation-panel">
+        <span class="trans-label"><i class="fa-solid fa-language"></i> Translation</span>
+        <span class="trans-text">I fell in love with Chinese and started learning it in 1997. That year, I was just admitted to college, and the school opened a new Chinese department...</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: SECTION 2 -->
+    <div class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-title">
+          <i class="fa-solid fa-book-open"></i> 课文一 我想去北京（二）
+        </div>
+        <span class="slide-badge">2 / 4</span>
+      </div>
+      <div class="content-grid">
+        <div class="text-column">
+          <div class="section-label">
+            <i class="fa-solid fa-align-left" style="color:#FF8C42;"></i> 课文正文
+          </div>
+          <div class="lesson-text">
+            中文系有从中国来的老师，也有我们<ruby>巴基斯坦<rt>bā jī sī tǎn</rt></ruby>的老师，中国老师大多来自北京，<ruby>而<rt>ér</rt></ruby>我们国家的老师呢，也都是从北京的大学毕业的。<ruby>不管<rt>bù guǎn</rt></ruby>是在课上，<ruby>还是<rt>hái shi</rt></ruby>课下，他们经常<ruby>谈到<rt>tán dào</rt></ruby>北京。
+          </div>
+        </div>
+        <div class="vocab-column">
+          <div class="section-label" style="color: #FF8C42;">
+            <i class="fa-solid fa-spell-check"></i> Vocabulary
+          </div>
+          <div class="vocab-list">
+            
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">巴基斯坦</span>
+                <span class="vocab-pinyin">bā jī sī tǎn</span>
+                <span class="vocab-pos">n.</span>
+              </div>
+              <div class="vocab-trans">Pakistan</div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">而</span>
+                <span class="vocab-pinyin">ér</span>
+                <span class="vocab-pos">conj.</span>
+              </div>
+              <div class="vocab-trans">Whereas; on the other hand</div>
+              <div class="vocab-example">
+                <div class="vocab-example-pinyin">Tā xǐhuān chá, ér wǒ xǐhuān kāfēi.</div>
+                <div class="vocab-example-en">He likes tea, whereas I prefer coffee.</div>
+              </div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">不管...还是...</span>
+                <span class="vocab-pinyin">bù guǎn... hái shi...</span>
+                <span class="vocab-pos">conj.</span>
+              </div>
+              <div class="vocab-trans">No matter whether... or...</div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">谈到</span>
+                <span class="vocab-pinyin">tán dào</span>
+                <span class="vocab-pos">v.</span>
+              </div>
+              <div class="vocab-trans">To talk about; to mention</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Bottom English Translation -->
+      <div class="translation-panel">
+        <span class="trans-label"><i class="fa-solid fa-language"></i> Translation</span>
+        <span class="trans-text">The Chinese department had teachers from China as well as from Pakistan. Most Chinese teachers came from Beijing, while our local teachers also graduated from Beijing universities...</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: SECTION 3 -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-title">
+          <i class="fa-solid fa-book-open"></i> 课文一 我想去北京（三）
+        </div>
+        <span class="slide-badge">3 / 4</span>
+      </div>
+      <div class="content-grid">
+        <div class="text-column">
+          <div class="section-label">
+            <i class="fa-solid fa-align-left" style="color:#FF8C42;"></i> 课文正文
+          </div>
+          <div class="lesson-text">
+            从他们的<ruby>谈话<rt>tán huà</rt></ruby>中，我<ruby>渐渐<rt>jiàn jiàn</rt></ruby><ruby>了解<rt>liǎo jiě</rt></ruby>了北京，知道北京很漂亮，文化很<ruby>丰富<rt>fēng fù</rt></ruby>，有很多<ruby>名胜古迹<rt>míng shèng gǔ jì</rt></ruby>，等等。
+          </div>
+        </div>
+        <div class="vocab-column">
+          <div class="section-label" style="color: #FF8C42;">
+            <i class="fa-solid fa-spell-check"></i> Vocabulary
+          </div>
+          <div class="vocab-list">
+            
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">谈话</span>
+                <span class="vocab-pinyin">tán huà</span>
+                <span class="vocab-pos">n.</span>
+              </div>
+              <div class="vocab-trans">Conversation; talk</div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">渐渐</span>
+                <span class="vocab-pinyin">jiàn jiàn</span>
+                <span class="vocab-pos">adv.</span>
+              </div>
+              <div class="vocab-trans">Gradually; step by step</div>
+              <div class="vocab-example">
+                <div class="vocab-example-pinyin">Tiānqì jiànjiàn biàn lěng le.</div>
+                <div class="vocab-example-en">The weather is gradually turning cold.</div>
+              </div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">了解</span>
+                <span class="vocab-pinyin">liǎo jiě</span>
+                <span class="vocab-pos">v.</span>
+              </div>
+              <div class="vocab-trans">To understand; to learn about</div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">丰富</span>
+                <span class="vocab-pinyin">fēng fù</span>
+                <span class="vocab-pos">adj.</span>
+              </div>
+              <div class="vocab-trans">Rich; abundant</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Bottom English Translation -->
+      <div class="translation-panel">
+        <span class="trans-label"><i class="fa-solid fa-language"></i> Translation</span>
+        <span class="trans-text">From their conversations, I gradually came to know Beijing, learning that Beijing is very beautiful, rich in culture, and has many places of historical interest...</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: SECTION 4 -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-title">
+          <i class="fa-solid fa-book-open"></i> 课文一 我想去北京（四）
+        </div>
+        <span class="slide-badge">4 / 4</span>
+      </div>
+      <div class="content-grid">
+        <div class="text-column">
+          <div class="section-label">
+            <i class="fa-solid fa-align-left" style="color:#FF8C42;"></i> 课文正文
+          </div>
+          <div class="lesson-text">
+            我们的课本上也有一些谈到北京的课文，我对那些<ruby>名胜古迹<rt>míng shèng gǔ jì</rt></ruby>的照片特别<ruby>感兴趣<rt>gǎn xìng qù</rt></ruby>。就这样，我喜欢上了北京，爱上了北京。我很希望能到北京去，去看看<ruby>故宫<rt>gù gōng</rt></ruby>、<ruby>长城<rt>cháng chéng</rt></ruby>、<ruby>颐和园<rt>yí hé yuán</rt></ruby>。
+          </div>
+        </div>
+        <div class="vocab-column">
+          <div class="section-label" style="color: #FF8C42;">
+            <i class="fa-solid fa-spell-check"></i> Vocabulary
+          </div>
+          <div class="vocab-list">
+            
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">名胜古迹</span>
+                <span class="vocab-pinyin">míng shèng gǔ jì</span>
+                <span class="vocab-pos">n.</span>
+              </div>
+              <div class="vocab-trans">Places of historic interest and scenic beauty</div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">感兴趣</span>
+                <span class="vocab-pinyin">gǎn xìng qù</span>
+                <span class="vocab-pos">v.</span>
+              </div>
+              <div class="vocab-trans">To be interested in</div>
+              <div class="vocab-example">
+                <div class="vocab-example-pinyin">Wǒ duì Zhōngguó wénhuà hěn gǎn xìngqù.</div>
+                <div class="vocab-example-en">I am very interested in Chinese culture.</div>
+              </div>
+            </div>
+
+            <div class="vocab-card">
+              <div class="vocab-head">
+                <span class="vocab-hanzi">故宫 / 长城 / 颐和园</span>
+                <span class="vocab-pos">n.</span>
+              </div>
+              <div class="vocab-trans">The Forbidden City / The Great Wall / The Summer Palace</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Bottom English Translation -->
+      <div class="translation-panel">
+        <span class="trans-label"><i class="fa-solid fa-language"></i> Translation</span>
+        <span class="trans-text">Our textbooks also had some lessons about Beijing. I was particularly interested in photos of historical sites. That's how I fell in love with Beijing and really hope to visit...</span>
+      </div>
+    </div>
+
+    <!-- NAVIGATION FOOTER -->
+    <div class="controls-footer">
+      <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)" disabled="">
+        <i class="fa-solid fa-chevron-left"></i> 上一页 (Prev)
+      </button>
+
+      <div class="slide-dots" id="dots-container">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+      </div>
+
+      <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">
+        下一页 (Next) <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function updateSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === slides.length - 1;
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = 0;
+      if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+      updateSlide();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
+
+    // Keyboard Controls
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        if (currentSlide < slides.length - 1) changeSlide(1);
+      } else if (e.key === 'ArrowLeft') {
+        if (currentSlide > 0) changeSlide(-1);
+      }
+    });
+  </script>
+
