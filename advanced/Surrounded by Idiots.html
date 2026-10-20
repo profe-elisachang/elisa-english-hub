@@ -1,0 +1,314 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surrounded by Idiots – English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+.lesson { --ink:#12202b; --paper:#e9edf0; --red:#c9302c; --yellow:#e5a800; --green:#2e7d4f; --blue:#1f5fa8; font-family:'Noto Sans','Open Sans',sans-serif; line-height:1.7; color:var(--ink); background:var(--paper); padding:1.5rem 1rem 3rem; }
+.lesson * { box-sizing:border-box; }
+.wrap { max-width:1400px; margin:auto; }
+.title { background:#fff; border:3px solid var(--ink); border-radius:10px; padding:1.5rem 1.8rem; box-shadow:6px 6px 0 var(--ink); margin-bottom:2rem; }
+.title h2 { font-size:clamp(2rem,4.5vw,3.4rem); line-height:1.15; margin:0 0 .4rem; font-weight:800; }
+.title p { font-size:clamp(1.15rem,2vw,1.5rem); margin:0; font-weight:600; }
+.stripe { display:flex; height:16px; margin-top:1rem; border:2px solid var(--ink); }
+.stripe i { flex:1; }
+.sec { margin:2.8rem 0 1.2rem; font-size:clamp(1.6rem,3vw,2.3rem); font-weight:800; display:flex; align-items:center; gap:.7rem; }
+.sec::after { content:""; flex:1; height:6px; background:var(--ink); }
+.exprs { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; }
+.expr { background:#fff; border:3px solid var(--ink); border-radius:8px; padding:1rem 1.2rem; box-shadow:4px 4px 0 var(--ink); }
+.expr .en { font-size:clamp(1.25rem,2.2vw,1.65rem); font-weight:800; }
+.expr .es { font-size:clamp(1.1rem,1.8vw,1.35rem); color:var(--blue); font-weight:700; margin:.2rem 0 .5rem; }
+.expr .exs { font-size:clamp(1.05rem,1.7vw,1.3rem); font-style:italic; border-top:2px dashed #9aa6af; padding-top:.5rem; }
+.para { background:#fff; border:3px solid var(--ink); border-left-width:14px; border-radius:8px; padding:1.3rem 1.6rem; margin:1.8rem 0 0; font-size:clamp(1.3rem,2.5vw,1.85rem); line-height:1.8; font-weight:500; }
+.highlight { background:#fff176; font-weight:800; border-bottom:3px solid #e65100; padding:0 4px; position:relative; cursor:help; border-radius:3px; }
+.highlight::after { content:attr(data-tooltip); position:absolute; bottom:calc(100% + 10px); left:50%; transform:translateX(-50%); background:var(--ink); color:#fff; padding:.5rem .9rem; border-radius:6px; font-size:1.1rem; font-weight:700; line-height:1.4; white-space:nowrap; opacity:0; pointer-events:none; z-index:50; box-shadow:3px 3px 0 rgba(0,0,0,.3); }
+.highlight::before { content:""; position:absolute; bottom:calc(100% + 2px); left:50%; transform:translateX(-50%); border:8px solid transparent; border-top-color:var(--ink); opacity:0; z-index:50; }
+.highlight:hover::after,.highlight:hover::before,.highlight:focus::after,.highlight:focus::before { opacity:1; }
+.vbox { background:#dfe5e9; border:3px solid var(--ink); border-top:none; border-radius:0 0 8px 8px; padding:0 1rem 1rem; margin:0 .6rem 0; }
+.vlabel { display:inline-block; color:#fff; font-weight:800; font-size:1.05rem; padding:.3rem 1rem; margin-bottom:.9rem; border:3px solid var(--ink); border-top:none; border-radius:0 0 8px 8px; }
+.vgrid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+.vcard { background:#fff; border:2px solid var(--ink); border-top:10px solid; border-radius:6px; padding:.8rem 1rem; }
+.vword { display:flex; align-items:center; justify-content:space-between; gap:.5rem; font-size:clamp(1.3rem,2vw,1.7rem); font-weight:800; }
+.speak { border:2px solid var(--ink); background:#fff176; border-radius:50%; width:2.4rem; height:2.4rem; font-size:1.1rem; cursor:pointer; flex:none; }
+.speak:hover { background:#ffd600; }
+.vpos { font-size:.95rem; font-weight:700; color:#4a5a66; margin-bottom:.3rem; }
+.vdef { margin:.2rem 0; font-size:1.1rem; line-height:1.5; }
+.ves { margin:.3rem 0; font-size:1.15rem; font-weight:800; color:var(--blue); }
+.vex { margin:.3rem 0 0; font-size:1.05rem; font-style:italic; line-height:1.5; border-top:1px dashed #9aa6af; padding-top:.4rem; }
+.qlist { background:#fff; border:3px solid var(--ink); border-radius:8px; padding:1.2rem 1.5rem 1.2rem 3rem; box-shadow:5px 5px 0 var(--ink); font-size:clamp(1.25rem,2.3vw,1.7rem); font-weight:600; }
+.qlist li { margin:.7rem 0; padding-left:.4rem; }
+.fold { background:#fff; border:3px solid var(--ink); border-radius:8px; margin:.9rem 0; box-shadow:4px 4px 0 var(--ink); }
+.fold summary { cursor:pointer; padding:.9rem 1.2rem; font-size:clamp(1.15rem,2.1vw,1.55rem); font-weight:700; }
+.fold[open] summary { background:#fff176; border-bottom:3px solid var(--ink); }
+.ans { padding:.9rem 1.2rem; font-size:clamp(1.15rem,2.1vw,1.5rem); font-weight:700; color:var(--green); }
+@media (max-width:1100px) { .vgrid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px) {
+ .vgrid { grid-template-columns:1fr; }
+ .para { border-left-width:8px; padding:1rem; }
+ .title { padding:1rem; box-shadow:4px 4px 0 var(--ink); }
+ .highlight::after { white-space:normal; width:max-content; max-width:70vw; font-size:1rem; }
+ .qlist { padding-left:2.2rem; }
+}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+<div class="header-content">
+<h1>📚 English Conversation with Elisa</h1>
+<span class="level-badge">Advanced Level </span>
+<div class="search-box">
+<a href="../index-advanced.html" class="back-to-calendar-btn" style="
+display: inline-block;
+padding: 0.5rem 1rem;
+background: rgba(255, 255, 255, 0.25);
+color: white;
+text-decoration: none;
+border-radius: 20px;
+font-size: 0.9rem;
+font-weight: 600;
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+">Home</a>
+</div>
+</div>
+</header>
+    <div class="article-image-container">
+        <img src="https://res-console.cloudinary.com/dxc8rcjuh/thumbnails/v1/image/upload/v1792512991/U3Vycm91bmRlZF9ieV9JZGlvdHNfeHg1ZXE1/drilldown" alt="🎨 Surrounded by Idiots" class="article-image">
+    </div>
+
+
+<main class="lesson"><div class="wrap">
+
+<div class="title">
+<h2>🎨 Surrounded by Idiots</h2>
+<p>A simple guide to communicating with everyone</p>
+<div class="stripe"><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i><i style="background:var(--green)"></i><i style="background:var(--blue)"></i></div>
+</div>
+
+<h2 class="sec">💬 Useful Expressions</h2>
+<div class="exprs"><div class="expr"><div class="en">I tend to be more…</div><div class="es">➜ Suelo ser más…</div><div class="exs">“I tend to be more analytical when I review an incident report.”</div></div><div class="expr"><div class="en">It’s just a difference in style.</div><div class="es">➜ Es solo una diferencia de estilo.</div><div class="exs">“Don’t take it personally. It’s just a difference in style.”</div></div><div class="expr"><div class="en">Let me look at this from your side.</div><div class="es">➜ Déjame verlo desde tu perspectiva.</div><div class="exs">“Let me look at this from your side. What worries you most about the new system?”</div></div><div class="expr"><div class="en">I want to make sure we’re on the same page.</div><div class="es">➜ Quiero asegurarme de que estamos de acuerdo / entendemos lo mismo.</div><div class="exs">“Before the audit, I want to make sure we’re on the same page.”</div></div><div class="expr"><div class="en">Let’s slow down and go over the details.</div><div class="es">➜ Vamos más despacio y revisemos los detalles.</div><div class="exs">“Let’s slow down and go over the details of the new policy.”</div></div></div>
+
+<h2 class="sec">🎨 Article</h2>
+<p class="para" style="border-left-color:#c9302c">Do you ever <span class="highlight" tabindex="0" data-tooltip="preguntarse">wonder</span> why some people are so difficult to <span class="highlight" tabindex="0" data-tooltip="trabajar con / tratar con">work with</span>? In Surrounded by Idiots, Thomas Erikson suggests it may not be because they are “idiots” at all. <span class="highlight" tabindex="0" data-tooltip="En cambio / en lugar de eso">Instead</span>, people often think and communicate in very different ways. To explain this, Erikson introduces four main styles of behavior that are represented by colors: Red, Yellow, Green and Blue. Each color reflects a certain <span class="highlight" tabindex="0" data-tooltip="patrón / forma habitual">pattern</span> of behavior that affects how people speak, listen and make decisions.</p>
+<div class="vbox"><div class="vlabel" style="background:#c9302c">Vocabulary · Paragraph 1</div><div class="vgrid"><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>wonder</span><button class="speak" onclick="speakWord('wonder')" aria-label="Listen to wonder">🔊</button></div>
+<div class="vpos">verb</div>
+<p class="vdef">to ask yourself a question; to be curious about something</p>
+<p class="ves">🇲🇽 preguntarse</p>
+<p class="vex">“I wonder why my team ignores the safety checklist.”</p>
+</div><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>work with</span><button class="speak" onclick="speakWord('work with')" aria-label="Listen to work with">🔊</button></div>
+<div class="vpos">phrasal verb</div>
+<p class="vdef">to deal with or cooperate with someone</p>
+<p class="ves">🇲🇽 trabajar con / tratar con</p>
+<p class="vex">“He is hard to work with when a deadline is close.”</p>
+</div><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>instead</span><button class="speak" onclick="speakWord('instead')" aria-label="Listen to instead">🔊</button></div>
+<div class="vpos">adverb</div>
+<p class="vdef">as a different choice or option</p>
+<p class="ves">🇲🇽 en cambio / en lugar de eso</p>
+<p class="vex">“Don’t send an email. Call the plant manager instead.”</p>
+</div><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>pattern</span><button class="speak" onclick="speakWord('pattern')" aria-label="Listen to pattern">🔊</button></div>
+<div class="vpos">noun</div>
+<p class="vdef">a regular way that something happens or is done</p>
+<p class="ves">🇲🇽 patrón / forma habitual</p>
+<p class="vex">“HR noticed a pattern in the exit interviews.”</p>
+</div></div></div>
+<p class="para" style="border-left-color:#e5a800">According to Erikson, many conflicts <span class="highlight" tabindex="0" data-tooltip="surgen de / provienen de">come from</span> <span class="highlight" tabindex="0" data-tooltip="suponer">assuming</span> that everyone thinks like we do. Reds are direct and oriented toward action. Yellows are energetic and imaginative. Greens are calm and <span class="highlight" tabindex="0" data-tooltip="solidarios / que apoyan a otros">supportive</span>. Blues are analytical and <span class="highlight" tabindex="0" data-tooltip="cuidadosos / meticulosos">careful</span>.</p>
+<div class="vbox"><div class="vlabel" style="background:#e5a800">Vocabulary · Paragraph 2</div><div class="vgrid"><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>come from</span><button class="speak" onclick="speakWord('come from')" aria-label="Listen to come from">🔊</button></div>
+<div class="vpos">phrasal verb</div>
+<p class="vdef">to be caused by something; to have as a source</p>
+<p class="ves">🇲🇽 surgir de / provenir de</p>
+<p class="vex">“Most IT tickets come from password problems.”</p>
+</div><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>assume</span><button class="speak" onclick="speakWord('assume')" aria-label="Listen to assume">🔊</button></div>
+<div class="vpos">verb</div>
+<p class="vdef">to believe something is true without checking</p>
+<p class="ves">🇲🇽 suponer</p>
+<p class="vex">“Never assume the machine is locked out.”</p>
+</div><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>supportive</span><button class="speak" onclick="speakWord('supportive')" aria-label="Listen to supportive">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">helpful and kind to other people</p>
+<p class="ves">🇲🇽 solidario / que apoya</p>
+<p class="vex">“My supervisor is very supportive during audits.”</p>
+</div><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>careful</span><button class="speak" onclick="speakWord('careful')" aria-label="Listen to careful">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">paying attention to avoid mistakes or danger</p>
+<p class="ves">🇲🇽 cuidadoso / meticuloso</p>
+<p class="vex">“Be careful with the chemical storage rules.”</p>
+</div></div></div>
+<p class="para" style="border-left-color:#2e7d4f">None of these styles are good or bad; they are <span class="highlight" tabindex="0" data-tooltip="simplemente">simply</span> different. When people understand these differences, they can <span class="highlight" tabindex="0" data-tooltip="evitar">avoid</span> <span class="highlight" tabindex="0" data-tooltip="malentendidos">misunderstandings</span> and communicate more clearly.</p>
+<div class="vbox"><div class="vlabel" style="background:#2e7d4f">Vocabulary · Paragraph 3</div><div class="vgrid"><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>simply</span><button class="speak" onclick="speakWord('simply')" aria-label="Listen to simply">🔊</button></div>
+<div class="vpos">adverb</div>
+<p class="vdef">only; just; in a plain way</p>
+<p class="ves">🇲🇽 simplemente</p>
+<p class="vex">“The delay was simply a scheduling error.”</p>
+</div><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>avoid</span><button class="speak" onclick="speakWord('avoid')" aria-label="Listen to avoid">🔊</button></div>
+<div class="vpos">verb</div>
+<p class="vdef">to stay away from something; to prevent it</p>
+<p class="ves">🇲🇽 evitar</p>
+<p class="vex">“We use checklists to avoid accidents.”</p>
+</div><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>misunderstanding</span><button class="speak" onclick="speakWord('misunderstanding')" aria-label="Listen to misunderstanding">🔊</button></div>
+<div class="vpos">noun</div>
+<p class="vdef">a failure to understand something correctly</p>
+<p class="ves">🇲🇽 malentendido</p>
+<p class="vex">“A misunderstanding about the shift delayed the training.”</p>
+</div></div></div>
+<p class="para" style="border-left-color:#1f5fa8">The author also explains why <span class="highlight" tabindex="0" data-tooltip="choques / enfrentamientos">clashes</span> happen. A Red may see a Green as slow. A Blue may think a Yellow is <span class="highlight" tabindex="0" data-tooltip="descuidado">careless</span>. But these judgments come from stress, not truth. Erikson <span class="highlight" tabindex="0" data-tooltip="anima a / alienta a">encourages</span> readers to <span class="highlight" tabindex="0" data-tooltip="ir más allá de">look beyond</span> their first reactions and try to understand the intention behind someone’s behavior. This awareness helps people work together with more patience and respect.</p>
+<div class="vbox"><div class="vlabel" style="background:#1f5fa8">Vocabulary · Paragraph 4</div><div class="vgrid"><div class="vcard" style="border-top-color:#1f5fa8">
+<div class="vword"><span>clash</span><button class="speak" onclick="speakWord('clash')" aria-label="Listen to clash">🔊</button></div>
+<div class="vpos">noun / verb</div>
+<p class="vdef">a strong disagreement or conflict between people</p>
+<p class="ves">🇲🇽 choque / enfrentamiento</p>
+<p class="vex">“There was a clash between IT and HR about data access.”</p>
+</div><div class="vcard" style="border-top-color:#1f5fa8">
+<div class="vword"><span>careless</span><button class="speak" onclick="speakWord('careless')" aria-label="Listen to careless">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">not paying enough attention; making mistakes</p>
+<p class="ves">🇲🇽 descuidado</p>
+<p class="vex">“A careless mistake on the form caused a delay.”</p>
+</div><div class="vcard" style="border-top-color:#1f5fa8">
+<div class="vword"><span>encourage</span><button class="speak" onclick="speakWord('encourage')" aria-label="Listen to encourage">🔊</button></div>
+<div class="vpos">verb</div>
+<p class="vdef">to give someone confidence or reasons to do something</p>
+<p class="ves">🇲🇽 animar a / alentar a</p>
+<p class="vex">“Our manager encourages us to report near misses.”</p>
+</div><div class="vcard" style="border-top-color:#1f5fa8">
+<div class="vword"><span>look beyond</span><button class="speak" onclick="speakWord('look beyond')" aria-label="Listen to look beyond">🔊</button></div>
+<div class="vpos">phrasal verb</div>
+<p class="vdef">to see more than the obvious first impression</p>
+<p class="ves">🇲🇽 ir más allá de</p>
+<p class="vex">“Look beyond the tone of the email and read the request.”</p>
+</div></div></div>
+<p class="para" style="border-left-color:#c9302c">The second half of Surrounded by Idiots shows how to apply these ideas. Erikson suggests changes people can make, many of which are essential for clearer communication. For example, Reds may need to <span class="highlight" tabindex="0" data-tooltip="bajar el ritmo / ir más despacio">slow down</span> and give others more space. Yellows may need to <span class="highlight" tabindex="0" data-tooltip="enfocarse en">focus on</span> details. Greens could practice <span class="highlight" tabindex="0" data-tooltip="atreverse a opinar / alzar la voz">speaking up</span>. Blues may need to share their thoughts without <span class="highlight" tabindex="0" data-tooltip="analizar en exceso">over-analyzing</span> everything. These adjustments make conversations more constructive.</p>
+<div class="vbox"><div class="vlabel" style="background:#c9302c">Vocabulary · Paragraph 5</div><div class="vgrid"><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>slow down</span><button class="speak" onclick="speakWord('slow down')" aria-label="Listen to slow down">🔊</button></div>
+<div class="vpos">phrasal verb</div>
+<p class="vdef">to go less fast; to reduce speed or pace</p>
+<p class="ves">🇲🇽 bajar el ritmo / ir más despacio</p>
+<p class="vex">“Slow down and read the safety instructions again.”</p>
+</div><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>focus on</span><button class="speak" onclick="speakWord('focus on')" aria-label="Listen to focus on">🔊</button></div>
+<div class="vpos">phrasal verb</div>
+<p class="vdef">to give your main attention to something</p>
+<p class="ves">🇲🇽 enfocarse en</p>
+<p class="vex">“Let’s focus on the root cause of the incident.”</p>
+</div><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>speak up</span><button class="speak" onclick="speakWord('speak up')" aria-label="Listen to speak up">🔊</button></div>
+<div class="vpos">phrasal verb</div>
+<p class="vdef">to say your opinion openly, especially in a group</p>
+<p class="ves">🇲🇽 atreverse a opinar / alzar la voz</p>
+<p class="vex">“If you see a risk, please speak up in the meeting.”</p>
+</div><div class="vcard" style="border-top-color:#c9302c">
+<div class="vword"><span>over-analyze</span><button class="speak" onclick="speakWord('over-analyze')" aria-label="Listen to over-analyze">🔊</button></div>
+<div class="vpos">verb</div>
+<p class="vdef">to think about something too much, for too long</p>
+<p class="ves">🇲🇽 analizar en exceso</p>
+<p class="vex">“Don’t over-analyze the report; send it today.”</p>
+</div></div></div>
+<p class="para" style="border-left-color:#e5a800">Erikson also offers strategies for reducing conflict. One suggestion is to observe how people speak and move. A <span class="highlight" tabindex="0" data-tooltip="de habla rápida">fast-talking</span> coworker with <span class="highlight" tabindex="0" data-tooltip="audaces / contundentes">bold</span> opinions may be a Red, while a quiet listener who avoids arguments may be a Green. When people recognize these patterns, they can modify their <span class="highlight" tabindex="0" data-tooltip="enfoque / manera de abordar algo">approach</span> so it is compatible with others. Instead of reacting in an <span class="highlight" tabindex="0" data-tooltip="brusca / repentina">abrupt</span> or emotional way, they can respond with understanding.</p>
+<div class="vbox"><div class="vlabel" style="background:#e5a800">Vocabulary · Paragraph 6</div><div class="vgrid"><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>fast-talking</span><button class="speak" onclick="speakWord('fast talking')" aria-label="Listen to fast-talking">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">speaking quickly and with confidence</p>
+<p class="ves">🇲🇽 de habla rápida</p>
+<p class="vex">“The fast-talking vendor promised a quick installation.”</p>
+</div><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>bold</span><button class="speak" onclick="speakWord('bold')" aria-label="Listen to bold">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">confident and not afraid to take risks</p>
+<p class="ves">🇲🇽 audaz / contundente</p>
+<p class="vex">“She made a bold proposal to change the onboarding process.”</p>
+</div><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>approach</span><button class="speak" onclick="speakWord('approach')" aria-label="Listen to approach">🔊</button></div>
+<div class="vpos">noun</div>
+<p class="vdef">a way of dealing with a situation or problem</p>
+<p class="ves">🇲🇽 enfoque / manera de abordar algo</p>
+<p class="vex">“We need a new approach to training new hires.”</p>
+</div><div class="vcard" style="border-top-color:#e5a800">
+<div class="vword"><span>abrupt</span><button class="speak" onclick="speakWord('abrupt')" aria-label="Listen to abrupt">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">sudden and unfriendly; without warning</p>
+<p class="ves">🇲🇽 brusco / repentino</p>
+<p class="vex">“His abrupt answer surprised the whole team.”</p>
+</div></div></div>
+<p class="para" style="border-left-color:#2e7d4f">The book’s key message is simple: Communication improves when people stop assuming others are wrong and start seeing differences as <span class="highlight" tabindex="0" data-tooltip="fortalezas">strengths</span>. By accepting each style, teams become more <span class="highlight" tabindex="0" data-tooltip="equilibrados">balanced</span> and friendships become more supportive. Erikson hopes readers will use this <span class="highlight" tabindex="0" data-tooltip="marco de referencia">framework</span> to create healthier relationships and work environments. With practice, anyone can become more flexible, more patient and less frustrated by <span class="highlight" tabindex="0" data-tooltip="las personas a su alrededor">those around them</span>.</p>
+<div class="vbox"><div class="vlabel" style="background:#2e7d4f">Vocabulary · Paragraph 7</div><div class="vgrid"><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>strengths</span><button class="speak" onclick="speakWord('strengths')" aria-label="Listen to strengths">🔊</button></div>
+<div class="vpos">noun</div>
+<p class="vdef">good qualities or skills a person or group has</p>
+<p class="ves">🇲🇽 fortalezas</p>
+<p class="vex">“Each person’s strengths help the project.”</p>
+</div><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>balanced</span><button class="speak" onclick="speakWord('balanced')" aria-label="Listen to balanced">🔊</button></div>
+<div class="vpos">adjective</div>
+<p class="vdef">with different parts in equal or fair proportion</p>
+<p class="ves">🇲🇽 equilibrado</p>
+<p class="vex">“A balanced team has detail people and big-picture people.”</p>
+</div><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>framework</span><button class="speak" onclick="speakWord('framework')" aria-label="Listen to framework">🔊</button></div>
+<div class="vpos">noun</div>
+<p class="vdef">a set of ideas or rules used to understand something</p>
+<p class="ves">🇲🇽 marco de referencia</p>
+<p class="vex">“This framework helps us predict communication problems.”</p>
+</div><div class="vcard" style="border-top-color:#2e7d4f">
+<div class="vword"><span>those around them</span><button class="speak" onclick="speakWord('those around them')" aria-label="Listen to those around them">🔊</button></div>
+<div class="vpos">phrase</div>
+<p class="vdef">the people near you, such as coworkers and family</p>
+<p class="ves">🇲🇽 las personas a su alrededor</p>
+<p class="vex">“Good leaders listen to those around them.”</p>
+</div></div></div>
+
+
+<h2 class="sec">🗣️ Discussion Questions</h2>
+<ol class="qlist"><li>Think of a coworker you find difficult. Which color might they be? What could be the intention behind their behavior?</li><li>Erikson says our negative judgments “come from stress, not truth.” Do you agree? Give an example from your workplace (EHS, HR or IT).</li><li>Which change would be hardest for you: slowing down, focusing on details, speaking up, or sharing thoughts without over-analyzing? Why?</li></ol>
+
+<h2 class="sec">✏️ Self-Practice</h2>
+<details class="fold"><summary>1. According to Erikson, what causes many conflicts?</summary><div class="ans">✅ Many conflicts come from assuming that everyone thinks like we do.</div></details><details class="fold"><summary>2. Complete: A Red may see a Green as ______. A Blue may think a Yellow is ______.</summary><div class="ans">✅ slow / careless</div></details><details class="fold"><summary>3. A coworker talks fast and has bold opinions. Another is a quiet listener who avoids arguments. Which colors are they?</summary><div class="ans">✅ The fast-talking coworker may be a Red. The quiet listener may be a Green.</div></details><details class="fold"><summary>4. Complete with a phrasal verb: Reds may need to ______ ______ and give others more space. Greens could practice ______ ______.</summary><div class="ans">✅ slow down / speaking up</div></details>
+
+</div></main>
+
+<script>
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
