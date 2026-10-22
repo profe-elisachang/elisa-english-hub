@@ -145,9 +145,7 @@ async function scanLessons() {
         { filename: 'How Hip-Hop Became a Global Phenomenon.html', date: '2026-10-15', title: '🎧 The Party That Never Stopped' },
         { filename: 'White flight and hip-hop.html', date: '2026-10-15', title: '🏘️ White flight and hip-hop' },
         { filename: 'How Hip-Hop Became a Global Phenomenon.html', date: '2026-10-20', title: '🎧 The Party That Never Stopped' },
-        { filename: 'White flight and hip-hop.html', date: '2026-10-20', title: '🏘️ White flight and hip-hop' },
-        { filename: 'Surrounded by Idiots.html', date: '2026-10-22', title: '🎨 Surrounded by Idiots' },
-        
+        { filename: 'White flight and hip-hop.html', date: '2026-10-20', title: '🏘️ White flight and hip-hop' },        { filename: 'Surrounded by Idiots.html', date: '2026-10-22', title: '🎨 Surrounded by Idiots' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
