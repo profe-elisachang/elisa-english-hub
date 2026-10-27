@@ -1,0 +1,222 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taking Animation a Step Too Far into Reality</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+.lesson{--ink:#1f2a30;--paper:#fbf3e2;--brick:#b83a26;--gold:#f2b134;--teal:#13696b;--moss:#5d7a2e;--card:#fffdf7;
+  font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7;color:var(--ink);background:var(--paper);
+  max-width:1400px;margin:auto;padding:2rem 1.5rem 3rem;font-size:22px;box-sizing:border-box}
+.lesson *{box-sizing:border-box}
+.lesson h2{font-weight:800;margin:2.5rem 0 1rem;font-size:1.7rem;background:var(--ink);color:var(--gold);padding:.6rem 1.2rem;border-left:12px solid var(--brick);border-radius:4px}
+.lesson h1.title{font-size:2.4rem;font-weight:800;margin:0 0 .5rem;border-bottom:6px solid var(--brick);padding-bottom:.6rem}
+.part{font-weight:800;color:var(--brick);text-transform:uppercase;letter-spacing:.08em;font-size:1rem;margin:2rem 0 .3rem}
+/* expressions */
+.expr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.expr{background:var(--card);border:3px solid var(--ink);border-radius:8px;padding:1rem 1.2rem;box-shadow:5px 5px 0 var(--gold)}
+.expr .en{font-weight:800;font-size:1.25rem;color:var(--brick)}
+.expr .es{font-weight:600;color:var(--teal)}
+.expr .ex{font-style:italic;margin-top:.4rem;font-size:.95rem}
+/* article */
+.article{background:var(--card);border:3px solid var(--ink);border-radius:8px;padding:1.2rem 1.8rem;font-size:1.12rem}
+.article p{margin:.6rem 0}
+.highlight{position:relative;background:#ffe066;font-weight:700;border-bottom:3px solid var(--brick);padding:0 .15em;cursor:help;border-radius:2px}
+.highlight::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-weight:600;font-size:.85rem;line-height:1.35;padding:.4rem .7rem;border-radius:6px;
+  width:max-content;max-width:240px;white-space:normal;text-align:center;opacity:0;visibility:hidden;pointer-events:none;z-index:20;transition:opacity .15s}
+.highlight::before{content:"";position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink);opacity:0;visibility:hidden;z-index:20}
+.highlight:hover::after,.highlight:hover::before,.highlight:focus::after,.highlight:focus::before{opacity:1;visibility:visible}
+/* vocab boxes */
+.vbox{margin:.8rem 0 1.6rem;background:#f1e4c3;border:3px solid var(--ink);border-radius:8px;padding:.8rem 1rem 1rem}
+.vbox h3{margin:0 0 .6rem;font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.vcard{background:#fff;border:2px solid var(--ink);border-top:10px solid var(--c);border-radius:6px;padding:.7rem .8rem;font-size:.85rem;line-height:1.5}
+.vcard:nth-child(1){--c:var(--brick)}.vcard:nth-child(2){--c:var(--teal)}.vcard:nth-child(3){--c:var(--moss)}.vcard:nth-child(4){--c:#d98e04}
+.vcard .w{font-weight:800;font-size:1.15rem;display:flex;justify-content:space-between;align-items:center;gap:.4rem}
+.vcard .pos{font-size:.75rem;font-weight:700;color:var(--c);text-transform:uppercase}
+.vcard .es{font-weight:700;color:var(--c);margin:.2rem 0}
+.vcard .ex{font-style:italic;border-top:1px dashed #999;margin-top:.4rem;padding-top:.4rem}
+.spk{background:var(--ink);color:#fff;border:0;border-radius:50%;width:2.2rem;height:2.2rem;font-size:1rem;cursor:pointer;flex:none}
+.spk:hover{background:var(--brick)}
+/* questions */
+.dq{counter-reset:q;list-style:none;padding:0;margin:0}
+.dq li{counter-increment:q;background:var(--card);border:3px solid var(--ink);border-left:14px solid var(--teal);border-radius:8px;padding:.9rem 1.2rem .9rem 1.4rem;margin-bottom:1rem;font-weight:600}
+.dq li::before{content:counter(q) ". ";font-weight:800;color:var(--teal)}
+details{background:var(--card);border:3px solid var(--ink);border-radius:8px;margin-bottom:.9rem}
+summary{cursor:pointer;font-weight:700;padding:.8rem 1.2rem;list-style:none}
+summary::before{content:"▶ ";color:var(--brick)}
+details[open] summary::before{content:"▼ "}
+details[open] summary{border-bottom:2px dashed var(--ink)}
+.ans{padding:.8rem 1.2rem;background:#e4efd0;border-radius:0 0 5px 5px;font-weight:600}
+@media(max-width:1100px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.lesson{font-size:18px;padding:1rem .8rem 2rem}.vgrid{grid-template-columns:1fr}.lesson h1.title{font-size:1.7rem}.highlight::after{max-width:180px}.article{padding:.8rem 1rem}}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://i.redd.it/lraj0vv3js6f1.jpg" alt="🎬 Taking Animation a Step Too Far into Reality" class="article-image">
+    </div>
+
+
+<main class="lesson">
+
+<h2>💬 Useful Expressions</h2>
+<div class="expr-grid">
+  <div class="expr"><div class="en">It comes down to…</div><div class="es">Todo se reduce a…</div><div class="ex">“It comes down to whether the remake respects the original story.”</div></div>
+  <div class="expr"><div class="en">To be fair, …</div><div class="es">Para ser justos, …</div><div class="ex">“To be fair, the visual effects were impressive.”</div></div>
+  <div class="expr"><div class="en">That's a fair point, but…</div><div class="es">Es un buen punto, pero…</div><div class="ex">“That's a fair point, but a familiar title doesn't guarantee a good film.”</div></div>
+  <div class="expr"><div class="en">I couldn't agree more.</div><div class="es">Estoy totalmente de acuerdo.</div><div class="ex">“Poor casting can ruin a film. I couldn't agree more.”</div></div>
+  <div class="expr"><div class="en">I'd rather… than…</div><div class="es">Prefiero… antes que…</div><div class="ex">“I'd rather watch the original than a weak remake.”</div></div>
+</div>
+
+<h1 class="title" style="margin-top:2.5rem">🎬 Taking Animation a Step Too Far into Reality</h1>
+<div class="part">Part 1 · Why studios keep doing it</div>
+
+<div class="article"><p>Once upon a time, animated characters lived solely inside their illustrated worlds. Then film studios began <span class="highlight" tabindex="0" data-tooltip="derribando">tearing down</span> the walls. From Disney classics to Japanese anime, what was once <span class="highlight" tabindex="0" data-tooltip="limitado a">confined to</span> ink and imagination has been transformed into flesh, fur, and increasingly sophisticated visual effects. As this shift from 2D animation to live-action adaptations <span class="highlight" tabindex="0" data-tooltip="se extiende por">sweeps through</span> the industry, it raises the question of why studios keep <span class="highlight" tabindex="0" data-tooltip="perseguir / insistir en">pursuing</span> this trend.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 1</h3><div class="vgrid">
+  <div class="vcard"><div class="w">tear down <button class="spk" onclick="speakWord('tear down')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To destroy a structure or remove a barrier.<div class="es">derribar, eliminar</div><div class="ex">We tore down the old access barriers to improve emergency evacuation.</div></div>
+  <div class="vcard"><div class="w">confined to <button class="spk" onclick="speakWord('confined to')" aria-label="Pronounce">🔊</button></div><div class="pos">adj. + prep.</div>Limited to one place or area.<div class="es">limitado a, restringido a</div><div class="ex">Access to the chemical storage room is confined to trained staff.</div></div>
+  <div class="vcard"><div class="w">sweep through <button class="spk" onclick="speakWord('sweep through')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To spread quickly and widely through a place or group.<div class="es">extenderse rápidamente por</div><div class="ex">A new remote-work policy swept through our plants in Taiwan.</div></div>
+  <div class="vcard"><div class="w">pursue <button class="spk" onclick="speakWord('pursue')" aria-label="Pronounce">🔊</button></div><div class="pos">verb</div>To follow or continue an activity or goal.<div class="es">perseguir, seguir con</div><div class="ex">IT decided to pursue a cloud-first strategy.</div></div>
+</div></div>
+
+<div class="article"><p>Live-action adaptations <span class="highlight" tabindex="0" data-tooltip="atraer a">appeal to</span> audiences across generations for different reasons. By <span class="highlight" tabindex="0" data-tooltip="aprovechar">tapping into</span> childhood memories, studios can easily <span class="highlight" tabindex="0" data-tooltip="ganarse a, conquistar">win over</span> nostalgic adults. At the same time, younger audiences are introduced to <span class="highlight" tabindex="0" data-tooltip="querido, adorado">beloved</span> stories through a fresh and visually appealing format. This cross-generational fascination makes live-action adaptations highly marketable.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 2</h3><div class="vgrid">
+  <div class="vcard"><div class="w">appeal to <button class="spk" onclick="speakWord('appeal to')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To be attractive or interesting to someone.<div class="es">atraer a, gustar a</div><div class="ex">Flexible schedules appeal to younger employees.</div></div>
+  <div class="vcard"><div class="w">tap into <button class="spk" onclick="speakWord('tap into')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To use an existing resource or feeling.<div class="es">aprovechar, explotar</div><div class="ex">HR tapped into employees' pride to promote the safety campaign.</div></div>
+  <div class="vcard"><div class="w">win over <button class="spk" onclick="speakWord('win over')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To gain someone's support or approval.<div class="es">convencer, ganarse el apoyo de</div><div class="ex">We need to win over the skeptical managers before the system upgrade.</div></div>
+  <div class="vcard"><div class="w">beloved <button class="spk" onclick="speakWord('beloved')" aria-label="Pronounce">🔊</button></div><div class="pos">adjective</div>Loved very much by many people.<div class="es">querido, muy amado</div><div class="ex">Our beloved supervisor retired after thirty years.</div></div>
+</div></div>
+
+<div class="article"><p>Another reason studios embrace live-action adaptations is that they help minimize financial risk. Rather than <span class="highlight" tabindex="0" data-tooltip="invertir en">investing in</span> completely new stories, studios often choose remakes that already <span class="highlight" tabindex="0" data-tooltip="traer consigo, incluir">come with</span> a loyal <span class="highlight" tabindex="0" data-tooltip="base de seguidores">fan base</span> and strong merchandising potential. In an industry where a single <span class="highlight" tabindex="0" data-tooltip="fracaso (de taquilla)">flop</span> can cost hundreds of millions of dollars, familiarity isn't laziness but strategy.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 3</h3><div class="vgrid">
+  <div class="vcard"><div class="w">invest in <button class="spk" onclick="speakWord('invest in')" aria-label="Pronounce">🔊</button></div><div class="pos">verb + prep.</div>To spend money or effort on something for future benefit.<div class="es">invertir en</div><div class="ex">The company will invest in better ergonomic chairs.</div></div>
+  <div class="vcard"><div class="w">come with <button class="spk" onclick="speakWord('come with')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To include something as part of a package.<div class="es">venir con, incluir</div><div class="ex">The new laptop comes with a three-year warranty.</div></div>
+  <div class="vcard"><div class="w">fan base <button class="spk" onclick="speakWord('fan base')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>A group of regular, loyal supporters.<div class="es">base de seguidores</div><div class="ex">Our internal wellness app has a loyal fan base among night-shift workers.</div></div>
+  <div class="vcard"><div class="w">flop <button class="spk" onclick="speakWord('flop')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>A complete failure.<div class="es">fracaso, desastre</div><div class="ex">The new onboarding portal was a flop; nobody used it.</div></div>
+</div></div>
+
+<div class="article"><p>Of course, none of this would be possible without a huge <span class="highlight" tabindex="0" data-tooltip="salto, gran avance">leap</span> in technology. <span class="highlight" tabindex="0" data-tooltip="avances importantes">Breakthroughs</span> in computer-generated imagery (CGI) make it possible for fantastical creatures to appear <span class="highlight" tabindex="0" data-tooltip="junto a">alongside</span> human actors in a convincing way. Characters like Toothless from <em>How to Train Your Dragon</em> and Stitch from <em>Lilo &amp; Stitch</em> can now share the screen with real performers while appearing surprisingly <span class="highlight" tabindex="0" data-tooltip="muy realista, como de la vida real">lifelike</span>.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 4</h3><div class="vgrid">
+  <div class="vcard"><div class="w">leap <button class="spk" onclick="speakWord('leap')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>A big, sudden improvement or jump.<div class="es">salto, gran avance</div><div class="ex">Predictive sensors were a huge leap for plant safety.</div></div>
+  <div class="vcard"><div class="w">breakthrough <button class="spk" onclick="speakWord('breakthrough')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>An important discovery or achievement after a long effort.<div class="es">avance, descubrimiento clave</div><div class="ex">The IT team reached a breakthrough in fixing the network delays.</div></div>
+  <div class="vcard"><div class="w">alongside <button class="spk" onclick="speakWord('alongside')" aria-label="Pronounce">🔊</button></div><div class="pos">preposition</div>Next to, or together with.<div class="es">junto a, al lado de</div><div class="ex">Operators now work alongside collaborative robots.</div></div>
+  <div class="vcard"><div class="w">lifelike <button class="spk" onclick="speakWord('lifelike')" aria-label="Pronounce">🔊</button></div><div class="pos">adjective</div>Looking very real, like a living thing.<div class="es">realista, muy natural</div><div class="ex">The safety training simulation felt surprisingly lifelike.</div></div>
+</div></div>
+
+<div class="article"><p>Animated characters no longer just live <span class="highlight" tabindex="0" data-tooltip="felices para siempre">happily ever after</span> inside their drawn universes. With technology steadily <span class="highlight" tabindex="0" data-tooltip="difuminando la línea">blurring the line</span> between fantasy and reality, and studios showing <span class="highlight" tabindex="0" data-tooltip="sin señales de">no signs of</span> <span class="highlight" tabindex="0" data-tooltip="desacelerar, frenar">slowing down</span>, the only question left is: whose story gets told next?</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 5</h3><div class="vgrid">
+  <div class="vcard"><div class="w">happily ever after <button class="spk" onclick="speakWord('happily ever after')" aria-label="Pronounce">🔊</button></div><div class="pos">idiom</div>The classic fairy-tale ending: a permanent happy life.<div class="es">felices para siempre</div><div class="ex">Not every merger ends happily ever after.</div></div>
+  <div class="vcard"><div class="w">blur the line <button class="spk" onclick="speakWord('blur the line')" aria-label="Pronounce">🔊</button></div><div class="pos">idiom</div>To make the difference between two things unclear.<div class="es">difuminar la línea entre</div><div class="ex">Remote work blurs the line between home and office.</div></div>
+  <div class="vcard"><div class="w">no signs of <button class="spk" onclick="speakWord('no signs of')" aria-label="Pronounce">🔊</button></div><div class="pos">phrase</div>No evidence that something is starting or happening.<div class="es">sin señales de</div><div class="ex">The audit showed no signs of safety violations.</div></div>
+  <div class="vcard"><div class="w">slow down <button class="spk" onclick="speakWord('slow down')" aria-label="Pronounce">🔊</button></div><div class="pos">phrasal verb</div>To reduce speed or activity.<div class="es">desacelerar, frenar</div><div class="ex">Hiring will slow down after the holidays.</div></div>
+</div></div>
+
+<div class="part">Part 2 · Why audiences are disappointed</div>
+
+<div class="article"><p>Once live-action movies <span class="highlight" tabindex="0" data-tooltip="llegar a los cines, estrenarse">hit the screens</span>, they face judgment from audiences across the globe. Instead of receiving universal praise, these <span class="highlight" tabindex="0" data-tooltip="muy esperadas">highly anticipated</span> productions sometimes leave viewers deeply disappointed. It seems the magic that <span class="highlight" tabindex="0" data-tooltip="cautiva, fascina">captivates</span> audiences in animation doesn't always <span class="highlight" tabindex="0" data-tooltip="sobrevivir, resistir">survive</span> the transition into reality.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 6</h3><div class="vgrid">
+  <div class="vcard"><div class="w">hit the screens <button class="spk" onclick="speakWord('hit the screens')" aria-label="Pronounce">🔊</button></div><div class="pos">idiom</div>To be released in cinemas.<div class="es">estrenarse en cines</div><div class="ex">The new training video will hit the screens next Monday.</div></div>
+  <div class="vcard"><div class="w">highly anticipated <button class="spk" onclick="speakWord('highly anticipated')" aria-label="Pronounce">🔊</button></div><div class="pos">collocation</div>Eagerly awaited by many people.<div class="es">muy esperado</div><div class="ex">The highly anticipated software update arrives tonight.</div></div>
+  <div class="vcard"><div class="w">captivate <button class="spk" onclick="speakWord('captivate')" aria-label="Pronounce">🔊</button></div><div class="pos">verb</div>To attract and hold someone's full attention.<div class="es">cautivar, fascinar</div><div class="ex">The trainer captivated the whole room with real accident stories.</div></div>
+  <div class="vcard"><div class="w">survive <button class="spk" onclick="speakWord('survive')" aria-label="Pronounce">🔊</button></div><div class="pos">verb</div>To continue to exist after a difficult change or event.<div class="es">sobrevivir, resistir</div><div class="ex">Not every old process will survive the digital transition.</div></div>
+</div></div>
+
+<div class="article"><p>More often than not, the problems begin with plot alterations that leave <span class="highlight" tabindex="0" data-tooltip="acérrimos, fieles hasta el final">die-hard</span> fans feeling betrayed. In an effort to condense dozens of anime episodes or an entire cartoon season into a single film, studios frequently rewrite character development or <span class="highlight" tabindex="0" data-tooltip="omitir, dejar fuera">omit</span> essential storylines. They may <span class="highlight" tabindex="0" data-tooltip="cambiar algo por algo">trade</span> the emotional depth that made the original unforgettable <span class="highlight" tabindex="0" data-tooltip="a cambio de">for</span> a tighter <span class="highlight" tabindex="0" data-tooltip="duración (de una película)">runtime</span>.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 7</h3><div class="vgrid">
+  <div class="vcard"><div class="w">die-hard <button class="spk" onclick="speakWord('die hard')" aria-label="Pronounce">🔊</button></div><div class="pos">adjective</div>Extremely loyal and unwilling to change.<div class="es">acérrimo, fiel hasta el final</div><div class="ex">A die-hard supporter of the old system resisted the migration.</div></div>
+  <div class="vcard"><div class="w">omit <button class="spk" onclick="speakWord('omit')" aria-label="Pronounce">🔊</button></div><div class="pos">verb</div>To leave something out on purpose or by mistake.<div class="es">omitir, dejar fuera</div><div class="ex">The report omitted two near-miss incidents.</div></div>
+  <div class="vcard"><div class="w">trade X for Y <button class="spk" onclick="speakWord('trade for')" aria-label="Pronounce">🔊</button></div><div class="pos">verb phrase</div>To give up one thing in order to get another.<div class="es">cambiar X por Y</div><div class="ex">We traded some features for faster performance.</div></div>
+  <div class="vcard"><div class="w">runtime <button class="spk" onclick="speakWord('runtime')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>The total length of a film or program.<div class="es">duración</div><div class="ex">The safety video has a runtime of ten minutes.</div></div>
+</div></div>
+
+<div class="article"><p>Then comes the casting controversy. When human actors <span class="highlight" tabindex="0" data-tooltip="no lograr captar">fail to capture</span> the unique essence or appearance of an animated character, the criticism can be immediate and <span class="highlight" tabindex="0" data-tooltip="feroz, intensa">fierce</span>. After all, audiences are not meeting these characters for the first time. To many fans, poor casting isn't a minor <span class="highlight" tabindex="0" data-tooltip="defecto, falla">flaw</span> but a serious <span class="highlight" tabindex="0" data-tooltip="alejamiento de">departure from</span> the much-loved original.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 8</h3><div class="vgrid">
+  <div class="vcard"><div class="w">fail to capture <button class="spk" onclick="speakWord('fail to capture')" aria-label="Pronounce">🔊</button></div><div class="pos">collocation</div>To not succeed in showing or expressing something.<div class="es">no lograr captar</div><div class="ex">The survey failed to capture how workers really feel.</div></div>
+  <div class="vcard"><div class="w">fierce <button class="spk" onclick="speakWord('fierce')" aria-label="Pronounce">🔊</button></div><div class="pos">adjective</div>Very strong, intense, or aggressive.<div class="es">feroz, intenso</div><div class="ex">There was fierce debate over the new shift schedule.</div></div>
+  <div class="vcard"><div class="w">flaw <button class="spk" onclick="speakWord('flaw')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>A mistake or weakness that spoils something.<div class="es">defecto, falla</div><div class="ex">The audit found a serious flaw in the login process.</div></div>
+  <div class="vcard"><div class="w">departure from <button class="spk" onclick="speakWord('departure from')" aria-label="Pronounce">🔊</button></div><div class="pos">noun phrase</div>A change away from what is usual or expected.<div class="es">alejamiento de, desviación de</div><div class="ex">Skipping the inspection is a departure from our procedure.</div></div>
+</div></div>
+
+<div class="article"><p>The journey from animation to live action involves far more than replacing drawings with human performers. Although modern technology is capable of <span class="highlight" tabindex="0" data-tooltip="recrear">recreating</span> spectacular visuals, capturing <span class="highlight" tabindex="0" data-tooltip="el corazón / la esencia de">the heart of</span> the original remains a far greater challenge. The cruelest <span class="highlight" tabindex="0" data-tooltip="ironía">irony</span> is that <span class="highlight" tabindex="0" data-tooltip="cuanto más amor, más dura la caída">the more strongly audiences love the original, the harder the fall</span> when the adaptation disappoints.</p></div>
+<div class="vbox"><h3>📖 Vocabulary · Paragraph 9</h3><div class="vgrid">
+  <div class="vcard"><div class="w">recreate <button class="spk" onclick="speakWord('recreate')" aria-label="Pronounce">🔊</button></div><div class="pos">verb</div>To make something exist again in the same way.<div class="es">recrear, reproducir</div><div class="ex">IT recreated the error in a test environment.</div></div>
+  <div class="vcard"><div class="w">the heart of <button class="spk" onclick="speakWord('the heart of')" aria-label="Pronounce">🔊</button></div><div class="pos">idiom</div>The most important, central part of something.<div class="es">el corazón / la esencia de</div><div class="ex">Trust is at the heart of a good team.</div></div>
+  <div class="vcard"><div class="w">irony <button class="spk" onclick="speakWord('irony')" aria-label="Pronounce">🔊</button></div><div class="pos">noun</div>A situation with the opposite result from what is expected.<div class="es">ironía</div><div class="ex">The irony is that the safety app crashed during the safety drill.</div></div>
+  <div class="vcard"><div class="w">the harder the fall <button class="spk" onclick="speakWord('the harder they fall')" aria-label="Pronounce">🔊</button></div><div class="pos">idiom</div>The higher the expectations, the bigger the disappointment.<div class="es">cuanto más alto, más dura la caída</div><div class="ex">We promised zero delays, so the harder the fall when the server crashed.</div></div>
+</div></div>
+
+<h2>🗣️ Discussion Questions</h2>
+<ol class="dq">
+  <li>Do you think studios choose live-action remakes mainly to make money or to be creative? Defend your opinion with an example.</li>
+  <li>Think of a remake you loved or hated. Did it capture the heart of the original? Why or why not?</li>
+  <li>Imagine your company has to “remake” a successful old process, such as a safety procedure, an onboarding program, or an IT system. What would you keep, and what would you change?</li>
+</ol>
+
+<h2>✍️ Self-Practice Questions</h2>
+<details><summary>1. Why does the author say “familiarity isn't laziness but strategy”?</summary><div class="ans">Because remakes come with a loyal fan base and merchandising potential, which reduces the financial risk of a flop.</div></details>
+<details><summary>2. How has CGI changed live-action movies?</summary><div class="ans">Fantastical creatures can now appear alongside human actors and look surprisingly lifelike.</div></details>
+<details><summary>3. What two problems often disappoint fans of the originals?</summary><div class="ans">Plot alterations (rewriting or omitting storylines to shorten the story) and casting that fails to capture the original character.</div></details>
+<details><summary>4. Explain the “irony” in the last paragraph in your own words.</summary><div class="ans">The more audiences love the original, the higher their expectations, so the disappointment is bigger when the adaptation does not deliver.</div></details>
+
+</main>
+
+<script>
+function speakWord(word) {
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9;
+  speechSynthesis.speak(utterance);
+}
+</script>
+
