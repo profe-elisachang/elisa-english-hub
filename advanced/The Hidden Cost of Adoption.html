@@ -53,6 +53,67 @@
   .expr .es { font-size: 1.1rem; font-weight: 600; color: var(--copper); margin: .3rem 0; }
   .expr .ex { font-style: italic; font-size: 1.05rem; }
 
+  /* ---------- Background ---------- */
+  .bg-note {
+    background: var(--sand);
+    border: 3px solid var(--line);
+    border-left: 12px solid var(--copper);
+    border-radius: 8px;
+    padding: 1rem 1.4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+    box-shadow: 5px 5px 0 var(--line);
+  }
+  .bg-sub { font-weight: 800; font-size: 1.4rem; color: var(--pine); margin: 1.8rem 0 .8rem; }
+  .path-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .path {
+    background: var(--card);
+    border: 3px solid var(--line);
+    border-top: 8px solid var(--pine);
+    border-radius: 8px;
+    padding: .9rem 1rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .path .p-title { font-weight: 800; font-size: 1.25rem; color: var(--pine); line-height: 1.3; }
+  .path .p-es { font-weight: 700; color: var(--copper); font-size: .95rem; margin-bottom: .4rem; }
+  .path .p-label { font-weight: 800; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; color: var(--copper); margin-top: .5rem; }
+  .term-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .term {
+    background: var(--mist);
+    border: 3px solid var(--line);
+    border-radius: 8px;
+    padding: .9rem 1.1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .term .t-word { font-weight: 800; font-size: 1.5rem; color: var(--pine); }
+  .term .t-es { font-weight: 700; color: var(--copper); }
+  .tension {
+    margin-top: 1.4rem;
+    background: var(--pine);
+    color: #fff;
+    border: 3px solid var(--line);
+    border-radius: 10px;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    box-shadow: 5px 5px 0 var(--line);
+  }
+  .tension b { color: var(--sand); }
+  .tension ul { margin: .5rem 0 .3rem; padding-left: 1.4rem; }
+  .tension li { margin-bottom: .3rem; }
+  .watch {
+    margin-top: 1.2rem;
+    background: var(--card);
+    border: 3px dashed var(--line);
+    border-radius: 8px;
+    padding: 1rem 1.4rem;
+    font-size: 1.15rem;
+  }
+  .watch .w-title { font-weight: 800; color: var(--copper); font-size: 1.2rem; }
+
   /* ---------- Article ---------- */
   .article-title {
     background: var(--pine);
@@ -198,6 +259,8 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 1100px) {
+    .path-grid { grid-template-columns: repeat(2, 1fr); }
+    .term-grid { grid-template-columns: 1fr; }
     .vocab-grid, .vocab-grid.three { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
@@ -209,6 +272,8 @@
     .disc { font-size: 1.1rem; padding: 1rem 1rem 1rem 4rem; }
     .disc .q { width: 2.3rem; height: 2.3rem; left: .8rem; font-size: 1.1rem; }
     .highlight::after { max-width: 190px; font-size: .9rem; }
+    .path-grid, .term-grid { grid-template-columns: 1fr; }
+    .bg-note, .tension { font-size: 1.05rem; }
   }
 
 .article-image-container {
@@ -295,6 +360,82 @@
       <div class="es">Cuando … no es posible, … es la mejor alternativa.</div>
       <div class="ex">“Where a full audit is not possible, a targeted spot-check is the next best option.”</div>
     </div>
+  </div>
+
+  <!-- BACKGROUND (scaffolding) -->
+  <h2 class="section-title">🧭 Background: Before You Read</h2>
+
+  <div class="bg-note">
+    📝 This article is an <b>opinion piece</b> written by an adoptive parent. It argues one side and does not explain how adoption systems work. Read it as an <b>argument</b>, not as a neutral report.
+  </div>
+
+  <div class="bg-sub">1. Four different paths to adoption</div>
+  <div class="path-grid">
+    <div class="path">
+      <div class="p-title">Child welfare system (foster care) → adoption</div>
+      <div class="p-es">Sistema de protección infantil → adopción</div>
+      <div class="p-label">How it happens</div>
+      The government removes a child from the home. If the child cannot return, a court ends the parents’ legal rights and the child may be adopted.
+      <div class="p-label">Parents’ situation</div>
+      Ranges from serious abuse to poverty, unstable housing or drug addiction.
+    </div>
+    <div class="path">
+      <div class="p-title">Voluntary relinquishment</div>
+      <div class="p-es">Entrega voluntaria en adopción</div>
+      <div class="p-label">How it happens</div>
+      Birth parents give up a child, often a baby, through an agency or a private arrangement.
+      <div class="p-label">Parents’ situation</div>
+      The author argues that this “choice” is often shaped by poverty or lack of support.
+    </div>
+    <div class="path">
+      <div class="p-title">International adoption</div>
+      <div class="p-es">Adopción internacional</div>
+      <div class="p-label">How it happens</div>
+      A child is adopted by a family in another country, usually through an agency.
+      <div class="p-label">Why it is controversial</div>
+      The article says weak regulations have allowed agencies to take children by force or pressure. Some countries have banned it.
+    </div>
+    <div class="path">
+      <div class="p-title">Kinship adoption</div>
+      <div class="p-es">Adopción por familiares o allegados</div>
+      <div class="p-label">How it happens</div>
+      Relatives or close friends adopt the child.
+      <div class="p-label">Why the author prefers it</div>
+      The child stays inside the biological family’s network, so ties are kept.
+    </div>
+  </div>
+
+  <div class="bg-sub">2. Three words that are easy to confuse</div>
+  <div class="term-grid">
+    <div class="term">
+      <div class="t-word">Abuse</div>
+      <div class="t-es">Maltrato / abuso</div>
+      Actively harming a child, physically, sexually or emotionally. Almost everyone agrees this can justify removal.
+    </div>
+    <div class="term">
+      <div class="t-word">Neglect</div>
+      <div class="t-es">Negligencia / desatención</div>
+      Failing to meet a child’s basic needs: food, supervision, medical care, safe housing. It can be serious and ongoing, or it can be a short-term situation.
+    </div>
+    <div class="term">
+      <div class="t-word">Poverty</div>
+      <div class="t-es">Pobreza</div>
+      Lacking money and resources. It makes neglect <b>more likely</b>, but it is <b>not the same thing</b>. A poor family can be loving and safe; a wealthy family can still neglect a child.
+    </div>
+  </div>
+
+  <div class="tension">
+    <b>⚖️ The core tension:</b> two things can be true at the same time.
+    <ul>
+      <li>Some parents truly cannot keep a child safe, and removal is necessary.</li>
+      <li>Some removals happen because a family is poor or unsupported, not because the child is in danger. The author wants these families helped, not separated.</li>
+    </ul>
+    <b>Note:</b> In the United States, neglect is the most common reason children are removed from their homes, and experts debate how often it is really poverty. Rules and numbers differ from country to country, and the article does not name a country.
+  </div>
+
+  <div class="watch">
+    <div class="w-title">👀 While you read, notice…</div>
+    Which paragraphs describe the <b>child’s experience</b> (paragraphs 2–4), and which describe <b>policy proposals</b> (paragraphs 5–6)? What does the article <b>not</b> say about parents who cannot care for their children?
   </div>
 
   <!-- 2. ARTICLE + 3. VOCAB BOXES -->
@@ -407,6 +548,10 @@
     <div class="disc"><span class="q">1</span>The author says calling adopted children “lucky” overlooks the harder realities. Where else do we see a “happy” label hiding a more complicated truth, such as in the workplace or in our own culture?</div>
     <div class="disc"><span class="q">2</span>The article suggests that stronger social support for struggling families could reduce the need for adoption. How far should governments and companies go in supporting families, and who should pay for it?</div>
     <div class="disc"><span class="q">3</span>Some countries have banned international adoption to protect cultural ties, while others keep it open. What are the strongest arguments on each side, and which concerns do you think should come first?</div>
+    <div class="disc"><span class="q">4</span>The article does not say how to tell a family in poverty from a family where a child is in danger. What signs or evidence would you want decision-makers to look at before separating a child from their parents?</div>
+    <div class="disc"><span class="q">5</span>The author is an adoptive parent writing an opinion piece, with no statistics cited. What would make you trust the argument more, and what kinds of voices or data are missing?</div>
+    <div class="disc"><span class="q">6</span>How is adoption talked about in Mexico, in Taiwan, or in your own family and workplace? Is it treated mostly as a happy ending, as a last resort, or as something people avoid discussing?</div>
+    <div class="disc"><span class="q">7</span>Imagine you advise a government with a limited budget. Would you fund (a) support for struggling families, (b) stricter oversight of adoption agencies, or (c) more kinship placements first? Explain your choice and respond to the strongest objection to it.</div>
   </div>
 
   <!-- 5. SELF-PRACTICE -->
