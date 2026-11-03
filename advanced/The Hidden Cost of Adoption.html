@@ -1,0 +1,460 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hidden Cost of Adoption – English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+  :root {
+    --paper: #f3ede0;
+    --ink: #1c2626;
+    --pine: #1f4a3d;
+    --copper: #b4532a;
+    --sand: #ffe08a;
+    --card: #ffffff;
+    --line: #1c2626;
+    --mist: #e3ecdf;
+  }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans', 'Open Sans', sans-serif;
+    line-height: 1.7;
+    font-size: 1.15rem;
+  }
+  .container { max-width: 1400px; margin: auto; padding: 1.5rem 1rem 4rem; }
+
+  /* ---------- Section headings ---------- */
+  .section-title {
+    font-weight: 800;
+    font-size: 1.9rem;
+    color: var(--pine);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: .4rem;
+    border-bottom: 5px solid var(--copper);
+    display: inline-block;
+  }
+
+  /* ---------- Useful expressions ---------- */
+  .expr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .expr {
+    background: var(--card);
+    border: 3px solid var(--line);
+    border-left: 12px solid var(--copper);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    box-shadow: 5px 5px 0 var(--line);
+  }
+  .expr .en { font-size: 1.4rem; font-weight: 800; color: var(--pine); line-height: 1.35; }
+  .expr .es { font-size: 1.1rem; font-weight: 600; color: var(--copper); margin: .3rem 0; }
+  .expr .ex { font-style: italic; font-size: 1.05rem; }
+
+  /* ---------- Article ---------- */
+  .article-title {
+    background: var(--pine);
+    color: #fff;
+    border: 4px solid var(--line);
+    border-radius: 10px;
+    padding: 1.4rem 1.8rem;
+    margin-bottom: 1.6rem;
+    box-shadow: 6px 6px 0 var(--line);
+  }
+  .article-title h2 { margin: 0; font-size: 2.3rem; font-weight: 800; line-height: 1.25; }
+  .article-title p { margin: .4rem 0 0; font-size: 1.2rem; color: var(--sand); font-weight: 700; }
+
+  .para {
+    background: var(--card);
+    border: 3px solid var(--line);
+    border-radius: 10px 10px 0 0;
+    padding: 1.4rem 1.8rem;
+    font-size: 1.35rem;
+    line-height: 1.85;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .para .num {
+    position: absolute; top: -16px; left: 18px;
+    background: var(--copper); color: #fff; font-weight: 800;
+    border: 3px solid var(--line); border-radius: 20px;
+    padding: 0 .9rem; font-size: 1rem; line-height: 1.7;
+  }
+
+  /* Highlighted vocabulary + tooltip ABOVE cursor */
+  .highlight {
+    background: var(--sand);
+    font-weight: 700;
+    border-bottom: 3px solid var(--copper);
+    padding: 0 3px;
+    border-radius: 3px;
+    position: relative;
+    cursor: help;
+  }
+  .highlight::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 240px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: .5rem .8rem;
+    border-radius: 6px;
+    border: 2px solid var(--sand);
+    text-align: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity .15s;
+    z-index: 50;
+    pointer-events: none;
+  }
+  .highlight::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-top-color: var(--sand);
+    opacity: 0; visibility: hidden;
+    transition: opacity .15s;
+    z-index: 51;
+  }
+  .highlight:hover::after, .highlight:hover::before,
+  .highlight:focus::after, .highlight:focus::before { opacity: 1; visibility: visible; }
+
+  /* ---------- Vocabulary boxes ---------- */
+  .vocab-box {
+    background: var(--mist);
+    border: 3px solid var(--line);
+    border-top: 6px solid var(--pine);
+    border-radius: 0 0 10px 10px;
+    padding: 1rem 1.2rem 1.2rem;
+  }
+  .vocab-box .vb-label {
+    font-weight: 800; color: var(--pine); font-size: 1.05rem;
+    text-transform: uppercase; letter-spacing: .06em; margin-bottom: .7rem;
+  }
+  .vocab-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .vocab-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .vcard {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-top: 6px solid var(--copper);
+    border-radius: 6px;
+    padding: .8rem .9rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  .vcard .word { font-size: 1.35rem; font-weight: 800; color: var(--pine); }
+  .vcard .pos { font-size: .85rem; font-weight: 700; color: var(--copper); font-style: italic; }
+  .vcard .def { margin: .3rem 0; }
+  .vcard .es { font-weight: 800; color: var(--copper); }
+  .vcard .ex { font-style: italic; margin-top: .3rem; border-top: 1px dashed #777; padding-top: .3rem; }
+  .speak {
+    background: var(--sand); border: 2px solid var(--line); border-radius: 50%;
+    width: 2.1rem; height: 2.1rem; font-size: 1rem; cursor: pointer; vertical-align: middle;
+    margin-left: .3rem; padding: 0; line-height: 1;
+  }
+  .speak:hover { background: var(--copper); }
+
+  /* ---------- Discussion ---------- */
+  .disc-list { display: grid; gap: 1.2rem; }
+  .disc {
+    background: var(--pine); color: #fff;
+    border: 3px solid var(--line); border-radius: 10px;
+    padding: 1.2rem 1.6rem 1.2rem 5rem;
+    font-size: 1.4rem; font-weight: 600; line-height: 1.6;
+    position: relative; box-shadow: 5px 5px 0 var(--line);
+  }
+  .disc .q {
+    position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%);
+    background: var(--sand); color: var(--ink); font-weight: 800;
+    width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 3px solid var(--line);
+    display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+  }
+
+  /* ---------- Self-practice ---------- */
+  .sp {
+    background: var(--card); border: 3px solid var(--line); border-radius: 10px;
+    margin-bottom: 1rem; overflow: hidden;
+  }
+  .sp summary {
+    cursor: pointer; padding: 1rem 1.4rem; font-weight: 700; font-size: 1.25rem;
+    list-style: none; background: var(--sand);
+  }
+  .sp summary::-webkit-details-marker { display: none; }
+  .sp summary::before { content: "▶ "; color: var(--copper); }
+  .sp[open] summary::before { content: "▼ "; }
+  .sp .ans { padding: 1rem 1.4rem; border-top: 3px solid var(--line); font-size: 1.15rem; }
+  .sp .ans b { color: var(--pine); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .vocab-grid, .vocab-grid.three { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 1.05rem; }
+    .vocab-grid, .vocab-grid.three { grid-template-columns: 1fr; }
+    .para { font-size: 1.15rem; padding: 1.2rem 1rem; }
+    .article-title h2 { font-size: 1.6rem; }
+    .section-title { font-size: 1.5rem; }
+    .disc { font-size: 1.1rem; padding: 1rem 1rem 1rem 4rem; }
+    .disc .q { width: 2.3rem; height: 2.3rem; left: .8rem; font-size: 1.1rem; }
+    .highlight::after { max-width: 190px; font-size: .9rem; }
+  }
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://s3-us-west-2.amazonaws.com/cdn.adopting.com/site/articles/what-is-adoption-and-where-to-begin/what-is-adoption.jpg" alt="👶 The Hidden Cost of Adoption" class="article-image">
+    </div>
+
+
+<div class="container">
+
+  <!-- 1. USEFUL EXPRESSIONS -->
+  <h2 class="section-title">💬 Useful Expressions</h2>
+  <div class="expr-grid">
+    <div class="expr">
+      <div class="en">Speaking from personal experience, …</div>
+      <div class="es">Hablando desde mi experiencia personal, …</div>
+      <div class="ex">“Speaking from personal experience, rolling out new software without training always backfires.”</div>
+    </div>
+    <div class="expr">
+      <div class="en">It is often portrayed as …, but in reality …</div>
+      <div class="es">Suele presentarse como …, pero en realidad …</div>
+      <div class="ex">“Remote work is often portrayed as a perk, but in reality it can blur the line between work and rest.”</div>
+    </div>
+    <div class="expr">
+      <div class="en">There must be recognition that …</div>
+      <div class="es">Debe reconocerse que …</div>
+      <div class="ex">“There must be recognition that safety rules only work if workers feel safe reporting problems.”</div>
+    </div>
+    <div class="expr">
+      <div class="en">That said, … / Even so, …</div>
+      <div class="es">Dicho esto, … / Aun así, …</div>
+      <div class="ex">“The policy is well-intentioned. That said, it ignores how long onboarding actually takes.”</div>
+    </div>
+    <div class="expr">
+      <div class="en">Where … is not possible, … is the next best option.</div>
+      <div class="es">Cuando … no es posible, … es la mejor alternativa.</div>
+      <div class="ex">“Where a full audit is not possible, a targeted spot-check is the next best option.”</div>
+    </div>
+  </div>
+
+  <!-- 2. ARTICLE + 3. VOCAB BOXES -->
+  <h2 class="section-title">⚖️ Article</h2>
+  <div class="article-title">
+    <h2>👶 The Hidden Cost of Adoption</h2>
+    <p>Why adoption policies need to change</p>
+  </div>
+
+  <!-- Paragraph 1 -->
+  <div class="para"><span class="num">1</span>
+    People usually <span class="highlight" tabindex="0" data-tooltip="presentan / retratan">portray</span> adoption as a happy ending to a hard start in life: a child becomes legally part of a new family. Having built my own family this way, I know it can be deeply <span class="highlight" tabindex="0" data-tooltip="satisfactorio, que llena">fulfilling</span>, bringing together people who want a child and a child who needs a home. Yet society tends to call adopted children “lucky,” and that label <span class="highlight" tabindex="0" data-tooltip="pasa por alto">overlooks</span> the harder realities. Often adoption is <span class="highlight" tabindex="0" data-tooltip="tiene su origen en">rooted in</span> poverty, weak protection for families, or a failure of social support. I am grateful for the children in my family, but we must also admit that adoption has <span class="highlight" tabindex="0" data-tooltip="que dura toda la vida">lifelong</span> consequences for the child.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 1</div>
+    <div class="vocab-grid">
+      <div class="vcard"><div class="word">portray <button class="speak" onclick="speakWord('portray')" aria-label="Pronounce portray">🔊</button></div><div class="pos">verb · often passive: “be portrayed as”</div><div class="def">To show or describe someone or something in a particular way.</div><div class="es">Retratar / presentar</div><div class="ex">“The audit was portrayed as a punishment, not a chance to improve.”</div></div>
+      <div class="vcard"><div class="word">fulfilling <button class="speak" onclick="speakWord('fulfilling')" aria-label="Pronounce fulfilling">🔊</button></div><div class="pos">adjective</div><div class="def">Giving you a deep sense of satisfaction and purpose.</div><div class="es">Gratificante / que llena</div><div class="ex">“Training new HR staff is the most fulfilling part of my job.”</div></div>
+      <div class="vcard"><div class="word">overlook <button class="speak" onclick="speakWord('overlook')" aria-label="Pronounce overlook">🔊</button></div><div class="pos">verb</div><div class="def">To fail to notice or consider something important.</div><div class="es">Pasar por alto</div><div class="ex">“The risk assessment overlooked a leaking valve near the loading dock.”</div></div>
+      <div class="vcard"><div class="word">be rooted in <button class="speak" onclick="speakWord('be rooted in')" aria-label="Pronounce be rooted in">🔊</button></div><div class="pos">phrasal expression</div><div class="def">To have something as its basic cause or origin.</div><div class="es">Tener su raíz / origen en</div><div class="ex">“Most of our security incidents are rooted in human error.”</div></div>
+    </div>
+  </div>
+
+  <!-- Paragraph 2 -->
+  <div class="para"><span class="num">2</span>
+    However much love an adoptive family gives, it cannot erase the loss of the child’s biological family. Research indicates that cutting an infant or child off from the mother is traumatic because it <span class="highlight" tabindex="0" data-tooltip="interrumpe, rompe">disrupts</span> the earliest <span class="highlight" tabindex="0" data-tooltip="vínculos">bonds</span>. Adopted children often <span class="highlight" tabindex="0" data-tooltip="batallan con, tienen dificultades con">struggle with</span> social and emotional development, especially <span class="highlight" tabindex="0" data-tooltip="apego">attachment</span>. Afraid of being <span class="highlight" tabindex="0" data-tooltip="rechazo">rejected</span> again, many ask, “Why did my parents leave me?” or “If they left, will you leave me too?” This difficulty trusting and bonding can shape not only the relationship with parents but also friendships and romantic partnerships later in life.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 2</div>
+    <div class="vocab-grid">
+      <div class="vcard"><div class="word">disrupt <button class="speak" onclick="speakWord('disrupt')" aria-label="Pronounce disrupt">🔊</button></div><div class="pos">verb</div><div class="def">To interrupt something so that it cannot continue normally.</div><div class="es">Interrumpir / alterar</div><div class="ex">“A server outage disrupted payroll for two days.”</div></div>
+      <div class="vcard"><div class="word">bond <button class="speak" onclick="speakWord('bond')" aria-label="Pronounce bond">🔊</button></div><div class="pos">noun / verb</div><div class="def">A close emotional connection; to form that connection.</div><div class="es">Vínculo / crear un vínculo</div><div class="ex">“Team-building days help new hires bond with their colleagues.”</div></div>
+      <div class="vcard"><div class="word">struggle with <button class="speak" onclick="speakWord('struggle with')" aria-label="Pronounce struggle with">🔊</button></div><div class="pos">phrasal expression</div><div class="def">To find something very difficult and to have trouble dealing with it.</div><div class="es">Tener dificultades con</div><div class="ex">“Some operators struggle with the new lockout-tagout procedure.”</div></div>
+      <div class="vcard"><div class="word">attachment <button class="speak" onclick="speakWord('attachment')" aria-label="Pronounce attachment">🔊</button></div><div class="pos">noun · psychology</div><div class="def">The deep emotional tie between a child and a caregiver.</div><div class="es">Apego (¡no “archivo adjunto”!)</div><div class="ex">“Secure attachment in childhood helps people trust others as adults.”</div></div>
+    </div>
+  </div>
+
+  <!-- Paragraph 3 -->
+  <div class="para"><span class="num">3</span>
+    Shame and guilt are also common. Adopted people may feel <span class="highlight" tabindex="0" data-tooltip="avergonzados">ashamed</span> of where they come from, or feel guilty for missing their first family even though their adoptive parents love them. Birthdays, holidays and other <span class="highlight" tabindex="0" data-tooltip="hitos, momentos importantes">milestones</span> remind them of who is absent, yet they often <span class="highlight" tabindex="0" data-tooltip="viven su duelo">grieve</span> alone because they are afraid of <span class="highlight" tabindex="0" data-tooltip="herir o disgustar a">upsetting</span> their adoptive family.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 3</div>
+    <div class="vocab-grid">
+      <div class="vcard"><div class="word">ashamed <button class="speak" onclick="speakWord('ashamed')" aria-label="Pronounce ashamed">🔊</button></div><div class="pos">adjective</div><div class="def">Feeling embarrassed or bad about something you are or have done.</div><div class="es">Avergonzado/a</div><div class="ex">“He felt ashamed of missing the safety deadline and asked for help.”</div></div>
+      <div class="vcard"><div class="word">milestone <button class="speak" onclick="speakWord('milestone')" aria-label="Pronounce milestone">🔊</button></div><div class="pos">noun</div><div class="def">An important event or stage in a person’s life or in a project.</div><div class="es">Hito</div><div class="ex">“Reaching 1,000 days without an accident was a big milestone for the plant.”</div></div>
+      <div class="vcard"><div class="word">grieve <button class="speak" onclick="speakWord('grieve')" aria-label="Pronounce grieve">🔊</button></div><div class="pos">verb</div><div class="def">To feel deep sadness, especially after a loss.</div><div class="es">Estar de duelo / llorar una pérdida</div><div class="ex">“HR offers time off so employees can grieve after losing a family member.”</div></div>
+      <div class="vcard"><div class="word">upset <button class="speak" onclick="speakWord('upset')" aria-label="Pronounce upset">🔊</button></div><div class="pos">verb · adj.</div><div class="def">To make someone feel sad, worried or angry (verb); unhappy (adjective).</div><div class="es">Molestar, disgustar / molesto</div><div class="ex">“I didn’t want to upset my manager, so I stayed quiet about the error.”</div></div>
+    </div>
+  </div>
+
+  <!-- Paragraph 4 -->
+  <div class="para"><span class="num">4</span>
+    Adoptees also wrestle with questions of <span class="highlight" tabindex="0" data-tooltip="pertenencia">belonging</span> and identity. Most children share genes, history and cultural <span class="highlight" tabindex="0" data-tooltip="herencia, legado">heritage</span> with their relatives, but adoptees may feel <span class="highlight" tabindex="0" data-tooltip="ajenos, distanciados">alienated</span> because they do not share biology and culture with their family. When they have no information about their family <span class="highlight" tabindex="0" data-tooltip="origen, antecedentes">background</span>, heritage or medical history, even basic questions about who they are can be hard to answer.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 4</div>
+    <div class="vocab-grid">
+      <div class="vcard"><div class="word">belonging <button class="speak" onclick="speakWord('belonging')" aria-label="Pronounce belonging">🔊</button></div><div class="pos">noun</div><div class="def">The feeling of being accepted as part of a group.</div><div class="es">Pertenencia / sentido de pertenencia</div><div class="ex">“A sense of belonging makes expatriates in Taiwan more likely to stay.”</div></div>
+      <div class="vcard"><div class="word">heritage <button class="speak" onclick="speakWord('heritage')" aria-label="Pronounce heritage">🔊</button></div><div class="pos">noun</div><div class="def">The traditions, culture and history passed down in a family or country.</div><div class="es">Herencia cultural / legado</div><div class="ex">“Our diversity programme celebrates the cultural heritage of every team.”</div></div>
+      <div class="vcard"><div class="word">alienated <button class="speak" onclick="speakWord('alienated')" aria-label="Pronounce alienated">🔊</button></div><div class="pos">adjective</div><div class="def">Feeling separate from, or not welcome in, a group you are in.</div><div class="es">Marginado / aislado</div><div class="ex">“Employees who never get feedback can feel alienated from the company.”</div></div>
+      <div class="vcard"><div class="word">background <button class="speak" onclick="speakWord('background')" aria-label="Pronounce background">🔊</button></div><div class="pos">noun</div><div class="def">Your family, education and past experiences; the facts behind a situation.</div><div class="es">Origen / trayectoria / antecedentes</div><div class="ex">“We hire engineers from very different backgrounds.”</div></div>
+    </div>
+  </div>
+
+  <!-- Paragraph 5 -->
+  <div class="para"><span class="num">5</span>
+    Many adoptees are now <span class="highlight" tabindex="0" data-tooltip="expresándose abiertamente">speaking out</span>. They urge society to try every other option before <span class="highlight" tabindex="0" data-tooltip="recurrir a">resorting to</span> adoption. Because separation does so much harm, they call for stronger social support so that families can <span class="highlight" tabindex="0" data-tooltip="mantener, conservar">stay together</span>. Where keeping the family intact is simply not possible, they see <span class="highlight" tabindex="0" data-tooltip="adopción por parientes o amigos cercanos">kinship adoption</span> (adoption by relatives or close friends) as the best route, since it helps keep biological ties alive.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 5</div>
+    <div class="vocab-grid">
+      <div class="vcard"><div class="word">speak out <button class="speak" onclick="speakWord('speak out')" aria-label="Pronounce speak out">🔊</button></div><div class="pos">phrasal verb</div><div class="def">To say publicly and openly what you think, often about a problem.</div><div class="es">Alzar la voz / pronunciarse</div><div class="ex">“Several staff spoke out against the unsafe overtime schedule.”</div></div>
+      <div class="vcard"><div class="word">resort to <button class="speak" onclick="speakWord('resort to')" aria-label="Pronounce resort to">🔊</button></div><div class="pos">phrasal verb</div><div class="def">To do something drastic because nothing else has worked.</div><div class="es">Recurrir a</div><div class="ex">“We only resort to layoffs when every other cost-cutting measure has failed.”</div></div>
+      <div class="vcard"><div class="word">preserve <button class="speak" onclick="speakWord('preserve')" aria-label="Pronounce preserve">🔊</button></div><div class="pos">verb</div><div class="def">To keep something in its original state and protect it from loss.</div><div class="es">Conservar / preservar</div><div class="ex">“Backups preserve our data even if the main server fails.”</div></div>
+      <div class="vcard"><div class="word">kinship <button class="speak" onclick="speakWord('kinship')" aria-label="Pronounce kinship">🔊</button></div><div class="pos">noun</div><div class="def">A family relationship by blood or marriage; a close bond between people.</div><div class="es">Parentesco / lazos familiares</div><div class="ex">“Kinship care lets a child stay with an aunt instead of going to a stranger.”</div></div>
+    </div>
+  </div>
+
+  <!-- Paragraph 6 -->
+  <div class="para"><span class="num">6</span>
+    The author also argues for tighter <span class="highlight" tabindex="0" data-tooltip="supervisión, control">oversight</span> of adoption systems. In recent years, countries across the Americas, Europe, Africa, Asia and Australia have admitted that, as long as <span class="highlight" tabindex="0" data-tooltip="normas, reglamentos">regulations</span> stay weak, agencies will kidnap children or remove them by <span class="highlight" tabindex="0" data-tooltip="mediante coacción, a la fuerza">coercive</span> means to supply both domestic and international adoption. In response, some governments have <span class="highlight" tabindex="0" data-tooltip="prohibido">banned</span> international adoption and favor domestic adoption in order to protect cultural ties. At the same time, open adoption, in which adoptees stay in touch with their biological parents, is becoming more common as societies try to lessen the harm of separation.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 6</div>
+    <div class="vocab-grid">
+      <div class="vcard"><div class="word">oversight <button class="speak" onclick="speakWord('oversight')" aria-label="Pronounce oversight">🔊</button></div><div class="pos">noun · ⚠️ two meanings</div><div class="def">Careful supervision of an activity. (It can also mean a mistake made by not noticing something.)</div><div class="es">Supervisión / control (también: descuido)</div><div class="ex">“The safety committee provides oversight of every contractor.”</div></div>
+      <div class="vcard"><div class="word">regulations <button class="speak" onclick="speakWord('regulations')" aria-label="Pronounce regulations">🔊</button></div><div class="pos">noun · plural</div><div class="def">Official rules made by a government or authority.</div><div class="es">Normativa / reglamentos</div><div class="ex">“New environmental regulations require us to report emissions monthly.”</div></div>
+      <div class="vcard"><div class="word">coercive <button class="speak" onclick="speakWord('coercive')" aria-label="Pronounce coercive">🔊</button></div><div class="pos">adjective</div><div class="def">Using pressure, threats or force to make someone do something.</div><div class="es">Coercitivo / coactivo</div><div class="ex">“Coercive tactics during interviews are illegal and unethical.”</div></div>
+      <div class="vcard"><div class="word">ban <button class="speak" onclick="speakWord('ban')" aria-label="Pronounce ban">🔊</button></div><div class="pos">verb · noun</div><div class="def">To officially forbid something; an official prohibition.</div><div class="es">Prohibir / prohibición</div><div class="ex">“The company banned personal USB drives to protect its network.”</div></div>
+    </div>
+  </div>
+
+  <!-- Paragraph 7 -->
+  <div class="para"><span class="num">7</span>
+    Adoption, although usually carried out with the best <span class="highlight" tabindex="0" data-tooltip="intenciones">intentions</span>, comes at a high emotional cost. If society learns from what adoptees have lived through and gives better support to <span class="highlight" tabindex="0" data-tooltip="que pasan apuros, en dificultades">struggling</span> families, it can protect some of its most <span class="highlight" tabindex="0" data-tooltip="vulnerables">vulnerable</span> members.
+  </div>
+  <div class="vocab-box">
+    <div class="vb-label">📖 Vocabulary · Paragraph 7</div>
+    <div class="vocab-grid three">
+      <div class="vcard"><div class="word">intention <button class="speak" onclick="speakWord('intention')" aria-label="Pronounce intention">🔊</button></div><div class="pos">noun</div><div class="def">What you plan or want to achieve by an action. “With the best intentions” = meaning well.</div><div class="es">Intención</div><div class="ex">“The policy was introduced with the best intentions, but employees found it confusing.”</div></div>
+      <div class="vcard"><div class="word">come at a cost <button class="speak" onclick="speakWord('come at a cost')" aria-label="Pronounce come at a cost">🔊</button></div><div class="pos">collocation</div><div class="def">To have a negative result or price that is not obvious at first.</div><div class="es">Tener un costo / salir caro</div><div class="ex">“Faster production comes at a cost: more fatigue for the night shift.”</div></div>
+      <div class="vcard"><div class="word">vulnerable <button class="speak" onclick="speakWord('vulnerable')" aria-label="Pronounce vulnerable">🔊</button></div><div class="pos">adjective</div><div class="def">Easily hurt, harmed or attacked; in need of protection.</div><div class="es">Vulnerable</div><div class="ex">“Outdated software leaves our systems vulnerable to attacks.”</div></div>
+    </div>
+  </div>
+
+  <!-- 4. DISCUSSION QUESTIONS -->
+  <h2 class="section-title">🗣️ Discussion Questions</h2>
+  <div class="disc-list">
+    <div class="disc"><span class="q">1</span>The author says calling adopted children “lucky” overlooks the harder realities. Where else do we see a “happy” label hiding a more complicated truth, such as in the workplace or in our own culture?</div>
+    <div class="disc"><span class="q">2</span>The article suggests that stronger social support for struggling families could reduce the need for adoption. How far should governments and companies go in supporting families, and who should pay for it?</div>
+    <div class="disc"><span class="q">3</span>Some countries have banned international adoption to protect cultural ties, while others keep it open. What are the strongest arguments on each side, and which concerns do you think should come first?</div>
+  </div>
+
+  <!-- 5. SELF-PRACTICE -->
+  <h2 class="section-title">✏️ Self-Practice Questions</h2>
+
+  <details class="sp">
+    <summary>1. Which sentence correctly uses “be rooted in”?</summary>
+    <div class="ans">
+      a) The workers were rooted in the factory all night.<br>
+      b) The accident was rooted in poor communication between shifts.<br>
+      c) She rooted in the new project very quickly.<br><br>
+      <b>Answer: b.</b> “Be rooted in” describes the basic cause or origin of something (a problem, a belief, a tradition). It is not used for people physically staying somewhere.
+    </div>
+  </details>
+
+  <details class="sp">
+    <summary>2. Complete with the correct word: “Several employees decided to ______ about the unsafe conditions.” (speak out / speak up for / speak over)</summary>
+    <div class="ans">
+      <b>Answer: speak out.</b> “Speak out” means to say publicly what you think about a problem. (“Speak up” is also possible, but it often means to talk louder or to raise a concern in a smaller setting.)
+    </div>
+  </details>
+
+  <details class="sp">
+    <summary>3. Two meanings: In the article, “oversight” means careful supervision. Can you explain a sentence where it means something different?</summary>
+    <div class="ans">
+      <b>Possible answer:</b> “The missing signature was an oversight; nobody noticed it before the audit.” Here “oversight” means a mistake made by failing to notice something. Context tells you which meaning is intended.
+    </div>
+  </details>
+
+  <details class="sp">
+    <summary>4. Rewrite in your own words: “Adoption, though often done with the best intentions, comes at a high emotional cost.”</summary>
+    <div class="ans">
+      <b>Model answer:</b> “Even when people adopt a child out of good motives, the child often pays a heavy emotional price.”<br>
+      <b>Pattern to reuse:</b> “[Action], though often done with the best intentions, comes at a high cost.” Try it with a workplace topic such as strict monitoring, overtime or automation.
+    </div>
+  </details>
+
+</div>
+
+<script>
+  function speakWord(word) {
+    if (!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    speechSynthesis.speak(utterance);
+  }
+</script>
+
+
