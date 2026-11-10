@@ -1,0 +1,232 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dealing with Regret – English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+.rg-page{background:#f6efe2;color:#2b2b2b;font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7;font-size:20px;padding:24px 16px 60px}
+.rg-wrap{max-width:1400px;margin:auto}
+.rg-page h2{font-size:1.7rem;font-weight:800;color:#1f3d36;border-left:10px solid #c8553d;padding-left:14px;margin:48px 0 18px}
+.rg-title{background:#1f3d36;color:#fff;border:4px solid #14281f;border-radius:14px;padding:26px 30px;box-shadow:6px 6px 0 #c8553d}
+.rg-title h1{margin:0;font-size:2.6rem;font-weight:800;line-height:1.2}
+.rg-title p{margin:6px 0 0;font-size:1.3rem;color:#f2d98a;font-weight:600}
+.rg-intro{background:#fff;border:3px solid #1f3d36;border-radius:12px;padding:18px 24px;margin-top:22px;font-size:1.25rem;font-weight:600}
+.rg-expr{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.rg-expr div{background:#fff;border:3px solid #c8553d;border-radius:12px;padding:14px 18px;box-shadow:4px 4px 0 #c8553d33}
+.rg-expr b{font-size:1.3rem;color:#a63d28;display:block}
+.rg-expr i{display:block;color:#1f3d36;font-weight:600}
+.rg-expr span{display:block;font-size:.95rem;color:#444;margin-top:4px}
+.rg-article{background:#fff;border:3px solid #2b2b2b;border-radius:14px;padding:10px 30px 30px}
+.rg-article h3{font-size:2rem;font-weight:800;margin:20px 0 8px;color:#1f3d36}
+.rg-article p{margin:20px 0 12px;font-size:1.3rem}
+.rg-extra{border:3px dashed #c8553d;border-radius:12px;padding:6px 20px 14px;margin-top:22px;background:#fff4ec}
+.rg-extra h4{margin:12px 0 0;font-size:1.25rem;color:#a63d28}
+.rg-tag{display:inline-block;background:#c8553d;color:#fff;font-size:.8rem;font-weight:800;padding:2px 10px;border-radius:12px;margin-right:8px;vertical-align:middle}
+.hl{position:relative;background:#fff176;font-weight:700;border-bottom:3px solid #e07b00;padding:0 3px;cursor:help;border-radius:3px}
+.hl::after{content:attr(data-tooltip);position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#2b2b2b;color:#fff;font-size:.95rem;font-weight:600;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;z-index:20;transition:opacity .15s}
+.hl::before{content:"";position:absolute;bottom:110%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#2b2b2b;opacity:0;z-index:20}
+.hl:hover::after,.hl:hover::before,.hl:focus::after,.hl:focus::before{opacity:1}
+.rg-vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;background:#e3ecd9;border:3px solid #5f7f4f;border-radius:12px;padding:14px;margin-bottom:8px}
+.rg-card{background:#fff;border:2px solid #5f7f4f;border-radius:10px;padding:10px 14px;font-size:.95rem;line-height:1.5}
+.rg-card .w{font-size:1.25rem;font-weight:800;color:#1f3d36}
+.rg-card .pos{font-size:.8rem;font-weight:700;background:#e8b93c;color:#2b2b2b;border-radius:8px;padding:1px 8px;margin-left:4px}
+.rg-card .es{color:#a63d28;font-weight:700}
+.rg-card .ex{color:#444;font-style:italic;margin-top:4px}
+.rg-card button{border:2px solid #1f3d36;background:#fff;border-radius:8px;cursor:pointer;font-size:1rem;padding:0 6px}
+.rg-card button:hover{background:#e8b93c}
+.rg-disc{counter-reset:q;list-style:none;padding:0}
+.rg-disc li{counter-increment:q;background:#fff;border:3px solid #1f3d36;border-radius:12px;padding:16px 20px 16px 70px;margin-bottom:14px;position:relative;font-size:1.25rem;font-weight:600}
+.rg-disc li::before{content:counter(q);position:absolute;left:16px;top:12px;width:40px;height:40px;border-radius:50%;background:#c8553d;color:#fff;font-weight:800;text-align:center;line-height:40px}
+.rg-disc em{color:#a63d28}
+details{background:#fff;border:3px solid #5f7f4f;border-radius:12px;margin-bottom:12px;padding:12px 20px;font-size:1.15rem}
+summary{cursor:pointer;font-weight:700;color:#1f3d36}
+details p{margin:10px 0 0;padding:10px 14px;background:#fff9c4;border-left:6px solid #e07b00;border-radius:6px}
+@media(max-width:700px){.rg-page{font-size:17px}.rg-title h1{font-size:1.8rem}.rg-expr{grid-template-columns:1fr}.rg-article{padding:6px 16px 20px}.rg-article p{font-size:1.1rem}.hl::after{white-space:normal;width:180px}}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWNhdILRMM9VpADTGUfHlf3EWJ-SEF-58J7MwC6LxWNcZxSmA0IsdFrzs&s=10" alt="🛤️ Dealing with Regret" class="article-image">
+    </div>
+
+
+<div class="rg-page"><div class="rg-wrap">
+
+<div class="rg-title">
+  <h1>🛤️ Dealing with Regret</h1>
+  <p>What to do when you've made mistakes</p>
+</div>
+<div class="rg-intro">Regret helps you learn from mistakes, but it's hard to learn lessons from regrets about things you didn't do. You can address this kind of regret by changing your thoughts.</div>
+
+<h2>💬 Useful Expressions</h2>
+<div class="rg-expr">
+  <div><b>I have mixed feelings about…</b><i>Tengo sentimientos encontrados sobre…</i><span>"I have mixed feelings about turning down the transfer to Taipei."</span></div>
+  <div><b>Looking back, I wish I had…</b><i>Mirando atrás, desearía haber…</i><span>"Looking back, I wish I had asked for more training."</span></div>
+  <div><b>It could be argued that…</b><i>Se podría argumentar que…</i><span>"It could be argued that not acting was also a decision."</span></div>
+  <div><b>What I take from that is…</b><i>Lo que me llevo de eso es…</i><span>"What I take from that is that I value learning."</span></div>
+</div>
+
+<h2>📖 Article</h2>
+<div class="rg-article">
+<h3>🛤️ Dealing with Regret</h3>
+
+<p>We all make more decisions throughout our lives than we can count. Some of those decisions bring us great happiness, while others leave us disappointed. The choices that don't <span class="hl" tabindex="0" data-tooltip="resultar como se esperaba">turn out</span> as we <span class="hl" tabindex="0" data-tooltip="imaginar, visualizar">envisioned</span> can <span class="hl" tabindex="0" data-tooltip="llevar a, provocar">lead to</span> regret.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">turn out</span> <button onclick="speakWord('turn out')" aria-label="Pronounce turn out">🔊</button><span class="pos">phrasal verb</span>
+    <div>To end up in a particular way.</div><div class="es">🇲🇽 resultar (de cierta manera)</div><div class="ex">"The safety drill didn't turn out as planned."</div></div>
+  <div class="rg-card"><span class="w">envision</span> <button onclick="speakWord('envision')" aria-label="Pronounce envision">🔊</button><span class="pos">verb</span>
+    <div>To picture something as a future possibility.</div><div class="es">🇲🇽 imaginar, visualizar</div><div class="ex">"We envisioned a zero-incident year."</div></div>
+  <div class="rg-card"><span class="w">lead to</span> <button onclick="speakWord('lead to')" aria-label="Pronounce lead to">🔊</button><span class="pos">phrasal verb</span>
+    <div>To cause something to happen.</div><div class="es">🇲🇽 llevar a, provocar</div><div class="ex">"Skipping backups can lead to data loss."</div></div>
+</div>
+
+<p>Regret comes in two main forms. Sometimes people regret specific actions, like <span class="hl" tabindex="0" data-tooltip="perder los estribos">losing their temper</span> and yelling at a loved one. Other times people regret things they didn't do – like a career path they didn't <span class="hl" tabindex="0" data-tooltip="seguir, dedicarse a">pursue</span> or a person they never <span class="hl" tabindex="0" data-tooltip="salir con (alguien)">dated</span>, etc. (et cetera). Many people <span class="hl" tabindex="0" data-tooltip="batallar con, sufrir con">struggle more with</span> this second type of regret because it is harder to learn from and resolve. Often we can't even know with certainty that the decision was a mistake, yet we still find ourselves <span class="hl" tabindex="0" data-tooltip="preguntándonos">wondering</span> if we should have done something different.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">lose your temper</span> <button onclick="speakWord('lose your temper')" aria-label="Pronounce lose your temper">🔊</button><span class="pos">idiom</span>
+    <div>To suddenly become very angry.</div><div class="es">🇲🇽 perder los estribos</div><div class="ex">"He lost his temper during the budget meeting."</div></div>
+  <div class="rg-card"><span class="w">pursue</span> <button onclick="speakWord('pursue')" aria-label="Pronounce pursue">🔊</button><span class="pos">verb</span>
+    <div>To follow a goal or career.</div><div class="es">🇲🇽 seguir, dedicarse a</div><div class="ex">"She pursued a career in HR."</div></div>
+  <div class="rg-card"><span class="w">date</span> <button onclick="speakWord('date')" aria-label="Pronounce date">🔊</button><span class="pos">verb</span>
+    <div>To have romantic meetings with someone.</div><div class="es">🇲🇽 salir con alguien</div><div class="ex">"They dated for a year before moving to Taiwan."</div></div>
+  <div class="rg-card"><span class="w">struggle with</span> <button onclick="speakWord('struggle with')" aria-label="Pronounce struggle with">🔊</button><span class="pos">phrasal verb</span>
+    <div>To find something very difficult.</div><div class="es">🇲🇽 batallar con</div><div class="ex">"Many staff struggle with the new system."</div></div>
+</div>
+
+<div class="rg-extra">
+  <h4><span class="rg-tag">EXTRA</span>Acting and not acting</h4>
+  <p>One study found that regrets about actions <span class="hl" tabindex="0" data-tooltip="suelen (hacer algo)">tend to</span> get less intense <span class="hl" tabindex="0" data-tooltip="con el tiempo">over time</span>. But regrets about things people didn't do tend to <span class="hl" tabindex="0" data-tooltip="empeorar">get worse</span> with time. This might be because it is easier to learn from something one did wrong than from something one did not do at all.</p>
+  <div class="rg-vocab">
+  <div class="rg-card"><span class="w">tend to</span> <button onclick="speakWord('tend to')" aria-label="Pronounce tend to">🔊</button><span class="pos">expression</span>
+    <div>To usually do or be something.</div><div class="es">🇲🇽 soler, tender a</div><div class="ex">"Accidents tend to happen when people rush."</div></div>
+  <div class="rg-card"><span class="w">get worse</span> <button onclick="speakWord('get worse')" aria-label="Pronounce get worse">🔊</button><span class="pos">phrasal verb</span>
+    <div>To become less good.</div><div class="es">🇲🇽 empeorar</div><div class="ex">"The network problem got worse after the update."</div></div>
+  <div class="rg-card"><span class="w">over time</span> <button onclick="speakWord('over time')" aria-label="Pronounce over time">🔊</button><span class="pos">expression</span>
+    <div>Gradually, as time passes.</div><div class="es">🇲🇽 con el tiempo</div><div class="ex">"Trust grows over time."</div></div>
+</div>
+</div>
+
+<p>Regret has a purpose: to help us recognize our past mistakes and avoid making similar ones in the future. For regrets about specific actions, we can <span class="hl" tabindex="0" data-tooltip="comprometerse a hacer, emprender">undertake</span> to do better and <span class="hl" tabindex="0" data-tooltip="tomar medidas">take steps</span> to repair any damage our actions caused. These steps can <span class="hl" tabindex="0" data-tooltip="aliviar">ease</span> the emotional distress associated with the regrets and improve our lives by helping us avoid future mistakes. But if the regret involves something we didn't do, it can be harder to resolve. In those cases, all we can do is change our thinking.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">undertake</span> <button onclick="speakWord('undertake')" aria-label="Pronounce undertake">🔊</button><span class="pos">verb</span>
+    <div>To promise or start to do something.</div><div class="es">🇲🇽 emprender, comprometerse a</div><div class="ex">"We undertook to fix the leak by Friday."</div></div>
+  <div class="rg-card"><span class="w">take steps</span> <button onclick="speakWord('take steps')" aria-label="Pronounce take steps">🔊</button><span class="pos">expression</span>
+    <div>To act in order to solve a problem.</div><div class="es">🇲🇽 tomar medidas</div><div class="ex">"Management took steps to reduce noise levels."</div></div>
+  <div class="rg-card"><span class="w">ease</span> <button onclick="speakWord('ease')" aria-label="Pronounce ease">🔊</button><span class="pos">verb</span>
+    <div>To make a problem or pain less severe.</div><div class="es">🇲🇽 aliviar</div><div class="ex">"A clear policy can ease employee stress."</div></div>
+</div>
+
+<p>When dealing with regret about things we did not do, we must remember that uncertainty is <span class="hl" tabindex="0" data-tooltip="propio de, inherente a">inherent</span> to these types of feelings. We can't be sure if we would have been happier in a different career, if the business we didn't start would have succeeded or if we would have been happily married to someone we didn't date. We can think and think about what could have happened, but <span class="hl" tabindex="0" data-tooltip="al final, a fin de cuentas">in the end</span> we are just <span class="hl" tabindex="0" data-tooltip="especulando">speculating</span>.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">inherent</span> <button onclick="speakWord('inherent')" aria-label="Pronounce inherent">🔊</button><span class="pos">adjective</span>
+    <div>A natural, permanent part of something.</div><div class="es">🇲🇽 inherente, propio de</div><div class="ex">"Some risk is inherent to chemical handling."</div></div>
+  <div class="rg-card"><span class="w">in the end</span> <button onclick="speakWord('in the end')" aria-label="Pronounce in the end">🔊</button><span class="pos">expression</span>
+    <div>Finally, after everything is considered.</div><div class="es">🇲🇽 al final, a fin de cuentas</div><div class="ex">"In the end, the team chose the cheaper server."</div></div>
+  <div class="rg-card"><span class="w">speculate</span> <button onclick="speakWord('speculate')" aria-label="Pronounce speculate">🔊</button><span class="pos">verb</span>
+    <div>To guess without knowing the facts.</div><div class="es">🇲🇽 especular</div><div class="ex">"Let's not speculate about the cause of the outage."</div></div>
+</div>
+
+<p>Further, sometimes you may have had good reasons for not taking other paths. If you understand the reason why you made your past choices, you might regret them less. <span class="hl" tabindex="0" data-tooltip="asimismo, de igual manera">Likewise</span>, it's important to remember the positive things about your current life. No situation is perfect, so it's best to accept that good and bad often <span class="hl" tabindex="0" data-tooltip="ir de la mano">go hand in hand</span>.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">likewise</span> <button onclick="speakWord('likewise')" aria-label="Pronounce likewise">🔊</button><span class="pos">adverb</span>
+    <div>In the same way; also.</div><div class="es">🇲🇽 asimismo, igualmente</div><div class="ex">"Review the safety rules. Likewise, update the checklist."</div></div>
+  <div class="rg-card"><span class="w">go hand in hand</span> <button onclick="speakWord('go hand in hand')" aria-label="Pronounce go hand in hand">🔊</button><span class="pos">idiom</span>
+    <div>To be closely connected.</div><div class="es">🇲🇽 ir de la mano</div><div class="ex">"Good training and low turnover go hand in hand."</div></div>
+  <div class="rg-card"><span class="w">it's best to</span> <button onclick="speakWord('it\'s best to')" aria-label="Pronounce it's best to">🔊</button><span class="pos">expression</span>
+    <div>The wisest choice is to.</div><div class="es">🇲🇽 lo mejor es</div><div class="ex">"It's best to report a near miss immediately."</div></div>
+</div>
+
+<p>Finally, a lost opportunity you regret might still reveal something about yourself that you can <span class="hl" tabindex="0" data-tooltip="actuar en consecuencia">act on</span>. For example, if you regret not trying to become an artist, that shows you value creativity. Even if you cannot change your career, you need not <span class="hl" tabindex="0" data-tooltip="perder la esperanza de">despair of</span> expressing your artistic side <span class="hl" tabindex="0" data-tooltip="por completo">altogether</span>. You may be able to ease the regret by finding a creative hobby.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">act on</span> <button onclick="speakWord('act on')" aria-label="Pronounce act on">🔊</button><span class="pos">phrasal verb</span>
+    <div>To do something because of information or a feeling.</div><div class="es">🇲🇽 actuar según</div><div class="ex">"HR acted on the survey results."</div></div>
+  <div class="rg-card"><span class="w">despair of</span> <button onclick="speakWord('despair of')" aria-label="Pronounce despair of">🔊</button><span class="pos">phrasal verb</span>
+    <div>To lose hope about something.</div><div class="es">🇲🇽 perder la esperanza de</div><div class="ex">"Don't despair of finding a solution."</div></div>
+  <div class="rg-card"><span class="w">altogether</span> <button onclick="speakWord('altogether')" aria-label="Pronounce altogether">🔊</button><span class="pos">adverb</span>
+    <div>Completely.</div><div class="es">🇲🇽 por completo</div><div class="ex">"They dropped the project altogether."</div></div>
+</div>
+
+<p>Regret is <span class="hl" tabindex="0" data-tooltip="doloroso">painful</span>, but if we <span class="hl" tabindex="0" data-tooltip="reaccionar ante, responder a">respond to</span> it well, we can find <span class="hl" tabindex="0" data-tooltip="consuelo, alivio">comfort</span> in the present and maybe even improve our lives.</p>
+<div class="rg-vocab">
+  <div class="rg-card"><span class="w">painful</span> <button onclick="speakWord('painful')" aria-label="Pronounce painful">🔊</button><span class="pos">adjective</span>
+    <div>Causing physical or emotional hurt.</div><div class="es">🇲🇽 doloroso</div><div class="ex">"Layoffs are painful for everyone."</div></div>
+  <div class="rg-card"><span class="w">respond to</span> <button onclick="speakWord('respond to')" aria-label="Pronounce respond to">🔊</button><span class="pos">phrasal verb</span>
+    <div>To react to something.</div><div class="es">🇲🇽 reaccionar ante</div><div class="ex">"How did IT respond to the incident?"</div></div>
+  <div class="rg-card"><span class="w">comfort</span> <button onclick="speakWord('comfort')" aria-label="Pronounce comfort">🔊</button><span class="pos">noun</span>
+    <div>A feeling of relief and calm.</div><div class="es">🇲🇽 consuelo, alivio</div><div class="ex">"She found comfort in a clear plan."</div></div>
+</div>
+</div>
+
+<h2>🗣️ Discussion Questions</h2>
+<ol class="rg-disc">
+  <li>Many people read Robert Frost's <em>"The Road Not Taken"</em> as a celebration of bold choices. Yet the speaker says both roads were "really about the same." Is the poem about bravery, or about the stories we tell ourselves later? Support your view.</li>
+  <li>The extra paragraph says regrets about things we <em>didn't</em> do get worse over time. Do you agree? Describe a chance you passed up, and explain how you feel about it today.</li>
+  <li>Imagine you are telling the story of one big career decision twenty years from now. Would you tell it "with a sigh" or with a smile? What might you do <em>now</em> to change that ending?</li>
+</ol>
+
+<h2>✍️ Self-Practice Questions</h2>
+<details><summary>1. According to the article, why is regret about things we didn't do harder to resolve?</summary>
+<p>Because we can't know what would have happened, so we are only speculating, and there is no clear mistake to repair or learn from.</p></details>
+<details><summary>2. Your colleague says, "I wish I had studied abroad. I'll never be an international person now." Using the article, what could you say?</summary>
+<p>Possible answer: "You had good reasons at the time. Also, your regret shows you value international experience. You could look for a global project, take a language course or ask about a short assignment abroad."</p></details>
+<details><summary>3. Rewrite using a useful expression: "I am happy and sad about leaving my old team."</summary>
+<p>"I have mixed feelings about leaving my old team."</p></details>
+<details><summary>4. Complete with your own idea: "If I understand why I made a choice, I might regret it less, because…"</summary>
+<p>Possible answer: "…I can see that I was doing my best with the information, time and resources I had back then."</p></details>
+
+</div></div>
+
+<script>
+function speakWord(word){
+  const u=new SpeechSynthesisUtterance(word);
+  u.lang='en-US';u.rate=0.9;
+  speechSynthesis.cancel();speechSynthesis.speak(u);
+}
+</script>
