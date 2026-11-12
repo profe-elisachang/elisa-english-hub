@@ -9,15 +9,14 @@
 body{font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7;background:#fbf3e4;color:#2b1d16;margin:0}
 .wrap{max-width:1400px;margin:auto;padding:1.5rem 1.2rem 3rem}
 h2{font-size:2.1rem;font-weight:800;margin:2.5rem 0 1rem;padding-left:.8rem;border-left:10px solid #c62828}
-.title{font-size:2.8rem;font-weight:800;color:#8b1a1a;margin:.5rem 0 .3rem}
-.sub{font-size:1.3rem;font-weight:600;color:#0f5c5c;margin:0 0 1rem}
+.title{font-size:2.8rem;font-weight:800;color:#8b1a1a;margin:.5rem 0 1rem;line-height:1.25}
 .expr{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
 .expr div{background:#fff;border:3px solid #0f5c5c;border-radius:10px;padding:1rem 1.2rem;box-shadow:4px 4px 0 #0f5c5c;font-size:1.25rem}
 .expr b{color:#8b1a1a;font-size:1.5rem;display:block}
 .expr i{color:#0f5c5c;font-weight:700;display:block}
 .expr small{font-size:1.1rem;display:block;margin-top:.3rem}
-.para{background:#fff;border:3px solid #2b1d16;border-radius:10px;padding:1.2rem 1.5rem;font-size:1.6rem;line-height:1.8;box-shadow:5px 5px 0 #2b1d16}
-.hl{background:#ffe066;font-weight:700;border-bottom:3px solid #c62828;padding:0 3px;position:relative;cursor:help}
+.para{background:#fff;border-left:10px solid #f2a900;border-radius:6px;padding:1.2rem 1.6rem;font-size:1.6rem;line-height:1.85;margin:2rem 0 0;box-shadow:0 2px 0 #d9c9a8}
+.hl{background:#ffe066;font-weight:700;border-bottom:3px solid #c62828;padding:0 3px;cursor:help}
 [data-tooltip]{position:relative}
 [data-tooltip]::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#2b1d16;color:#fff;font-size:1.1rem;font-weight:600;line-height:1.3;padding:.4rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;z-index:20;transition:opacity .15s}
 [data-tooltip]::before{content:"";position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);border:8px solid transparent;border-top-color:#2b1d16;border-bottom:0;opacity:0;z-index:20;transition:opacity .15s}
@@ -30,13 +29,13 @@ h2{font-size:2.1rem;font-weight:800;margin:2.5rem 0 1rem;padding-left:.8rem;bord
 .card .pos{font-style:italic;color:#555;font-size:1rem}
 .card .es{font-weight:800;color:#0f5c5c}
 .card .ex{border-top:2px dashed #2b1d16;margin-top:.4rem;padding-top:.4rem}
-ol.q{font-size:1.4rem;padding-left:1.6rem}
-ol.q li{margin:.8rem 0;background:#fff;border:3px solid #c62828;border-radius:10px;padding:.8rem 1rem;list-style-position:inside}
+ol.q{font-size:1.4rem;padding-left:0;list-style:none}
+ol.q li{margin:.8rem 0;background:#fff;border:3px solid #c62828;border-radius:10px;padding:.8rem 1rem}
 details{background:#fff;border:3px solid #0f5c5c;border-radius:10px;margin:.8rem 0;padding:.8rem 1.1rem;font-size:1.3rem}
 summary{font-weight:800;cursor:pointer;color:#0f5c5c}
 details p{margin:.6rem 0 0;border-left:6px solid #f2a900;padding-left:.8rem}
 @media(max-width:1100px){.vgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.vgrid{grid-template-columns:1fr}.para{font-size:1.25rem}.title{font-size:2rem}[data-tooltip]::after{white-space:normal;width:180px}}
+@media(max-width:640px){.vgrid{grid-template-columns:1fr}.para{font-size:1.25rem;padding:1rem}.title{font-size:2rem}[data-tooltip]::after{white-space:normal;width:180px}}
 
 .article-image-container {
     max-width: 1400px;
@@ -93,7 +92,6 @@ details p{margin:.6rem 0 0;border-left:6px solid #f2a900;padding-left:.8rem}
 
 <div class="wrap">
 <div class="title">🥤🍅 Wait, Coke and Ketchup Were Once Medicine?</div>
-<p class="sub">How food products reinvent their image over time</p>
 
 <h2>💬 Useful Expressions</h2>
 <div class="expr">
@@ -105,20 +103,26 @@ details p{margin:.6rem 0 0;border-left:6px solid #f2a900;padding-left:.8rem}
 
 <h2>📖 The Article</h2>
 
-<div class="para">Foods can change their image over time. Some products once <span class="hl" tabindex="0" data-tooltip="considerados / creídos">believed</span> to have healing power are now simply <span class="hl" tabindex="0" data-tooltip="botanas / refrigerios">snacks</span> or drinks. Two famous cases are Coca-Cola and ketchup. Today, most people think of Coca-Cola as a sugary, <span class="hl" tabindex="0" data-tooltip="con gas, burbujeante">fizzy</span> soda to <span class="hl" tabindex="0" data-tooltip="acompañar (una comida)">go with</span> fast food. Its original recipe, however, was <span class="hl" tabindex="0" data-tooltip="enormemente">vastly</span> different. Dr. John S. Pemberton <span class="hl" tabindex="0" data-tooltip="lanzó (al mercado)">launched</span> it in the late 1800s as a medicinal <span class="hl" tabindex="0" data-tooltip="tónico, reconstituyente">tonic</span>.</div>
+<div class="para" style="margin-top:0">Food has a way of <span class="hl" tabindex="0" data-tooltip="reinventarse">reinventing</span> itself over time. Some products that were once <span class="hl" tabindex="0" data-tooltip="se creía que tenían">believed to</span> have <span class="hl" tabindex="0" data-tooltip="medicinal">medicinal</span> value are now treated as <span class="hl" tabindex="0" data-tooltip="de todos los días, cotidianos">everyday</span> snacks or drinks. Coca-Cola and ketchup are two famous examples.</div>
 <div class="vgrid" id="v1"></div>
 
-<div class="para" style="margin-top:1.5rem">Pemberton had been badly injured in the Civil War and <span class="hl" tabindex="0" data-tooltip="desarrolló / contrajo">developed</span> a <span class="hl" tabindex="0" data-tooltip="grave">severe</span> morphine addiction. He created a sweet syrup from coca leaves and kola nut, hoping for a <span class="hl" tabindex="0" data-tooltip="estímulo, subidón de energía">pick-me-up</span> without alcohol or other drugs. He sold it as a <span class="hl" tabindex="0" data-tooltip="remedio para todo">cure-all</span> to be mixed into soda water, and ads <span class="hl" tabindex="0" data-tooltip="afirmaban">claimed</span> it eased headaches, nerve pain, and even a low mood. Back then, this sounded believable: <span class="hl" tabindex="0" data-tooltip="con gas">carbonated</span> water was thought to be healthy, and doctors often recommended coca leaves as a <span class="hl" tabindex="0" data-tooltip="estimulante">stimulant</span>.</div>
+<div class="para">Coca-Cola is one of the most popular drinks in the world. Today, most people see it as a sweet, <span class="hl" tabindex="0" data-tooltip="burbujeante, con gas">bubbly</span> soda often enjoyed with fast food. However, the original recipe of Coca-Cola <span class="hl" tabindex="0" data-tooltip="enormemente">vastly</span> differs from the drink we know today. It was originally developed and <span class="hl" tabindex="0" data-tooltip="promocionado como">marketed as</span> a medicinal <span class="hl" tabindex="0" data-tooltip="tónico, reconstituyente">tonic</span> by Dr. John S. Pemberton in the late 1800s.</div>
 <div class="vgrid" id="v2"></div>
 
-<div class="para" style="margin-top:1.5rem">As people realized how addictive and harmful cocaine is, public <span class="hl" tabindex="0" data-tooltip="preocupación">concern</span> grew, and the company <span class="hl" tabindex="0" data-tooltip="eliminó / retiró">took out</span> the cocaine-containing extract. It kept using coca leaves with the cocaine removed, while caffeine provided a <span class="hl" tabindex="0" data-tooltip="leve, suave">mild</span> lift. Better bottling soon made fizzy drinks <span class="hl" tabindex="0" data-tooltip="algo común, de todos los días">commonplace</span>, and people <span class="hl" tabindex="0" data-tooltip="poco a poco">gradually</span> stopped seeing them mainly as health products. What began as a medicinal <span class="hl" tabindex="0" data-tooltip="mezcla, brebaje">concoction</span> became a refreshing <span class="hl" tabindex="0" data-tooltip="gusto, placer (que uno se permite)">indulgence</span> enjoyed worldwide.</div>
+<div class="para">Pemberton created the drink as a way to help with the <span class="hl" tabindex="0" data-tooltip="grave">severe</span> <span class="hl" tabindex="0" data-tooltip="morfina (analgésico muy adictivo)">morphine</span> addiction he developed after getting seriously <span class="hl" tabindex="0" data-tooltip="herido, lesionado">injured</span> in the Civil War. He made a sweet <span class="hl" tabindex="0" data-tooltip="jarabe">syrup</span> with ingredients like coca leaves and kola nut, hoping to offer <span class="hl" tabindex="0" data-tooltip="estimulación">stimulation</span> without the need for alcohol or other drugs. Pemberton marketed the syrup as a <span class="hl" tabindex="0" data-tooltip="remedio para todo">cure-all</span> that could be added to soda water. Advertisements claimed that the drink could treat conditions such as headaches, nerve pain, and even a low mood. At the time, such claims seemed believable because <span class="hl" tabindex="0" data-tooltip="con gas, carbonatada">carbonated</span> water was thought to have health benefits, while coca leaves were often <span class="hl" tabindex="0" data-tooltip="recomendadas">recommended</span> by doctors as a <span class="hl" tabindex="0" data-tooltip="estimulante">stimulant</span>.</div>
 <div class="vgrid" id="v3"></div>
 
-<div class="para" style="margin-top:1.5rem">Ketchup has also been <span class="hl" tabindex="0" data-tooltip="reinventado su imagen">rebranded</span> along the way. Most people picture a sweet, <span class="hl" tabindex="0" data-tooltip="de sabor ácido y picante">tangy</span> dip for fries, but that was not always the case. Its roots are often traced to southern China, where <span class="hl" tabindex="0" data-tooltip="costeras">coastal</span> communities made a <span class="hl" tabindex="0" data-tooltip="fermentada">fermented</span> fish sauce, sometimes called "kue-chiap." It was <span class="hl" tabindex="0" data-tooltip="duradera, de larga vida">long-lasting</span> and easy to store, so sailors carried it on their voyages. By the 1700s it had <span class="hl" tabindex="0" data-tooltip="se había extendido">spread</span> to Europe, where cooks <span class="hl" tabindex="0" data-tooltip="adaptaron">adapted</span> the recipe using anchovies, shallots, horseradish, and nutmeg.</div>
+<div class="para">As the addictive and harmful effects of <span class="hl" tabindex="0" data-tooltip="cocaína">cocaine</span> became widely recognized, Coca-Cola removed the cocaine-containing coca <span class="hl" tabindex="0" data-tooltip="extracto">extract</span> from the drink after growing public concern. The company later used processed coca leaves without cocaine while continuing to provide a <span class="hl" tabindex="0" data-tooltip="leve, suave">mild</span> stimulating effect through caffeine. With advancements in bottling, carbonated drinks soon became <span class="hl" tabindex="0" data-tooltip="algo común, habitual">commonplace</span>, and people gradually stopped viewing them mainly as health products. What began as a medicinal <span class="hl" tabindex="0" data-tooltip="mezcla, brebaje">concoction</span> was <span class="hl" tabindex="0" data-tooltip="con el tiempo, finalmente">eventually</span> transformed into a sweet and <span class="hl" tabindex="0" data-tooltip="refrescante">refreshing</span> <span class="hl" tabindex="0" data-tooltip="gusto, antojo (que uno se permite)">indulgence</span> enjoyed worldwide today.</div>
 <div class="vgrid" id="v4"></div>
 
-<div class="para" style="margin-top:1.5rem">Modern tomato ketchup <span class="hl" tabindex="0" data-tooltip="surgió">emerged</span> in the US in the early 1800s, when tomatoes were being promoted as a healthy food, even as a help for liver problems. One American doctor sold tomato ketchup as a <span class="hl" tabindex="0" data-tooltip="remedio">remedy</span> for <span class="hl" tabindex="0" data-tooltip="indigestión">indigestion</span>. Many doctors <span class="hl" tabindex="0" data-tooltip="descartaron / rechazaron">dismissed</span> these claims, yet its popularity kept growing. Only with the fast-food boom of the mid-1900s did ketchup <span class="hl" tabindex="0" data-tooltip="adquirió">gain</span> its current image as the natural partner of fries, burgers, and hot dogs. A drink once sold as a cure and a sauce once linked to health benefits are now ordinary parts of daily meals, which shows how food, culture, and marketing keep <span class="hl" tabindex="0" data-tooltip="remodelando">reshaping</span> what we eat and drink.</div>
+<div class="para">Like Coca-Cola, ketchup has undergone serious <span class="hl" tabindex="0" data-tooltip="cambio de imagen de marca">rebranding</span> throughout its history. Most people think of ketchup as a sweet tangy <span class="hl" tabindex="0" data-tooltip="condimento, salsa">condiment</span> perfect for dipping fries, but this has not always been the case. The origins of ketchup are often traced back to southern China. People in <span class="hl" tabindex="0" data-tooltip="costeros">coastal</span> towns made a <span class="hl" tabindex="0" data-tooltip="fermentada">fermented</span> fish sauce sometimes called "kue-chiap." Easy to store and long-lasting, it became popular with sailors, who carried it with them across the seas. By the 1700s, this sauce had spread across Europe, where people <span class="hl" tabindex="0" data-tooltip="adaptaron">adapted</span> recipes to suit local tastes by using ingredients such as anchovies, shallots, horseradish, and nutmeg.</div>
 <div class="vgrid" id="v5"></div>
+
+<div class="para">Modern tomato-based ketchup was developed in the US in the early 19th century, when tomatoes were <span class="hl" tabindex="0" data-tooltip="muy promovidos">widely promoted</span> as a healthy food with medicinal benefits. Specifically, they were believed to help treat liver problems. One American doctor promoted tomato ketchup as a cure for <span class="hl" tabindex="0" data-tooltip="indigestión">indigestion</span>. Although many doctors <span class="hl" tabindex="0" data-tooltip="descartaron, desestimaron">dismissed</span> these claims, tomato ketchup's popularity continued to grow across the United States. It wasn't until the <span class="hl" tabindex="0" data-tooltip="auge, boom">explosion</span> of fast food in the mid-1900s that ketchup finally developed its current <span class="hl" tabindex="0" data-tooltip="reputación, imagen">reputation</span> as a familiar partner for fries, burgers, and hot dogs.</div>
+<div class="vgrid" id="v6"></div>
+
+<div class="para">A drink once marketed as a cure and a sauce once associated with health benefits are now <span class="hl" tabindex="0" data-tooltip="comunes, normales">ordinary</span> parts of daily meals. Their changing roles show how food, culture, and marketing <span class="hl" tabindex="0" data-tooltip="remodelan continuamente">continually reshape</span> what people eat and drink.</div>
+<div class="vgrid" id="v7"></div>
 
 <h2>🗣️ Discussion Questions</h2>
 <ol class="q">
@@ -129,34 +133,42 @@ details p{margin:.6rem 0 0;border-left:6px solid #f2a900;padding-left:.8rem}
 
 <h2>✏️ Self-Practice</h2>
 <details><summary>1. Use "claim" as both a noun and a verb in two sentences about a safety or HR policy.</summary><p>Example: The vendor <b>claims</b> the new helmet passes every test, but we need proof. / That <b>claim</b> was never verified by our EHS team.</p></details>
-<details><summary>2. Replace "took out" with a more formal verb, then rewrite: "The company took out the harmful ingredient."</summary><p>Suggested: removed, eliminated, or withdrew. "The company removed the harmful ingredient." Phrasal verbs are natural in speech; the formal verb suits reports.</p></details>
-<details><summary>3. Your manager says a new tool "cures all our problems." Respond using "Take it with a grain of salt" or "It just goes to show that …".</summary><p>Example: "That sounds like a cure-all claim. I'd take it with a grain of salt until we run a pilot." Any answer that questions the claim politely and proposes evidence is a strong one.</p></details>
-<details><summary>4. Explain in two sentences how something at your company was "rebranded" or changed its image.</summary><p>Model: "Our IT help desk used to be seen as a place for complaints. After a rebranding as a 'support partner,' people started to contact us earlier." Judge your answer by clarity and by whether it shows a before and after.</p></details>
+<details><summary>2. Replace "removed" with a more casual phrasal verb, then say which one you would use in a report and why.</summary><p>Casual: took out. "The company took out the harmful ingredient." In a written report, "removed" or "eliminated" sounds more formal; in a quick team chat, "took out" is natural.</p></details>
+<details><summary>3. Your manager says a new tool "cures all our problems." Respond using "Take it with a grain of salt" or "It just goes to show that …".</summary><p>Example: "That sounds like a cure-all claim. I'd take it with a grain of salt until we run a pilot." Any answer that politely questions the claim and asks for evidence is a strong one.</p></details>
+<details><summary>4. Explain in two sentences how something at your company was "rebranded" or changed its image.</summary><p>Model: "Our IT help desk used to be seen as a place for complaints. After it was rebranded as a 'support partner,' people started contacting us earlier." Judge your answer by clarity and whether it shows a before and after.</p></details>
 </div>
 
 <script>
 function speakWord(w){speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(w);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
 var V={
-v1:[["tonic","noun","A drink or medicine meant to give energy or health.","tónico","The wellness drink was sold as a tonic for tired night-shift workers."],
-["market (sth) as","verb phrase","To advertise and sell a product as a specific thing.","promocionar como","The supplement is marketed as a safe sleep aid; HR asked for proof."],
+v1:[["reinvent","verb","To change something so completely that it seems new.","reinventar","HR reinvented the onboarding process after the merger."],
+["medicinal","adjective","Used as or related to medicine.","medicinal","The lab handles medicinal plant extracts under strict rules."],
+["be believed to","verb phrase","To be thought to be true, often without proof.","se cree que","The bug is believed to come from last week's update."],
+["everyday","adjective","Ordinary; used or seen daily.","cotidiano, de todos los días","Wearing safety glasses is an everyday habit here."]],
+v2:[["bubbly","adjective","Full of small bubbles of gas.","burbujeante","The bubbly drink spilled on the keyboard."],
 ["vastly","adverb","To a very large degree.","enormemente","Safety rules vastly differ between our Taiwan and Mexico plants."],
-["go with","phrasal verb","To be eaten, used, or chosen together with something.","acompañar a","Which software license goes with this server?"]],
-v2:[["cure-all","noun","A remedy said to solve every problem.","remedio para todo","No single training program is a cure-all for workplace accidents."],
-["claim","noun / verb","A statement that something is true, often without proof.","afirmación / afirmar","The vendor claims the patch fixes every bug."],
-["carbonated","adjective","Containing bubbles of carbon dioxide gas.","con gas / carbonatado","Carbonated drinks are not allowed near the lab equipment."],
-["severe","adjective","Very serious or intense.","grave, severo","A severe chemical spill needs an immediate evacuation."]],
-v3:[["commonplace","adjective","Ordinary; seen everywhere.","común, habitual","Remote meetings became commonplace after 2020."],
+["market (sth) as","verb phrase","To advertise and sell a product as a specific thing.","promocionar como","The supplement is marketed as a sleep aid; HR asked for proof."],
+["tonic","noun","A drink or medicine meant to give energy or health.","tónico","The wellness drink was sold as a tonic for night-shift workers."]],
+v3:[["injured","adjective","Physically hurt.","herido, lesionado","Two injured workers were taken to the clinic."],
+["syrup","noun","A thick, sweet liquid.","jarabe","The cleaning syrup must be diluted before use."],
+["cure-all","noun","A remedy said to solve every problem.","remedio para todo","No single training is a cure-all for workplace accidents."],
+["carbonated","adjective","Containing bubbles of carbon dioxide gas.","con gas","Carbonated drinks are not allowed near the lab equipment."]],
+v4:[["mild","adjective","Not strong or severe.","leve, suave","The audit found only mild problems."],
+["commonplace","adjective","Ordinary; seen everywhere.","común, habitual","Remote meetings became commonplace after 2020."],
 ["concoction","noun","A mixture of different things, often unusual.","mezcla, brebaje","The cleaner was a dangerous concoction of two chemicals."],
-["indulgence","noun","A treat you enjoy even though you don't need it.","gusto, antojo","A long lunch is a small indulgence on Fridays."],
-["gradually","adverb","Slowly, step by step.","poco a poco","We gradually moved our HR files to the cloud."]],
-v4:[["fermented","adjective","Changed by bacteria or yeast, as in sauces or yogurt.","fermentado","The lab stores fermented samples at low temperature."],
+["indulgence","noun","A treat you enjoy even though you don't need it.","gusto, antojo","A long lunch is a small indulgence on Fridays."]],
+v5:[["condiment","noun","A sauce or spice added to food for flavor.","condimento, salsa","The cafeteria offers three condiments with every meal."],
 ["coastal","adjective","Near or along the sea.","costero","Coastal factories face stronger typhoon risks."],
-["long-lasting","adjective","Staying good or working for a long time.","duradero","We need a long-lasting battery for the sensors."],
-["adapt (sth) to","verb","To change something so it suits new conditions.","adaptar a","We adapted the training to suit Mexican staff in Taiwan."]],
-v5:[["dismiss","verb","To reject an idea as not worth considering.","descartar, desestimar","The manager dismissed the near-miss report; that was a mistake."],
-["tangy","adjective","Having a sharp, slightly sour taste.","ácido, picante","The tangy sauce went well with the fries."],
-["indigestion","noun","Stomach pain after eating.","indigestión","Too much coffee gave him indigestion before the audit."],
-["rebranding","noun","Changing the image or name of a product or team.","cambio de imagen","The IT team's rebranding improved its reputation internally."]]};
-Object.keys(V).forEach(function(k){var h="";V[k].forEach(function(w){h+='<div class="card"><h4>'+w[0]+'<button type="button" aria-label="Pronounce '+w[0]+'" onclick="speakWord(\''+w[0].replace(/ \(sth\)/,'').replace(/'/g,"")+'\')">🔊</button></h4><div class="pos">'+w[1]+'</div><div>'+w[2]+'</div><div class="es">🇲🇽 '+w[3]+'</div><div class="ex">💼 '+w[4]+'</div></div>';});document.getElementById(k).innerHTML=h;});
+["fermented","adjective","Changed by bacteria or yeast, as in sauces or yogurt.","fermentado","Fermented samples are stored at low temperature."],
+["adapt (sth) to suit","verb phrase","To change something so it fits new conditions.","adaptar para que se ajuste a","We adapted the training to suit our Mexican team in Taiwan."]],
+v6:[["indigestion","noun","Stomach pain after eating.","indigestión","Too much coffee gave him indigestion before the audit."],
+["dismiss","verb","To reject an idea as not worth considering.","descartar, desestimar","The manager dismissed the near-miss report; that was a mistake."],
+["explosion (of)","noun","A sudden, rapid increase.","auge, boom","There was an explosion of remote-work requests last year."],
+["reputation","noun","The general opinion people have of someone or something.","reputación","Our plant has a strong reputation for safety."]],
+v7:[["ordinary","adjective","Normal; not special.","normal, común","An ordinary day in IT can still bring a surprise outage."],
+["be associated with","verb phrase","To be connected in people's minds with something.","estar asociado con","Heat stress is associated with long outdoor shifts."],
+["continually","adverb","Again and again over a long period.","continuamente","Policies must be continually updated."],
+["reshape","verb","To change the form or nature of something.","remodelar","New laws reshape how we report incidents."]]};
+Object.keys(V).forEach(function(k){var h="";V[k].forEach(function(w){var s=w[0].replace(/ \(.*?\)/,'').replace(/'/g,"");h+='<div class="card"><h4>'+w[0]+'<button type="button" aria-label="Pronounce '+s+'" onclick="speakWord(\''+s+'\')">🔊</button></h4><div class="pos">'+w[1]+'</div><div>'+w[2]+'</div><div class="es">🇲🇽 '+w[3]+'</div><div class="ex">💼 '+w[4]+'</div></div>';});document.getElementById(k).innerHTML=h;});
 </script>
 
