@@ -153,6 +153,7 @@ async function scanLessons() {
         { filename: 'The Hidden Cost of Adoption.html', date: '2026-11-05', title: '👶 The Hidden Cost of Adoption' },
         { filename: 'Dealing with Regret.html', date: '2026-11-10', title: '🛤️ Dealing with Regret' },        { filename: 'Coke and Ketchup Were Once Medicine.html', date: '2026-11-12', title: '🥤🍅 Wait, Coke and Ketchup Were Once Medicine?' },        { filename: 'Run Fast, Run Lean.html', date: '2026-11-17', title: '📊 Run Fast, Run Lean' },        { filename: 'From Fans to Foes.html', date: '2026-11-19', title: '📊 From Fans to Foes' },
         { filename: 'Too Clueless To Care?.html', date: '2026-11-24', title: 'Too Clueless To Care?' },
+        { filename: '️ Too Clueless To Care?.html', date: '2026-11-24', title: '' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
