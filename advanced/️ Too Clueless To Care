@@ -1,0 +1,168 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playing Dumb on Purpose – English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+body{font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7;background:#fbf3e4;color:#1f1f1f;margin:0;font-size:20px}
+.container{max-width:1400px;margin:auto;padding:1.5rem}
+section{margin-bottom:2.5rem}
+h2{font-size:2rem;font-weight:800;color:#8f2d22;border-left:10px solid #d99a00;padding-left:.8rem;margin:0 0 1rem}
+.expr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.expr{background:#fff;border:3px solid #8f2d22;border-radius:12px;padding:1rem 1.2rem;box-shadow:5px 5px 0 #8f2d22}
+.expr b{font-size:1.4rem;color:#8f2d22}
+.expr .es{color:#2f5d3a;font-weight:700}
+.expr .ex{font-style:italic;margin-top:.3rem}
+.article{background:#fff;border:3px solid #1f1f1f;border-radius:12px;padding:1.5rem 2rem;box-shadow:5px 5px 0 #1f1f1f}
+.article h2{border:none;padding:0;font-size:2.2rem}
+.article p{font-size:1.35rem;margin:0}
+.subtitle{font-weight:700;color:#2f5d3a;margin-bottom:1rem;font-size:1.2rem}
+.hl{background:#ffe066;font-weight:700;border-bottom:3px solid #c25a00;padding:0 3px;border-radius:3px;position:relative;cursor:help}
+.hl::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#1f1f1f;color:#fff;font-size:1rem;font-weight:600;padding:.4rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;z-index:20;transition:opacity .15s}
+.hl::before{content:"";position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);border:8px solid transparent;border-top-color:#1f1f1f;border-bottom:0;opacity:0;z-index:20;transition:opacity .15s}
+.hl:hover::after,.hl:hover::before,.hl:focus::after,.hl:focus::before{opacity:1}
+.vocab{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1rem 0 2rem;padding:1rem;background:#2f5d3a;border:3px solid #1f1f1f;border-radius:12px}
+.card{background:#fffdf5;border:3px solid #1f1f1f;border-radius:10px;padding:.8rem 1rem;font-size:1rem;line-height:1.55}
+.card h4{margin:0;font-size:1.3rem;color:#8f2d22;font-weight:800}
+.pos{font-size:.85rem;color:#555;font-weight:700}
+.card .es{color:#2f5d3a;font-weight:800}
+.card .ex{font-style:italic;border-top:2px dashed #c25a00;margin-top:.4rem;padding-top:.4rem}
+.spk{border:2px solid #1f1f1f;background:#ffe066;border-radius:50%;cursor:pointer;font-size:1rem;padding:.1rem .4rem;margin-left:.3rem}
+.spk:hover{background:#d99a00}
+.disc li,.prac details{background:#fff;border:3px solid #8f2d22;border-radius:12px;padding:1rem 1.3rem;margin-bottom:1rem;font-size:1.3rem;font-weight:600}
+.disc{list-style:none;padding:0;counter-reset:q}
+.disc li{counter-increment:q}
+.disc li::before{content:counter(q);display:inline-block;background:#8f2d22;color:#fff;border-radius:50%;width:2rem;height:2rem;text-align:center;margin-right:.7rem;line-height:2rem}
+.prac summary{cursor:pointer;font-weight:700}
+.prac .ans{margin-top:.7rem;padding-top:.7rem;border-top:2px dashed #c25a00;font-weight:400;font-size:1.1rem}
+@media(max-width:1100px){.vocab{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){body{font-size:17px}.container{padding:.8rem}.expr-grid,.vocab{grid-template-columns:1fr}.article{padding:1rem}.article p{font-size:1.15rem}.hl::after{white-space:normal;width:180px}}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+<div class="header-content">
+<h1>📚 English Conversation with Elisa</h1>
+<span class="level-badge">Advanced Level </span>
+<div class="search-box">
+<a href="../index-advanced.html" class="back-to-calendar-btn" style="
+display: inline-block;
+padding: 0.5rem 1rem;
+background: rgba(255, 255, 255, 0.25);
+color: white;
+text-decoration: none;
+border-radius: 20px;
+font-size: 0.9rem;
+font-weight: 600;
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+">Home</a>
+</div>
+</div>
+</header>
+    <div class="article-image-container">
+        <img src="https://i.ytimg.com/vi/Mvr58M4yojM/maxresdefault.jpg" alt="" class="article-image">
+    </div>
+
+
+<div class="container">
+
+<section>
+<h2>💬 Useful Expressions</h2>
+<div class="expr-grid">
+<div class="expr"><b>to pull your weight</b> <button class="spk" data-w="to pull your weight">🔊</button><div class="es">→ hacer tu parte del trabajo</div><div class="ex">"Everyone on the audit team needs to pull their weight."</div></div>
+<div class="expr"><b>to pass the buck</b> <button class="spk" data-w="to pass the buck">🔊</button><div class="es">→ echarle la culpa / la responsabilidad a otro</div><div class="ex">"Instead of fixing the bug, he passed the buck to the vendor."</div></div>
+<div class="expr"><b>to let someone off the hook</b> <button class="spk" data-w="to let someone off the hook">🔊</button><div class="es">→ librar a alguien de una obligación</div><div class="ex">"If we always cover for him, we let him off the hook."</div></div>
+<div class="expr"><b>to draw the line</b> <button class="spk" data-w="to draw the line">🔊</button><div class="es">→ poner un límite</div><div class="ex">"I'm happy to help, but I draw the line at doing your reports."</div></div></div></section><section><div class="article"><h1 style="scrollbar-width: thin;"><font color="#ffffff"><span style="font-size: 2.6rem;">🕵️ </span></font><font color="#8f2d22"><span style="font-size: 35.2px;">&nbsp;Too Clueless To Care?</span></font></h1><h1 style="scrollbar-width: thin;"><font color="#2f5d3a"><span style="font-size: 19.2px;">It happens more&nbsp;</span></font><span style="font-size: 19.2px; color: rgb(47, 93, 58);">than you may think</span></h1>
+
+<p>Anyone who has been in a group project with a teammate who <span class="hl" tabindex="0" data-tooltip="no hace su parte">barely pulls their weight</span> knows the frustration: the rest of the team <span class="hl" tabindex="0" data-tooltip="absorbe, asume">soaks up</span> the extra work. Sometimes this is not simply an accident. It can be a pattern called <span class="hl" tabindex="0" data-tooltip="incompetencia usada como arma">weaponized incompetence</span>, where a person acts as if they are unable to do certain tasks so that someone else <span class="hl" tabindex="0" data-tooltip="termina haciéndolas">ends up handling</span> them.</p>
+</div>
+<div class="vocab">
+<div class="card"><h4>pull your weight <button class="spk" data-w="pull your weight">🔊</button></h4><div class="pos">idiom</div>do your fair share of the work<div class="es">→ hacer tu parte</div><div class="ex">The IT contractor never pulls his weight during system migrations.</div></div>
+<div class="card"><h4>soak up <button class="spk" data-w="soak up">🔊</button></h4><div class="pos">phrasal verb</div>absorb something, such as extra work or cost<div class="es">→ absorber, asumir</div><div class="ex">The EHS team soaked up the paperwork when two coordinators left.</div></div>
+<div class="card"><h4>end up doing <button class="spk" data-w="end up doing">🔊</button></h4><div class="pos">phrasal verb</div>finally do something, often unplanned<div class="es">→ terminar haciendo</div><div class="ex">I always end up doing the safety-training slides.</div></div>
+<div class="card"><h4>troublesome <button class="spk" data-w="troublesome">🔊</button></h4><div class="pos">adjective</div>causing difficulty or worry over time<div class="es">→ problemático, molesto</div><div class="ex">An unclear approval process is troublesome for HR.</div></div>
+</div>
+
+<div class="article">
+<p>People rely on this behavior for different reasons. Some want to <span class="hl" tabindex="0" data-tooltip="evitar, esquivar">dodge</span> accountability, while others are simply afraid of <span class="hl" tabindex="0" data-tooltip="cometer errores">making mistakes</span>. Sometimes it becomes a habit because colleagues keep <span class="hl" tabindex="0" data-tooltip="intervenir para ayudar">stepping in</span> to rescue the person. And occasionally it is used on purpose, to <span class="hl" tabindex="0" data-tooltip="manipular / dirigir">steer</span> a situation or <span class="hl" tabindex="0" data-tooltip="descargar cargas en otros">offload burdens</span> onto others.</p>
+</div>
+<div class="vocab">
+<div class="card"><h4>dodge <button class="spk" data-w="dodge">🔊</button></h4><div class="pos">verb</div>avoid something cleverly<div class="es">→ esquivar, evadir</div><div class="ex">He dodged every question about the missed audit deadline.</div></div>
+<div class="card"><h4>step in <button class="spk" data-w="step in">🔊</button></h4><div class="pos">phrasal verb</div>get involved to help or take over<div class="es">→ intervenir</div><div class="ex">HR stepped in when the conflict between two managers escalated.</div></div>
+<div class="card"><h4>steer <button class="spk" data-w="steer">🔊</button></h4><div class="pos">verb</div>guide or influence, sometimes quietly<div class="es">→ dirigir, orientar</div><div class="ex">She steered the meeting away from the overdue incident report.</div></div>
+<div class="card"><h4>offload <button class="spk" data-w="offload">🔊</button></h4><div class="pos">verb</div>pass a task or burden to someone else<div class="es">→ descargar, delegar</div><div class="ex">He offloaded the ticket backlog onto the new analyst.</div></div>
+</div>
+
+<div class="article">
+<p>It may look minor, but it can <span class="hl" tabindex="0" data-tooltip="tener efectos graves en">seriously affect</span> relationships at work and at home. Over time, other people <span class="hl" tabindex="0" data-tooltip="asumir más trabajo">take on</span> more and more, and <span class="hl" tabindex="0" data-tooltip="el resentimiento crece">resentment builds up</span>.</p>
+</div>
+<div class="vocab">
+<div class="card"><h4>take on <button class="spk" data-w="take on">🔊</button></h4><div class="pos">phrasal verb</div>accept a task or responsibility<div class="es">→ asumir</div><div class="ex">I can't take on another plant audit this quarter.</div></div>
+<div class="card"><h4>build up <button class="spk" data-w="build up">🔊</button></h4><div class="pos">phrasal verb</div>increase gradually<div class="es">→ acumularse</div><div class="ex">Frustration built up in the helpdesk team over months.</div></div>
+<div class="card"><h4>resentment <button class="spk" data-w="resentment">🔊</button></h4><div class="pos">noun</div>bitter feeling about unfair treatment<div class="es">→ resentimiento</div><div class="ex">Unequal overtime created resentment on the shift.</div></div>
+<div class="card"><h4>minor <button class="spk" data-w="minor">🔊</button></h4><div class="pos">adjective</div>small, not very important<div class="es">→ menor, poco importante</div><div class="ex">A minor habit can become a major team problem.</div></div>
+</div>
+
+<div class="article">
+<p>The solution starts with <span class="hl" tabindex="0" data-tooltip="comunicación clara">clear communication</span>. <span class="hl" tabindex="0" data-tooltip="definir qué se espera">Setting expectations</span> and refusing to <span class="hl" tabindex="0" data-tooltip="asumir la tarea de otro">take over</span> tasks encourages people to own their actions. <span class="hl" tabindex="0" data-tooltip="a largo plazo">In the long run</span>, <span class="hl" tabindex="0" data-tooltip="enfrentar">confronting</span> the behavior leads to healthier, more balanced relationships.</p>
+</div>
+<div class="vocab">
+<div class="card"><h4>set expectations <button class="spk" data-w="set expectations">🔊</button></h4><div class="pos">collocation</div>explain clearly what is required<div class="es">→ establecer expectativas</div><div class="ex">We set expectations about who updates the risk register.</div></div>
+<div class="card"><h4>take over <button class="spk" data-w="take over">🔊</button></h4><div class="pos">phrasal verb</div>assume control of someone else's task<div class="es">→ hacerse cargo de</div><div class="ex">Don't take over his tickets; let him learn.</div></div>
+<div class="card"><h4>in the long run <button class="spk" data-w="in the long run">🔊</button></h4><div class="pos">idiom</div>over a long period<div class="es">→ a la larga</div><div class="ex">In the long run, clear roles save HR hours of mediation.</div></div>
+<div class="card"><h4>confront <button class="spk" data-w="confront">🔊</button></h4><div class="pos">verb</div>face a problem or person directly<div class="es">→ enfrentar</div><div class="ex">She confronted the issue calmly, with examples.</div></div>
+</div>
+</section>
+
+<section>
+<h2>🗣️ Discussion Questions</h2>
+<ol class="disc">
+<li>Have you ever seen someone use "I'm just not good at this" to avoid a task? What did the team do, and did it work?</li>
+<li>Where is the line between genuinely lacking a skill and weaponized incompetence? How could a manager tell the difference?</li>
+<li>If helping someone repeatedly can make the problem habitual, when does being a supportive colleague become part of the problem?</li>
+</ol>
+</section>
+
+<section class="prac">
+<h2>✏️ Self-Practice</h2>
+<details><summary>1. A colleague says, "I'm terrible with spreadsheets, can you do the monthly report?" for the fifth time. What would you say?</summary><div class="ans">Sample: "I'll show you the steps once, and then the report is yours. I can review it afterward." This sets expectations without taking over.</div></details>
+<details><summary>2. Complete the sentence: "If we always ______ for him, he will never learn." (step in / dodge / offload)</summary><div class="ans">step in. "Dodge" and "offload" describe what he does, not what the team does.</div></details>
+<details><summary>3. Which sounds more constructive? (a) "You never do anything." (b) "I need you to own the incident reports starting this week."</summary><div class="ans">(b). It is specific, states the expectation, and focuses on the task, not the person's character.</div></details>
+<details><summary>4. A new hire is afraid of making mistakes and keeps asking others to do tasks. Is this weaponized incompetence? Justify your view.</summary><div class="ans">Not necessarily. Fear of mistakes is one possible cause, so intent matters. Support and training may fix it, while a deliberate pattern needs a firmer conversation.</div></details>
+</section>
+
+</div>
+<script>
+function speakWord(word){const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u);}
+document.querySelectorAll('.spk').forEach(b=>b.addEventListener('click',()=>speakWord(b.dataset.w)));
+</script>
+
