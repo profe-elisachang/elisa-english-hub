@@ -1,0 +1,171 @@
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Teacherless Classroom – English Conversation with Elisa</title>
+<link rel="stylesheet" href="../style-advanced.css">
+<style>
+:root{--ink:#22302f;--teal:#1d5c58;--cream:#fbf5e6;--card:#ffffff;--mustard:#f0a81e;--terra:#c0502b;--sage:#dfe9d3;--line:#22302f}
+body{font-family:'Noto Sans','Open Sans',sans-serif;line-height:1.7;color:var(--ink);background:var(--cream)}
+.lesson{max-width:1400px;margin:auto;padding:1.5rem 1rem 4rem;font-size:1.25rem}
+.lesson h2{font-size:2rem;font-weight:800;color:var(--teal);border-bottom:5px solid var(--mustard);padding-bottom:.3rem;margin:2.8rem 0 1.2rem}
+/* Expressions */
+.expr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.expr{background:var(--card);border:3px solid var(--line);border-left:12px solid var(--terra);border-radius:10px;padding:1rem 1.2rem;box-shadow:5px 5px 0 var(--line)}
+.expr b{display:block;font-size:1.45rem;color:var(--terra)}
+.expr .es{font-weight:700}
+.expr i{display:block;margin-top:.4rem;color:#3d4a49}
+/* Article */
+.article-title{background:var(--teal);color:#fff;border:3px solid var(--line);border-radius:10px;padding:1.2rem 1.5rem;box-shadow:5px 5px 0 var(--line)}
+.article-title h2{color:#fff;border:0;margin:0;padding:0;font-size:2.3rem}
+.article-title p{margin:.3rem 0 0;font-size:1.2rem;color:#ffe9b0;font-weight:600}
+.para{background:var(--card);border:3px solid var(--line);border-radius:10px;padding:1.2rem 1.6rem;margin-top:1.4rem;font-size:1.35rem}
+.para h3{margin:0 0 .4rem;color:var(--terra);font-weight:800;font-size:1.5rem}
+.hl{background:#fff176;font-weight:700;border-bottom:3px solid #e65100;padding:0 3px;border-radius:3px;position:relative;cursor:help}
+.hl[data-tooltip]::after{content:attr(data-tooltip);position:absolute;left:50%;bottom:130%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:1rem;font-weight:600;line-height:1.4;padding:.45rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:20}
+.hl[data-tooltip]::before{content:"";position:absolute;left:50%;bottom:112%;transform:translateX(-50%);border:7px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .15s;z-index:20}
+.hl:hover::after,.hl:hover::before,.hl:focus::after,.hl:focus::before{opacity:1}
+/* Vocab */
+.vocab{margin-top:.8rem;background:var(--sage);border:3px solid var(--line);border-radius:10px;padding:1rem 1.2rem}
+.vocab>h4{margin:0 0 .7rem;font-size:1.2rem;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.06em}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem}
+.vcard{background:#fff;border:2px solid var(--line);border-top:8px solid var(--mustard);border-radius:8px;padding:.8rem 1rem;font-size:1.1rem;line-height:1.55}
+.vcard .w{font-size:1.5rem;font-weight:800;color:var(--ink)}
+.vcard .pos{color:var(--terra);font-weight:700;font-size:1rem}
+.vcard .es{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:0 .5rem;border-radius:4px;margin:.25rem 0}
+.vcard .ex{font-style:italic;color:#34423f;border-left:4px solid var(--mustard);padding-left:.6rem;margin-top:.3rem}
+.spk{border:2px solid var(--line);background:var(--mustard);border-radius:50%;width:2.2rem;height:2.2rem;font-size:1.05rem;cursor:pointer;vertical-align:middle;margin-left:.3rem}
+.spk:hover{background:#ffc94d}
+/* Questions */
+.dq{background:var(--card);border:3px solid var(--line);border-left:12px solid var(--teal);border-radius:10px;padding:1rem 1.4rem;margin-bottom:1rem;font-size:1.35rem;font-weight:600;box-shadow:5px 5px 0 var(--line)}
+.dq span{color:var(--terra);font-weight:800;margin-right:.4rem}
+details{background:var(--card);border:3px solid var(--line);border-radius:10px;margin-bottom:1rem;box-shadow:5px 5px 0 var(--line)}
+summary{cursor:pointer;padding:.9rem 1.2rem;font-weight:700;font-size:1.3rem;list-style:none}
+summary::before{content:"▶ ";color:var(--terra)}
+details[open] summary::before{content:"▼ "}
+details[open] summary{border-bottom:3px dashed var(--line)}
+details .ans{padding:.8rem 1.2rem;background:#fff3cf;border-radius:0 0 7px 7px;font-size:1.2rem}
+@media (max-width:700px){.lesson{font-size:1.05rem;padding:1rem .7rem 3rem}.lesson h2{font-size:1.5rem}.article-title h2{font-size:1.6rem}.para{font-size:1.15rem;padding:1rem}.hl[data-tooltip]::after{white-space:normal;width:190px}}
+
+.article-image-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.article-image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .article-image-container {
+        padding: 0 15px;
+        margin: 15px auto;
+    }
+    
+    .article-image-container img {
+        border-radius: 6px;
+    }
+}
+</style>
+
+
+<header class="header">
+  <div class="header-content">
+    <h1>📚 English Conversation with Elisa</h1>
+    <span class="level-badge">Advanced Level </span>
+    <div class="search-box">
+      <a href="../index-advanced.html" class="back-to-calendar-btn" style="
+        display: inline-block; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.25); color: white; text-decoration: none; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;
+      ">Home</a>
+    </div>
+  </div>
+</header>
+    <div class="article-image-container">
+        <img src="https://media.licdn.com/dms/image/v2/D5612AQE3sOeEjdzleQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1706415283994?e=2147483647&v=beta&t=q-I-ZK2mUp64nS5x3wqMgFM1LuWb_owmXdAv4uHOA9w" alt="🏫 The Teacherless Classroom" class="article-image">
+    </div>
+
+
+<main class="lesson">
+
+<h2>💬 Useful Expressions</h2>
+<div class="expr-grid">
+  <div class="expr"><b>to buy into something</b><span class="es">creer en algo / estar de acuerdo con una idea</span><i>"Not everyone in the plant has bought into the new safety app."</i></div>
+  <div class="expr"><b>to cater to someone</b><span class="es">atender las necesidades de alguien</span><i>"Our training mostly caters to office staff, not operators."</i></div>
+  <div class="expr"><b>at the end of the day</b><span class="es">al fin y al cabo</span><i>"At the end of the day, HR needs the data to be accurate."</i></div>
+  <div class="expr"><b>to weigh something</b><span class="es">sopesar / evaluar</span><i>"We're weighing the risks before moving servers to the cloud."</i></div>
+  <div class="expr"><b>beyond what…can do</b><span class="es">más allá de lo que…puede hacer</span><i>"Some judgment calls are beyond what any software can do."</i></div>
+</div>
+
+<div class="article-title" style="margin-top:2.8rem">
+  <h2>🏫 The Teacherless Classroom</h2>
+  <p>Inside the fast-growing schools that replace teachers with AI-guided learning</p>
+</div>
+
+<div class="para">
+  <h3>A school without teachers</h3>
+  Blake Mohseni is one of the most <span class="hl" tabindex="0" data-tooltip="ferviente, apasionado">fervent</span> supporters of Alpha School, a network of private schools built around AI. There are no teachers, only "guides" who <span class="hl" tabindex="0" data-tooltip="motivar a, impulsar a">motivate</span> students. Lessons come from AI software and last just two hours a day. The rest of the day is for hands-on workshops, from building robots to <span class="hl" tabindex="0" data-tooltip="subir de nivel / ampliar">scaling</span> obstacle courses. It all comes with a <span class="hl" tabindex="0" data-tooltip="considerable, abultado">hefty</span> price tag of $55,000 a year. Founder MacKenzie Price says the model offers more personal and efficient learning, and that AI can finally <span class="hl" tabindex="0" data-tooltip="liberar / desbloquear">unlock</span> human potential.</div>
+<div class="vocab"><h4>📖 Vocabulary · Paragraph 1</h4><div class="vgrid" data-words="fervent,hefty"></div></div>
+
+<div class="para">
+  <h3>Mixed reviews</h3>
+  The model has caused both praise and <span class="hl" tabindex="0" data-tooltip="escepticismo">skepticism</span>. As the schools <span class="hl" tabindex="0" data-tooltip="lanzamiento, implementación">rollout</span> spreads quickly, educators are <span class="hl" tabindex="0" data-tooltip="sopesar">weighing</span> what AI should do in class, and the change has brought <span class="hl" tabindex="0" data-tooltip="turbulencia, agitación">turbulence</span> for some. Critics note there is little outside research behind the curriculum. Others fear a teacher-free classroom will <span class="hl" tabindex="0" data-tooltip="cortar, romper (un vínculo)">sever</span> the relationships that sit at the heart of learning. One philosophy professor worries that we are changing the very nature of education.</div>
+<div class="vocab"><h4>📖 Vocabulary · Paragraph 2</h4><div class="vgrid" data-words="skepticism,sever"></div></div>
+
+<div class="para">
+  <h3>What guides actually do</h3>
+  The guides are not trained teachers. They supervise students and act as mentors, and later in the day they <span class="hl" tabindex="0" data-tooltip="dirigir, orientar">steer</span> workshops and help set individual goals. Price insists, "We're not replacing teachers; the role is just changing." Even so, a Stanford professor, Victor Lee, accepts that AI can <span class="hl" tabindex="0" data-tooltip="agilizar, hacer más eficiente">streamline</span> some tasks but warns against <span class="hl" tabindex="0" data-tooltip="eliminar por completo">cutting out</span> teachers altogether. Teachers do so much that is <span class="hl" tabindex="0" data-tooltip="más allá de lo que">beyond what</span> even advanced language models can do.</div>
+<div class="vocab"><h4>📖 Vocabulary · Paragraph 3</h4><div class="vgrid" data-words="steer,streamline"></div></div>
+
+<div class="para">
+  <h3>Preference for the privileged?</h3>
+  Because Alpha charges <span class="hl" tabindex="0" data-tooltip="colegiatura, matrícula">tuition</span>, it tends to <span class="hl" tabindex="0" data-tooltip="atender a, dirigirse a">cater to</span> families of a certain income level. Price says doubts about Alpha reflect a <span class="hl" tabindex="0" data-tooltip="perenne, recurrente">perennial</span> resistance to new ideas in education. She admits there is some <span class="hl" tabindex="0" data-tooltip="sesgo de selección">selection bias</span>, since wealthier students often have more resources, but she says she wants to change that. At the flagship school in Texas, over 40% of students receive <span class="hl" tabindex="0" data-tooltip="ayuda financiera / beca">financial aid</span>. Lee, however, questions whether private schools really try to educate more people.</div>
+<div class="vocab"><h4>📖 Vocabulary · Paragraph 4</h4><div class="vgrid" data-words="perennial,cater to"></div></div>
+
+<div class="para">
+  <h3>Growing amid debate</h3>
+  Alpha's growth is <span class="hl" tabindex="0" data-tooltip="desplegándose, expandiéndose">unfurling</span> in the middle of the national debate over school choice. Supporters say it gives parents more options and gives low-income students access to better schooling. Price points to families from across the political <span class="hl" tabindex="0" data-tooltip="espectro, gama">spectrum</span>, and almost a dozen new campuses opened this fall because of <span class="hl" tabindex="0" data-tooltip="creciente, en aumento">surging</span> demand. Mohseni sums it up: <span class="hl" tabindex="0" data-tooltip="al fin y al cabo">at the end of the day</span>, the best asset he can give his daughter is her brain, and AI is where the future is heading.</div>
+<div class="vocab"><h4>📖 Vocabulary · Paragraph 5</h4><div class="vgrid" data-words="unfurl,spectrum"></div></div>
+
+<h2>🗣️ Discussion Questions</h2>
+<div class="dq"><span>1.</span>Would you trust AI to deliver most of the training in your department? What would still need a human, and why?</div>
+<div class="dq"><span>2.</span>Is it fair to pay $55,000 a year for a model that is still unproven? Who should decide whether a new approach is worth trying?</div>
+<div class="dq"><span>3.</span>Which parts of your job could be "streamlined" by AI, and which parts are beyond what any software can do?</div>
+
+<h2>✍️ Self-Practice Questions</h2>
+<details><summary>1. Which word means "to cut a connection or relationship"?</summary><div class="ans"><b>Sever.</b> "The audit severed our relationship with that supplier."</div></details>
+<details><summary>2. Complete: "A new office policy can ______ the hiring process, saving us hours each week."</summary><div class="ans"><b>Streamline.</b> It means to make something work more simply and effectively.</div></details>
+<details><summary>3. What is the difference between "fervent" and "hefty"?</summary><div class="ans"><b>Fervent</b> describes strong, sincere feeling (a fervent supporter). <b>Hefty</b> describes a large amount, especially money (a hefty fee).</div></details>
+<details><summary>4. Explain "a perennial problem" with an example from your workplace.</summary><div class="ans">A problem that keeps coming back, e.g. "Late safety reports are a perennial problem every quarter." Answers will vary.</div></details>
+
+</main>
+
+<script>
+const V={
+ "fervent":{d:"believing or feeling something very strongly and sincerely",p:"adjective",es:"ferviente, apasionado",ex:"Our HR director is a fervent supporter of flexible schedules."},
+ "hefty":{d:"very large, especially an amount of money",p:"adjective",es:"considerable, cuantioso",ex:"The plant faced a hefty fine for the safety violation."},
+ "skepticism":{d:"an attitude of doubting that claims or statements are true",p:"noun",es:"escepticismo",ex:"There was skepticism about the new login system at first."},
+ "sever":{d:"to end a relationship or connection with someone or something",p:"verb",es:"cortar, romper (un vínculo)",ex:"IT had to sever the connection to stop the attack."},
+ "steer":{d:"to guide or take charge of a group, project or discussion",p:"verb",es:"dirigir, orientar",ex:"The EHS manager steers the monthly safety meeting."},
+ "streamline":{d:"to make a process work more simply and effectively",p:"verb",es:"agilizar, optimizar",ex:"We streamlined onboarding by moving every form online."},
+ "perennial":{d:"continuing for a long time, or happening again and again",p:"adjective",es:"perenne, recurrente",ex:"Password resets are a perennial headache for the help desk."},
+ "cater to":{d:"to provide what a particular group of people needs or wants",p:"phrasal verb",es:"atender las necesidades de",ex:"Our training caters to workers on different shifts."},
+ "unfurl":{d:"to spread out or become spread out",p:"verb",es:"desplegarse, extenderse",ex:"The new HR policy is unfurling across all Taiwan sites."},
+ "spectrum":{d:"a complete range of opinions, people or situations",p:"noun",es:"espectro, gama",ex:"Employees across the whole spectrum of roles joined the survey."}
+};
+function speakWord(word){const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+document.querySelectorAll('.vgrid').forEach(g=>{
+ g.dataset.words.split(',').forEach(k=>{
+  const v=V[k],d=document.createElement('div');d.className='vcard';
+  d.innerHTML=`<div><span class="w">${k}</span><button class="spk" aria-label="Pronounce ${k}" onclick="speakWord('${k}')">🔊</button> <span class="pos">${v.p}</span></div><div>${v.d}</div><span class="es">${v.es}</span><div class="ex">${v.ex}</div>`;
+  g.appendChild(d);
+ });
+});
+</script>
+
