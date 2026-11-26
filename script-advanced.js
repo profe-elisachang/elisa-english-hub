@@ -155,6 +155,7 @@ async function scanLessons() {
         { filename: 'Too Clueless To Care?.html', date: '2026-11-24', title: 'Too Clueless To Care?' },
         { filename: '️ Too Clueless To Care?.html', date: '2026-11-24', title: '' },
         { filename: 'Too Clueless To Care- discus.html', date: '2026-11-24', title: '🕵️ Too Clueless To Care?- discus' },
+        { filename: 'The Teacherless Classroom.html', date: '2026-11-26', title: '🏫 The Teacherless Classroom' },
 // 👆 在此上方添加新文章，記得加逗號！
         // 格式：{ filename: '檔名.html', date: 'YYYY-MM-DD', title: '標題（含emoji）' }
         // 假日通知範例：{ date: '2026-12-25', title: '🎄 Christmas - No Class', isHoliday: true }
